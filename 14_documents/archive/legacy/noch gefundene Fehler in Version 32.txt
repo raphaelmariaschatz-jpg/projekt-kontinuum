@@ -1,0 +1,54 @@
+noch gefundene Fehler in Version 32.3
+
+Ja, das sind echte Laufzeitreste, nicht nur kosmetische Dinge. Ich behandle das als 32.3-Härtungsnacharbeit: erst die realen Datensätze und offenen Zyklen diagnostizieren, dann Guard-Logik und Bestandsbereinigung so korrigieren, dass Motivation/Meaning nicht weiter aus Systemmeldungen gefüttert werden.
+
+Die Diagnose bestätigt deine Beobachtung ziemlich klar: Der Guard verhindert neue Fälle besser, aber der Altbestand aus früheren Dialog-/Statusantworten steckt noch in learning_tasks und wird dadurch weiter vom Motivation Core bewertet. Ich lese jetzt die Score-/Task-Persistenz und setze dann eine Bestandsbereinigung plus schärfere Klassifikation um.
+
+Wichtig: motivation_scores ist append-only, daher lösche oder überschreibe ich alte Scores nicht. Stattdessen wird ab jetzt bei der Anzeige und bei neuen Berechnungen nur noch aktive, saubere Motivation berücksichtigt; alte kontaminierte Scores bleiben historisch prüfbar, aber wirken nicht mehr in Prioritäten.
+
+Ich mache das jetzt in drei Schichten: bessere Klassifikation, aktive Bereinigung bestehender Review-Tasks, und Motivation-Ausgabe filtert historische kontaminierte Scores aus. Zusätzlich verhindere ich, dass Identity-Router-Antworten künftig vollständig als Chronik-Wissensintegration landen.
+
+Die Codehärtung ist drin. Ich kompiliere die geänderten Module und lasse dann auf dem realen Datenbestand refresh() plus recalculate() laufen, damit alte Review-Tasks deaktiviert und die aktuelle Motivation-Anzeige sauber wird.
+
+Die Bereinigung klassifiziert jetzt deutlich mehr Altbestand als report_output/foundation_knowledge, aber es gibt tatsächlich einen offenen Foundation-Zyklus 1177. Ich schließe den kontrolliert über die Recovery und prüfe danach die drei kritischen Ausgaben erneut.
+
+Die Lernprojekt-/Teilantwort-Fälle sind raus, aber die alten „Mein Name ist Kontinuum…“-Selbstausgaben und eine Motivationserklärung rutschen noch durch. Das heißt: Die Report-Erkennung ist noch nicht breit genug für Selbstbeschreibungs-/Versionsantworten im Wrapper „Wissen X überprüfen“. Ich schärfe genau diese Marker nach.
+
+Die Normalisierung zeigt den Grund: Punkte bleiben im Text, und ä wird zu a, nicht zu ae. Ich ergänze robuste Kurzmarker wie „mein name ist kontinuum“, „ich bin projekt kontinuum“ und „motivationserklarung“.
+
+Die Marker sind nachgeschärft. Ich teste sie direkt, bereinige erneut und prüfe Motivation/Gaps/Foundation-Zyklen nochmal.
+
+Die beiden Problemklassen werden jetzt direkt als Report-Ausgaben erkannt. Ich prüfe die echten Nutzerbefehle nochmal.
+
+Die Hauptschwachstelle ist jetzt weg: motivationsprioritäten zeigt keine System-/Lernprojekt-/Teilantwort-Wissenslücken mehr. Es bleibt noch ein Statusaltbestand Continuity Core 29.0 in den Wissenslücken; den klassifiziere ich ebenfalls als Report-Ausgabe. Außerdem filtere ich Bedeutungspfad-Chronikdarstellung künftig gegen alte Dialogantwort-Volltexte.
+
+Ich ergänze Continuity Core und ähnliche Statuskern-Ausgaben als Reportklasse und filtere die Chronikdarstellung im Bedeutungspfad gegen alte Dialog-/Statusintegrationen.
+
+Jetzt bereinige ich noch einmal und prüfe die Ausgaben final.
+
+Der Bedeutungspfad ist jetzt frei von Identity-Router-Volltexten, zeigt aber noch technische Prüfzyklus-Chronik. Ich filtere diese ebenfalls aus der lesbaren Identitätsperspektive heraus und ergänze Regressionen für die gefundenen Restfälle, damit der Fehler nicht wiederkommt
+
+Die Regressionen sind ergänzt. Ich lasse die betroffene 32.3-Testgruppe und die Kernprüfungen jetzt laufen.
+
+Die Regressionen sind grün. Ich mache noch eine letzte Live-Ausgabe der vier kritischen Punkte, damit wir sehen, dass die korrigierte Realität jetzt passt.
+
+Die Chronikdarstellung ist schon von Volltexten befreit, aber viermal dieselbe technische Schutzmeldung ist nicht schön. Ich normalisiere diese Anzeige noch zu einem deduplizierten Eintrag „Identity Routing aktiviert …“, dann ist auch dieser Punkt sauberer.
+
+Ich prüfe noch einmal kurz den Bedeutungspfad und die betroffene Regression.
+
+Die kritischen Ausgaben sehen jetzt sauber aus. Weil wir Core-Guards geändert haben, starte ich zum Abschluss noch den vollständigen Testeinstieg, damit die Härtung nicht versehentlich an anderer Stelle etwas bricht.
+
+Der Volltest hat genau eine Alt-Regression getroffen: test_v25_0_knowledge_platform.py erwartet noch, dass eine Dialogantwort als Wissenseinheit mit Origin dialogue integriert wird. Genau das haben wir für Status-/Identity-/Systemantworten jetzt bewusst eingeschränkt. Ich passe den Test auf die neue, sicherere Semantik an: Dialogintegration bleibt nur für echte Fachantworten zulässig, nicht für System-/Identity-Antworten.
+
+Ich aktualisiere die alte v25-Regression so, dass dialogue nicht mehr zwingend als Knowledge-Platform-Origin erwartet wird. Die neue Architektur erlaubt Dialogwissen nur noch selektiv; Notebook, Learning und Memory bleiben die stabilen Pflichtursprünge.
+
+Ich mache die Testassertion noch präziser: Systemstatus muss explizit vom Guard abgelehnt werden.
+
+Ich lasse die angepasste v25-Regression und die neuen Guard-Regressionen kurz laufen, bevor ich den Volltest wiederhole.
+
+Die direkt betroffenen Tests sind grün. Ich wiederhole jetzt den vollständigen 32.3-Testeinstieg.
+
+Gemerkter aktueller Testeinstieg für Kontinuum 32.3:
+C:\Projekt Kontinuum\16_installation\TEST_KONTINUUM_32_3.bat
+Letzter vollständiger Lauf: erfolgreich, alle aktiven Tests bestanden.
+

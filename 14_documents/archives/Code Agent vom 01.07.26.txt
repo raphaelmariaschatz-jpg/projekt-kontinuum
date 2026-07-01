@@ -1,0 +1,228 @@
+Code Agent vom 01.07.26
+
+Codex-Auftrag: CodeAgent für Projekt Kontinuum integrieren
+
+Ziel:
+Bitte einen neuen CodeAgenten integrieren, der Quellcode analysieren, Projektstrukturen verstehen, Programmierlogik erklären und perspektivisch neue Programmiersprachen lernen kann.
+
+Grundsatz:
+Der CodeAgent arbeitet zunächst read-only. Er darf Quellcode lesen, analysieren und Berichte erstellen, aber keine Quelldateien verändern, verschieben oder automatisch reparieren.
+
+Aufgaben:
+
+1. Bestehende Architektur prüfen
+
+* vorhandene Agentenstruktur analysieren
+* Registry-, Router-, Memory-, Knowledge- und Provenienzlogik verwenden
+* keine Parallelarchitektur erzeugen
+* CodeAgent sauber in die Agent Registry eintragen
+
+2. CodeAgent als eigenes Modul erstellen
+   Fähigkeiten:
+
+* Quellcodedateien lesen
+* Projektordner analysieren
+* Programmiersprache erkennen
+* Dateien nach Sprache, Zweck und Risiko klassifizieren
+* Imports, Abhängigkeiten und Einstiegspunkte erkennen
+* Klassen, Funktionen, Methoden und zentrale Logik extrahieren
+* Architekturzusammenfassung erstellen
+* Risiken, TODOs, fehlende Tests und auffällige Strukturen melden
+
+3. Unterstützte Dateitypen
+   Mindestens vorbereiten für:
+
+* Python: .py
+* JavaScript/TypeScript: .js, .jsx, .ts, .tsx
+* Web: .html, .css
+* Shell/Batch/PowerShell: .sh, .bat, .ps1
+* Konfiguration: .json, .yaml, .yml, .toml, .ini, .env.example
+* Dokumentation: .md, .txt
+
+4. Zentrale Methoden
+   Bitte mindestens umsetzen:
+
+analyze_file(path: str) -> dict
+analyze_project(path: str) -> dict
+detect_language(path: str, content: str) -> dict
+summarize_code(path: str, content: str) -> dict
+extract_symbols(path: str, content: str) -> dict
+create_project_map(path: str) -> dict
+
+Rückgaben als strukturierte Dict-/JSON-Blöcke mit:
+
+* status
+* source_path
+* language
+* file_type
+* detected_symbols
+* imports/dependencies
+* entrypoints
+* summary
+* risks
+* warnings
+* errors
+* timestamp
+* agent_name
+* read_only: true
+
+5. Router-Anbindung
+   Neue Befehle ermöglichen:
+
+* "analysiere code <pfad>"
+* "analysiere projekt <pfad>"
+* "erkläre code <pfad>"
+* "finde einstiegspunkte <pfad>"
+* "erstelle projektkarte <pfad>"
+* "welche sprache ist <pfad>"
+* "codeagent <pfad>"
+
+6. Projektverständnis
+   Bei Ordneranalysen erkennen:
+
+* Hauptsprache des Projekts
+* wichtige Einstiegspunkte
+* zentrale Module
+* Testordner
+* Konfigurationsdateien
+* Dokumentationsdateien
+* mögliche Build-/Startbefehle
+* grobe Architektur
+* auffällige Altdateien, Duplikate oder unklare Strukturen
+
+7. Lernfähigkeit für neue Programmiersprachen vorbereiten
+   Bitte eine erweiterbare Sprachregistry anlegen oder nutzen, z. B.:
+
+language_registry.json
+
+Darin pro Sprache speichern:
+
+* Dateiendungen
+* Kommentarzeichen
+* typische Import-/Include-Muster
+* Funktions-/Klassenmuster
+* Einstiegspunkt-Konventionen
+* Paket-/Build-Dateien
+* bekannte Risiken
+* empfohlene Analyseparser
+
+Neue Sprachen sollen später per Konfiguration ergänzt werden können, ohne den CodeAgent hart umzubauen.
+
+8. Knowledge-/Memory-Anbindung vorbereiten
+
+* keine automatische Speicherung ohne ausdrücklichen Befehl
+* klare Trennung zwischen Analyse und Persistenz
+* exportierbare JSON-Ergebnisse
+* vollständige Provenienzangaben
+
+9. Sicherheit und Pfadfreigabe
+   Der CodeAgent muss bestehende Pfadfreigabe- und Sicherheitsregeln respektieren.
+
+Bei nicht freigegebenem Pfad:
+
+* sauber ablehnen
+* verständliche Fehlermeldung ausgeben
+* keine Datei öffnen
+
+Bei sehr großen Projekten:
+
+* Größenlimit beachten
+* Analyse begrenzen oder abbrechen
+* Teilergebnis mit Warnung zurückgeben
+
+10. GUI-Vorbereitung
+    Falls die GUI Agentenstatus oder Quellenausgabe unterstützt:
+
+* CodeAgent sichtbar machen
+* Quelle "lokaler Quellcode" anzeigen
+* erkannte Sprache anzeigen
+* Read-only-Status anzeigen
+* Risiken/Warnungen verständlich ausgeben
+
+11. Tests erstellen
+    Bitte Tests für folgende Fälle ergänzen:
+
+* gültige Python-Datei
+* gültige JavaScript-Datei
+* Projektordner mit mehreren Dateien
+* nicht vorhandene Datei
+* nicht unterstützter Dateityp
+* nicht freigegebener Pfad
+* sehr große Datei
+* Router-Befehl "analysiere code <pfad>"
+* Router-Befehl "analysiere projekt <pfad>"
+
+12. Abschlussbericht erstellen
+    Bitte nach Umsetzung einen Bericht erzeugen mit:
+
+* geänderten Dateien
+* neu angelegten Dateien
+* Registry-/Router-Anbindung
+* unterstützten Sprachen und Dateitypen
+* Testergebnissen
+* bekannten Einschränkungen
+* nächstem sinnvollen Ausbauschritt
+
+Wichtig:
+Keine Quelldateien verändern.
+Keine automatische Reparatur.
+Keine automatische Speicherung ins Memory.
+Keine Parallelarchitektur.
+Read-only zuerst.
+Kanonische Integration vor Funktionsfülle.
+
+Umsetzung:
+
+Ich integriere den CodeAgent im gleichen Muster wie Vision/Git: Core-Service für Analyse, dünner Agent fürs Routing, bestehender Request Router und Quellenblock. Ich halte ihn bewusst read-only: keine Reparaturen, keine Memory-Schreibungen, nur JSON-Export von Analyseergebnissen.
+
+Ich habe die bestehenden Integrationspunkte geprüft: Agent Registry, Request Router, Systembindung und Quellenfooter sind die richtigen Stellen. Jetzt erstelle ich den CodeAgent-Core mit Sprachregistry-Fallback, Pfadfreigabe, Größenlimits, Symbol-/Import-Extraktion und Projektkartenanalyse.
+
+Der Core-Service ist angelegt. Ich ergänze jetzt die Sprachregistry als konfigurierbare JSON-Datei, damit neue Sprachen später ohne Umbau ergänzt werden können.
+
+Die Registry-Datei ist da; der Service hat trotzdem einen vollständigen Fallback für alle geforderten Dateitypen. Jetzt kommt der dünne Agent und die Registry-Eintragung.
+
+Der Agent ist registriert. Ich ergänze nun den Request Router so, dass analysiere code/projekt nicht als Lernauftrag oder FileAgent-Auftrag wegrutscht.
+
+Router ist ergänzt. Ich binde den Service jetzt in KontinuumSystem ein und mache ihn im Statusmodell sichtbar.
+
+Systembindung steht. Jetzt ergänze ich den Statusbefehl, den Routed-Zweig und den Quellenblock „lokaler Quellcode“.
+
+Die Integration ist verdrahtet. Ich schreibe jetzt die Abnahmetests mit einem temporären Projekt: Python, JavaScript, Projektkarte, Fehlerfälle, Größenlimit und Routerbefehle.
+
+Die Tests sind angelegt. Ich lasse jetzt Syntaxprüfung und den neuen CodeAgent-Test laufen.
+
+CodeAgent-Test ist grün. Ich prüfe jetzt die berührten Routing-/Agenten-Regressionen, damit Change/Vision/Git durch die neue Code-Route nicht verschoben wurden.
+
+Die Regressionen sind grün. Ich mache noch einen End-to-End-Check über KontinuumSystem.ask("analysiere code ...") und ask("analysiere projekt ..."), damit die echte Orchestrierung samt Quellenblock geprüft ist.
+
+Der End-to-End-Check ist sauber. Ich schreibe jetzt den Abschlussbericht mit Dateien, Router-/Registry-Anbindung, unterstützten Typen, Tests und Einschränkungen.
+
+Der Bericht ist erstellt. Ich mache noch einen letzten Treffercheck über CodeAgent-Dateien und -Befehle, dann fasse ich dir knapp zusammen.
+
+Erledigt. CodeAgent 1.0 ist read-only und kanonisch in Projekt Kontinuum integriert.
+Neu/angepasst:
+[code_agent.py](/C:/Projekt Kontinuum/01_system/kontinuum/core/code_agent.py)
+[code_agent.py](/C:/Projekt Kontinuum/01_system/kontinuum/agents/code_agent.py)
+[code_agent_language_registry.json](/C:/Projekt Kontinuum/24_config/code_agent_language_registry.json)
+[agent_registry.py](/C:/Projekt Kontinuum/01_system/kontinuum/agents/agent_registry.py)
+[request_router.py](/C:/Projekt Kontinuum/01_system/kontinuum/core/request_router.py)
+[application_services.py](/C:/Projekt Kontinuum/01_system/kontinuum/core/application_services.py)
+[system.py](/C:/Projekt Kontinuum/01_system/kontinuum/core/system.py)
+[test_code_agent_1_0.py](/C:/Projekt Kontinuum/17_tests/test_code_agent_1_0.py)
+[code_agent_1_0_umsetzung_2026-07-01.md](/C:/Projekt Kontinuum/14_documents/code_agent_1_0_umsetzung_2026-07-01.md)
+Umgesetzt:
+analyze_file, analyze_project, detect_language, summarize_code, extract_symbols, create_project_map
+Routerbefehle wie analysiere code <pfad>, analysiere projekt <pfad>, finde einstiegspunkte <pfad>, codeagent <pfad>
+Sprachregistry für spätere Erweiterung
+Quellenblock „lokaler Quellcode“
+Pfadfreigabe, Größenlimit, JSON-Export, keine Memory-Schreibung
+Verifiziert:
+test_code_agent_1_0.py bestanden
+test_request_router_knowledge_agent_1_0.py bestanden
+test_change_agent_1_0.py bestanden
+test_vision_agent_1_0.py bestanden
+test_git_agent_cgm_2_0.py bestanden
+End-to-End über KontinuumSystem.ask("analysiere code ...") und ask("analysiere projekt ...") bestanden
+Syntaxprüfung per compile() bestanden
+Hinweis: git status auf C:\Projekt Kontinuum meldet weiterhin kein Git-Repository, wie erwartet.
+

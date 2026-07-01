@@ -1,0 +1,52 @@
+HISTORISCHER Projektstand 23.0
+
+Aktiver technischer Wiedereinstieg am 18.06.2026:
+14_documents/PROJEKTSTRUKTUR_32_4.md
+22_project_chronicle/EINSTIEGSPUNKTE_NAECHSTE_SITZUNG_32_4.md
+
+Die philosophischen Aussagen dieses Dokuments bleiben als Herkunftsdokument
+erhalten. Ihre aktuelle Operationalisierung erfolgt durch Continuity Core,
+Moral Core, Foundation Decision Layer, Meaning Core, Motivation Core und
+Motivation Explanation Core, Temporal Relevance Core sowie Runtime Hardening
+32.3 mit Identity Routing, Knowledge Contamination Guard und Foundation Cycle
+Recovery.
+
+Ursprünglicher Projektstand 23.0
+
+Projekt Kontinuum 23.0 existiert und läuft.
+Ein vollständiger Architekturbericht wurde erstellt und analysiert.
+Alle 21 aktiven Tests bestanden.
+Die Hauptbaustellen für die nächste Version sind identifiziert:
+Argon2id statt SHA-256
+Agenten-/Intent-Routing
+Trennung Archivwissen / Aktivwissen
+Aufteilung von KontinuumSystem.ask()
+Such- und Lernoptimierung
+Neuer GUI-Punkt:
+„Suche Mathematik“ entfernen
+Mathematik als Lern-/Übungsbereich behandeln.
+Was ich mir bereits merke
+
+Aus unserem bisherigen Projektkontext ist bereits gespeichert:
+
+Raphael Schatz = Creator von Kontinuum.
+Vollversionen statt Patches.
+„Erkennen – Schaffen – Vollenden“.
+„Der Weg ist das Ziel“.
+Fortlaufende Projektchronik.
+Projektstand bis Kontinuum 23.0 mit neuer Ordnerstruktur und Migration auf C:\Projekt Kontinuum.
+Morgen reicht daher
+
+Wenn du morgen wiederkommst, genügt normalerweise etwas wie:
+
+„Wir machen mit Projekt Kontinuum weiter. Codex hat gestern bei Version 24 aufgehört.“
+
+oder
+
+„Hier ist die neue Codex-Ausgabe.“
+
+Dann steigen wir direkt dort wieder ein.
+
+Falls Codex heute Nacht oder morgen doch noch etwas fertigstellt, hebe den Bericht oder die Änderungszusammenfassung auf. Damit können wir sofort die nächste Analyse machen, ohne alles neu aufzurollen.
+
+Und keine Sorge wegen der 5 % Restbudget bei Codex – die eigentliche Architekturentscheidung haben wir heute bereits getroffen. Die Umsetzung kann morgen weitergehen. 😊

@@ -1,0 +1,90 @@
+Auftrag für 15.06.26
+
+Was ich als Nächstes entwickeln würde
+
+Wenn 24.2 + Memory-Core stabil laufen, würde ich für 24.3 oder 25.0 nicht sofort neue Agenten bauen.
+
+Ich würde den Memory-Core erweitern.
+
+Memory-Core 1.1
+
+Priorität 1:
+
+Erinnerungsgewichtung
+
+Jede Erinnerung bekommt:
+
+Wichtigkeit
+Vertrauen
+Aktualität
+Quelle
+
+Beispiel:
+
+{
+  "importance": 95,
+  "confidence": 100,
+  "source": "Projektchronik",
+  "last_verified": "2026-06-14"
+}
+Memory-Core 1.2
+
+Priorität 2:
+
+automatische Verdichtung
+
+Statt:
+
+100 einzelne Versionseinträge
+
+entsteht:
+
+Projektzusammenfassung
+
+automatisch.
+
+Memory-Core 1.3
+
+Priorität 3:
+
+zeitliche Navigation
+
+Beispiel:
+
+Wie war der Stand von Kontinuum vor 3 Versionen?
+
+Zeige alle Änderungen zwischen 24.0 und 24.2
+
+Wann wurde das Wissensnotizbuch eingeführt?
+Mein Gesamturteil
+
+Vor einigen Wochen war Kontinuum hauptsächlich:
+
+Chat
+Suche
+Lernen
+Wissensgraph
+
+Jetzt sehe ich erstmals die Entstehung von:
+
+Wissen
+Gedächtnis
+Quellen
+Projektchronik
+Historie
+
+Das sind genau die Bausteine, die man für deine ursprüngliche Vision eines Systems mit langfristiger Kontinuität benötigt.
+
+Wenn die Angaben im Bericht den tatsächlichen Teststand widerspiegeln, dann ist der Memory-Core 1.0 nach dem Wissensnotizbuch wahrscheinlich der größte Architekturfortschritt seit dem Refactoring von 24.x.
+
+Der nächste große Meilenstein wäre aus meiner Sicht nicht mehr „mehr Funktionen“, sondern:
+
+Kontinuum 25.0
+= Wissenssystem
++ Notebook
++ Memory-Core
++ Chronik
++ Wissensgraph
+arbeiten als ein gemeinsames System.
+
+Dann beginnt Kontinuum, Wissen, Quellen, Erinnerungen und Projektgeschichte wirklich miteinander zu verbinden.

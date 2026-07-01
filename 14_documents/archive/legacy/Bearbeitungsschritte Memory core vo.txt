@@ -1,0 +1,173 @@
+Bearbeitungsschritte Memory core vom 14.06.26
+
+ch baue den Memory-Core als eigenes lokales, prüfbares Modul in Kontinuum ein. Zuerst lese ich die bestehende Memory-Agent-, Storage-, Gesprächs- und Wissensgraph-Logik; danach implementiere ich Schichten, Memory-Prüfer, strukturierte Projekt-/Fakten-Erinnerungen, Widerspruchserkennung und die genannten Befehle samt Regressionstests.
+
+
+Die vorhandene Memory-Funktion ist bislang tatsächlich nur ein ungeprüftes Ablegen von Freitext. Ich ersetze sie durch einen Memory-Core-Service mit sechs Schichten und einem deterministischen Prüfer. Der Prüfer erzeugt strukturierte Schlüssel, erkennt Versionen/Status/offene Punkte/Präferenzen, ersetzt überholte Einträge nachvollziehbar, markiert Unsicherheit und legt Beziehungen als Wissensgraph-Kanten ab. Danach wird der bestehende MemoryAgent zur Befehlsschnittstelle des neuen Kerns.
+
+1 Datei erstellt, 1 Datei bearbeitetBearbeitetmemory_agent.py+64-9
+
+Erstelltmemory_core.py+228-0
+
+Der Kern steht: Erinnerungen werden jetzt als memory.core mit Schicht, Subjekt, stabilem Schlüssel, Wert, Status, Konfidenz, Prüfgrund, strukturierter Nutzlast und Ersetzungsbeziehung gespeichert. Eine neue Aussage zur gleichen Sache überschreibt den alten Datensatz nicht still, sondern markiert ihn als superseded und verknüpft beide im Wissensgraphen. Ich binde den Core nun in System, automatische Gesprächsprüfung, Befehlsrouting und Quellennotizbuch ein.
+
+Der Memory-Core ist jetzt vollständig angebunden. Er prüft freie Gesprächsaussagen automatisch, speichert aber nur erkennbare Langzeitrelevanz; beispielsweise wird „Heute regnet es“ verworfen, während „Version 25 ist geplant“ strukturiert ins Projektgedächtnis gelangt. Notebook-Quellen werden der Quellen-Schicht zugeordnet, und Verknüpfungen/Ersetzungen erscheinen als Wissensgraph-Kanten. Ich teste nun alle Befehle, Ersetzung, Unsicherheit, Vergessen, Quellenbezug und die bestehenden Kernabläufe.
+
+Die Integrationstests für Gespräch und Notebook bestehen bereits. Der neue Memory-Test hat einen kleinen Datenzugriffsfehler im Ersetzungspfad gefunden: Der alte Wert liegt korrekt in den Metadaten, wurde dort aber an einer Stelle ohne metadata-Zwischenschritt gelesen. Ich korrigiere das und teste anschließend zusätzlich den realen Projektbestand mit einer isolierten Test-Erinnerung, die danach wieder vergessen wird.
+
+Die Syntax ist sauber, aber die längeren Testläufe hängen nicht im Memory-Core, sondern an der bereits bekannten Standard-Sprachmodellwartezeit: Der Test gibt eine freie Versionsaussage ein, die korrekt automatisch gespeichert wird und danach zusätzlich an den Dialog-Agenten weiterläuft. Ich deaktiviere das Sprachmodell in der isolierten Memory-Suite, damit sie ausschließlich den neuen Kern misst, und führe die Memory-Funktionen einzeln aus.
+
+Der reale Projektcheck hat Speichern, Projekt-Schicht, offene Punkte und Vergessen korrekt bestätigt. Zwei Abrufbefehle wurden jedoch vom Dialog-Agenten statt vom Memory-Agenten beantwortet. Das ist kein Speicherfehler, sondern eine Routinglücke in can_handle: Die Status-/Listenbefehle werden zwar im Handler unterstützt, aber noch nicht vollständig als behandelbar gemeldet. Ich korrigiere diese letzte Schnittstelle und prüfe Abruf, Status, Update und Widersprüche erneut.
+
+Der Memory-Core-Test besteht jetzt vollständig, und der reale Projektbestand bestätigt Status, Abrufrouting und Widerspruchsprüfung. Der reale Bestand enthält aktuell nur die bereits vergessene Test-Erinnerung, deshalb liefert „was weißt du über Kontinuum“ erwartungsgemäß keine aktiven Treffer. Ich ergänze noch die Beziehungs-Schicht im Status aus echten Wissensgraph-Kanten und teste den manuellen Update-Befehl, damit alle sechs Schichten und alle gewünschten Operationen sauber abgedeckt sind.
+
+Der Memory-Core-Test besteht jetzt vollständig, und der reale Projektbestand bestätigt Status, Abrufrouting und Widerspruchsprüfung. Der reale Bestand enthält aktuell nur die bereits vergessene Test-Erinnerung, deshalb liefert „was weißt du über Kontinuum“ erwartungsgemäß keine aktiven Treffer. Ich ergänze noch die Beziehungs-Schicht im Status aus echten Wissensgraph-Kanten und teste den manuellen Update-Befehl, damit alle sechs Schichten und alle gewünschten Operationen sauber abgedeckt sind.
+
+Die großen Regressionen bleiben grün. Der letzte neue Test zeigt noch eine präzise Routingkante: aktualisiere erinnerung ... wird zwar als Memory-Befehl erkannt, aber ein anderer, höher priorisierter Agent beansprucht den Text ebenfalls. Ich prüfe die Agentendiagnose und ziehe die Memory-Verwaltungsbefehle anschließend vor konkurrierende allgemeine Agenten.
+
+Alle neuen Memory-Befehle und die bestehenden Routing-, Formel- und Gesprächstests bestehen nun. Ein letzter Architekturfeinschliff: Kurzzeit- und episodisches Gedächtnis existieren bereits technisch als aktuelle Sitzung beziehungsweise Gesprächsereignisse, waren im neuen Memory-Core-Status aber noch nicht sichtbar. Ich verbinde diese bestehenden Ereignisschichten mit der Statusansicht, sodass alle sechs vorgesehenen Ebenen messbar ausgewiesen werden.
+
+ontinuum 24.2 ist umgesetzt.
+ask_async() ergänzt; GUI erlaubt mehrere parallele Aufträge und bleibt bedienbar.
+Webrecherche: 12-Sekunden-Gesamtbudget, parallele daemonisierte Quellenabrufe und garantierte Teilantwort.
+Suchanbieter: 8-Sekunden-Budget mit DuckDuckGo-Lite-Fallback.
+Netzwerkaufrufe erhalten äußere Deadline-Wächter.
+Version auf 24.2 aktualisiert.
+Wissensnotizbuch
+Neue Befehle:
+notizbuch import <Pfad|URL>
+notizbuch zusammenfassung
+notizbuch frage <Frage>
+notizbuch lernen <Thema>
+notizbuchstatus
+Unterstützt lokale Text-, Markdown-, HTML-, JSON-, CSV- und Python-Dateien sowie Webseiten. PDF-Import ist über optionales pypdf vorbereitet. Antworten enthalten Quellenzitate; Wissen kann in Lernsystem und Wissensgraph übernommen werden.
+Die 24.2-, Kern-, Formel-, Winget- und Architekturtests bestanden. Die zwei historischen Webtest-Fixtures hängen weiterhin in ihrer lokalen HTTP-Server-Harness; die neue deterministische 24.2-Rechercheprüfung bestand.
+
+17:17
+
+
+
+
+
+
+hier dein nächster Auftrag: erstelle bitte ein neues Modul: offene „Memory Layer“ für KI-Agenten: Sie speichert relevante Fakten, Präferenzen und Beziehungen aus Gesprächen und macht sie später wieder abrufbar; die Open-Source-Version ist für Self-Hosting gedacht.
+
+Für Kontinuum würde ich es nicht 1:1 übernehmen, sondern als eigenes Modul bauen:
+
+Kontinuum Memory-Core
+Ziel
+
+Kontinuum soll nicht nur Chatverläufe speichern, sondern erkennen:
+
+Was ist wichtig?
+Was ist dauerhaft gültig?
+Was ist nur ein Tagesereignis?
+Was widerspricht altem Wissen?
+Was gehört zu Raphael?
+Was gehört zum Projekt?
+Was gehört zu einer Quelle?
+Architektur für Kontinuum
+01 Kurzzeitgedächtnis
+→ aktuelle Sitzung
+
+02 Episodisches Gedächtnis
+→ Chatverläufe, Ereignisse, Tests, Fehler, Entscheidungen
+
+03 Fakten-Gedächtnis
+→ stabile Aussagen: Creator, Versionen, Module, Regeln
+
+04 Projekt-Gedächtnis
+→ Kontinuum-Chronik, Roadmap, offene Bugs, Releases
+
+05 Quellen-Gedächtnis
+→ PDFs, Webseiten, Notebook-Quellen
+
+06 Beziehungs-Gedächtnis
+→ Verknüpfungen im Wissensgraphen
+Sehr wichtig
+
+Ich würde zusätzlich etwas einbauen, das mem0 nicht immer sauber löst:
+
+Memory-Prüfer
+
+Der entscheidet:
+
+speichern
+aktualisieren
+verwerfen
+als unsicher markieren
+mit bestehendem Wissen verknüpfen
+alten Eintrag ersetzen
+
+Beispiel:
+
+Version 24.1 ist umgesetzt
+
+wird nicht einfach als Text gespeichert, sondern als strukturierter Eintrag:
+
+{
+  "projekt": "Kontinuum",
+  "version": "24.1",
+  "status": "umgesetzt",
+  "tests": "bestanden",
+  "offen": "externer Webrecherche-Test überschreitet 3 Minuten"
+}
+Mein Vorschlag für Version 24.2 oder 25
+Kontinuum Memory-Core 1.0
+
+mit diesen Befehlen:
+
+merke dir ...
+was weißt du über ...
+zeige projekterinnerungen
+zeige offene punkte
+aktualisiere erinnerung ...
+vergiss ...
+verknüpfe erinnerungen
+prüfe widersprüche
+Fazit
+
+Ja: eine Open-Source-Alternative ähnlich mem0 wäre perfekt für Kontinuum.
+
+Noch besser gesagt:
+
+mem0 = allgemeines KI-Gedächtnis
+Kontinuum Memory-Core = lokales, projektbewusstes, prüfbares Langzeitgedächtnis
+
+Das wäre genau der nächste logische Kernbaustein nach 24.1.
+
+
+Weniger anzeigen
+
+17:23
+
+
+
+
+
+
+23m 39s lang gearbeitet
+
+
+
+Kontinuum Memory-Core 1.0 ist implementiert.
+Funktionen
+Sechs Gedächtnisschichten: Kurzzeit, episodisch, Fakten, Projekt, Quellen und Beziehungen.
+Automatischer Memory-Prüfer entscheidet zwischen Speichern, Verwerfen, Unsicherheit und Ersetzen.
+Strukturierte Versions-, Präferenz-, Quellen- und offene-Punkte-Erkennung.
+Widersprüchliche Einträge werden historisiert und im Wissensgraphen verknüpft.
+Notebook-Quellen fließen automatisch ins Quellen-Gedächtnis.
+Neue Befehle
+merke dir ...
+was weißt du über ...
+zeige projekterinnerungen
+zeige offene punkte
+aktualisiere erinnerung <ID>: ...
+vergiss <ID|Suchbegriff>
+verknüpfe erinnerungen <ID> <ID>
+prüfe widersprüche
+gedächtnisstatus
+Beispielhafte Versionsaussagen werden nun strukturiert mit Projekt, Version, Status, Tests und offenen Punkten gespeichert.
+Memory-Core-, Notebook-, Gesprächs-, Formel- und Architekturtests bestehen vollständig.
+
+17:47

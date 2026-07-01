@@ -1,0 +1,37 @@
+Ich setze das bewusst als Kontinuum 27.1 um: keine neue Grundarchitektur, sondern die erste kontrollierte Aktionsschicht auf den bestehenden epistemischen Prüfaufträgen. Ich prüfe zuerst Rechercheagent, kontinuierlichen Lerndienst, Konfiguration und Sicherheitsgrenzen und implementiere danach einen budgetierten, nachvollziehbaren Prüfzyklus mit Statusneuberechnung und Chronik.
+
+Ich implementiere die Aktionsschicht als kontrollierten, standardmäßig manuellen Prüfzyklus: Sie wählt einen priorisierten epistemischen Auftrag, blockiert Identitäts- und Sicherheitswissen, begrenzt Versuche und Quellen, bewertet Suchtreffer auf Mindestqualität und Themenbezug, ergänzt akzeptierte Evidenz am bestehenden Wissen und berechnet den Zustand neu. Jeder Lauf wird als Ereignis und Chronikeintrag protokolliert.
+
+Die 27.1-Aktionsschicht ist verdrahtet und bleibt absichtlich manuell kontrolliert (automatic: false). Ein Prüfzyklus akzeptiert höchstens drei unabhängige, thematisch passende Treffer, blockiert geschütztes Wissen, begrenzt Wiederholungen, ergänzt Evidenz am bestehenden Wissenseintrag, berechnet den Zustand neu und schreibt Ereignis plus Chronik. Jetzt teste ich den geschlossenen Kreislauf mit deterministischen Suchtreffern.
+
+Der geschlossene Lernkreislauf besteht seinen End-to-End-Test: Eine unsichere Aussage wird ausgewählt, zwei unabhängige relevante Treffer werden akzeptiert, Evidenz wird angehängt, Vertrauen neu berechnet, der Zustand wechselt zu knowledge, und der Prüfauftrag wird abgeschlossen. Geschütztes Wissen wird korrekt blockiert. Ich dokumentiere nun 27.1 als kontrollierte Aktionsschicht und lasse danach die breite Regression laufen.
+
+Alle 27.1- und Regressionstests sind grün. Ich führe nun einen einzelnen realen, budgetierten Prüfzyklus aus. Dafür wähle ich bewusst eine fachliche, nicht geschützte Aussage statt Identitäts- oder Sicherheitswissen; maximal drei unabhängige Treffer und höchstens ein Versuch in diesem Lauf. Anschließend prüfe ich Zustandswechsel, Quellen und Audit.
+
+Der reale Lauf wurde noch nicht gestartet; PowerShell hat lediglich den JSON-Pfad im Auswahlbefehl interpretiert. Ich wiederhole dieselbe kontrollierte Auswahl ohne shell-empfindliche SQL-Syntax.
+
+Der erste reale 27.1-Prüfzyklus ist erfolgreich abgeschlossen: Die Aussage zum Hookeschen Gesetz wechselte mit drei unabhängigen akzeptierten Quellen von uncertain zu knowledge, Vertrauen stieg auf 0,71, der Prüfauftrag wurde abgeschlossen und Ereignis sowie Chronik wurden geschrieben. Die Automatik bleibt deaktiviert; 28 weitere Prüfaufträge warten auf kontrollierte Auswahl. Ich halte diesen realen Nachweis jetzt im Releasebericht fest und prüfe den finalen Status.
+
+Kontinuum 27.1 ist umgesetzt und real aktiviert.
+Der geschlossene Lernkreislauf funktioniert jetzt:
+Unsicherheit → Prüfauftrag → Recherche → Evidenzbewertung
+→ Vertrauensberechnung → neuer Wissenszustand → Chronik
+Erster realer Prüfzyklus:
+Aussage: Hookesches Gesetz
+3 unabhängige relevante Quellen akzeptiert
+Zustand: uncertain → knowledge
+Vertrauen: 0,71
+Prüfauftrag abgeschlossen
+Ereignis und Chronikeintrag gespeichert
+Aktueller Stand:
+30 integrierte Wissenseinheiten
+2 im Zustand knowledge
+28 im Zustand uncertain
+28 aktive Prüfaufträge
+Automatik bleibt deaktiviert
+Neue Befehle:
+aktionsschichtstatus
+prüfzyklus
+prüfauftrag <ID>
+Kanonischer Bericht: [PROJEKTSTRUKTUR_27_1.md](C:/Projekt Kontinuum/14_documents/PROJEKTSTRUKTUR_27_1.md)
+Alle neuen und bestehenden Kern-, Plattform-, Memory-, Dialog-, Lern- und Architekturtests bestanden.

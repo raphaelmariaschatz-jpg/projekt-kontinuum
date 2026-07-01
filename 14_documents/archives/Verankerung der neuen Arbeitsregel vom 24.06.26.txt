@@ -1,0 +1,18 @@
+Verankerung der neuen Arbeitsregel vom 24.06.26
+
+ch verankere diese Regel als verbindliche Artefakt-Lifecycle-Policy für K. Da CAM, Statusprüfung und Release-Gate bereits grün sind, archiviere ich die wertvollen Unterlagen der aktuellen Kanonisierung unter 02_versions/migration_artifacts/34_1_CAM_Kanonisierung; reproduzierbare Caches werden getrennt behandelt und erst nach sicherer Inventur entfernt.
+
+K besitzt bereits eine gute Retention-Basis; ich erweitere sie statt eine zweite Regelwelt daneben zu bauen. Neu wird die Freigabeschwelle explizit: wertvolle Entwicklungsartefakte bleiben bis Tests, Status, Gate, Dokumentation und bestätigte Freigabe vollständig erhalten; danach werden sie archiviert, nie automatisch gelöscht. Nur reproduzierbare Caches bleiben sofort löschbar.
+
+Die wertvollen CAM-Artefakte sind jetzt doppelt sinnvoll gesichert: als Migrationsarchiv unter 02_versions/migration_artifacts/34_1_CAM_Kanonisierung und der zentrale Migrationsbericht zusätzlich unter 09_backups/migration_reports. Im Archiv liegen Arbeitskopien, Fixtures, Manifeste und die signierten Release-Nachweise – keine Python-Caches.
+
+Die gezielten Prüfungen sind grün. Das Archiv enthält 20 Arbeits-/Fixture-Dateien, drei signierte Release-Nachweise und das Migrationsprotokoll; Cachebestand darin: null. Ich erneuere nun das vollständige Release-Gate, weil die neue Policy selbst Teil der kanonischen Architektur geworden ist.
+
+Die neue Arbeitsregel ist verbindlich umgesetzt.
+Wertvolle Test-, Migrations-, Release-, Architektur- und Audit-Artefakte werden niemals automatisch gelöscht.
+Archivierung erst nach fünf erfüllten Freigabebedingungen.
+CAM überwacht die Lifecycle-Policy und das Migrationsarchiv.
+CAM-Artefakte samt signierten Nachweisen wurden unter 02_versions/migration_artifacts/34_1_CAM_Kanonisierung archiviert.
+Migrationsbericht zusätzlich unter 09_backups/migration_reports.
+Alle reproduzierbaren aktiven Caches entfernt.
+Tests, Statusprüfung und Release-Gate: VERIFIZIERT – Freigabe JA.

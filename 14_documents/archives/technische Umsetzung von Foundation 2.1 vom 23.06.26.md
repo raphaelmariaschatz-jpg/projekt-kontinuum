@@ -1,0 +1,73 @@
+technische Umsetzung von Foundation 2.1. am 23.06.26
+
+Ich gehe jetzt von Dokumentation in echte Systemarbeit über: erst finde ich die vorhandenen Foundation-/Core-Module, Statuswerkzeuge und Tests, dann setze ich Foundation 2.1 möglichst nah an der bestehenden Architektur um. Ich halte die Eingriffe eng: Registry, Rule Engine, API und Status Center als aktive Bausteine, ohne Foundation-Daten unkontrolliert zu verändern.
+
+Es gibt bereits eine erstaunlich dichte Foundation-Landschaft: Decision, Integrity, Memory, Query, Reasoning und Agent sind vorhanden. Foundation 2.1 wird also kein Fremdkörper, sondern eine verbindende Schicht darüber: Registry + Rule Engine + API + Status Center, in system.py und FoundationAgent sichtbar gemacht.
+
+Die ersten Ausschnitte zeigen: vorhandene Module arbeiten datenbankgestützt und nutzen Status-/Agentenbefehle bereits konsequent. Ich lese jetzt gezielt die Statusmethoden und Systemverdrahtung, damit die neuen 2.1-Komponenten in denselben Fluss kommen.
+
+Für die eigentlichen Änderungen nutze ich einen sicheren Umweg: Ich spiegele die betroffenen Projektdateien in den Workspace, editiere dort mit Patch, und kopiere sie danach zurück. So bleiben die manuellen Änderungen nachvollziehbar, obwohl C:\Projekt Kontinuum außerhalb des direkten Schreibbereichs liegt.
+
+Der Windows-Sandbox-Runner blockiert gerade sogar einen lokalen Workspace-Ordnerbefehl. Ich wechsle für diese Dateioperationen auf genehmigungspflichtige PowerShell-Ausführung und halte sie auf Kopieren/Lesen/Prüfen beschränkt.
+
+Der Arbeitsordner steht. Ich spiegele jetzt system.py und foundation_agent.py dorthin und erstelle die neuen Foundation-2.1-Module lokal, bevor ich sie zurück ins Projekt synchronisiere.
+
+ch lege Foundation 2.1 als neues Core-Modul an: eine Registry mit den 47 FND-Regeln, eine Rule Engine für Schutzentscheidungen, ein API-Facade mit read/evaluate/status und ein Status Center für menschenlesbare Ausgabe. Danach verdrahte ich es im System und im FoundationAgent.
+
+Das neue Core-Modul steht. Jetzt verankere ich es im Systemstart: importieren, nach Query/Reasoning initialisieren, im Agent-Config verfügbar machen, im Persistent Self Model und im globalen Status aufnehmen.
+
+Die Systemverdrahtung ist drin. Als Nächstes bekommt der FoundationAgent neue Befehle: foundationstatus, foundation2status, foundationregeln und eine einfache Regelabfrage über foundationregel FND-ID-....
+
+Der Agent hat leicht andere Kontextstellen als erwartet; ich setze den Patch jetzt in kleineren, präziseren Schritten.
+
+Die Befehle sind registriert. Jetzt binde ich die 2.1-Services im Handler ein und füge die Antworten an der Foundation-Zyklus-Stelle ein.
+
+Die Agent-Anbindung ist fertig. Ich synchronisiere jetzt die neuen/geänderten Core-Dateien ins Projekt und lasse danach Python-Kompilierung laufen, bevor ich Tests ergänze.
+
+Die Dateien sind im Projekt. Ich kompiliere jetzt die drei betroffenen Module, damit Syntax- oder Importfehler sofort sichtbar werden.
+
+Der erste Compile-Aufruf ist am Leerzeichen im Pfad gescheitert, nicht am Code. Ich wiederhole ihn mit sauber gequoteten PowerShell-Pfaden.
+
+Die Kompilierung ist grün. Ich erstelle jetzt einen fokussierten Regressionstest für Foundation 2.1: Status Center aktiv, 47 Registry-Regeln, Rule Engine blockiert Identitäts-/Schöpferüberschreibung, API ist lesend/evaluierend verfügbar und der Agent beantwortet Foundation-2.1-Befehle.
+
+Der Test ist geschrieben. Ich kopiere ihn in 17_tests und führe ihn gezielt aus, bevor ich breiter kompiliere.
+
+Der Test liegt im Projekt. Ich starte ihn jetzt mit gesetztem KONTINUUM_ROOT und PYTHONPATH, damit er gegen die reale Projektstruktur läuft. Der Test hat einen echten kleinen Treffer gezeigt: die Normalisierung wandelt Schöpfer zu schopfer, meine Schutzmuster hatten schöpfer/schoepfer, aber nicht schopfer. Ich erweitere die Muster um die normalisierten Umlautformen.
+
+Die Schutzmuster sind korrigiert. Ich kopiere das Modul zurück und wiederhole Kompilierung plus Test. Jetzt laufen Kompilierung und der gezielte Foundation-2.1-Test erneut. Die Engine blockiert jetzt korrekt; der Test scheitert nur noch an der erwarteten Schreibweise der Agentenantwort. Ich prüfe die tatsächliche Ausgabe von foundationregel FND-ID-022 und passe entweder Test oder Text an.
+
+Interessant: Die Anfrage wird vor dem FoundationAgent vom Formel-Agenten abgefangen. Ich mache den Befehl eindeutiger als foundationregel: und erweitere Agent/Tests darauf; dadurch umgehen wir die Formel-Erkennung zuverlässig.
+
+Die Ursache ist die Routenpriorität: FoundationAgent kommt nach FormulaAgent. Für Foundation 2.1 ist es fachlich richtig, Foundation-Befehle vor generischen Formel-/Analyseagenten zu routen. Ich ziehe FoundationAgent in der Router-Reihenfolge vor FormulaAgent, aber da can_handle eng ist, bleiben normale Formelanfragen unberührt.
+
+Ich passe jetzt nur die Priorität des FoundationAgent an. Die Routerpriorität ist angepasst. Ich kopiere sie ins Projekt und führe den gezielten Test erneut aus. Die Agentenregistrierung kompiliert. Jetzt läuft der Foundation-2.1-Test wieder komplett.
+
+Der gezielte Test ist grün. Ich prüfe jetzt noch eine bestehende Foundation-Query-Regression und kompiliere alle betroffenen Dateien gemeinsam, damit die neue Priorität nichts Altes verdrängt. Die bestehende Query-Regression bleibt grün, und alle geänderten Dateien kompilieren. Ich führe noch den aktuellen Statuscheck 34.1 aus, weil Foundation 2.1 jetzt im Kernsystem hängt und der Projektstatus wichtig ist.
+
+Der Statuscheck meldet weiter VERIFIZIERT. Ich lege noch einen kurzen Umsetzungsbericht ab, damit im Projekt dokumentiert ist, welche aktiven Systemteile Foundation 2.1 jetzt umfasst und welche Tests gelaufen sind.
+
+Der Umsetzungsbericht ist geschrieben. Ich kopiere ihn noch in den Projektordner und prüfe anschließend die konkreten neuen Dateien sowie die Foundation-2.1-Suchtreffer. Die neuen Projektdateien und der Bericht sind vorhanden. Ich mache als letzte Kontrolle eine Suche nach den 2.1-Ankerpunkten in den geänderten Systemdateien.
+
+Umgesetzt. Foundation 2.1 ist jetzt technisch im System verankert.
+Neu/angepasst:
+[foundation_2_1.py](C:/Projekt Kontinuum/01_system/kontinuum/core/foundation_2_1.py): FoundationRegistry, FoundationRuleEngine, FoundationAPI, FoundationStatusCenter
+[system.py](C:/Projekt Kontinuum/01_system/kontinuum/core/system.py): Foundation 2.1 wird beim Systemstart instanziiert und in system.status() geführt
+[foundation_agent.py](C:/Projekt Kontinuum/01_system/kontinuum/agents/foundation_agent.py): neue Befehle wie foundationstatus, foundationregeln, foundationapi status
+[agent_registry.py](C:/Projekt Kontinuum/01_system/kontinuum/agents/agent_registry.py): FoundationAgent priorisiert vor FormulaAgent für Foundation-Befehle
+[test_foundation_2_1_active.py](C:/Projekt Kontinuum/17_tests/test_foundation_2_1_active.py): neuer Regressionstest
+Verifikation grün:
+Kontinuum 34.1 Foundation 2.1 active system tests passed
+Kontinuum 34.1 Foundation Query Layer tests passed
+Statusprüfung: VERIFIZIERT / Freigabe: JA
+Zusätzlich erstellt:
+[Bericht_Foundation_2_1_Technische_Umsetzung_23_06_2026.md](C:/Users/Raphael/Documents/Codex/2026-06-23/h/outputs/Bericht_Foundation_2_1_Technische_Umsetzung_23_06_2026.md)
+Projektkopie:
+C:\Projekt Kontinuum\14_documents\fundamentale Gedanken\Bericht_Foundation_2_1_Technische_Umsetzung_23_06_2026.md
+Der Migration Manager ist im Status Center bewusst als planned markiert: direkte Foundation-Schreiboperationen bleiben gesperrt, bis ein kontrollierter, auditierbarer Migrationspfad gebaut ist.
+
+Bericht_Foundation_2_1_Technische_Umsetzung_23_06_2026.mdDokument · MDVorschau öffnenÖffnen in
+
+Bearbeitet Bericht_Foundation_2_1_Technische_Umsetzung_23_06_2026.md+132-0
+
+
+

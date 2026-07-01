@@ -1,0 +1,287 @@
+13.06.26
+
+nun hätte ich gerne, dass Kontinuum eine eigene Sandbox erhält in der Kontinuum selbst programmieren und Testen kann. Außerdem integriere git.
+
+
+Ich richte dafür einen klar abgegrenzten Entwicklungsbereich mit eigener Git-Historie und kontrolliertem Testlauf ein, statt Kontinuum direkt am aktiven Kern schreiben zu lassen. Zuerst prüfe ich die vorhandenen Codex-/Python-Werkzeuge, Sicherheitskonfiguration und ob Git lokal auffindbar oder installierbar ist.
+
+
+Der vorhandene Codex-Bridge ist bislang absichtlich read-only und arbeitet direkt auf der Projektwurzel. Ich werde ihn nicht pauschal entsperren, sondern einen neuen Entwicklungsagenten bauen: Codex erhält workspace-write ausschließlich innerhalb von 13_tools\development_sandbox, Tests laufen dort mit Zeitlimit, Git verwaltet nur diese Sandbox, und Änderungen gelangen nie automatisch in den aktiven Kern. Für Git ermittle ich noch den tatsächlichen Winget-Pfad, da weder git noch winget im aktuellen Prozess-PATH liegen.
+
+Git 2.54.0 ist jetzt erfolgreich installiert. Die Architektur steht: ein eigener DevelopmentTools-Baustein mit ausschließlich freigegebenen Operationen (status, Codex-Entwicklung, Tests, Git-Status, lokaler Snapshot), plus ein eigener Agent und klarer Konfiguration. Ich implementiere das jetzt samt Regressionstest und einer initialen, versionierten Sandbox.
+
+Die Implementierung ist vorbereitet. Ein wichtiger Schutz ist fest eingebaut: Kontinuum kann in seiner Sandbox entwickeln und committen, aber es gibt absichtlich keinen Befehl zur automatischen Übernahme in 01_system oder andere aktive Bereiche. Jetzt prüfe ich Syntax und den neuen Sandbox-Test isoliert, bevor ich die Integration mit Sicherung in das aktive Projekt übernehme.
+
+Die Dateien sind nun im aktiven Projekt, mit Sicherung unter 09_backups\development_sandbox_20260613. Als Nächstes initialisiere ich die echte Sandbox als eigenes Git-Repository, erstelle ihren ersten Snapshot und prüfe den neuen Agenten sowie die vollständige Testsuite.
+
+Die Integration läuft, Git-Repository und erster Snapshot sind erstellt, und alle 20 Projekt-Testskripte bestehen. Beim praktischen sandboxtest ist jedoch eine sinnvolle Kante aufgefallen: Eine leere Sandbox meldet von unittest technisch Erfolg trotz 0 Tests. Ich schärfe das noch nach, sodass Kontinuum fehlende Tests klar als nicht bestanden meldet; danach lasse ich Kontinuum selbst ein kleines Modul samt Test programmieren und versionieren, um den gesamten Weg real zu belegen.
+
+Der End-to-End-Nachweis ist gelungen: Kontinuum hat selbst calculator.py und test_calculator.py ausschließlich in der Sandbox geschrieben; der kontrollierte Sandbox-Test lief mit 1/1 bestanden, anschließend entstand Git-Commit 880ae44. Die Codex-interne Windows-Shell konnte wegen einer lokalen workspace-write-Initialisierungsstörung ihre eigenen Befehle nicht starten, aber Schreiben war begrenzt möglich und Kontinuums separater Test-Runner funktionierte. Ich verbinde deshalb den kontrollierten Testlauf jetzt automatisch mit jedem Entwicklungsauftrag und reiche Git explizit an den Codex-Prozess weiter.
+
+Die finale Prüfung ist sauber: alle 20 Projekt-Testskripte bestehen, Kontinuums echte Befehle entwicklungsstatus und gitstatus funktionieren, die Sandbox ist sauber auf Branch main, und der selbst erzeugte Beispieltest besteht. Ich synchronisiere nur noch den aktuellen Sitzungseinstieg von 19 auf 20 Tests und ergänze dort die neuen Entwicklungsbefehle.
+
+Integriert
+Sandbox: C:\Projekt Kontinuum\13_tools\development_sandbox
+Git 2.54.0 installiert
+Eigenes Git-Repository auf Branch main
+Codex-Schreibzugriff ausschließlich innerhalb der Sandbox
+Automatischer kontrollierter Testlauf nach Entwicklungsaufträgen
+Keine automatische Übernahme in den aktiven Kontinuum-Kern
+Neue Befehle
+entwicklungsstatus
+entwickle: <Programmierauftrag>
+sandboxtest
+gitstatus
+gitsnapshot <Beschreibung>
+Kontinuum hat den vollständigen Ablauf bereits praktisch durchgeführt:
+selbst calculator.py und test_calculator.py programmiert
+Sandbox-Test bestanden: 1/1
+Git-Commit erstellt: 880ae44 Calculator sandbox proof
+Git-Arbeitsbaum sauber
+vollständige Kontinuum-Suite: alle 20 Testskripte bestanden
+Sicherung der Integration: 09_backups\development_sandbox_20260613
+
+stelle bitte sicher, dass wenn ich als Super Admin Kontinuum einen Programmierbefehl gebe, dass Kontinuum diesen ausführt und sich damit auch selbst erweitern kann, natürlich mit allen möglichen vorherigen Prüfungen und Tests. 
+
+
+Ich erweitere den sicheren Ablauf von „nur Sandbox“ zu einer kontrollierten Selbst-Erweiterung: ausschließlich für verifizierte Superadmins, mit Sandbox-Entwicklung, Pflichtprüfungen, Sicherheits- und Pfadkontrolle, Sicherung, Promotion in den aktiven Kern, vollständiger Testsuite und automatischem Rollback bei Fehlern. Zuerst prüfe ich, wie Benutzerkontext und Rollen aktuell bis zu Agenten und Tools gelangen.
+
+Die entscheidende Lücke ist bestätigt: Der Login-Kontext erreicht zwar die Conversation-Schicht, aber der Entwicklungsagent prüft ihn bisher nicht. Ich ergänze nun einen eigenen Befehl für kontrollierte Selbst-Erweiterung. entwickle: bleibt reine Sandbox-Arbeit; programmiere: beziehungsweise erweitere dich: darf nur mit gebundenem, verifiziertem Superadmin-Kontext einen Kandidaten erzeugen und nach Prüfungen in den aktiven Kern übernehmen.
+
+Der Workflow ist jetzt im Kern entworfen, und ich härte vor dem ersten Einsatz noch zwei Schutzlinien nach: Kontinuum darf seine eigenen Authentifizierungs- und Self-Extension-Schutzmechanismen nicht selbst verändern, und jede Self-Extension muss mindestens eine Testdatei mitliefern. Außerdem werden symbolische Links und nicht freigegebene Dateitypen abgewiesen. Danach teste ich Promotion und Rollback zuerst vollständig in einem temporären Projekt.
+
+Die Sicherheitskette ist implementiert: Superadmin-Gate, unveränderliche Schutzdateien, Kandidatenkopie, Pflicht-Teständerung, Syntax- und Kandidatentests, Git-Snapshot, Sicherung, Promotion, vollständige aktive Tests und Rollback. Ich prüfe jetzt zunächst isoliert Autorisierung, Vorprüfung und einen absichtlich erzwungenen Rollback, bevor diese Fähigkeit in Kontinuum aktiviert wird.
+
+Die isolierten Schutztests bestehen, einschließlich eines absichtlich ausgelösten Rollbacks. Ich verschärfe noch den letzten kritischen Punkt: Eine Self-Extension darf bestehende Tests nicht passend „weichmachen“, sondern muss mindestens eine neue Testdatei ergänzen; Änderungen an vorhandenen Tests werden für die automatische Promotion abgelehnt. Der Kandidat erhält außerdem eine eigene Git-Historie, damit nicht die komplette Kandidatenkopie in Kontinuums allgemeiner Sandbox-Historie landet.
+
+Die aktive Integration weist Nicht-Superadmins korrekt ab, und alle 20 Tests bestehen. Vor dem echten Superadmin-End-to-End-Lauf schließe ich noch eine Authentifizierungslücke: Für Self-Extension genügt künftig nicht nur ein Rollenfeld, sondern der Benutzerkontext muss ausdrücklich aus einer erfolgreichen Anmeldung stammen und die Berechtigung can_execute_admin_commands besitzen. So kann ein bloß gesetztes SUPERADMIN-Label den Prozess nicht starten.
+
+Ich habe noch zwei echte Angriffsflächen identifiziert, die bei automatisch erzeugtem Code nicht offen bleiben dürfen: Git-Hooks und Kandidatentests mit uneingeschränkten Datei-/Prozesszugriffen. Ich schließe deshalb Git-Hooks für alle automatischen Snapshots aus und begrenze automatisch promotbare Änderungen auf Python und Dokumentation. Neu erzeugter Python-Code wird zusätzlich statisch auf Prozess-, Netzwerk-, Registry-, dynamische Codeausführungs- und freie Dateizugriffe geprüft; Erweiterungen, die solche Rechte benötigen, bleiben bewusst im manuellen Review
+
+Der produktive Befehlsweg ist jetzt bestätigt: Ein authentifizierter Superadmin-Auftrag erreicht den Self-Extension-Workflow samt vollständigem Benutzerkontext; nicht authentifizierte oder nicht privilegierte Rollen werden abgewiesen. Der von der Promotion verwendete Nachtest-Runner wurde separat ausgeführt und meldet Erfolg, zusätzlich bestehen weiterhin alle 20 Projekt-Testskripte. Ich sichere nun noch die aktualisierten Sandbox-Regeln als Git-Snapshot und prüfe den finalen Status.
+
+Kontinuum kann sich nun auf Superadmin-Befehl kontrolliert selbst erweitern.
+Verwendung:
+programmiere: <Programmierauftrag>
+erweitere dich: <Programmierauftrag>
+Der Ablauf verlangt:
+erfolgreich authentifizierte Superadmin-Sitzung
+Berechtigung can_execute_admin_commands
+isolierte Kandidatenkopie
+mindestens eine neue Testdatei
+unveränderte bestehende Tests
+Pfad-, Dateityp-, Größen-, Syntax- und Sicherheitsprüfung
+vollständige Kandidatentests
+Git-Snapshot ohne Git-Hooks
+Sicherung vor Übernahme
+vollständige aktive Testsuite nach Übernahme
+automatisches Rollback bei jedem Fehler
+Auditprotokoll unter 27_logs\self_extension_audit.log
+Authentifizierung, Self-Extension-Werkzeug und Sicherheitskonfiguration kann Kontinuum nicht selbst verändern. Erweiterungen mit freiem Datei-, Prozess-, Netzwerk- oder Registryzugriff benötigen weiterhin manuelle Prüfung.
+Verifiziert:
+Nicht-Superadmins werden abgewiesen.
+Superadmin-Befehlsrouting funktioniert.
+Rollback wurde erzwungen und erfolgreich geprüft.
+Nachtest-Runner funktioniert.
+Alle 20 Projekt-Testskripte bestehen.
+Sandbox-Git ist sauber, letzter Commit: 706652c.
+Sicherung: 09_backups\self_extension_workflow_20260613
+
+rojektstatus, Ordnerstruktur und Projekthandbuch wurden auf den aktuellen Stand gebracht.
+Aktualisiert wurden insbesondere:
+Superadmin-gesteuerte Self-Extension
+Befehle programmiere: und erweitere dich:
+Autorisierungs- und Sicherheitsprüfungen
+Kandidatenkopie und Promotiongrenzen
+Pflicht-Testdateien und unveränderliche Bestandstests
+Git-Hook-Sperre, Auditlog und automatisches Rollback
+Git 2.54.0 und 20 aktive Testskripte
+bekannte Grenzen automatischer Self-Extension
+Dokumente:
+[PROJECT_STATUS_23.md](C:\Projekt Kontinuum\02_versions\version_23\PROJECT_STATUS_23.md)
+[ORDNERSTRUKTUR_23.md](C:\Projekt Kontinuum\14_documents\ORDNERSTRUKTUR_23.md)
+[HANDBUCH_23.md](C:\Projekt Kontinuum\14_documents\HANDBUCH_23.md)
+Sicherung: 09_backups\documentation_self_extension_20260613
+
+ich möchte Kontinuum nun noch einige Tools geben. Könnte ich z.B. Oracle Cloud free in Kontinuum integrieren?
+
+
+
+
+13:38
+
+
+
+
+
+
+Ja. Oracle Cloud Infrastructure lässt sich sinnvoll in Kontinuum integrieren. Besonders geeignet wäre Oracle Cloud Free Tier als optionaler externer Rechen-, Speicher- und Sicherungsbereich.
+Ich würde Oracle Cloud jedoch nicht direkt mit vollständigen Administratorrechten anbinden. Die Integration sollte über einen eigenen, eingeschränkten OCI-Benutzer und einen kontrollierten Kontinuum-Agenten erfolgen.
+Mögliche Funktionen
+Always-Free-Compute-Instanzen starten, stoppen und überwachen
+Dateien oder verschlüsselte Sicherungen im Object Storage speichern
+Cloud-Systemstatus und Kostenlimits prüfen
+Kontinuum-Dienste auf einer OCI-Instanz betreiben
+rechenintensive Entwicklungs- oder Testaufgaben auslagern
+Git-Repositories sichern oder spiegeln
+Datenbanken und Forschungsdienste bereitstellen
+Empfohlene Architektur
+Kontinuum
+└── OracleCloudAgent
+    └── OracleCloudTools
+        ├── status()
+        ├── list_instances()
+        ├── start_instance()
+        ├── stop_instance()
+        ├── upload_backup()
+        ├── download_backup()
+        └── cost_status()
+Konfiguration und Zugangsdaten sollten getrennt bleiben:
+24_config\oracle_cloud.json          ungefährliche Einstellungen
+10_security\oracle_cloud             Schlüssel und sensible Konfiguration
+13_tools\oracle_cloud_workspace      kontrollierter Arbeitsbereich
+Sicherheitsregeln
+eigener OCI-Benutzer ausschließlich für Kontinuum
+minimale IAM-Berechtigungen
+keine Tenancy-Administratorrechte
+private API-Schlüssel niemals in Datenbank, Handbuch oder Dialoghistorie
+schreibende und kostenpflichtige Aktionen nur als Superadmin
+Kostenlimit, Ressourcenlimit und Auditprotokoll
+standardmäßig nur Status- und Lesezugriff
+Lösch-, Netzwerk- und kostenpflichtige Aktionen mit zusätzlicher Bestätigung
+Cloud-Zugang ausdrücklich von automatischer Self-Extension ausschließen
+Wichtiger Hinweis
+„Always Free“ bedeutet nicht automatisch, dass jede OCI-Nutzung kostenlos bleibt. Ressourcen außerhalb der kostenlosen Kontingente können Kosten verursachen. Auch kostenlose Compute-Kapazitäten können regional zeitweise nicht verfügbar sein. Vor der Integration sollten wir deshalb das Konto, die Region und die tatsächlich verfügbaren Free-Tier-Ressourcen prüfen.
+Der passende nächste technische Schritt wäre eine erste read-only OCI-Integration mit:
+oraclestatus
+oracle instanzen
+oracle speicherstatus
+oracle kostenstatus
+Danach könnten kontrollierte Superadmin-Befehle zum Starten, Stoppen und Sichern ergänzt werden.
+
+Oracle Cloud Infrastructure ist jetzt in Kontinuum integriert.
+Aktiver Stand
+Offizielle OCI CLI 3.86.0 installiert
+Neuer Oracle-Cloud-Agent und neues OCI-Tool
+Kontinuum besitzt jetzt 16 Agenten, 15 Tools und 21 Testskripte
+Alle 21 Tests bestanden
+Cloud-Änderungen standardmäßig gesperrt
+Start-/Stop-Aktionen erfordern authentifizierten Superadmin
+API-Schlüssel bleiben außerhalb des Projektordners
+Sicherung: 09_backups\oracle_cloud_integration_20260613
+Neue Befehle
+oraclestatus
+oracle kostenstatus
+oracle instanzen
+oracle speicher
+oracle limits
+oracle starte <Instance-OCID>
+oracle stoppe <Instance-OCID>
+Derzeit meldet Kontinuum korrekt:
+OCI CLI: 3.86.0
+Konto-Konfiguration: noch nicht eingerichtet
+Änderungen: gesperrt
+Zur Verbindung mit deinem persönlichen Oracle-Konto dient:
+16_installation\SETUP_ORACLE_CLOUD_23.bat
+Dieses interaktive Oracle-Werkzeug benötigt deine OCI-Kontodaten und legt Schlüssel sicher außerhalb von C:\Projekt Kontinuum ab. Danach müssen Region, Compartment-OCID und Tenancy-OCID in 24_config\oracle_cloud.json eingetragen werden.
+
+Kannst du bitte programmieren, dass ich immer bevor Kosten entstehen eine Superadminbestätigung geben muss, mit erneuter Passwort Abfrage?
+
+Ich ergänze eine echte Kostenfreigabe mit erneuter Passwortprüfung direkt vor jeder potenziell kostenverursachenden Oracle-Aktion. Dafür prüfe ich zuerst den aktuellen Auth- und GUI/CLI-Eingabefluss, damit das Passwort maskiert abgefragt, niemals gespeichert und nur einmalig für genau die angeforderte Aktion verwendet wird.
+
+Die richtige Architektur ist klar: Die erneute Passwortabfrage gehört in CLI beziehungsweise GUI, während das Oracle-Tool jede potenziell kostenverursachende Aktion ohne eine einmalige bestätigte Freigabe grundsätzlich ablehnt. Das Passwort wird direkt mit dem Sicherheits-Master geprüft, nicht an Agent oder Cloud weitergereicht und nicht gespeichert. Ich implementiere jetzt diese durchgängige Kette.
+
+Die Kernkette ist implementiert: Das Oracle-Tool akzeptiert kostenrelevante Aktionen nur mit einer einmaligen Bestätigung; CLI fragt ausdrücklich „ja“ plus maskiertes Superadmin-Passwort, GUI zeigt Bestätigungsdialog plus maskierte Passwortabfrage. Ich schärfe noch das Verhalten, damit bei global gesperrten Cloud-Änderungen gar keine unnötige Passwortabfrage erscheint, und dokumentiere die Garantie anschließend.
+
+Die isolierten Auth-, Oracle- und Syntaxprüfungen bestehen. Ich verschiebe die eigentliche Einmalfreigabe noch eine Ebene tiefer direkt in das Oracle-Tool: Damit kann kein Agent durch ein bloßes Wahrheitsflag behaupten, die Passwortprüfung sei erfolgt. Das Tool selbst fordert unmittelbar vor dem OCI-Aufruf den Bestätigungs-Handler an und lehnt ohne ihn ab.
+
+Die Sicherheitskette sitzt jetzt direkt im Oracle-Tool und besteht isoliert: Jede einzelne Aktion fordert den Handler erneut an; ohne Handler, bei Abbruch oder falschem Passwort wird kein OCI-Aufruf ausgeführt. Ich aktiviere die Änderung nun mit Sicherung und prüfe anschließend den echten Kontinuum-Befehlsweg mit simuliertem OCI-Aufruf sowie die vollständige Testsuite.
+
+Der produktive Pfad ist verifiziert: Ohne Bestätigungs-Handler wird die Aktion abgewiesen; mit Handler wird jede einzelne Aktion separat bestätigt, und zwei Aktionen erzeugen zwei getrennte Freigaben. Alle 21 Tests bestehen. Ich ergänze nur noch den sichtbaren Oracle-Schutzstatus und die Connector-Dokumentation, damit Kontinuum ausdrücklich meldet, dass die erneute Passwortprüfung aktiv ist.
+
+Oracle Cloud Infrastructure ist jetzt in Kontinuum integriert.
+Aktiver Stand
+Offizielle OCI CLI 3.86.0 installiert
+Neuer Oracle-Cloud-Agent und neues OCI-Tool
+Kontinuum besitzt jetzt 16 Agenten, 15 Tools und 21 Testskripte
+Alle 21 Tests bestanden
+Cloud-Änderungen standardmäßig gesperrt
+Start-/Stop-Aktionen erfordern authentifizierten Superadmin
+API-Schlüssel bleiben außerhalb des Projektordners
+Sicherung: 09_backups\oracle_cloud_integration_20260613
+Neue Befehle
+oraclestatus
+oracle kostenstatus
+oracle instanzen
+oracle speicher
+oracle limits
+oracle starte <Instance-OCID>
+oracle stoppe <Instance-OCID>
+Derzeit meldet Kontinuum korrekt:
+OCI CLI: 3.86.0
+Konto-Konfiguration: noch nicht eingerichtet
+Änderungen: gesperrt
+Zur Verbindung mit deinem persönlichen Oracle-Konto dient:
+16_installation\SETUP_ORACLE_CLOUD_23.bat
+Dieses interaktive Oracle-Werkzeug benötigt deine OCI-Kontodaten und legt Schlüssel sicher außerhalb von C:\Projekt Kontinuum ab. Danach müssen Region, Compartment-OCID und Tenancy-OCID in 24_config\oracle_cloud.json eingetragen werden.
+
+13:57
+
+
+
+
+
+
+kannst du bitte programmieren, dass ich immer bevor Kosten entstehen eine Superadminbestätigung geben muss, mit erneuter Passwort Abfrage?
+
+
+
+
+14:05
+
+
+
+
+
+
+7m 39s lang gearbeitet
+
+
+
+Die verpflichtende Kostenbestätigung ist jetzt integriert.
+Vor jeder potenziell kostenverursachenden Oracle-Aktion verlangt Kontinuum:
+ausdrückliche Bestätigung der konkreten Aktion und Ressource
+erneute maskierte Eingabe des Superadmin-Passworts
+lokale Prüfung gegen Auth-Datei und Sicherheits-Master
+Die Freigabe gilt nur für genau eine Aktion. Für eine zweite Aktion ist eine neue Passwortprüfung erforderlich.
+Zusätzliche Sicherheiten:
+Ohne Bestätigungs-Handler wird die Aktion abgewiesen.
+Abbruch oder falsches Passwort verhindern den OCI-Aufruf.
+Passwort wird nicht gespeichert, protokolliert oder an Oracle übertragen.
+CLI und GUI unterstützen die erneute Passwortabfrage.
+Kostenbestätigungen werden sicher im Auth-Audit protokolliert.
+Cloud-Änderungen bleiben zusätzlich global gesperrt, bis sie bewusst aktiviert werden.
+Verifiziert:
+Aktion ohne Bestätigung: abgewiesen
+zwei Aktionen: zwei separate Bestätigungen
+Oracle-Schutzstatus meldet Passwortbestätigung als aktiv
+alle 21 Kontinuum-Testskripte bestanden
+Sicherung: 09_backups\oracle_cost_confirmation_20260613
+
+
+bitte aktualisier Projektstatus, Ordnerstruktur und Projekthandbuch sowie Wiedereinstiegspunkte
+
+Ich synchronisiere die vier zentralen Dokumente jetzt mit dem tatsächlich aktiven Oracle-Kostenfreigabe-Workflow, der erneuten Passwortprüfung sowie dem aktuellen Agenten-, Tool- und Teststand. Danach prüfe ich gezielt auf alte Aussagen und fehlende Wiedereinstiegsbefehle.
+
+ch habe die größten Abweichungen lokalisiert: Der Wiedereinstieg beschreibt noch den Stand vor Git und Oracle Cloud, außerdem steht an einer Stelle noch der alte Testumfang. Ich aktualisiere jetzt die vier Dokumente gemeinsam, damit Status, Architekturhinweise und nächste Schritte wieder denselben Stand abbilden.
+
+Die Dokumente bekommen jetzt nicht nur neue Zahlen, sondern auch die entscheidende Sicherheitsgrenze: Die Oracle-Integration erzwingt die Einmalfreigabe direkt vor dem OCI-Aufruf; CLI und GUI erfassen dafür die erneute Passwortprüfung maskiert. Den Wiedereinstieg ersetze ich durch einen aktuellen, ausführbaren Ablauf mit bewusst gesperrten Cloud-Änderungen.
+
+Die Projektdokumentation wurde aktualisiert und konsolidiert:
+[Projektstatus](C:\Projekt Kontinuum\02_versions\version_23\PROJECT_STATUS_23.md)
+[Ordnerstruktur](C:\Projekt Kontinuum\14_documents\ORDNERSTRUKTUR_23.md)
+[Projekthandbuch](C:\Projekt Kontinuum\14_documents\HANDBUCH_23.md)
+[Wiedereinstiegspunkte](C:\Projekt Kontinuum\22_project_chronicle\EINSTIEGSPUNKTE_NAECHSTE_SITZUNG.md)
+Dokumentiert sind nun der aktuelle Stand mit 16 Agenten, 15 Tools, 21 Tests, Git 2.54.0, OCI CLI 3.86.0 sowie der vollständige Oracle-Kostenfreigabe- und Passwortprüfungsablauf.
+Der vorherige Dokumentationsstand wurde unter 09_backups\documentation_cost_confirmation_20260613 gesichert. Die aktiven Dokumente wurden abschließend auf veraltete Angaben geprüft.
+

@@ -1,0 +1,182 @@
+# Codex Execution Prompt – Phase 2b vom 27.06.26
+
+## Canonical Decision Engine (Echtzeit Aktiv/Archiv-Entscheidung)
+
+---
+
+## Kontext
+
+Phase 2 (Archivmigration) und Phase 2a (Duplikat- und Review-Cluster-Auflösung) haben folgende Grundlagen geschaffen:
+
+* stabile Archivstruktur (`archive/` in allen Hauptordnern)
+* klassifizierte historische Kandidaten
+* aufgelöste Duplikat-Cluster
+* konsolidierte Review-Struktur
+* funktionierendes Logging- und Verifikationssystem
+
+Nun folgt die nächste Stufe:
+
+> **kontinuierliche, automatische Entscheidungslogik für Datei-Lebenszyklen**
+
+---
+
+## Ziel von Phase 2b
+
+Einführung eines **Canonical Decision Engine (CDE)** Systems, das in Echtzeit entscheidet:
+
+* Datei bleibt **aktiv**
+* Datei wird **archiviert**
+* Datei wird **zur Review-Klassifikation markiert**
+* Datei wird **konsolidiert (Merge/Replace) vorgeschlagen**
+
+---
+
+## Grundprinzip
+
+Der CDE ist **kein Archivierungstool**, sondern eine:
+
+> kontinuierliche Entscheidungs- und Klassifikationsschicht über dem gesamten Dateisystem
+
+---
+
+## Entscheidungslogik (Core Rules)
+
+Für jede erkannte Datei gilt:
+
+### 1. Aktivitätsprüfung
+
+Eine Datei wird als **aktiv** klassifiziert, wenn:
+
+* sie aktuell referenziert ist (Code, Config, Docs)
+* sie Teil eines laufenden Workflows ist
+* sie in Tests, Builds oder Manifests eingebunden ist
+
+---
+
+### 2. Archivierungslogik
+
+Eine Datei wird als **archivierbar** klassifiziert, wenn:
+
+* keine aktiven Referenzen existieren
+* sie durch neuere Version ersetzt wurde
+* sie historisch, aber nicht strukturell relevant ist
+* sie älter als definierte Lifecycle-Schwelle ist (falls vorhanden)
+
+Zielpfad:
+`archive/legacy` oder spezialisierte Substruktur
+
+---
+
+### 3. Review-Logik
+
+Eine Datei wird als **reviewpflichtig** klassifiziert, wenn:
+
+* Referenzen unklar oder indirekt sind
+* mehrere Versionen konkurrieren
+* keine eindeutige Kanonizität feststellbar ist
+* semantische Konflikte im Inhalt bestehen
+
+Diese Dateien werden NICHT bewegt.
+
+Nur Markierung + Logging.
+
+---
+
+### 4. Konsolidierungsvorschlag
+
+Eine Datei wird als **konsolidierbar** markiert, wenn:
+
+* ähnliche oder doppelte Inhalte existieren
+* Fragmentierung über mehrere Dateien vorliegt
+* klare inhaltliche Überlappung erkannt wird
+
+Der CDE erzeugt nur Vorschlag – keine automatische Zusammenführung ohne Phase 2a/3 Freigabe.
+
+---
+
+## Echtzeit-Modus
+
+Der CDE arbeitet:
+
+* bei Dateiänderung (write/update event)
+* bei neuen Dateien
+* bei Scan/Index-Operationen
+* bei Release-/Build-Prozessen
+
+---
+
+## Architekturintegration
+
+Der CDE wird eingebunden in:
+
+* Canonical Architecture Manager
+* Canonical Artifact Manager
+* Release Integrity Framework
+* Version Consistency Engine
+
+---
+
+## Logging-System
+
+Alle Entscheidungen werden protokolliert in:
+
+`31_reports/archive_lifecycle/cde_realtime_decisions.jsonl`
+
+Pro Eintrag:
+
+* Datei-ID / Pfad
+* Entscheidungstyp (active / archive / review / consolidate_suggest)
+* Begründung
+* Referenzstatus
+* Zeitstempel
+* Systemquelle (scan, event, build, manual)
+
+---
+
+## Sicherheitsregeln
+
+Der CDE darf NICHT:
+
+* Dateien löschen
+* Dateien verschieben (außer explizit freigegeben im Archivmodus)
+* Konsolidierungen selbstständig durchführen
+* aktive Systemdateien ohne Referenzprüfung verändern
+
+---
+
+## Abbruch- und Override-Regeln
+
+Der CDE stoppt automatisch bei:
+
+* widersprüchlichen Klassifikationen
+* fehlender Referenzdatenbasis
+* Inkonsistenzen im Canonical Graph
+* Konflikten mit Phase 2 / 2a Ergebnissen
+
+Override nur durch:
+
+> explizite Codex-Freigabe (Manual Governance Layer)
+
+---
+
+## Zielzustand nach Phase 2b
+
+Nach vollständiger Integration:
+
+* jede Datei hat einen klaren Lebenszyklusstatus
+* aktive Struktur bleibt stabil
+* Archiv wächst kontrolliert
+* Review-Last wird sichtbar und steuerbar
+* Redundanz entsteht nicht mehr unkontrolliert
+
+---
+
+## Architekturwirkung
+
+Phase 2b etabliert:
+
+> eine **kontinuierliche kanonische Entscheidungsinstanz über alle Dateien hinweg**
+
+Damit wird Projekt Kontinuum von einem strukturierten System zu einem:
+
+> **selbstregulierenden, lifecycle-basierten Informationssystem**

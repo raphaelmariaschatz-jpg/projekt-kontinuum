@@ -1,0 +1,27 @@
+Projekt Kontinuum 24.3 - kompakte Ordnerstruktur
+Stand: 2026-06-14
+
+Die kanonische und kommentierte Strukturübersicht liegt unter:
+
+14_documents\ORDNERSTRUKTUR_23.md
+14_documents\PROJEKTSTRUKTUR_24_3.md
+
+Operative Einstiegspunkte:
+
+16_installation\START_GUI_32_3.bat
+16_installation\START_KONTINUUM_23.bat
+16_installation\TEST_KONTINUUM_23.bat
+
+Aktive Kernbereiche:
+
+01_system\kontinuum
+11_gui
+14_documents
+16_installation
+17_tests
+22_project_chronicle
+24_config
+32_data
+
+Rekursive Dateidumps, Sicherungsinhalte, Laufzeit-Caches und generierte Daten
+sind bewusst nicht Bestandteil dieser kompakten Strukturübersicht.

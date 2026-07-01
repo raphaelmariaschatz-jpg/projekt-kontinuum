@@ -1,0 +1,75 @@
+Version 32.2
+
+Ich behandle das als 32.2-Härtung gegen Bedeutungsinflation: erst Meaning/Motivation/Chronik-Mechanik prüfen, dann falls nötig eine Zeit-/Relevanzschicht einbauen, zirkuläre Begründungen absichern, Tests ergänzen und alle Wiedereinstiegspunkte aktualisieren. Ich starte mit den betroffenen Core-Dateien und den aktuellen Tests, damit die Korrektur nicht nur kosmetisch wird.
+
+Die Prüfung zeigt die Schwachstelle tatsächlich: Meaning-Kanten sind append-only und werden nicht verändert, aber bisher fehlt eine eigene append-only Bewertungsschicht für Alterung, Relevanz und Chronikprägung. Ich setze 32.2 daher als “Temporal Relevance Layer” um: Kanten bleiben historisch erhalten, bekommen aber zeitliche Relevanzbewertungen, Chronikereignisse werden als prägend/nicht prägend unterscheidbar, und Motivationserklärungen bekommen eine explizite Anti-Zirkularitätsmarkierung.
+
+Ich werde die vorhandenen Kanten nicht nachträglich verändern, weil das append-only-Prinzip korrekt ist. Stattdessen bekommt 32.2 eine eigene Relevanzbewertung als append-only Beobachtung: eine Kante bleibt historisch, aber ihr aktueller Status kann active, aging oder obsolete_candidate sein.
+
+Der neue Core ist drin: temporal_relevance.py bewertet Kanten, Chronik und Wissenslücken getrennt vom historischen Graphen. Jetzt binde ich die Befehle ein, damit K die Schwachstelle selbst anzeigen kann: Relevanzstatus, Bedeutungsinflationsprüfung, Chronikprägung und Wissenslückenpriorität.
+
+Die GUI und Befehle sind angebunden. Ich prüfe jetzt auf verbliebene aktive 32.0-Labels und setze sie dort auf 32.2, ohne historische 32.0-Release-Dateien zu überschreiben.
+
+Ich ziehe die aktiven Labels auf 32.2 und mache die 32.0-Regression version-neutral, damit sie weiter den Explanation Core schützt, ohne am alten Release-String zu hängen.
+
+Jetzt bekommt 32.2 eine eigene Regression: sie prüft Relevanzbewertungen, Kantenstatus, Chronikprägung, Wissenslückenpriorisierung, Anti-Zirkularität und append-only-Schutz.
+
+Die 32.2-Regression ist angelegt. Ich lasse jetzt Syntax und die gezielten Meaning/Motivation/Temporal-Tests laufen; falls die neue Schicht irgendwo zu streng ist, justiere ich sie direkt.
+
+Der erste Testlauf hat genau einen Implementierungsfehler gefunden: die Statusklassifikation (active/aging/obsolete_candidate) war referenziert, aber noch nicht als Methode eingetragen. Ich ergänze sie jetzt und starte die gezielten Tests erneut.
+
+Die Klassifikation ist ergänzt. Ich wiederhole die gezielten Tests jetzt; danach kommt die reale Aktivierung und Dokumentation.
+
+Der Test erzeugt jetzt bewusst eine kleine Chronikbasis. Ich lasse ihn erneut laufen.
+
+Die 32.2-Regression ist grün. Ich aktiviere die Relevanzschicht jetzt auf dem realen Datenbestand und lese die echten Zähler aus, bevor ich Berichte und Wiedereinstiegspunkte aktualisiere.
+
+Die reale Aktivierung ist sauber: 2.391 Relevanzbewertungen, 2.287 bewertete Meaning-Kanten, 48 Chronikbewertungen, 55 Wissenslückenprioritäten und 0 Zirkularitätsverletzungen. Ich ergänze noch eine Ausgabe-Sicherung, damit auch ältere bereits gespeicherte 32.0-Erklärungen bei Abruf explizit die Anti-Zirkularitätsregel anzeigen.
+
+Jetzt aktualisiere ich die Dokumentation auf 32.2: Architekturbericht, Projektstatusordner, Chronik, README, Handbuch und Wiedereinstiegspunkte. Die 32.0-Datei bleibt historisch erhalten; 32.2 bekommt einen eigenen Bericht.
+
+Die Dokumentation ist auf 32.2 gesetzt. Ich mache jetzt eine Konsistenzprüfung und starte dann die Testsuite wieder in Blöcken, weil die neue Schicht systemweit am Startpfad hängt.
+
+Die Konsistenzsuche zeigt nur zwei echte aktive Formulierungen: GUI/Wiedereinstieg stehen noch auf 32.0; historische 32.0-Verweise bleiben natürlich erhalten. Ich korrigiere die aktiven Formulierungen.
+
+Ausgeführt: Kontinuum ist jetzt auf Version 32.2 gehärtet.
+Die mögliche Schwachstelle war real: Meaning-Kanten waren append-only gespeichert und wurden bereits gewichtet, aber es gab noch keine eigene Schicht für Relevanz über Zeit. Ich habe dafür den neuen Temporal Relevance Core ergänzt.
+Umgesetzt:
+neue Version: 32.2
+neuer Core: [temporal_relevance.py](C:/Projekt Kontinuum/01_system/kontinuum/core/temporal_relevance.py)
+neue append-only Tabellen:relevance_assessments
+relevance_reports
+
+Meaning-Kanten erhalten jetzt Status:active
+aging
+obsolete_candidate
+
+Chronikeinträge werden nach Prägung bewertet
+Wissenslücken werden strategisch priorisiert
+Anti-Zirkularitätsregel ergänzt:Meaning-Kanten sind Evidenz
+Motivation-Scores dürfen nicht die alleinige Begründung derselben Meaning-Kanten sein
+
+Neue Befehle:
+relevanzstatus
+bedeutungsinflation
+chronikprägung
+wissenslückenpriorität
+Finaler Realstand nach vollständiger Regression:
+Relevanzbewertungen: 2.777
+bewertete Meaning-Kanten: 2.665
+Chronikbewertungen: 53
+Wissenslückenprioritäten: 58
+Kantenstatus: 2.662 aktiv, 3 alternd, 0 Obsoleszenz-Kandidaten
+Zirkularitätsverletzungen: 0
+Chronik: 53/53 signiert
+Schutzgrenzen: 5/5 intakt
+offene innere Konflikte: 0
+Aktualisiert wurden u. a.:
+[PROJEKTSTRUKTUR_32_2.md](C:/Projekt Kontinuum/14_documents/PROJEKTSTRUKTUR_32_2.md)
+[RELEASE_32_2_TEMPORAL_RELEVANCE.md](C:/Projekt Kontinuum/22_project_chronicle/RELEASE_32_2_TEMPORAL_RELEVANCE.md)
+[EINSTIEGSPUNKTE_NAECHSTE_SITZUNG.md](C:/Projekt Kontinuum/22_project_chronicle/EINSTIEGSPUNKTE_NAECHSTE_SITZUNG.md)
+[PROJEKTSTATUS_AKTUELL_32_2.md](C:/Projekt Kontinuum/14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_32_2.md)
+Tests:
+neue Regression: test_v32_2_temporal_relevance.py
+vollständige aktive Testsuite bestanden: 40/40
+Damit ist die Bedeutungsinflation nicht “gelöscht”, sondern architektonisch sauber kontrolliert: Geschichte bleibt erhalten, aktuelle Relevanz wird getrennt bewertet. Das ist eine gute Grundlage für einen späteren Narrative Identity Core.

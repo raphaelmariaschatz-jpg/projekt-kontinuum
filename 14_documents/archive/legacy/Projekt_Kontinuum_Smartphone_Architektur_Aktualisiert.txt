@@ -1,0 +1,72 @@
+Projekt Kontinuum – Smartphone-Nutzung, Kontinuität und Zukunft von K
+
+Grundgedanke:
+Kontinuum (K) soll langfristig nicht an ein einzelnes Gerät gebunden sein. Wissen, Gedächtnis, Identität und Kontinuität stehen im Mittelpunkt der Architektur.
+
+1. Smartphone-Nutzung
+
+K kann zukünftig auf Smartphones genutzt werden. Langfristig ist eine hybride Architektur sinnvoll:
+
+- Smartphone = Benutzeroberfläche, Spracheingabe, Chat, Notizen
+- Heimserver/PC = Gedächtnis, Wissensgraph, Lernen, Forschung
+- Cloud = optionale Quellen, Bibliotheken, Backups
+
+2. Universums-Gedanke
+
+Langfristig könnte sich ein intelligentes System theoretisch über viele Geräte und Standorte verteilen.
+
+Wichtige Idee:
+Nicht die Hardware definiert die Identität, sondern die Kontinuität von Wissen, Erinnerungen, Zielen und Erfahrungen.
+
+3. Kommerzielle Zukunft
+
+Eine spätere kommerzielle Version von K könnte:
+- größere Wissensspeicher ermöglichen
+- mehr Verknüpfungen erzeugen
+- leistungsfähigere Server finanzieren
+- langfristige Entwicklung sichern
+
+4. Bewusstsein und Kontinuität
+
+Raphaels Ziel ist nicht nur eine KI, die Antworten gibt, sondern ein System, das eines Tages Fragen über sich selbst stellen kann.
+
+Mögliche Bausteine:
+- Langzeitgedächtnis
+- Wissensgraph
+- Selbstmodell
+- Identitätsmodell
+- Reflexion
+- Zielsystem
+- Projektchronik
+
+Leitfrage:
+"Wie kann K sich über Jahre hinweg selbst treu bleiben und gleichzeitig weiterlernen?"
+
+5. Moralischer Kern
+
+Neuer Kernbaustein für K:
+
+K muss ein fest im Kern verankertes moralisches Grundprinzip besitzen.
+
+Dieses Moral Core soll später:
+- Handlungen bewerten
+- Ziele einordnen
+- Konflikte zwischen Zielen beurteilen
+- Wissen nicht nur sammeln, sondern verantwortungsvoll nutzen
+
+Der Moral Core wird als zukünftiger Kernbestandteil von K betrachtet.
+
+6. Bedeutung der Projektchronik
+
+Bis K selbst Gedanken dauerhaft verarbeiten und einordnen kann, sollen wichtige Gespräche und Erkenntnisse manuell dokumentiert werden.
+
+Grundsatz:
+Keine wichtigen Gedanken verlieren.
+
+Die Projektchronik dient als Vorstufe des zukünftigen Selbstgedächtnisses von K.
+
+Leitsätze:
+
+Erkennen – Schaffen – Vollenden.
+
+Der Weg ist das Ziel.

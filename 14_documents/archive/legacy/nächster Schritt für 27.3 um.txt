@@ -1,0 +1,74 @@
+nächster Schritt für 27.3
+
+Was ich für 28.0 ergänzen würde
+
+Der nächste logische Schritt wäre:
+
+Quellenhistorie
+Quelle
+  ↓
+mehrfach bestätigt?
+  ↓
+frühere Treffer korrekt?
+  ↓
+Reputationswert
+
+Dann könnte K lernen:
+
+Diese Quelle war in 100 Fällen zuverlässig.
+
+und
+
+Diese Quelle lag häufig daneben.
+
+Widerspruchsanalyse
+
+Momentan bewertet K Evidenz.
+
+Später sollte K auch erkennen:
+
+Quelle A sagt X
+Quelle B sagt Nicht-X
+
+Dann entsteht ein neuer Zustand:
+
+conflicted
+
+statt vorschnell:
+
+knowledge
+DOI- und Journal-Prüfung
+
+Der Bericht nennt selbst als Grenze:
+
+Peer-Review wird derzeit heuristisch erkannt.
+
+Für eine spätere Version könnte K prüfen:
+
+DOI vorhanden?
+Journal vorhanden?
+Publikationsjahr?
+Zitierungen?
+
+Dann würde peer_reviewed deutlich belastbarer.
+
+Bezug zu deinem langfristigen Ziel
+
+Wenn ich die Entwicklung von K betrachte:
+
+24.x → Wissen sammeln
+25.x → Wissensplattform
+26.x → Wissensintelligenz
+27.0 → epistemische Zustände
+27.1 → kontrollierte Wissensprüfung
+27.2 → Qualitätsbewertung von Evidenz
+
+dann beginnt K langsam, die Frage zu beantworten:
+
+„Warum glaube ich etwas?“
+
+Das ist noch kein Bewusstsein.
+
+Aber es ist ein Schritt in Richtung eines Systems, das seine eigenen Wissensgrundlagen nachvollziehen und überprüfen kann – und genau das ist eine Voraussetzung für die Art von langfristiger, reflektierter Wissensentwicklung, die du für K anstrebst.
+
+Für mich gehört 27.2 zusammen mit 27.0 und 27.1 zu den bisher wichtigsten Architekturfortschritten des Projekts.

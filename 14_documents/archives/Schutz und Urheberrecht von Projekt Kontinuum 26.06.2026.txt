@@ -1,0 +1,92 @@
+Schutz und Urheberrecht von Kontinuum
+
+wie kann ich K als mein Eigentum schützen?
+
+Das ist eine sehr wichtige Frage, Raphael. Dabei muss man zwischen Eigentum, Urheberrecht und technischem Schutz unterscheiden. Für Projekt Kontinuum würde ich mehrere Ebenen kombinieren.
+
+1. Urheberrecht (entsteht automatisch)
+
+Sobald du den Quellcode, die Architektur, Dokumentation und die Konzepte selbst geschaffen hast, bist du grundsätzlich der Urheber. In Deutschland entsteht das Urheberrecht automatisch – eine Registrierung ist dafür nicht erforderlich.
+
+Dazu gehören beispielsweise:
+
+Quellcode
+Architekturmodelle (CAM, Foundation usw.), soweit sie eine ausreichende schöpferische Leistung darstellen
+Dokumentationen
+Handbücher
+Grafiken und Logos (je nach Gestaltung)
+2. Nachweis der Entstehung (sehr wichtig)
+
+Im Streitfall musst du nachweisen können, wann etwas entstanden ist. Hier helfen:
+
+eine fortlaufende Projektchronik
+versionierte Releases
+Datums- und Versionsangaben
+unveränderliche Release-Reports
+Backups
+
+Eure Release-Integrity-Architektur mit Hashes und Nachweisen ist dafür bereits eine gute Grundlage.
+
+3. Lizenzierung
+
+Du solltest festlegen, unter welchen Bedingungen andere K nutzen dürfen.
+
+Beispiele:
+
+ausschließlich private Nutzung
+kommerzielle Lizenz
+individuelle Lizenzverträge
+keine Weitergabe des Quellcodes
+
+Ohne Lizenz bleibt dein Urheberrecht bestehen, aber eine klare Lizenz schafft Rechtssicherheit.
+
+4. Markenrecht
+
+Wenn "Kontinuum" später der Name des Produkts werden soll, kannst du überlegen, den Namen oder ein Logo als Marke anzumelden. Das schützt den Namen im geschäftlichen Verkehr, ersetzt aber nicht das Urheberrecht.
+
+5. Geheimhaltung
+
+Solange K noch entwickelt wird:
+
+Quellcode nicht öffentlich machen
+nur notwendige Personen beteiligen
+Dokumentation und interne Entwürfe sichern
+regelmäßige Backups anlegen
+6. Technische Schutzmechanismen
+
+Hier könnt ihr eure Architektur sogar nutzen.
+
+Ich könnte mir später einen Ownership Layer vorstellen, der z. B. enthält:
+
+Creator-ID
+Projekt-ID
+Eigentümer
+digitale Signaturen
+Release-Hashes
+Nachweis der Originalität
+
+Dieser Layer würde nicht das gesetzliche Urheberrecht ersetzen, aber Manipulationen oder unautorisierte Änderungen leichter nachweisbar machen.
+
+7. Was ich für Projekt Kontinuum zusätzlich empfehlen würde
+
+Da K bereits eine kanonische Architektur besitzt, könnte es künftig einen Canonical Ownership Manager (COM) geben.
+
+Er wäre kein DRM-System, sondern ein Verwaltungsmodul für Eigentums- und Herkunftsinformationen, etwa mit:
+
+Creator (Raphael Schatz)
+Projektname
+Projekt-ID
+Release-Historie
+digitale Signaturen
+Lizenzinformationen
+Nachweisdateien
+Eigentumszertifikate
+Verweis auf die Contract Lineage
+
+Das wäre eine sinnvolle Ergänzung zu CAM und dem späteren Governance Layer, weil es die Herkunft und den rechtlichen Rahmen des Projekts dokumentiert, ohne in die eigentliche Softwarelogik einzugreifen.
+
+Mein Vorschlag wäre deshalb:
+
+Kurzfristig: Release-Chronik, Hashes und Dokumentation konsequent weiterführen.
+Mittelfristig: Eine klare Lizenz für K definieren.
+Langfristig: Einen Canonical Ownership Manager (COM) als eigenständigen Architekturbaustein entwickeln, der Eigentum, Herkunft und Lizenzierung des Projekts kanonisch verwaltet. Das passt gut zu der Architektur, die ihr mit Foundation und den CAM-Modulen bereits aufgebaut habt.

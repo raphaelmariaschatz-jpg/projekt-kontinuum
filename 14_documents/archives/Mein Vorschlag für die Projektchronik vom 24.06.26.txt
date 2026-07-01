@@ -1,0 +1,39 @@
+Mein Vorschlag für die Projektchronik vom 24.06.26
+
+Mein Vorschlag für die Projektchronik
+
+Ich würde diesen Schritt als eigenständigen Meilenstein aufnehmen:
+
+CAM 1.1 – Artifact Lifecycle Policy
+
+Ziel:
+
+Kontrollierter Umgang mit Entwicklungsartefakten.
+
+Regeln:
+
+niemals automatische Löschung wertvoller Artefakte
+Archivierung statt Löschung
+Freigabebedingungen vor Archivierung
+CAM-Überwachung
+signierte Nachweise dauerhaft aufbewahren
+
+Ablageorte:
+
+02_versions/migration_artifacts
+09_backups/migration_reports
+
+wie im Bericht beschrieben.
+
+Gesamturteil
+
+Die drei Schritte der letzten zwei Tage bilden zusammen eine erstaunlich saubere Kette:
+
+FND-ID-048
+„Versuche es beim nächsten Mal immer besser zu machen“
+CAM 1.0
+Kanonisierung der Architektur
+Artifact Lifecycle Policy
+Schutz der Entwicklungsgeschichte
+
+Das wirkt inzwischen weniger wie einzelne Funktionen und mehr wie der Aufbau einer echten Governance- und Architekturgrundlage für spätere große Versionen von K. 🤝

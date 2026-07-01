@@ -1,0 +1,19 @@
+Bearbeitung Foundation Architecture für Projekt Kontinuum 23.06.26
+
+Ich nehme die angehängte Vorlage aus dem Archiv als Ausgangspunkt und prüfe erst ihren Aufbau, damit die neue Foundation Architecture in derselben Tonalität und Struktur entsteht.
+
+Die Vorlage ist eher ein Architekturentwurf mit 20 Bausteinen als ein fertiges Projektdokument. Ich forme daraus jetzt eine kanonische Foundation Architecture für Kontinuum, mit den neuen Linien vom 23.06.2026: Multi-LLM, UFUPF, Evidence, Release Integrity und Schutz vor Wissenskontamination.
+
+Der lokale Sandbox-Aufruf für die Workspace-Liste wurde vom Windows-Runner blockiert, also gehe ich ohne Umweg weiter und lege das Dokument direkt als Ausgabedatei an. Danach kopiere ich es zusätzlich in den Projektordner, damit es dort bei den Kontinuum-Dokumenten liegt.
+
+Das Dokument ist als saubere Markdown-Fassung erzeugt. Ich kopiere es jetzt noch in den Kontinuum-Dokumentbereich, damit es nicht nur als Codex-Ausgabe existiert, sondern direkt im Projektbestand weiterverwendet werden kann.
+
+Erledigt. Ich habe die neue Foundation Architecture nach der Vorlage erstellt und um den Stand vom 23.06.2026 erweitert: Foundation-Klassen, feste Regel-IDs, Query/Reasoning Layer, Hash/Audit, Knowledge Contamination Guard, Migration, Routing, Meaning/Motivation, Multi-LLM, UFUPF, Diagnostik, GUI, Tests und Recovery.
+Gespeichert ist sie hier:
+[Foundation_Architecture_Kontinuum_23_06_2026.md](C:/Users/Raphael/Documents/Codex/2026-06-23/h/outputs/Foundation_Architecture_Kontinuum_23_06_2026.md)
+Zusätzlich liegt eine Projektkopie hier:
+C:\Projekt Kontinuum\14_documents\fundamentale Gedanken\Foundation_Architecture_Kontinuum_23_06_2026.md
+Ich habe geprüft: Die Projektkopie existiert und ist lesbar.
+
+Foundation_Architecture_Kontinuum_23_06_2026.md
+

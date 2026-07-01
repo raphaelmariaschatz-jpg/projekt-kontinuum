@@ -1,0 +1,173 @@
+Version 32.1
+
+Ich setze das als 32.x-Suchconnector-Ausbau um: erst vorhandenen Search-Connector und lokale Wissensroute lesen, dann Provider-Router ergänzen, Tests/Doku/Wiedereinstiegspunkte aktualisieren und den neuen Projektstatus-Ordner unter 14_documents anlegen. Ich mache das ohne inhaltliche Rückfragen; technische Freigabefelder sind nur Sandbox-Mechanik.
+
+Der aktuelle Connector ist noch DuckDuckGo-zentriert mit Lite-Fallback. Ich erweitere ihn jetzt als Router mit konfigurierter Reihenfolge, API-fähigen Providern und Offline-/Spezialprovidern wie Wikipedia, arXiv und Semantic Scholar, ohne bestehende DuckDuckGo-Tests zu brechen.
+
+ch mache den Router so, dass alte Konfigurationen weiter funktionieren: provider + fallback_providers bleiben gültig, neu ist provider_order. Lokales Wissen und Notebook-Wissen können über den SearchRouter angebunden werden; Brave läuft nur mit API-Key, ohne Key wird es sauber übersprungen statt hart zu fehlschlagen.
+
+Damit ältere Tests und alte Installationen nicht plötzlich die neue Standardkette erzwingen, ergänze ich noch eine Kompatibilitätsregel: Wenn eine alte Konfig explizit provider/fallback_providers setzt, bleibt diese Kette aktiv. Die reale Projektkonfiguration bekommt danach bewusst die neue 32.x-Router-Reihenfolge.
+
+Der reale Connector ist jetzt auf die neue Router-Reihenfolge gestellt. Ich prüfe als Nächstes die Konfiguration, ergänze gezielte Tests für Router-Reihenfolge und Spezialprovider-Parsing und korrigiere alles, was dabei herausfällt.
+
+Ich habe eine wichtige Kante gefunden: Wenn provider jetzt search_provider_router heißt, darf duckduckgo_html in der Providerliste trotzdem die normale base_url nutzen. Das ziehe ich sofort glatt und ergänze den Regressionstest dazu.
+
+Die Router-Kante ist korrigiert und der Test deckt jetzt Provider-Reihenfolge sowie Wikipedia/Semantic-Scholar/Brave-Parser ab. Ich lasse nun die Suchconnector-Regression und die alte Research-Notebook-Regression laufen.
+
+Die Suchconnector-Tests sind grün. Jetzt lege ich den neuen Projektstatus-Unterordner an und aktualisiere Wiedereinstiegspunkte, Architektur-/Projektberichte und Chronik mit dem Suchanbieter-Router als aktuellem 32.0-Nachtrag.
+
+Der Ordner 14_documents\projektstatus ist angelegt. Ich schreibe dort jetzt einen aktuellen Statusindex und verknüpfe ihn aus den Wiedereinstiegspunkten heraus.
+
+Der große Patch ist an einer abweichenden README-Stelle hängen geblieben; nichts Dramatisches. Ich teile die Dokumentationsänderungen jetzt in kleinere, treffsichere Patches auf.
+
+ch habe die konkreten Einfügepunkte. Jetzt gehen die Dokumente in kleinen Schritten durch: README, Handbuch, Architekturbericht, Wiedereinstieg, Ordnerstruktur, Chronik und der neue Projektstatusordner.
+
+Der neue Projektstatusordner ist gefüllt und README/Handbuch zeigen den Router. Ich aktualisiere jetzt die Architektur- und Wiedereinstiegsdokumente mit derselben Provider-Kette.
+
+Eine kleine Kompatibilitätsfeinheit fehlt noch: Wenn ein Test oder eine alte Konfig explizit eine eigene duckduckgo_html-Fallback-URL setzt, soll diese Vorrang vor der Standard-URL bekommen. Ich ziehe das nach, dann laufen die Tests nochmal.
+
+Die GUI-Aktivitätsprognose zeigt jetzt auch die Search-Router-Datei und Konfiguration. Ich führe nun Syntaxprüfung, Suchconnector-Tests und einen realen suchmaschinenstatus aus.
+
+Die GUI-Aktivitätsprognose zeigt jetzt auch die Search-Router-Datei und Konfiguration. Ich führe nun Syntaxprüfung, Suchconnector-Tests und einen realen suchmaschinenstatus aus.
+
+Die relevanten Regressionen sind grün. Ich hole jetzt noch den realen Status aus dem laufenden System und prüfe die neuen Projektstatus-Dateien/Verweise kurz gegen.
+
+Kontinuum 32.0 ist umgesetzt und auf den realen Bestand aktiviert.
+Kernänderung: Der neue Motivation Explanation Core erklärt Motivation-Scores jetzt über gespeicherte Gründe, Meaning-Kanten, Evidenzbelege und Erklärungspfade. Dazu kamen die append-only Tabellen motivation_explanations, motivation_evidence und motivation_paths.
+Aktueller Realstand nach Testlauf:
+Version: 32.0
+Motivation-Scores: 2.530
+Score-Erklärungen: 2.530
+Evidenzbelege: 21.715
+Erklärungspfade: 2.530
+Bedeutungsknoten: 546
+Bedeutungsbeziehungen: 2.270
+Foundation Decision Layer: 161/161
+Chronik: 48/48 signiert
+Kontinuität: intakt
+Schutzgrenzen: 5/5
+offene innere Konflikte: 0
+Neue Befehle sind aktiv:
+motivationserklärungsstatus
+motivationserklärung <Begriff>
+warum score <Begriff>
+erkläre priorität <Begriff>
+wichtige einflüsse <Begriff>
+Aktualisiert wurden unter anderem:
+[motivation_explanation.py](C:/Projekt Kontinuum/01_system/kontinuum/core/motivation_explanation.py)
+[system.py](C:/Projekt Kontinuum/01_system/kontinuum/core/system.py)
+[foundation_agent.py](C:/Projekt Kontinuum/01_system/kontinuum/agents/foundation_agent.py)
+[desktop_gui_32_3.py](C:/Projekt Kontinuum/11_gui/desktop_gui_32_3.py)
+[PROJEKTSTRUKTUR_32_0.md](C:/Projekt Kontinuum/14_documents/PROJEKTSTRUKTUR_32_0.md)
+[EINSTIEGSPUNKTE_NAECHSTE_SITZUNG.md](C:/Projekt Kontinuum/22_project_chronicle/EINSTIEGSPUNKTE_NAECHSTE_SITZUNG.md)
+Tests:
+gezielte 32.0-Regression bestanden
+vollständige aktive Testsuite bestanden: 39/39
+Hinweis: C:\Projekt Kontinuum ist aktuell kein Git-Repository, daher konnte dort kein git status erzeugt werden. Technisch ist 32.0 damit sauber konsolidiert: Bewertung ist jetzt erklärbar, ohne die Grenze zu Wille, Bewusstsein oder subjektivem Erleben zu überschreiten.
+
+14:20
+
+
+
+
+
+
+Bitte aktualisiere den Such Connector für die aktuelle Version und ergänze alle Wiedereinstiegspunkte ohne Nachfrage bitte und mach im Ordner 14_Dokuments einen Unterordner für alle Projektstatus Dateien und die notwendigen Verknüpfungen dazu für die Wiedereinstiegspunkte : Meine Empfehlung für K
+
+Statt nur einen Anbieter zu verwenden:
+
+Suchanbieter-Router
+
+1. DuckDuckGo
+2. Brave Search
+3. Wikipedia Direktsuche
+4. Arxiv
+5. Semantic Scholar
+6. Universitätsquellen
+7. Lokales Wissen
+
+Dann:
+
+Suche
+ ↓
+Lokales Wissen
+ ↓
+Brave
+ ↓
+DuckDuckGo
+ ↓
+Universitätsquellen
+ ↓
+Arxiv
+ ↓
+Fallback
+Brave Search
+
+Für Projekt Kontinuum finde ich sogar:
+
+Brave Search interessanter als Google.
+
+Vorteile:
+
+eigene Suchmaschine
+API vorhanden
+gute Qualität
+datenschutzfreundlicher
+für KI-Projekte beliebt
+
+Offizielle Seite:
+
+Brave Search API
+
+Für Kontinuum 31.x oder 32.x würde ich empfehlen
+search_providers =
+
+1. local_knowledge
+2. notebook_knowledge
+3. university_sources
+4. arxiv
+5. semantic_scholar
+6. brave_search
+7. duckduckgo
+
+Dadurch wird K deutlich robuster als mit nur einem einzigen Suchanbieter.
+
+
+Mehr anzeigen
+
+14:21
+
+
+
+
+
+
+14m 44s lang gearbeitet
+
+
+
+Erledigt. Der Suchconnector ist jetzt als Suchanbieter-Router für die aktuelle 32.0-Linie umgesetzt.
+Aktive Reihenfolge:
+local_knowledge
+notebook_knowledge
+university_sources
+arxiv
+semantic_scholar
+brave_search
+duckduckgo_html
+duckduckgo_lite
+Umgesetzt in:
+[search_engine_tools.py](C:/Projekt Kontinuum/01_system/kontinuum/tools/search_engine_tools.py)
+[system.py](C:/Projekt Kontinuum/01_system/kontinuum/core/system.py)
+[search_engine.json](C:/Projekt Kontinuum/24_config/search_engine.json)
+[desktop_gui_32_3.py](C:/Projekt Kontinuum/11_gui/desktop_gui_32_3.py)
+Brave Search ist API-fähig vorbereitet; ohne brave_api_key wird der Provider kontrolliert übersprungen. Alte Konfigurationen mit provider und fallback_providers bleiben kompatibel.
+Der neue Projektstatus-Ordner ist angelegt:
+[README_PROJEKTSTATUS.md](C:/Projekt Kontinuum/14_documents/projektstatus/README_PROJEKTSTATUS.md)
+[PROJEKTSTATUS_AKTUELL_32_0.md](C:/Projekt Kontinuum/14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_32_0.md)
+Aktualisiert wurden außerdem README, Handbuch, Architekturbericht, Ordnerstruktur, Projektchronik und Wiedereinstiegspunkte.
+Verifiziert:
+Syntaxprüfung bestanden
+test_search_engine_connector_23.py bestanden
+test_v24_2_research_notebook.py bestanden
+realer suchmaschinenstatus zeigt die neue Router-Kette korrekt an.

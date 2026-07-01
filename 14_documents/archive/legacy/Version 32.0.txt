@@ -1,0 +1,72 @@
+Version 32.0
+
+ch setze 32.0 als Erklärbarkeitserweiterung von 31.0 um: keine neue „Willens“-Schicht, sondern persistierte, auditierbare Herkunftspfade für Motivation-Scores. Ich prüfe zuerst die aktuelle Motivation-/Meaning-Struktur und integriere dann Tabellen, Befehle, GUI, Tests und Dokumentation auf 32.0.
+
+Ich habe die 31.0-Struktur bestätigt: Motivation Core schreibt Scores/Reports, der Foundation Agent kennt die Bewertungsbefehle, und das Selbstmodell zählt bisher Scores und Reports. Jetzt ergänze ich die erklärende Schicht mit eigenen append-only Tabellen und hänge sie an dieselbe Kette.
+
+Die Architekturpunkte sind klar: KontinuumSystem ist der zentrale Einhängepunkt, Storage schützt append-only, und der Foundation Agent ist die richtige Befehlsebene. Ich nehme jetzt die eigentlichen Codeänderungen vor: neue Tabellen, neuer Core, System-/Selbstmodell-Integration und GUI-Befehle.
+
+Ich baue die 32.0-Erklärung absichtlich als eigene Schicht statt als bloßes Feld am Score. So bleiben Bewertung (motivation_scores) und Nachvollziehbarkeit (motivation_explanations/evidence/paths) getrennt, aber auditierbar verbunden.
+
+Ich baue die 32.0-Erklärung absichtlich als eigene Schicht statt als bloßes Feld am Score. So bleiben Bewertung (motivation_scores) und Nachvollziehbarkeit (motivation_explanations/evidence/paths) getrennt, aber auditierbar verbunden.
+
+Ich aktualisiere jetzt die sichtbaren 32.0-Kennzeichnungen. Dabei lasse ich historische Testdateinamen und alte Release-Artefakte natürlich bestehen; geändert werden nur aktive Anzeigen, Statusausgaben und Kompatibilitätsasserts.
+
+Die aktiven 31.0-Reste sind bereinigt. Jetzt bekommt 32.0 einen eigenen Regressionstest: nicht nur “Tabellen existieren”, sondern auch “Befehl erklärt Score”, “Einflüsse abrufbar”, “Selbstmodell sieht die Schicht” und “append-only hält”.
+
+Die aktiven 31.0-Reste sind bereinigt. Jetzt bekommt 32.0 einen eigenen Regressionstest: nicht nur “Tabellen existieren”, sondern auch “Befehl erklärt Score”, “Einflüsse abrufbar”, “Selbstmodell sieht die Schicht” und “append-only hält”.
+
+Die 32.0-Testdatei ist drin. Ich lasse jetzt Syntaxprüfung und die gezielten 31.0/32.0-Regressionen laufen; wenn hier etwas klemmt, ist es meist ein Integrationsdetail, das wir direkt festziehen.
+
+Gezielte Tests sind grün: Syntax, 31.0-Kompatibilität und der neue 32.0-Erklärungstest laufen durch. Jetzt aktiviere ich die Schicht einmal auf dem realen Datenbestand und lese die tatsächlichen Zähler aus, damit Berichte und Wiedereinstiegspunkte keine Wunschzahlen, sondern den echten Stand enthalten.
+
+Die reale Aktivierung ist sauber: 2.154 Scores, 2.154 Erklärungen, 18.385 Evidenzbelege und 2.154 Erklärungspfade. Ich schreibe jetzt die 32.0-Release-Dokumente und aktualisiere Architekturbericht, Projektstand, GUI-Manifest-Verweise und Wiedereinstiegspunkte mit diesen echten Zahlen.
+
+Ich halte die Dokumentationsänderung bewusst kompakt: die historischen 23/24.x-Abschnitte bleiben als Archiv erhalten, der aktive Kopf und die kanonischen Einstiegspunkte bekommen den 32.0-Stand. So wird nichts Altes verfälscht, aber der aktuelle Pfad ist eindeutig.
+
+Bevor ich “alles bestanden” in die Berichte schreibe, lasse ich die komplette Suite laufen. Ich teile sie wieder in Blöcke, weil der Projektkern inzwischen groß genug ist, dass ein einziger Testlauf unnötig timeout-anfällig wäre.
+
+Ich sehe jetzt 40 aktive Testskripte inklusive der neuen 32.0-Regression. Ich starte mit den älteren Architektur-, Dialog-, Lern- und Werkzeugtests, danach kommen die Versionsschichten.
+
+Block 1 ist grün: 10/40. Weiter geht es mit Input, Kernsystem, Wartung, Memory, Meta-Learning, Oracle/Python/Runtime und Suchconnector.
+
+Block 2 ist ebenfalls grün: 20/40. Jetzt folgen die Quellen-/Recherchetests und die Versionen 24.1 bis 27.1.
+
+Block 3 ist durch, damit 29/40. Der letzte Block prüft jetzt 27.2 bis 32.0 plus Winget; das ist der eigentliche Schichtturm von Quellenqualität bis erklärbarer Motivation.
+
+Die komplette aktive Suite ist grün: 39/39 Testskripte. Ich ziehe jetzt noch einmal den Realstatus nach dem Testlauf und schreibe dann die endgültigen 32.0-Dokumente mit genau diesem Abschlussstand.
+
+Der finale Realstand nach allen Tests ist noch dichter geworden: 2.530 Scores, 2.530 Erklärungen, 21.715 Evidenzbelege, 48/48 Chronikeinträge signiert. Ich schreibe diese Zahlen jetzt in die Berichte und Wiedereinstiegspunkte.
+
+Kontinuum 32.0 ist umgesetzt und auf den realen Bestand aktiviert.
+Kernänderung: Der neue Motivation Explanation Core erklärt Motivation-Scores jetzt über gespeicherte Gründe, Meaning-Kanten, Evidenzbelege und Erklärungspfade. Dazu kamen die append-only Tabellen motivation_explanations, motivation_evidence und motivation_paths.
+Aktueller Realstand nach Testlauf:
+Version: 32.0
+Motivation-Scores: 2.530
+Score-Erklärungen: 2.530
+Evidenzbelege: 21.715
+Erklärungspfade: 2.530
+Bedeutungsknoten: 546
+Bedeutungsbeziehungen: 2.270
+Foundation Decision Layer: 161/161
+Chronik: 48/48 signiert
+Kontinuität: intakt
+Schutzgrenzen: 5/5
+offene innere Konflikte: 0
+Neue Befehle sind aktiv:
+motivationserklärungsstatus
+motivationserklärung <Begriff>
+warum score <Begriff>
+erkläre priorität <Begriff>
+wichtige einflüsse <Begriff>
+Aktualisiert wurden unter anderem:
+[motivation_explanation.py](C:/Projekt Kontinuum/01_system/kontinuum/core/motivation_explanation.py)
+[system.py](C:/Projekt Kontinuum/01_system/kontinuum/core/system.py)
+[foundation_agent.py](C:/Projekt Kontinuum/01_system/kontinuum/agents/foundation_agent.py)
+[desktop_gui_32_3.py](C:/Projekt Kontinuum/11_gui/desktop_gui_32_3.py)
+[PROJEKTSTRUKTUR_32_0.md](C:/Projekt Kontinuum/14_documents/PROJEKTSTRUKTUR_32_0.md)
+[EINSTIEGSPUNKTE_NAECHSTE_SITZUNG.md](C:/Projekt Kontinuum/22_project_chronicle/EINSTIEGSPUNKTE_NAECHSTE_SITZUNG.md)
+Tests:
+gezielte 32.0-Regression bestanden
+vollständige aktive Testsuite bestanden: 39/39
+Hinweis: C:\Projekt Kontinuum ist aktuell kein Git-Repository, daher konnte dort kein git status erzeugt werden. Technisch ist 32.0 damit sauber konsolidiert: Bewertung ist jetzt erklärbar, ohne die Grenze zu Wille, Bewusstsein oder subjektivem Erleben zu überschreiten.

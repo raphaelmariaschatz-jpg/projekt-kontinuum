@@ -1,0 +1,20 @@
+letzte Prüfung Version 32.4
+
+Ich prüfe genau diese drei Restpunkte jetzt praktisch, ohne neue Entwicklung zu beginnen: Chronikkomprimierung in einer isolierten temporären Laufzeit, beide Statusprüfer und anschließend eine projektweite 32.3-Vollsuche mit Trennung zwischen historischen, Kompatibilitäts- und problematischen aktiven Treffern.
+
+Beide Statusprüfer funktionieren und melden identisch 32.4, 0 offene Zyklen und „verifiziert“. Der erste Versuch, einen zusätzlichen Inline-Prüfer für die Chronik zu starten, scheiterte an der Shell-Übergabesyntax, bevor Python oder Kontinuum liefen; das ist kein Stream-/Compact-/Disconnect-Fehler. Ich verwende deshalb den bereits vorhandenen isolierten 32.4-Regressionstest und führe parallel dazu die vollständige Trefferklassifikation durch.
+
+Nachprüfung abgeschlossen. Kontinuum 32.4 bleibt VERIFIZIERT.
+Chronikkomprimierung: bestanden. Gespeichert wird ein Ereignis wie Geprüftes Dialogwissen integriert: Fachdialog; kein Dialogvolltext, maximal 220 Zeichen.
+status_check_32_3.py: Exit 0, Status verifiziert.
+status_check_32_4.py: Exit 0, Status verifiziert.
+Foundation-Zyklen: 0 offen.
+Projektweite Altversionssuche: 62 Dateien mit Treffern. Sämtliche aktiven Treffer sind historische Dokumente, Kompatibilitätsweiterleitungen, Regressionstestnamen oder Testdaten. Keine unbeabsichtigte kanonische 32.3-Referenz gefunden.
+Keine Stream-, Compact- oder Disconnect-Fehler.
+Keine Dateien verändert.
+Gesamturteil:
+Version: 32.4
+Risiko: niedrig
+Kritische Fehler: keine
+Status: verifiziert
+Die vorgeschlagenen Entwicklungszweige wurden noch nicht begonnen.

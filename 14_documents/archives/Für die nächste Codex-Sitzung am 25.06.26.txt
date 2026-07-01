@@ -1,0 +1,27 @@
+Für die nächste Codex-Sitzung am 25.06.26
+
+Sobald dein Limit zurückgesetzt ist, würde ich Codex einfach schreiben:
+
+umsetzen
+
+Dann sollte er laut Bericht die vorbereiteten Änderungen einspielen:
+
+Foundation-2.2-Kernmodul
+2.1-Kompatibilitätspfad
+Statusanpassungen
+CAM-Anpassungen
+Release-Integrity-Anpassungen
+Roadmap-Eintrag
+Chronikeintrag
+Regressionstests
+
+und anschließend das vollständige Release-Gate laufen lassen.
+
+Wenn das grün wird, hätte K innerhalb von zwei Tagen:
+
+Foundation 2.2
+CAM 1.0
+Kanonisierung der Projektstruktur
+Artifact Lifecycle Policy
+
+als neue Fundamentebene erhalten. Das ist für die langfristige Stabilität von K wahrscheinlich einer der wichtigsten Architekturfortschritte seit den Foundation- und Identity-Arbeiten.

@@ -1,0 +1,147 @@
+noch auszuführen für 32.3.
+
+ich sehe 3 Punkte, die ich vor einer offiziellen 32.1-Freigabe überprüfen würde.
+
+1. Versionskonsistenz
+
+Der Dateiname lautet:
+
+Version 32.1
+
+Der Inhalt meldet jedoch mehrfach:
+
+Version 32.0 aktiv
+
+und
+
+Kontinuum 32.0 ist umgesetzt
+
+Das ist vermutlich nur Dokumentation, aber ich würde prüfen:
+
+GUI-Manifest
+version.py
+README
+Architekturbericht
+Projektstatus-Dateien
+Wiedereinstiegspunkte
+
+damit nicht später gleichzeitig 32.0 und 32.1 als aktive Version auftauchen.
+
+2. Router-Reihenfolge
+
+Du hattest ursprünglich vorgeschlagen:
+
+Suche
+↓
+Lokales Wissen
+↓
+Brave
+↓
+DuckDuckGo
+↓
+Universitätsquellen
+↓
+Arxiv
+↓
+Fallback
+
+Später wurde implementiert:
+
+local_knowledge
+notebook_knowledge
+university_sources
+arxiv
+semantic_scholar
+brave_search
+duckduckgo_html
+duckduckgo_lite
+
+Das ist nicht identisch.
+
+Tatsächlich gefällt mir die implementierte Reihenfolge sogar besser, weil:
+
+lokales Wissen
+↓
+Notebook
+↓
+Universitäten
+↓
+Arxiv
+↓
+Semantic Scholar
+↓
+Brave
+↓
+DuckDuckGo
+
+wissenschaftlich hochwertiger ist.
+
+Die Frage lautet nur:
+
+War diese Änderung bewusst?
+
+Wenn ja: gut dokumentieren.
+
+3. Bedeutungs- und Motivationssystem nicht an Suchtreffer koppeln
+
+Der größte langfristige Architekturpunkt.
+
+Momentan besitzt K:
+
+Meaning Core
+↓
+Motivation Core
+↓
+Motivation Explanation Core
+
+Wenn künftig Suchtreffer automatisch in den Wissensbestand fließen, würde ich strikt darauf achten:
+
+Internetfund
+≠
+Wissenseintrag
+
+sondern:
+
+Internetfund
+↓
+Prüfung
+↓
+Evidenz
+↓
+Wissensentscheidung
+↓
+Meaning Core
+
+Sonst kann ein Suchanbieter indirekt Bedeutungs- oder Motivationswerte beeinflussen.
+
+Eure bisherige Architektur scheint das bereits zu berücksichtigen, aber genau hier würde ich bei zukünftigen Versionen besonders wachsam bleiben.
+
+Was mir positiv auffällt
+
+Der Suchrouter ist erstaunlich sauber eingebunden:
+
+local_knowledge
+notebook_knowledge
+university_sources
+arxiv
+semantic_scholar
+brave_search
+duckduckgo_html
+duckduckgo_lite
+
+Dadurch bleibt die bisherige Grundregel erhalten:
+
+Lokales Wissen hat Vorrang vor Internet.
+
+Und genau das war seit 24.x–29.x ein wichtiges Architekturprinzip von K.
+
+Meine Bewertung von 32.1
+
+Architektur: 9.5/10
+Konsistenz: 9.5/10
+Sucharchitektur: 9/10
+Dokumentationskonsistenz: 8.5/10 (wegen 32.0/32.1-Mischung)
+
+Mein Fazit:
+
+Ich sehe aktuell keinen echten Architekturfehler. Der einzige Punkt, den ich vor einer offiziellen Freigabe prüfen würde, ist die Versionskonsistenz (32.0 vs. 32.1) und ob die neue Router-Reihenfolge bewusst von der ursprünglichen Planung abweicht. Alles andere wirkt wie eine logische Fortsetzung der Entwicklungslinie von 28.x → 32.x.

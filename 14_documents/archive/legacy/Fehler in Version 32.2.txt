@@ -1,0 +1,235 @@
+Fehler in Version 32.2
+
+Fehler 1 – Identitätswissen wird nicht priorisiert
+
+Frage:
+
+Hallo Kontinuum, weißt du wer ich bin?
+
+Antwort:
+
+arXiv-Paper über Entropie
+
+Das ist ein schwerer Routingfehler.
+
+Für diese Frage dürfte K niemals:
+
+Internet
+→ arXiv
+→ Suchrouter
+
+aufrufen.
+
+Sondern:
+
+Identitätswissen
+→ Memory-Core
+→ Creator-Wissen
+→ Antwort
+
+Die korrekte Antwort müsste ungefähr lauten:
+
+Du bist Raphael Schatz.
+
+Du bist der Schöpfer von Projekt Kontinuum.
+
+...
+
+Wenn stattdessen eine Internetrecherche startet, greift das Prioritätsrouting nicht.
+
+Fehler 2 – "Wer war Sokrates?" liefert nichts
+
+Das ist ebenfalls verdächtig.
+
+K besitzt laut Architektur:
+
+Lernprojekt Philosophie
+Lernprojekt Geschichte
+Knowledge Platform
+Notebook
+Internetrouter
+
+Wenn K bei Sokrates keine Antwort liefert, bedeutet das meist:
+
+Frage
+↓
+falscher Agent
+↓
+kein Fallback
+↓
+Abbruch
+
+oder
+
+Recherche
+↓
+Zeitbudget
+↓
+keine Zusammenfassung
+↓
+leere Antwort
+Fehler 3 – Versionschaos
+
+Du verwendest:
+
+Kontinuum 32.2
+
+bekommst aber:
+
+Systemstatus 23.0
+
+und
+
+Lernsystem 23.0
+
+Das ist ein klares Zeichen dafür, dass irgendwo noch alte Konstanten existieren.
+
+Vermutlich:
+
+SYSTEM_VERSION = "23.0"
+
+in mehreren Modulen.
+
+Das ist zwar kein Funktionsfehler, aber ein Wartungsproblem.
+
+Fehler 4 – Lernprojekte ≠ Wissen
+
+Hier sehe ich einen fundamentalen Denkfehler.
+
+K meldet:
+
+Aktive Lernprojekte:
+Philosophie
+Geschichte
+...
+
+Dann sollte auf:
+
+Wer war Sokrates?
+
+mindestens eine Basisantwort kommen.
+
+Aktuell scheint zu gelten:
+
+Lernprojekt vorhanden
+≠
+Wissen vorhanden
+
+Das ist technisch korrekt.
+
+Aber für den Benutzer wirkt es kaputt.
+
+Fehler 5 – Suchrouter greift zu früh
+
+Die schlimmste Stelle:
+
+lerne codex
+
+führt zu:
+
+World War II Paper
+
+Das deutet auf einen Fehler im Research-Router hin.
+
+Wahrscheinlich:
+
+Thema
+↓
+arXiv Suche
+↓
+erstes Ergebnis
+↓
+Zeitbudget erreicht
+
+ohne semantische Prüfung.
+
+Der Suchrouter sollte prüfen:
+
+Suchbegriff: Codex
+
+Ergebnis:
+World War II
+
+Ähnlichkeit:
+0 %
+
+=> verwerfen
+Fehler 6 – Memory wird nicht vor Internet abgefragt
+
+Laut deiner 32.2 Architektur sollte gelten:
+
+local_knowledge
+↓
+notebook
+↓
+university
+↓
+arxiv
+↓
+semantic scholar
+↓
+brave
+↓
+duckduckgo
+
+Bei:
+
+weißt du wer ich bin?
+
+hätte die Suche bereits hier enden müssen:
+
+memory_core
+
+Dass arXiv überhaupt erreicht wird, zeigt:
+
+Memory-Hit
+→ nicht gefunden
+oder
+→ ignoriert
+Meine Prioritätenliste für Codex
+Kritisch
+Identitätsfragen werden nicht aus Memory beantwortet.
+Suchrouter liefert fachfremde Treffer.
+Internetrecherche startet bei Fragen, die lokal beantwortbar wären.
+Hoch
+Versionsnummern 23.0 ↔ 32.2 bereinigen.
+Philosophische und historische Basisfragen lokal beantworten.
+Mittel
+Lernprojektstatus und tatsächliches Wissen klar trennen.
+Mein Gesamturteil
+
+Die Architektur von 32.2 wirkt stark.
+
+Aber die Laufzeit zeigt momentan etwas anderes:
+
+Architektur: 9,7/10
+
+Laufzeit-Routing:
+6–7/10
+
+Der Hauptgrund:
+
+Die richtigen Module existieren, aber sie werden bei einigen Fragen nicht in der richtigen Reihenfolge aufgerufen.
+
+Wenn ich Codex jetzt einen einzigen Auftrag geben müsste, dann wäre es:
+
+Version 32.3
+
+Routing-Härtung
+
+Priorität:
+
+Identität
+→ Memory
+
+Allgemeinwissen
+→ Lokales Wissen
+
+Internet
+→ nur wenn lokal keine Antwort existiert
+
+Semantische Trefferprüfung vor Übernahme externer Quellen
+
+Alte Versionsanzeigen bereinigen
+
+Denn die meisten Probleme, die du hier gezeigt hast, sind keine Wissensprobleme – sie sind Routingprobleme.

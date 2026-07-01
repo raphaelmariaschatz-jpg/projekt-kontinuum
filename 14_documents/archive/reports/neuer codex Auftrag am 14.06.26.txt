@@ -1,0 +1,89 @@
+14.06.26
+
+neuer Auftrag für Codex:
+
+offene „Memory Layer“ für KI-Agenten: Sie speichert relevante Fakten, Präferenzen und Beziehungen aus Gesprächen und macht sie später wieder abrufbar; die Open-Source-Version ist für Self-Hosting gedacht.
+
+Für Kontinuum würde ich es nicht 1:1 übernehmen, sondern als eigenes Modul bauen:
+
+Kontinuum Memory-Core
+Ziel
+
+Kontinuum soll nicht nur Chatverläufe speichern, sondern erkennen:
+
+Was ist wichtig?
+Was ist dauerhaft gültig?
+Was ist nur ein Tagesereignis?
+Was widerspricht altem Wissen?
+Was gehört zu Raphael?
+Was gehört zum Projekt?
+Was gehört zu einer Quelle?
+Architektur für Kontinuum
+01 Kurzzeitgedächtnis
+→ aktuelle Sitzung
+
+02 Episodisches Gedächtnis
+→ Chatverläufe, Ereignisse, Tests, Fehler, Entscheidungen
+
+03 Fakten-Gedächtnis
+→ stabile Aussagen: Creator, Versionen, Module, Regeln
+
+04 Projekt-Gedächtnis
+→ Kontinuum-Chronik, Roadmap, offene Bugs, Releases
+
+05 Quellen-Gedächtnis
+→ PDFs, Webseiten, Notebook-Quellen
+
+06 Beziehungs-Gedächtnis
+→ Verknüpfungen im Wissensgraphen
+Sehr wichtig
+
+Ich würde zusätzlich etwas einbauen, das mem0 nicht immer sauber löst:
+
+Memory-Prüfer
+
+Der entscheidet:
+
+speichern
+aktualisieren
+verwerfen
+als unsicher markieren
+mit bestehendem Wissen verknüpfen
+alten Eintrag ersetzen
+
+Beispiel:
+
+Version 24.1 ist umgesetzt
+
+wird nicht einfach als Text gespeichert, sondern als strukturierter Eintrag:
+
+{
+  "projekt": "Kontinuum",
+  "version": "24.1",
+  "status": "umgesetzt",
+  "tests": "bestanden",
+  "offen": "externer Webrecherche-Test überschreitet 3 Minuten"
+}
+Mein Vorschlag für Version 24.2 oder 25
+Kontinuum Memory-Core 1.0
+
+mit diesen Befehlen:
+
+merke dir ...
+was weißt du über ...
+zeige projekterinnerungen
+zeige offene punkte
+aktualisiere erinnerung ...
+vergiss ...
+verknüpfe erinnerungen
+prüfe widersprüche
+Fazit
+
+Ja: eine Open-Source-Alternative ähnlich mem0 wäre perfekt für Kontinuum.
+
+Noch besser gesagt:
+
+mem0 = allgemeines KI-Gedächtnis
+Kontinuum Memory-Core = lokales, projektbewusstes, prüfbares Langzeitgedächtnis
+
+Das wäre genau der nächste logische Kernbaustein nach 24.1.

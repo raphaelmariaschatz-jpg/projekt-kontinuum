@@ -1,0 +1,217 @@
+Empfehlung chatgpt für 15.06.26
+
+Raphael,
+
+ich habe den Architekturbericht gelesen. Das ist inzwischen kein kleiner Prototyp mehr, sondern ein recht umfangreiches lokales Assistenzsystem.
+
+Besonders interessant ist, dass der Bericht viele der Kritikpunkte enthält, die inzwischen laut deinem Fortschrittsbericht bereits behoben wurden:
+
+Argon2id statt SHA-256
+priorisiertes Routing
+getrennte Archivsuche
+Winget-Härtung
+Wissensnotizbuch
+Memory-Core 1.0
+asynchrone Webrecherche mit Budgets und Teilantworten
+
+Diese Punkte werden im Update-Abschnitt ausdrücklich als umgesetzt genannt.
+
+Meine Einschätzung von Kontinuum 24.2
+
+Wenn ich den Bericht und deine letzten Fortschrittsmeldungen zusammenführe, sehe ich derzeit folgende Reifestufe:
+
+Phase 1
+Grundsystem
+✓ abgeschlossen
+
+Phase 2
+Agentensystem
+✓ abgeschlossen
+
+Phase 3
+Lernen + Wissensgraph
+✓ abgeschlossen
+
+Phase 4
+Notebook-System
+✓ abgeschlossen
+
+Phase 5
+Memory-Core
+✓ abgeschlossen
+
+Phase 6
+Konsolidierung
+→ aktueller Stand
+
+Das ist wichtig.
+
+Viele Projekte scheitern, weil sie immer neue Funktionen hinzufügen.
+
+Kontinuum nähert sich langsam dem Punkt:
+
+weniger neue Module
+mehr Integration
+Was mir im Bericht besonders auffällt
+Die Datenbank wächst bereits
+
+Aktuell:
+
+events: 1305
+graph_edges: 362
+memories: 290
+sources: 190
+
+Das ist noch klein.
+
+Aber es zeigt:
+
+Kontinuum produziert inzwischen echtes Wissen.
+
+Nicht mehr nur Chattexte.
+
+Der Wissensgraph beginnt interessant zu werden
+graph_edges = 362
+
+Mit dem Memory-Core könnte daraus später entstehen:
+
+Raphael
+↓
+Projekt Kontinuum
+↓
+Version 24.2
+↓
+Wissensnotizbuch
+↓
+Memory-Core
+↓
+offene Punkte
+↓
+Quellen
+
+Dann wird Wissen nicht nur gespeichert, sondern vernetzt.
+
+Der größte noch offene Architekturpunkt
+
+Für mich ist das hier:
+
+Der generische SQLite-Datenentwurf verwendet weiterhin viel JSON-Metadaten ohne formale Schema-Migrationen.
+
+Das ist typisch für frühe Projekte.
+
+Am Anfang ist es flexibel.
+
+Später wird es gefährlich.
+
+Aktuell:
+
+id
+kind
+content
+metadata(JSON)
+created_at
+
+Für Version 25 würde ich anfangen mit:
+
+memory_entries
+sources
+project_events
+learning_tasks
+knowledge_nodes
+knowledge_edges
+
+als echte Fachtabellen.
+
+Was ich für Version 25.0 empfehlen würde
+
+Nicht:
+
+neue Agenten
+neue Menüs
+neue Befehle
+
+sondern:
+
+Kontinuum 25.0 – Foundation Release
+1
+
+Schema-Migrationen
+
+db_version
+migration_runner
+rollback
+2
+
+Memory-Core 1.1
+
+Zusätzliche Felder:
+
+importance
+confidence
+last_verified
+source_count
+3
+
+Notebook-Ausbau
+
+PDF-Unterstützung fest integrieren.
+
+Der Bericht nennt pypdf aktuell noch als optional.
+
+Das würde ich fest einbauen.
+
+4
+
+Wissensgraph visualisieren
+
+Das wäre ein riesiger Gewinn.
+
+Neue GUI:
+
+Wissensgraph anzeigen
+
+mit:
+
+Raphael
+Projekt Kontinuum
+Versionen
+Quellen
+Erinnerungen
+Beziehungen
+
+als Graph.
+
+5
+
+Projektchronik automatisch erzeugen
+
+Aktuell dokumentierst du vieles manuell.
+
+Mit dem Memory-Core könnte Kontinuum künftig selbst schreiben:
+
+Version 24.1:
+Routing repariert
+
+Version 24.2:
+Wissensnotizbuch
+Memory-Core
+Asynchrone Recherche
+
+vollautomatisch.
+
+Mein Gesamturteil
+
+Der Bericht beschreibt inzwischen kein Experiment mehr, sondern eine recht klar strukturierte lokale Plattform.
+
+Der entscheidende Unterschied zu vor einigen Wochen:
+
+Früher:
+Kontinuum beantwortet Fragen.
+
+Heute:
+Kontinuum speichert Wissen,
+ordnet Wissen,
+verknüpft Wissen,
+historisiert Wissen.
+
+Das ist genau die Richtung, die du von Anfang an verfolgt hast: Nicht nur ein Chatfenster, sondern ein System mit Kontinuität über Versionen, Quellen, Erinnerungen und Projektgeschichte hinweg.

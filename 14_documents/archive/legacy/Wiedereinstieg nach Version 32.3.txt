@@ -1,0 +1,12 @@
+Wiedereinstieg nach Version 32.3
+
+32.3 ist hiermit als verbindlicher Ist-Stand bestätigt. Ich ändere keine Projektdateien. Für die praktische Prüfung nutze ich vorhandene Regressionen und, wo nötig, isolierte temporäre Laufzeitdaten, damit der aktive Datenbestand und die Chronik unangetastet bleiben. Zuerst prüfe ich die Testabdeckung und die tatsächlichen Seiteneffekte der vorgesehenen Prüfwege.
+
+Der dokumentierte Pfad 13_tools\status_check_32_3.py existiert nicht; das ist bereits eine Auffälligkeit der Dokumentation, kein Stream-/Compact-/Disconnect-Fehler. Ich verwende ihn daher nicht und prüfe weiter über die vorhandenen 32.3-Regressionen. Noch wurde nichts ausgeführt oder verändert.
+
+Die acht 32.3-Tests verwenden überwiegend temporäre Projektwurzeln; ich deaktiviere zusätzlich Python-Bytecode-Schreibzugriffe. Vor dem Lauf mache ich die vereinbarte Altversionssuche in den aktiven Laufzeit- und Einstiegspfaden. Anschließend führe ich nur die gezielten Regressionen aus—nicht den potenziell schreibenden Live-Statuslauf gegen 32_data.
+
+Die acht gezielten Runtime-Regressionen sind vollständig grün. Zwei Punkte brauchen noch eine eigene Bewertung: Die Chronik-Kompaktheit ist nicht Teil dieser acht Tests, und die Altversionssuche fand zwei ältere Projektstatusdateien, die sich weiterhin selbst als „aktiv“ bezeichnen. Ich prüfe jetzt beide Punkte ausschließlich lesend im Code und in der Testabdeckung.
+
+Auch die isolierten Fundament-Regressionen sind grün. Der technische Kern erfüllt Creator- und Prinzipienprüfung; die verbleibenden Auffälligkeiten liegen in der Chronik-Kompaktheit und Dokumentationsmigration. Ich prüfe abschließend nur noch, ob der Projektbaum als Git-Arbeitsbaum unerwartete Änderungen meldet—ohne etwas zurückzusetzen oder anzufassen.
+

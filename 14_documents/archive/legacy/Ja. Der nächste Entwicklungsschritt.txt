@@ -1,0 +1,11 @@
+Ja. Der nächste Entwicklungsschritt ist ein quellenbasiertes Internet-Recherchesystem:
+Jede Sachfrage automatisch erkennen.
+Zuerst mehrere Internetquellen suchen.
+Quellen abrufen, vergleichen und bewerten.
+Antwort ausschließlich aus belegbaren Fundstellen erstellen.
+Quellenlinks und Unsicherheit anzeigen.
+Persönliche Fragen, Befehle und lokale Systemfragen von der Websuche ausnehmen.
+Bei fehlendem Internetzugriff ehrlich abbrechen statt Antworten zu erfinden.
+Dafür benötigt Kontinuum zunächst einen echten Suchmaschinen-Connector. Danach können Recherche-Agent, Quellenbewertung, Antwortsynthese und Tests integriert werden.
+
+Der nächste Schritt ist, gefundene Quellen automatisch abzurufen, zu vergleichen und daraus belegte Antworten zu erstellen.

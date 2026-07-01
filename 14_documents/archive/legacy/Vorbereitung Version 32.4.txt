@@ -1,0 +1,143 @@
+Vorbereitung Version 32.4
+
+Erstelle Version 32.4 ausschließlich als Verifikations- und Dokumentationsversion.
+
+Pflichtpunkte:
+1. Chronikeinträge vor Speicherung ereignisbasiert komprimieren.
+2. Historische Projektstatusdateien eindeutig als historisch markieren.
+3. Fehlenden status_check_32_3.py entweder wiederherstellen oder alle Verweise entfernen.
+4. Versionskonsistenztest auf aktive Dokumentations-, Start-, GUI-, Manifest- und Einstiegspfade erweitern.
+5. 48er-Regression vollständig ausführen und dokumentieren.
+6. Keine neuen Funktionsmodule beginnen.
+7. Keine interne Fehlerprüfung, kein Context/Intent Core, keine Sprach-zu-Code-Funktion und kein Security Core vor Abschluss von 32.4.
+
+Behandle 32.4 als vollständige Inhalts-, Struktur- und Pfadmigration.
+Erstelle danach einen Abschlussbericht mit:
+- geänderten Dateien
+- Testergebnissen
+- verbleibenden offenen Punkten
+- neuer kanonischer Wiedereinstiegspunkt-Datei
+
+Ich setze 32.4 jetzt als reine Verifikations- und Dokumentationsmigration um—ohne neue Funktionskerne. Vor der ersten Änderung laufen gemäß deiner Regel die vollständige Altversionsprüfung, der bestehende Versionskonsistenztest und der komplette 48er-Regressionslauf. Erst bei grünem Ausgang beginne ich die Migration.
+
+Die Altversionssuche hat erwartungsgemäß die beiden falsch als aktiv bezeichneten historischen Statusdateien gefunden; der bestehende 32.3-Konsistenztest ist grün. Der vollständige 48er-Lauf läuft jetzt. Bis zu seinem Abschluss beginne ich keine Änderung.
+
+Der vollständige Lauf dauert deutlich länger als die gezielten Regressionen, ist aber weiterhin aktiv und hat keinen Stream-, Compact- oder Disconnect-Fehler gemeldet. Ich lasse ihn kontrolliert bis zum echten Abschluss laufen.
+
+Vorprüfung abgeschlossen: Altversionsbefunde dokumentiert, bestehender Konsistenztest grün, vollständige Baseline 48/48 grün. Ich beginne nun die 32.4-Migration. Sie bleibt strikt auf Chronikkomprimierung, Versions-/Pfadkonsistenz, Prüfwerkzeug, Dokumentation und Tests begrenzt.
+
+Die 32.4-Zielpfade sind als Kopien angelegt; der 32.3-Stand bleibt gesichert. Jetzt kommt die einzige funktionale Änderung dieser Version: Chronikeinträge werden vor Speicherung in ein kurzes, ereignisbasiertes Format überführt. Danach migriere ich ausschließlich Versions- und Dokumentationspfade.
+
+Die Kernmigration ist umgesetzt: APP_VERSION, Chronikkomprimierung, 32.4-GUI/Manifest/Startpfade, Statusprüfer, historische Statuskennzeichnung, Release- und Wiedereinstiegsdateien. Ich führe jetzt die verbindliche Konsistenzsuche aus und bereinige ausschließlich noch aktive 32.3-Pfade; historische Release- und Herkunftsdokumente bleiben unverändert.
+
+Der erweiterte 32.4-Konsistenztest ist grün, der neue read-only Statusprüfer meldet 0 offene Foundation-Zyklen und „verifiziert“. Die Suite enthält weiterhin exakt 48 Tests. Jetzt läuft der kanonische 32.4-Abschlusslauf über alle 48 Skripte.
+
+Der 32.4-Abschlusslauf ist weiterhin aktiv; wie bei der Baseline braucht die vollständige Suite mehrere Minuten. Bislang kein Stream-, Compact- oder Disconnect-Fehler.
+
+Der Abschlusslauf ist nicht grün: 46 Tests bestanden, zwei historische Regressionen greifen noch fest auf GUI_32_3_MANIFEST.json zu und vergleichen es nun korrekt gegen APP_VERSION 32.4. Das ist ein Pfadmigrationsfehler in den Tests, kein Runtime-Funktionsfehler und kein Stream-/Compact-/Disconnect-Fehler. Ich korrigiere ausschließlich diese beiden Testpfade auf das kanonische 32.4-Manifest und wiederhole danach den vollständigen Lauf. Bis dahin gilt 32.4 als nicht abgeschlossen.
+
+Der zweite vollständige Lauf läuft stabil weiter. Die zuvor fehlgeschlagenen Motivation-/Manifesttests waren im gezielten Nachlauf bereits grün; jetzt zählt nur noch der vollständige Abschlussstatus.
+
+Der zweite vollständige Abschlusslauf ist grün: 48/48. Kein Stream-, Compact- oder Disconnect-Fehler. Ich trage jetzt ausschließlich dieses verifizierte Ergebnis in Release, Status, Architektur und Wiedereinstieg ein; danach folgen noch einmal der erweiterte Konsistenztest, der read-only Statusprüfer und die finale Altversionssuche.
+
+32.4 ist jetzt vollständig verifiziert: 48/48 im finalen Gesamtlauf, erweiterter Konsistenztest grün, read-only Statusprüfung grün, 0 offene Foundation-Zyklen. Die Sperrsuche fand keine neu begonnenen Funktionskerne für interne Fehlerprüfung, Context/Intent, Sprach-zu-Code oder Security. Ich erstelle jetzt nur noch den Abschlussbericht.
+
+Version 32.4 ist abgeschlossen und verifiziert. Keine neuen Funktionskerne wurden begonnen.
+Testergebnisse
+Baseline vor Änderungen: 48/48 bestanden
+Erster Abschlusslauf: 46/48; zwei alte GUI-Manifestpfade gefunden
+Korrigierter Abschlusslauf: 48/48 bestanden
+Erweiterte Versions-/Pfadkonsistenz: bestanden
+Read-only Statusprüfung: bestanden
+Foundation-Zyklen: 0 offen
+Keine Stream-, Compact- oder Disconnect-Fehler
+Wesentliche Änderungen
+APP_VERSION auf 32.4 migriert.
+Chronikeinträge werden vor Speicherung ereignisbasiert auf maximal 220 Zeichen komprimiert.
+Statusdateien 32.0, 32.2 und 32.3 eindeutig als historisch markiert.
+status_check_32_4.py ergänzt; status_check_32_3.py als Weiterleitung wiederhergestellt.
+GUI, Manifest, Start-, Test-, Status-, Dokumentations- und Einstiegspfade auf 32.4 migriert.
+Versionskonsistenztest erweitert; alter 32.3-Test ersetzt.
+Geänderte Bereiche:
+01_system\kontinuum\version.py
+01_system\kontinuum\core\knowledge_platform.py
+11_gui\desktop_gui_32_4.py
+11_gui\GUI_32_4_MANIFEST.json
+13_tools\status_check_32_3.py
+13_tools\status_check_32_4.py
+alle kanonischen 16_installation\*_32_4.bat sowie 23-/32.3-Weiterleitungen
+README, Handbuch, Ordnerstruktur und Architekturbericht
+Projektstatusdateien 32.0, 32.2, 32.3 und 32.4
+Projektchronik, Releasebericht und Wiedereinstiege
+Motivation-Regressionen und neuer 32.4-Konsistenztest
+entfernt: test_v32_3_version_consistency.py
+Sicherung: 09_backups\version32_4_verification_prechange_20260618
+Verbleibende offene Punkte
+Keine offenen Punkte innerhalb des 32.4-Pflichtumfangs. Interne Fehlerprüfung, Context/Intent Core, Sprach-zu-Code und Security Core bleiben bewusst für spätere Versionen gesperrt.
+Neuer kanonischer Wiedereinstieg:
+
+# Projekt Kontinuum 32.4 - Kanonischer Wiedereinstiegspunkt
+
+Stand: 2026-06-18
+
+## Verbindlicher Ist-Stand
+
+Kontinuum 32.4 ist ausschließlich eine Verifikations- und
+Dokumentationsversion. Es wurden keine neuen Funktionsmodule begonnen.
+
+```text
+Foundation Layer
+-> Meaning Core
+-> Motivation Core
+-> Motivation Explanation Core
+-> Temporal Relevance Core
+-> Runtime Hardening
+-> Verification / Documentation Migration 32.4
+```
+
+## Verifizierte 32.4-Punkte
+
+- zentrale `APP_VERSION`: 32.4
+- Identitätsrouting und Creator-Erkennung bleiben lokal geschützt
+- Knowledge Contamination Guard bleibt aktiv
+- neue Knowledge-Platform-Chronikeinträge sind kurze Ereignisse ohne
+  kopierten Dialog- oder Quellvolltext
+- historische Statusdateien 32.0, 32.2 und 32.3 sind als historisch markiert
+- GUI-, Manifest-, Start-, Test-, Status- und Dokumentationspfade zeigen auf
+  32.4
+- `13_tools\status_check_32_4.py` prüft Pflichtpfade und Foundation-Zyklen
+  read-only
+- Baseline vor Migration: 48/48 aktive Testskripte bestanden
+- Abschlusslauf: 48/48 aktive Testskripte bestanden
+- kein Stream-, Compact- oder Disconnect-Fehler; Stand verifiziert
+
+## Kanonischer Start
+
+```text
+16_installation\START_GUI_32_4.bat
+16_installation\START_KONTINUUM_32_4.bat <Befehl>
+16_installation\TEST_KONTINUUM_32_4.bat
+python 13_tools\status_check_32_4.py
+```
+
+## Aktive Referenzen
+
+```text
+README.md
+14_documents\HANDBUCH_23.md
+14_documents\ORDNERSTRUKTUR_23.md
+14_documents\PROJEKTSTRUKTUR_32_4.md
+14_documents\projektstatus\PROJEKTSTATUS_AKTUELL_32_4.md
+14_documents\projektstatus\README_PROJEKTSTATUS.md
+22_project_chronicle\RELEASE_32_4_VERIFICATION_DOCUMENTATION.md
+22_project_chronicle\PROJEKTCHRONIK_23.md
+31_reports\ARCHITEKTURBERICHT_PROJEKT_KONTINUUM_23.md
+```
+
+## Verbindliche Grenze
+
+Vor Abschluss von 32.4 werden keine interne Fehlerprüfung, kein Context/Intent
+Core, keine Sprach-zu-Code-Funktion und kein Security Core begonnen.
+
+Bei Stream-, Compact- oder Disconnect-Fehlern gilt der Stand als nicht
+verifiziert.

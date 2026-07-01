@@ -1,0 +1,55 @@
+Bitte nur den offenen CAM-1.4-Release-Gate-Blocker beheben 26.06.26
+
+Änderung:
+In 24_config/release_integrity_34_1.json unter allowed_legacy_paths ergänzen:
+
+24_config/canonical_artifacts_34_1.json
+
+Begründung:
+Dieses Manifest referenziert legitimerweise ein historisches Archivartefakt:
+PROJEKTSTRUKTUR_34_0.md
+
+Keine weiteren Änderungen.
+Keine Aufräumaktionen.
+Keine Artefakte verschieben oder löschen.
+
+Danach ausführen:
+- status_check_34_1.py
+- vollständiges Release-Integrity-Gate
+
+Bitte berichten:
+- geänderte Datei
+- Testergebnis
+- Release-Gate Ergebnis
+
+Meine Einschätzung: Freigeben.
+CAM 1.4 selbst ist gate-fähig; es fehlt nur die formale Anerkennung dieses legitimen Archivverweises.
+
+Ich mache genau diesen einen Gate-Blocker: erst die Konfigurationsstelle prüfen, dann minimal patchen, danach die zwei verlangten Prüfungen laufen lassen. Keine Aufräumrunde, kein Verschieben.
+
+Der erste Zugriff wurde durch die Sandbox abgebrochen, weil C:\Projekt Kontinuum außerhalb des aktuellen schreibbaren Arbeitsordners liegt. Ich setze jetzt mit expliziter Freigabe für genau diesen Projektpfad fort und halte die Änderung auf den einen JSON-Eintrag begrenzt.
+
+Die Datei enthält allowed_legacy_paths, und der gewünschte Eintrag fehlt dort tatsächlich. Ich füge ihn direkt nach 24_config/canonical_architecture_34_1.json ein, damit die Liste logisch beisammen bleibt.
+
+Der erste Schreibversuch war zu vorsichtig: der Pfad existiert bereits an anderer Stelle unter required_paths, daher hat die Schutzprüfung die Legacy-Liste nicht berührt. Ich korrigiere das jetzt präzise auf den Block allowed_legacy_paths.
+
+Ich sehe den Fehler: In der PowerShell-Zeichenkette waren die Anführungszeichen unnötig escaped, dadurch passte der Suchtext nicht exakt. Jetzt kommt die kleine, echte Änderung.
+
+Der Block nutzt offenbar andere Zeilenenden als die PowerShell-Ersetzung erwartet. Ich nehme jetzt eine zeilenenden-tolerante Regex, weiterhin nur für genau diese Stelle vor dem Ende von allowed_legacy_paths.
+
+Die Konfigurationsänderung sitzt jetzt an der gewünschten Stelle. Ich starte als Nächstes den Status-Check und danach das vollständige Release-Gate über das vorhandene RELEASE_GATE_34_1.bat.
+
+Der Status-Check läuft jetzt durch, meldet aber noch NICHT VERIFIZIERT. Ich führe trotzdem das vollständige Release-Integrity-Gate aus, damit wir die konkrete Gate-Diagnose sehen statt nur das zusammenfassende Nein.
+
+Das vollständige Gate ist jetzt grün und hat die Freigabe gesetzt. Weil der Status-Check vor dem Gate noch den alten Verifikationsstand gesehen hat, lasse ich ihn noch einmal laufen, damit das berichtete Testergebnis den finalen Zustand widerspiegelt.
+
+Erledigt.
+Geänderte Datei: [release_integrity_34_1.json](C:/Projekt Kontinuum/24_config/release_integrity_34_1.json)
+Änderung: 24_config/canonical_artifacts_34_1.json unter allowed_legacy_paths ergänzt.
+Testergebnis: status_check_34_1.py bestanden
+Status: VERIFIZIERT
+Freigabe: JA
+Release-Gate Ergebnis: vollständiges RELEASE_GATE_34_1.bat bestanden
+Alle Gate-Schritte bestanden, inklusive Canonical Artifact Manager 1.4 und CAM 1.1 Artifact Lifecycle Policy.
+Nachweis: C:\Projekt Kontinuum\31_reports\release_integrity\34.1\release_gate.json
+Einschätzung bestätigt: freigeben.

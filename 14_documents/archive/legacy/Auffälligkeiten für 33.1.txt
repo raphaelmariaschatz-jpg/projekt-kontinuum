@@ -1,0 +1,53 @@
+Auffälligkeiten für 33.0.1 oder 34.0:
+
+„Versionsinfo?“ wird falsch geroutet
+Mit Fragezeichen landet es im Such-/Memorypfad. Ohne Fragezeichen scheint es später nur als Gedanke aufgenommen zu werden. Das muss ein eigener lokaler Systemhandler werden.
+Lernprojekte sind überwiegend leer
+Viele Lernprojekte sind aktiv, aber mit 0 Wissenseinheiten und „Abrufbare Basisantworten: nein“. Das ist kein Fehler der Diagnose, aber ein klarer nächster Entwicklungsbereich.
+„suche Mathematik“ liefert wieder Struktur-/Altpfadfragmente
+Das sollte perspektivisch sauberer zwischen echter Wissensantwort, aktiver Suche und Altversions-/Archivtreffern trennen.
+Motivationsprioritäten sind noch zu technisch
+Die Ausgabe central_meaning_relation | rahmt Handlung | Zentralität... ist intern korrekt, aber für dich als Benutzer noch nicht erklärend genug.
+
+Gesamturteil:
+
+Version: 33.0
+Status: real weitgehend verifiziert
+Kritische Fehler: 0
+Offene Verbesserungen: 4
+Nächster sinnvoller Schritt: 33.0.1 Stabilisierung oder 34.0 Alignment Core
+
+Meine Empfehlung: vor 34.0 eine kleine 33.0.1 machen, nur mit Routing- und Ausgabehärtung. Danach ist 34.0 sauberer.
+
+
+Version 33.1 – Stabilisierung & Feinschliff
+
+Priorität A
+
+Versionsinfo-Routing reparieren
+Varianten erkennen:
+versionsinfo
+versionsinfo?
+Version?
+Welche Version läuft?
+
+Priorität B
+
+Menschlichere Motivationsprioritäten
+Weniger technische Zentralitätswerte
+Mehr erklärende Ursachen
+
+Priorität C
+
+Trennung:
+Wissensantwort
+aktive Suche
+Archiv-/Altversionstreffer
+
+Priorität D
+
+Lernprojekte analysieren
+Warum besitzen viele Projekte noch 0 integrierte Wissenseinheiten?
+Lernfortschritt transparenter machen
+
+Wenn 33.1 diese Punkte sauber löst, wäre danach der Weg für den großen Schritt 34.0 (Alignment & Moral Core) sehr gut vorbereitet.

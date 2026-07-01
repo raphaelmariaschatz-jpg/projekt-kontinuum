@@ -1,0 +1,187 @@
+Nächster Codex-Auftrag
+
+Ich würde Codex morgen etwa Folgendes geben:
+
+Prüfe das neue Intent-Routing von Kontinuum 24.0.
+
+Die Kommandos:
+
+roadmap
+forschung
+projektchronik
+mathematik lernen
+mathematik üben
+mathematikfrage stellen
+
+werden derzeit nicht an die vorgesehenen Agenten bzw. Lernmodule weitergeleitet und landen stattdessen im allgemeinen DialogueAgent.
+
+Ergänze explizite Intents und Routingregeln.
+
+Zusätzlich:
+
+Entferne den GUI-Eintrag "Suche Mathematik".
+
+Ersetze ihn durch:
+
+Mathematikfrage stellen
+
+Mathematik darf nicht als Dateisuche behandelt werden.
+
+Fehler in Kontinuum 24.0:
+
+Die Eingabe „Archivsuche Mathematik“ bleibt über 5 Minuten ohne Antwort.
+
+Bitte prüfen und korrigieren:
+
+1. Archivsuche darf die GUI nie blockieren.
+2. Archivsuche braucht Timeout, Trefferlimit und Fortschrittsmeldung.
+3. Archivsuche soll nur definierte Archivbereiche durchsuchen:
+   - 02_versions
+   - 09_backups
+   - ggf. 17_tests nur optional
+4. Große Binärdateien, Modelle, ZIPs, EXE, DB, Pycache und Vosk-Modelle ausschließen.
+5. Bei zu vielen Treffern nach z.B. 50 Treffern abbrechen.
+6. Nach spätestens 30 Sekunden eine Teilantwort liefern.
+7. In der GUI Aktivitätsfenster anzeigen:
+   „Archivsuche läuft… Bereich: 02_versions“
+8. Wenn kein Ergebnis vorliegt:
+   „Archivsuche abgebrochen: Zeitlimit erreicht. Bitte Suchbegriff eingrenzen.“
+9. Regressionstest hinzufügen:
+   archivsuche Mathematik darf nicht länger als 30 Sekunden laufen.
+
+Zusätzlich würde ich festlegen:
+
+Normale Suche = schnell, aktive Bereiche
+Archivsuche = langsam, begrenzt, bewusst gestartet, nie blockierend
+
+Für deinen aktuellen Teststand notiere ich:
+
+Kontinuum 24.0 – offener Bug:
+archivsuche Mathematik hängt länger als 5 Minuten und braucht Timeout/Limit/GUI-Fortschritt.
+
+Auffällig bleiben aber drei Punkte:
+
+GUI meldet noch „23.0“, obwohl Codex 24.0-Grundlage implementiert hat. Versionstexte müssen aktualisiert werden.
+Winget-Systemänderungen sind freigeschaltet. Das war im Architekturbericht ein Sicherheitsrisiko. Für Version 24 sollte das standardmäßig aus sein oder eine erneute Superadmin-Bestätigung verlangen.
+Archivsuche hängt. Das ist der wichtigste offene Bug.
+
+Für Codex morgen würde ich zusätzlich notieren:
+
+Bitte Versionstexte prüfen:
+GUI/Status/Lernstatus zeigen noch 23.0, obwohl die 24.0-Grundlage implementiert wurde.
+
+Bitte winget härten:
+wingetstatus meldet „Systemänderungen sind freigeschaltet“.
+Für Kontinuum 24.0 sollen Winget-Änderungen standardmäßig deaktiviert sein oder pro Änderung eine erneute Superadmin-Bestätigung verlangen.
+
+Bitte Archivsuche reparieren:
+„archivsuche Mathematik“ hängt länger als 5 Minuten.
+Timeout, Trefferlimit, Dateityp-Ausschlüsse und GUI-Fortschritt einbauen.
+
+Fehleranalyse Chemie-Modul
+
+1. Frage:
+   "Was ist Phenol?"
+
+   Darf nicht automatisch in die Internetsuche gehen.
+
+   Zuerst:
+   - Knowledge-Agent
+   - lokales Wissen
+   - Lernwissen
+
+   Nur bei unbekannten Begriffen Recherche.
+
+2. Formel-Engine erweitern
+
+   Stoffnamen müssen erkannt werden.
+
+   Beispiele:
+   - Phenol
+   - Benzol
+   - Ethanol
+   - Methanol
+   - Aceton
+   - Essigsäure
+   - Natriumchlorid
+   - Schwefelsäure
+
+   Ausgabe:
+   - Summenformel
+   - Halbstrukturformel (falls verfügbar)
+
+3. Regressionstests ergänzen
+
+   Eingabe:
+   "Was ist Phenol?"
+
+   Erwartung:
+   lokale Antwort ohne Internetsuche
+
+   Eingabe:
+   "Zeige die chemische Formel von Phenol"
+
+   Erwartung:
+   C6H6O bzw. C6H5OH
+
+Bug-Kategorie: Kritisch
+
+Warum kritisch?
+
+Weil dadurch praktisch jedes Basiswissen kaputt ist.
+
+Kontinuum verhält sich momentan ungefähr so:
+
+Wasser?
+→ Internet
+
+Sauerstoff?
+→ Internet
+
+Einstein?
+→ Internet
+
+Erdumfang?
+→ Internet
+
+Wenn das Internet ausfällt:
+
+Kontinuum weiß nichts mehr.
+
+Und genau das widerspricht deiner ursprünglichen Vision eines lokalen Wissenssystems.
+
+Zusätzlicher Test
+
+Falls du noch 2 Minuten investieren möchtest:
+
+Teste einmal:
+
+Wasserstoff
+Phenol
+Einstein
+
+also ohne "Was ist ...".
+
+Wenn diese funktionieren, dann liegt der Fehler wahrscheinlich direkt in der neuen Frage-Klassifikation.
+
+Wenn auch diese scheitern, dann wird der Knowledge-Agent generell nicht mehr erreicht.
+
+Mein aktueller Befund zu Kontinuum 24.0
+Erfolgreich
+
+✅ Argon2id
+✅ neues Routing-System
+✅ Refactoring
+✅ Lernsystem aktiv
+✅ Agentensystem aktiv
+✅ Tests bestanden
+
+Offene Bugs
+
+🔴 Allgemeiner Wissens-Intent wird falsch geroutet
+
+🔴 Archivsuche hängt
+
+🟡 Mathematik-Lernmodus wird nicht aktiviert
+
+🟡 Roadmap/Forschung/Projektchronik landen im Dialog-Agent

@@ -1,0 +1,47 @@
+Arbeitsschritte Codex Version 33.0
+
+ch setze Version 33.0 jetzt direkt im bestehenden Projekt um. Zuerst lese ich Architektur, Versionspfade, Tests und die bisherigen Diagnose-/GUI-Anbindungen, damit der neue Kern sauber in Kontinuums vorhandene Abläufe greift.
+
+Die aktive Basis ist Version 32.4; das Projekt liegt hier ohne Git-Metadaten vor. Ich prüfe nun gezielt Startpfad, Systemkomposition, Agentenregister, GUI-Ausgabe und Versionsprüfung, anschließend ergänze ich Diagnosekern, Auditablage und Regressionstests als zusammenhängende Version 33.0.
+
+Die Einhängepunkte sind klar: Diagnose läuft nach vollständiger Systeminitialisierung, speichert strukturierte Audit-Ereignisse, erzeugt den täglichen Markdown-Bericht und stellt die Zusammenfassung über diagnostikstatus sowie beim GUI-Start bereit. Die Prüfungen bleiben beobachtend; sie reparieren Daten nicht eigenmächtig und markieren echte Integritäts-, Routing- oder Versionsabweichungen nach festem Schweregrad.
+
+Ich beginne jetzt mit den Änderungen: drei getrennte Kernmodule für Klassifikation, Lösungsvorschläge und Prüfkoordination, dazu ein routbarer Diagnose-Agent. Danach verdrahte ich Startdiagnose, Status/Chatmeldung und die 33.0-Versionsträger; bestehende 32.4-Dateien bleiben als historischer Stand erhalten.
+
+Der Kern ist eingebaut und an System, Router und Audit-Storage gebunden. Jetzt ziehe ich die aktiven Start-/GUI-/Statuspfade auf 33.0, ergänze die Startmeldung im Chatfenster und lege gezielte Tests an, darunter manipulierte Chronik, fehlerhafte Graphkante, Schweregradregeln und idempotente Tagesberichte.
+
+Die 33.0-Versionsträger und Regressionstests sind angelegt. Ich führe nun zuerst Syntaxprüfung und die beiden neuen Tests aus; danach lasse ich den realen Statusprüfer sowie die bestehende Gesamtsuite laufen und korrigiere dabei auftauchende Integrationsfehler direkt.
+
+Die neuen Prüfungen sind vollständig grün. Eine erwartbare historische Testannahme aus 32.4 bindet die globale Version noch fest an 32.4; ich kennzeichne sie als Mindestversions-Regressionsprüfung, damit sie ihre damaligen Pfade weiter schützt, ohne den 33.0-Kern fälschlich abzulehnen.
+
+Die vollständige Suite läuft jetzt über den neuen kanonischen 33.0-Teststarter. Parallel dazu bleibt die Diagnose bewusst defensiv: Sie erzeugt Vorschläge und Auditnachweise, nimmt aber keine selbstständigen Datenreparaturen vor, besonders nicht an Chronik oder Foundation Layer.
+
+Die Suite arbeitet sich durch sämtliche historischen und aktuellen Regressionstests; bislang ist kein Fehler ausgegeben worden. Nach Abschluss prüfe ich noch den realen erzeugten Diagnosebericht und die aktive Dokumentations-/Startpfadkonsistenz.
+
+Der Gesamtlauf ist ungewöhnlich lang, aber der Prozess ist weiterhin aktiv; der Batch puffert seine Ausgabe bis zum Ende. Ich lasse ihn kontrolliert fertiglaufen, statt die laufende Verifikation abzubrechen.
+
+Der Gesamtlauf hat 47 Tests erreicht und drei ausschließlich historische Manifestvergleiche gefunden: Tests für 31.0, 32.0 und 32.4 erwarten fälschlich, dass ihr archiviertes GUI-Manifest immer der aktuellen Kernversion entspricht. Ich korrigiere diese drei Regressionstests auf ihre jeweilige historische Manifestversion und starte danach gezielt die betroffenen Tests plus den 33.0-Gesamtlauf erneut.
+
+Die drei historischen Tests sind jetzt grün; damit sind sämtliche Tests über den Gesamtlauf plus gezielten Wiederholungslauf erfolgreich nachgewiesen. Als letzten technischen Schritt starte ich Kontinuum 33.0 einmal gegen die reale Projektwurzel, lasse den Diagnosebericht erzeugen und kontrolliere dessen Befundzahl, höchste Priorität und Speicherpfad.
+
+Die reale Startdiagnose funktioniert und hat einen kritischen offenen Foundation-Zyklus (ID 1591) dokumentiert. Bevor ich abschließe, prüfe ich diesen Fund noch auf einen möglichen Nebenläufigkeits-Fehlalarm durch einen gerade laufenden Hintergrunddienst; ein autonomes Diagnosesystem darf laufende Entscheidungen nicht als verwaiste Zyklen melden.
+
+Der Fund war tatsächlich ein 140-ms-Zeitfenster: Der autonome Lernzyklus war beim Diagnose-Snapshot gerade geöffnet und unmittelbar danach ordnungsgemäß abgeschlossen. Ich beseitige diesen Fehlalarm an zwei Stellen: Startdiagnose vor dem Start der Hintergrunddienste und Foundation-Befunde nur für Zyklen, die nach einer Karenzzeit weiterhin offen sind.
+
+Der Nebenläufigkeitsfehler ist behoben: Die reale Diagnose meldet jetzt Wichtigkeit: KEINE, 0 mögliche Probleme, und der Statusprüfer ist grün. Ich schließe noch die sichtbare Versionsmigration ab, damit README und aktuelle Wiedereinstiegspfade nicht weiterhin 32.4 als aktiven Stand ausweisen und die Versionsdiagnose solche Abweichungen künftig selbst erkennt.
+
+Die sichtbaren aktiven Verweise zeigen nun überall auf 33.0, während 32.4 als historischer Stand erhalten bleibt. Ich mache den abschließenden Konsistenzlauf über neue Diagnose-/Versionstests, die angepasste historische 32.4-Prüfung, Statusprüfung und reale Startdiagnose.
+
+Im letzten Versionsprüfungs-Patch steckt ein reiner Klammerfehler in der neu erweiterten Evidenzformatierung. Ich korrigiere ihn sofort und wiederhole denselben Abschlusslauf.
+
+Version 33.0 ist umgesetzt.
+Autonomous Diagnostics Core mit acht Prüfbereichen
+Fehlerklassifikation und Lösungsvorschläge
+interner Diagnose-Agent und Chatbefehle
+automatische GUI-Startmeldung
+tägliche Auditberichte
+vollständige 33.0-Start-, Status- und Dokumentationspfade
+Nebenläufigkeitsschutz für aktive Foundation-Zyklen
+Verifikation erfolgreich: Status grün, alle Regressionen bestanden. Reale Startdiagnose: 0 Befunde.
+Bericht: [2026_06_18_error_report.md](C:/Projekt Kontinuum/14_documents/interne_fehler_und_loesungen/2026_06_18_error_report.md)
+Start: C:\Projekt Kontinuum\16_installation\START_GUI_33_0.bat

@@ -1,0 +1,6 @@
+Aktueller Engpass
+Der ältere AMD A8-7600 und die Radeon R7 mit etwa 1 GB Grafikspeicher begrenzen größere lokale Sprachmodelle. qwen2.5:3b ist für diesen PC eine vernünftige Modellgröße. Modelle ab ungefähr 7 Milliarden Parametern würden wahrscheinlich deutlich langsamer laufen.
+Sinnvolle Erweiterungen
+RAM auf 32 GB erweitern, falls vom Mainboard unterstützt.
+Langfristig moderner Rechner mit mindestens 8 CPU-Kernen und NVIDIA-Grafikkarte mit 12 GB oder mehr VRAM.
+Git installieren, damit Änderungen sauber versioniert und zurückgesetzt werden können.

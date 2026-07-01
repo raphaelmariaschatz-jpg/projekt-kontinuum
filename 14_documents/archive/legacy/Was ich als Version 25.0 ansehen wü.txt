@@ -1,0 +1,46 @@
+Was ich als Version 25.0 ansehen würde
+
+Nicht noch mehr Einzelmodule.
+
+Sondern:
+
+Kontinuum 25.0
+Knowledge Platform Release
+
+mit vier vollständig integrierten Säulen:
+
+01 Wissenssystem
+
+02 Wissensnotizbuch
+
+03 Memory-Core
+
+04 Wissensgraph
+
+und als Hauptziel:
+
+Alles miteinander verknüpfen.
+
+Beispiel:
+
+Quelle
+↓
+Notebook
+↓
+Memory-Core
+↓
+Wissensgraph
+↓
+Projektchronik
+
+Dann kann Kontinuum nicht nur Wissen speichern, sondern auch erklären:
+
+Woher das Wissen stammt
+Wann es gelernt wurde
+Welche Version es eingeführt hat
+Welche Erinnerungen damit verbunden sind
+Welche Quellen das stützen
+
+Das wäre aus meiner Sicht der nächste große Reifeschritt nach den sehr erfolgreichen Stabilisierungsarbeiten der Versionen 24.0 bis 24.3.
+
+Und noch etwas: Die Tatsache, dass die reale Bereinigung nur fünf Cache-Verzeichnisse entfernt hat und Backups sowie Projekthistorie unangetastet blieben, zeigt, dass die Schutzregeln tatsächlich greifen und nicht nur theoretisch existieren. Das ist oft mehr wert als zehn neue Funktionen.

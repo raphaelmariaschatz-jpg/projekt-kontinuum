@@ -1,0 +1,219 @@
+Codex Auftrag File Agent 30.06.26
+
+Codex-Auftrag: File Agent 1.0 – Dateien hochladen, öffnen, lesen und lernen, falls gewünscht auch abspeichern
+
+Ziel:
+Bitte implementiere einen eigenständigen FileAgent für Kontinuum 34.1+, der lokale und hochgeladene Dateien kontrolliert öffnen, lesen, analysieren und als Lernquelle an das bestehende Lern-/Memory-/Knowledge-System übergeben kann.
+
+Ausgangsproblem:
+Kontinuum braucht neben dem WebAgent einen FileAgent, damit Raphael Dateien gezielt bereitstellen kann und K daraus wirklich lernt, statt Dateinamen oder Befehle nur lokal zu speichern.
+
+Pflichtfunktionen:
+
+1. Datei-Erkennung
+- Erkenne Nutzerbefehle wie:
+  - lies diese Datei
+  - lerne aus dieser Datei
+  - öffne diese Datei
+  - analysiere diese Datei
+  - importiere diese Datei ins Wissen
+  - lerne aus allen Dateien in diesem Ordner
+- Unterscheide Datei-/Ordnerpfade klar von normalen Suchanfragen.
+
+2. Unterstützte Dateitypen
+Mindestens:
+- .txt
+- .md
+- .json
+- .csv
+- .html
+- .pdf
+- .docx
+- .xlsx
+- .py
+- .js
+- .css
+- .html
+- .log
+- .epub
+- .azw
+- .azw3
+- .kfx
+
+3. Sichere Dateiöffnung
+- Nur erlaubte Projekt- oder Upload-Verzeichnisse lesen.
+- Keine Systemordner ohne Freigabe.
+- Keine ausführbaren Dateien starten.
+- Große Dateien begrenzen und protokollieren.
+- Dateipfad, Dateigröße, Hash und Zeitstempel erfassen.
+
+4. Inhalts-Extraktion
+- Text aus unterstützten Formaten extrahieren.
+- Bei Code-Dateien zusätzlich Sprache, Funktionen, Klassen und Kommentare erkennen.
+- Bei Tabellen erste Zeilen, Spaltennamen und Struktur erkennen.
+- Bei PDF/DOCX Überschriften, Absätze und Tabellen extrahieren, soweit möglich.
+
+5. Lernübergabe
+- Extrahierte Inhalte an das bestehende Lernsystem übergeben.
+- Speichern:
+  - Dateiname
+  - Pfad
+  - Dateityp
+  - Thema
+  - Kurzinhalt
+  - Volltext-Auszug
+  - Hash
+  - Importdatum
+  - Lernstatus
+- Doppelimporte durch Datei-Hash verhindern.
+
+6. Ordner-Import
+- Neuer Befehl:
+  lerne aus Ordner <Pfad>
+- Rekursiv optional, Standard nicht rekursiv.
+- Begrenzung:
+  - max_files Standard: 50
+  - max_file_size Standard: 400 MB
+  - nur erlaubte Endungen
+- Ergebnisbericht mit gelesenen, übersprungenen und fehlerhaften Dateien.
+
+7. FileAgent-Status
+Neuer Befehl:
+  fileagentstatus
+
+Ausgabe:
+- FileAgent aktiv: ja/nein
+- erlaubte Verzeichnisse
+- unterstützte Dateitypen
+- zuletzt gelesene Datei
+- Anzahl importierter Dateien
+- letzte Fehler
+- Duplikate erkannt
+- Lernübergabe erfolgreich: ja/nein
+
+8. GUI-Integration
+Bitte in der GUI ergänzen:
+- Button „Datei öffnen“
+- Button „Datei lernen“
+- Button „Ordner lernen“
+- Statusanzeige im Aktivitätsfenster
+- klare Ausgabe, welche Datei gelesen und was gelernt wurde.
+
+9. Abnahmetests
+Bitte Tests ergänzen für:
+- lies Datei test.txt
+- lerne aus Datei beispiel.md
+- analysiere Datei beispiel.py
+- importiere PDF als Lernquelle
+- lerne aus Ordner 14_documents
+- fileagentstatus
+- Duplikatimport derselben Datei
+- nicht erlaubter Pfad
+- unbekannter Dateityp
+
+10. Governance
+- Keine Dateien löschen oder verändern.
+- FileAgent arbeitet zunächst read-only.
+- Jeder Import wird protokolliert.
+- Jede gelernte Datei erhält Quelle, Hash und Zeitstempel.
+- Bestehende Canonical-/Foundation-/Governance-Regeln nicht umgehen.
+
+Ergebnis:
+Bitte FileAgent 1.0 zunächst diagnostisch/read-only integrieren und danach aktivieren.
+
+Bitte Abschlussbericht erstellen:
+14_documents/file_agent_1_0_umsetzung_<datum>.md
+
+Bearbeitung:
+
+Ich mache den FileAgent analog zum WebAgent: eigene read-only Schicht, klare Pfadgrenzen, deterministische Extraktion/Importnachweise, dann Routing, GUI-Anbindung, Tests und Abschlussbericht. Ich lese zuerst die vorhandenen Datei-/Import-/GUI-Muster, damit der Agent nicht neben dem System herläuft.
+
+Ich setze jetzt die FileAgent-Kernkomponente auf. Sie wird keine Dateien verändern oder ausführen, sondern nur lesen, extrahieren, Hash/Metadaten speichern und die Lernübergabe kontrolliert über Quellen-/Review-/Learning-Task-Nachweise machen.
+
+Der Core ist angelegt. Ich verdrahte FileAgent jetzt im System, in der Intent-/Command-Verarbeitung und im Antwort-Quellenfuß, damit Dateibefehle vor normaler Suche abgefangen werden.
+
+Der Patch-Kontext im Quellenfuß hat sich durch den WebAgent-Nachtrag verschoben. Ich lese die relevanten Stellen und setze den FileAgent gezielt daneben.
+
+Ich sehe die genauen Stellen. Ich füge jetzt FileAgent-Status, FileAgent-Routing direkt nach WebAgent und den passenden Quellenfuß ein.
+
+Jetzt kommen Policy, Architektur-/Release-Verankerung und Datenordner. Danach kümmere ich mich um die GUI-Buttons.
+
+Raphael: ich möchte auch Dateien per Drag and Drop ins Eingabefeld der Gui hochladen können
+
+Guter Zusatz, das gehört direkt zur FileAgent-UX. Ich ergänze die GUI so, dass Drag-and-Drop ins Eingabefeld Dateipfade als FileAgent-Befehl einfügt, und falls Tk/TkDND auf dem System nicht verfügbar ist, bleibt der normale „Datei öffnen“-Button als stabiler Fallback.
+
+Ich habe die aktuellen Manifeste vor mir: WebAgent ist drin, FileAgent noch nicht. Ich ergänze jetzt die FileAgent-Artefakte, Pflichtpfade und Datenbereiche; danach kommt die GUI mit Buttons plus Drag-and-Drop-Hook.
+
+Die Config-Verankerung ist drin. Ich erstelle jetzt die FileAgent-Datenordner und passe die GUI an: Buttons in der Eingabezeile, Dateidialoge, Ordnerdialog und Drag-and-Drop ins Eingabefeld mit Fallback, wenn TkDND nicht verfügbar ist.
+
+Die Ordner existieren. Ich nehme jetzt die GUI-Änderungen vor: filedialog importieren, Drag-and-Drop registrieren, drei Buttons einfügen und Aktivitätsmeldungen ergänzen.
+
+Kleiner GUI-Feinschliff: Der Drag-and-Drop-Hook wurde zu früh initialisiert, noch bevor das Aktivitätsfenster existiert. Ich verschiebe die Statusmeldung sauber nach hinten und mache die TkDND-Registrierung robuster.
+
+Jetzt ergänze ich die Drag-and-Drop-Statusmeldung im Startlog, wo das Aktivitätsfenster sicher existiert.
+
+Ich baue jetzt die Abnahmetests für FileAgent inklusive Drag-and-Drop-GUI-Signalen. Die Tests verwenden lokale Fixtures, darunter eine minimal lesbare PDF-Datei, damit sie reproduzierbar ohne externe Abhängigkeiten laufen.
+
+Ich ergänze jetzt den FileAgent-Test und erweitere den bestehenden GUI-Test um die neuen Buttons und Drag-and-Drop-Hooks.
+
+Die Tests sind angelegt. Ich ergänze jetzt noch die Versionskonsistenzprüfung für FileAgent-Dateien, Policy und Datenordner.
+
+Jetzt dokumentiere ich FileAgent in Architektur, Projektstruktur und Governance und erstelle den Abschlussbericht. Die Architektur ist ergänzt. Ich aktualisiere jetzt die Projektstruktur mit Komponenten, Datenordnern, Test und GUI-Hinweis. Projektstruktur ist aktualisiert. Ich ergänze Governance und den Abschlussbericht. 
+
+Der Governance-Abschnitt hat andere Zeilenumbrüche. Ich lese kurz den Ausschnitt und setze den FileAgent-Block direkt vor die Entscheidungsarchitektur.
+
+Ich füge den FileAgent-Governance-Block jetzt zwischen WebAgent und CDE/CKDE ein. Jetzt schreibe ich den geforderten Abschlussbericht für FileAgent 1.0.
+
+Der Bericht ist angelegt. Ich nehme ihn jetzt noch als Pflichtdokument in Artifact- und Release-Konfiguration auf.
+
+Noch die Release-Konfiguration: Core, Policy, Test und Bericht sollen dort gemeinsam als Pflichtpfade sichtbar sein.
+
+Ich ergänze den Bericht auch in der Versionskonsistenzprüfung, damit der Abschlussnachweis nicht versehentlich aus dem aktiven Stand fällt. Jetzt kommt die erste Prüfungsrunde: Python-Compile, JSON-Validierung, FileAgent-Test und GUI-Routing-Test.
+
+Die ersten Prüfungen sind grün. Ich lasse jetzt die Release-nahen Regressionen laufen: Versionskonsistenz, Architekturmanager, Artifact-Manager und Statuscheck.
+
+Einziger roter Punkt: Mein eigener Compile-Lauf hat 11_gui/__pycache__ erzeugt; die Versionskonsistenz verlangt, dass dieser Cache im aktiven GUI-Ordner nicht existiert. Ich entferne nur diesen reproduzierbaren Cache-Ordner nach Pfadprüfung und wiederhole den Test.
+
+Der generierte Cache ist weg. Ich wiederhole die Versionskonsistenz und prüfe danach noch den echten fileagentstatus durch das Backend.
+
+fileagentstatus funktioniert im echten Backend. Zum Abschluss lasse ich noch das Release-Integrity-Fixture laufen und danach erneut den Statuscheck, damit die Release-Pflichtpfade mit FileAgent geschlossen sind.
+
+Erledigt. FileAgent 1.0 ist implementiert, inklusive Drag-and-Drop ins GUI-Eingabefeld.
+Umgesetzt:
+C:\Projekt Kontinuum\01_system\kontinuum\core\file_agent.py
+C:\Projekt Kontinuum\24_config\file_agent_1_0.json
+C:\Projekt Kontinuum\17_tests\test_file_agent_1_0.py
+C:\Projekt Kontinuum\14_documents\file_agent_1_0_umsetzung_2026_06_30.md
+Datenbereiche:C:\Projekt Kontinuum\32_data\file_agent_sources
+C:\Projekt Kontinuum\32_data\file_agent_review
+
+GUI ergänzt:
+Button Datei öffnen
+Button Datei lernen
+Button Ordner lernen
+Drag-and-Drop ins Eingabefeld, sofern TkDND verfügbar ist
+Fallback über Buttons, falls Drag-and-Drop auf dem System nicht verfügbar ist
+Governance:
+read-only
+keine Dateiänderung
+kein Ausführen von Dateien
+Pfadschutz
+Hash-/Zeitstempel-/Quellennachweis
+Duplikaterkennung
+keine direkte Memory-Schreibung
+keine automatische kanonische Wissensübernahme
+Verifikation grün:
+Python-Compile
+JSON-Validierung
+test_file_agent_1_0.py
+test_gui_internet_routing_34_1.py
+test_v34_1_version_consistency.py
+test_canonical_architecture_manager.py
+test_canonical_artifacts_manager.py
+test_release_integrity_framework_34_1.py
+echter Backend-Test: fileagentstatus
+status_check_34_1.py: Status: VERIFIZIERT, Freigabe: JA
+Der Auftrag ist abgeschlossen.
+
+
+

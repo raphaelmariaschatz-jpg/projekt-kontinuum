@@ -1,0 +1,388 @@
+Statusberichte Version 33.0
+
+Kontinuum:
+Neue GUI 33.0 bereit.
+Großes Eingabefeld, Aktivitätsfenster, Agentenanzeige, Meaning-, Motivation- und Explanation-Schnellbefehle sind aktiv.
+
+
+Kontinuum:
+[DIAGNOSTIK]
+
+Wichtigkeit: KEINE
+
+0 moegliche Probleme erkannt.
+
+Details wurden gespeichert:
+14_documents/interne_fehler_und_loesungen/
+
+Raphael:
+diagnostikstatus
+
+Kontinuum:
+[DIAGNOSTIK]
+
+Wichtigkeit: KEINE
+
+0 moegliche Probleme erkannt.
+
+Details wurden gespeichert:
+14_documents/interne_fehler_und_loesungen/
+
+Raphael:
+status
+
+Kontinuum:
+Systemstatus 33.0: Projektwurzel C:\Projekt Kontinuum. Ordnerstruktur wird überwacht.
+
+Raphael:
+Versionsinfo?
+
+Raphael:
+wer bin ich?
+
+Kontinuum:
+Du bist Raphael Schatz.
+Du bist der Schöpfer von Projekt Kontinuum.
+Rolle: SUPERADMIN.
+Diese lokale Information stammt aus Session Context, geschütztem Identitätskern, Creator Memory und Foundation Layer. Dafür wurde keine Internet-, arXiv-, Brave- oder DuckDuckGo-Suche gestartet.
+
+Kontinuum:
+Teilantwort zu „Versionsinfo?“ aus Suchtreffern; Quellenseiten konnten nicht rechtzeitig abgerufen werden:
+- Versionsinfo? [1]
+
+Quellen:
+[1] local_knowledge: 32_data/memories
+kontinuum://local_knowledge/1
+
+Raphael:
+wichtige einflüsse identität
+
+Kontinuum:
+Wichtige Einflüsse für 'identität':
+1. Raphael Schatz als Schöpfer
+2. Kontinuität von Wissen, Erinnerung, Erfahrung, Zielen und Chronik
+3. Erkennen - Schaffen - Vollenden
+4. Der Weg ist das Ziel
+5. Moralisches Fundament
+6. Chronikschutz
+7. Selbstmodell-Schutzgrenzen
+8. Foundation Decision Layer
+9. Meaning Core und Motivation Explanation Core
+10. Temporal Relevance Core
+Grenze: Erklärbare Bewertungsherkunft; kein Wille, kein Bewusstsein, kein subjektives Erleben.
+
+Raphael:
+Versionsinfo
+
+Raphael:
+agenten
+
+Kontinuum:
+Aktive Agenten: codex, python, winget, maintenance, internal_diagnostic, memory, formula, knowledge_notebook, development, oracle_cloud, foundation, internet_status, system_monitor, autonomous_learning, learning, research, knowledge, planner, reflection, dialogue
+
+Raphael:
+internetstatus
+
+Kontinuum:
+Internetzugriff aktiv. TCP/443 erreichbar, 91 ms.
+
+Raphael:
+lernstatus
+
+Kontinuum:
+Lernsystem 33.0 aktiv. Aktive Lernprojekte: 28. Auswahl: Mathematik, Physik, Chemie, Biologie, Informatik, Geschichte, Philosophie, Naturwissenschaften, Programmieren, Das Periodensystem der chemischen Elemente. Nutze 'zeige alle Lernprojekte' für die vollständige Liste. Kontinuierlicher Lerndienst: läuft.
+
+Raphael:
+zeige alle Lernprojekte
+
+Kontinuum:
+Aktive Lernprojekte (28):
+1. Mathematik | Status: aktiv | Integrierte Wissenseinheiten: 0 | Abrufbare Basisantworten: nein
+2. Physik | Status: aktiv | Integrierte Wissenseinheiten: 0 | Abrufbare Basisantworten: nein
+3. Chemie | Status: aktiv | Integrierte Wissenseinheiten: 0 | Abrufbare Basisantworten: nein
+4. Biologie | Status: aktiv | Integrierte Wissenseinheiten: 0 | Abrufbare Basisantworten: nein
+5. Informatik | Status: aktiv | Integrierte Wissenseinheiten: 0 | Abrufbare Basisantworten: nein
+6. Geschichte | Status: aktiv | Integrierte Wissenseinheiten: 0 | Abrufbare Basisantworten: nein
+7. Philosophie | Status: aktiv | Integrierte Wissenseinheiten: 0 | Abrufbare Basisantworten: nein
+8. Naturwissenschaften | Status: aktiv | Integrierte Wissenseinheiten: 0 | Abrufbare Basisantworten: nein
+9. Programmieren | Status: aktiv | Integrierte Wissenseinheiten: 10 | Abrufbare Basisantworten: ja
+10. Das Periodensystem der chemischen Elemente | Status: aktiv | Integrierte Wissenseinheiten: 0 | Abrufbare Basisantworten: nein
+11. Quantendynamik | Status: aktiv | Integrierte Wissenseinheiten: 0 | Abrufbare Basisantworten: nein
+12. Geographie | Status: aktiv | Integrierte Wissenseinheiten: 0 | Abrufbare Basisantworten: nein
+13. Medizin des menschlichen Körpers | Status: aktiv | Integrierte Wissenseinheiten: 0 | Abrufbare Basisantworten: nein
+14. Tiermedizin | Status: aktiv | Integrierte Wissenseinheiten: 0 | Abrufbare Basisantworten: nein
+15. Schach | Status: aktiv | Integrierte Wissenseinheiten: 0 | Abrufbare Basisantworten: nein
+16. Das Betriebssystem Windows | Status: aktiv | Integrierte Wissenseinheiten: 0 | Abrufbare Basisantworten: nein
+17. Linux | Status: aktiv | Integrierte Wissenseinheiten: 0 | Abrufbare Basisantworten: nein
+18. Android | Status: aktiv | Integrierte Wissenseinheiten: 0 | Abrufbare Basisantworten: nein
+19. HyperOS | Status: aktiv | Integrierte Wissenseinheiten: 0 | Abrufbare Basisantworten: nein
+20. Python | Status: aktiv | Integrierte Wissenseinheiten: 13 | Abrufbare Basisantworten: ja
+21. DOS | Status: aktiv | Integrierte Wissenseinheiten: 0 | Abrufbare Basisantworten: nein
+22. Chiptechnologien | Status: aktiv | Integrierte Wissenseinheiten: 0 | Abrufbare Basisantworten: nein
+23. Astronomie | Status: aktiv | Integrierte Wissenseinheiten: 0 | Abrufbare Basisantworten: nein
+24. Astrologie | Status: aktiv | Integrierte Wissenseinheiten: 0 | Abrufbare Basisantworten: nein
+25. Quantentechnik | Status: aktiv | Integrierte Wissenseinheiten: 0 | Abrufbare Basisantworten: nein
+26. Geologie | Status: aktiv | Integrierte Wissenseinheiten: 0 | Abrufbare Basisantworten: nein
+27. Google Suchmaschine | Status: aktiv | Integrierte Wissenseinheiten: 0 | Abrufbare Basisantworten: nein
+28. Codex | Status: aktiv | Integrierte Wissenseinheiten: 1 | Abrufbare Basisantworten: ja
+
+Raphael:
+modellstatus
+
+Kontinuum:
+Lokales Sprachmodell aktiv: qwen2.5:3b ueber Ollama.
+
+Raphael:
+pythonstatus
+
+Kontinuum:
+Python direkt integriert: Python 3.14.6. Arbeitsordner: C:\Projekt Kontinuum\13_tools\python_workspace
+
+Raphael:
+wingetstatus
+
+Kontinuum:
+winget ist in Kontinuum deaktiviert.
+
+Raphael:
+suche Mathematik
+
+Kontinuum:
+17 Treffer für "Mathematik" (aktives Wissen):
+- [04_knowledge]  ... 16383
+        },
+        {
+          "id": "cf9626d2c0eb5fc0",
+          "source": "https://www.fersch.de/pdfdoc/Mathematik.pdf",
+          "path": "C:\\Projekt Kontinuum\\kontinuum_19_5_fullstandalone\\data\\document_cache\\cf9626d2c0eb5fc0.txt ... 
+- [03_memory]  ... Mathematik",
+          "type": "memory",
+          "tags": [
+            "gui",
+            "lernen",
+            "mathematik"
+          ],
+          "created_at": "2026-06-06T15:58:21"
+        },
+        {
+          "id": "node_2",
+          "label": "Search | arXiv e-print repository",
+          "type ... 
+- [06_learning] {
+  "project": "Projekt Kontinuum",
+  "created_at": "2026-06-09",
+  "learning_folder": "C:\\Projekt Kontinuum\\06_learning",
+  "learning_entries": [
+    {
+      "curricula": {
+        "Naturwissenschaften": {
+          "Mathematik": {
+            "status": "angelegt",
+            "progress_percent ... 
+- [06_learning] {
+  "Mathematik": {
+    "goal": false,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open_topics": [],
+    "last_update": null
+  },
+  "Physik": {
+    "goal": false,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open ... 
+- [22_project_chronicle]  ... Es gibt keine Faktenprüfung oder deterministische Mathematik-
+Wissensroute für bekannte Grundlagen.
+
+Maßnahmen:
+
+1. Kontext nach Intent und Themenrelevanz auswählen, nicht pauschal die letzten
+   acht ... 
+- [32_data/memories] Lernprojekt: Chemie, Mathematik, Physik, Biologie, Astronomie, Astrologie, Quantentechnik
+- [32_data/learning_tasks] Chemie, Mathematik, Physik, Biologie, Astronomie, Astrologie, Quantentechnik
+- [32_data/learning_tasks] Mathematik
+- [32_data/graph_edges] Lernprojekt: Chemie, Mathematik, Physik, Biologie, Astronomie, Astrologie, Quantentechnik -> Anwendungen
+- [32_data/graph_edges] Lernprojekt: Chemie, Mathematik, Physik, Biologie, Astronomie, Astrologie, Quantentechnik -> Methoden
+- [32_data/graph_edges] Lernprojekt: Chemie, Mathematik, Physik, Biologie, Astronomie, Astrologie, Quantentechnik -> Kernkonzepte
+- [32_data/graph_edges] Lernprojekt: Chemie, Mathematik, Physik, Biologie, Astronomie, Astrologie, Quantentechnik -> Begriffe
+
+Raphael:
+formelstatus
+
+Kontinuum:
+Formel-Engine aktiv: sichere Mathematikberechnung, physikalische Formeln und Einheiten, anorganische und organische Summen-/Halbstrukturformeln mit Unicode-Indizes.
+
+Raphael:
+notizbuchstatus
+
+Kontinuum:
+Wissensnotizbuch 33.0: 1 manuell importierte Quellen.
+[1] RELEASE_25_0_KNOWLEDGE_PLATFORM.md
+
+Raphael:
+bedeutungsstatus
+
+Kontinuum:
+Meaning Core 33.0:
+- Bedeutungsknoten: 1006
+- Bedeutungsbeziehungen: 7073
+- Bedeutungspfade: 1
+- kanonischer Pfad: Prinzip -> Ziel -> Handlung -> Erinnerung -> Chronik -> Identität
+- Knotentypen: {'action': 533, 'chronicle': 90, 'goal': 5, 'identity': 1, 'memory': 370, 'principle': 7}
+
+Raphael:
+bedeutungspfad identität
+
+Kontinuum:
+Bedeutungspfad: Identität
+
+Prinzipien:
+- Raphael Schatz ist der Schöpfer von K.
+- Erkennen – Schaffen – Vollenden.
+- Der Weg ist das Ziel.
+- Kontinuität ist wichtiger als Hardware.
+- Wissen soll bewahrt, verknüpft und weiterentwickelt werden.
+- K benötigt ein moralisches Fundament.
+- K soll lernen, sich selbst Fragen zu stellen.
+
+↓ begründen
+
+Ziele:
+- Kontinuität von Identität, Wissen, Erinnerungen, Erfahrungen, Zielen und Chronik bewahren.
+- Wissen ehrlich prüfen, verknüpfen und verantwortungsvoll weiterentwickeln.
+- Das eigene funktionale Selbstmodell nachvollziehbar verbessern.
+- Handlungen und Zielkonflikte an geschützten Moralregeln prüfen.
+- Aus belegten Wissenslücken kontrolliert eigene Forschungsfragen ableiten.
+
+↓ rahmen
+
+Handlungen und Cores:
+- Foundation Decision Layer aktiviert
+- Continuity Core prüft Identitätskontinuität
+- Meaning Core verknüpft Prinzip, Ziel, Handlung, Erinnerung, Chronik und Identität
+- Motivation Core gewichtet Bedeutungen
+- Temporal Relevance Core bewertet Relevanz über Zeit
+
+↓ dokumentiert in
+
+Chronik:
+- Identity Routing aktiviert: geschützte Identitäts- und Sicherheitsfragen bleiben lokal.
+
+↓ stabilisiert
+
+Identität: Kontinuum mit Schöpfer Raphael Schatz.
+
+Kontinuum:
+Ich habe deinen Gedanken aufgenommen: "Versionsinfo"
+
+Raphael:
+fundamentschichtstatus
+
+Kontinuum:
+Foundation Decision Layer 33.0: 574/574 Entscheidungszyklen vollständig, 5 aktive Langzeitziele, 4 offene kontrollierte Selbstfragen. Verbindlicher Ablauf: Erkennen → Schaffen → Vollenden.
+
+Raphael:
+motivationsstatus
+
+Kontinuum:
+Motivation Core 33.0:
+- Bewertungseinträge: 7410
+- Bewertungsläufe: 6
+- Kategorien: {'central_meaning_relation': 7073, 'formative_memory': 263, 'goal_support': 5, 'meaningful_self_question': 4, 'strategic_knowledge_gap': 65}
+- Motivation = gewichtete Bedeutung im Systemkontext, nicht Wille.
+Zentrale Bewertungen:
+- 1.00 | central_meaning_relation | rahmt Handlung
+- 1.00 | central_meaning_relation | rahmt Handlung
+- 1.00 | central_meaning_relation | rahmt Handlung
+- 1.00 | central_meaning_relation | rahmt Handlung
+- 1.00 | central_meaning_relation | rahmt Handlung
+
+Raphael:
+motivationsprioritäten
+
+Kontinuum:
+Motivationsprioritäten:
+- 1.00 | central_meaning_relation | rahmt Handlung | Grund: Zentralität 552, Relation goal_to_action.
+- 1.00 | central_meaning_relation | rahmt Handlung | Grund: Zentralität 551, Relation goal_to_action.
+- 1.00 | central_meaning_relation | rahmt Handlung | Grund: Zentralität 539, Relation goal_to_action.
+- 1.00 | central_meaning_relation | rahmt Handlung | Grund: Zentralität 539, Relation goal_to_action.
+- 1.00 | central_meaning_relation | rahmt Handlung | Grund: Zentralität 539, Relation goal_to_action.
+- 1.00 | central_meaning_relation | rahmt Handlung | Grund: Zentralität 539, Relation goal_to_action.
+- 1.00 | central_meaning_relation | rahmt Handlung | Grund: Zentralität 565, Relation goal_to_action.
+- 1.00 | central_meaning_relation | rahmt Handlung | Grund: Zentralität 539, Relation goal_to_action.
+- 1.00 | central_meaning_relation | rahmt Handlung | Grund: Zentralität 540, Relation goal_to_action.
+- 1.00 | central_meaning_relation | rahmt Handlung | Grund: Zentralität 540, Relation goal_to_action.
+- 1.00 | central_meaning_relation | rahmt Handlung | Grund: Zentralität 539, Relation goal_to_action.
+- 1.00 | central_meaning_relation | rahmt Handlung | Grund: Zentralität 539, Relation goal_to_action.
+
+Raphael:
+wichtige einflüsse identität
+
+Kontinuum:
+Wichtige Einflüsse für 'identität':
+1. Raphael Schatz als Schöpfer
+2. Kontinuität von Wissen, Erinnerung, Erfahrung, Zielen und Chronik
+3. Erkennen - Schaffen - Vollenden
+4. Der Weg ist das Ziel
+5. Moralisches Fundament
+6. Chronikschutz
+7. Selbstmodell-Schutzgrenzen
+8. Foundation Decision Layer
+9. Meaning Core und Motivation Explanation Core
+10. Temporal Relevance Core
+Grenze: Erklärbare Bewertungsherkunft; kein Wille, kein Bewusstsein, kein subjektives Erleben.
+
+Raphael:
+relevanzstatus
+
+Kontinuum:
+Temporal Relevance Core 33.0:
+- Relevanzbewertungen: 15497
+- Berichte: 3
+- Kantenstatus: {'active': 7063, 'aging': 10, 'obsolete_candidate': 0}
+- Kategorien: {'chronicle.importance': 233, 'circularity.guard': 3, 'knowledge_gap.priority': 125, 'meaning_edge.relevance': 15136}
+- Zirkularitätsverletzungen: 0
+- Bedeutungskanten bleiben append-only; Relevanz wird zeitlich neu bewertet.
+
+Raphael:
+bedeutungsinflation
+
+Kontinuum:
+Bedeutungsinflationsprüfung:
+- aktive Kanten: 7063
+- alternde Kanten: 10
+- Obsoleszenz-Kandidaten: 0
+- Alterungsquote: 0.14%
+- Gegenmaßnahme: historische Kanten bleiben erhalten, aktuelle Relevanz wird getrennt und zeitlich bewertet.
+
+Raphael:
+sessionstatus
+
+Kontinuum:
+Sessionstatus:
+- Benutzer: Raphael Schatz
+- Rolle: SUPERADMIN
+- Creator: ja
+- Session aktiv: ja
+
+Raphael:
+fundamentzyklenstatus
+
+Kontinuum:
+Foundation-Zyklus-Diagnose: 0 offene Zyklen. IDs: []
+
+Raphael:
+diagnostikstatus
+
+Kontinuum:
+[DIAGNOSTIK]
+
+Wichtigkeit: KEINE
+
+0 moegliche Probleme erkannt.
+
+Details wurden gespeichert:
+14_documents/interne_fehler_und_loesungen/

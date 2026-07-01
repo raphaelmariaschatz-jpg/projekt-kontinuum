@@ -1,0 +1,5 @@
+Zentrale Erkennung von Intent, Nutzerkontext und Gesprächsbezug.
+Übergabe der letzten relevanten Dialogbeiträge an Agenten und Sprachmodell.
+Klare Priorität für lokale Wahrheiten wie eingeloggter Benutzer, Identität und Auftrag.
+Trennung zwischen Fragen, Befehlen, Gedanken und Erinnerungen.
+Einheitliche Speicherung von Eingabe, Antwort, zuständigem Agenten und Sitzung.

@@ -1,0 +1,60 @@
+Umsetzung Foundation Knowledge Protection 3.0
+
+Protection 2.0 schützt und isoliert Fundamentwissen technisch. Protection 3.0 würde daraus ein strukturiertes semantisches Gedächtnis machen:
+Foundation Memory Layer
+├── Identität
+├── Prinzipien
+├── Moral
+├── Schöpferwissen
+└── Langfristige Ziele
+
+Learned Knowledge Layer
+├── Fachwissen
+├── Recherchewissen
+├── Lerninhalte
+├── Hypothesen
+└── Erfahrungen
+Jeder Eintrag sollte eine eindeutige Klasse besitzen, etwa:
+knowledge_class: foundation.identity
+knowledge_class: foundation.creator
+knowledge_class: learned.domain
+K könnte dann verlässlich erklären:
+Dies ist geschütztes Fundamentwissen aus dem Foundation Memory Layer.
+
+oder:
+Dies ist gelerntes Wissen mit Quellen, Evidenz und Unsicherheit.
+
+Wesentliche Abnahmekriterien wären:
+keine gemeinsamen Schreibpfade;
+keine Umklassifizierung durch Lernen oder Recherche;
+Fundamentwissen hat Vorrang bei Identitätsfragen;
+gelerntes Wissen behält Quellen-, Evidenz- und Unsicherheitsstatus;
+Beziehungen zwischen beiden Bereichen sind erlaubt, Überschreibungen nicht;
+jede Klassifikation und Herkunft ist über fundamentaudit erklärbar.
+Ich würde diesen Schritt ausdrücklich als Foundation Knowledge Protection 3.0 – Foundation Memory Layer in die Roadmap aufnehmen.
+
+Ich setze Protection 3.0 jetzt als eigene persistente Foundation Memory Layer um – nicht als bloße Umbenennung von 2.0. Die fünf Bereiche erhalten getrennte Klassen und unveränderliche Datensätze; allgemeines Wissen bekommt ausdrücklich die Gegenklasse learned.knowledge. Dazu kommen Klassifikationsausgabe, Integritätsdiagnose, Audit-Erweiterung und Regressionstests.
+
+Das Datenmodell steht: Protection 3.0 führt derzeit 19 kanonische Foundation-Memory-Einträge über fünf getrennte Klassen. Ich ergänze nun die Abnahmetests – besonders für die gefährlichen Übergänge: Fundamentziel als Lernauftrag, Fundamentaussage als Recherchewissen und normales Fachwissen, das fälschlich im Foundation Layer landen könnte.
+
+Der erste Abnahmelauf hat keinen Schutzfehler, sondern einen Routingkonflikt gefunden: Identitätsaussagen wurden – korrekt für normale Dialoge – schon vom Identity Router beantwortet, bevor wissensklasse den Foundation Memory Layer erreichte. Ich binde den Klassifikationsbefehl deshalb als vorrangigen lokalen Systembefehl; normale Identitätsfragen bleiben unverändert.
+
+Protection 3.0 und die Rückwärtskompatibilität sind jetzt grün: 2.0-Schutz, Identity Routing, Kontaminationsschutz, autonomes Lernen, Foundation Decision und Motivation bestehen weiter. Als Nächstes migriere ich die reale Projektdatenbank und prüfe die drei sichtbaren Ausgaben direkt am aktiven System.
+
+Foundation Knowledge Protection 3.0 ist umgesetzt und aktiv.
+Ergebnis:
+Foundation Memory Layer mit 19 geschützten Einträgen
+Fünf Klassen: Identität, Prinzipien, Moral, Schöpferwissen und langfristige Ziele
+Gelerntes Wissen erhält getrennt learned.knowledge
+Separate Tabellen und Schreibpfade
+Append-only-Schutz und SHA-256-Prüfsummen
+Reale Projektdatenbank erfolgreich migriert
+Neue Befehle:
+foundationmemorystatus
+wissensklasse <Aussage>
+fundamentaudit
+Beispiel:
+Dies ist Fundamentwissen. Klasse: foundation.creator.
+Dies ist gelerntes Wissen. Klasse: learned.knowledge.
+Status: 19/19 Einträge verifiziert, Syntax-, Status-, 3.0-Abnahme- und 2.0-Kompatibilitätstests grün.
+Zentrale Datei: [foundation_memory.py](C:/Projekt Kontinuum/01_system/kontinuum/core/foundation_memory.py) · [Roadmap.md](C:/Projekt Kontinuum/14_documents/fundamentale Gedanken/Roadmap.md)

@@ -1,0 +1,199 @@
+# Codex Execution Prompt – Phase 2a vom 27.06.26
+
+## Duplikat- und Review-Cluster-Auflösung (Projekt Kontinuum)
+
+---
+
+## Kontext
+
+Phase 2 (Archivmigration) ist abgeschlossen bzw. läuft kontrolliert in Wellen.
+Die folgende Struktur wurde in Phase 1 identifiziert:
+
+* 392 Dateien analysiert
+* 3 Duplikatgruppen erkannt
+* 98 Dateien als „reviewpflichtig oder möglicherweise aktiv“ markiert
+* 52 Dateien bereits archiviert
+
+Phase 2a erweitert Phase 2 um eine **Struktur- und Konsistenzbereinigung**.
+
+---
+
+## Ziel von Phase 2a
+
+Auflösung von:
+
+1. Duplikatgruppen (3 Cluster)
+2. Review-/Unsicherheits-Cluster (98 Dateien)
+
+Ziel ist nicht Löschung, sondern:
+
+* eindeutige kanonische Zuordnung
+* Reduktion von Redundanz
+* klare Entscheidung pro Datei:
+
+  * aktiv
+  * archiviert
+  * oder zu konsolidieren
+
+---
+
+## Grundprinzipien
+
+1. Keine Datei wird gelöscht
+2. Jede Entscheidung ist begründet und geloggt
+3. Kanonische Version hat Vorrang
+4. Redundante Versionen werden archiviert, nicht entfernt
+5. Review-Dateien dürfen nicht „blind“ verschoben werden
+6. Jede Aktion ist reversibel dokumentiert
+
+---
+
+## Phase-2a Modulstruktur
+
+Codex nutzt bestehende Tools:
+
+* `archive_lifecycle_34_1.py`
+* Canonical Architecture Manager
+* Canonical Artifact Manager
+* Release Integrity Framework
+
+Zusätzlich wird eine Logik für Cluster-Auswertung angewendet:
+
+---
+
+## 1. Duplikatauflösung
+
+### Vorgehen:
+
+Für jede Duplikatgruppe:
+
+1. Inhalte vergleichen (semantisch + strukturell)
+2. Bestimme:
+
+   * kanonische Version (Master)
+   * sekundäre Version(en)
+3. Entscheidung:
+
+* Master bleibt aktiv
+* andere Versionen → `archive/legacy/duplicates/`
+
+### Logpflicht:
+
+Für jede Gruppe:
+
+* Cluster-ID
+* Auswahlkriterium
+* Hash/Ähnlichkeit
+* Zielpfade
+* Entscheidungsgrund
+
+---
+
+## 2. Review-Cluster-Auflösung
+
+### Ziel:
+
+Die 98 Review-Dateien werden in 3 Kategorien aufgeteilt:
+
+#### A) Aktiv bestätigen
+
+* Datei bleibt im aktiven Bereich
+* wird als „kanonisch aktiv“ markiert
+
+#### B) Archivieren
+
+* eindeutig historisch oder irrelevant
+* → `archive/review_candidates/`
+
+#### C) Konsolidieren
+
+* teilweise redundant oder fragmentiert
+* wird zusammengeführt mit kanonischer Datei
+* resultierende Datei ersetzt ältere Version
+
+---
+
+## 3. Konsolidierungsregeln
+
+Wenn Konsolidierung notwendig:
+
+* neueste oder stabilste Version ist Basis
+* Inhalte anderer Dateien werden integriert
+* alte Versionen werden archiviert (nicht gelöscht)
+* neue Datei wird als kanonisch markiert
+
+---
+
+## 4. Sicherheits- und Prüfregeln
+
+Nach jeder Cluster-Operation:
+
+* Canonical Architecture Manager prüfen
+* Referenzintegrität prüfen
+* Release Integrity Framework ausführen
+* Version Consistency Check durchführen
+
+---
+
+## 5. Logging-System
+
+Alle Aktionen werden in erweitertem Log gespeichert:
+
+`archive_cluster_resolution_log.jsonl`
+
+Pro Eintrag:
+
+* Cluster-ID
+* Dateiliste
+* Entscheidungstyp (duplicate / review / consolidate)
+* kanonische Datei
+* Archivziel
+* Begründung
+* Zeitstempel
+* Verifikationsstatus
+
+---
+
+## 6. Abbruchbedingungen
+
+Phase 2a wird sofort gestoppt bei:
+
+* widersprüchlicher kanonischer Zuordnung
+* fehlgeschlagener Konsolidierung
+* Referenzbruch in aktiven Systemen
+* inkonsistentem Cluster-Graph
+
+---
+
+## 7. Abschlusskriterien
+
+Phase 2a gilt als abgeschlossen, wenn:
+
+* alle Duplikate aufgelöst sind
+* alle Review-Dateien klassifiziert wurden
+* keine offenen Cluster übrig sind
+* alle Logs konsistent und verifiziert sind
+* kein aktiver Referenzbruch existiert
+
+---
+
+## Ergebnis
+
+Nach Abschluss von Phase 2a ist das System:
+
+* frei von redundanten Artefakten
+* klar kanonisch strukturiert
+* auditfähig auf Datei-Ebene
+* vollständig rückverfolgbar
+
+---
+
+## Architekturwirkung
+
+Phase 2a etabliert:
+
+> eine erste echte **kanonische Datenreinheitsschicht** innerhalb des Projekt Kontinuum Systems
+
+und erweitert CAM 1.4 von reiner Archivierung zu:
+
+> struktureller Entscheidungslogik über Dateiexistenz und Kanonizität

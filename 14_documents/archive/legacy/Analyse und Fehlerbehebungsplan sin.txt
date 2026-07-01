@@ -1,0 +1,28 @@
+Analyse und Fehlerbehebungsplan sind fertig:
+[FEHLERBEHEBUNGSPLAN_EINGABEN_2026-06-12.md](C:/Projekt Kontinuum/22_project_chronicle/FEHLERBEHEBUNGSPLAN_EINGABEN_2026-06-12.md)
+Wichtigste Ursachen:
+Lernbefehle mit „Bewusstsein“ werden von der Bewusstseinslogik überschrieben.
+Komma- und Mehrzeileneingaben werden als einzelnes Lernprojekt gespeichert.
+lernstatus zeigt höchstens zehn Projekte.
+Anweisungen werden fälschlich als Lernziele interpretiert.
+Das Sprachmodell verwendet irrelevanten Gesprächskontext.
+Frage- und Korrekturerkennung ist zu eingeschränkt.
+Drei der aktuell 28 Lernaufträge sind eindeutig falsch strukturiert.
+Der Plan priorisiert zuerst Routing, Lernparser und vollständige Projektlisten. Die Datenbereinigung erfolgt anschließend kontrolliert mit Datenbankbackup.
+
+16:46
+
+bitte Fehlerbehebungsplan ausführen
+
+16:47
+
+In Bearbeitung seit 2m 6s
+
+Ich setze den Plan jetzt vollständig um: zuerst sichere ich Datenbank und betroffene Dateien, dann repariere ich Routing, Lernparser, Projektlisten und Dialog-Fallbacks. Anschließend ergänze ich Regressionstests, bereinige die drei bestätigten Fehleinträge kontrolliert und führe die Tests aus.
+
+Ich setze den Plan jetzt vollständig um: zuerst sichere ich Datenbank und betroffene Dateien, dann repariere ich Routing, Lernparser, Projektlisten und Dialog-Fallbacks. Anschließend ergänze ich Regressionstests, bereinige die drei bestätigten Fehleinträge kontrolliert und führe die Tests aus.
+
+Die Sicherung liegt unter 10_security\backups\dialog_learning_fix_20260612_164834. Ich ändere nun sechs Kernbereiche: Befehlspriorität, Mehrfach-Lernbefehle, echte Projektlisten, Frage-/Korrekturerkennung, relevanteren Modellkontext und Lernzielvalidierung. Danach werden die Änderungen zunächst gegen eine temporäre Testdatenbank geprüft.
+Bearbeitetlearning_agent.py+70-25
+
+Die Kernlogik ist repariert. Besonders wichtig: Explizite Befehle haben jetzt Vorrang vor dem Thema „Bewusstsein“, mehrere Lernziele werden getrennt, und Projektlisten kommen direkt aus der Datenbank statt aus dem Sprachmodell. Ich ergänze nun Regressionstests exakt aus deinem Eingabeprotokoll und prüfe die Syntax, bevor die aktive Laufzeit ersetzt wird.
