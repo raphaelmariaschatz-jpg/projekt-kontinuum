@@ -1,0 +1,162 @@
+{
+  "Mathematik": {
+    "goal": false,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open_topics": [],
+    "last_update": null
+  },
+  "Physik": {
+    "goal": false,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open_topics": [],
+    "last_update": null
+  },
+  "Chemie": {
+    "goal": false,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open_topics": [],
+    "last_update": null
+  },
+  "Biologie": {
+    "goal": false,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open_topics": [],
+    "last_update": null
+  },
+  "Astronomie": {
+    "goal": false,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open_topics": [],
+    "last_update": null
+  },
+  "Geologie": {
+    "goal": false,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open_topics": [],
+    "last_update": null
+  },
+  "Medizin": {
+    "goal": false,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open_topics": [],
+    "last_update": null
+  },
+  "Informatik": {
+    "goal": false,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open_topics": [],
+    "last_update": null
+  },
+  "Optik": {
+    "goal": false,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open_topics": [],
+    "last_update": null
+  },
+  "Mechanik": {
+    "goal": false,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open_topics": [],
+    "last_update": null
+  },
+  "Elektrotechnik": {
+    "goal": false,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open_topics": [],
+    "last_update": null
+  },
+  "Architektur": {
+    "goal": false,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open_topics": [],
+    "last_update": null
+  },
+  "Bauwesen": {
+    "goal": false,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open_topics": [],
+    "last_update": null
+  },
+  "Landwirtschaft": {
+    "goal": false,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open_topics": [],
+    "last_update": null
+  },
+  "Geschichte": {
+    "goal": false,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open_topics": [],
+    "last_update": null
+  },
+  "Philosophie": {
+    "goal": false,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open_topics": [],
+    "last_update": null
+  },
+  "Psychologie": {
+    "goal": false,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open_topics": [],
+    "last_update": null
+  },
+  "Sprachwissenschaft": {
+    "goal": false,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open_topics": [],
+    "last_update": null
+  },
+  "Soziologie": {
+    "goal": false,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open_topics": [],
+    "last_update": null
+  },
+  "Ökonomie": {
+    "goal": false,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open_topics": [],
+    "last_update": null
+  }
+}

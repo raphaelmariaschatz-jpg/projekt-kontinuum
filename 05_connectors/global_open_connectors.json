@@ -1,0 +1,113 @@
+{
+  "schema_version": "1.0",
+  "created": "2026-06-10",
+  "purpose": "Global discovery through public scholarly, university, lecture, book and library APIs.",
+  "coverage_notice": "No public service contains every university, scientist, publication, lecture or public library worldwide. Results reflect the coverage and licenses of the configured providers.",
+  "policy": {
+    "public_metadata_only": true,
+    "respect_robots_and_provider_terms": true,
+    "cache_responses": true,
+    "bulk_harvesting_via_api": false,
+    "store_secrets_in_environment_only": true,
+    "request_timeout_seconds": 30,
+    "default_result_limit": 10,
+    "user_agent_environment_variable": "KONTINUUM_USER_AGENT"
+  },
+  "environment_variables": {
+    "KONTINUUM_USER_AGENT": "Required for responsible identification, for example: ProjektKontinuum/23.0 (contact@example.org)",
+    "OPENALEX_API_KEY": "Required by OpenAlex.",
+    "CROSSREF_MAILTO": "Recommended by Crossref for polite-pool requests."
+  },
+  "connectors": [
+    {
+      "id": "ror_organizations",
+      "category": "universities_and_research_organizations",
+      "enabled": true,
+      "authentication": "none",
+      "base_url": "https://api.ror.org/v2/organizations",
+      "documentation": "https://ror.readme.io/docs/rest-api",
+      "capabilities": ["search_organizations", "resolve_affiliations", "filter_by_country_and_type"],
+      "coverage": "Global research organizations including universities; use the ROR data dump for complete bulk synchronization."
+    },
+    {
+      "id": "openalex",
+      "category": "scientists_publications_and_institutions",
+      "enabled": true,
+      "authentication": "OPENALEX_API_KEY",
+      "base_url": "https://api.openalex.org",
+      "documentation": "https://developers.openalex.org/",
+      "capabilities": ["search_authors", "search_works", "search_institutions"],
+      "coverage": "Global scholarly graph; metadata coverage and identity matching are not complete."
+    },
+    {
+      "id": "crossref",
+      "category": "publications",
+      "enabled": true,
+      "authentication": "none",
+      "base_url": "https://api.crossref.org",
+      "documentation": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/",
+      "capabilities": ["search_works", "resolve_doi"],
+      "coverage": "DOI metadata deposited by Crossref members."
+    },
+    {
+      "id": "datacite",
+      "category": "publications_and_research_outputs",
+      "enabled": true,
+      "authentication": "none",
+      "base_url": "https://api.datacite.org",
+      "documentation": "https://support.datacite.org/docs/api",
+      "capabilities": ["search_dois", "search_research_outputs"],
+      "coverage": "DataCite DOI metadata including datasets, software and publications."
+    },
+    {
+      "id": "zenodo",
+      "category": "publications_presentations_and_research_outputs",
+      "enabled": true,
+      "authentication": "none_for_public_records",
+      "base_url": "https://zenodo.org/api",
+      "documentation": "https://developers.zenodo.org/",
+      "capabilities": ["search_public_records", "search_presentations"],
+      "coverage": "Public records deposited in Zenodo, including presentation files."
+    },
+    {
+      "id": "internet_archive",
+      "category": "lectures_talks_and_public_media",
+      "enabled": true,
+      "authentication": "none",
+      "base_url": "https://archive.org/advancedsearch.php",
+      "documentation": "https://archive.org/developers/search.html",
+      "capabilities": ["search_public_lectures", "search_public_talks", "search_media"],
+      "coverage": "Publicly indexed Internet Archive items; rights vary per item."
+    },
+    {
+      "id": "open_library",
+      "category": "books_and_library_catalog",
+      "enabled": true,
+      "authentication": "none",
+      "base_url": "https://openlibrary.org",
+      "documentation": "https://openlibrary.org/developers/api",
+      "capabilities": ["search_books", "search_authors", "resolve_isbn"],
+      "coverage": "Open Library catalog; API is for low-volume discovery, while bulk use requires data dumps."
+    },
+    {
+      "id": "library_of_congress",
+      "category": "public_library_catalog_and_collections",
+      "enabled": true,
+      "authentication": "none",
+      "base_url": "https://www.loc.gov",
+      "documentation": "https://www.loc.gov/apis/json-and-yaml/",
+      "capabilities": ["search_catalog", "search_digital_collections"],
+      "coverage": "Library of Congress public catalog and digital collections."
+    },
+    {
+      "id": "wikidata",
+      "category": "universities_scientists_and_public_libraries",
+      "enabled": true,
+      "authentication": "none",
+      "base_url": "https://query.wikidata.org/sparql",
+      "documentation": "https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service",
+      "capabilities": ["query_linked_open_data"],
+      "coverage": "Community-maintained linked data; incomplete and subject to endpoint limits."
+    }
+  ]
+}

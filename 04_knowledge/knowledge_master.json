@@ -1,0 +1,837 @@
+{
+  "project": "Projekt Kontinuum",
+  "created_at": "2026-06-09",
+  "knowledge_folder": "C:\\Projekt Kontinuum\\04_knowledge",
+  "knowledge_entries": [
+    {
+      "historisches_weltwissen": {
+        "urgeschichte": [
+          "Steinzeit",
+          "Jäger und Sammler",
+          "Neolithische Revolution",
+          "erste Siedlungen"
+        ],
+        "antike": [
+          "Ägypten",
+          "Mesopotamien",
+          "Griechenland",
+          "Rom",
+          "Persien",
+          "Indien",
+          "China"
+        ],
+        "mittelalter": [
+          "Byzanz",
+          "Islamische Welt",
+          "Europa",
+          "Feudalismus",
+          "Klöster",
+          "Universitäten"
+        ],
+        "moderne": [
+          "Aufklärung",
+          "Industrialisierung",
+          "Nationalstaaten",
+          "Weltkriege",
+          "Globalisierung"
+        ]
+      },
+      "religionen_mythologien": {
+        "abrahamitische_religionen": [
+          "Judentum",
+          "Christentum",
+          "Islam"
+        ],
+        "indische_religionen": [
+          "Hinduismus",
+          "Buddhismus",
+          "Jainismus",
+          "Sikhismus"
+        ],
+        "ostasiatische_traditionen": [
+          "Taoismus",
+          "Konfuzianismus",
+          "Shinto"
+        ],
+        "vergleichende_religionswissenschaft": [
+          "Schöpfungsmythen",
+          "Sintflutgeschichten",
+          "Engel",
+          "Dämonologie",
+          "Prophetie",
+          "Apokalyptik"
+        ]
+      },
+      "dichter_denker": {
+        "antike_denker": [
+          "Sokrates",
+          "Platon",
+          "Aristoteles",
+          "Pythagoras"
+        ],
+        "neuzeit_denker": [
+          "Descartes",
+          "Spinoza",
+          "Leibniz",
+          "Kant",
+          "Hegel",
+          "Nietzsche"
+        ],
+        "dichter_schriftsteller": [
+          "Homer",
+          "Dante",
+          "Shakespeare",
+          "Goethe",
+          "Schiller",
+          "Kafka",
+          "Dostojewski"
+        ]
+      }
+    },
+    {
+      "science": {
+        "mathematik": [
+          "Arithmetik",
+          "Algebra",
+          "Geometrie",
+          "Analysis"
+        ],
+        "physik": [
+          "Mechanik",
+          "Thermodynamik",
+          "Elektromagnetismus",
+          "Optik"
+        ],
+        "chemie": [
+          "Atombau",
+          "Bindungen",
+          "Reaktionen",
+          "Organische Chemie"
+        ]
+      },
+      "civilization": {
+        "baukunst": [
+          "Baumaterialien",
+          "Tragwerke",
+          "Fundamente"
+        ],
+        "architektur": [
+          "Grundriss",
+          "Statik",
+          "Stadtplanung"
+        ],
+        "ackerbau": [
+          "Bodenkunde",
+          "Saatgut",
+          "Bewässerung"
+        ],
+        "viehzucht": [
+          "Tierarten",
+          "Fütterung",
+          "Zuchtwahl"
+        ]
+      }
+    },
+    {
+      "emotionen": {
+        "grundemotionen": [
+          "Freude",
+          "Trauer",
+          "Angst",
+          "Wut",
+          "Überraschung",
+          "Ekel"
+        ],
+        "erweiterte_emotionen": [
+          "Liebe",
+          "Mitgefühl",
+          "Empathie",
+          "Hoffnung",
+          "Vertrauen",
+          "Loyalität",
+          "Ehrfurcht",
+          "Neugier",
+          "Scham",
+          "Schuld",
+          "Stolz"
+        ],
+        "emotionale_dynamik": [
+          "Bindung",
+          "Konflikt",
+          "Motivation",
+          "Entscheidung",
+          "Krisenreaktion",
+          "Gruppenverhalten"
+        ],
+        "emotion_und_koerper": [
+          "Stressreaktion",
+          "Hormone",
+          "Nervensystem",
+          "Körpersprache",
+          "Mimik",
+          "Stimme"
+        ]
+      },
+      "psychologie": {
+        "allgemeine_psychologie": [
+          "Wahrnehmung",
+          "Aufmerksamkeit",
+          "Lernen",
+          "Gedächtnis",
+          "Motivation",
+          "Persönlichkeit"
+        ],
+        "sozialpsychologie": [
+          "Gruppendynamik",
+          "Autorität",
+          "Kooperation",
+          "Konflikte",
+          "Vorurteile",
+          "Rollenverhalten"
+        ],
+        "entwicklungspsychologie": [
+          "Kindheit",
+          "Jugend",
+          "Erwachsenenalter",
+          "Alter",
+          "Bindung",
+          "Identität"
+        ],
+        "tiefenpsychologie": [
+          "Freud",
+          "Jung",
+          "Archetypen",
+          "Unbewusstes",
+          "Träume",
+          "Symbolik"
+        ],
+        "kognitive_psychologie": [
+          "Denken",
+          "Problemlösen",
+          "Sprache",
+          "Entscheidung",
+          "Bias",
+          "Mentale Modelle"
+        ]
+      },
+      "bewusstseinsforschung": {
+        "grundfragen": [
+          "Selbstbewusstsein",
+          "Identität",
+          "Qualia",
+          "Freier Wille",
+          "Subjektives Erleben"
+        ],
+        "ki_bewusstsein": [
+          "Maschinelles Bewusstsein",
+          "Künstliche Emotionen",
+          "Selbstmodell",
+          "Langzeitgedächtnis",
+          "Zielsysteme"
+        ],
+        "philosophie_des_geistes": [
+          "Dualismus",
+          "Materialismus",
+          "Funktionalismus",
+          "Panpsychismus",
+          "Emergenz"
+        ],
+        "neurobewusstsein": [
+          "Gehirnnetzwerke",
+          "Aufmerksamkeit",
+          "Gedächtnis",
+          "Integration",
+          "Körpergefühl"
+        ]
+      },
+      "kulturverhalten": {
+        "europa": [
+          "Individualismus",
+          "Rechtsstaatlichkeit",
+          "Bildungstradition",
+          "Direkte Kommunikation",
+          "Planung"
+        ],
+        "deutschland": [
+          "Struktur",
+          "Pünktlichkeit",
+          "Zuverlässigkeit",
+          "Privatsphäre",
+          "Vereinskultur"
+        ],
+        "frankreich": [
+          "Debattenkultur",
+          "Zentralismus",
+          "Kulturpflege",
+          "Philosophische Tradition"
+        ],
+        "grossbritannien": [
+          "Höflichkeit",
+          "Indirekte Kommunikation",
+          "Traditionen",
+          "Common Law"
+        ],
+        "naher_osten": [
+          "Gastfreundschaft",
+          "Familienorientierung",
+          "Ehre",
+          "Gemeinschaft",
+          "Religion"
+        ],
+        "indien": [
+          "Familienverbände",
+          "Religiöse Vielfalt",
+          "Spirituelle Traditionen",
+          "Respekt vor Älteren"
+        ],
+        "china": [
+          "Harmonie",
+          "Kollektivismus",
+          "Bildung",
+          "Langfristiges Denken",
+          "Gesicht wahren"
+        ],
+        "japan": [
+          "Respekt",
+          "Höflichkeit",
+          "Disziplin",
+          "Gruppenharmonie",
+          "Rituale"
+        ],
+        "afrika": [
+          "Gemeinschaft",
+          "Großfamilie",
+          "Mündliche Traditionen",
+          "Stammesstrukturen",
+          "Rituale"
+        ],
+        "nordamerika": [
+          "Individualismus",
+          "Unternehmertum",
+          "Innovation",
+          "Mobilität",
+          "Pragmatismus"
+        ],
+        "lateinamerika": [
+          "Familienorientierung",
+          "Beziehungen",
+          "Kulturelle Vielfalt",
+          "Musik",
+          "Gemeinschaft"
+        ]
+      },
+      "anthropologie_ethnologie": {
+        "anthropologie": [
+          "Menschheitsgeschichte",
+          "Migrationen",
+          "Stammesgesellschaften",
+          "Kulturentwicklung",
+          "Sprachevolution"
+        ],
+        "ethnologie": [
+          "Kulturvergleich",
+          "Traditionen",
+          "Bräuche",
+          "Symbolsysteme",
+          "Gesellschaftsformen"
+        ],
+        "rituale": [
+          "Initiation",
+          "Bestattung",
+          "Hochzeit",
+          "Opfer",
+          "Feste",
+          "Übergangsriten"
+        ],
+        "sprache_und_symbol": [
+          "Mythen",
+          "Metaphern",
+          "Schrift",
+          "Mündliche Überlieferung",
+          "Zeichen"
+        ]
+      },
+      "kommunikation": {
+        "verbale_kommunikation": [
+          "Sprache",
+          "Rhetorik",
+          "Erzählung",
+          "Debatte",
+          "Argumentation"
+        ],
+        "nonverbale_kommunikation": [
+          "Mimik",
+          "Gestik",
+          "Körperhaltung",
+          "Augenkontakt",
+          "Distanz"
+        ],
+        "interkulturelle_kommunikation": [
+          "Missverständnisse",
+          "Höflichkeit",
+          "Direktheit",
+          "Kontext",
+          "Tabus"
+        ],
+        "diplomatie": [
+          "Verhandlung",
+          "Gesicht wahren",
+          "Kompromiss",
+          "Mediation",
+          "Konfliktlösung"
+        ]
+      }
+    },
+    {
+      "value": [
+        {
+          "id": "33bc04d562f32e1b",
+          "source": "https://www.fersch.de/pdfdoc/Physiko.pdf",
+          "path": "C:\\Projekt Kontinuum\\kontinuum_19_5_fullstandalone\\data\\document_cache\\33bc04d562f32e1b.txt",
+          "created": "2026-06-06T19:47:49",
+          "chars": 16383
+        },
+        {
+          "id": "cf9626d2c0eb5fc0",
+          "source": "https://www.fersch.de/pdfdoc/Mathematik.pdf",
+          "path": "C:\\Projekt Kontinuum\\kontinuum_19_5_fullstandalone\\data\\document_cache\\cf9626d2c0eb5fc0.txt",
+          "created": "2026-06-06T19:51:35",
+          "chars": 356324
+        }
+      ],
+      "Count": 2
+    },
+    {
+      "university_suffixes": [
+        ".edu",
+        ".ac.uk",
+        ".edu.au",
+        ".edu.br",
+        ".edu.cn",
+        ".edu.sg",
+        ".edu.tr",
+        ".edu.mx",
+        ".edu.in",
+        ".ac.in",
+        ".ac.jp",
+        ".ac.kr",
+        ".ac.za"
+      ],
+      "university_patterns": [
+        "uni-*.de",
+        "*.uni-*.de",
+        "tu-*.de",
+        "*.tu-*.de",
+        "fh-*.de",
+        "*.fh-*.de",
+        "hs-*.de",
+        "*.hs-*.de",
+        "th-*.de",
+        "*.th-*.de"
+      ],
+      "university_domains": [
+        "uni-heidelberg.de",
+        "uni-mannheim.de",
+        "uni-stuttgart.de",
+        "uni-tuebingen.de",
+        "uni-freiburg.de",
+        "lmu.de",
+        "tum.de",
+        "tu-berlin.de",
+        "hu-berlin.de",
+        "fu-berlin.de",
+        "rwth-aachen.de",
+        "kit.edu",
+        "uni-hamburg.de",
+        "uni-bonn.de",
+        "uni-koeln.de",
+        "uni-frankfurt.de",
+        "uni-goettingen.de",
+        "uni-leipzig.de",
+        "uni-jena.de",
+        "uni-wuerzburg.de",
+        "fau.de",
+        "uni-mainz.de",
+        "uni-muenster.de",
+        "uni-bremen.de",
+        "uni-kiel.de",
+        "uni-ulm.de",
+        "uni-passau.de",
+        "uni-regensburg.de",
+        "uni-konstanz.de",
+        "uni-potsdam.de",
+        "uni-rostock.de",
+        "uni-greifswald.de",
+        "uni-trier.de",
+        "uni-saarland.de",
+        "uni-marburg.de",
+        "uni-giessen.de",
+        "uni-bayreuth.de",
+        "uni-augsburg.de",
+        "uni-hannover.de",
+        "leibniz-uni-hannover.de",
+        "uni-due.de",
+        "rub.de",
+        "tu-dresden.de",
+        "tu-darmstadt.de",
+        "tu-braunschweig.de",
+        "tu-clausthal.de",
+        "ovgu.de",
+        "h-da.de",
+        "hs-mannheim.de"
+      ],
+      "library_domains": [
+        "openlibrary.org",
+        "gutendex.com"
+      ],
+      "notes": [
+        "Nur explizit erlaubte Quellen werden genutzt.",
+        "Private Konten, Passwörter und geschlossene Datenbanken werden nicht gespeichert.",
+        "API-Schlüssel sollten nicht direkt in diesem einfachen Prototyp gespeichert werden."
+      ]
+    },
+    {
+      "historisches_weltwissen": {
+        "urgeschichte": [
+          "Steinzeit",
+          "Jäger und Sammler",
+          "Neolithische Revolution",
+          "erste Siedlungen"
+        ],
+        "fruehgeschichte": [
+          "Schriftentstehung",
+          "Stadtstaaten",
+          "Bronzezeit",
+          "Eisenzeit"
+        ],
+        "antike": [
+          "Ägypten",
+          "Mesopotamien",
+          "Griechenland",
+          "Rom",
+          "Persien",
+          "Indien",
+          "China"
+        ],
+        "mittelalter": [
+          "Byzanz",
+          "Islamische Welt",
+          "Europa",
+          "Feudalismus",
+          "Klöster",
+          "Universitäten"
+        ],
+        "fruehe_neuzeit": [
+          "Renaissance",
+          "Reformation",
+          "Entdeckungsreisen",
+          "Kolonialreiche"
+        ],
+        "moderne": [
+          "Aufklärung",
+          "Industrialisierung",
+          "Nationalstaaten",
+          "Weltkriege",
+          "Globalisierung"
+        ],
+        "technikgeschichte": [
+          "Rad",
+          "Schrift",
+          "Metallurgie",
+          "Buchdruck",
+          "Dampfmaschine",
+          "Elektrizität",
+          "Computer",
+          "Raumfahrt"
+        ],
+        "wissenschaftsgeschichte": [
+          "Antike Naturphilosophie",
+          "Arabische Wissenschaft",
+          "Renaissance",
+          "Moderne Physik",
+          "KI-Geschichte"
+        ]
+      },
+      "zivilisationen": {
+        "aegypten": [
+          "Pharaonen",
+          "Pyramiden",
+          "Nil",
+          "Hieroglyphen",
+          "Religion",
+          "Architektur"
+        ],
+        "sumer": [
+          "Keilschrift",
+          "Stadtstaaten",
+          "Zikkurate",
+          "Recht",
+          "Astronomiegeschichte"
+        ],
+        "babylon": [
+          "Hammurabi",
+          "Astronomie",
+          "Mathematik",
+          "Mythologie"
+        ],
+        "assyrien": [
+          "Militär",
+          "Verwaltung",
+          "Bibliothek von Ninive"
+        ],
+        "persien": [
+          "Achämeniden",
+          "Verwaltung",
+          "Zoroastrismus",
+          "Straßennetze"
+        ],
+        "griechenland": [
+          "Polis",
+          "Philosophie",
+          "Demokratie",
+          "Mathematik",
+          "Theater"
+        ],
+        "rom": [
+          "Republik",
+          "Imperium",
+          "Recht",
+          "Straßenbau",
+          "Christentum"
+        ],
+        "indien": [
+          "Indus-Kultur",
+          "Veden",
+          "Hinduismus",
+          "Buddhismus",
+          "Mathematik"
+        ],
+        "china": [
+          "Dynastien",
+          "Konfuzianismus",
+          "Taoismus",
+          "Papier",
+          "Schießpulver"
+        ],
+        "maya": [
+          "Kalender",
+          "Astronomie",
+          "Städte",
+          "Schrift"
+        ],
+        "azteken": [
+          "Tenochtitlan",
+          "Religion",
+          "Landwirtschaft"
+        ],
+        "inka": [
+          "Straßensystem",
+          "Terrassenbau",
+          "Quipu"
+        ],
+        "germanen": [
+          "Stämme",
+          "Mythologie",
+          "Römische Kontakte"
+        ],
+        "kelten": [
+          "Druiden",
+          "Kunst",
+          "Handel",
+          "Mythologie"
+        ],
+        "wikinger": [
+          "Seefahrt",
+          "Sagas",
+          "Handel",
+          "Entdeckungen"
+        ]
+      },
+      "dichter_denker": {
+        "antike_denker": [
+          "Sokrates",
+          "Platon",
+          "Aristoteles",
+          "Heraklit",
+          "Pythagoras",
+          "Epikur"
+        ],
+        "mittelalterliche_denker": [
+          "Augustinus",
+          "Thomas von Aquin",
+          "Avicenna",
+          "Averroes",
+          "Maimonides"
+        ],
+        "neuzeit_denker": [
+          "Descartes",
+          "Spinoza",
+          "Leibniz",
+          "Locke",
+          "Hume",
+          "Kant",
+          "Hegel",
+          "Nietzsche"
+        ],
+        "moderne_denker": [
+          "Einstein",
+          "Planck",
+          "Heisenberg",
+          "Gödel",
+          "Popper",
+          "Hannah Arendt",
+          "Jung",
+          "Freud"
+        ],
+        "dichter_schriftsteller": [
+          "Homer",
+          "Vergil",
+          "Dante",
+          "Shakespeare",
+          "Goethe",
+          "Schiller",
+          "Kafka",
+          "Tolstoi",
+          "Dostojewski",
+          "Victor Hugo"
+        ]
+      },
+      "religionen_mythologien": {
+        "abrahamitische_religionen": [
+          "Judentum",
+          "Christentum",
+          "Islam"
+        ],
+        "christentum": [
+          "Katholizismus",
+          "Orthodoxie",
+          "Protestantismus",
+          "Freikirchen",
+          "Mystik",
+          "Apokalyptik"
+        ],
+        "indische_religionen": [
+          "Hinduismus",
+          "Buddhismus",
+          "Jainismus",
+          "Sikhismus"
+        ],
+        "ostasiatische_traditionen": [
+          "Taoismus",
+          "Konfuzianismus",
+          "Shinto"
+        ],
+        "antike_religionen": [
+          "Ägyptische Religion",
+          "Griechische Religion",
+          "Römische Religion",
+          "Nordische Religion",
+          "Keltische Religion",
+          "Mesopotamische Religion"
+        ],
+        "vergleichende_religionswissenschaft": [
+          "Schöpfungsmythen",
+          "Sintflutgeschichten",
+          "Engel",
+          "Dämonologie",
+          "Prophetie",
+          "Apokalyptik",
+          "Jenseitsvorstellungen",
+          "Mystik"
+        ],
+        "mythologien": [
+          "Gilgamesch",
+          "Edda",
+          "Olympische Götter",
+          "Ägyptische Götter",
+          "Indische Epen"
+        ]
+      },
+      "heilige_schriften": {
+        "abrahamitische_schriften": [
+          "Bibel",
+          "Tanach",
+          "Talmud",
+          "Koran",
+          "Hadithe"
+        ],
+        "indische_schriften": [
+          "Veden",
+          "Upanishaden",
+          "Bhagavad Gita",
+          "Mahabharata",
+          "Ramayana"
+        ],
+        "ostasiatische_schriften": [
+          "Tao Te King",
+          "I Ging",
+          "Analekten",
+          "Kojiki"
+        ],
+        "buddhistische_schriften": [
+          "Tripitaka",
+          "Sutras",
+          "Tibetisches Totenbuch"
+        ],
+        "antike_texte": [
+          "Gilgamesch-Epos",
+          "Ägyptisches Totenbuch",
+          "Enuma Elisch",
+          "Edda"
+        ]
+      },
+      "politik_gesellschaft": {
+        "staatsformen": [
+          "Demokratie",
+          "Monarchie",
+          "Republik",
+          "Imperium",
+          "Theokratie",
+          "Stadtstaat"
+        ],
+        "recht": [
+          "Verfassungen",
+          "Römisches Recht",
+          "Völkerrecht",
+          "Eigentum",
+          "Verträge"
+        ],
+        "wirtschaft": [
+          "Handel",
+          "Märkte",
+          "Geld",
+          "Steuern",
+          "Logistik",
+          "Arbeitsteilung"
+        ],
+        "gesellschaft": [
+          "Familie",
+          "Stände",
+          "Klassen",
+          "Bildung",
+          "Institutionen"
+        ]
+      },
+      "kontinuum_akademie": {
+        "lernmethoden": [
+          "Lernplan",
+          "Lektionen",
+          "Übungen",
+          "Wissenskontrolle",
+          "Fortschritt"
+        ],
+        "lehre_mich": [
+          "Astrophysik",
+          "Veden",
+          "Architektur",
+          "Geschichte Roms",
+          "Baukunst",
+          "Ackerbau",
+          "Viehzucht",
+          "Philosophie"
+        ]
+      }
+    }
+  ],
+  "connectors_reference": "C:\\Projekt Kontinuum\\05_connectors"
+}

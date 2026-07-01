@@ -111,3 +111,6 @@ node_modules/
 
 *.db-wal
 *.db-shm
+
+03_memory/conversation_journal/*.jsonl
+03_memory/forgotten/*.jsonl

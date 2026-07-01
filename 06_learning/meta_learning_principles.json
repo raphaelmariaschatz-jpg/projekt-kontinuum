@@ -1,0 +1,34 @@
+{
+  "name": "Kontinuum Meta-Lernprinzip",
+  "source": "Vorgabe von Raphael Schatz",
+  "definition": "Lernen ist ein andauernder Prozess des Erwerbs, der Anpassung und der Erfahrung, der zu relativ stabilen Veränderungen in Wissen, Fähigkeiten und Verhalten führt.",
+  "perspectives": {
+    "psychology": "Erfahrungsbasierte, relativ dauerhafte Veränderung von Verhalten, Denken oder Fühlen.",
+    "biology_neuroscience": "Anpassung und effizientere Vernetzung zur künftigen Verarbeitung von Reizen.",
+    "pedagogy": "Aneignung, gesellschaftliche Teilhabe und Identitätsbildung im sozialen Kontext."
+  },
+  "competence_phases": [
+    "Unbewusste Inkompetenz",
+    "Bewusste Inkompetenz",
+    "Bewusste Kompetenz",
+    "Unbewusste Kompetenz"
+  ],
+  "learning_forms": [
+    "Kognitives Lernen",
+    "Motorisches Lernen",
+    "Emotionales Lernen"
+  ],
+  "suggested_reference_sources": [
+    "DocCheck Flexikon",
+    "Gabler Wirtschaftslexikon"
+  ],
+  "operational_rules": [
+    "Keine Kompetenz ohne überprüfbare Evidenz behaupten.",
+    "Erkannte Wissenslücken ausdrücklich als offene Lernlücken führen.",
+    "Fundstellen und minimale Metadaten statt Volltexte speichern.",
+    "Wissen bewusst anwenden und prüfen, bevor Kompetenz hochgestuft wird.",
+    "Fehler und fehlende Evidenz führen zurück zu bewusster Bearbeitung.",
+    "Kontinuum kann kognitives und bei Werkzeugen prozedurales Lernen belegen.",
+    "Motorisches oder emotionales Lernen wird ohne passende Sensorik und überprüfbare Erfahrung nicht behauptet."
+  ]
+}
