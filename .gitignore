@@ -1,0 +1,40 @@
+# ----------------------------
+# Projekt Kontinuum
+# Git Ignore
+# ----------------------------
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtuelle Umgebungen
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Logdateien
+*.log
+
+# Temporäre Dateien
+*.tmp
+*.temp
+
+# Python Test Cache
+.pytest_cache/
+.mypy_cache/
+
+# Git
+.gitmodules
+
+# Betriebssystem
+.DS_Store
