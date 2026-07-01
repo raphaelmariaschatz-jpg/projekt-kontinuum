@@ -1,0 +1,78 @@
+{
+  "kind": "kontinuum.phase3.stabilization_policy",
+  "version": "34.1",
+  "status": "ACTIVE",
+  "read_only": true,
+  "created_at": "2026-06-28T10:00:36.174649+00:00",
+  "baseline": "34.1",
+  "purpose": "Binding operating policy for Phase 3 governance drift classification, response, and compliance handling.",
+  "drift_classification": {
+    "expected_drift": {
+      "definition": "Changes that are directly caused by the introduction and stabilization of Phase 3.",
+      "examples": [
+        "new governance files",
+        "new report hashes",
+        "new baseline files",
+        "additional metadata"
+      ],
+      "compliance_effect": "Does not count as an error; compliance remains valid."
+    },
+    "real_drift": {
+      "definition": "Unplanned or not explainable changes.",
+      "examples": [
+        "hash changes of active canonical artifacts",
+        "missing governance files",
+        "inconsistencies between reports",
+        "unexpected registry changes"
+      ],
+      "compliance_effect": "Must be reported; compliance score decreases."
+    }
+  },
+  "drift_levels": {
+    "LOW": {
+      "criteria": "Only expected changes.",
+      "action": [
+        "log"
+      ]
+    },
+    "MEDIUM": {
+      "criteria": "Expected changes plus small explainable differences.",
+      "action": [
+        "warning",
+        "extend_governance_report"
+      ]
+    },
+    "HIGH": {
+      "criteria": "Unexplainable changes, canonical violations, hash inconsistencies, or missing artifacts.",
+      "action": [
+        "block_governance",
+        "compliance_fail"
+      ]
+    }
+  },
+  "governance_reaction": {
+    "LOW": [
+      "log"
+    ],
+    "MEDIUM": [
+      "log",
+      "report",
+      "notice"
+    ],
+    "HIGH": [
+      "block",
+      "manual_approval_required"
+    ]
+  },
+  "compliance_rules": {
+    "expected_drift": "Compliance remains valid.",
+    "real_drift": "Compliance decreases.",
+    "high_drift": "Compliance FAIL."
+  },
+  "mutation_policy": {
+    "auto_delete": false,
+    "auto_move": false,
+    "verified_change_required": true,
+    "manual_approval_required_for_high_drift": true
+  }
+}

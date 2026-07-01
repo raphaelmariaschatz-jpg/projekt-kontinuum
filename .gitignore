@@ -99,3 +99,15 @@ node_modules/
 ########################################################
 
 *.rej
+
+########################################################
+# Projekt Kontinuum – Laufzeit / Backups
+########################################################
+
+10_security/backups/
+
+13_tools/codex_cli/*.exe
+13_tools/development_sandbox/
+
+*.db-wal
+*.db-shm

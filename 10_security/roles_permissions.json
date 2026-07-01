@@ -1,0 +1,33 @@
+{
+  "project": "Projekt Kontinuum",
+  "created_at": "2026-06-09",
+  "roles": [
+    {
+      "username": "Raphael Schatz",
+      "full_name": "Raphael Schatz",
+      "role": "SUPERADMIN",
+      "is_superadmin": true,
+      "permissions": {
+        "can_manage_connectors": true,
+        "can_search_internet": true,
+        "can_use_local_workspace": true,
+        "can_execute_admin_commands": true,
+        "requires_confirmation_for_risky_actions": true
+      }
+    },
+    {
+      "username": "Raphael",
+      "full_name": null,
+      "role": null,
+      "is_superadmin": false,
+      "permissions": {}
+    },
+    {
+      "username": "Raphael",
+      "full_name": "Raphael Schatz",
+      "role": "SUPERADMIN",
+      "is_superadmin": true,
+      "permissions": {}
+    }
+  ]
+}

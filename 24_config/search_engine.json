@@ -1,0 +1,30 @@
+{
+  "enabled": true,
+  "provider": "search_provider_router",
+  "provider_order": [
+    "local_knowledge",
+    "notebook_knowledge",
+    "university_sources",
+    "arxiv",
+    "semantic_scholar",
+    "brave_search",
+    "duckduckgo_html",
+    "duckduckgo_lite"
+  ],
+  "fallback_providers": ["duckduckgo_html", "duckduckgo_lite"],
+  "base_url": "https://html.duckduckgo.com/html/",
+  "fallback_base_urls": {
+    "duckduckgo_lite": "https://lite.duckduckgo.com/lite/",
+    "wikipedia": "https://de.wikipedia.org/w/api.php",
+    "arxiv": "https://export.arxiv.org/api/query",
+    "semantic_scholar": "https://api.semanticscholar.org/graph/v1/paper/search",
+    "brave_search": "https://api.search.brave.com/res/v1/web/search"
+  },
+  "brave_api_key": "",
+  "university_domains": ["site:.edu", "site:.ac.uk", "site:.edu.au", "site:.de university"],
+  "language": "de-de",
+  "safe_search": "moderate",
+  "timeout_seconds": 5,
+  "max_results": 8
+  ,"auto_research_questions": true
+}

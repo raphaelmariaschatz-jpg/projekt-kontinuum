@@ -1,0 +1,130 @@
+{
+  "policy": "Internet Knowledge Governance",
+  "version": "IKG 1.0",
+  "status": "policy_only_no_automatic_knowledge_adoption",
+  "created_at": "2026-06-28",
+  "scope": [
+    "internet_learning_service",
+    "internet_research",
+    "source_review",
+    "canonical_knowledge_adoption"
+  ],
+  "allowed_sources": [
+    "scientific_publication",
+    "university",
+    "public_documentation",
+    "government",
+    "technical_documentation",
+    "encyclopedia"
+  ],
+  "source_classification": {
+    "scientific_publication": "high_trust_review_required",
+    "university": "high_trust_review_required",
+    "government": "high_trust_review_required",
+    "technical_documentation": "medium_high_trust_review_required",
+    "public_documentation": "medium_trust_review_required",
+    "encyclopedia": "medium_trust_review_required",
+    "unknown": "reject_or_manual_exception_only"
+  },
+  "trust_scoring": {
+    "high": "primary institution, stable publication, clear provenance",
+    "medium": "public and attributable source with review requirement",
+    "low": "insufficient authority, unstable source, weak provenance",
+    "reject": "blocked class, missing provenance, unsafe or non-public source"
+  },
+  "automatic_rejection": [
+    "paywall_bypass",
+    "illegal_source",
+    "login_required",
+    "private_data",
+    "mass_scraping",
+    "aggressive_crawler",
+    "http_without_tls",
+    "missing_url",
+    "missing_retrieval_time",
+    "missing_content_hash",
+    "missing_source_class",
+    "direct_memory_write_request"
+  ],
+  "review_rules": {
+    "review_required": true,
+    "minimum_review_status_for_canonical_adoption": "approved_by_human_review",
+    "queue_directory": "32_data/internet_learning_queue",
+    "review_directory": "32_data/internet_learning_review",
+    "no_direct_memory_write": true,
+    "no_automatic_canonical_adoption": true
+  },
+  "ckde": {
+    "engine": "Canonical Knowledge Decision Engine",
+    "version": "CKDE 1.0",
+    "policy": "24_config/canonical_knowledge_decision_engine_1_0.json",
+    "decision_classes": [
+      "ACCEPT",
+      "REVIEW",
+      "REJECT",
+      "CONFLICT"
+    ],
+    "no_automatic_canonical_adoption": true,
+    "trust_classes": {
+      "A": "Universitaeten, wissenschaftliche Publikationen, Behoerden, offizielle Dokumentationen",
+      "B": "Fachbuecher, Fachorganisationen, technische Standards",
+      "C": "Etablierte Fachportale, Wikipedia, serioese Nachrichtenquellen",
+      "D": "Foren, Communitys, Reddit",
+      "E": "Social Media oder unbekannte Quellen"
+    },
+    "append_only_storage": [
+      "knowledge_evaluations",
+      "source_ratings",
+      "knowledge_conflicts",
+      "evaluation_history"
+    ]
+  },
+  "conflicting_sources": {
+    "default_action": "hold_for_review",
+    "required_action": "document_conflict_and_keep_out_of_canonical_memory",
+    "resolution": "manual_review_with_source_quality_and_recency_assessment"
+  },
+  "provenance_required_fields": [
+    "url",
+    "source_class",
+    "title",
+    "retrieved_at",
+    "sha256",
+    "summary",
+    "review_required",
+    "write_to_memory_directly",
+    "status",
+    "policy"
+  ],
+  "canonical_adoption_rules": [
+    "human_review_required",
+    "provenance_complete",
+    "source_class_allowed",
+    "no_conflict_or_conflict_resolved",
+    "no_foundation_or_identity_override",
+    "release_or_governance_record_required"
+  ],
+  "bandwidth_control": {
+    "bandwidth_limit_percent": 10,
+    "max_requests_per_minute": 2,
+    "min_delay_between_requests_seconds": 10,
+    "max_download_mb_per_hour": 5,
+    "max_response_bytes": 500000
+  },
+  "security_rules": [
+    "https_only",
+    "no_login_required_sources",
+    "no_private_data_sources",
+    "no_mass_scraping",
+    "no_paywall_bypass",
+    "no_foundation_mutation",
+    "no_unreviewed_memory_write"
+  ],
+  "governance_rules": {
+    "phase3_integration": "Continuous Canonical Governance observes queue, review, provenance and policy drift.",
+    "evidence_required": true,
+    "release_gate_required": true,
+    "policy_changes": "release_controlled_migration",
+    "logging": "append_only"
+  }
+}

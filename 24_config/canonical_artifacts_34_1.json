@@ -1,0 +1,416 @@
+{
+  "version": "34.1",
+  "manager_version": "1.4",
+  "scope": "release_relevant_project_artifacts",
+  "mutation_policy": "read_only_verification; no_move_no_delete_no_autofix",
+  "lifecycle_policy": "24_config/retention_policy.json",
+  "allowed_lifecycle_policies": [
+    "retain_until_release_then_archive",
+    "never_auto_delete",
+    "release_controlled",
+    "archive_required",
+    "report_only"
+  ],
+  "required_lifecycle_values": {
+    "valuable_artifact_action_before_release": "retain",
+    "valuable_artifact_action_after_release": "archive",
+    "valuable_artifact_deletion": "manual_only_after_explicit_review",
+    "migration_artifact_archive_root": "02_versions/migration_artifacts",
+    "migration_report_backup_root": "09_backups/migration_reports"
+  },
+  "required_lifecycle_roots": [
+    "02_versions/migration_artifacts",
+    "09_backups/migration_reports",
+    "31_reports/release_integrity/34.1",
+    "31_reports/governance",
+    "31_reports/events",
+    "31_reports/drift"
+  ],
+  "generated_cache_names": [
+    "__pycache__",
+    ".pytest_cache",
+    ".mypy_cache",
+    ".ruff_cache",
+    ".coverage_cache",
+    "htmlcov"
+  ],
+  "generated_cache_suffixes": [
+    ".pyc",
+    ".pyo"
+  ],
+  "cache_scan_roots": [
+    "01_system",
+    "11_gui",
+    "17_tests"
+  ],
+  "protected_cache_roots": [
+    "02_versions",
+    "03_memory",
+    "04_knowledge",
+    "07_models",
+    "09_backups",
+    "22_project_chronicle",
+    "32_data"
+  ],
+  "artifacts": [
+    {
+      "artifact_id": "ART-RELEASE-CORE-001",
+      "artifact_class": "release-critical",
+      "path": "01_system/kontinuum/core/release_integrity.py",
+      "required": true,
+      "expected_root": "01_system/kontinuum/core",
+      "signed": false,
+      "lifecycle_policy": "release_controlled"
+    },
+    {
+      "artifact_id": "ART-RELEASE-CORE-002",
+      "artifact_class": "release-critical",
+      "path": "01_system/kontinuum/core/canonical_artifacts.py",
+      "required": true,
+      "expected_root": "01_system/kontinuum/core",
+      "signed": false,
+      "lifecycle_policy": "release_controlled"
+    },
+    {
+      "artifact_id": "ART-CDE-CORE-001",
+      "artifact_class": "release-critical",
+      "path": "24_config/canonical_decision_engine_2_0.json",
+      "required": true,
+      "expected_root": "24_config",
+      "signed": false,
+      "lifecycle_policy": "release_controlled"
+    },
+    {
+      "artifact_id": "ART-CKDE-CORE-001",
+      "artifact_class": "release-critical",
+      "path": "01_system/kontinuum/core/canonical_knowledge_decision.py",
+      "required": true,
+      "expected_root": "01_system/kontinuum/core",
+      "signed": false,
+      "lifecycle_policy": "release_controlled"
+    },
+    {
+      "artifact_id": "ART-CKDE-CONFIG-001",
+      "artifact_class": "release-critical",
+      "path": "24_config/canonical_knowledge_decision_engine_1_0.json",
+      "required": true,
+      "expected_root": "24_config",
+      "signed": false,
+      "lifecycle_policy": "release_controlled"
+    },
+    {
+      "artifact_id": "ART-WEBAGENT-CORE-001",
+      "artifact_class": "release-critical",
+      "path": "01_system/kontinuum/core/web_agent.py",
+      "required": true,
+      "expected_root": "01_system/kontinuum/core",
+      "signed": false,
+      "lifecycle_policy": "release_controlled"
+    },
+    {
+      "artifact_id": "ART-WEBAGENT-CONFIG-001",
+      "artifact_class": "release-critical",
+      "path": "24_config/web_agent_1_0.json",
+      "required": true,
+      "expected_root": "24_config",
+      "signed": false,
+      "lifecycle_policy": "release_controlled"
+    },
+    {
+      "artifact_id": "ART-FILEAGENT-CORE-001",
+      "artifact_class": "release-critical",
+      "path": "01_system/kontinuum/core/file_agent.py",
+      "required": true,
+      "expected_root": "01_system/kontinuum/core",
+      "signed": false,
+      "lifecycle_policy": "release_controlled"
+    },
+    {
+      "artifact_id": "ART-FILEAGENT-CONFIG-001",
+      "artifact_class": "release-critical",
+      "path": "24_config/file_agent_1_0.json",
+      "required": true,
+      "expected_root": "24_config",
+      "signed": false,
+      "lifecycle_policy": "release_controlled"
+    },
+    {
+      "artifact_id": "ART-RELEASE-CONFIG-001",
+      "artifact_class": "release-critical",
+      "path": "24_config/release_integrity_34_1.json",
+      "required": true,
+      "expected_root": "24_config",
+      "signed": false,
+      "lifecycle_policy": "release_controlled"
+    },
+    {
+      "artifact_id": "ART-RELEASE-CONFIG-002",
+      "artifact_class": "release-critical",
+      "path": "24_config/canonical_artifacts_34_1.json",
+      "required": true,
+      "expected_root": "24_config",
+      "signed": false,
+      "lifecycle_policy": "release_controlled"
+    },
+    {
+      "artifact_id": "ART-AUDIT-EVIDENCE-001",
+      "artifact_class": "audit-evidence",
+      "path": "31_reports/release_integrity/34.1/baseline.json",
+      "required": true,
+      "expected_root": "31_reports/release_integrity/34.1",
+      "signed": true,
+      "lifecycle_policy": "never_auto_delete"
+    },
+    {
+      "artifact_id": "ART-AUDIT-EVIDENCE-002",
+      "artifact_class": "audit-evidence",
+      "path": "31_reports/release_integrity/34.1/audit_snapshot.json",
+      "required": true,
+      "expected_root": "31_reports/release_integrity/34.1",
+      "signed": true,
+      "lifecycle_policy": "never_auto_delete"
+    },
+    {
+      "artifact_id": "ART-AUDIT-EVIDENCE-003",
+      "artifact_class": "audit-evidence",
+      "path": "31_reports/release_integrity/34.1/release_gate.json",
+      "required": true,
+      "expected_root": "31_reports/release_integrity/34.1",
+      "signed": true,
+      "lifecycle_policy": "never_auto_delete"
+    },
+    {
+      "artifact_id": "ART-MIGRATION-EVIDENCE-001",
+      "artifact_class": "migration-artifact",
+      "path": "02_versions/migration_artifacts/34_1_Foundation_2_2_CAM_1_1/release_evidence/baseline.json",
+      "required": true,
+      "expected_root": "02_versions/migration_artifacts",
+      "signed": true,
+      "lifecycle_policy": "archive_required"
+    },
+    {
+      "artifact_id": "ART-MIGRATION-EVIDENCE-002",
+      "artifact_class": "migration-artifact",
+      "path": "02_versions/migration_artifacts/34_1_Foundation_2_2_CAM_1_1/release_evidence/audit_snapshot.json",
+      "required": true,
+      "expected_root": "02_versions/migration_artifacts",
+      "signed": true,
+      "lifecycle_policy": "archive_required"
+    },
+    {
+      "artifact_id": "ART-MIGRATION-EVIDENCE-003",
+      "artifact_class": "migration-artifact",
+      "path": "02_versions/migration_artifacts/34_1_Foundation_2_2_CAM_1_1/release_evidence/release_gate.json",
+      "required": true,
+      "expected_root": "02_versions/migration_artifacts",
+      "signed": true,
+      "lifecycle_policy": "archive_required"
+    },
+    {
+      "artifact_id": "ART-DOCUMENTATION-001",
+      "artifact_class": "documentation",
+      "path": "14_documents/PROJEKTSTRUKTUR_34_1.md",
+      "required": true,
+      "expected_root": "14_documents",
+      "signed": false,
+      "lifecycle_policy": "release_controlled"
+    },
+    {
+      "artifact_id": "ART-DOCUMENTATION-002",
+      "artifact_class": "documentation",
+      "path": "14_documents/KANONISCHES_ARCHITEKTURMODELL_34_1.md",
+      "required": true,
+      "expected_root": "14_documents",
+      "signed": false,
+      "lifecycle_policy": "release_controlled"
+    },
+    {
+      "artifact_id": "ART-DOCUMENTATION-003",
+      "artifact_class": "documentation",
+      "path": "14_documents/ARBEITSREGEL_ARTEFAKT_LIFECYCLE_34_1.md",
+      "required": true,
+      "expected_root": "14_documents",
+      "signed": false,
+      "lifecycle_policy": "release_controlled"
+    },
+    {
+      "artifact_id": "ART-DOCUMENTATION-WEBAGENT-001",
+      "artifact_class": "documentation",
+      "path": "14_documents/web_agent_1_0_umsetzung_2026_06_30.md",
+      "required": true,
+      "expected_root": "14_documents",
+      "signed": false,
+      "lifecycle_policy": "release_controlled"
+    },
+    {
+      "artifact_id": "ART-DOCUMENTATION-FILEAGENT-001",
+      "artifact_class": "documentation",
+      "path": "14_documents/file_agent_1_0_umsetzung_2026_06_30.md",
+      "required": true,
+      "expected_root": "14_documents",
+      "signed": false,
+      "lifecycle_policy": "release_controlled"
+    },
+    {
+      "artifact_id": "ART-HISTORICAL-ARCHIVE-001",
+      "artifact_class": "historical-archive",
+      "path": "02_versions/projektstrukturen/PROJEKTSTRUKTUR_34_0.md",
+      "required": true,
+      "expected_root": "02_versions/projektstrukturen",
+      "signed": false,
+      "lifecycle_policy": "archive_required"
+    },
+    {
+      "artifact_id": "ART-GOVERNANCE-CORE-001",
+      "artifact_class": "release-critical",
+      "path": "01_system/kontinuum/core/continuous_governance.py",
+      "required": true,
+      "expected_root": "01_system/kontinuum/core",
+      "signed": false,
+      "lifecycle_policy": "release_controlled"
+    },
+    {
+      "artifact_id": "ART-GOVERNANCE-CONFIG-001",
+      "artifact_class": "release-critical",
+      "path": "24_config/continuous_governance_34_1.json",
+      "required": true,
+      "expected_root": "24_config",
+      "signed": false,
+      "lifecycle_policy": "release_controlled"
+    },
+    {
+      "artifact_id": "ART-GOVERNANCE-DOC-001",
+      "artifact_class": "documentation",
+      "path": "14_documents/PHASE3_CONTINUOUS_CANONICAL_GOVERNANCE_34_1.md",
+      "required": true,
+      "expected_root": "14_documents",
+      "signed": false,
+      "lifecycle_policy": "release_controlled"
+    },
+    {
+      "artifact_id": "ART-GOVERNANCE-LOG-001",
+      "artifact_class": "audit-evidence",
+      "path": "31_reports/governance/phase3_continuous_governance_log.jsonl",
+      "required": true,
+      "expected_root": "31_reports/governance",
+      "signed": false,
+      "lifecycle_policy": "never_auto_delete"
+    },
+    {
+      "artifact_id": "ART-GOVERNANCE-BASELINE-001",
+      "artifact_class": "release-critical",
+      "path": "24_config/canonical_governance_baseline_34_1.json",
+      "required": true,
+      "expected_root": "24_config",
+      "signed": false,
+      "lifecycle_policy": "release_controlled"
+    },
+    {
+      "artifact_id": "ART-CCE-CORE-001",
+      "artifact_class": "release-critical",
+      "path": "01_system/kontinuum/core/continuous_canonical_engine.py",
+      "required": true,
+      "expected_root": "01_system/kontinuum/core",
+      "signed": false,
+      "lifecycle_policy": "release_controlled"
+    },
+    {
+      "artifact_id": "ART-CCE-CONFIG-001",
+      "artifact_class": "release-critical",
+      "path": "24_config/continuous_canonical_engine_34_1.json",
+      "required": true,
+      "expected_root": "24_config",
+      "signed": false,
+      "lifecycle_policy": "release_controlled"
+    },
+    {
+      "artifact_id": "ART-CCE-TEST-001",
+      "artifact_class": "release-critical",
+      "path": "17_tests/test_continuous_canonical_engine_34_1.py",
+      "required": true,
+      "expected_root": "17_tests",
+      "signed": false,
+      "lifecycle_policy": "release_controlled"
+    },
+    {
+      "artifact_id": "ART-CCE-DOC-001",
+      "artifact_class": "documentation",
+      "path": "14_documents/continuous_canonical_engine_34_1_umsetzung_2026_06_30.md",
+      "required": true,
+      "expected_root": "14_documents",
+      "signed": false,
+      "lifecycle_policy": "release_controlled"
+    },
+    {
+      "artifact_id": "ART-CCE-EVENTLOG-001",
+      "artifact_class": "audit-evidence",
+      "path": "31_reports/events/canonical_events.jsonl",
+      "required": true,
+      "expected_root": "31_reports/events",
+      "signed": false,
+      "lifecycle_policy": "never_auto_delete"
+    },
+    {
+      "artifact_id": "ART-CCE-PROCESSLOG-001",
+      "artifact_class": "audit-evidence",
+      "path": "31_reports/events/event_processing_log.jsonl",
+      "required": true,
+      "expected_root": "31_reports/events",
+      "signed": false,
+      "lifecycle_policy": "never_auto_delete"
+    },
+    {
+      "artifact_id": "ART-CCE-DRIFTLOG-001",
+      "artifact_class": "audit-evidence",
+      "path": "31_reports/drift/drift_events.jsonl",
+      "required": true,
+      "expected_root": "31_reports/drift",
+      "signed": false,
+      "lifecycle_policy": "never_auto_delete"
+    },
+    {
+      "artifact_id": "ART-CCE-HOOKLOG-001",
+      "artifact_class": "audit-evidence",
+      "path": "31_reports/governance/governance_hooks.jsonl",
+      "required": true,
+      "expected_root": "31_reports/governance",
+      "signed": false,
+      "lifecycle_policy": "never_auto_delete"
+    }
+  ],
+  "artifact_patterns": [
+    {
+      "pattern_id": "PATTERN-ACTIVE-PROJECT-STRUCTURE",
+      "artifact_class": "documentation",
+      "pattern": "14_documents/PROJEKTSTRUKTUR_*.md",
+      "expected_root": "14_documents",
+      "min_count": 1,
+      "max_count": 1,
+      "signed": false
+    },
+    {
+      "pattern_id": "PATTERN-HISTORICAL-PROJECT-STRUCTURES",
+      "artifact_class": "historical-archive",
+      "pattern": "02_versions/projektstrukturen/PROJEKTSTRUKTUR_*.md",
+      "expected_root": "02_versions/projektstrukturen",
+      "min_count": 19,
+      "signed": false
+    },
+    {
+      "pattern_id": "PATTERN-RELEASE-INTEGRITY-BACKUPS",
+      "artifact_class": "audit-evidence",
+      "pattern": "09_backups/release_integrity/Kontinuum_34_1_*.zip",
+      "expected_root": "09_backups/release_integrity",
+      "min_count": 1,
+      "signed": false
+    },
+    {
+      "pattern_id": "PATTERN-MIGRATION-EVIDENCE-SIGNED",
+      "artifact_class": "migration-artifact",
+      "pattern": "02_versions/migration_artifacts/34_1_Foundation_2_2_CAM_1_1/release_evidence/*.json",
+      "expected_root": "02_versions/migration_artifacts",
+      "min_count": 3,
+      "signed": true
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "project": "Projekt Kontinuum",
+  "version": "34.1",
+  "component": "Desktop-GUI mit Release Integrity Framework 1.0",
+  "files": [
+    "11_gui/desktop_gui_34_1.py",
+    "16_installation/START_GUI_34_1.bat"
+  ],
+  "features": [
+    "Foundation Reasoning 4.1 und vollständige Coverage aus der Vorversion",
+    "SHA-256-Baseline und signierter Audit-Snapshot",
+    "verifiziertes Release-Backup mit temporärer Rollback-Probe",
+    "vollständige Altversions- und Pfadkonsistenzprüfung",
+    "Testsuite mit Einzeltest-Zeitlimit",
+    "technisch erzwungene Freigabe nur bei vollständig grünem Release-Gate"
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "enabled": true,
+  "execution_enabled": true,
+  "cache_directory_names": [
+    "__pycache__",
+    ".pytest_cache",
+    ".mypy_cache",
+    ".ruff_cache",
+    ".coverage_cache",
+    "htmlcov"
+  ],
+  "cache_file_suffixes": [
+    ".pyc",
+    ".pyo"
+  ],
+  "obsolete_test_copy_names": [
+    "Projekt_Kontinuum_Test",
+    "Projekt_Kontinuum_Backup_Vor_Patch"
+  ],
+  "obsolete_test_copies_keep": 0,
+  "structure_report_names": [
+    "dateiliste.txt",
+    "dateiliste_versions.txt",
+    "ordnerstruktur.txt",
+    "projektstruktur.txt",
+    "Projekt_Kontinuum_Struktur_2026.txt"
+  ],
+  "structure_report_archive_after_days": 30,
+  "protected_roots": [
+    "02_versions",
+    "03_memory",
+    "04_knowledge",
+    "07_models",
+    "09_backups",
+    "10_security",
+    "22_project_chronicle",
+    "32_data"
+  ],
+  "valuable_artifact_categories": [
+    "temporary_test_projects",
+    "test_fixtures",
+    "cam_test_manifests",
+    "generated_verification_reports",
+    "release_integrity_reports",
+    "verification_logs",
+    "migration_logs",
+    "migration_reports",
+    "architecture_reports",
+    "audit_logs"
+  ],
+  "release_archive_requirements": [
+    "tests_green",
+    "status_green",
+    "release_gate_green",
+    "documentation_updated",
+    "codex_release_confirmed"
+  ],
+  "valuable_artifact_action_before_release": "retain",
+  "valuable_artifact_action_after_release": "archive",
+  "valuable_artifact_deletion": "manual_only_after_explicit_review",
+  "migration_artifact_archive_root": "02_versions/migration_artifacts",
+  "migration_report_backup_root": "09_backups/migration_reports",
+  "permanent_backup_patterns": [
+    "*.zip",
+    "auth_*",
+    "security_*",
+    "self_extension_*"
+  ],
+  "functional_backup_review_after_days": 180,
+  "active_main_archive_roots": [
+    "01_system/archive",
+    "02_versions/archive",
+    "03_memory/archive",
+    "04_knowledge/archive",
+    "05_connectors/archive",
+    "06_learning/archive",
+    "07_models/archive",
+    "08_workspace_index/archive",
+    "09_backups/archive",
+    "10_security/archive",
+    "11_gui/archive",
+    "12_agents/archive",
+    "13_tools/archive",
+    "14_documents/archive",
+    "15_exports/archive",
+    "16_installation/archive",
+    "17_tests/archive",
+    "18_autonomous_learning/archive",
+    "19_university_sources/archive",
+    "20_library_sources/archive",
+    "21_internet_sources/archive",
+    "22_project_chronicle/archive",
+    "23_recovery/archive",
+    "24_config/archive",
+    "25_voice/archive",
+    "26_research/archive",
+    "27_logs/archive",
+    "30_import/archive",
+    "31_reports/archive",
+    "32_data/archive"
+  ],
+  "active_area_policy": "productive_or_canonical_only",
+  "historical_artifact_policy": "archive_in_respective_main_folder_archive",
+  "archive_before_move_safety_check": [
+    "current_usage_checked",
+    "canonical_status_checked",
+    "dependencies_checked",
+    "references_checked",
+    "archive_is_safe"
+  ],
+  "archive_after_move_reference_check": [
+    "documentation",
+    "manifests",
+    "registries",
+    "configuration",
+    "start_scripts",
+    "tests",
+    "build_processes",
+    "release_files"
+  ],
+  "release_archive_review": "required_after_each_release"
+}

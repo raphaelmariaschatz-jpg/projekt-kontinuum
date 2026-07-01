@@ -1,0 +1,51 @@
+{
+  "enabled": true,
+  "workspace": "13_tools/development_sandbox",
+  "codex_sandbox": "workspace-write",
+  "codex_timeout_seconds": 900,
+  "test_timeout_seconds": 120,
+  "max_output_characters": 20000,
+  "allow_git_snapshots": true,
+  "allow_self_extension": true,
+  "full_test_timeout_seconds": 600,
+  "max_changed_files": 100,
+  "max_changed_file_bytes": 1000000,
+  "promotion_roots": [
+    "01_system/kontinuum",
+    "11_gui",
+    "14_documents",
+    "17_tests",
+    "22_project_chronicle"
+  ],
+  "promotion_extensions": [".py", ".md", ".txt"],
+  "require_test_changes": true,
+  "require_new_test_file": true,
+  "protected_paths": [
+    "01_system/kontinuum/core/auth.py",
+    "01_system/kontinuum/tools/development_tools.py",
+    "01_system/kontinuum/agents/development_agent.py",
+    "24_config/development_sandbox.json"
+  ],
+  "forbidden_python_tokens": [
+    "import os",
+    "from os",
+    "import subprocess",
+    "from subprocess",
+    "import shutil",
+    "from shutil",
+    "import socket",
+    "from socket",
+    "import ctypes",
+    "from ctypes",
+    "import winreg",
+    "from winreg",
+    "import urllib",
+    "from urllib",
+    "import requests",
+    "from requests",
+    "__import__(",
+    "eval(",
+    "exec(",
+    "open("
+  ]
+}

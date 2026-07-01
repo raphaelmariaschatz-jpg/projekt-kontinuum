@@ -1,0 +1,88 @@
+{
+  "engine": "Canonical Knowledge Decision Engine",
+  "version": "CKDE 1.0",
+  "compatibility_aliases": [
+    "KEE 1.0",
+    "Knowledge Evaluation Engine"
+  ],
+  "canonical_facade_classes": [
+    "KnowledgeEvaluationEngine",
+    "SourceEvaluator",
+    "EvidenceEvaluator",
+    "ConflictEvaluator",
+    "GovernanceEvaluator",
+    "EvaluationReport"
+  ],
+  "release": "34.1",
+  "status": "knowledge_decision_layer_only_no_automatic_canonical_adoption",
+  "scope": {
+    "responsible_for": [
+      "knowledge_objects",
+      "source_quality",
+      "evidence",
+      "currentness",
+      "completeness",
+      "provenance",
+      "consistency",
+      "governance_conformity",
+      "conflicts",
+      "trust_level"
+    ],
+    "not_responsible_for": [
+      "files",
+      "documents",
+      "source_code",
+      "project_structure",
+      "artifact_archiving",
+      "artifact_consolidation"
+    ]
+  },
+  "decision_classes": [
+    "ACCEPT",
+    "REVIEW",
+    "REJECT",
+    "CONFLICT"
+  ],
+  "storage": {
+    "knowledge_evaluations": "append_only_versioned_auditable",
+    "source_ratings": "append_only_versioned_auditable",
+    "knowledge_conflicts": "append_only_versioned_auditable",
+    "evaluation_history": "append_only_versioned_auditable"
+  },
+  "trust_classes": {
+    "A": {
+      "description": "Universitaeten, wissenschaftliche Publikationen, Behoerden, offizielle Dokumentationen",
+      "default_decision_bias": "ACCEPT_OR_REVIEW"
+    },
+    "B": {
+      "description": "Fachbuecher, Fachorganisationen, technische Standards",
+      "default_decision_bias": "REVIEW"
+    },
+    "C": {
+      "description": "Etablierte Fachportale, Wikipedia, serioese Nachrichtenquellen",
+      "default_decision_bias": "REVIEW"
+    },
+    "D": {
+      "description": "Foren, Communitys, Reddit",
+      "default_decision_bias": "REVIEW_OR_REJECT"
+    },
+    "E": {
+      "description": "Social Media oder unbekannte Quellen",
+      "default_decision_bias": "REJECT_OR_MANUAL_EXCEPTION_ONLY"
+    }
+  },
+  "conflict_management": {
+    "automatic_resolution_allowed": false,
+    "store_all_sources": true,
+    "preserve_all_provenance": true,
+    "log_conflict": true,
+    "create_governance_review": true
+  },
+  "governance_rules": {
+    "no_direct_memory_write": true,
+    "no_automatic_canonical_knowledge_adoption": true,
+    "review_queue_required": true,
+    "append_only_logging": true,
+    "release_controlled_policy_changes": true
+  }
+}

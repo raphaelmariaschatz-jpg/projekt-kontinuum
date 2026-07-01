@@ -1,0 +1,111 @@
+{
+  "kind": "kontinuum.canonical_governance_baseline",
+  "version": "34.1",
+  "created_at": "2026-06-27T11:12:25.802211+00:00",
+  "phase": "Phase 3 - Continuous Canonical Governance",
+  "status": "VERIFIZIERT",
+  "freigabe": "JA",
+  "active_main_folders": [
+    "01_system",
+    "02_versions",
+    "03_memory",
+    "04_knowledge",
+    "05_connectors",
+    "06_learning",
+    "07_models",
+    "08_workspace_index",
+    "09_backups",
+    "10_security",
+    "11_gui",
+    "12_agents",
+    "13_tools",
+    "14_documents",
+    "15_exports",
+    "16_installation",
+    "17_tests",
+    "18_autonomous_learning",
+    "19_university_sources",
+    "20_library_sources",
+    "21_internet_sources",
+    "22_project_chronicle",
+    "23_recovery",
+    "24_config",
+    "25_voice",
+    "26_research",
+    "27_logs",
+    "30_import",
+    "31_reports",
+    "32_data"
+  ],
+  "registered_canonical_managers": [
+    "CanonicalArchitectureManager",
+    "CanonicalArtifactManager",
+    "CanonicalDatabaseManager",
+    "CanonicalAPIRegistryManager",
+    "ReleaseIntegrityFramework",
+    "ContinuousGovernanceSystem"
+  ],
+  "central_manifests": [
+    "24_config/canonical_architecture_34_1.json",
+    "24_config/canonical_artifacts_34_1.json",
+    "24_config/release_integrity_34_1.json",
+    "24_config/continuous_governance_34_1.json"
+  ],
+  "release_integrity_status": {
+    "status": "VERIFIZIERT",
+    "freigabe": "JA",
+    "release_approved": true,
+    "report": "31_reports/release_integrity/34.1/release_gate.json"
+  },
+  "governance_configuration": "24_config/continuous_governance_34_1.json",
+  "governance_log": "31_reports/governance/phase3_continuous_governance_log.jsonl",
+  "final_release_gate_report": "31_reports/release_integrity/34.1/release_gate.json",
+  "artifact_hashes": {
+    "01_system/kontinuum/core/continuous_governance.py": {
+      "sha256": "c7f226c0c0f1323e17e8b694619877b734acdbb96acb525d61544dd7eb6a8557",
+      "bytes": 11440
+    },
+    "24_config/continuous_governance_34_1.json": {
+      "sha256": "7e79b59f4e3f366fe22abd5b9c745378e1eb75f3e7174649e5aeb825aa1a4529",
+      "bytes": 4174
+    },
+    "17_tests/test_continuous_governance_34_1.py": {
+      "sha256": "4485a114dcb9703605605f1aaa7eb855c71d2cc705ae4c5c0a9cbed899e4597c",
+      "bytes": 1834
+    },
+    "14_documents/PHASE3_CONTINUOUS_CANONICAL_GOVERNANCE_34_1.md": {
+      "sha256": "22465da284338d1b1c7a99cbf3bb2a111396990fa65dccf36780082cf48c4d6d",
+      "bytes": 1477
+    },
+    "31_reports/governance/phase3_continuous_governance_log.jsonl": {
+      "sha256": "eddbe675024b49ec553d2079237e3cc9d1b375dc6621b5887e0a3400c352c6a7",
+      "bytes": 1238
+    },
+    "31_reports/release_integrity/34.1/release_gate.json": {
+      "sha256": "68e0421023a1cb09d33260cf97c69659e53b54506b7b69f23a2ce20e12207504",
+      "bytes": 52514
+    }
+  },
+  "governance_policy": {
+    "auto_delete": false,
+    "auto_move": false,
+    "verification_required": true,
+    "log_required": true,
+    "phase2_batch_migration": "closed"
+  },
+  "continuous_verification": [
+    "CanonicalArchitectureManager",
+    "CanonicalArtifactManager",
+    "ReleaseIntegrityFramework",
+    "VersionConsistencyCheck"
+  ],
+  "architecture_reference": {
+    "version": "1.0",
+    "module": "01_system/kontinuum/core/continuous_governance.py",
+    "configuration": "24_config/continuous_governance_34_1.json",
+    "documentation": "14_documents/PHASE3_CONTINUOUS_CANONICAL_GOVERNANCE_34_1.md",
+    "log": "31_reports/governance/phase3_continuous_governance_log.jsonl",
+    "mutation_policy": "read_only_classification; no_delete_no_auto_move; verified_change_only",
+    "phase2_batch_migration": "closed"
+  }
+}

@@ -1,0 +1,213 @@
+{
+  "version": "34.1",
+  "manager_version": "1.0",
+  "scope": "continuous_canonical_governance",
+  "governance_log": "31_reports/governance/phase3_continuous_governance_log.jsonl",
+  "required_roots": [
+    "01_system/kontinuum/core",
+    "11_gui",
+    "13_tools",
+    "14_documents",
+    "16_installation",
+    "17_tests",
+    "22_project_chronicle",
+    "24_config",
+    "31_reports/governance",
+    "31_reports/events",
+    "31_reports/drift"
+  ],
+  "archive_roots": [
+    "01_system/archive",
+    "02_versions/archive",
+    "03_memory/archive",
+    "04_knowledge/archive",
+    "05_connectors/archive",
+    "06_learning/archive",
+    "07_models/archive",
+    "08_workspace_index/archive",
+    "09_backups/archive",
+    "10_security/archive",
+    "11_gui/archive",
+    "12_agents/archive",
+    "13_tools/archive",
+    "14_documents/archive",
+    "15_exports/archive",
+    "16_installation/archive",
+    "17_tests/archive",
+    "18_autonomous_learning/archive",
+    "19_university_sources/archive",
+    "20_library_sources/archive",
+    "21_internet_sources/archive",
+    "22_project_chronicle/archive",
+    "23_recovery/archive",
+    "24_config/archive",
+    "25_voice/archive",
+    "26_research/archive",
+    "27_logs/archive",
+    "30_import/archive",
+    "31_reports/archive",
+    "32_data/archive"
+  ],
+  "active_paths": [
+    "01_system/kontinuum/core/continuous_governance.py",
+    "24_config/continuous_governance_34_1.json",
+    "14_documents/PHASE3_CONTINUOUS_CANONICAL_GOVERNANCE_34_1.md",
+    "31_reports/governance/phase3_continuous_governance_log.jsonl",
+    "01_system/kontinuum/core/continuous_canonical_engine.py",
+    "24_config/continuous_canonical_engine_34_1.json",
+    "31_reports/events/canonical_events.jsonl",
+    "31_reports/events/event_processing_log.jsonl",
+    "31_reports/drift/drift_events.jsonl",
+    "31_reports/governance/governance_hooks.jsonl"
+  ],
+  "canonical_paths": [
+    "14_documents/PROJEKTSTRUKTUR_34_1.md",
+    "14_documents/KANONISCHES_ARCHITEKTURMODELL_34_1.md",
+    "14_documents/ARBEITSREGEL_ARTEFAKT_LIFECYCLE_34_1.md",
+    "14_documents/PHASE3_ARCHITEKTURPLAN_34_1.md"
+  ],
+  "entrypoint_paths": [
+    "16_installation/RELEASE_GATE_34_1.bat",
+    "16_installation/TEST_KONTINUUM_34_1.bat"
+  ],
+  "registry_paths": [
+    "24_config/canonical_architecture_34_1.json",
+    "24_config/canonical_artifacts_34_1.json",
+    "24_config/release_integrity_34_1.json",
+    "24_config/continuous_canonical_engine_34_1.json"
+  ],
+  "watch_roots": [
+    "13_tools",
+    "14_documents",
+    "16_installation",
+    "17_tests",
+    "24_config",
+    "31_reports",
+    "31_reports/events",
+    "31_reports/drift"
+  ],
+  "allowed_top_level_entries": {
+    "13_tools": [
+      "13_tools/Kontinuum Tools",
+      "13_tools/archive",
+      "13_tools/codex_cli",
+      "13_tools/development_sandbox",
+      "13_tools/git_hooks_disabled",
+      "13_tools/oracle_cloud_workspace",
+      "13_tools/python_workspace",
+      "13_tools/__pycache__"
+    ],
+    "14_documents": [
+      "14_documents/archive",
+      "14_documents/archives",
+      "14_documents/fundamentale Gedanken",
+      "14_documents/interne_fehler_und_loesungen",
+      "14_documents/pdf",
+      "14_documents/projektstatus",
+      "14_documents/audio",
+      "14_documents/images",
+      "14_documents/video"
+    ],
+    "16_installation": [
+      "16_installation/archive"
+    ],
+    "17_tests": [
+      "17_tests/archive",
+      "17_tests/__pycache__"
+    ],
+    "24_config": [
+      "24_config/archive"
+    ],
+    "31_reports": [
+      "31_reports/archive",
+      "31_reports/archive_lifecycle",
+      "31_reports/governance",
+      "31_reports/release_integrity",
+      "31_reports/memory",
+      "31_reports/events",
+      "31_reports/drift"
+    ]
+  },
+  "review_roots": [
+    "13_tools/development_sandbox",
+    "30_import",
+    "31_reports/archive_lifecycle"
+  ],
+  "consolidation_roots": [
+    "14_documents/pdf",
+    "22_project_chronicle"
+  ],
+  "archive_candidate_markers": [
+    "_32_",
+    "_33_",
+    "_33_0",
+    "Version 32",
+    "Version 33",
+    "2026-06-09"
+  ],
+  "single_active_patterns": [
+    "14_documents/PROJEKTSTRUKTUR_*.md"
+  ],
+  "forbidden_free_roots": [
+    "tmp",
+    "temp",
+    "old",
+    "backup",
+    "legacy"
+  ],
+  "enforcement": {
+    "auto_delete": false,
+    "auto_move": false,
+    "verification_required": true,
+    "log_required": true,
+    "phase2_batch_migration": "closed"
+  },
+  "continuous_verification": [
+    "CanonicalArchitectureManager",
+    "CanonicalArtifactManager",
+    "ReleaseIntegrityFramework",
+    "VersionConsistencyCheck"
+  ],
+  "phase3_components": {
+    "CGM": "Canonical Governance Monitor",
+    "DDE": "Drift Detection Engine",
+    "CIC": "Canonical Integrity Checker",
+    "GEL": "Governance Event Logger",
+    "continuous_canonical_engine": {
+      "status": "active_diagnostic",
+      "components": [
+        "local_event_bus",
+        "cde_2_0_runtime",
+        "drift_layer",
+        "governance_hooks",
+        "release_gate_bridge"
+      ],
+      "config": "24_config/continuous_canonical_engine_34_1.json",
+      "core": "01_system/kontinuum/core/continuous_canonical_engine.py",
+      "logs": [
+        "31_reports/events/canonical_events.jsonl",
+        "31_reports/events/event_processing_log.jsonl",
+        "31_reports/drift/drift_events.jsonl",
+        "31_reports/governance/governance_hooks.jsonl"
+      ],
+      "mutation_policy": "diagnostic_read_only_append_only"
+    }
+  },
+  "baseline_reference": {
+    "path": "24_config/canonical_governance_baseline_34_1.json",
+    "mode": "immutable_read_only",
+    "accepted_by": "24_config/canonical_governance_baseline_34_1_ACCEPTED.json"
+  },
+  "canonical_name_markers": [
+    "34_1",
+    "34.1",
+    "canonical",
+    "governance"
+  ],
+  "reports": {
+    "governance_status": "31_reports/governance/phase3/governance_status_report.json",
+    "drift": "31_reports/governance/phase3/drift_report.json",
+    "integrity": "31_reports/governance/phase3/integrity_report.json",
+    "baseline_compliance_score": "31_reports/governance/phase3/baseline_compliance_score.json"
+  }
+}

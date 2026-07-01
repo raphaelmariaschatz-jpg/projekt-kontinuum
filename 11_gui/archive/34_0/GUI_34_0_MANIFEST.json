@@ -1,0 +1,16 @@
+{
+  "project": "Projekt Kontinuum",
+  "version": "34.0",
+  "component": "Desktop-GUI mit Foundation Reasoning 4.1 und Coverage Layer",
+  "files": [
+    "11_gui/desktop_gui_34_0.py",
+    "16_installation/START_GUI_34_0.bat"
+  ],
+  "features": [
+    "vollständige Foundation-Traces auch für Identitätsschutz",
+    "gespeicherte Erklärungen ohne Post-hoc-Rekonstruktion",
+    "sichtbare Regelkonflikte und konfliktbehaftete Einflüsse",
+    "aktive Langzeitziele in Entscheidungsnachweisen",
+    "automatische Startdiagnose und Diagnostikstatus"
+  ]
+}

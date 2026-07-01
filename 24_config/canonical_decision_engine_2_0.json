@@ -1,0 +1,44 @@
+{
+  "engine": "Canonical Decision Engine",
+  "version": "CDE 2.0",
+  "release": "34.1",
+  "status": "artifact_decision_layer_only",
+  "scope": {
+    "responsible_for": [
+      "files",
+      "documents",
+      "reports",
+      "configurations",
+      "scripts",
+      "manifests",
+      "project_structure",
+      "archiving",
+      "consolidation_suggestions",
+      "review_markers"
+    ],
+    "not_responsible_for": [
+      "knowledge_objects",
+      "canonical_knowledge_adoption",
+      "internet_source_truth_decisions",
+      "memory_integration"
+    ]
+  },
+  "decision_targets": [
+    "active",
+    "archive_candidate",
+    "review",
+    "consolidate_suggest"
+  ],
+  "safety_rules": {
+    "no_automatic_delete": true,
+    "no_automatic_consolidation": true,
+    "append_only_logging": true,
+    "full_traceability": true,
+    "canonical_governance_required": true
+  },
+  "integration": {
+    "input": "CAM and Continuous Canonical Governance artifact observations",
+    "output": "Archive / Active / Review classification",
+    "release_gate": "Release Integrity Framework verifies required CDE policy artifacts"
+  }
+}

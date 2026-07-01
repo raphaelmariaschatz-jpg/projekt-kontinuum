@@ -1,0 +1,7 @@
+{
+  "enabled": true,
+  "timeout_seconds": 15,
+  "max_output_characters": 12000,
+  "isolated_mode": true,
+  "workspace": "13_tools/python_workspace"
+}

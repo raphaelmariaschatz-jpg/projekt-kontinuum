@@ -1,0 +1,21 @@
+{
+  "enabled": true,
+  "automatic": true,
+  "automatic_interval_seconds": 300,
+  "automatic_startup_delay_seconds": 20,
+  "max_automatic_cycles_per_run": 1,
+  "max_sources_per_cycle": 3,
+  "max_attempts_per_task": 3,
+  "minimum_snippet_characters": 30,
+  "minimum_page_characters": 120,
+  "page_timeout_seconds": 6,
+  "protected_markers": [
+    "schöpfer",
+    "schoepfer",
+    "passwort",
+    "sicherheit",
+    "identität",
+    "identitaet",
+    "superadmin"
+  ]
+}

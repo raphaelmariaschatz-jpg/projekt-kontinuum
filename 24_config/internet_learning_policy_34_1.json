@@ -1,0 +1,44 @@
+{
+  "enabled": true,
+  "continuous_internet_learning_enabled": true,
+  "bandwidth_limit_percent": 10,
+  "max_requests_per_minute": 2,
+  "min_delay_between_requests_seconds": 10,
+  "max_download_mb_per_hour": 5,
+  "max_response_bytes": 500000,
+  "request_timeout_seconds": 6,
+  "cycle_interval_seconds": 900,
+  "startup_delay_seconds": 10,
+  "max_sources_per_cycle": 2,
+  "allowed_source_classes": [
+    "scientific_publication",
+    "university",
+    "public_documentation",
+    "government",
+    "technical_documentation",
+    "encyclopedia"
+  ],
+  "blocked_source_classes": [
+    "paywall_bypass",
+    "illegal_source",
+    "login_required",
+    "private_data",
+    "mass_scraping",
+    "aggressive_crawler"
+  ],
+  "review_required": true,
+  "write_to_memory_directly": false,
+  "perform_startup_speedtest": false,
+  "seed_sources": [
+    {
+      "url": "https://docs.python.org/3/",
+      "source_class": "technical_documentation",
+      "title": "Python 3 Documentation"
+    },
+    {
+      "url": "https://www.nist.gov/artificial-intelligence",
+      "source_class": "government",
+      "title": "NIST Artificial Intelligence"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "enabled": true,
+  "interval_seconds": 60,
+  "startup_delay_seconds": 5,
+  "max_references_per_cycle": 3,
+  "max_files_scanned_per_cycle": 1500,
+  "max_characters_read_per_file": 200000,
+  "allowed_suffixes": [".json", ".md", ".txt", ".py"],
+  "policy": "references_only",
+  "default_subjects": [
+    "Mathematik",
+    "Physik",
+    "Chemie",
+    "Biologie",
+    "Informatik",
+    "Geschichte",
+    "Philosophie"
+  ]
+}

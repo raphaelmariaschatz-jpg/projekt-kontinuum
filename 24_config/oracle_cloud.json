@@ -1,0 +1,14 @@
+{
+  "enabled": true,
+  "allow_changes": false,
+  "require_superadmin_for_changes": true,
+  "require_cost_confirmation": true,
+  "profile": "DEFAULT",
+  "oci_config_file": "",
+  "executable": "C:\\Program Files (x86)\\Oracle\\oci_cli\\oci.exe",
+  "compartment_ocid": "",
+  "tenancy_ocid": "",
+  "region": "",
+  "timeout_seconds": 90,
+  "max_output_characters": 20000
+}

@@ -1,0 +1,117 @@
+{
+  "version": "34.1",
+  "engine_version": "1.0",
+  "scope": "continuous_canonical_engine_blueprint",
+  "active": true,
+  "mode": "diagnostic_report_only",
+  "network_broker": false,
+  "append_only_logs": true,
+  "automation_boundaries": {
+    "auto_delete": false,
+    "auto_archive": false,
+    "auto_knowledge_adoption": false,
+    "release_override": false,
+    "mass_ingestion": false
+  },
+  "flow": [
+    "System Event",
+    "Event Bus",
+    "Canonical Decision Engine",
+    "Drift Layer",
+    "Governance Hooks",
+    "Review/Gate/Release Decision"
+  ],
+  "logs": {
+    "canonical_events": "31_reports/events/canonical_events.jsonl",
+    "event_processing": "31_reports/events/event_processing_log.jsonl",
+    "drift_events": "31_reports/drift/drift_events.jsonl",
+    "governance_hooks": "31_reports/governance/governance_hooks.jsonl"
+  },
+  "event_schema": [
+    "event_id",
+    "event_type",
+    "source_component",
+    "affected_path",
+    "affected_object_id",
+    "timestamp",
+    "severity",
+    "payload",
+    "provenance",
+    "governance_context",
+    "processing_state"
+  ],
+  "decision_classes": [
+    "ACTIVE",
+    "ARCHIVE_CANDIDATE",
+    "REVIEW_REQUIRED",
+    "CONSOLIDATION_SUGGESTED",
+    "BLOCKED"
+  ],
+  "drift_classes": [
+    "EXPECTED_DRIFT",
+    "LOW_DRIFT",
+    "MEDIUM_DRIFT",
+    "HIGH_DRIFT",
+    "BLOCKING_DRIFT"
+  ],
+  "drift_rules": {
+    "EXPECTED_DRIFT": "expected documentation-only change; document and continue",
+    "LOW_DRIFT": "log only",
+    "MEDIUM_DRIFT": "review required",
+    "HIGH_DRIFT": "blocks release",
+    "BLOCKING_DRIFT": "stops gate"
+  },
+  "governance_hooks": [
+    "HIGH_DRIFT",
+    "BLOCKING_DRIFT",
+    "missing_provenance",
+    "policy_violation",
+    "unregistered_artifact",
+    "unclear_canonicity",
+    "code_doc_conflict",
+    "internet_learning_without_review",
+    "release_gate_with_open_review"
+  ],
+  "release_gate": {
+    "required_config": "24_config/continuous_canonical_engine_34_1.json",
+    "required_core": "01_system/kontinuum/core/continuous_canonical_engine.py",
+    "blocking_drift_classes": [
+      "HIGH_DRIFT",
+      "BLOCKING_DRIFT"
+    ],
+    "requires_schema_valid": true,
+    "requires_append_only_logs_present": true,
+    "requires_reports_present": true,
+    "allows_expected_drift": true
+  },
+  "status_center": {
+    "command": "canonicalenginestatus",
+    "aliases": [
+      "cestatus",
+      "continuouscanonicalstatus"
+    ],
+    "diagnostics": [
+      "event_bus_status",
+      "last_events",
+      "open_hooks",
+      "drift_status",
+      "cde_status",
+      "blocking_findings",
+      "last_gate_decision"
+    ]
+  },
+  "integrations": [
+    "CanonicalArchitectureManager",
+    "CanonicalArtifactManager",
+    "ReleaseIntegrityFramework",
+    "ContinuousGovernance",
+    "InternetKnowledgeGovernance",
+    "InternetLearningService",
+    "WebAgentService",
+    "FileAgentService",
+    "future_CKDE",
+    "Chronicle",
+    "StatusCenter",
+    "DesktopGUI"
+  ]
+}

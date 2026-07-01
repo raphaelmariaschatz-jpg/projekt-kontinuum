@@ -1,0 +1,125 @@
+{
+  "kind": "kontinuum.phase3.stable_run_baseline",
+  "metadata": {
+    "version": "34.1",
+    "timestamp": "2026-06-28T10:03:25.046781+00:00",
+    "baseline": "34.1",
+    "canonical_governance_baseline": "24_config/canonical_governance_baseline_34_1.json",
+    "replaces_canonical_governance_baseline": false
+  },
+  "governance_status": {
+    "CGM": {
+      "name": "Canonical Governance Monitor",
+      "active": true,
+      "ok": true,
+      "status": "ACTIVE"
+    },
+    "DDE": {
+      "name": "Drift Detection Engine",
+      "active": true,
+      "ok": false,
+      "classification": "MEDIUM",
+      "status": "ACTIVE_EXPECTED_DRIFT"
+    },
+    "CIC": {
+      "name": "Canonical Integrity Checker",
+      "active": true,
+      "ok": true,
+      "status": "ACTIVE"
+    },
+    "GEL": {
+      "name": "Governance Event Logger",
+      "active": true,
+      "ok": true,
+      "status": "ACTIVE_APPEND_ONLY",
+      "log": "31_reports/governance/phase3_continuous_governance_log.jsonl"
+    }
+  },
+  "expected_drift": [
+    {
+      "path": "01_system/kontinuum/core/continuous_governance.py",
+      "type": "artifact_hash_drift",
+      "severity": "MEDIUM",
+      "reason": "Phase-3 introduction drift: runtime/report hash changed after activating continuous governance.",
+      "expected_sha256": "c7f226c0c0f1323e17e8b694619877b734acdbb96acb525d61544dd7eb6a8557",
+      "actual_sha256": "a598c531b0d448809d7c033b0c071cd1c508c523169ee30a18a3e6d6e336c1a8"
+    },
+    {
+      "path": "24_config/continuous_governance_34_1.json",
+      "type": "artifact_hash_drift",
+      "severity": "MEDIUM",
+      "reason": "Phase-3 introduction drift: runtime/report hash changed after activating continuous governance.",
+      "expected_sha256": "7e79b59f4e3f366fe22abd5b9c745378e1eb75f3e7174649e5aeb825aa1a4529",
+      "actual_sha256": "154f9ea35ec2d09967fc0a305cfa9658516d324570e921091cdef2c462346d01"
+    },
+    {
+      "path": "17_tests/test_continuous_governance_34_1.py",
+      "type": "artifact_hash_drift",
+      "severity": "MEDIUM",
+      "reason": "Phase-3 introduction drift: runtime/report hash changed after activating continuous governance.",
+      "expected_sha256": "4485a114dcb9703605605f1aaa7eb855c71d2cc705ae4c5c0a9cbed899e4597c",
+      "actual_sha256": "8f7d223200ebe3907b36afbf2e25b93f49180d1b84846bef97e844636627e41c"
+    },
+    {
+      "path": "14_documents/PHASE3_CONTINUOUS_CANONICAL_GOVERNANCE_34_1.md",
+      "type": "artifact_hash_drift",
+      "severity": "MEDIUM",
+      "reason": "Phase-3 introduction drift: runtime/report hash changed after activating continuous governance.",
+      "expected_sha256": "22465da284338d1b1c7a99cbf3bb2a111396990fa65dccf36780082cf48c4d6d",
+      "actual_sha256": "56525bbf756d919c3a1a6e86bc9783ea0198efe057bda3387eefffd279d7b5f5"
+    },
+    {
+      "path": "31_reports/governance/phase3_continuous_governance_log.jsonl",
+      "type": "artifact_hash_drift",
+      "severity": "MEDIUM",
+      "reason": "Phase-3 introduction drift: runtime/report hash changed after activating continuous governance.",
+      "expected_sha256": "eddbe675024b49ec553d2079237e3cc9d1b375dc6621b5887e0a3400c352c6a7",
+      "actual_sha256": "eb2cd235c142c0618baf14570fe8307f4eaf7cca8737fdf3a163fc9f6fde0edb"
+    },
+    {
+      "path": "31_reports/release_integrity/34.1/release_gate.json",
+      "type": "artifact_hash_drift",
+      "severity": "MEDIUM",
+      "reason": "Phase-3 introduction drift: runtime/report hash changed after activating continuous governance.",
+      "expected_sha256": "68e0421023a1cb09d33260cf97c69659e53b54506b7b69f23a2ce20e12207504",
+      "actual_sha256": "9250bdaad8b4ac529fb3cf9bb63dd27fe0c295a00495fb9871ae74ac31d93901"
+    }
+  ],
+  "real_drift": [],
+  "compliance": {
+    "compliance_score": 10,
+    "integrity_score": 10,
+    "governance_score": 10,
+    "drift_level": "MEDIUM",
+    "status": "VALID_WITH_EXPECTED_DRIFT"
+  },
+  "report_hashes": {
+    "governance_status_report": {
+      "path": "31_reports/governance/phase3/governance_status_report.json",
+      "sha256": "7562707a6033d1efd6a22e85e325c9986f952bedf52642fceae8c7ba2eda6f37"
+    },
+    "drift_report": {
+      "path": "31_reports/governance/phase3/drift_report.json",
+      "sha256": "e9a83e897db15711571a38325e77a62ab7d4e4db5eb37d5daf8f4da22467803d"
+    },
+    "integrity_report": {
+      "path": "31_reports/governance/phase3/integrity_report.json",
+      "sha256": "a987de31c279167a3c0c0dd951132a882fb5b5abe018ebe0f0126a50ce81ad4c"
+    },
+    "baseline_compliance_score": {
+      "path": "31_reports/governance/phase3/baseline_compliance_score.json",
+      "sha256": "1a55550598fd1be25e1440146c19f3637a1b07fc60bfdf48ff9be82d413116ed"
+    },
+    "governance_log": {
+      "path": "31_reports/governance/phase3_continuous_governance_log.jsonl",
+      "sha256": "5dfaf75b8586d50cdebf77a0533542e903e4314e16a1ead86194d1e174766510"
+    },
+    "canonical_governance_baseline": {
+      "path": "24_config/canonical_governance_baseline_34_1.json",
+      "sha256": "062702e546c8acf4951e293dd8cb65b92200e986f10660c136a9421b3c2c9f65"
+    }
+  },
+  "status": "Stable",
+  "read_only": true,
+  "note": "This file documents the first stable operating state after Phase 3 introduction and does not replace canonical_governance_baseline_34_1.json."
+}

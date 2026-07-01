@@ -1,0 +1,7 @@
+{
+  "enabled": false,
+  "allow_changes": false,
+  "timeout_seconds": 60,
+  "max_output_characters": 16000,
+  "executable": "C:\\Program Files\\WindowsApps\\Microsoft.DesktopAppInstaller_1.28.240.0_x64__8wekyb3d8bbwe\\winget.exe"
+}

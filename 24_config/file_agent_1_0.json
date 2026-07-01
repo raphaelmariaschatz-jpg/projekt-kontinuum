@@ -1,0 +1,44 @@
+{
+  "enabled": true,
+  "mode": "diagnostic_read_only",
+  "max_files": 50,
+  "max_file_size_mb": 400,
+  "max_extract_chars": 500000,
+  "recursive_default": false,
+  "no_source_mutation": true,
+  "no_executable_start": true,
+  "write_review_queue": true,
+  "supported_suffixes": [
+    ".azw",
+    ".azw3",
+    ".css",
+    ".csv",
+    ".docx",
+    ".epub",
+    ".html",
+    ".htm",
+    ".js",
+    ".json",
+    ".kfx",
+    ".log",
+    ".md",
+    ".pdf",
+    ".py",
+    ".txt",
+    ".xlsx"
+  ],
+  "allowed_roots": [
+    ".",
+    "30_import",
+    "14_documents",
+    "04_knowledge",
+    "06_learning"
+  ],
+  "handoff": {
+    "source_table": "sources",
+    "learning_tasks": true,
+    "review_records": "32_data/file_agent_review",
+    "source_records": "32_data/file_agent_sources",
+    "canonical_knowledge_adoption": "manual_governance_review_only"
+  }
+}

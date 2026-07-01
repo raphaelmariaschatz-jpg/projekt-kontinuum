@@ -1,0 +1,15 @@
+{
+  "project": "Projekt Kontinuum",
+  "version": "33.0",
+  "component": "Desktop-GUI mit Autonomous Diagnostics Core",
+  "files": [
+    "11_gui/desktop_gui_33_0.py",
+    "16_installation/START_GUI_33_0.bat"
+  ],
+  "features": [
+    "automatische Startdiagnose",
+    "Diagnostikmeldung im Chatfenster",
+    "Diagnostikstatus-Schnellbefehl",
+    "taeglicher interner Fehler- und Loesungsbericht"
+  ]
+}

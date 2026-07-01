@@ -1,0 +1,31 @@
+{
+  "project": "Projekt Kontinuum",
+  "version": "32.3",
+  "component": "Desktop-GUI für Runtime Hardening, Temporal Relevance Core und erklärbare Bedeutungsgewichtung",
+  "files": [
+    "11_gui/desktop_gui_32_3.py",
+    "16_installation/START_GUI_32_3.bat",
+    "14_documents/README_GUI_32_3.md",
+    "27_logs/README_LOGS.txt"
+  ],
+  "features": [
+    "großes mehrzeiliges Eingabefeld",
+    "Such- und Aktivitätsfenster",
+    "Agentenanzeige",
+    "Schnellbefehle",
+    "Fallback-Modus",
+    "KONTINUUM_ROOT-Unterstützung",
+    "APP_VERSION-gebundene Anzeige",
+    "Backend-Status für Kontinuum 32.3",
+    "Meaning-Core-Schnellbefehle",
+    "Bedeutungsgraph-Aktivitätsprognose",
+    "Motivation-Core-Schnellbefehle",
+    "Motivation-Explanation-Schnellbefehle",
+    "Score-Erklärpfad-Aktivitätsprognose",
+    "Temporal-Relevance-Schnellbefehle",
+    "Bedeutungsinflations-Aktivitätsprognose",
+    "Sessionstatus-Schnellbefehl",
+    "Foundation-Recovery-Schnellbefehl",
+    "Runtime-Hardening-Aktivitätsprognose"
+  ]
+}

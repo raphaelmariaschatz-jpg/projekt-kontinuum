@@ -1,0 +1,101 @@
+{
+  "python": {
+    "class_patterns": [
+      "^\\s*class\\s+([A-Za-z_]\\w*)"
+    ],
+    "comment_markers": [
+      "#"
+    ],
+    "entrypoint_patterns": [
+      "if\\s+__name__\\s*==\\s*['\\\"]__main__['\\\"]"
+    ],
+    "extensions": [
+      ".py"
+    ],
+    "function_patterns": [
+      "^\\s*def\\s+([A-Za-z_]\\w*)\\s*\\("
+    ],
+    "import_patterns": [
+      "^\\s*import\\s+([\\w.]+)",
+      "^\\s*from\\s+([\\w.]+)\\s+import\\s+"
+    ],
+    "known_risks": [
+      "eval(",
+      "exec(",
+      "shell=True",
+      "pickle.loads",
+      "subprocess."
+    ],
+    "package_files": [
+      "pyproject.toml",
+      "requirements.txt",
+      "setup.py"
+    ],
+    "recommended_parser": "ast"
+  },
+  "javascript": {
+    "class_patterns": [
+      "\\bclass\\s+([A-Za-z_$][\\w$]*)"
+    ],
+    "comment_markers": [
+      "//",
+      "/*"
+    ],
+    "entrypoint_patterns": [
+      "if\\s*\\(\\s*require\\.main\\s*===\\s*module\\s*\\)"
+    ],
+    "extensions": [
+      ".js",
+      ".jsx"
+    ],
+    "function_patterns": [
+      "\\bfunction\\s+([A-Za-z_$][\\w$]*)",
+      "\\b(?:const|let|var)\\s+([A-Za-z_$][\\w$]*)\\s*=\\s*(?:async\\s*)?\\("
+    ],
+    "import_patterns": [
+      "\\bimport\\s+.*?\\s+from\\s+['\\\"]([^'\\\"]+)",
+      "\\brequire\\(['\\\"]([^'\\\"]+)"
+    ],
+    "known_risks": [
+      "eval(",
+      "innerHTML",
+      "child_process",
+      "document.write"
+    ],
+    "package_files": [
+      "package.json"
+    ],
+    "recommended_parser": "regex"
+  },
+  "typescript": {
+    "class_patterns": [
+      "\\bclass\\s+([A-Za-z_$][\\w$]*)"
+    ],
+    "comment_markers": [
+      "//",
+      "/*"
+    ],
+    "entrypoint_patterns": [],
+    "extensions": [
+      ".ts",
+      ".tsx"
+    ],
+    "function_patterns": [
+      "\\bfunction\\s+([A-Za-z_$][\\w$]*)",
+      "\\b(?:const|let)\\s+([A-Za-z_$][\\w$]*)\\s*=\\s*(?:async\\s*)?\\("
+    ],
+    "import_patterns": [
+      "\\bimport\\s+.*?\\s+from\\s+['\\\"]([^'\\\"]+)"
+    ],
+    "known_risks": [
+      "eval(",
+      "innerHTML",
+      "child_process"
+    ],
+    "package_files": [
+      "package.json",
+      "tsconfig.json"
+    ],
+    "recommended_parser": "regex"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "project": "Projekt Kontinuum",
+  "version": "34.1",
+  "component": "Kanonische produktive Desktop-GUI mit Release Integrity Framework 1.0",
+  "canonical_entrypoint": "11_gui/desktop_gui.py",
+  "versioned_implementation": "11_gui/desktop_gui_34_1.py",
+  "archive_root": "11_gui/archive",
+  "starter": "16_installation/START_GUI.bat",
+  "compatibility_policy": "Historische START_GUI_<version>.bat leiten ausschließlich auf START_GUI.bat weiter.",
+  "features": [
+    "Foundation Reasoning 4.1 und vollständige Coverage aus der Vorversion",
+    "SHA-256-Baseline und signierter Audit-Snapshot",
+    "verifiziertes Release-Backup mit temporärer Rollback-Probe",
+    "vollständige Altversions- und Pfadkonsistenzprüfung",
+    "Testsuite mit Einzeltest-Zeitlimit",
+    "technisch erzwungene Freigabe nur bei vollständig grünem Release-Gate",
+    "Kopieren-Button im Antwortfenster",
+    "Suchmodus-Dropdown für Automatisch, Lokal, Internet und Hybrid",
+    "Quellen-, Routing-, lokale Such- und Internet-Recherche-Anzeige",
+    "Internet-Lernen-Status mit Review-Queue und 10-Prozent-Bandbreitenlimit",
+    "Standardstatus Internet-Lernen: Aktiv",
+    "GUI-Schalter zum Aktivieren oder Deaktivieren der Internet-Learning-Policy"
+  ]
+}

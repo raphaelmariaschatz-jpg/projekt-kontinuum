@@ -1,0 +1,15 @@
+{
+  "kind": "kontinuum.canonical_governance_baseline.acceptance",
+  "version": "34.1",
+  "accepted_at": "2026-06-27T17:20:00+02:00",
+  "accepted_date": "2026-06-27",
+  "status": "OFFIZIELL_AKZEPTIERT",
+  "canonical_governance_baseline": "24_config/canonical_governance_baseline_34_1.json",
+  "sha256": "062702e546c8acf4951e293dd8cb65b92200e986f10660c136a9421b3c2c9f65",
+  "reference_state": "Canonical Governance Baseline 34.1",
+  "binding": "Verbindliche Ausgangsbasis fuer alle zukuenftigen Governance-Pruefungen",
+  "replacement_policy": "Darf ausschliesslich durch zukuenftige, offiziell freigegebene Governance-Versionen ersetzt werden",
+  "release_gate": "31_reports/release_integrity/34.1/release_gate.json",
+  "release_status": "VERIFIZIERT",
+  "freigabe": "JA"
+}

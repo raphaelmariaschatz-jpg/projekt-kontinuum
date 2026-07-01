@@ -1,0 +1,22 @@
+{
+  "active_root": "C:\\Projekt Kontinuum",
+  "legacy_roots": [
+    "E:\\Projekt Kontinuum"
+  ],
+  "mapping_rules": [
+    {
+      "from": "E:\\Projekt Kontinuum",
+      "to": "C:\\Projekt Kontinuum",
+      "mode": "runtime_mapping_only",
+      "note": "Historische Pfade bleiben als Archivinformation erhalten, aktive Laufzeitpfade werden auf C:\\Projekt Kontinuum gemappt."
+    }
+  ],
+  "removed_paths": [
+    {
+      "path": "C:\\Projekt Kontinuum\\29_memory",
+      "replacement": "C:\\Projekt Kontinuum\\03_memory",
+      "note": "29_memory wurde entfernt; Inhalte liegen in 03_memory."
+    }
+  ],
+  "created_at": "2026-06-09"
+}

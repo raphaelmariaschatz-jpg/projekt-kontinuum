@@ -1,0 +1,152 @@
+{
+  "version": "34.1",
+  "manager_version": "1.2",
+  "database": "32_data/kontinuum.db",
+  "required_tables": [
+    "memories",
+    "knowledge_items",
+    "learning_tasks",
+    "graph_nodes",
+    "graph_edges",
+    "events",
+    "sources",
+    "questions",
+    "chronicle_entries",
+    "audit_events",
+    "self_state",
+    "self_state_events",
+    "self_explanations",
+    "self_boundaries",
+    "self_change_log",
+    "chronicle_integrity",
+    "foundation_principles",
+    "foundation_knowledge",
+    "foundation_memory",
+    "foundation_reasoning",
+    "continuity_nodes",
+    "continuity_snapshots",
+    "continuity_events",
+    "moral_assessments",
+    "foundation_decisions",
+    "strategic_goals",
+    "self_questions",
+    "meaning_nodes",
+    "meaning_edges",
+    "meaning_paths",
+    "motivation_scores",
+    "motivation_reports",
+    "motivation_explanations",
+    "motivation_evidence",
+    "motivation_paths",
+    "relevance_assessments",
+    "relevance_reports",
+    "knowledge_evaluations",
+    "source_ratings",
+    "knowledge_conflicts",
+    "evaluation_history",
+    "file_search_documents",
+    "file_search_fts"
+  ],
+  "table_contracts": {
+    "foundation_memory": {
+      "id": {"type": "INTEGER", "primary_key": true},
+      "kind": {"type": "TEXT", "not_null": true},
+      "content": {"type": "TEXT", "not_null": true},
+      "metadata": {"type": "TEXT", "not_null": true},
+      "created_at": {"type": "TEXT", "not_null": true}
+    },
+    "foundation_knowledge": {
+      "id": {"type": "INTEGER", "primary_key": true},
+      "kind": {"type": "TEXT", "not_null": true},
+      "content": {"type": "TEXT", "not_null": true},
+      "metadata": {"type": "TEXT", "not_null": true},
+      "created_at": {"type": "TEXT", "not_null": true}
+    },
+    "foundation_reasoning": {
+      "id": {"type": "INTEGER", "primary_key": true},
+      "kind": {"type": "TEXT", "not_null": true},
+      "content": {"type": "TEXT", "not_null": true},
+      "metadata": {"type": "TEXT", "not_null": true},
+      "created_at": {"type": "TEXT", "not_null": true}
+    },
+    "memories": {
+      "id": {"type": "INTEGER", "primary_key": true},
+      "kind": {"type": "TEXT", "not_null": true},
+      "content": {"type": "TEXT", "not_null": true},
+      "metadata": {"type": "TEXT", "not_null": true},
+      "created_at": {"type": "TEXT", "not_null": true}
+    },
+    "file_search_documents": {
+      "path": {"type": "TEXT", "primary_key": true},
+      "area": {"type": "TEXT", "not_null": true},
+      "content": {"type": "TEXT", "not_null": true},
+      "modified_ns": {"type": "INTEGER", "not_null": true},
+      "archive": {"type": "INTEGER", "not_null": true}
+    }
+  },
+  "required_indexes": [
+    "idx_foundation_memory_kind",
+    "idx_foundation_memory_created_at",
+    "idx_foundation_memory_kind_created",
+    "idx_foundation_knowledge_kind",
+    "idx_foundation_reasoning_kind",
+    "idx_memories_content",
+    "idx_memories_kind_created",
+    "idx_file_search_area_archive"
+  ],
+  "required_triggers": [
+    "protect_chronicle_update",
+    "protect_chronicle_delete",
+    "protect_foundation_principles_update",
+    "protect_foundation_principles_delete",
+    "protect_foundation_knowledge_update",
+    "protect_foundation_knowledge_delete",
+    "protect_foundation_memory_update",
+    "protect_foundation_memory_delete",
+    "protect_foundation_reasoning_update",
+    "protect_foundation_reasoning_delete",
+    "protect_foundation_decisions_update",
+    "protect_foundation_decisions_delete",
+    "protect_knowledge_evaluations_update",
+    "protect_knowledge_evaluations_delete",
+    "protect_source_ratings_update",
+    "protect_source_ratings_delete",
+    "protect_knowledge_conflicts_update",
+    "protect_knowledge_conflicts_delete",
+    "protect_evaluation_history_update",
+    "protect_evaluation_history_delete"
+  ],
+  "required_fts": ["file_search_fts"],
+  "data_domains": {
+    "foundation": [
+      "foundation_principles",
+      "foundation_knowledge",
+      "foundation_memory",
+      "foundation_reasoning",
+      "foundation_decisions"
+    ],
+    "memory": [
+      "memories",
+      "self_state",
+      "self_state_events",
+      "continuity_nodes",
+      "continuity_snapshots"
+    ],
+    "knowledge": [
+      "knowledge_items",
+      "graph_nodes",
+      "graph_edges",
+      "sources",
+      "knowledge_evaluations",
+      "source_ratings",
+      "knowledge_conflicts",
+      "evaluation_history"
+    ],
+    "search": [
+      "file_search_documents",
+      "file_search_fts"
+    ]
+  },
+  "mutation_policy": "read_only_verification; controlled_migration_only",
+  "allow_additional_tables": true
+}

@@ -1,0 +1,47 @@
+{
+  "enabled": true,
+  "mode": "diagnostic_review_only",
+  "request_timeout_seconds": 8,
+  "max_response_bytes": 1200000,
+  "max_pages": 20,
+  "max_depth": 2,
+  "same_domain_preferred": true,
+  "respect_robots_txt": true,
+  "no_direct_memory_write": true,
+  "no_automatic_canonical_adoption": true,
+  "write_review_queue": true,
+  "blocked_download_suffixes": [
+    ".7z",
+    ".avi",
+    ".bin",
+    ".dmg",
+    ".doc",
+    ".docx",
+    ".exe",
+    ".gz",
+    ".iso",
+    ".mp3",
+    ".mp4",
+    ".pdf",
+    ".ppt",
+    ".pptx",
+    ".rar",
+    ".tar",
+    ".tgz",
+    ".xls",
+    ".xlsx",
+    ".zip"
+  ],
+  "providers": [
+    "direct_http_get",
+    "html_text_extractor",
+    "controlled_crawler"
+  ],
+  "handoff": {
+    "source_table": "sources",
+    "learning_tasks": true,
+    "review_queue": "32_data/internet_learning_review",
+    "source_records": "32_data/web_agent_sources",
+    "canonical_knowledge_adoption": "manual_governance_review_only"
+  }
+}
