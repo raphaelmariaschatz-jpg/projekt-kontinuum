@@ -123,3 +123,10 @@ node_modules/
 # Temporäre Analysedateien
 analyse_*.txt
 32_data_ordner.txt
+
+# Laufzeit-Logs
+27_logs/*.log
+27_logs/*.jsonl
+
+# README im Logordner trotzdem behalten
+!27_logs/README_LOGS.txt
