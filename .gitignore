@@ -130,3 +130,9 @@ analyse_*.txt
 
 # README im Logordner trotzdem behalten
 !27_logs/README_LOGS.txt
+
+# Backups
+09_backups/
+
+# KI-/Sprachmodelle
+07_models/
