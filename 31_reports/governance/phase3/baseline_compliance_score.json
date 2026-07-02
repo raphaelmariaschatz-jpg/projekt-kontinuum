@@ -1,0 +1,16 @@
+{
+  "version": "34.1",
+  "created_at": "2026-06-30T10:23:00.262836+00:00",
+  "score": 10,
+  "baseline": {
+    "component": "Baseline Layer",
+    "active": true,
+    "ok": true,
+    "path": "24_config/canonical_governance_baseline_34_1.json",
+    "sha256": "062702e546c8acf4951e293dd8cb65b92200e986f10660c136a9421b3c2c9f65",
+    "accepted_sha256": "062702e546c8acf4951e293dd8cb65b92200e986f10660c136a9421b3c2c9f65",
+    "status": "IMMUTABLE_READ_ONLY_REFERENCE",
+    "replacement_policy": "Darf ausschliesslich durch zukuenftige, offiziell freigegebene Governance-Versionen ersetzt werden"
+  },
+  "drift_classification": "MEDIUM"
+}

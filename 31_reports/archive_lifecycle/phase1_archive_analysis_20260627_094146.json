@@ -1,0 +1,4349 @@
+{
+  "kind": "kontinuum.archive_lifecycle.phase1_analysis",
+  "created_at": "2026-06-27T09:41:46.837486+00:00",
+  "project_root": "C:\\Projekt Kontinuum",
+  "active_version": "34.1",
+  "mode": "read_only_no_moves",
+  "active_path_count": 108,
+  "counts": {
+    "files_scanned": 384,
+    "clearly_historical": 11,
+    "possible_active_or_needs_review": 282,
+    "already_archived": 52,
+    "cache_or_generated": 7,
+    "duplicate_groups": 3
+  },
+  "clearly_historical": [
+    {
+      "path": "13_tools/Kontinuum Tools/AUTH_MASTER_BUILDER_22_8.bat",
+      "reason": "older_version_marker:22.8",
+      "archive_target": "13_tools/archive/legacy/AUTH_MASTER_BUILDER_22_8.bat",
+      "references": []
+    },
+    {
+      "path": "13_tools/Kontinuum Tools/AUTH_MASTER_BUILDER_22_8_FIXED.bat",
+      "reason": "older_version_marker:22.8",
+      "archive_target": "13_tools/archive/legacy/AUTH_MASTER_BUILDER_22_8_FIXED.bat",
+      "references": []
+    },
+    {
+      "path": "13_tools/Kontinuum Tools/KONTINUUM_22_8_FINALIZER.bat",
+      "reason": "older_version_marker:22.8",
+      "archive_target": "13_tools/archive/legacy/KONTINUUM_22_8_FINALIZER.bat",
+      "references": []
+    },
+    {
+      "path": "13_tools/Kontinuum Tools/KONTINUUM_22_8_FINALIZER_FIXED.bat",
+      "reason": "older_version_marker:22.8",
+      "archive_target": "13_tools/archive/legacy/KONTINUUM_22_8_FINALIZER_FIXED.bat",
+      "references": []
+    },
+    {
+      "path": "13_tools/Kontinuum Tools/LOGIN_KONSOLIDIERUNG_22_8.bat",
+      "reason": "older_version_marker:22.8",
+      "archive_target": "13_tools/archive/legacy/LOGIN_KONSOLIDIERUNG_22_8.bat",
+      "references": []
+    },
+    {
+      "path": "13_tools/Kontinuum Tools/LOGIN_MIGRATION_22_8.bat",
+      "reason": "older_version_marker:22.8",
+      "archive_target": "13_tools/archive/legacy/LOGIN_MIGRATION_22_8.bat",
+      "references": []
+    },
+    {
+      "path": "13_tools/Kontinuum Tools/MASTER_AUSWAHL_22_8.bat",
+      "reason": "older_version_marker:22.8",
+      "archive_target": "13_tools/archive/legacy/MASTER_AUSWAHL_22_8.bat",
+      "references": []
+    },
+    {
+      "path": "13_tools/Kontinuum Tools/RUNTIME_BUILDER_22_8.bat",
+      "reason": "older_version_marker:22.8",
+      "archive_target": "13_tools/archive/legacy/RUNTIME_BUILDER_22_8.bat",
+      "references": []
+    },
+    {
+      "path": "13_tools/Kontinuum Tools/VOLLINTEGRATION_22_8.bat",
+      "reason": "older_version_marker:22.8",
+      "archive_target": "13_tools/archive/legacy/VOLLINTEGRATION_22_8.bat",
+      "references": []
+    },
+    {
+      "path": "31_reports/MIGRATION_REPORT_2026-06-09.md",
+      "reason": "dated_historical_report_or_note",
+      "archive_target": "31_reports/archive/reports/MIGRATION_REPORT_2026-06-09.md",
+      "references": []
+    },
+    {
+      "path": "31_reports/Projekt_Kontinuum_Architekturpruefung_2026-06-09.md",
+      "reason": "dated_historical_report_or_note",
+      "archive_target": "31_reports/archive/reports/Projekt_Kontinuum_Architekturpruefung_2026-06-09.md",
+      "references": []
+    }
+  ],
+  "possible_active_or_needs_review": [
+    {
+      "path": "11_gui/desktop_gui.py",
+      "reason": "canonical_or_required:11_gui/desktop_gui.py",
+      "references": [
+        {
+          "source": "11_gui/gui_manifest.json",
+          "needle": "11_gui/desktop_gui.py"
+        },
+        {
+          "source": "11_gui/README_GUI.md",
+          "needle": "11_gui/desktop_gui.py"
+        },
+        {
+          "source": "13_tools/Kontinuum Tools/ANALYSE_PATCH_KONTINUUM_1_BIS_22.bat",
+          "needle": "desktop_gui.py"
+        },
+        {
+          "source": "13_tools/Kontinuum Tools/KONTINUUM_22_8_FINALIZER.bat",
+          "needle": "desktop_gui.py"
+        },
+        {
+          "source": "13_tools/Kontinuum Tools/KONTINUUM_22_8_FINALIZER_FIXED.bat",
+          "needle": "desktop_gui.py"
+        }
+      ]
+    },
+    {
+      "path": "11_gui/desktop_gui_34_1.py",
+      "reason": "canonical_or_required:11_gui/desktop_gui_34_1.py",
+      "references": [
+        {
+          "source": "11_gui/archive/34_1/GUI_34_1_MANIFEST.pre_canonical.json",
+          "needle": "desktop_gui_34_1.py"
+        },
+        {
+          "source": "11_gui/gui_manifest.json",
+          "needle": "desktop_gui_34_1.py"
+        },
+        {
+          "source": "11_gui/README_GUI.md",
+          "needle": "desktop_gui_34_1.py"
+        },
+        {
+          "source": "14_documents/PROJEKTSTRUKTUR_34_1.md",
+          "needle": "desktop_gui_34_1.py"
+        },
+        {
+          "source": "14_documents/README_GUI_34_1.md",
+          "needle": "desktop_gui_34_1.py"
+        }
+      ]
+    },
+    {
+      "path": "11_gui/gui_manifest.json",
+      "reason": "canonical_or_required:11_gui/gui_manifest.json",
+      "references": [
+        {
+          "source": "11_gui/README_GUI.md",
+          "needle": "gui_manifest.json"
+        },
+        {
+          "source": "13_tools/status_check_34_1.py",
+          "needle": "gui_manifest.json"
+        },
+        {
+          "source": "14_documents/PROJEKTSTRUKTUR_34_1.md",
+          "needle": "gui_manifest.json"
+        },
+        {
+          "source": "14_documents/README_GUI_34_1.md",
+          "needle": "gui_manifest.json"
+        },
+        {
+          "source": "17_tests/test_v34_1_version_consistency.py",
+          "needle": "gui_manifest.json"
+        }
+      ]
+    },
+    {
+      "path": "11_gui/README_GUI.md",
+      "reason": "canonical_or_required:11_gui",
+      "references": [
+        {
+          "source": "14_documents/PROJEKTSTRUKTUR_34_1.md",
+          "needle": "11_gui/README_GUI.md"
+        },
+        {
+          "source": "14_documents/README_GUI_34_1.md",
+          "needle": "README_GUI.md"
+        },
+        {
+          "source": "17_tests/test_v34_1_version_consistency.py",
+          "needle": "11_gui/README_GUI.md"
+        },
+        {
+          "source": "24_config/release_integrity_34_1.json",
+          "needle": "11_gui/README_GUI.md"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "11_gui/README_GUI.md"
+        }
+      ]
+    },
+    {
+      "path": "13_tools/codex_cli/codex.exe",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "13_tools/Kontinuum Tools/codex_tools.py",
+          "needle": "codex.exe"
+        },
+        {
+          "source": "14_documents/CODEX_INTEGRATION.md",
+          "needle": "codex.exe"
+        }
+      ]
+    },
+    {
+      "path": "13_tools/development_sandbox/.git/config",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "11_gui/archive/32_3/desktop_gui_32_3.py",
+          "needle": "config"
+        },
+        {
+          "source": "11_gui/archive/32_4/desktop_gui_32_4.py",
+          "needle": "config"
+        },
+        {
+          "source": "11_gui/archive/33_0/desktop_gui_33_0.py",
+          "needle": "config"
+        },
+        {
+          "source": "11_gui/archive/34_0/desktop_gui_34_0.py",
+          "needle": "config"
+        },
+        {
+          "source": "11_gui/desktop_gui_34_1.py",
+          "needle": "config"
+        },
+        {
+          "source": "13_tools/archive_lifecycle_34_1.py",
+          "needle": "config"
+        },
+        {
+          "source": "13_tools/Kontinuum Tools/codex_tools.py",
+          "needle": "config"
+        },
+        {
+          "source": "13_tools/Kontinuum Tools/path_tools.py",
+          "needle": "config"
+        }
+      ]
+    },
+    {
+      "path": "13_tools/development_sandbox/.git/description",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "13_tools/release_integrity_34_1.py",
+          "needle": "description"
+        },
+        {
+          "source": "17_tests/test_search_engine_connector_23.py",
+          "needle": "description"
+        },
+        {
+          "source": "17_tests/test_v32_3_knowledge_contamination_guard.py",
+          "needle": "description"
+        }
+      ]
+    },
+    {
+      "path": "13_tools/development_sandbox/.git/index",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "11_gui/archive/32_3/desktop_gui_32_3.py",
+          "needle": "index"
+        },
+        {
+          "source": "11_gui/archive/32_4/desktop_gui_32_4.py",
+          "needle": "index"
+        },
+        {
+          "source": "11_gui/archive/33_0/desktop_gui_33_0.py",
+          "needle": "index"
+        },
+        {
+          "source": "11_gui/archive/34_0/desktop_gui_34_0.py",
+          "needle": "index"
+        },
+        {
+          "source": "11_gui/desktop_gui_34_1.py",
+          "needle": "index"
+        },
+        {
+          "source": "13_tools/archive_lifecycle_34_1.py",
+          "needle": "index"
+        },
+        {
+          "source": "13_tools/Kontinuum Tools/ANALYSE_PATCH_KONTINUUM_1_BIS_22.bat",
+          "needle": "index"
+        },
+        {
+          "source": "13_tools/Kontinuum Tools/MASTER_AUSWAHL_22_8.bat",
+          "needle": "index"
+        }
+      ]
+    },
+    {
+      "path": "13_tools/development_sandbox/.git/info/exclude",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "17_tests/legacy_kontinuum_23.py",
+          "needle": "exclude"
+        },
+        {
+          "source": "17_tests/legacy_sourced_research_23.py",
+          "needle": "exclude"
+        }
+      ]
+    },
+    {
+      "path": "13_tools/development_sandbox/.git/logs/refs/heads/main",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "11_gui/archive/32_3/desktop_gui_32_3.py",
+          "needle": "main"
+        },
+        {
+          "source": "11_gui/archive/32_4/desktop_gui_32_4.py",
+          "needle": "main"
+        },
+        {
+          "source": "11_gui/archive/33_0/desktop_gui_33_0.py",
+          "needle": "main"
+        },
+        {
+          "source": "11_gui/archive/34_0/desktop_gui_34_0.py",
+          "needle": "main"
+        },
+        {
+          "source": "11_gui/desktop_gui.py",
+          "needle": "main"
+        },
+        {
+          "source": "11_gui/desktop_gui_34_1.py",
+          "needle": "main"
+        },
+        {
+          "source": "13_tools/archive_lifecycle_34_1.py",
+          "needle": "main"
+        },
+        {
+          "source": "13_tools/development_sandbox/test_calculator.py",
+          "needle": "main"
+        }
+      ]
+    },
+    {
+      "path": "13_tools/development_sandbox/.git/refs/heads/main",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "11_gui/archive/32_3/desktop_gui_32_3.py",
+          "needle": "main"
+        },
+        {
+          "source": "11_gui/archive/32_4/desktop_gui_32_4.py",
+          "needle": "main"
+        },
+        {
+          "source": "11_gui/archive/33_0/desktop_gui_33_0.py",
+          "needle": "main"
+        },
+        {
+          "source": "11_gui/archive/34_0/desktop_gui_34_0.py",
+          "needle": "main"
+        },
+        {
+          "source": "11_gui/desktop_gui.py",
+          "needle": "main"
+        },
+        {
+          "source": "11_gui/desktop_gui_34_1.py",
+          "needle": "main"
+        },
+        {
+          "source": "13_tools/archive_lifecycle_34_1.py",
+          "needle": "main"
+        },
+        {
+          "source": "13_tools/development_sandbox/test_calculator.py",
+          "needle": "main"
+        }
+      ]
+    },
+    {
+      "path": "13_tools/development_sandbox/calculator.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "14_documents/fundamentale Gedanken/13.06.26.txt",
+          "needle": "calculator.py"
+        }
+      ]
+    },
+    {
+      "path": "13_tools/development_sandbox/README.md",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "14_documents/fundamentale Gedanken/11-06-26.txt",
+          "needle": "README.md"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/Kontinuum 29.1 – Foundation Decisio.txt",
+          "needle": "README.md"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/Version 30.0.txt",
+          "needle": "README.md"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/Version 31.0.txt",
+          "needle": "README.md"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/Vorbereitung Version 32.4.txt",
+          "needle": "README.md"
+        },
+        {
+          "source": "14_documents/ORDNERSTRUKTUR_23.md",
+          "needle": "README.md"
+        },
+        {
+          "source": "22_project_chronicle/EINSTIEGSPUNKTE_NAECHSTE_SITZUNG.md",
+          "needle": "README.md"
+        },
+        {
+          "source": "22_project_chronicle/EINSTIEGSPUNKTE_NAECHSTE_SITZUNG_32_4.md",
+          "needle": "README.md"
+        }
+      ]
+    },
+    {
+      "path": "13_tools/development_sandbox/test_calculator.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "14_documents/fundamentale Gedanken/13.06.26.txt",
+          "needle": "test_calculator.py"
+        }
+      ]
+    },
+    {
+      "path": "13_tools/Kontinuum Tools/__init__.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "__init__.py"
+        }
+      ]
+    },
+    {
+      "path": "13_tools/Kontinuum Tools/backup_tools.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "backup_tools.py"
+        }
+      ]
+    },
+    {
+      "path": "13_tools/Kontinuum Tools/codex_tools.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "codex_tools.py"
+        }
+      ]
+    },
+    {
+      "path": "13_tools/Kontinuum Tools/export_tools.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "export_tools.py"
+        }
+      ]
+    },
+    {
+      "path": "13_tools/Kontinuum Tools/file_tools.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "file_tools.py"
+        }
+      ]
+    },
+    {
+      "path": "13_tools/Kontinuum Tools/import_tools.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "import_tools.py"
+        }
+      ]
+    },
+    {
+      "path": "13_tools/Kontinuum Tools/json_tools.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "json_tools.py"
+        }
+      ]
+    },
+    {
+      "path": "13_tools/Kontinuum Tools/PASSWORT_SETZEN_22_8.bat",
+      "reason": "historical_marker_but_referenced:older_version_marker:22.8",
+      "references": [
+        {
+          "source": "13_tools/Kontinuum Tools/AUTH_MASTER_BUILDER_22_8.bat",
+          "needle": "PASSWORT_SETZEN_22_8.bat"
+        },
+        {
+          "source": "13_tools/Kontinuum Tools/AUTH_MASTER_BUILDER_22_8_FIXED.bat",
+          "needle": "PASSWORT_SETZEN_22_8.bat"
+        },
+        {
+          "source": "13_tools/Kontinuum Tools/KONTINUUM_22_8_FINALIZER.bat",
+          "needle": "PASSWORT_SETZEN_22_8.bat"
+        },
+        {
+          "source": "13_tools/Kontinuum Tools/LOGIN_KONSOLIDIERUNG_22_8.bat",
+          "needle": "PASSWORT_SETZEN_22_8.bat"
+        },
+        {
+          "source": "13_tools/Kontinuum Tools/RUNTIME_BUILDER_22_8.bat",
+          "needle": "PASSWORT_SETZEN_22_8.bat"
+        }
+      ],
+      "suggested_archive_target_after_reference_update": "13_tools/archive/legacy/PASSWORT_SETZEN_22_8.bat"
+    },
+    {
+      "path": "13_tools/Kontinuum Tools/path_tools.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "path_tools.py"
+        }
+      ]
+    },
+    {
+      "path": "13_tools/Kontinuum Tools/search_tools.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "search_tools.py"
+        }
+      ]
+    },
+    {
+      "path": "13_tools/Kontinuum Tools/tool_registry.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "24_config/canonical_architecture_34_1.json",
+          "needle": "tool_registry.py"
+        },
+        {
+          "source": "31_reports/ARCHITEKTURBERICHT_PROJEKT_KONTINUUM_23.md",
+          "needle": "tool_registry.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "tool_registry.py"
+        }
+      ]
+    },
+    {
+      "path": "13_tools/Kontinuum Tools/web_tools.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "web_tools.py"
+        }
+      ]
+    },
+    {
+      "path": "13_tools/release_integrity_34_1.py",
+      "reason": "canonical_or_required:13_tools/release_integrity_34_1.py",
+      "references": [
+        {
+          "source": "14_documents/archives/Umsetzung CAM 1.4 Canonical Artifact Manager vom 26.06.26.txt",
+          "needle": "release_integrity_34_1.py"
+        },
+        {
+          "source": "14_documents/archives/Wiedereinstieg am 26.06.26, Defdinieren von CAM 1.3 API-Registry.txt",
+          "needle": "13_tools/release_integrity_34_1.py"
+        },
+        {
+          "source": "14_documents/PROJEKTSTRUKTUR_34_1.md",
+          "needle": "13_tools/release_integrity_34_1.py"
+        },
+        {
+          "source": "16_installation/RELEASE_GATE_34_1.bat",
+          "needle": "release_integrity_34_1.py"
+        },
+        {
+          "source": "17_tests/test_v34_1_version_consistency.py",
+          "needle": "13_tools/release_integrity_34_1.py"
+        }
+      ]
+    },
+    {
+      "path": "13_tools/status_check_32_3.py",
+      "reason": "historical_marker_but_referenced:older_version_marker:32.3",
+      "references": [
+        {
+          "source": "14_documents/fundamentale Gedanken/Ergebnis Version 32.4.txt",
+          "needle": "status_check_32_3.py"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/letzte Prüfung Version 32.4.txt",
+          "needle": "status_check_32_3.py"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/Vorbereitung Version 32.4.txt",
+          "needle": "status_check_32_3.py"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/Wiedereinstieg nach Version 32.3.txt",
+          "needle": "status_check_32_3.py"
+        },
+        {
+          "source": "17_tests/test_v32_4_version_consistency.py",
+          "needle": "status_check_32_3.py"
+        },
+        {
+          "source": "22_project_chronicle/RELEASE_32_4_VERIFICATION_DOCUMENTATION.md",
+          "needle": "status_check_32_3.py"
+        }
+      ],
+      "suggested_archive_target_after_reference_update": "13_tools/archive/reports/status_check_32_3.py"
+    },
+    {
+      "path": "13_tools/status_check_32_4.py",
+      "reason": "historical_marker_but_referenced:older_version_marker:32.4",
+      "references": [
+        {
+          "source": "13_tools/status_check_32_3.py",
+          "needle": "status_check_32_4.py"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/Ergebnis Version 32.4.txt",
+          "needle": "status_check_32_4.py"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/letzte Prüfung Version 32.4.txt",
+          "needle": "status_check_32_4.py"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/Vorbereitung Version 32.4.txt",
+          "needle": "status_check_32_4.py"
+        },
+        {
+          "source": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_32_4.md",
+          "needle": "status_check_32_4.py"
+        },
+        {
+          "source": "17_tests/test_v32_4_version_consistency.py",
+          "needle": "status_check_32_4.py"
+        },
+        {
+          "source": "22_project_chronicle/EINSTIEGSPUNKTE_NAECHSTE_SITZUNG_32_4.md",
+          "needle": "status_check_32_4.py"
+        },
+        {
+          "source": "22_project_chronicle/RELEASE_32_4_VERIFICATION_DOCUMENTATION.md",
+          "needle": "status_check_32_4.py"
+        }
+      ],
+      "suggested_archive_target_after_reference_update": "13_tools/archive/reports/status_check_32_4.py"
+    },
+    {
+      "path": "13_tools/status_check_33_0.py",
+      "reason": "historical_marker_but_referenced:older_version_marker:33.0",
+      "references": [
+        {
+          "source": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_33_0.md",
+          "needle": "status_check_33_0.py"
+        },
+        {
+          "source": "17_tests/test_v33_0_version_consistency.py",
+          "needle": "status_check_33_0.py"
+        }
+      ],
+      "suggested_archive_target_after_reference_update": "13_tools/archive/reports/status_check_33_0.py"
+    },
+    {
+      "path": "13_tools/status_check_34_0.py",
+      "reason": "historical_marker_but_referenced:older_version_marker:34.0",
+      "references": [
+        {
+          "source": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_34_0.md",
+          "needle": "status_check_34_0.py"
+        },
+        {
+          "source": "17_tests/test_v34_0_version_consistency.py",
+          "needle": "status_check_34_0.py"
+        }
+      ],
+      "suggested_archive_target_after_reference_update": "13_tools/archive/reports/status_check_34_0.py"
+    },
+    {
+      "path": "13_tools/status_check_34_1.py",
+      "reason": "canonical_or_required:13_tools/status_check_34_1.py",
+      "references": [
+        {
+          "source": "14_documents/archives/Codex-Auftrag – Dauerhafte Archivstruktur und Lifecycle-Regel für Projekt Kontinuum 27.06.26.txt",
+          "needle": "status_check_34_1.py"
+        },
+        {
+          "source": "14_documents/archives/Ergänzung zu CAM 1.3 Registry-Api vom 26.06.26.txt",
+          "needle": "status_check_34_1.py"
+        },
+        {
+          "source": "14_documents/archives/offenen CAM-1.4-Release-Gate-Blocker beheben 26.06.26.txt",
+          "needle": "status_check_34_1.py"
+        },
+        {
+          "source": "14_documents/archives/Umsetzung CAM 1.4 Canonical Artifact Manager vom 26.06.26.txt",
+          "needle": "status_check_34_1.py"
+        },
+        {
+          "source": "14_documents/archives/Version 34.1 mit Release Integrity Framework.txt",
+          "needle": "13_tools/status_check_34_1.py"
+        }
+      ]
+    },
+    {
+      "path": "14_documents/ARBEITSREGEL_ARTEFAKT_LIFECYCLE_34_1.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": [
+        {
+          "source": "14_documents/archives/Codex-Auftrag – Dauerhafte Archivstruktur und Lifecycle-Regel für Projekt Kontinuum 27.06.26.txt",
+          "needle": "ARBEITSREGEL_ARTEFAKT_LIFECYCLE_34_1.md"
+        },
+        {
+          "source": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_34_1.md",
+          "needle": "14_documents/ARBEITSREGEL_ARTEFAKT_LIFECYCLE_34_1.md"
+        },
+        {
+          "source": "17_tests/test_release_integrity_framework_34_1.py",
+          "needle": "14_documents/ARBEITSREGEL_ARTEFAKT_LIFECYCLE_34_1.md"
+        },
+        {
+          "source": "22_project_chronicle/EINSTIEGSPUNKTE_NAECHSTE_SITZUNG.md",
+          "needle": "14_documents/ARBEITSREGEL_ARTEFAKT_LIFECYCLE_34_1.md"
+        },
+        {
+          "source": "24_config/canonical_architecture_34_1.json",
+          "needle": "14_documents/ARBEITSREGEL_ARTEFAKT_LIFECYCLE_34_1.md"
+        }
+      ]
+    },
+    {
+      "path": "14_documents/CODEX_INTEGRATION.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/11-06-26.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/13.06.26.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/28.1 – Schutzgrenzen vervollständigen.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Aktueller Engpass.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Aktueller Projektstand 23.0.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": [
+        {
+          "source": "14_documents/projektstatus/README_PROJEKTSTATUS.md",
+          "needle": "Aktueller Projektstand 23.0.txt"
+        }
+      ]
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Analyse und Fehlerbehebungsplan sin.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Arbeitsschritte Codex Version 33.0.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Auffälligkeiten für 33.1.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Auftrag für 15.06.26.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Bearbeitungsschritte Memory core vo.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Bericht_Foundation_2_1_Technische_Umsetzung_23_06_2026.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": [
+        {
+          "source": "14_documents/archives/nächster Schritt 24.06.26.txt",
+          "needle": "Bericht_Foundation_2_1_Technische_Umsetzung_23_06_2026.md"
+        },
+        {
+          "source": "14_documents/archives/technische Umsetzung von Foundation 2.1 vom 23.06.26.md",
+          "needle": "Bericht_Foundation_2_1_Technische_Umsetzung_23_06_2026.md"
+        },
+        {
+          "source": "14_documents/archives/technische Umsetzung von Foundation 2.1 vom 23.06.26.txt",
+          "needle": "Bericht_Foundation_2_1_Technische_Umsetzung_23_06_2026.md"
+        }
+      ]
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Bericht_Foundation_Architektur_Kontinuum_23_06_2026.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Bücher lesen und verstehen.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Empfehlung chatgpt für 15.06.26.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Entwicklungsvorschlaege_fuer_K.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Entwicklungsvorschlaege_fuer_K_Ausfuehrlich ab Version 32.3.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Entwicklungsvorschlaege_fuer_K_Kurzfassung ab Version 32.3.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Ergebnis Version 32.4.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Erweiterung_Roadmap_Langfassung_21_06_2026.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Fazit aus Version 32.2.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Fehler in Version 32.2.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Fehlerbehebungsbericht Version 32.2.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Fehlerpruefung_zwischen_den_Modulen Version 32.3.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Foundation_Architecture_Kontinuum_23_06_2026.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": [
+        {
+          "source": "14_documents/archives/Bearbeitung Foundation Architecture Kontinuum vom 23.06.26.txt",
+          "needle": "Foundation_Architecture_Kontinuum_23_06_2026.md"
+        },
+        {
+          "source": "14_documents/archives/Was mir noch als Foundation 2.0 fehlt vom 23.06.26.txt",
+          "needle": "Foundation_Architecture_Kontinuum_23_06_2026.md"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/Bericht_Foundation_Architektur_Kontinuum_23_06_2026.md",
+          "needle": "Foundation_Architecture_Kontinuum_23_06_2026.md"
+        }
+      ]
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Fundamentale_Gedanken_20_06_2026.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/fundamentale_Gedanken_vom_23.06.2026.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Ich setze das bewusst als Kontinuum 27.1 um.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Ja. Der nächste Entwicklungsschritt.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/K_Fundamentale_Gedanken_Aktualisiert.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Kontinuum 29.1 – Foundation Decisio.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Kontinuum Eingaben vom 12.06.26.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Lernen ist der bewusste oder unbewu.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/letzte Prüfung Version 32.4.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Master-Handbuch_Deluxe_Revision_2_fuer_Version_35-50.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Master-Handbuch_Deluxe_Revision_3_Betriebs_Entwickler_und_Benutzerhandbuch.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Master_Handbuch_Deluxe_Kontinuum_2026_2028.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Master_Handbuch_Kontinuum_2026_2028.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Master_Roadmap_Kontinuum_2026_2028.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Master_Roadmap_Kontinuum_2026_2028_Revision_1.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/mein Fazit Version 32.2.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/neuer codex Auftrag am 14.06.26.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/noch auszuführen für 32.3..txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/noch gefundene Fehler in Version 32.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Nächster Codex-Auftrag.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/nächster Schritt für 27.3 um.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Ordnerstruktur.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": [
+        {
+          "source": "14_documents/ORDNERSTRUKTUR_23.md",
+          "needle": "Ordnerstruktur.txt"
+        }
+      ]
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Prioritätsliste für Codex am 17.06..txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Projekt Kontinuum 23.0.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Projekt_Kontinuum_Smartphone_Architektur.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Projekt_Kontinuum_Smartphone_Architektur_Aktualisiert.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Projekt_Kontinuum_Strategische_Roadmap_35_bis_40_Langfassung.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Roadmap nach Version 32.3.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Roadmap Vorschlag vom 19.06.26.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Roadmap.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": [
+        {
+          "source": "14_documents/archives/Umsetzung Foundation Knowledge Protection.txt",
+          "needle": "14_documents/fundamentale Gedanken/Roadmap.md"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "14_documents/fundamentale Gedanken/Roadmap.md"
+        }
+      ]
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Roadmap_Ergaenzung_20_06_2026.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Selbsterkenntnis bedeutet, das eige.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Statusberichte Version 33.0.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Technisches_Referenzwerk_Kontinuum.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Technisches_Referenzwerk_Kontinuum_Revision_2_fuer_Version_50-100.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Unter Bewusstsein versteht man die.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Version 19.5.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Version 22.6.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Version 30.0.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Version 31.0.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Version 32.0.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Version 32.1.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Version 32.2.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Versionsauftrag Version 33.0.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Vorbereitung Version 32.4.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Was ich als Version 25.0 ansehen wü.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/weitere Entwicklungsschritte ab Version 33.0.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Wenn ich unsere Gespräche über Proj.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Wiedereinstieg nach Version 32.3.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Windows Startdateien Version 22.6.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/fundamentale Gedanken/Zentrale Erkennung von Intent, Nutz.txt",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/HANDBUCH_23.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": [
+        {
+          "source": "14_documents/fundamentale Gedanken/13.06.26.txt",
+          "needle": "HANDBUCH_23.md"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/Version 30.0.txt",
+          "needle": "HANDBUCH_23.md"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/Version 31.0.txt",
+          "needle": "HANDBUCH_23.md"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/Vorbereitung Version 32.4.txt",
+          "needle": "HANDBUCH_23.md"
+        },
+        {
+          "source": "22_project_chronicle/EINSTIEGSPUNKTE_NAECHSTE_SITZUNG_32_4.md",
+          "needle": "HANDBUCH_23.md"
+        }
+      ]
+    },
+    {
+      "path": "14_documents/interne_fehler_und_loesungen/.gitkeep",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/interne_fehler_und_loesungen/2026_06_18_error_report.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": [
+        {
+          "source": "14_documents/fundamentale Gedanken/Arbeitsschritte Codex Version 33.0.txt",
+          "needle": "2026_06_18_error_report.md"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/Versionsauftrag Version 33.0.txt",
+          "needle": "2026_06_18_error_report.md"
+        }
+      ]
+    },
+    {
+      "path": "14_documents/interne_fehler_und_loesungen/2026_06_19_error_report.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/interne_fehler_und_loesungen/2026_06_20_error_report.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/interne_fehler_und_loesungen/2026_06_21_error_report.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": [
+        {
+          "source": "22_project_chronicle/EINSTIEGSPUNKTE_NAECHSTE_SITZUNG.md",
+          "needle": "14_documents/interne_fehler_und_loesungen/2026_06_21_error_report.md"
+        }
+      ]
+    },
+    {
+      "path": "14_documents/KANONISCHES_ARCHITEKTURMODELL_34_1.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": [
+        {
+          "source": "14_documents/HANDBUCH_23.md",
+          "needle": "KANONISCHES_ARCHITEKTURMODELL_34_1.md"
+        },
+        {
+          "source": "14_documents/PROJEKTSTRUKTUR_34_1.md",
+          "needle": "KANONISCHES_ARCHITEKTURMODELL_34_1.md"
+        },
+        {
+          "source": "17_tests/test_v34_1_version_consistency.py",
+          "needle": "KANONISCHES_ARCHITEKTURMODELL_34_1.md"
+        },
+        {
+          "source": "22_project_chronicle/EINSTIEGSPUNKTE_NAECHSTE_SITZUNG.md",
+          "needle": "KANONISCHES_ARCHITEKTURMODELL_34_1.md"
+        },
+        {
+          "source": "24_config/canonical_architecture_34_1.json",
+          "needle": "KANONISCHES_ARCHITEKTURMODELL_34_1.md"
+        }
+      ]
+    },
+    {
+      "path": "14_documents/LEITPRINZIPIEN_2026_06_21.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": [
+        {
+          "source": "13_tools/status_check_33_0.py",
+          "needle": "14_documents/LEITPRINZIPIEN_2026_06_21.md"
+        },
+        {
+          "source": "13_tools/status_check_34_0.py",
+          "needle": "14_documents/LEITPRINZIPIEN_2026_06_21.md"
+        },
+        {
+          "source": "22_project_chronicle/EINSTIEGSPUNKTE_NAECHSTE_SITZUNG.md",
+          "needle": "14_documents/LEITPRINZIPIEN_2026_06_21.md"
+        },
+        {
+          "source": "22_project_chronicle/FOUNDATION_GUIDING_PRINCIPLES_2026_06_21.md",
+          "needle": "14_documents/LEITPRINZIPIEN_2026_06_21.md"
+        }
+      ]
+    },
+    {
+      "path": "14_documents/ORDNERSTRUKTUR_23.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": [
+        {
+          "source": "14_documents/fundamentale Gedanken/13.06.26.txt",
+          "needle": "ORDNERSTRUKTUR_23.md"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/Ordnerstruktur.txt",
+          "needle": "ORDNERSTRUKTUR_23.md"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/Version 30.0.txt",
+          "needle": "ORDNERSTRUKTUR_23.md"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/Version 31.0.txt",
+          "needle": "ORDNERSTRUKTUR_23.md"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/Vorbereitung Version 32.4.txt",
+          "needle": "ORDNERSTRUKTUR_23.md"
+        }
+      ]
+    },
+    {
+      "path": "14_documents/pdf/Projekt_Kontinuum_17_Entwicklerhandbuch_Kompakt.pdf",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/pdf/Projekt_Kontinuum_17_Handbuch_Kompakt.pdf",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/pdf/Projekt_Kontinuum_22_9_Handbuch.pdf",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/pdf/Projekt_Kontinuum_22_9_Projektchronik.pdf",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/pdf/Projekt_Kontinuum_Chatprotokoll_2026-06-06.pdf",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/pdf/Projekt_Kontinuum_Chatverlauf_2026-06-06.pdf",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/pdf/Projekt_Kontinuum_Chatverlauf_2026-06-09.pdf",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/pdf/Projekt_Kontinuum_Chronik_Aktualisiert_2026-06-06.pdf",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/pdf/Projekt_Kontinuum_Handbuch_Aktualisiert_2026-06-09.pdf",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/pdf/Projekt_Kontinuum_Handbuch_V1_bis_V13.pdf",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/pdf/Projekt_Kontinuum_Handbuch_V1_bis_V8.pdf",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_32_0.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": [
+        {
+          "source": "14_documents/fundamentale Gedanken/Version 32.1.txt",
+          "needle": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_32_0.md"
+        },
+        {
+          "source": "17_tests/test_v32_4_version_consistency.py",
+          "needle": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_32_0.md"
+        }
+      ]
+    },
+    {
+      "path": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_32_2.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": [
+        {
+          "source": "14_documents/fundamentale Gedanken/Version 32.2.txt",
+          "needle": "PROJEKTSTATUS_AKTUELL_32_2.md"
+        },
+        {
+          "source": "17_tests/test_v32_4_version_consistency.py",
+          "needle": "PROJEKTSTATUS_AKTUELL_32_2.md"
+        }
+      ]
+    },
+    {
+      "path": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_32_3.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": [
+        {
+          "source": "14_documents/fundamentale Gedanken/Fehlerbehebungsbericht Version 32.2.txt",
+          "needle": "PROJEKTSTATUS_AKTUELL_32_3.md"
+        },
+        {
+          "source": "17_tests/test_v32_4_version_consistency.py",
+          "needle": "PROJEKTSTATUS_AKTUELL_32_3.md"
+        }
+      ]
+    },
+    {
+      "path": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_32_4.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": [
+        {
+          "source": "13_tools/status_check_32_4.py",
+          "needle": "PROJEKTSTATUS_AKTUELL_32_4.md"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/Vorbereitung Version 32.4.txt",
+          "needle": "PROJEKTSTATUS_AKTUELL_32_4.md"
+        },
+        {
+          "source": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_32_0.md",
+          "needle": "PROJEKTSTATUS_AKTUELL_32_4.md"
+        },
+        {
+          "source": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_32_2.md",
+          "needle": "PROJEKTSTATUS_AKTUELL_32_4.md"
+        },
+        {
+          "source": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_32_3.md",
+          "needle": "PROJEKTSTATUS_AKTUELL_32_4.md"
+        }
+      ]
+    },
+    {
+      "path": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_33_0.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": [
+        {
+          "source": "13_tools/status_check_33_0.py",
+          "needle": "PROJEKTSTATUS_AKTUELL_33_0.md"
+        },
+        {
+          "source": "17_tests/test_v33_0_version_consistency.py",
+          "needle": "PROJEKTSTATUS_AKTUELL_33_0.md"
+        }
+      ]
+    },
+    {
+      "path": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_34_0.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": [
+        {
+          "source": "13_tools/status_check_34_0.py",
+          "needle": "PROJEKTSTATUS_AKTUELL_34_0.md"
+        },
+        {
+          "source": "17_tests/test_v34_0_version_consistency.py",
+          "needle": "PROJEKTSTATUS_AKTUELL_34_0.md"
+        }
+      ]
+    },
+    {
+      "path": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_34_1.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": [
+        {
+          "source": "14_documents/ORDNERSTRUKTUR_23.md",
+          "needle": "PROJEKTSTATUS_AKTUELL_34_1.md"
+        },
+        {
+          "source": "14_documents/projektstatus/README_PROJEKTSTATUS.md",
+          "needle": "PROJEKTSTATUS_AKTUELL_34_1.md"
+        },
+        {
+          "source": "17_tests/test_v34_1_version_consistency.py",
+          "needle": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_34_1.md"
+        },
+        {
+          "source": "22_project_chronicle/EINSTIEGSPUNKTE_NAECHSTE_SITZUNG.md",
+          "needle": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_34_1.md"
+        },
+        {
+          "source": "24_config/release_integrity_34_1.json",
+          "needle": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_34_1.md"
+        }
+      ]
+    },
+    {
+      "path": "14_documents/projektstatus/README_PROJEKTSTATUS.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": [
+        {
+          "source": "14_documents/fundamentale Gedanken/Version 32.1.txt",
+          "needle": "README_PROJEKTSTATUS.md"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/Vorbereitung Version 32.4.txt",
+          "needle": "README_PROJEKTSTATUS.md"
+        },
+        {
+          "source": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_32_3.md",
+          "needle": "README_PROJEKTSTATUS.md"
+        },
+        {
+          "source": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_32_4.md",
+          "needle": "README_PROJEKTSTATUS.md"
+        },
+        {
+          "source": "22_project_chronicle/EINSTIEGSPUNKTE_NAECHSTE_SITZUNG_32_4.md",
+          "needle": "README_PROJEKTSTATUS.md"
+        }
+      ]
+    },
+    {
+      "path": "14_documents/PROJEKTSTRUKTUR_34_1.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": [
+        {
+          "source": "14_documents/archives/Ausführung geplante 2 Arbeitsschritte vom 24.06.26.txt",
+          "needle": "PROJEKTSTRUKTUR_34_1.md"
+        },
+        {
+          "source": "14_documents/archives/Codex-Auftrag – Dauerhafte Archivstruktur und Lifecycle-Regel für Projekt Kontinuum 27.06.26.txt",
+          "needle": "PROJEKTSTRUKTUR_34_1.md"
+        },
+        {
+          "source": "14_documents/archives/Gesicherter Stand (24.06.2026).txt",
+          "needle": "PROJEKTSTRUKTUR_34_1.md"
+        },
+        {
+          "source": "14_documents/archives/Version 34.1 mit Release Integrity Framework.txt",
+          "needle": "PROJEKTSTRUKTUR_34_1.md"
+        },
+        {
+          "source": "14_documents/HANDBUCH_23.md",
+          "needle": "PROJEKTSTRUKTUR_34_1.md"
+        }
+      ]
+    },
+    {
+      "path": "14_documents/README_AGENTS_TOOLS_23.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/README_GUI_32_3.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": [
+        {
+          "source": "11_gui/archive/32_3/GUI_32_3_MANIFEST.json",
+          "needle": "14_documents/README_GUI_32_3.md"
+        }
+      ]
+    },
+    {
+      "path": "14_documents/README_GUI_32_4.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": [
+        {
+          "source": "11_gui/archive/32_4/GUI_32_4_MANIFEST.json",
+          "needle": "README_GUI_32_4.md"
+        },
+        {
+          "source": "17_tests/test_v32_4_version_consistency.py",
+          "needle": "README_GUI_32_4.md"
+        }
+      ]
+    },
+    {
+      "path": "14_documents/README_GUI_34_0.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "14_documents/README_GUI_34_1.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": [
+        {
+          "source": "24_config/release_integrity_34_1.json",
+          "needle": "14_documents/README_GUI_34_1.md"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "14_documents/README_GUI_34_1.md"
+        }
+      ]
+    },
+    {
+      "path": "14_documents/RESEARCH_STORAGE_POLICY.md",
+      "reason": "canonical_or_required:14_documents",
+      "references": []
+    },
+    {
+      "path": "16_installation/RELEASE_GATE_34_1.bat",
+      "reason": "canonical_or_required:16_installation",
+      "references": [
+        {
+          "source": "14_documents/archives/offenen CAM-1.4-Release-Gate-Blocker beheben 26.06.26.txt",
+          "needle": "RELEASE_GATE_34_1.bat"
+        },
+        {
+          "source": "14_documents/archives/Version 34.1 mit Release Integrity Framework.txt",
+          "needle": "16_installation/RELEASE_GATE_34_1.bat"
+        },
+        {
+          "source": "14_documents/ORDNERSTRUKTUR_23.md",
+          "needle": "RELEASE_GATE_34_1.bat"
+        },
+        {
+          "source": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_34_1.md",
+          "needle": "16_installation/RELEASE_GATE_34_1.bat"
+        },
+        {
+          "source": "14_documents/PROJEKTSTRUKTUR_34_1.md",
+          "needle": "16_installation/RELEASE_GATE_34_1.bat"
+        }
+      ]
+    },
+    {
+      "path": "16_installation/SETUP_ORACLE_CLOUD_23.bat",
+      "reason": "canonical_or_required:16_installation",
+      "references": [
+        {
+          "source": "14_documents/fundamentale Gedanken/13.06.26.txt",
+          "needle": "SETUP_ORACLE_CLOUD_23.bat"
+        }
+      ]
+    },
+    {
+      "path": "16_installation/SETUP_ORACLE_CLOUD_32_3.bat",
+      "reason": "canonical_or_required:16_installation",
+      "references": []
+    },
+    {
+      "path": "16_installation/SETUP_ORACLE_CLOUD_32_4.bat",
+      "reason": "canonical_or_required:16_installation",
+      "references": [
+        {
+          "source": "14_documents/HANDBUCH_23.md",
+          "needle": "SETUP_ORACLE_CLOUD_32_4.bat"
+        },
+        {
+          "source": "16_installation/SETUP_ORACLE_CLOUD_23.bat",
+          "needle": "SETUP_ORACLE_CLOUD_32_4.bat"
+        },
+        {
+          "source": "16_installation/SETUP_ORACLE_CLOUD_32_3.bat",
+          "needle": "SETUP_ORACLE_CLOUD_32_4.bat"
+        }
+      ]
+    },
+    {
+      "path": "16_installation/START_GUI.bat",
+      "reason": "canonical_or_required:16_installation",
+      "references": [
+        {
+          "source": "11_gui/gui_manifest.json",
+          "needle": "16_installation/START_GUI.bat"
+        },
+        {
+          "source": "11_gui/README_GUI.md",
+          "needle": "16_installation/START_GUI.bat"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/Roadmap.md",
+          "needle": "START_GUI.bat"
+        },
+        {
+          "source": "14_documents/ORDNERSTRUKTUR_23.md",
+          "needle": "START_GUI.bat"
+        },
+        {
+          "source": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_34_1.md",
+          "needle": "16_installation/START_GUI.bat"
+        }
+      ]
+    },
+    {
+      "path": "16_installation/START_GUI_23.bat",
+      "reason": "canonical_or_required:16_installation",
+      "references": [
+        {
+          "source": "17_tests/test_v32_4_version_consistency.py",
+          "needle": "16_installation/START_GUI_23.bat"
+        }
+      ]
+    },
+    {
+      "path": "16_installation/START_GUI_32_3.bat",
+      "reason": "canonical_or_required:16_installation",
+      "references": [
+        {
+          "source": "11_gui/archive/32_3/GUI_32_3_MANIFEST.json",
+          "needle": "16_installation/START_GUI_32_3.bat"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/Ordnerstruktur.txt",
+          "needle": "START_GUI_32_3.bat"
+        },
+        {
+          "source": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_32_3.md",
+          "needle": "START_GUI_32_3.bat"
+        },
+        {
+          "source": "14_documents/README_GUI_32_3.md",
+          "needle": "START_GUI_32_3.bat"
+        },
+        {
+          "source": "17_tests/test_v32_4_version_consistency.py",
+          "needle": "16_installation/START_GUI_32_3.bat"
+        }
+      ]
+    },
+    {
+      "path": "16_installation/START_GUI_32_4.bat",
+      "reason": "canonical_or_required:16_installation",
+      "references": [
+        {
+          "source": "11_gui/archive/32_4/GUI_32_4_MANIFEST.json",
+          "needle": "START_GUI_32_4.bat"
+        },
+        {
+          "source": "13_tools/status_check_32_4.py",
+          "needle": "START_GUI_32_4.bat"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/Vorbereitung Version 32.4.txt",
+          "needle": "START_GUI_32_4.bat"
+        },
+        {
+          "source": "14_documents/HANDBUCH_23.md",
+          "needle": "START_GUI_32_4.bat"
+        },
+        {
+          "source": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_32_4.md",
+          "needle": "START_GUI_32_4.bat"
+        }
+      ]
+    },
+    {
+      "path": "16_installation/START_GUI_33_0.bat",
+      "reason": "canonical_or_required:16_installation",
+      "references": [
+        {
+          "source": "11_gui/archive/33_0/GUI_33_0_MANIFEST.json",
+          "needle": "START_GUI_33_0.bat"
+        },
+        {
+          "source": "13_tools/status_check_33_0.py",
+          "needle": "START_GUI_33_0.bat"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/Arbeitsschritte Codex Version 33.0.txt",
+          "needle": "START_GUI_33_0.bat"
+        },
+        {
+          "source": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_33_0.md",
+          "needle": "START_GUI_33_0.bat"
+        },
+        {
+          "source": "17_tests/test_v33_0_version_consistency.py",
+          "needle": "START_GUI_33_0.bat"
+        }
+      ]
+    },
+    {
+      "path": "16_installation/START_GUI_34_0.bat",
+      "reason": "canonical_or_required:16_installation",
+      "references": [
+        {
+          "source": "11_gui/archive/34_0/GUI_34_0_MANIFEST.json",
+          "needle": "16_installation/START_GUI_34_0.bat"
+        },
+        {
+          "source": "13_tools/status_check_34_0.py",
+          "needle": "16_installation/START_GUI_34_0.bat"
+        },
+        {
+          "source": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_34_0.md",
+          "needle": "16_installation/START_GUI_34_0.bat"
+        },
+        {
+          "source": "14_documents/README_GUI_34_0.md",
+          "needle": "START_GUI_34_0.bat"
+        },
+        {
+          "source": "17_tests/test_v34_0_version_consistency.py",
+          "needle": "16_installation/START_GUI_34_0.bat"
+        }
+      ]
+    },
+    {
+      "path": "16_installation/START_GUI_34_1.bat",
+      "reason": "canonical_or_required:16_installation",
+      "references": [
+        {
+          "source": "11_gui/archive/34_1/GUI_34_1_MANIFEST.pre_canonical.json",
+          "needle": "16_installation/START_GUI_34_1.bat"
+        },
+        {
+          "source": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_34_1.md",
+          "needle": "16_installation/START_GUI_34_1.bat"
+        },
+        {
+          "source": "14_documents/README_GUI_34_1.md",
+          "needle": "START_GUI_34_1.bat"
+        },
+        {
+          "source": "17_tests/test_v34_1_version_consistency.py",
+          "needle": "16_installation/START_GUI_34_1.bat"
+        },
+        {
+          "source": "22_project_chronicle/EINSTIEGSPUNKTE_NAECHSTE_SITZUNG.md",
+          "needle": "START_GUI_34_1.bat"
+        }
+      ]
+    },
+    {
+      "path": "16_installation/START_KONTINUUM_23.bat",
+      "reason": "canonical_or_required:16_installation",
+      "references": [
+        {
+          "source": "14_documents/CODEX_INTEGRATION.md",
+          "needle": "START_KONTINUUM_23.bat"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/11-06-26.txt",
+          "needle": "START_KONTINUUM_23.bat"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/Ordnerstruktur.txt",
+          "needle": "START_KONTINUUM_23.bat"
+        },
+        {
+          "source": "17_tests/test_v32_4_version_consistency.py",
+          "needle": "START_KONTINUUM_23.bat"
+        }
+      ]
+    },
+    {
+      "path": "16_installation/START_KONTINUUM_32_3.bat",
+      "reason": "canonical_or_required:16_installation",
+      "references": [
+        {
+          "source": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_32_3.md",
+          "needle": "START_KONTINUUM_32_3.bat"
+        },
+        {
+          "source": "17_tests/test_v32_4_version_consistency.py",
+          "needle": "START_KONTINUUM_32_3.bat"
+        }
+      ]
+    },
+    {
+      "path": "16_installation/START_KONTINUUM_32_4.bat",
+      "reason": "canonical_or_required:16_installation",
+      "references": [
+        {
+          "source": "13_tools/status_check_32_4.py",
+          "needle": "START_KONTINUUM_32_4.bat"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/Vorbereitung Version 32.4.txt",
+          "needle": "START_KONTINUUM_32_4.bat"
+        },
+        {
+          "source": "14_documents/HANDBUCH_23.md",
+          "needle": "START_KONTINUUM_32_4.bat"
+        },
+        {
+          "source": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_32_4.md",
+          "needle": "START_KONTINUUM_32_4.bat"
+        },
+        {
+          "source": "17_tests/test_v32_4_version_consistency.py",
+          "needle": "START_KONTINUUM_32_4.bat"
+        }
+      ]
+    },
+    {
+      "path": "16_installation/START_KONTINUUM_33_0.bat",
+      "reason": "canonical_or_required:16_installation",
+      "references": [
+        {
+          "source": "13_tools/status_check_33_0.py",
+          "needle": "16_installation/START_KONTINUUM_33_0.bat"
+        },
+        {
+          "source": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_33_0.md",
+          "needle": "16_installation/START_KONTINUUM_33_0.bat"
+        },
+        {
+          "source": "17_tests/test_v33_0_version_consistency.py",
+          "needle": "16_installation/START_KONTINUUM_33_0.bat"
+        }
+      ]
+    },
+    {
+      "path": "16_installation/START_KONTINUUM_34_0.bat",
+      "reason": "canonical_or_required:16_installation",
+      "references": [
+        {
+          "source": "13_tools/status_check_34_0.py",
+          "needle": "START_KONTINUUM_34_0.bat"
+        },
+        {
+          "source": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_34_0.md",
+          "needle": "START_KONTINUUM_34_0.bat"
+        },
+        {
+          "source": "17_tests/test_v34_0_version_consistency.py",
+          "needle": "START_KONTINUUM_34_0.bat"
+        },
+        {
+          "source": "22_project_chronicle/EINSTIEGSPUNKTE_NAECHSTE_SITZUNG_34_0.md",
+          "needle": "START_KONTINUUM_34_0.bat"
+        }
+      ]
+    },
+    {
+      "path": "16_installation/START_KONTINUUM_34_1.bat",
+      "reason": "canonical_or_required:16_installation",
+      "references": [
+        {
+          "source": "14_documents/ORDNERSTRUKTUR_23.md",
+          "needle": "START_KONTINUUM_34_1.bat"
+        },
+        {
+          "source": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_34_1.md",
+          "needle": "16_installation/START_KONTINUUM_34_1.bat"
+        },
+        {
+          "source": "16_installation/START_KONTINUUM_23.bat",
+          "needle": "START_KONTINUUM_34_1.bat"
+        },
+        {
+          "source": "16_installation/START_KONTINUUM_32_3.bat",
+          "needle": "START_KONTINUUM_34_1.bat"
+        },
+        {
+          "source": "17_tests/test_v34_1_version_consistency.py",
+          "needle": "16_installation/START_KONTINUUM_34_1.bat"
+        }
+      ]
+    },
+    {
+      "path": "16_installation/TEST_KONTINUUM_23.bat",
+      "reason": "canonical_or_required:16_installation",
+      "references": [
+        {
+          "source": "14_documents/fundamentale Gedanken/Fehlerbehebungsbericht Version 32.2.txt",
+          "needle": "TEST_KONTINUUM_23.bat"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/Ordnerstruktur.txt",
+          "needle": "TEST_KONTINUUM_23.bat"
+        },
+        {
+          "source": "17_tests/test_v32_4_version_consistency.py",
+          "needle": "TEST_KONTINUUM_23.bat"
+        }
+      ]
+    },
+    {
+      "path": "16_installation/TEST_KONTINUUM_32_3.bat",
+      "reason": "canonical_or_required:16_installation",
+      "references": [
+        {
+          "source": "14_documents/fundamentale Gedanken/noch gefundene Fehler in Version 32.txt",
+          "needle": "TEST_KONTINUUM_32_3.bat"
+        },
+        {
+          "source": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_32_3.md",
+          "needle": "TEST_KONTINUUM_32_3.bat"
+        },
+        {
+          "source": "17_tests/test_v32_4_version_consistency.py",
+          "needle": "16_installation/TEST_KONTINUUM_32_3.bat"
+        },
+        {
+          "source": "22_project_chronicle/RELEASE_32_3_RUNTIME_HARDENING.md",
+          "needle": "TEST_KONTINUUM_32_3.bat"
+        },
+        {
+          "source": "31_reports/ARCHITEKTURBERICHT_PROJEKT_KONTINUUM_23.md",
+          "needle": "TEST_KONTINUUM_32_3.bat"
+        }
+      ]
+    },
+    {
+      "path": "16_installation/TEST_KONTINUUM_32_4.bat",
+      "reason": "canonical_or_required:16_installation",
+      "references": [
+        {
+          "source": "13_tools/status_check_32_4.py",
+          "needle": "16_installation/TEST_KONTINUUM_32_4.bat"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/Vorbereitung Version 32.4.txt",
+          "needle": "TEST_KONTINUUM_32_4.bat"
+        },
+        {
+          "source": "14_documents/HANDBUCH_23.md",
+          "needle": "TEST_KONTINUUM_32_4.bat"
+        },
+        {
+          "source": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_32_4.md",
+          "needle": "TEST_KONTINUUM_32_4.bat"
+        },
+        {
+          "source": "17_tests/test_v32_4_version_consistency.py",
+          "needle": "16_installation/TEST_KONTINUUM_32_4.bat"
+        }
+      ]
+    },
+    {
+      "path": "16_installation/TEST_KONTINUUM_33_0.bat",
+      "reason": "canonical_or_required:16_installation",
+      "references": [
+        {
+          "source": "13_tools/status_check_33_0.py",
+          "needle": "16_installation/TEST_KONTINUUM_33_0.bat"
+        },
+        {
+          "source": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_33_0.md",
+          "needle": "16_installation/TEST_KONTINUUM_33_0.bat"
+        },
+        {
+          "source": "17_tests/test_v33_0_version_consistency.py",
+          "needle": "16_installation/TEST_KONTINUUM_33_0.bat"
+        }
+      ]
+    },
+    {
+      "path": "16_installation/TEST_KONTINUUM_34_0.bat",
+      "reason": "canonical_or_required:16_installation",
+      "references": [
+        {
+          "source": "13_tools/status_check_34_0.py",
+          "needle": "TEST_KONTINUUM_34_0.bat"
+        },
+        {
+          "source": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_34_0.md",
+          "needle": "TEST_KONTINUUM_34_0.bat"
+        },
+        {
+          "source": "17_tests/test_v34_0_version_consistency.py",
+          "needle": "TEST_KONTINUUM_34_0.bat"
+        },
+        {
+          "source": "22_project_chronicle/EINSTIEGSPUNKTE_NAECHSTE_SITZUNG_34_0.md",
+          "needle": "TEST_KONTINUUM_34_0.bat"
+        }
+      ]
+    },
+    {
+      "path": "16_installation/TEST_KONTINUUM_34_1.bat",
+      "reason": "canonical_or_required:16_installation",
+      "references": [
+        {
+          "source": "14_documents/ORDNERSTRUKTUR_23.md",
+          "needle": "TEST_KONTINUUM_34_1.bat"
+        },
+        {
+          "source": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_34_1.md",
+          "needle": "TEST_KONTINUUM_34_1.bat"
+        },
+        {
+          "source": "14_documents/PROJEKTSTRUKTUR_34_1.md",
+          "needle": "TEST_KONTINUUM_34_1.bat"
+        },
+        {
+          "source": "16_installation/TEST_KONTINUUM_23.bat",
+          "needle": "TEST_KONTINUUM_34_1.bat"
+        },
+        {
+          "source": "16_installation/TEST_KONTINUUM_32_3.bat",
+          "needle": "TEST_KONTINUUM_34_1.bat"
+        }
+      ]
+    },
+    {
+      "path": "17_tests/legacy_kontinuum_23.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "14_documents/archives/test_kontinuum_23.py hängt unabhäng.txt",
+          "needle": "17_tests/legacy_kontinuum_23.py"
+        },
+        {
+          "source": "14_documents/PROJEKTSTRUKTUR_34_1.md",
+          "needle": "legacy_kontinuum_23.py"
+        },
+        {
+          "source": "17_tests/LEGACY_TESTS.md",
+          "needle": "legacy_kontinuum_23.py"
+        },
+        {
+          "source": "22_project_chronicle/RELEASE_34_1_RELEASE_INTEGRITY_FRAMEWORK.md",
+          "needle": "legacy_kontinuum_23.py"
+        }
+      ]
+    },
+    {
+      "path": "17_tests/legacy_sourced_research_23.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "17_tests/LEGACY_TESTS.md",
+          "needle": "legacy_sourced_research_23.py"
+        }
+      ]
+    },
+    {
+      "path": "17_tests/LEGACY_TESTS.md",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "14_documents/archives/test_kontinuum_23.py hängt unabhäng.txt",
+          "needle": "17_tests/LEGACY_TESTS.md"
+        }
+      ]
+    },
+    {
+      "path": "17_tests/test_architecture_v24_23.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "17_tests/test_architecture_v24_23.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_architecture_v24_23.py"
+        }
+      ]
+    },
+    {
+      "path": "17_tests/test_auth_23.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "17_tests/test_auth_23.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_auth_23.py"
+        }
+      ]
+    },
+    {
+      "path": "17_tests/test_canonical_api_registry_manager.py",
+      "reason": "canonical_or_required:17_tests/test_canonical_api_registry_manager.py",
+      "references": [
+        {
+          "source": "14_documents/archives/Ergänzung zu CAM 1.3 Registry-Api vom 26.06.26.txt",
+          "needle": "17_tests/test_canonical_api_registry_manager.py"
+        },
+        {
+          "source": "14_documents/archives/Umsetzung CAM 1.4 Canonical Artifact Manager vom 26.06.26.txt",
+          "needle": "test_canonical_api_registry_manager.py"
+        },
+        {
+          "source": "14_documents/archives/Wiedereinstieg am 26.06.26, Defdinieren von CAM 1.3 API-Registry.txt",
+          "needle": "17_tests/test_canonical_api_registry_manager.py"
+        },
+        {
+          "source": "24_config/release_integrity_34_1.json",
+          "needle": "17_tests/test_canonical_api_registry_manager.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "17_tests/test_canonical_api_registry_manager.py"
+        }
+      ]
+    },
+    {
+      "path": "17_tests/test_canonical_architecture_manager.py",
+      "reason": "canonical_or_required:17_tests/test_canonical_architecture_manager.py",
+      "references": [
+        {
+          "source": "14_documents/archives/Codex-Auftrag – Dauerhafte Archivstruktur und Lifecycle-Regel für Projekt Kontinuum 27.06.26.txt",
+          "needle": "test_canonical_architecture_manager.py"
+        },
+        {
+          "source": "14_documents/archives/Wiedereinstieg am 26.06.26, Defdinieren von CAM 1.3 API-Registry.txt",
+          "needle": "test_canonical_architecture_manager.py"
+        },
+        {
+          "source": "17_tests/test_canonical_api_registry_manager.py",
+          "needle": "test_canonical_architecture_manager.py"
+        },
+        {
+          "source": "24_config/canonical_api_registry_34_1.json",
+          "needle": "test_canonical_architecture_manager.py"
+        },
+        {
+          "source": "24_config/release_integrity_34_1.json",
+          "needle": "test_canonical_architecture_manager.py"
+        }
+      ]
+    },
+    {
+      "path": "17_tests/test_canonical_artifacts_manager.py",
+      "reason": "canonical_or_required:17_tests/test_canonical_artifacts_manager.py",
+      "references": [
+        {
+          "source": "14_documents/archives/Codex-Auftrag – Dauerhafte Archivstruktur und Lifecycle-Regel für Projekt Kontinuum 27.06.26.txt",
+          "needle": "test_canonical_artifacts_manager.py"
+        },
+        {
+          "source": "14_documents/archives/Umsetzung CAM 1.4 Canonical Artifact Manager vom 26.06.26.txt",
+          "needle": "test_canonical_artifacts_manager.py"
+        },
+        {
+          "source": "24_config/canonical_api_registry_34_1.json",
+          "needle": "test_canonical_artifacts_manager.py"
+        },
+        {
+          "source": "24_config/release_integrity_34_1.json",
+          "needle": "test_canonical_artifacts_manager.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "test_canonical_artifacts_manager.py"
+        }
+      ]
+    },
+    {
+      "path": "17_tests/test_canonical_database_manager.py",
+      "reason": "canonical_or_required:17_tests/test_canonical_database_manager.py",
+      "references": [
+        {
+          "source": "14_documents/archives/Wiedereinstieg am 26.06.26, Defdinieren von CAM 1.3 API-Registry.txt",
+          "needle": "test_canonical_database_manager.py"
+        },
+        {
+          "source": "17_tests/test_canonical_api_registry_manager.py",
+          "needle": "test_canonical_database_manager.py"
+        },
+        {
+          "source": "24_config/canonical_api_registry_34_1.json",
+          "needle": "test_canonical_database_manager.py"
+        },
+        {
+          "source": "24_config/release_integrity_34_1.json",
+          "needle": "test_canonical_database_manager.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "test_canonical_database_manager.py"
+        }
+      ]
+    },
+    {
+      "path": "17_tests/test_consciousness_23.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "17_tests/test_consciousness_23.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_consciousness_23.py"
+        }
+      ]
+    },
+    {
+      "path": "17_tests/test_continuous_learning_23.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "test_continuous_learning_23.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_continuous_learning_23.py"
+        }
+      ]
+    },
+    {
+      "path": "17_tests/test_continuous_learning_system_23.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "17_tests/test_continuous_learning_system_23.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_continuous_learning_system_23.py"
+        }
+      ]
+    },
+    {
+      "path": "17_tests/test_conversation_architecture_23.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "17_tests/test_conversation_architecture_23.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_conversation_architecture_23.py"
+        }
+      ]
+    },
+    {
+      "path": "17_tests/test_conversation_system_23.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "17_tests/test_conversation_system_23.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_conversation_system_23.py"
+        }
+      ]
+    },
+    {
+      "path": "17_tests/test_development_sandbox_23.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "test_development_sandbox_23.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_development_sandbox_23.py"
+        }
+      ]
+    },
+    {
+      "path": "17_tests/test_dialog_learning_regressions_23.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "test_dialog_learning_regressions_23.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_dialog_learning_regressions_23.py"
+        }
+      ]
+    },
+    {
+      "path": "17_tests/test_formula_engine_23.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "test_formula_engine_23.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_formula_engine_23.py"
+        }
+      ]
+    },
+    {
+      "path": "17_tests/test_foundation_2_1_active.py",
+      "reason": "canonical_or_required:17_tests/test_foundation_2_1_active.py",
+      "references": [
+        {
+          "source": "14_documents/archives/nächster Schritt 24.06.26.txt",
+          "needle": "17_tests/test_foundation_2_1_active.py"
+        },
+        {
+          "source": "14_documents/archives/technische Umsetzung von Foundation 2.1 vom 23.06.26.md",
+          "needle": "17_tests/test_foundation_2_1_active.py"
+        },
+        {
+          "source": "14_documents/archives/technische Umsetzung von Foundation 2.1 vom 23.06.26.txt",
+          "needle": "17_tests/test_foundation_2_1_active.py"
+        },
+        {
+          "source": "14_documents/archives/Versuche es beim nächsten Mal immer besser zu machen vom 24.06.25.txt",
+          "needle": "test_foundation_2_1_active.py"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/Bericht_Foundation_2_1_Technische_Umsetzung_23_06_2026.md",
+          "needle": "17_tests/test_foundation_2_1_active.py"
+        }
+      ]
+    },
+    {
+      "path": "17_tests/test_foundation_2_2_active.py",
+      "reason": "canonical_or_required:17_tests/test_foundation_2_2_active.py",
+      "references": [
+        {
+          "source": "17_tests/test_canonical_api_registry_manager.py",
+          "needle": "test_foundation_2_2_active.py"
+        },
+        {
+          "source": "24_config/canonical_api_registry_34_1.json",
+          "needle": "test_foundation_2_2_active.py"
+        },
+        {
+          "source": "24_config/release_integrity_34_1.json",
+          "needle": "test_foundation_2_2_active.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "test_foundation_2_2_active.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_foundation_2_2_active.py"
+        }
+      ]
+    },
+    {
+      "path": "17_tests/test_foundation_knowledge_protection_2.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "13_tools/status_check_33_0.py",
+          "needle": "17_tests/test_foundation_knowledge_protection_2.py"
+        },
+        {
+          "source": "13_tools/status_check_34_0.py",
+          "needle": "17_tests/test_foundation_knowledge_protection_2.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "17_tests/test_foundation_knowledge_protection_2.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_foundation_knowledge_protection_2.py"
+        }
+      ]
+    },
+    {
+      "path": "17_tests/test_foundation_memory_layer_3.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "13_tools/status_check_33_0.py",
+          "needle": "test_foundation_memory_layer_3.py"
+        },
+        {
+          "source": "13_tools/status_check_34_0.py",
+          "needle": "test_foundation_memory_layer_3.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "test_foundation_memory_layer_3.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_foundation_memory_layer_3.py"
+        }
+      ]
+    },
+    {
+      "path": "17_tests/test_foundation_query_layer.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "13_tools/status_check_33_0.py",
+          "needle": "17_tests/test_foundation_query_layer.py"
+        },
+        {
+          "source": "13_tools/status_check_34_0.py",
+          "needle": "17_tests/test_foundation_query_layer.py"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/Bericht_Foundation_2_1_Technische_Umsetzung_23_06_2026.md",
+          "needle": "17_tests/test_foundation_query_layer.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "17_tests/test_foundation_query_layer.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_foundation_query_layer.py"
+        }
+      ]
+    },
+    {
+      "path": "17_tests/test_foundation_reasoning_4_1_coverage.py",
+      "reason": "historical_marker_but_referenced:older_version_marker:4.1",
+      "references": [
+        {
+          "source": "13_tools/status_check_34_0.py",
+          "needle": "17_tests/test_foundation_reasoning_4_1_coverage.py"
+        },
+        {
+          "source": "22_project_chronicle/RELEASE_34_0_FOUNDATION_REASONING_4_1.md",
+          "needle": "17_tests/test_foundation_reasoning_4_1_coverage.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "17_tests/test_foundation_reasoning_4_1_coverage.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_foundation_reasoning_4_1_coverage.py"
+        }
+      ],
+      "suggested_archive_target_after_reference_update": "17_tests/archive/tests/test_foundation_reasoning_4_1_coverage.py"
+    },
+    {
+      "path": "17_tests/test_foundation_reasoning_layer_4.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "13_tools/status_check_33_0.py",
+          "needle": "17_tests/test_foundation_reasoning_layer_4.py"
+        },
+        {
+          "source": "13_tools/status_check_34_0.py",
+          "needle": "17_tests/test_foundation_reasoning_layer_4.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "17_tests/test_foundation_reasoning_layer_4.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_foundation_reasoning_layer_4.py"
+        }
+      ]
+    },
+    {
+      "path": "17_tests/test_guiding_principles_12.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "13_tools/status_check_33_0.py",
+          "needle": "17_tests/test_guiding_principles_12.py"
+        },
+        {
+          "source": "13_tools/status_check_34_0.py",
+          "needle": "17_tests/test_guiding_principles_12.py"
+        },
+        {
+          "source": "22_project_chronicle/FOUNDATION_GUIDING_PRINCIPLES_2026_06_21.md",
+          "needle": "17_tests/test_guiding_principles_12.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "17_tests/test_guiding_principles_12.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_guiding_principles_12.py"
+        }
+      ]
+    },
+    {
+      "path": "17_tests/test_input_history_23.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "17_tests/test_input_history_23.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_input_history_23.py"
+        }
+      ]
+    },
+    {
+      "path": "17_tests/test_language_model_23.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "test_language_model_23.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_language_model_23.py"
+        }
+      ]
+    },
+    {
+      "path": "17_tests/test_maintenance_retention.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "17_tests/test_maintenance_retention.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_maintenance_retention.py"
+        }
+      ]
+    },
+    {
+      "path": "17_tests/test_memory_core_1.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "22_project_chronicle/PROJEKTCHRONIK_23.md",
+          "needle": "test_memory_core_1.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "test_memory_core_1.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_memory_core_1.py"
+        }
+      ]
+    },
+    {
+      "path": "17_tests/test_meta_learning_23.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "17_tests/test_meta_learning_23.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_meta_learning_23.py"
+        }
+      ]
+    },
+    {
+      "path": "17_tests/test_meta_learning_system_23.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "17_tests/test_meta_learning_system_23.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_meta_learning_system_23.py"
+        }
+      ]
+    },
+    {
+      "path": "17_tests/test_oracle_cloud_23.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "17_tests/test_oracle_cloud_23.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_oracle_cloud_23.py"
+        }
+      ]
+    },
+    {
+      "path": "17_tests/test_python_tool_23.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "17_tests/test_python_tool_23.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_python_tool_23.py"
+        }
+      ]
+    },
+    {
+      "path": "17_tests/test_release_integrity_framework_34_1.py",
+      "reason": "canonical_or_required:17_tests/test_release_integrity_framework_34_1.py",
+      "references": [
+        {
+          "source": "14_documents/archives/Codex-Auftrag – Dauerhafte Archivstruktur und Lifecycle-Regel für Projekt Kontinuum 27.06.26.txt",
+          "needle": "test_release_integrity_framework_34_1.py"
+        },
+        {
+          "source": "14_documents/archives/Ergänzung zu CAM 1.3 Registry-Api vom 26.06.26.txt",
+          "needle": "test_release_integrity_framework_34_1.py"
+        },
+        {
+          "source": "14_documents/archives/Umsetzung CAM 1.4 Canonical Artifact Manager vom 26.06.26.txt",
+          "needle": "test_release_integrity_framework_34_1.py"
+        },
+        {
+          "source": "14_documents/archives/Versuche es beim nächsten Mal immer besser zu machen vom 24.06.25.txt",
+          "needle": "test_release_integrity_framework_34_1.py"
+        },
+        {
+          "source": "14_documents/archives/Wiedereinstieg am 26.06.26, Defdinieren von CAM 1.3 API-Registry.txt",
+          "needle": "test_release_integrity_framework_34_1.py"
+        }
+      ]
+    },
+    {
+      "path": "17_tests/test_runtime_agents_tools_23.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "14_documents/README_AGENTS_TOOLS_23.md",
+          "needle": "test_runtime_agents_tools_23.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "test_runtime_agents_tools_23.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_runtime_agents_tools_23.py"
+        }
+      ]
+    },
+    {
+      "path": "17_tests/test_search_engine_connector_23.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "14_documents/fundamentale Gedanken/Version 32.1.txt",
+          "needle": "test_search_engine_connector_23.py"
+        },
+        {
+          "source": "17_tests/legacy_sourced_research_23.py",
+          "needle": "test_search_engine_connector_23.py"
+        },
+        {
+          "source": "17_tests/LEGACY_TESTS.md",
+          "needle": "test_search_engine_connector_23.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "17_tests/test_search_engine_connector_23.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_search_engine_connector_23.py"
+        }
+      ]
+    },
+    {
+      "path": "17_tests/test_self_knowledge_23.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "test_self_knowledge_23.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_self_knowledge_23.py"
+        }
+      ]
+    },
+    {
+      "path": "17_tests/test_v24_1_regressions.py",
+      "reason": "historical_marker_but_referenced:older_version_marker:24.1",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "17_tests/test_v24_1_regressions.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_v24_1_regressions.py"
+        }
+      ],
+      "suggested_archive_target_after_reference_update": "17_tests/archive/tests/test_v24_1_regressions.py"
+    },
+    {
+      "path": "17_tests/test_v24_2_research_notebook.py",
+      "reason": "historical_marker_but_referenced:older_version_marker:24.2",
+      "references": [
+        {
+          "source": "14_documents/fundamentale Gedanken/Version 32.1.txt",
+          "needle": "test_v24_2_research_notebook.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "17_tests/test_v24_2_research_notebook.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_v24_2_research_notebook.py"
+        }
+      ],
+      "suggested_archive_target_after_reference_update": "17_tests/archive/tests/test_v24_2_research_notebook.py"
+    },
+    {
+      "path": "17_tests/test_v25_0_knowledge_platform.py",
+      "reason": "historical_marker_but_referenced:older_version_marker:25.0",
+      "references": [
+        {
+          "source": "14_documents/fundamentale Gedanken/noch gefundene Fehler in Version 32.txt",
+          "needle": "test_v25_0_knowledge_platform.py"
+        },
+        {
+          "source": "22_project_chronicle/RELEASE_25_0_KNOWLEDGE_PLATFORM.md",
+          "needle": "test_v25_0_knowledge_platform.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "17_tests/test_v25_0_knowledge_platform.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_v25_0_knowledge_platform.py"
+        }
+      ],
+      "suggested_archive_target_after_reference_update": "17_tests/archive/tests/test_v25_0_knowledge_platform.py"
+    },
+    {
+      "path": "17_tests/test_v26_0_knowledge_intelligence.py",
+      "reason": "historical_marker_but_referenced:older_version_marker:26.0",
+      "references": [
+        {
+          "source": "22_project_chronicle/RELEASE_26_0_KNOWLEDGE_INTELLIGENCE.md",
+          "needle": "test_v26_0_knowledge_intelligence.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "17_tests/test_v26_0_knowledge_intelligence.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_v26_0_knowledge_intelligence.py"
+        }
+      ],
+      "suggested_archive_target_after_reference_update": "17_tests/archive/tests/test_v26_0_knowledge_intelligence.py"
+    },
+    {
+      "path": "17_tests/test_v27_0_epistemic_state.py",
+      "reason": "historical_marker_but_referenced:older_version_marker:27.0",
+      "references": [
+        {
+          "source": "22_project_chronicle/RELEASE_27_0_EPISTEMIC_STATE.md",
+          "needle": "test_v27_0_epistemic_state.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "17_tests/test_v27_0_epistemic_state.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_v27_0_epistemic_state.py"
+        }
+      ],
+      "suggested_archive_target_after_reference_update": "17_tests/archive/tests/test_v27_0_epistemic_state.py"
+    },
+    {
+      "path": "17_tests/test_v27_1_epistemic_actions.py",
+      "reason": "historical_marker_but_referenced:older_version_marker:27.1",
+      "references": [
+        {
+          "source": "22_project_chronicle/RELEASE_27_1_EPISTEMIC_ACTIONS.md",
+          "needle": "test_v27_1_epistemic_actions.py"
+        },
+        {
+          "source": "22_project_chronicle/RELEASE_27_2_SOURCE_QUALITY.md",
+          "needle": "test_v27_1_epistemic_actions.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "test_v27_1_epistemic_actions.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_v27_1_epistemic_actions.py"
+        }
+      ],
+      "suggested_archive_target_after_reference_update": "17_tests/archive/tests/test_v27_1_epistemic_actions.py"
+    },
+    {
+      "path": "17_tests/test_v27_2_source_quality.py",
+      "reason": "historical_marker_but_referenced:older_version_marker:27.2",
+      "references": [
+        {
+          "source": "22_project_chronicle/RELEASE_27_2_SOURCE_QUALITY.md",
+          "needle": "test_v27_2_source_quality.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "17_tests/test_v27_2_source_quality.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_v27_2_source_quality.py"
+        }
+      ],
+      "suggested_archive_target_after_reference_update": "17_tests/archive/tests/test_v27_2_source_quality.py"
+    },
+    {
+      "path": "17_tests/test_v28_0_persistent_self_model.py",
+      "reason": "historical_marker_but_referenced:older_version_marker:28.0",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "test_v28_0_persistent_self_model.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_v28_0_persistent_self_model.py"
+        }
+      ],
+      "suggested_archive_target_after_reference_update": "17_tests/archive/tests/test_v28_0_persistent_self_model.py"
+    },
+    {
+      "path": "17_tests/test_v28_1_protection_boundaries.py",
+      "reason": "historical_marker_but_referenced:older_version_marker:28.1",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "test_v28_1_protection_boundaries.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_v28_1_protection_boundaries.py"
+        }
+      ],
+      "suggested_archive_target_after_reference_update": "17_tests/archive/tests/test_v28_1_protection_boundaries.py"
+    },
+    {
+      "path": "17_tests/test_v28_2_epistemic_automation.py",
+      "reason": "historical_marker_but_referenced:older_version_marker:28.2",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "17_tests/test_v28_2_epistemic_automation.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_v28_2_epistemic_automation.py"
+        }
+      ],
+      "suggested_archive_target_after_reference_update": "17_tests/archive/tests/test_v28_2_epistemic_automation.py"
+    },
+    {
+      "path": "17_tests/test_v29_0_continuity_moral_foundation.py",
+      "reason": "historical_marker_but_referenced:older_version_marker:29.0",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "17_tests/test_v29_0_continuity_moral_foundation.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_v29_0_continuity_moral_foundation.py"
+        }
+      ],
+      "suggested_archive_target_after_reference_update": "17_tests/archive/tests/test_v29_0_continuity_moral_foundation.py"
+    },
+    {
+      "path": "17_tests/test_v29_1_foundation_decision_layer.py",
+      "reason": "historical_marker_but_referenced:older_version_marker:29.1",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "17_tests/test_v29_1_foundation_decision_layer.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_v29_1_foundation_decision_layer.py"
+        }
+      ],
+      "suggested_archive_target_after_reference_update": "17_tests/archive/tests/test_v29_1_foundation_decision_layer.py"
+    },
+    {
+      "path": "17_tests/test_v30_0_meaning_core.py",
+      "reason": "historical_marker_but_referenced:older_version_marker:30.0",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "17_tests/test_v30_0_meaning_core.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_v30_0_meaning_core.py"
+        }
+      ],
+      "suggested_archive_target_after_reference_update": "17_tests/archive/tests/test_v30_0_meaning_core.py"
+    },
+    {
+      "path": "17_tests/test_v31_0_motivation_core.py",
+      "reason": "historical_marker_but_referenced:older_version_marker:31.0",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "17_tests/test_v31_0_motivation_core.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_v31_0_motivation_core.py"
+        }
+      ],
+      "suggested_archive_target_after_reference_update": "17_tests/archive/tests/test_v31_0_motivation_core.py"
+    },
+    {
+      "path": "17_tests/test_v32_0_motivation_explanation.py",
+      "reason": "historical_marker_but_referenced:older_version_marker:32.0",
+      "references": [
+        {
+          "source": "22_project_chronicle/RELEASE_32_0_MOTIVATION_EXPLANATION.md",
+          "needle": "test_v32_0_motivation_explanation.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "test_v32_0_motivation_explanation.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_v32_0_motivation_explanation.py"
+        }
+      ],
+      "suggested_archive_target_after_reference_update": "17_tests/archive/tests/test_v32_0_motivation_explanation.py"
+    },
+    {
+      "path": "17_tests/test_v32_2_temporal_relevance.py",
+      "reason": "historical_marker_but_referenced:older_version_marker:32.2",
+      "references": [
+        {
+          "source": "14_documents/fundamentale Gedanken/Version 32.2.txt",
+          "needle": "test_v32_2_temporal_relevance.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "test_v32_2_temporal_relevance.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_v32_2_temporal_relevance.py"
+        }
+      ],
+      "suggested_archive_target_after_reference_update": "17_tests/archive/tests/test_v32_2_temporal_relevance.py"
+    },
+    {
+      "path": "17_tests/test_v32_3_foundation_cycle_recovery.py",
+      "reason": "historical_marker_but_referenced:older_version_marker:32.3",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "17_tests/test_v32_3_foundation_cycle_recovery.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_v32_3_foundation_cycle_recovery.py"
+        }
+      ],
+      "suggested_archive_target_after_reference_update": "17_tests/archive/tests/test_v32_3_foundation_cycle_recovery.py"
+    },
+    {
+      "path": "17_tests/test_v32_3_foundation_knowledge_guard.py",
+      "reason": "historical_marker_but_referenced:older_version_marker:32.3",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "17_tests/test_v32_3_foundation_knowledge_guard.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_v32_3_foundation_knowledge_guard.py"
+        }
+      ],
+      "suggested_archive_target_after_reference_update": "17_tests/archive/tests/test_v32_3_foundation_knowledge_guard.py"
+    },
+    {
+      "path": "17_tests/test_v32_3_identity_routing.py",
+      "reason": "historical_marker_but_referenced:older_version_marker:32.3",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "test_v32_3_identity_routing.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_v32_3_identity_routing.py"
+        }
+      ],
+      "suggested_archive_target_after_reference_update": "17_tests/archive/tests/test_v32_3_identity_routing.py"
+    },
+    {
+      "path": "17_tests/test_v32_3_knowledge_contamination_guard.py",
+      "reason": "historical_marker_but_referenced:older_version_marker:32.3",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "test_v32_3_knowledge_contamination_guard.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_v32_3_knowledge_contamination_guard.py"
+        }
+      ],
+      "suggested_archive_target_after_reference_update": "17_tests/archive/tests/test_v32_3_knowledge_contamination_guard.py"
+    },
+    {
+      "path": "17_tests/test_v32_3_meaning_presentation.py",
+      "reason": "historical_marker_but_referenced:older_version_marker:32.3",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "17_tests/test_v32_3_meaning_presentation.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_v32_3_meaning_presentation.py"
+        }
+      ],
+      "suggested_archive_target_after_reference_update": "17_tests/archive/tests/test_v32_3_meaning_presentation.py"
+    },
+    {
+      "path": "17_tests/test_v32_3_semantic_search_validation.py",
+      "reason": "historical_marker_but_referenced:older_version_marker:32.3",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "test_v32_3_semantic_search_validation.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_v32_3_semantic_search_validation.py"
+        }
+      ],
+      "suggested_archive_target_after_reference_update": "17_tests/archive/tests/test_v32_3_semantic_search_validation.py"
+    },
+    {
+      "path": "17_tests/test_v32_3_session_context.py",
+      "reason": "historical_marker_but_referenced:older_version_marker:32.3",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "17_tests/test_v32_3_session_context.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_v32_3_session_context.py"
+        }
+      ],
+      "suggested_archive_target_after_reference_update": "17_tests/archive/tests/test_v32_3_session_context.py"
+    },
+    {
+      "path": "17_tests/test_v32_4_version_consistency.py",
+      "reason": "historical_marker_but_referenced:older_version_marker:32.4",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "test_v32_4_version_consistency.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_v32_4_version_consistency.py"
+        }
+      ],
+      "suggested_archive_target_after_reference_update": "17_tests/archive/tests/test_v32_4_version_consistency.py"
+    },
+    {
+      "path": "17_tests/test_v33_0_autonomous_diagnostics.py",
+      "reason": "historical_marker_but_referenced:older_version_marker:33.0",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "test_v33_0_autonomous_diagnostics.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_v33_0_autonomous_diagnostics.py"
+        }
+      ],
+      "suggested_archive_target_after_reference_update": "17_tests/archive/tests/test_v33_0_autonomous_diagnostics.py"
+    },
+    {
+      "path": "17_tests/test_v33_0_version_consistency.py",
+      "reason": "historical_marker_but_referenced:older_version_marker:33.0",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "17_tests/test_v33_0_version_consistency.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_v33_0_version_consistency.py"
+        }
+      ],
+      "suggested_archive_target_after_reference_update": "17_tests/archive/tests/test_v33_0_version_consistency.py"
+    },
+    {
+      "path": "17_tests/test_v34_0_version_consistency.py",
+      "reason": "historical_marker_but_referenced:older_version_marker:34.0",
+      "references": [
+        {
+          "source": "13_tools/status_check_34_0.py",
+          "needle": "17_tests/test_v34_0_version_consistency.py"
+        },
+        {
+          "source": "17_tests/test_v34_1_version_consistency.py",
+          "needle": "17_tests/test_v34_0_version_consistency.py"
+        },
+        {
+          "source": "24_config/release_integrity_34_1.json",
+          "needle": "17_tests/test_v34_0_version_consistency.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "17_tests/test_v34_0_version_consistency.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_v34_0_version_consistency.py"
+        }
+      ],
+      "suggested_archive_target_after_reference_update": "17_tests/archive/tests/test_v34_0_version_consistency.py"
+    },
+    {
+      "path": "17_tests/test_v34_1_version_consistency.py",
+      "reason": "canonical_or_required:17_tests/test_v34_1_version_consistency.py",
+      "references": [
+        {
+          "source": "14_documents/archives/Codex-Auftrag – Dauerhafte Archivstruktur und Lifecycle-Regel für Projekt Kontinuum 27.06.26.txt",
+          "needle": "test_v34_1_version_consistency.py"
+        },
+        {
+          "source": "14_documents/archives/Umsetzung CAM 1.4 Canonical Artifact Manager vom 26.06.26.txt",
+          "needle": "test_v34_1_version_consistency.py"
+        },
+        {
+          "source": "14_documents/archives/Wiedereinstieg am 26.06.26, Defdinieren von CAM 1.3 API-Registry.txt",
+          "needle": "test_v34_1_version_consistency.py"
+        },
+        {
+          "source": "24_config/release_integrity_34_1.json",
+          "needle": "test_v34_1_version_consistency.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "test_v34_1_version_consistency.py"
+        }
+      ]
+    },
+    {
+      "path": "17_tests/test_winget_tool_23.py",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "17_tests/test_winget_tool_23.py"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "test_winget_tool_23.py"
+        }
+      ]
+    },
+    {
+      "path": "22_project_chronicle/EINSTIEGSPUNKTE_NAECHSTE_SITZUNG.md",
+      "reason": "canonical_or_required:22_project_chronicle",
+      "references": [
+        {
+          "source": "14_documents/fundamentale Gedanken/13.06.26.txt",
+          "needle": "EINSTIEGSPUNKTE_NAECHSTE_SITZUNG.md"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/Fehlerbehebungsbericht Version 32.2.txt",
+          "needle": "EINSTIEGSPUNKTE_NAECHSTE_SITZUNG.md"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/Kontinuum 29.1 – Foundation Decisio.txt",
+          "needle": "EINSTIEGSPUNKTE_NAECHSTE_SITZUNG.md"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/Version 30.0.txt",
+          "needle": "EINSTIEGSPUNKTE_NAECHSTE_SITZUNG.md"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/Version 31.0.txt",
+          "needle": "EINSTIEGSPUNKTE_NAECHSTE_SITZUNG.md"
+        }
+      ]
+    },
+    {
+      "path": "22_project_chronicle/EINSTIEGSPUNKTE_NAECHSTE_SITZUNG_32_4.md",
+      "reason": "canonical_or_required:22_project_chronicle",
+      "references": [
+        {
+          "source": "13_tools/status_check_32_4.py",
+          "needle": "EINSTIEGSPUNKTE_NAECHSTE_SITZUNG_32_4.md"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/Aktueller Projektstand 23.0.txt",
+          "needle": "EINSTIEGSPUNKTE_NAECHSTE_SITZUNG_32_4.md"
+        },
+        {
+          "source": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_32_4.md",
+          "needle": "EINSTIEGSPUNKTE_NAECHSTE_SITZUNG_32_4.md"
+        },
+        {
+          "source": "17_tests/test_v32_4_version_consistency.py",
+          "needle": "EINSTIEGSPUNKTE_NAECHSTE_SITZUNG_32_4.md"
+        }
+      ]
+    },
+    {
+      "path": "22_project_chronicle/EINSTIEGSPUNKTE_NAECHSTE_SITZUNG_33_0.md",
+      "reason": "canonical_or_required:22_project_chronicle",
+      "references": [
+        {
+          "source": "13_tools/status_check_33_0.py",
+          "needle": "EINSTIEGSPUNKTE_NAECHSTE_SITZUNG_33_0.md"
+        },
+        {
+          "source": "17_tests/test_v33_0_version_consistency.py",
+          "needle": "EINSTIEGSPUNKTE_NAECHSTE_SITZUNG_33_0.md"
+        }
+      ]
+    },
+    {
+      "path": "22_project_chronicle/EINSTIEGSPUNKTE_NAECHSTE_SITZUNG_34_0.md",
+      "reason": "canonical_or_required:22_project_chronicle",
+      "references": [
+        {
+          "source": "13_tools/status_check_34_0.py",
+          "needle": "EINSTIEGSPUNKTE_NAECHSTE_SITZUNG_34_0.md"
+        },
+        {
+          "source": "17_tests/test_v34_0_version_consistency.py",
+          "needle": "EINSTIEGSPUNKTE_NAECHSTE_SITZUNG_34_0.md"
+        }
+      ]
+    },
+    {
+      "path": "22_project_chronicle/EINSTIEGSPUNKTE_NAECHSTE_SITZUNG_34_1.md",
+      "reason": "canonical_or_required:22_project_chronicle/EINSTIEGSPUNKTE_NAECHSTE_SITZUNG_34_1.md",
+      "references": [
+        {
+          "source": "17_tests/test_v34_1_version_consistency.py",
+          "needle": "EINSTIEGSPUNKTE_NAECHSTE_SITZUNG_34_1.md"
+        },
+        {
+          "source": "24_config/release_integrity_34_1.json",
+          "needle": "EINSTIEGSPUNKTE_NAECHSTE_SITZUNG_34_1.md"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/baseline.json",
+          "needle": "EINSTIEGSPUNKTE_NAECHSTE_SITZUNG_34_1.md"
+        }
+      ]
+    },
+    {
+      "path": "22_project_chronicle/FEHLERBEHEBUNGSPLAN_EINGABEN_2026-06-12.md",
+      "reason": "canonical_or_required:22_project_chronicle",
+      "references": [
+        {
+          "source": "14_documents/fundamentale Gedanken/Analyse und Fehlerbehebungsplan sin.txt",
+          "needle": "FEHLERBEHEBUNGSPLAN_EINGABEN_2026-06-12.md"
+        }
+      ]
+    },
+    {
+      "path": "22_project_chronicle/FOUNDATION_GUIDING_PRINCIPLES_2026_06_21.md",
+      "reason": "canonical_or_required:22_project_chronicle",
+      "references": []
+    },
+    {
+      "path": "22_project_chronicle/kontinuum_fragen_log.json",
+      "reason": "canonical_or_required:22_project_chronicle",
+      "references": []
+    },
+    {
+      "path": "22_project_chronicle/Projekt_Kontinuum_22_9_Projektchronik.pdf",
+      "reason": "canonical_or_required:22_project_chronicle",
+      "references": []
+    },
+    {
+      "path": "22_project_chronicle/Projekt_Kontinuum_Chronik_Aktualisiert_2026-06-06.pdf",
+      "reason": "canonical_or_required:22_project_chronicle",
+      "references": []
+    },
+    {
+      "path": "22_project_chronicle/PROJEKTCHRONIK_23.md",
+      "reason": "canonical_or_required:22_project_chronicle",
+      "references": [
+        {
+          "source": "14_documents/fundamentale Gedanken/Version 30.0.txt",
+          "needle": "PROJEKTCHRONIK_23.md"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/Version 31.0.txt",
+          "needle": "PROJEKTCHRONIK_23.md"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/Vorbereitung Version 32.4.txt",
+          "needle": "PROJEKTCHRONIK_23.md"
+        },
+        {
+          "source": "22_project_chronicle/EINSTIEGSPUNKTE_NAECHSTE_SITZUNG_32_4.md",
+          "needle": "PROJEKTCHRONIK_23.md"
+        }
+      ]
+    },
+    {
+      "path": "22_project_chronicle/RELEASE_25_0_KNOWLEDGE_PLATFORM.md",
+      "reason": "canonical_or_required:22_project_chronicle",
+      "references": [
+        {
+          "source": "14_documents/fundamentale Gedanken/Statusberichte Version 33.0.txt",
+          "needle": "RELEASE_25_0_KNOWLEDGE_PLATFORM.md"
+        }
+      ]
+    },
+    {
+      "path": "22_project_chronicle/RELEASE_26_0_KNOWLEDGE_INTELLIGENCE.md",
+      "reason": "canonical_or_required:22_project_chronicle",
+      "references": []
+    },
+    {
+      "path": "22_project_chronicle/RELEASE_27_0_EPISTEMIC_STATE.md",
+      "reason": "canonical_or_required:22_project_chronicle",
+      "references": []
+    },
+    {
+      "path": "22_project_chronicle/RELEASE_27_1_EPISTEMIC_ACTIONS.md",
+      "reason": "canonical_or_required:22_project_chronicle",
+      "references": []
+    },
+    {
+      "path": "22_project_chronicle/RELEASE_27_2_SOURCE_QUALITY.md",
+      "reason": "canonical_or_required:22_project_chronicle",
+      "references": []
+    },
+    {
+      "path": "22_project_chronicle/RELEASE_28_0_PERSISTENT_SELF_MODEL.md",
+      "reason": "canonical_or_required:22_project_chronicle",
+      "references": []
+    },
+    {
+      "path": "22_project_chronicle/RELEASE_28_1_PROTECTION_BOUNDARIES.md",
+      "reason": "canonical_or_required:22_project_chronicle",
+      "references": []
+    },
+    {
+      "path": "22_project_chronicle/RELEASE_28_2_EPISTEMIC_AUTOMATION.md",
+      "reason": "canonical_or_required:22_project_chronicle",
+      "references": []
+    },
+    {
+      "path": "22_project_chronicle/RELEASE_29_0_CONTINUITY_MORAL_FOUNDATION.md",
+      "reason": "canonical_or_required:22_project_chronicle",
+      "references": []
+    },
+    {
+      "path": "22_project_chronicle/RELEASE_29_1_FOUNDATION_DECISION_LAYER.md",
+      "reason": "canonical_or_required:22_project_chronicle",
+      "references": [
+        {
+          "source": "14_documents/fundamentale Gedanken/Kontinuum 29.1 – Foundation Decisio.txt",
+          "needle": "RELEASE_29_1_FOUNDATION_DECISION_LAYER.md"
+        }
+      ]
+    },
+    {
+      "path": "22_project_chronicle/RELEASE_30_0_MEANING_CORE.md",
+      "reason": "canonical_or_required:22_project_chronicle",
+      "references": [
+        {
+          "source": "14_documents/fundamentale Gedanken/Version 30.0.txt",
+          "needle": "RELEASE_30_0_MEANING_CORE.md"
+        }
+      ]
+    },
+    {
+      "path": "22_project_chronicle/RELEASE_31_0_MOTIVATION_CORE.md",
+      "reason": "canonical_or_required:22_project_chronicle",
+      "references": [
+        {
+          "source": "14_documents/fundamentale Gedanken/Version 31.0.txt",
+          "needle": "RELEASE_31_0_MOTIVATION_CORE.md"
+        }
+      ]
+    },
+    {
+      "path": "22_project_chronicle/RELEASE_32_0_MOTIVATION_EXPLANATION.md",
+      "reason": "canonical_or_required:22_project_chronicle",
+      "references": []
+    },
+    {
+      "path": "22_project_chronicle/RELEASE_32_2_TEMPORAL_RELEVANCE.md",
+      "reason": "canonical_or_required:22_project_chronicle",
+      "references": [
+        {
+          "source": "14_documents/fundamentale Gedanken/Version 32.2.txt",
+          "needle": "RELEASE_32_2_TEMPORAL_RELEVANCE.md"
+        },
+        {
+          "source": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_32_2.md",
+          "needle": "RELEASE_32_2_TEMPORAL_RELEVANCE.md"
+        },
+        {
+          "source": "14_documents/projektstatus/README_PROJEKTSTATUS.md",
+          "needle": "RELEASE_32_2_TEMPORAL_RELEVANCE.md"
+        }
+      ]
+    },
+    {
+      "path": "22_project_chronicle/RELEASE_32_3_RUNTIME_HARDENING.md",
+      "reason": "canonical_or_required:22_project_chronicle",
+      "references": [
+        {
+          "source": "14_documents/fundamentale Gedanken/Fehlerbehebungsbericht Version 32.2.txt",
+          "needle": "RELEASE_32_3_RUNTIME_HARDENING.md"
+        },
+        {
+          "source": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_32_3.md",
+          "needle": "RELEASE_32_3_RUNTIME_HARDENING.md"
+        },
+        {
+          "source": "14_documents/projektstatus/README_PROJEKTSTATUS.md",
+          "needle": "RELEASE_32_3_RUNTIME_HARDENING.md"
+        }
+      ]
+    },
+    {
+      "path": "22_project_chronicle/RELEASE_32_4_VERIFICATION_DOCUMENTATION.md",
+      "reason": "canonical_or_required:22_project_chronicle",
+      "references": [
+        {
+          "source": "14_documents/fundamentale Gedanken/Vorbereitung Version 32.4.txt",
+          "needle": "RELEASE_32_4_VERIFICATION_DOCUMENTATION.md"
+        },
+        {
+          "source": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_32_4.md",
+          "needle": "RELEASE_32_4_VERIFICATION_DOCUMENTATION.md"
+        },
+        {
+          "source": "14_documents/projektstatus/README_PROJEKTSTATUS.md",
+          "needle": "RELEASE_32_4_VERIFICATION_DOCUMENTATION.md"
+        },
+        {
+          "source": "17_tests/test_v32_4_version_consistency.py",
+          "needle": "22_project_chronicle/RELEASE_32_4_VERIFICATION_DOCUMENTATION.md"
+        },
+        {
+          "source": "22_project_chronicle/EINSTIEGSPUNKTE_NAECHSTE_SITZUNG_32_4.md",
+          "needle": "RELEASE_32_4_VERIFICATION_DOCUMENTATION.md"
+        }
+      ]
+    },
+    {
+      "path": "22_project_chronicle/RELEASE_33_0_AUTONOMOUS_DIAGNOSTICS.md",
+      "reason": "canonical_or_required:22_project_chronicle",
+      "references": [
+        {
+          "source": "14_documents/projektstatus/README_PROJEKTSTATUS.md",
+          "needle": "RELEASE_33_0_AUTONOMOUS_DIAGNOSTICS.md"
+        },
+        {
+          "source": "17_tests/test_v33_0_version_consistency.py",
+          "needle": "RELEASE_33_0_AUTONOMOUS_DIAGNOSTICS.md"
+        }
+      ]
+    },
+    {
+      "path": "22_project_chronicle/RELEASE_34_0_FOUNDATION_REASONING_4_1.md",
+      "reason": "canonical_or_required:22_project_chronicle",
+      "references": [
+        {
+          "source": "13_tools/status_check_34_0.py",
+          "needle": "22_project_chronicle/RELEASE_34_0_FOUNDATION_REASONING_4_1.md"
+        },
+        {
+          "source": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_34_0.md",
+          "needle": "22_project_chronicle/RELEASE_34_0_FOUNDATION_REASONING_4_1.md"
+        },
+        {
+          "source": "17_tests/test_v34_0_version_consistency.py",
+          "needle": "22_project_chronicle/RELEASE_34_0_FOUNDATION_REASONING_4_1.md"
+        }
+      ]
+    },
+    {
+      "path": "22_project_chronicle/RELEASE_34_1_RELEASE_INTEGRITY_FRAMEWORK.md",
+      "reason": "canonical_or_required:22_project_chronicle",
+      "references": [
+        {
+          "source": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_34_1.md",
+          "needle": "RELEASE_34_1_RELEASE_INTEGRITY_FRAMEWORK.md"
+        },
+        {
+          "source": "14_documents/projektstatus/README_PROJEKTSTATUS.md",
+          "needle": "RELEASE_34_1_RELEASE_INTEGRITY_FRAMEWORK.md"
+        },
+        {
+          "source": "17_tests/test_v34_1_version_consistency.py",
+          "needle": "RELEASE_34_1_RELEASE_INTEGRITY_FRAMEWORK.md"
+        },
+        {
+          "source": "22_project_chronicle/EINSTIEGSPUNKTE_NAECHSTE_SITZUNG.md",
+          "needle": "RELEASE_34_1_RELEASE_INTEGRITY_FRAMEWORK.md"
+        },
+        {
+          "source": "24_config/release_integrity_34_1.json",
+          "needle": "RELEASE_34_1_RELEASE_INTEGRITY_FRAMEWORK.md"
+        }
+      ]
+    },
+    {
+      "path": "24_config/canonical_api_registry_34_1.json",
+      "reason": "canonical_or_required:24_config/canonical_api_registry_34_1.json",
+      "references": [
+        {
+          "source": "14_documents/archives/Arbeitsauftrag für Codex 26.06.26.txt",
+          "needle": "canonical_api_registry_34_1.json"
+        },
+        {
+          "source": "14_documents/archives/Ergänzung zu CAM 1.3 Registry-Api vom 26.06.26.txt",
+          "needle": "canonical_api_registry_34_1.json"
+        },
+        {
+          "source": "14_documents/archives/Wiedereinstieg am 26.06.26, Defdinieren von CAM 1.3 API-Registry.txt",
+          "needle": "canonical_api_registry_34_1.json"
+        },
+        {
+          "source": "17_tests/test_canonical_api_registry_manager.py",
+          "needle": "canonical_api_registry_34_1.json"
+        },
+        {
+          "source": "17_tests/test_release_integrity_framework_34_1.py",
+          "needle": "canonical_api_registry_34_1.json"
+        }
+      ]
+    },
+    {
+      "path": "24_config/canonical_architecture_34_1.json",
+      "reason": "canonical_or_required:24_config",
+      "references": [
+        {
+          "source": "13_tools/archive_lifecycle_34_1.py",
+          "needle": "24_config/canonical_architecture_34_1.json"
+        },
+        {
+          "source": "14_documents/archives/Codex-Auftrag – Dauerhafte Archivstruktur und Lifecycle-Regel für Projekt Kontinuum 27.06.26.txt",
+          "needle": "canonical_architecture_34_1.json"
+        },
+        {
+          "source": "14_documents/archives/offenen CAM-1.4-Release-Gate-Blocker beheben 26.06.26.txt",
+          "needle": "24_config/canonical_architecture_34_1.json"
+        },
+        {
+          "source": "14_documents/archives/Umsetzung CAM 1.4 Canonical Artifact Manager vom 26.06.26.txt",
+          "needle": "canonical_architecture_34_1.json"
+        },
+        {
+          "source": "14_documents/archives/Wiedereinstieg am 26.06.26, Defdinieren von CAM 1.3 API-Registry.txt",
+          "needle": "24_config/canonical_architecture_34_1.json"
+        }
+      ]
+    },
+    {
+      "path": "24_config/canonical_artifacts_34_1.json",
+      "reason": "canonical_or_required:24_config/canonical_artifacts_34_1.json",
+      "references": [
+        {
+          "source": "13_tools/archive_lifecycle_34_1.py",
+          "needle": "24_config/canonical_artifacts_34_1.json"
+        },
+        {
+          "source": "14_documents/archives/offenen CAM-1.4-Release-Gate-Blocker beheben 26.06.26.txt",
+          "needle": "24_config/canonical_artifacts_34_1.json"
+        },
+        {
+          "source": "14_documents/archives/Umsetzung CAM 1.4 Canonical Artifact Manager vom 26.06.26.txt",
+          "needle": "24_config/canonical_artifacts_34_1.json"
+        },
+        {
+          "source": "17_tests/test_canonical_artifacts_manager.py",
+          "needle": "24_config/canonical_artifacts_34_1.json"
+        },
+        {
+          "source": "17_tests/test_release_integrity_framework_34_1.py",
+          "needle": "24_config/canonical_artifacts_34_1.json"
+        }
+      ]
+    },
+    {
+      "path": "24_config/canonical_database_34_1.json",
+      "reason": "canonical_or_required:24_config/canonical_database_34_1.json",
+      "references": [
+        {
+          "source": "14_documents/KANONISCHES_ARCHITEKTURMODELL_34_1.md",
+          "needle": "canonical_database_34_1.json"
+        },
+        {
+          "source": "14_documents/PROJEKTSTRUKTUR_34_1.md",
+          "needle": "canonical_database_34_1.json"
+        },
+        {
+          "source": "17_tests/test_canonical_database_manager.py",
+          "needle": "canonical_database_34_1.json"
+        },
+        {
+          "source": "17_tests/test_release_integrity_framework_34_1.py",
+          "needle": "canonical_database_34_1.json"
+        },
+        {
+          "source": "22_project_chronicle/EINSTIEGSPUNKTE_NAECHSTE_SITZUNG.md",
+          "needle": "canonical_database_34_1.json"
+        }
+      ]
+    },
+    {
+      "path": "24_config/continuous_learning.json",
+      "reason": "canonical_or_required:24_config",
+      "references": [
+        {
+          "source": "14_documents/HANDBUCH_23.md",
+          "needle": "continuous_learning.json"
+        },
+        {
+          "source": "17_tests/legacy_sourced_research_23.py",
+          "needle": "continuous_learning.json"
+        },
+        {
+          "source": "17_tests/test_continuous_learning_23.py",
+          "needle": "continuous_learning.json"
+        },
+        {
+          "source": "17_tests/test_continuous_learning_system_23.py",
+          "needle": "continuous_learning.json"
+        },
+        {
+          "source": "17_tests/test_conversation_system_23.py",
+          "needle": "continuous_learning.json"
+        }
+      ]
+    },
+    {
+      "path": "24_config/development_sandbox.json",
+      "reason": "canonical_or_required:24_config",
+      "references": [
+        {
+          "source": "14_documents/HANDBUCH_23.md",
+          "needle": "development_sandbox.json"
+        },
+        {
+          "source": "14_documents/ORDNERSTRUKTUR_23.md",
+          "needle": "development_sandbox.json"
+        },
+        {
+          "source": "17_tests/test_development_sandbox_23.py",
+          "needle": "development_sandbox.json"
+        }
+      ]
+    },
+    {
+      "path": "24_config/epistemic_action.json",
+      "reason": "canonical_or_required:24_config",
+      "references": [
+        {
+          "source": "17_tests/test_foundation_2_2_active.py",
+          "needle": "epistemic_action.json"
+        },
+        {
+          "source": "17_tests/test_foundation_knowledge_protection_2.py",
+          "needle": "epistemic_action.json"
+        },
+        {
+          "source": "17_tests/test_foundation_memory_layer_3.py",
+          "needle": "epistemic_action.json"
+        },
+        {
+          "source": "17_tests/test_foundation_query_layer.py",
+          "needle": "epistemic_action.json"
+        },
+        {
+          "source": "17_tests/test_foundation_reasoning_4_1_coverage.py",
+          "needle": "epistemic_action.json"
+        }
+      ]
+    },
+    {
+      "path": "24_config/language_model.json",
+      "reason": "canonical_or_required:24_config",
+      "references": [
+        {
+          "source": "17_tests/test_language_model_23.py",
+          "needle": "language_model.json"
+        },
+        {
+          "source": "17_tests/test_maintenance_retention.py",
+          "needle": "language_model.json"
+        },
+        {
+          "source": "17_tests/test_memory_core_1.py",
+          "needle": "language_model.json"
+        }
+      ]
+    },
+    {
+      "path": "24_config/oracle_cloud.json",
+      "reason": "canonical_or_required:24_config",
+      "references": [
+        {
+          "source": "14_documents/fundamentale Gedanken/13.06.26.txt",
+          "needle": "oracle_cloud.json"
+        },
+        {
+          "source": "14_documents/HANDBUCH_23.md",
+          "needle": "oracle_cloud.json"
+        },
+        {
+          "source": "14_documents/ORDNERSTRUKTUR_23.md",
+          "needle": "oracle_cloud.json"
+        },
+        {
+          "source": "16_installation/SETUP_ORACLE_CLOUD_32_4.bat",
+          "needle": "oracle_cloud.json"
+        },
+        {
+          "source": "17_tests/test_oracle_cloud_23.py",
+          "needle": "oracle_cloud.json"
+        }
+      ]
+    },
+    {
+      "path": "24_config/path_mapping.json",
+      "reason": "canonical_or_required:24_config",
+      "references": [
+        {
+          "source": "31_reports/MIGRATION_REPORT_2026-06-09.md",
+          "needle": "path_mapping.json"
+        }
+      ]
+    },
+    {
+      "path": "24_config/python_runtime.json",
+      "reason": "canonical_or_required:24_config",
+      "references": []
+    },
+    {
+      "path": "24_config/release_integrity_34_1.json",
+      "reason": "canonical_or_required:24_config",
+      "references": [
+        {
+          "source": "13_tools/archive_lifecycle_34_1.py",
+          "needle": "release_integrity_34_1.json"
+        },
+        {
+          "source": "14_documents/archives/Codex-Auftrag – Dauerhafte Archivstruktur und Lifecycle-Regel für Projekt Kontinuum 27.06.26.txt",
+          "needle": "release_integrity_34_1.json"
+        },
+        {
+          "source": "14_documents/archives/offenen CAM-1.4-Release-Gate-Blocker beheben 26.06.26.txt",
+          "needle": "release_integrity_34_1.json"
+        },
+        {
+          "source": "14_documents/archives/Umsetzung CAM 1.4 Canonical Artifact Manager vom 26.06.26.txt",
+          "needle": "release_integrity_34_1.json"
+        },
+        {
+          "source": "14_documents/archives/Versuche es beim nächsten Mal immer besser zu machen vom 24.06.25.txt",
+          "needle": "release_integrity_34_1.json"
+        }
+      ]
+    },
+    {
+      "path": "24_config/retention_policy.json",
+      "reason": "canonical_or_required:24_config/retention_policy.json",
+      "references": [
+        {
+          "source": "14_documents/archives/Codex-Auftrag – Dauerhafte Archivstruktur und Lifecycle-Regel für Projekt Kontinuum 27.06.26.txt",
+          "needle": "retention_policy.json"
+        },
+        {
+          "source": "14_documents/HANDBUCH_23.md",
+          "needle": "retention_policy.json"
+        },
+        {
+          "source": "17_tests/test_canonical_artifacts_manager.py",
+          "needle": "retention_policy.json"
+        },
+        {
+          "source": "17_tests/test_maintenance_retention.py",
+          "needle": "retention_policy.json"
+        },
+        {
+          "source": "17_tests/test_release_integrity_framework_34_1.py",
+          "needle": "retention_policy.json"
+        }
+      ]
+    },
+    {
+      "path": "24_config/search_engine.json",
+      "reason": "canonical_or_required:24_config",
+      "references": [
+        {
+          "source": "11_gui/archive/32_3/desktop_gui_32_3.py",
+          "needle": "24_config/search_engine.json"
+        },
+        {
+          "source": "11_gui/archive/32_4/desktop_gui_32_4.py",
+          "needle": "24_config/search_engine.json"
+        },
+        {
+          "source": "11_gui/archive/33_0/desktop_gui_33_0.py",
+          "needle": "24_config/search_engine.json"
+        },
+        {
+          "source": "11_gui/archive/34_0/desktop_gui_34_0.py",
+          "needle": "24_config/search_engine.json"
+        },
+        {
+          "source": "11_gui/desktop_gui_34_1.py",
+          "needle": "24_config/search_engine.json"
+        }
+      ]
+    },
+    {
+      "path": "24_config/winget.json",
+      "reason": "canonical_or_required:24_config",
+      "references": [
+        {
+          "source": "11_gui/archive/32_3/desktop_gui_32_3.py",
+          "needle": "24_config/winget.json"
+        },
+        {
+          "source": "11_gui/archive/32_4/desktop_gui_32_4.py",
+          "needle": "24_config/winget.json"
+        },
+        {
+          "source": "11_gui/archive/33_0/desktop_gui_33_0.py",
+          "needle": "24_config/winget.json"
+        },
+        {
+          "source": "11_gui/archive/34_0/desktop_gui_34_0.py",
+          "needle": "24_config/winget.json"
+        },
+        {
+          "source": "11_gui/desktop_gui_34_1.py",
+          "needle": "24_config/winget.json"
+        }
+      ]
+    },
+    {
+      "path": "31_reports/ARCHITEKTURBERICHT_PROJEKT_KONTINUUM_23.md",
+      "reason": "referenced_noncanonical_or_context_file",
+      "references": [
+        {
+          "source": "14_documents/fundamentale Gedanken/Fehlerbehebungsbericht Version 32.2.txt",
+          "needle": "ARCHITEKTURBERICHT_PROJEKT_KONTINUUM_23.md"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/Version 30.0.txt",
+          "needle": "ARCHITEKTURBERICHT_PROJEKT_KONTINUUM_23.md"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/Version 31.0.txt",
+          "needle": "ARCHITEKTURBERICHT_PROJEKT_KONTINUUM_23.md"
+        },
+        {
+          "source": "14_documents/fundamentale Gedanken/Vorbereitung Version 32.4.txt",
+          "needle": "ARCHITEKTURBERICHT_PROJEKT_KONTINUUM_23.md"
+        },
+        {
+          "source": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_32_3.md",
+          "needle": "ARCHITEKTURBERICHT_PROJEKT_KONTINUUM_23.md"
+        },
+        {
+          "source": "14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_32_4.md",
+          "needle": "ARCHITEKTURBERICHT_PROJEKT_KONTINUUM_23.md"
+        },
+        {
+          "source": "14_documents/projektstatus/README_PROJEKTSTATUS.md",
+          "needle": "ARCHITEKTURBERICHT_PROJEKT_KONTINUUM_23.md"
+        },
+        {
+          "source": "22_project_chronicle/EINSTIEGSPUNKTE_NAECHSTE_SITZUNG_32_4.md",
+          "needle": "ARCHITEKTURBERICHT_PROJEKT_KONTINUUM_23.md"
+        }
+      ]
+    },
+    {
+      "path": "31_reports/release_integrity/34.1/audit_snapshot.json",
+      "reason": "canonical_or_required:31_reports/release_integrity/34.1/audit_snapshot.json",
+      "references": [
+        {
+          "source": "17_tests/test_release_integrity_framework_34_1.py",
+          "needle": "audit_snapshot.json"
+        },
+        {
+          "source": "24_config/canonical_architecture_34_1.json",
+          "needle": "audit_snapshot.json"
+        },
+        {
+          "source": "24_config/canonical_artifacts_34_1.json",
+          "needle": "31_reports/release_integrity/34.1/audit_snapshot.json"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "31_reports/release_integrity/34.1/audit_snapshot.json"
+        }
+      ]
+    },
+    {
+      "path": "31_reports/release_integrity/34.1/baseline.json",
+      "reason": "canonical_or_required:31_reports/release_integrity/34.1/baseline.json",
+      "references": [
+        {
+          "source": "17_tests/test_release_integrity_framework_34_1.py",
+          "needle": "baseline.json"
+        },
+        {
+          "source": "24_config/canonical_architecture_34_1.json",
+          "needle": "baseline.json"
+        },
+        {
+          "source": "24_config/canonical_artifacts_34_1.json",
+          "needle": "31_reports/release_integrity/34.1/baseline.json"
+        },
+        {
+          "source": "31_reports/release_integrity/34.1/release_gate.json",
+          "needle": "31_reports/release_integrity/34.1/baseline.json"
+        }
+      ]
+    },
+    {
+      "path": "31_reports/release_integrity/34.1/release_gate.json",
+      "reason": "canonical_or_required:31_reports/release_integrity/34.1",
+      "references": [
+        {
+          "source": "13_tools/release_integrity_34_1.py",
+          "needle": "release_gate.json"
+        },
+        {
+          "source": "14_documents/archives/Ergänzung zu CAM 1.3 Registry-Api vom 26.06.26.txt",
+          "needle": "31_reports/release_integrity/34.1/release_gate.json"
+        },
+        {
+          "source": "14_documents/archives/offenen CAM-1.4-Release-Gate-Blocker beheben 26.06.26.txt",
+          "needle": "release_gate.json"
+        },
+        {
+          "source": "14_documents/archives/Version 34.1 mit Release Integrity Framework.txt",
+          "needle": "31_reports/release_integrity/34.1/release_gate.json"
+        },
+        {
+          "source": "14_documents/archives/Wiedereinstieg am 26.06.26, Defdinieren von CAM 1.3 API-Registry.txt",
+          "needle": "31_reports/release_integrity/34.1/release_gate.json"
+        }
+      ]
+    }
+  ],
+  "already_archived": [
+    {
+      "path": "11_gui/archive/32_3/desktop_gui_32_3.py",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "11_gui/archive/32_3/GUI_32_3_MANIFEST.json",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "11_gui/archive/32_4/desktop_gui_32_4.py",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "11_gui/archive/32_4/GUI_32_4_MANIFEST.json",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "11_gui/archive/33_0/desktop_gui_33_0.py",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "11_gui/archive/33_0/GUI_33_0_MANIFEST.json",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "11_gui/archive/34_0/desktop_gui_34_0.py",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "11_gui/archive/34_0/GUI_34_0_MANIFEST.json",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "11_gui/archive/34_1/GUI_34_1_MANIFEST.pre_canonical.json",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/am 21.06. zuerst fragen ob das so umgesetzt wurde.txt",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/Arbeitsauftrag für Codex 26.06.26.txt",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/Ausführung geplante 2 Arbeitsschritte vom 24.06.26.txt",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/Bearbeitung Foundation Architecture Kontinuum vom 23.06.26.txt",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/Bearbeitung Leitprinzipien am 21.06.26.txt",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/Bewertung des Ist Standes von Version 34.0.txt",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/CAM 1.1 – Canonical Database Manager vom 24.06.26.txt",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/Codex-Auftrag – Dauerhafte Archivstruktur und Lifecycle-Regel für Projekt Kontinuum 27.06.26.txt",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/Der Wiedereinstieg für morgen 26.06.26.txt",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/Ergänzung zu CAM 1.3 Registry-Api vom 26.06.26.txt",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/Fehlerbehebung und Migration auf Version 34.0.txt",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/Foundation Architecture für Projekt Kontinuum 23.06.26.txt",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/Für die nächste Codex-Sitzung am 25.06.26.txt",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/gefundene kritische Fehler am 21.06.26.txt",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/gefundene und behobene Fehler 21.06.26.txt",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/Gesicherter Stand (24.06.2026).txt",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/ist folgendes jetzt gewährleistet 21.06.26.txt",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/Mein Vorschlag für die Projektchronik vom 24.06.26.txt",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/noch zu bearbeiten in Version 34.0.txt",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/nächster logischer Schritt 20.06.26 - 1.txt",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/nächster logischer Schritt 20.06.26.txt",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/nächster Schritt 24.06.26.txt",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/offenen CAM-1.4-Release-Gate-Blocker beheben 26.06.26.txt",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/Phase A – Foundation stabilisieren 25.06.26.txt",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/Projektchronik-Einordnung vom 24.06.26.txt",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/Schutz und Urheberrecht von Projekt Kontinuum 26.06.2026.txt",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/technische Umsetzung von Foundation 2.1 vom 23.06.26.md",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/technische Umsetzung von Foundation 2.1 vom 23.06.26.txt",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/test_kontinuum_23.py hängt unabhäng.txt",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/Umsetzung CAM 1.4 Canonical Artifact Manager vom 26.06.26.txt",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/Umsetzung der noch unbearbeiteten Punkte in Version 34.0.txt",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/Umsetzung Foundation Knowledge Protection.txt",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/Umsetzung Foundation Query Layer 20.06.26.txt",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/Umsetzung Foundation Reasoning Layer 4.0 vom 20.06.26.txt",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/Umsetzung Fundamentschutz 20.06.26.txt",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/Umsetzung vom 25.06.26.txt",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/Verankerung der neuen Arbeitsregel vom 24.06.26.txt",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/Version 34.1 mit Release Integrity Framework.txt",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/Versuche es beim nächsten Mal immer besser zu machen 24.06.26.txt",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/Versuche es beim nächsten Mal immer besser zu machen vom 24.06.25.txt",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/Was mir noch als Foundation 2.0 fehlt vom 23.06.26.txt",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/Wiedereinstieg am 26.06.26, Defdinieren von CAM 1.3 API-Registry.txt",
+      "reason": "already_in_archive_area"
+    },
+    {
+      "path": "14_documents/archives/Wiedereinstieg am 26.06.26.txt",
+      "reason": "already_in_archive_area"
+    }
+  ],
+  "cache_or_generated": [
+    {
+      "path": "13_tools/__pycache__/archive_lifecycle_34_1.cpython-314.pyc",
+      "reason": "generated_runtime_cache",
+      "archive_target": null
+    },
+    {
+      "path": "13_tools/__pycache__/release_integrity_34_1.cpython-314.pyc",
+      "reason": "generated_runtime_cache",
+      "archive_target": null
+    },
+    {
+      "path": "13_tools/__pycache__/status_check_34_1.cpython-314.pyc",
+      "reason": "generated_runtime_cache",
+      "archive_target": null
+    },
+    {
+      "path": "17_tests/__pycache__/test_canonical_api_registry_manager.cpython-314.pyc",
+      "reason": "generated_runtime_cache",
+      "archive_target": null
+    },
+    {
+      "path": "17_tests/__pycache__/test_canonical_artifacts_manager.cpython-314.pyc",
+      "reason": "generated_runtime_cache",
+      "archive_target": null
+    },
+    {
+      "path": "17_tests/__pycache__/test_release_integrity_framework_34_1.cpython-314.pyc",
+      "reason": "generated_runtime_cache",
+      "archive_target": null
+    },
+    {
+      "path": "17_tests/__pycache__/test_v34_1_version_consistency.cpython-314.pyc",
+      "reason": "generated_runtime_cache",
+      "archive_target": null
+    }
+  ],
+  "duplicates": [
+    {
+      "sha256": "5f0b500ba7444f93a3db17467b4959076cdf88ae6dbf0bba1a796729a5b38c58",
+      "count": 2,
+      "paths": [
+        "13_tools/development_sandbox/.git/logs/HEAD",
+        "13_tools/development_sandbox/.git/logs/refs/heads/main"
+      ]
+    },
+    {
+      "sha256": "ac3e81eaf8acd4bfc8a346ce421675f3d5242e73b2839ffc2329143231d68fee",
+      "count": 2,
+      "paths": [
+        "14_documents/pdf/Projekt_Kontinuum_22_9_Projektchronik.pdf",
+        "22_project_chronicle/Projekt_Kontinuum_22_9_Projektchronik.pdf"
+      ]
+    },
+    {
+      "sha256": "cf3a0d8a6706a8fa32f3416a08b6850ce220dfbf8642835c5a473dfc7c677adb",
+      "count": 2,
+      "paths": [
+        "14_documents/pdf/Projekt_Kontinuum_Chronik_Aktualisiert_2026-06-06.pdf",
+        "22_project_chronicle/Projekt_Kontinuum_Chronik_Aktualisiert_2026-06-06.pdf"
+      ]
+    }
+  ]
+}

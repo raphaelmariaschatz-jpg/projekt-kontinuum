@@ -1,0 +1,1577 @@
+{
+  "kind": "release.integrity.gate",
+  "framework_version": "1.0",
+  "release_version": "34.1",
+  "created_at": "2026-06-29T11:25:01.671442+00:00",
+  "status": "VERIFIZIERT",
+  "release_approved": true,
+  "freigabe": "JA",
+  "gates": {
+    "baseline": true,
+    "backup": true,
+    "audit_snapshot": true,
+    "rollback_test": true,
+    "legacy_scan": true,
+    "test_suite": true,
+    "version_consistency": true,
+    "chronicle_migration": true,
+    "entrypoints": true,
+    "foundation_core": true,
+    "canonical_architecture": true,
+    "canonical_database": true,
+    "canonical_api_registry": true,
+    "canonical_artifacts": true,
+    "artifact_lifecycle": true
+  },
+  "evidence": {
+    "baseline_hash": "1906dcc012ef5b06d2fb8b9ac9a54cb4520dac75d12ba1549ea2b2fe3e8392ac",
+    "audit_hash": "159ad453f1fe573cf12fd84add9700182c4e0e88081dccc213e291e0a9601316",
+    "backup": {
+      "ok": true,
+      "path": "C:\\Projekt Kontinuum\\09_backups\\release_integrity\\Kontinuum_34_1_20260629_131443.zip",
+      "sha256": "7e5d6ebbd41297912ba406bc0f46395453c23ccb0609fb43a03e286dd5df8d03",
+      "bytes": 20187204,
+      "manifest_hash": "6f37db4358f4e04f3e7486b5df917cbaf2350ee8f171bbe635ed6867e704e615"
+    },
+    "backup_verification": {
+      "ok": true,
+      "issues": [],
+      "path": "C:\\Projekt Kontinuum\\09_backups\\release_integrity\\Kontinuum_34_1_20260629_131443.zip"
+    },
+    "rollback": {
+      "ok": true,
+      "issues": [],
+      "checked_files": 180,
+      "database": {
+        "ok": true,
+        "path": "c:\\Temp\\tmp2skvgw89\\database\\kontinuum.db",
+        "integrity_check": "ok",
+        "tables": {
+          "audit_events": 226,
+          "chronicle_entries": 90,
+          "chronicle_integrity": 90,
+          "continuity_events": 210,
+          "continuity_nodes": 1,
+          "continuity_snapshots": 209,
+          "events": 3957,
+          "file_search_documents": 8577,
+          "file_search_fts": 8577,
+          "file_search_fts_config": 1,
+          "file_search_fts_content": 8577,
+          "file_search_fts_data": 1471,
+          "file_search_fts_docsize": 8577,
+          "file_search_fts_idx": 1084,
+          "foundation_decisions": 2384,
+          "foundation_knowledge": 11,
+          "foundation_memory": 131,
+          "foundation_principles": 7,
+          "foundation_reasoning": 9526,
+          "graph_edges": 884,
+          "graph_nodes": 850,
+          "knowledge_items": 63,
+          "learning_tasks": 90,
+          "meaning_edges": 8864,
+          "meaning_nodes": 1286,
+          "meaning_paths": 1,
+          "memories": 539,
+          "moral_assessments": 1586,
+          "motivation_evidence": 81424,
+          "motivation_explanations": 9216,
+          "motivation_paths": 9216,
+          "motivation_reports": 8,
+          "motivation_scores": 9216,
+          "questions": 0,
+          "relevance_assessments": 57076,
+          "relevance_reports": 8,
+          "self_boundaries": 5,
+          "self_change_log": 1673,
+          "self_explanations": 1524,
+          "self_questions": 4,
+          "self_state": 37,
+          "self_state_events": 1524,
+          "sources": 304,
+          "strategic_goals": 5
+        },
+        "trigger_count": 32,
+        "bytes": 231211008,
+        "sha256": "e3d8fc6b861c408056012f083262a16d0fa431b0c13abad9be0f68a139fafe8f"
+      },
+      "mode": "temporary_restore_no_production_write"
+    },
+    "legacy_scan": {
+      "ok": true,
+      "scanned_files": 171,
+      "findings": [],
+      "forbidden_versions": [
+        "34.0"
+      ],
+      "historical_artifact_roots": [
+        "02_versions/projektstrukturen",
+        "02_versions/migration_artifacts",
+        "09_backups/migration_reports"
+      ]
+    },
+    "tests": {
+      "ok": true,
+      "count": 48,
+      "failed": [],
+      "tests": [
+        {
+          "name": "test_architecture_v24_23.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum version 24 architecture foundation tests passed",
+          "duration_seconds": 5.262
+        },
+        {
+          "name": "test_auth_23.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum auth tests passed",
+          "duration_seconds": 3.011
+        },
+        {
+          "name": "test_canonical_api_registry_manager.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum 34.1 Canonical API Registry Manager tests passed",
+          "duration_seconds": 1.027
+        },
+        {
+          "name": "test_canonical_architecture_manager.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum 34.1 Canonical Architecture Manager tests passed",
+          "duration_seconds": 22.143
+        },
+        {
+          "name": "test_canonical_artifacts_manager.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum 34.1 Canonical Artifact Manager tests passed",
+          "duration_seconds": 1.53
+        },
+        {
+          "name": "test_canonical_database_manager.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum 34.1 Canonical Database Manager tests passed",
+          "duration_seconds": 27.874
+        },
+        {
+          "name": "test_consciousness_23.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum 23.0 consciousness tests passed",
+          "duration_seconds": 13.692
+        },
+        {
+          "name": "test_continuous_governance_34_1.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum 34.1 Continuous Governance tests passed",
+          "duration_seconds": 13.007
+        },
+        {
+          "name": "test_continuous_learning_23.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum 23.0 continuous learning tests passed",
+          "duration_seconds": 4.288
+        },
+        {
+          "name": "test_continuous_learning_system_23.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum 23.0 continuous learning system tests passed",
+          "duration_seconds": 13.565
+        },
+        {
+          "name": "test_conversation_architecture_23.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum 23.0 conversation architecture tests passed",
+          "duration_seconds": 4.183
+        },
+        {
+          "name": "test_conversation_system_23.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum 23.0 conversation system tests passed",
+          "duration_seconds": 14.868
+        },
+        {
+          "name": "test_development_sandbox_23.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum development sandbox tests passed",
+          "duration_seconds": 4.895
+        },
+        {
+          "name": "test_dialog_learning_regressions_23.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum 23.0 dialog and learning regression tests passed",
+          "duration_seconds": 24.456
+        },
+        {
+          "name": "test_formula_engine_23.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum formula engine tests passed",
+          "duration_seconds": 27.115
+        },
+        {
+          "name": "test_foundation_2_1_active.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum Foundation 2.1 compatibility path tests passed",
+          "duration_seconds": 0.413
+        },
+        {
+          "name": "test_foundation_2_2_active.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum 34.1 Foundation 2.2 active system tests passed",
+          "duration_seconds": 25.321
+        },
+        {
+          "name": "test_foundation_knowledge_protection_2.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum 34.1 Foundation Knowledge Protection 2.0 tests passed",
+          "duration_seconds": 12.709
+        },
+        {
+          "name": "test_foundation_memory_layer_3.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum 34.1 Foundation Memory Layer 3.0 tests passed",
+          "duration_seconds": 22.147
+        },
+        {
+          "name": "test_foundation_query_layer.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum 34.1 Foundation Query Layer tests passed",
+          "duration_seconds": 19.561
+        },
+        {
+          "name": "test_foundation_reasoning_4_1_coverage.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum 34.1 Foundation Reasoning 4.1 coverage tests passed",
+          "duration_seconds": 15.333
+        },
+        {
+          "name": "test_foundation_reasoning_layer_4.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum 34.1 Foundation Reasoning Layer 4.1 tests passed",
+          "duration_seconds": 19.892
+        },
+        {
+          "name": "test_gui_internet_routing_34_1.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum 34.1 GUI internet routing tests passed",
+          "duration_seconds": 0.87
+        },
+        {
+          "name": "test_guiding_principles_12.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum 34.1 guiding principles tests passed",
+          "duration_seconds": 11.098
+        },
+        {
+          "name": "test_input_history_23.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum 23.0 input history tests passed",
+          "duration_seconds": 3.59
+        },
+        {
+          "name": "test_internet_learning_34_1.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum 34.1 internet learning tests passed",
+          "duration_seconds": 0.824
+        },
+        {
+          "name": "test_language_model_23.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum language model tests passed",
+          "duration_seconds": 1.334
+        },
+        {
+          "name": "test_maintenance_retention.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum maintenance retention tests passed",
+          "duration_seconds": 11.099
+        },
+        {
+          "name": "test_memory_core_1.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum Memory-Core 1.0 tests passed",
+          "duration_seconds": 27.761
+        },
+        {
+          "name": "test_meta_learning_23.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum 23.0 meta learning tests passed",
+          "duration_seconds": 0.406
+        },
+        {
+          "name": "test_meta_learning_system_23.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum 23.0 meta learning system tests passed",
+          "duration_seconds": 13.148
+        },
+        {
+          "name": "test_oracle_cloud_23.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum Oracle Cloud tests passed",
+          "duration_seconds": 8.179
+        },
+        {
+          "name": "test_python_tool_23.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum Python tool tests passed",
+          "duration_seconds": 16.626
+        },
+        {
+          "name": "test_release_integrity_framework_34_1.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum 34.1 Release Integrity Framework tests passed",
+          "duration_seconds": 1.564
+        },
+        {
+          "name": "test_runtime_agents_tools_23.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "PROMPT: Wie ist dein Name?\nAGENT: dialogue\nMein Name ist Kontinuum. Ich bin Projekt Kontinuum 34.1.\n------------------------------------------------------------\nPROMPT: Wer ist dein Schöpfer?\nAGENT: dialogue\nMein Schoepfer gemaess Kernarchitektur ist Raphael Schatz.\n------------------------------------------------------------\nPROMPT: lerne Mathematik\nAGENT: learning\nLernprojekt angelegt: Mathematik\nTeilgebiete: Arithmetik, Algebra, Geometrie, Analysis, Statistik.\n------------------------------------------------------------\nPROMPT: suche Mathematik\nAGENT: knowledge\n20 Treffer für „Mathematik“:\n- [04_knowledge] C:\\Projekt Kontinuum\\04_knowledge\\knowledge_master.json\n- [03_memory] C:\\Projekt Kontinuum\\03_memory\\memory_master.json\n- [06_learning] C:\\Projekt Kontinuum\\06_learning\\learning_master.json\n- [06_learning] C:\\Projekt Kontinuum\\06_learning\\progress\\learning_progress.json\n- [32_data] C:\\Projekt Kontinuum\\32_data\\curricula.json\n- [32_data] C:\\Projekt Kontinuum\\32_data\\index.json\n- [32_data] C:\\Projekt Kontinuum\\32_data\\learning.json\n- [32_data] C:\\Projekt Kontinuum\\32_data\\learning_progress.json\n- [32_data] C:\\Projekt Kontinuum\\32_data\\version_1_bis_29.json\n- [32_data] C:\\Projekt Kontinuum\\32_data\\_version_09_projekt_kontinuum_9_0_cross_platform_projekt_kontinuum_9_0_cross_platform_data_knowledge_graph.json\n- [32_data] C:\\Projekt Kontinuum\\32_data\\_version_09_projekt_kontinuum_9_0_cross_platform_projekt_kontinuum_9_0_cross_platform_data_master_index.json\n- [32_data] C:\\Projekt Kontinuum\\32_data\\_version_09_projekt_kontinuum_9_0_cross_platform_projekt_kontinuum_9_0_cross_platform_data_memory.json\n------------------------------------------------------------\nPROMPT: internetstatus\nAGENT: internet_status\nInternetzugriff aktiv. TCP/443 erreichbar, 32 ms.\n------------------------------------------------------------\nPROMPT: autostatus\nAGENT: autonomous_learning\nKontinuierliches Lernen 34.1:\n- aktiviert: False\n- Hintergrund läuft: False\n- Lernaufträge: 0\n- deaktivierte Lernziele: 0\n- Fundstellen: 0\n- Lernzyklen: 0\n- Kompetenzphasen: {}\n- Speicherprinzip: Fundstellen statt Volltexte.\n------------------------------------------------------------",
+          "duration_seconds": 2.063
+        },
+        {
+          "name": "test_search_engine_connector_23.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum search engine connector tests passed",
+          "duration_seconds": 19.804
+        },
+        {
+          "name": "test_self_knowledge_23.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum 23.0 self knowledge tests passed",
+          "duration_seconds": 13.951
+        },
+        {
+          "name": "test_v24_2_research_notebook.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum 29.0 research and notebook regression tests passed",
+          "duration_seconds": 14.547
+        },
+        {
+          "name": "test_v25_0_knowledge_platform.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum 29.0 knowledge platform regression tests passed",
+          "duration_seconds": 26.684
+        },
+        {
+          "name": "test_v26_0_knowledge_intelligence.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum knowledge intelligence and self-model tests passed",
+          "duration_seconds": 29.408
+        },
+        {
+          "name": "test_v27_0_epistemic_state.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum 27.0 epistemic state management tests passed",
+          "duration_seconds": 23.699
+        },
+        {
+          "name": "test_v27_1_epistemic_actions.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum 29.0 epistemic action loop tests passed",
+          "duration_seconds": 11.816
+        },
+        {
+          "name": "test_v27_2_source_quality.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum 29.0 source quality classification tests passed",
+          "duration_seconds": 0.415
+        },
+        {
+          "name": "test_v32_0_motivation_explanation.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum 34.1 motivation explanation tests passed",
+          "duration_seconds": 17.275
+        },
+        {
+          "name": "test_v32_2_temporal_relevance.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum 34.1 temporal relevance tests passed",
+          "duration_seconds": 17.822
+        },
+        {
+          "name": "test_v34_0_version_consistency.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum 34.0 version consistency tests passed",
+          "duration_seconds": 0.303
+        },
+        {
+          "name": "test_v34_1_version_consistency.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum 34.1 version consistency tests passed",
+          "duration_seconds": 0.283
+        },
+        {
+          "name": "test_winget_tool_23.py",
+          "ok": true,
+          "returncode": 0,
+          "output": "Kontinuum winget tool tests passed",
+          "duration_seconds": 0.711
+        }
+      ],
+      "timeout_seconds": 420,
+      "started_at": "2026-06-29T11:15:30.095394+00:00",
+      "completed_at": "2026-06-29T11:25:01.670601+00:00"
+    },
+    "path_consistency": {
+      "ok": true,
+      "required_paths": {
+        "ok": true,
+        "missing": [],
+        "checked": 54
+      },
+      "version_ok": true,
+      "entrypoint_ok": true,
+      "starters_ok": true,
+      "canonical_start": {
+        "ok": true,
+        "configured": true,
+        "path": "START_KONTINUUM.bat",
+        "checks": {
+          "sets_pythonpath_to_01_system": true,
+          "starts_package_module": true,
+          "does_not_start_main_py": true,
+          "does_not_start_01_system_module": true
+        }
+      },
+      "gui_ok": true,
+      "chronicle_migration_ok": true
+    },
+    "foundation_core": {
+      "ok": true,
+      "rule_id": "FND-ID-048",
+      "checks": {
+        "rule_present": true,
+        "rule_class": true,
+        "rule_text": true,
+        "highest_protection": true,
+        "improvement_class": true,
+        "foundation_version": true,
+        "migration_manager": true,
+        "compatibility_path": true,
+        "required_paths": true
+      },
+      "missing": []
+    },
+    "canonical_architecture": {
+      "version": "1.2",
+      "architecture_version": "34.1",
+      "active": true,
+      "ok": true,
+      "checks": {
+        "project_structure": true,
+        "historical_archive": true,
+        "folders": true,
+        "main_archives": true,
+        "entrypoints": true,
+        "registries": true,
+        "apis": true,
+        "database_schema": true,
+        "artifact_lifecycle": true,
+        "layers": true
+      },
+      "project_structure": {
+        "ok": true,
+        "expected": "14_documents/PROJEKTSTRUKTUR_34_1.md",
+        "active": [
+          "PROJEKTSTRUKTUR_34_1.md"
+        ],
+        "active_count": 1,
+        "duplicates": [],
+        "warning": ""
+      },
+      "archive": {
+        "ok": true,
+        "path": "02_versions/projektstrukturen",
+        "expected": 19,
+        "present": 19,
+        "missing": []
+      },
+      "folders": {
+        "ok": true,
+        "checked": 49,
+        "missing": []
+      },
+      "main_archives": {
+        "ok": true,
+        "checked": 30,
+        "missing": [],
+        "invalid": [],
+        "policy": "each_active_main_folder_has_archive_subfolder"
+      },
+      "entrypoints": {
+        "ok": true,
+        "checked": 5,
+        "missing": []
+      },
+      "registries": {
+        "ok": true,
+        "checked": 7,
+        "missing": []
+      },
+      "apis": {
+        "ok": true,
+        "checked_symbols": 10,
+        "registry": [
+          "FoundationAPI",
+          "FoundationRegistry",
+          "FoundationStatusCenter",
+          "CanonicalArchitectureManager",
+          "CanonicalDatabaseManager",
+          "CanonicalAPIRegistryManager",
+          "CanonicalArtifactManager",
+          "ReleaseIntegrityFramework",
+          "ContinuousGovernanceSystem",
+          "GovernanceDecision"
+        ],
+        "unregistered": [],
+        "missing": []
+      },
+      "database_schema": {
+        "version": "1.2",
+        "active": true,
+        "configured": true,
+        "ok": true,
+        "database": "C:\\Projekt Kontinuum\\32_data\\kontinuum.db",
+        "checks": {
+          "integrity": true,
+          "tables": true,
+          "columns": true,
+          "indexes": true,
+          "triggers": true,
+          "fts": true,
+          "data_domains": true
+        },
+        "integrity_check": "ok",
+        "foreign_keys_enabled": false,
+        "object_counts": {
+          "tables": 44,
+          "indexes": 113,
+          "triggers": 32,
+          "views": 0
+        },
+        "missing_tables": [],
+        "column_issues": {},
+        "missing_indexes": [],
+        "missing_triggers": [],
+        "fts": {
+          "file_search_fts": {
+            "present": true,
+            "fts5": true
+          }
+        },
+        "data_domains": {
+          "foundation": {
+            "ok": true,
+            "tables": [
+              "foundation_principles",
+              "foundation_knowledge",
+              "foundation_memory",
+              "foundation_reasoning",
+              "foundation_decisions"
+            ],
+            "missing": []
+          },
+          "memory": {
+            "ok": true,
+            "tables": [
+              "memories",
+              "self_state",
+              "self_state_events",
+              "continuity_nodes",
+              "continuity_snapshots"
+            ],
+            "missing": []
+          },
+          "knowledge": {
+            "ok": true,
+            "tables": [
+              "knowledge_items",
+              "graph_nodes",
+              "graph_edges",
+              "sources"
+            ],
+            "missing": []
+          },
+          "search": {
+            "ok": true,
+            "tables": [
+              "file_search_documents",
+              "file_search_fts"
+            ],
+            "missing": []
+          }
+        },
+        "unmanaged_tables": [],
+        "mutation_policy": "read_only_verification; controlled_migration_only"
+      },
+      "artifact_lifecycle": {
+        "ok": true,
+        "policy_version": "CAM 1.1",
+        "paths": {
+          "policy": "24_config/retention_policy.json",
+          "documentation": "14_documents/ARBEITSREGEL_ARTEFAKT_LIFECYCLE_34_1.md",
+          "migration_archive": "02_versions/migration_artifacts",
+          "migration_report_backup": "09_backups/migration_reports"
+        },
+        "missing": [],
+        "invalid_values": {},
+        "signed_evidence_archive": "02_versions/migration_artifacts/34_1_Foundation_2_2_CAM_1_1/release_evidence",
+        "evidence_missing": [],
+        "evidence_unsigned": [],
+        "automatic_deletion": false,
+        "archive_instead_of_delete": true,
+        "release_requirements": [
+          "tests_green",
+          "status_green",
+          "release_gate_green",
+          "documentation_updated",
+          "codex_release_confirmed"
+        ]
+      },
+      "layers": {
+        "foundation": {
+          "ok": true,
+          "components": 6,
+          "missing": [],
+          "change_policy": "protected_migration_only"
+        },
+        "canonical": {
+          "ok": true,
+          "components": 16,
+          "missing": [],
+          "change_policy": "release_controlled_migration"
+        },
+        "operational": {
+          "ok": true,
+          "components": 7,
+          "missing": [],
+          "change_policy": "replaceable_with_contract_checks"
+        },
+        "learning": {
+          "ok": true,
+          "components": 8,
+          "missing": [],
+          "change_policy": "dynamic_with_provenance_and_audit"
+        }
+      },
+      "mutation_policy": "read_only_verification; controlled_migration_only"
+    },
+    "canonical_database": {
+      "version": "1.2",
+      "active": true,
+      "configured": true,
+      "ok": true,
+      "database": "C:\\Projekt Kontinuum\\32_data\\kontinuum.db",
+      "checks": {
+        "integrity": true,
+        "tables": true,
+        "columns": true,
+        "indexes": true,
+        "triggers": true,
+        "fts": true,
+        "data_domains": true
+      },
+      "integrity_check": "ok",
+      "foreign_keys_enabled": false,
+      "object_counts": {
+        "tables": 44,
+        "indexes": 113,
+        "triggers": 32,
+        "views": 0
+      },
+      "missing_tables": [],
+      "column_issues": {},
+      "missing_indexes": [],
+      "missing_triggers": [],
+      "fts": {
+        "file_search_fts": {
+          "present": true,
+          "fts5": true
+        }
+      },
+      "data_domains": {
+        "foundation": {
+          "ok": true,
+          "tables": [
+            "foundation_principles",
+            "foundation_knowledge",
+            "foundation_memory",
+            "foundation_reasoning",
+            "foundation_decisions"
+          ],
+          "missing": []
+        },
+        "memory": {
+          "ok": true,
+          "tables": [
+            "memories",
+            "self_state",
+            "self_state_events",
+            "continuity_nodes",
+            "continuity_snapshots"
+          ],
+          "missing": []
+        },
+        "knowledge": {
+          "ok": true,
+          "tables": [
+            "knowledge_items",
+            "graph_nodes",
+            "graph_edges",
+            "sources"
+          ],
+          "missing": []
+        },
+        "search": {
+          "ok": true,
+          "tables": [
+            "file_search_documents",
+            "file_search_fts"
+          ],
+          "missing": []
+        }
+      },
+      "unmanaged_tables": [],
+      "mutation_policy": "read_only_verification; controlled_migration_only"
+    },
+    "canonical_api_registry": {
+      "version": "1.3",
+      "registry_version": "34.1",
+      "active": true,
+      "configured": true,
+      "ok": true,
+      "api_count": 7,
+      "checks": {
+        "manifest": true,
+        "unique_api_ids": true,
+        "unique_api_uids": true,
+        "unique_canonical_names": true,
+        "canonical_names": true,
+        "canonical_hashes": true,
+        "symbols": true,
+        "signatures": true,
+        "required_methods": true,
+        "outputs": true,
+        "stability": true,
+        "security": true,
+        "mutation_policy": true,
+        "test_coverage": true,
+        "required_fields": true
+      },
+      "duplicate_api_ids": [],
+      "duplicate_api_uids": [],
+      "duplicate_canonical_names": [],
+      "apis": [
+        {
+          "ok": true,
+          "api_uid": "KAPI-000001",
+          "api_id": "KAPI-FOUNDATION-REGISTRY",
+          "canonical_name": "FoundationRegistry",
+          "symbol": "FoundationRegistry",
+          "path": "01_system/kontinuum/core/foundation_2_2.py",
+          "kind": "class",
+          "missing_fields": [],
+          "contract_version": "1.0",
+          "introduced_in": "34.1",
+          "deprecated_in": null,
+          "supersedes": null,
+          "expected_canonical_hash": "5edd83483eda3855197a8dead1fd6dfd742249fa2defbda47de843faaddcf4fe",
+          "hash_ok": true,
+          "actual_signature": [],
+          "expected_signature": [],
+          "missing_methods": [],
+          "required_keys": [],
+          "invalid_stability": false,
+          "invalid_security_class": false,
+          "invalid_mutation_policy": false,
+          "missing_tests": [],
+          "mutation_violations": [],
+          "issues": []
+        },
+        {
+          "ok": true,
+          "api_uid": "KAPI-000002",
+          "api_id": "KAPI-FOUNDATION-API",
+          "canonical_name": "FoundationAPI",
+          "symbol": "FoundationAPI",
+          "path": "01_system/kontinuum/core/foundation_2_2.py",
+          "kind": "class",
+          "missing_fields": [],
+          "contract_version": "1.0",
+          "introduced_in": "34.1",
+          "deprecated_in": null,
+          "supersedes": null,
+          "expected_canonical_hash": "0fa8d7077a9310bf10ab170e9eb671e8ee29642664d4d34aad9af5ec54e455a7",
+          "hash_ok": true,
+          "actual_signature": [],
+          "expected_signature": [],
+          "missing_methods": [],
+          "required_keys": [],
+          "invalid_stability": false,
+          "invalid_security_class": false,
+          "invalid_mutation_policy": false,
+          "missing_tests": [],
+          "mutation_violations": [],
+          "issues": []
+        },
+        {
+          "ok": true,
+          "api_uid": "KAPI-000003",
+          "api_id": "KAPI-FOUNDATION-STATUS-CENTER",
+          "canonical_name": "FoundationStatusCenter",
+          "symbol": "FoundationStatusCenter",
+          "path": "01_system/kontinuum/core/foundation_2_2.py",
+          "kind": "class",
+          "missing_fields": [],
+          "contract_version": "1.0",
+          "introduced_in": "34.1",
+          "deprecated_in": null,
+          "supersedes": null,
+          "expected_canonical_hash": "f3746d6bbb568ffc1a6d5cb9c7323bc69cf86446972a7f1d658e50339813da87",
+          "hash_ok": true,
+          "actual_signature": [],
+          "expected_signature": [],
+          "missing_methods": [],
+          "required_keys": [],
+          "invalid_stability": false,
+          "invalid_security_class": false,
+          "invalid_mutation_policy": false,
+          "missing_tests": [],
+          "mutation_violations": [],
+          "issues": []
+        },
+        {
+          "ok": true,
+          "api_uid": "KAPI-000004",
+          "api_id": "KAPI-CANONICAL-ARCHITECTURE-MANAGER",
+          "canonical_name": "CanonicalArchitectureManager",
+          "symbol": "CanonicalArchitectureManager",
+          "path": "01_system/kontinuum/core/canonical_architecture.py",
+          "kind": "class",
+          "missing_fields": [],
+          "contract_version": "1.0",
+          "introduced_in": "34.1",
+          "deprecated_in": null,
+          "supersedes": null,
+          "expected_canonical_hash": "ba99b91d9cc138814e28e4b442265bc8f26f526deb969e38b6c5524cf59b53ca",
+          "hash_ok": true,
+          "actual_signature": [],
+          "expected_signature": [],
+          "missing_methods": [],
+          "required_keys": [],
+          "invalid_stability": false,
+          "invalid_security_class": false,
+          "invalid_mutation_policy": false,
+          "missing_tests": [],
+          "mutation_violations": [],
+          "issues": []
+        },
+        {
+          "ok": true,
+          "api_uid": "KAPI-000005",
+          "api_id": "KAPI-CANONICAL-DATABASE-MANAGER",
+          "canonical_name": "CanonicalDatabaseManager",
+          "symbol": "CanonicalDatabaseManager",
+          "path": "01_system/kontinuum/core/canonical_database.py",
+          "kind": "class",
+          "missing_fields": [],
+          "contract_version": "1.0",
+          "introduced_in": "34.1",
+          "deprecated_in": null,
+          "supersedes": null,
+          "expected_canonical_hash": "8d01416bcea0263dff11be24d8ec567b59c582b35b5461db8acb095a65766bb4",
+          "hash_ok": true,
+          "actual_signature": [],
+          "expected_signature": [],
+          "missing_methods": [],
+          "required_keys": [],
+          "invalid_stability": false,
+          "invalid_security_class": false,
+          "invalid_mutation_policy": false,
+          "missing_tests": [],
+          "mutation_violations": [],
+          "issues": []
+        },
+        {
+          "ok": true,
+          "api_uid": "KAPI-000006",
+          "api_id": "KAPI-RELEASE-INTEGRITY-FRAMEWORK",
+          "canonical_name": "ReleaseIntegrityFramework",
+          "symbol": "ReleaseIntegrityFramework",
+          "path": "01_system/kontinuum/core/release_integrity.py",
+          "kind": "class",
+          "missing_fields": [],
+          "contract_version": "1.0",
+          "introduced_in": "34.1",
+          "deprecated_in": null,
+          "supersedes": null,
+          "expected_canonical_hash": "952baf56be90f54d2d44988d55df96cb6cc353acf251615ac323125b228e1bf3",
+          "hash_ok": true,
+          "actual_signature": [],
+          "expected_signature": [],
+          "missing_methods": [],
+          "required_keys": [],
+          "invalid_stability": false,
+          "invalid_security_class": false,
+          "invalid_mutation_policy": false,
+          "missing_tests": [],
+          "mutation_violations": [],
+          "issues": []
+        },
+        {
+          "ok": true,
+          "api_uid": "KAPI-000007",
+          "api_id": "KAPI-CANONICAL-ARTIFACT-MANAGER",
+          "canonical_name": "CanonicalArtifactManager",
+          "symbol": "CanonicalArtifactManager",
+          "path": "01_system/kontinuum/core/canonical_artifacts.py",
+          "kind": "class",
+          "missing_fields": [],
+          "contract_version": "1.0",
+          "introduced_in": "34.1",
+          "deprecated_in": null,
+          "supersedes": null,
+          "expected_canonical_hash": "d70161d408c803ea3faf2275f2975b8603501549a063fac9ce0d75fd96ec049a",
+          "hash_ok": true,
+          "actual_signature": [],
+          "expected_signature": [],
+          "missing_methods": [],
+          "required_keys": [],
+          "invalid_stability": false,
+          "invalid_security_class": false,
+          "invalid_mutation_policy": false,
+          "missing_tests": [],
+          "mutation_violations": [],
+          "issues": []
+        }
+      ],
+      "scope": "release_relevant_core_apis",
+      "mutation_policy": "read_only_verification; controlled_migration_only"
+    },
+    "canonical_artifacts": {
+      "version": "1.4",
+      "artifact_version": "34.1",
+      "active": true,
+      "configured": true,
+      "ok": true,
+      "artifact_count": 19,
+      "pattern_count": 4,
+      "artifact_classes": [
+        "release-critical",
+        "audit-evidence",
+        "migration-artifact",
+        "documentation",
+        "generated-cache",
+        "historical-archive"
+      ],
+      "class_counts": {
+        "release-critical": 7,
+        "audit-evidence": 4,
+        "migration-artifact": 3,
+        "documentation": 4,
+        "generated-cache": 0,
+        "historical-archive": 1
+      },
+      "checks": {
+        "artifacts": true,
+        "patterns": true,
+        "required_artifacts": true,
+        "locations": true,
+        "signatures": true,
+        "classes": true,
+        "lifecycle": true,
+        "generated_cache": true
+      },
+      "artifacts": [
+        {
+          "ok": true,
+          "artifact_id": "ART-RELEASE-CORE-001",
+          "artifact_class": "release-critical",
+          "path": "01_system/kontinuum/core/release_integrity.py",
+          "exists": true,
+          "required": true,
+          "expected_root": "01_system/kontinuum/core",
+          "signed": false,
+          "signature_ok": true,
+          "lifecycle_policy": "release_controlled",
+          "missing_fields": [],
+          "issues": []
+        },
+        {
+          "ok": true,
+          "artifact_id": "ART-RELEASE-CORE-002",
+          "artifact_class": "release-critical",
+          "path": "01_system/kontinuum/core/canonical_artifacts.py",
+          "exists": true,
+          "required": true,
+          "expected_root": "01_system/kontinuum/core",
+          "signed": false,
+          "signature_ok": true,
+          "lifecycle_policy": "release_controlled",
+          "missing_fields": [],
+          "issues": []
+        },
+        {
+          "ok": true,
+          "artifact_id": "ART-RELEASE-CONFIG-001",
+          "artifact_class": "release-critical",
+          "path": "24_config/release_integrity_34_1.json",
+          "exists": true,
+          "required": true,
+          "expected_root": "24_config",
+          "signed": false,
+          "signature_ok": true,
+          "lifecycle_policy": "release_controlled",
+          "missing_fields": [],
+          "issues": []
+        },
+        {
+          "ok": true,
+          "artifact_id": "ART-RELEASE-CONFIG-002",
+          "artifact_class": "release-critical",
+          "path": "24_config/canonical_artifacts_34_1.json",
+          "exists": true,
+          "required": true,
+          "expected_root": "24_config",
+          "signed": false,
+          "signature_ok": true,
+          "lifecycle_policy": "release_controlled",
+          "missing_fields": [],
+          "issues": []
+        },
+        {
+          "ok": true,
+          "artifact_id": "ART-AUDIT-EVIDENCE-001",
+          "artifact_class": "audit-evidence",
+          "path": "31_reports/release_integrity/34.1/baseline.json",
+          "exists": true,
+          "required": true,
+          "expected_root": "31_reports/release_integrity/34.1",
+          "signed": true,
+          "signature_ok": true,
+          "lifecycle_policy": "never_auto_delete",
+          "missing_fields": [],
+          "issues": []
+        },
+        {
+          "ok": true,
+          "artifact_id": "ART-AUDIT-EVIDENCE-002",
+          "artifact_class": "audit-evidence",
+          "path": "31_reports/release_integrity/34.1/audit_snapshot.json",
+          "exists": true,
+          "required": true,
+          "expected_root": "31_reports/release_integrity/34.1",
+          "signed": true,
+          "signature_ok": true,
+          "lifecycle_policy": "never_auto_delete",
+          "missing_fields": [],
+          "issues": []
+        },
+        {
+          "ok": true,
+          "artifact_id": "ART-AUDIT-EVIDENCE-003",
+          "artifact_class": "audit-evidence",
+          "path": "31_reports/release_integrity/34.1/release_gate.json",
+          "exists": true,
+          "required": true,
+          "expected_root": "31_reports/release_integrity/34.1",
+          "signed": true,
+          "signature_ok": true,
+          "lifecycle_policy": "never_auto_delete",
+          "missing_fields": [],
+          "issues": []
+        },
+        {
+          "ok": true,
+          "artifact_id": "ART-MIGRATION-EVIDENCE-001",
+          "artifact_class": "migration-artifact",
+          "path": "02_versions/migration_artifacts/34_1_Foundation_2_2_CAM_1_1/release_evidence/baseline.json",
+          "exists": true,
+          "required": true,
+          "expected_root": "02_versions/migration_artifacts",
+          "signed": true,
+          "signature_ok": true,
+          "lifecycle_policy": "archive_required",
+          "missing_fields": [],
+          "issues": []
+        },
+        {
+          "ok": true,
+          "artifact_id": "ART-MIGRATION-EVIDENCE-002",
+          "artifact_class": "migration-artifact",
+          "path": "02_versions/migration_artifacts/34_1_Foundation_2_2_CAM_1_1/release_evidence/audit_snapshot.json",
+          "exists": true,
+          "required": true,
+          "expected_root": "02_versions/migration_artifacts",
+          "signed": true,
+          "signature_ok": true,
+          "lifecycle_policy": "archive_required",
+          "missing_fields": [],
+          "issues": []
+        },
+        {
+          "ok": true,
+          "artifact_id": "ART-MIGRATION-EVIDENCE-003",
+          "artifact_class": "migration-artifact",
+          "path": "02_versions/migration_artifacts/34_1_Foundation_2_2_CAM_1_1/release_evidence/release_gate.json",
+          "exists": true,
+          "required": true,
+          "expected_root": "02_versions/migration_artifacts",
+          "signed": true,
+          "signature_ok": true,
+          "lifecycle_policy": "archive_required",
+          "missing_fields": [],
+          "issues": []
+        },
+        {
+          "ok": true,
+          "artifact_id": "ART-DOCUMENTATION-001",
+          "artifact_class": "documentation",
+          "path": "14_documents/PROJEKTSTRUKTUR_34_1.md",
+          "exists": true,
+          "required": true,
+          "expected_root": "14_documents",
+          "signed": false,
+          "signature_ok": true,
+          "lifecycle_policy": "release_controlled",
+          "missing_fields": [],
+          "issues": []
+        },
+        {
+          "ok": true,
+          "artifact_id": "ART-DOCUMENTATION-002",
+          "artifact_class": "documentation",
+          "path": "14_documents/KANONISCHES_ARCHITEKTURMODELL_34_1.md",
+          "exists": true,
+          "required": true,
+          "expected_root": "14_documents",
+          "signed": false,
+          "signature_ok": true,
+          "lifecycle_policy": "release_controlled",
+          "missing_fields": [],
+          "issues": []
+        },
+        {
+          "ok": true,
+          "artifact_id": "ART-DOCUMENTATION-003",
+          "artifact_class": "documentation",
+          "path": "14_documents/ARBEITSREGEL_ARTEFAKT_LIFECYCLE_34_1.md",
+          "exists": true,
+          "required": true,
+          "expected_root": "14_documents",
+          "signed": false,
+          "signature_ok": true,
+          "lifecycle_policy": "release_controlled",
+          "missing_fields": [],
+          "issues": []
+        },
+        {
+          "ok": true,
+          "artifact_id": "ART-HISTORICAL-ARCHIVE-001",
+          "artifact_class": "historical-archive",
+          "path": "02_versions/projektstrukturen/PROJEKTSTRUKTUR_34_0.md",
+          "exists": true,
+          "required": true,
+          "expected_root": "02_versions/projektstrukturen",
+          "signed": false,
+          "signature_ok": true,
+          "lifecycle_policy": "archive_required",
+          "missing_fields": [],
+          "issues": []
+        },
+        {
+          "ok": true,
+          "artifact_id": "ART-GOVERNANCE-CORE-001",
+          "artifact_class": "release-critical",
+          "path": "01_system/kontinuum/core/continuous_governance.py",
+          "exists": true,
+          "required": true,
+          "expected_root": "01_system/kontinuum/core",
+          "signed": false,
+          "signature_ok": true,
+          "lifecycle_policy": "release_controlled",
+          "missing_fields": [],
+          "issues": []
+        },
+        {
+          "ok": true,
+          "artifact_id": "ART-GOVERNANCE-CONFIG-001",
+          "artifact_class": "release-critical",
+          "path": "24_config/continuous_governance_34_1.json",
+          "exists": true,
+          "required": true,
+          "expected_root": "24_config",
+          "signed": false,
+          "signature_ok": true,
+          "lifecycle_policy": "release_controlled",
+          "missing_fields": [],
+          "issues": []
+        },
+        {
+          "ok": true,
+          "artifact_id": "ART-GOVERNANCE-DOC-001",
+          "artifact_class": "documentation",
+          "path": "14_documents/PHASE3_CONTINUOUS_CANONICAL_GOVERNANCE_34_1.md",
+          "exists": true,
+          "required": true,
+          "expected_root": "14_documents",
+          "signed": false,
+          "signature_ok": true,
+          "lifecycle_policy": "release_controlled",
+          "missing_fields": [],
+          "issues": []
+        },
+        {
+          "ok": true,
+          "artifact_id": "ART-GOVERNANCE-LOG-001",
+          "artifact_class": "audit-evidence",
+          "path": "31_reports/governance/phase3_continuous_governance_log.jsonl",
+          "exists": true,
+          "required": true,
+          "expected_root": "31_reports/governance",
+          "signed": false,
+          "signature_ok": true,
+          "lifecycle_policy": "never_auto_delete",
+          "missing_fields": [],
+          "issues": []
+        },
+        {
+          "ok": true,
+          "artifact_id": "ART-GOVERNANCE-BASELINE-001",
+          "artifact_class": "release-critical",
+          "path": "24_config/canonical_governance_baseline_34_1.json",
+          "exists": true,
+          "required": true,
+          "expected_root": "24_config",
+          "signed": false,
+          "signature_ok": true,
+          "lifecycle_policy": "release_controlled",
+          "missing_fields": [],
+          "issues": []
+        }
+      ],
+      "patterns": [
+        {
+          "ok": true,
+          "pattern_id": "PATTERN-ACTIVE-PROJECT-STRUCTURE",
+          "artifact_class": "documentation",
+          "pattern": "14_documents/PROJEKTSTRUKTUR_*.md",
+          "count": 1,
+          "min_count": 1,
+          "max_count": 1,
+          "expected_root": "14_documents",
+          "wrong_location": [],
+          "unsigned": [],
+          "matches": [
+            "14_documents/PROJEKTSTRUKTUR_34_1.md"
+          ],
+          "issues": []
+        },
+        {
+          "ok": true,
+          "pattern_id": "PATTERN-HISTORICAL-PROJECT-STRUCTURES",
+          "artifact_class": "historical-archive",
+          "pattern": "02_versions/projektstrukturen/PROJEKTSTRUKTUR_*.md",
+          "count": 19,
+          "min_count": 19,
+          "max_count": null,
+          "expected_root": "02_versions/projektstrukturen",
+          "wrong_location": [],
+          "unsigned": [],
+          "matches": [
+            "02_versions/projektstrukturen/PROJEKTSTRUKTUR_24_3.md",
+            "02_versions/projektstrukturen/PROJEKTSTRUKTUR_25_0.md",
+            "02_versions/projektstrukturen/PROJEKTSTRUKTUR_26_0.md",
+            "02_versions/projektstrukturen/PROJEKTSTRUKTUR_27_0.md",
+            "02_versions/projektstrukturen/PROJEKTSTRUKTUR_27_1.md",
+            "02_versions/projektstrukturen/PROJEKTSTRUKTUR_27_2.md",
+            "02_versions/projektstrukturen/PROJEKTSTRUKTUR_28_0.md",
+            "02_versions/projektstrukturen/PROJEKTSTRUKTUR_28_1.md",
+            "02_versions/projektstrukturen/PROJEKTSTRUKTUR_28_2.md",
+            "02_versions/projektstrukturen/PROJEKTSTRUKTUR_29_0.md",
+            "02_versions/projektstrukturen/PROJEKTSTRUKTUR_29_1.md",
+            "02_versions/projektstrukturen/PROJEKTSTRUKTUR_30_0.md",
+            "02_versions/projektstrukturen/PROJEKTSTRUKTUR_31_0.md",
+            "02_versions/projektstrukturen/PROJEKTSTRUKTUR_32_0.md",
+            "02_versions/projektstrukturen/PROJEKTSTRUKTUR_32_2.md",
+            "02_versions/projektstrukturen/PROJEKTSTRUKTUR_32_3.md",
+            "02_versions/projektstrukturen/PROJEKTSTRUKTUR_32_4.md",
+            "02_versions/projektstrukturen/PROJEKTSTRUKTUR_33_0.md",
+            "02_versions/projektstrukturen/PROJEKTSTRUKTUR_34_0.md"
+          ],
+          "issues": []
+        },
+        {
+          "ok": true,
+          "pattern_id": "PATTERN-RELEASE-INTEGRITY-BACKUPS",
+          "artifact_class": "audit-evidence",
+          "pattern": "09_backups/release_integrity/Kontinuum_34_1_*.zip",
+          "count": 28,
+          "min_count": 1,
+          "max_count": null,
+          "expected_root": "09_backups/release_integrity",
+          "wrong_location": [],
+          "unsigned": [],
+          "matches": [
+            "09_backups/release_integrity/Kontinuum_34_1_20260621_164339.zip",
+            "09_backups/release_integrity/Kontinuum_34_1_20260621_164616.zip",
+            "09_backups/release_integrity/Kontinuum_34_1_20260621_171234.zip",
+            "09_backups/release_integrity/Kontinuum_34_1_20260622_175226.zip",
+            "09_backups/release_integrity/Kontinuum_34_1_20260622_180223.zip",
+            "09_backups/release_integrity/Kontinuum_34_1_20260622_181034.zip",
+            "09_backups/release_integrity/Kontinuum_34_1_20260624_153708.zip",
+            "09_backups/release_integrity/Kontinuum_34_1_20260624_161212.zip",
+            "09_backups/release_integrity/Kontinuum_34_1_20260624_163332.zip",
+            "09_backups/release_integrity/Kontinuum_34_1_20260624_170023.zip",
+            "09_backups/release_integrity/Kontinuum_34_1_20260625_185434.zip",
+            "09_backups/release_integrity/Kontinuum_34_1_20260625_190738.zip",
+            "09_backups/release_integrity/Kontinuum_34_1_20260625_193948.zip",
+            "09_backups/release_integrity/Kontinuum_34_1_20260625_200100.zip",
+            "09_backups/release_integrity/Kontinuum_34_1_20260626_095837.zip",
+            "09_backups/release_integrity/Kontinuum_34_1_20260626_102423.zip",
+            "09_backups/release_integrity/Kontinuum_34_1_20260626_105158.zip",
+            "09_backups/release_integrity/Kontinuum_34_1_20260626_180703.zip",
+            "09_backups/release_integrity/Kontinuum_34_1_20260627_115804.zip",
+            "09_backups/release_integrity/Kontinuum_34_1_20260627_120951.zip",
+            "09_backups/release_integrity/Kontinuum_34_1_20260627_123240.zip",
+            "09_backups/release_integrity/Kontinuum_34_1_20260627_125024.zip",
+            "09_backups/release_integrity/Kontinuum_34_1_20260627_130307.zip",
+            "09_backups/release_integrity/Kontinuum_34_1_20260627_131414.zip",
+            "09_backups/release_integrity/Kontinuum_34_1_20260629_115057.zip",
+            "09_backups/release_integrity/Kontinuum_34_1_20260629_124212.zip",
+            "09_backups/release_integrity/Kontinuum_34_1_20260629_125529.zip",
+            "09_backups/release_integrity/Kontinuum_34_1_20260629_131443.zip"
+          ],
+          "issues": []
+        },
+        {
+          "ok": true,
+          "pattern_id": "PATTERN-MIGRATION-EVIDENCE-SIGNED",
+          "artifact_class": "migration-artifact",
+          "pattern": "02_versions/migration_artifacts/34_1_Foundation_2_2_CAM_1_1/release_evidence/*.json",
+          "count": 3,
+          "min_count": 3,
+          "max_count": null,
+          "expected_root": "02_versions/migration_artifacts",
+          "wrong_location": [],
+          "unsigned": [],
+          "matches": [
+            "02_versions/migration_artifacts/34_1_Foundation_2_2_CAM_1_1/release_evidence/audit_snapshot.json",
+            "02_versions/migration_artifacts/34_1_Foundation_2_2_CAM_1_1/release_evidence/baseline.json",
+            "02_versions/migration_artifacts/34_1_Foundation_2_2_CAM_1_1/release_evidence/release_gate.json"
+          ],
+          "issues": []
+        }
+      ],
+      "lifecycle": {
+        "ok": true,
+        "path": "24_config/retention_policy.json",
+        "invalid_values": {},
+        "missing_roots": []
+      },
+      "generated_cache": {
+        "ok": true,
+        "findings": [
+          "01_system/kontinuum/__pycache__",
+          "01_system/kontinuum/__pycache__/__init__.cpython-312.pyc",
+          "01_system/kontinuum/__pycache__/__init__.cpython-314.pyc",
+          "01_system/kontinuum/__pycache__/__main__.cpython-314.pyc",
+          "01_system/kontinuum/__pycache__/version.cpython-312.pyc",
+          "01_system/kontinuum/__pycache__/version.cpython-314.pyc",
+          "01_system/kontinuum/agents/__pycache__",
+          "01_system/kontinuum/agents/__pycache__/__init__.cpython-314.pyc",
+          "01_system/kontinuum/agents/__pycache__/agent_registry.cpython-314.pyc",
+          "01_system/kontinuum/agents/__pycache__/autonomous_learning_agent.cpython-314.pyc",
+          "01_system/kontinuum/agents/__pycache__/base_agent.cpython-314.pyc",
+          "01_system/kontinuum/agents/__pycache__/codex_agent.cpython-314.pyc",
+          "01_system/kontinuum/agents/__pycache__/development_agent.cpython-314.pyc",
+          "01_system/kontinuum/agents/__pycache__/dialogue_agent.cpython-314.pyc",
+          "01_system/kontinuum/agents/__pycache__/formula_agent.cpython-314.pyc",
+          "01_system/kontinuum/agents/__pycache__/foundation_agent.cpython-314.pyc",
+          "01_system/kontinuum/agents/__pycache__/internal_diagnostic_agent.cpython-314.pyc",
+          "01_system/kontinuum/agents/__pycache__/internet_status_agent.cpython-314.pyc",
+          "01_system/kontinuum/agents/__pycache__/knowledge_agent.cpython-314.pyc",
+          "01_system/kontinuum/agents/__pycache__/learning_agent.cpython-314.pyc",
+          "01_system/kontinuum/agents/__pycache__/maintenance_agent.cpython-314.pyc",
+          "01_system/kontinuum/agents/__pycache__/memory_agent.cpython-314.pyc",
+          "01_system/kontinuum/agents/__pycache__/notebook_agent.cpython-314.pyc",
+          "01_system/kontinuum/agents/__pycache__/oracle_cloud_agent.cpython-314.pyc",
+          "01_system/kontinuum/agents/__pycache__/planner_agent.cpython-314.pyc",
+          "01_system/kontinuum/agents/__pycache__/python_agent.cpython-314.pyc",
+          "01_system/kontinuum/agents/__pycache__/reflection_agent.cpython-314.pyc",
+          "01_system/kontinuum/agents/__pycache__/research_agent.cpython-314.pyc",
+          "01_system/kontinuum/agents/__pycache__/system_monitor_agent.cpython-314.pyc",
+          "01_system/kontinuum/agents/__pycache__/winget_agent.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__",
+          "01_system/kontinuum/core/__pycache__/__init__.cpython-312.pyc",
+          "01_system/kontinuum/core/__pycache__/__init__.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/application_services.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/auth.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/autonomous_diagnostics.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/canonical_api_registry.cpython-312.pyc",
+          "01_system/kontinuum/core/__pycache__/canonical_api_registry.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/canonical_architecture.cpython-312.pyc",
+          "01_system/kontinuum/core/__pycache__/canonical_architecture.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/canonical_artifacts.cpython-312.pyc",
+          "01_system/kontinuum/core/__pycache__/canonical_artifacts.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/canonical_database.cpython-312.pyc",
+          "01_system/kontinuum/core/__pycache__/canonical_database.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/consciousness.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/continuity.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/continuous_governance.cpython-312.pyc",
+          "01_system/kontinuum/core/__pycache__/continuous_governance.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/continuous_learning.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/contracts.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/conversation.cpython-312.pyc",
+          "01_system/kontinuum/core/__pycache__/conversation.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/epistemic_actions.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/error_classification.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/foundation_2_1.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/foundation_2_2.cpython-312.pyc",
+          "01_system/kontinuum/core/__pycache__/foundation_2_2.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/foundation_cycle_recovery.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/foundation_decision.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/foundation_integrity.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/foundation_knowledge_guard.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/foundation_memory.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/foundation_query.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/foundation_reasoning.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/identity_router.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/internet_learning.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/knowledge_contamination_guard.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/knowledge_intelligence.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/knowledge_platform.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/meaning_core.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/meaning_presentation.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/memory_core.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/meta_learning.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/moral_core.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/motivation_core.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/motivation_explanation.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/password_security.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/persistent_self_model.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/release_integrity.cpython-312.pyc",
+          "01_system/kontinuum/core/__pycache__/release_integrity.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/search_router.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/self_knowledge.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/semantic_result_validator.cpython-312.pyc",
+          "01_system/kontinuum/core/__pycache__/semantic_result_validator.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/session_context.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/solution_proposal.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/source_quality.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/storage.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/structure.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/system.cpython-314.pyc",
+          "01_system/kontinuum/core/__pycache__/temporal_relevance.cpython-314.pyc",
+          "01_system/kontinuum/tools/__pycache__",
+          "01_system/kontinuum/tools/__pycache__/__init__.cpython-312.pyc",
+          "01_system/kontinuum/tools/__pycache__/__init__.cpython-314.pyc",
+          "01_system/kontinuum/tools/__pycache__/backup_tools.cpython-314.pyc",
+          "01_system/kontinuum/tools/__pycache__/codex_tools.cpython-312.pyc",
+          "01_system/kontinuum/tools/__pycache__/codex_tools.cpython-314.pyc",
+          "01_system/kontinuum/tools/__pycache__/development_tools.cpython-314.pyc",
+          "01_system/kontinuum/tools/__pycache__/export_tools.cpython-314.pyc",
+          "01_system/kontinuum/tools/__pycache__/file_tools.cpython-314.pyc",
+          "01_system/kontinuum/tools/__pycache__/formula_engine.cpython-314.pyc",
+          "01_system/kontinuum/tools/__pycache__/import_tools.cpython-314.pyc",
+          "01_system/kontinuum/tools/__pycache__/json_tools.cpython-312.pyc",
+          "01_system/kontinuum/tools/__pycache__/json_tools.cpython-314.pyc",
+          "01_system/kontinuum/tools/__pycache__/language_model_tools.cpython-314.pyc",
+          "01_system/kontinuum/tools/__pycache__/maintenance_tools.cpython-314.pyc",
+          "01_system/kontinuum/tools/__pycache__/notebook_tools.cpython-314.pyc",
+          "01_system/kontinuum/tools/__pycache__/oracle_cloud_tools.cpython-314.pyc",
+          "01_system/kontinuum/tools/__pycache__/path_tools.cpython-312.pyc",
+          "01_system/kontinuum/tools/__pycache__/path_tools.cpython-314.pyc",
+          "01_system/kontinuum/tools/__pycache__/python_tools.cpython-314.pyc",
+          "01_system/kontinuum/tools/__pycache__/search_engine_tools.cpython-312.pyc",
+          "01_system/kontinuum/tools/__pycache__/search_engine_tools.cpython-314.pyc",
+          "01_system/kontinuum/tools/__pycache__/search_tools.cpython-312.pyc",
+          "01_system/kontinuum/tools/__pycache__/search_tools.cpython-314.pyc",
+          "01_system/kontinuum/tools/__pycache__/tool_registry.cpython-314.pyc",
+          "01_system/kontinuum/tools/__pycache__/web_tools.cpython-312.pyc",
+          "01_system/kontinuum/tools/__pycache__/web_tools.cpython-314.pyc",
+          "01_system/kontinuum/tools/__pycache__/winget_tools.cpython-314.pyc",
+          "17_tests/__pycache__",
+          "17_tests/__pycache__/test_canonical_api_registry_manager.cpython-314.pyc",
+          "17_tests/__pycache__/test_canonical_artifacts_manager.cpython-314.pyc",
+          "17_tests/__pycache__/test_continuous_governance_34_1.cpython-314.pyc",
+          "17_tests/__pycache__/test_release_integrity_framework_34_1.cpython-314.pyc",
+          "17_tests/__pycache__/test_v34_1_version_consistency.cpython-314.pyc"
+        ],
+        "protected_findings": [],
+        "mode": "report_only_no_delete"
+      },
+      "mutation_policy": "read_only_verification; no_move_no_delete_no_autofix"
+    },
+    "artifact_lifecycle": {
+      "ok": true,
+      "policy_version": "CAM 1.1",
+      "paths": {
+        "policy": "24_config/retention_policy.json",
+        "documentation": "14_documents/ARBEITSREGEL_ARTEFAKT_LIFECYCLE_34_1.md",
+        "migration_archive": "02_versions/migration_artifacts",
+        "migration_report_backup": "09_backups/migration_reports"
+      },
+      "missing": [],
+      "invalid_values": {},
+      "signed_evidence_archive": "02_versions/migration_artifacts/34_1_Foundation_2_2_CAM_1_1/release_evidence",
+      "evidence_missing": [],
+      "evidence_unsigned": [],
+      "automatic_deletion": false,
+      "archive_instead_of_delete": true,
+      "release_requirements": [
+        "tests_green",
+        "status_green",
+        "release_gate_green",
+        "documentation_updated",
+        "codex_release_confirmed"
+      ]
+    }
+  },
+  "proof_hash": "5a27700b6a0345c65c0ed7fb0d2ac32b171dbccc61ccfd0a3443f27c76e34422"
+}

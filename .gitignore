@@ -114,3 +114,12 @@ node_modules/
 
 03_memory/conversation_journal/*.jsonl
 03_memory/forgotten/*.jsonl
+
+# Laufzeit-Logs
+31_reports/drift/*.jsonl
+31_reports/events/*.jsonl
+31_reports/governance/governance_hooks.jsonl
+
+# Temporäre Analysedateien
+analyse_*.txt
+32_data_ordner.txt

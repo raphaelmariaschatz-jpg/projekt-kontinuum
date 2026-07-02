@@ -1,0 +1,1086 @@
+{
+  "wave": 3,
+  "moved_count": 40,
+  "moves": [
+    {
+      "timestamp_utc": "2026-06-27T09:51:59.995947+00:00",
+      "phase": "phase2",
+      "wave": 3,
+      "original_path": "14_documents/fundamentale Gedanken/Master_Roadmap_Kontinuum_2026_2028_Revision_1.md",
+      "archive_path": "14_documents/archive/legacy/Master_Roadmap_Kontinuum_2026_2028_Revision_1.md",
+      "reason": "working_note_or_historical_thought_document",
+      "size_bytes": 3683,
+      "sha256_before": "a0f40b0c1d5050ff95dd4c2c817fb888b4a27f03aa521f803aa2bfe6af6c0a77",
+      "sha256_after": "a0f40b0c1d5050ff95dd4c2c817fb888b4a27f03aa521f803aa2bfe6af6c0a77",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/fundamentale Gedanken/Master_Roadmap_Kontinuum_2026_2028_Revision_1.md",
+        "archive_path": "14_documents/archive/legacy/Master_Roadmap_Kontinuum_2026_2028_Revision_1.md",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:52:00.023056+00:00",
+      "phase": "phase2",
+      "wave": 3,
+      "original_path": "14_documents/fundamentale Gedanken/mein Fazit Version 32.2.txt",
+      "archive_path": "14_documents/archive/legacy/mein Fazit Version 32.2.txt",
+      "reason": "older_version_marker:32.2",
+      "size_bytes": 3875,
+      "sha256_before": "a398954bf9aaace15a6796582765b422d0fddca8e0b265b8cfdcdf40b1b63bb7",
+      "sha256_after": "a398954bf9aaace15a6796582765b422d0fddca8e0b265b8cfdcdf40b1b63bb7",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/fundamentale Gedanken/mein Fazit Version 32.2.txt",
+        "archive_path": "14_documents/archive/legacy/mein Fazit Version 32.2.txt",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:52:00.075148+00:00",
+      "phase": "phase2",
+      "wave": 3,
+      "original_path": "14_documents/fundamentale Gedanken/neuer codex Auftrag am 14.06.26.txt",
+      "archive_path": "14_documents/archive/reports/neuer codex Auftrag am 14.06.26.txt",
+      "reason": "dated_historical_report_or_note",
+      "size_bytes": 2216,
+      "sha256_before": "4d637122849b8d5c1052f97c130a0406c5b5420e205019e8e69789bc6ba4fef7",
+      "sha256_after": "4d637122849b8d5c1052f97c130a0406c5b5420e205019e8e69789bc6ba4fef7",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/fundamentale Gedanken/neuer codex Auftrag am 14.06.26.txt",
+        "archive_path": "14_documents/archive/reports/neuer codex Auftrag am 14.06.26.txt",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:52:00.096509+00:00",
+      "phase": "phase2",
+      "wave": 3,
+      "original_path": "14_documents/fundamentale Gedanken/noch auszuführen für 32.3..txt",
+      "archive_path": "14_documents/archive/legacy/noch auszuführen für 32.3..txt",
+      "reason": "older_version_marker:32.3",
+      "size_bytes": 2827,
+      "sha256_before": "899f3fbe95c68c42656dd5ba18d1642c29467aa6205f7c87f2bf4ae1ca1cc698",
+      "sha256_after": "899f3fbe95c68c42656dd5ba18d1642c29467aa6205f7c87f2bf4ae1ca1cc698",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/fundamentale Gedanken/noch auszuführen für 32.3..txt",
+        "archive_path": "14_documents/archive/legacy/noch auszuführen für 32.3..txt",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:52:00.116059+00:00",
+      "phase": "phase2",
+      "wave": 3,
+      "original_path": "14_documents/fundamentale Gedanken/noch gefundene Fehler in Version 32.txt",
+      "archive_path": "14_documents/archive/legacy/noch gefundene Fehler in Version 32.txt",
+      "reason": "working_note_or_historical_thought_document",
+      "size_bytes": 5610,
+      "sha256_before": "ce33f4771816df514aa4149ec9226169bcb349745a7aec7965452aa80a3cda3f",
+      "sha256_after": "ce33f4771816df514aa4149ec9226169bcb349745a7aec7965452aa80a3cda3f",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/fundamentale Gedanken/noch gefundene Fehler in Version 32.txt",
+        "archive_path": "14_documents/archive/legacy/noch gefundene Fehler in Version 32.txt",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:52:00.139681+00:00",
+      "phase": "phase2",
+      "wave": 3,
+      "original_path": "14_documents/fundamentale Gedanken/Nächster Codex-Auftrag.txt",
+      "archive_path": "14_documents/archive/legacy/Nächster Codex-Auftrag.txt",
+      "reason": "working_note_or_historical_thought_document",
+      "size_bytes": 4771,
+      "sha256_before": "f776bfee6ae9e0e887b19ccc7e2385ede999e46006e9923b0308e326ae4f7459",
+      "sha256_after": "f776bfee6ae9e0e887b19ccc7e2385ede999e46006e9923b0308e326ae4f7459",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/fundamentale Gedanken/Nächster Codex-Auftrag.txt",
+        "archive_path": "14_documents/archive/legacy/Nächster Codex-Auftrag.txt",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:52:00.172186+00:00",
+      "phase": "phase2",
+      "wave": 3,
+      "original_path": "14_documents/fundamentale Gedanken/nächster Schritt für 27.3 um.txt",
+      "archive_path": "14_documents/archive/legacy/nächster Schritt für 27.3 um.txt",
+      "reason": "older_version_marker:27.3",
+      "size_bytes": 1619,
+      "sha256_before": "9a128348d9f769c8be63da4067bf0729cdbf76ecc6c4a50877cd3ee479ce2699",
+      "sha256_after": "9a128348d9f769c8be63da4067bf0729cdbf76ecc6c4a50877cd3ee479ce2699",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/fundamentale Gedanken/nächster Schritt für 27.3 um.txt",
+        "archive_path": "14_documents/archive/legacy/nächster Schritt für 27.3 um.txt",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:52:00.198037+00:00",
+      "phase": "phase2",
+      "wave": 3,
+      "original_path": "14_documents/fundamentale Gedanken/Prioritätsliste für Codex am 17.06..txt",
+      "archive_path": "14_documents/archive/legacy/Prioritätsliste für Codex am 17.06..txt",
+      "reason": "working_note_or_historical_thought_document",
+      "size_bytes": 23667,
+      "sha256_before": "ed68a6dcb14dcb7300999d7d2046eb2305dd9413325d2d01bab2cfd2d341225a",
+      "sha256_after": "ed68a6dcb14dcb7300999d7d2046eb2305dd9413325d2d01bab2cfd2d341225a",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/fundamentale Gedanken/Prioritätsliste für Codex am 17.06..txt",
+        "archive_path": "14_documents/archive/legacy/Prioritätsliste für Codex am 17.06..txt",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:52:00.222619+00:00",
+      "phase": "phase2",
+      "wave": 3,
+      "original_path": "14_documents/fundamentale Gedanken/Projekt Kontinuum 23.0.txt",
+      "archive_path": "14_documents/archive/legacy/Projekt Kontinuum 23.0.txt",
+      "reason": "older_version_marker:23.0",
+      "size_bytes": 443,
+      "sha256_before": "cd0369b38bca349891240db5aa9f79fff7c930dd6c0fe2d9b891d08a301689ae",
+      "sha256_after": "cd0369b38bca349891240db5aa9f79fff7c930dd6c0fe2d9b891d08a301689ae",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/fundamentale Gedanken/Projekt Kontinuum 23.0.txt",
+        "archive_path": "14_documents/archive/legacy/Projekt Kontinuum 23.0.txt",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:52:00.242640+00:00",
+      "phase": "phase2",
+      "wave": 3,
+      "original_path": "14_documents/fundamentale Gedanken/Projekt_Kontinuum_Smartphone_Architektur.txt",
+      "archive_path": "14_documents/archive/legacy/Projekt_Kontinuum_Smartphone_Architektur.txt",
+      "reason": "working_note_or_historical_thought_document",
+      "size_bytes": 1621,
+      "sha256_before": "264bbf771f7bae8f399308ec05e60c785c7a385ac32c7a4cfb23e309e06fec8c",
+      "sha256_after": "264bbf771f7bae8f399308ec05e60c785c7a385ac32c7a4cfb23e309e06fec8c",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/fundamentale Gedanken/Projekt_Kontinuum_Smartphone_Architektur.txt",
+        "archive_path": "14_documents/archive/legacy/Projekt_Kontinuum_Smartphone_Architektur.txt",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:52:00.266483+00:00",
+      "phase": "phase2",
+      "wave": 3,
+      "original_path": "14_documents/fundamentale Gedanken/Projekt_Kontinuum_Smartphone_Architektur_Aktualisiert.txt",
+      "archive_path": "14_documents/archive/legacy/Projekt_Kontinuum_Smartphone_Architektur_Aktualisiert.txt",
+      "reason": "working_note_or_historical_thought_document",
+      "size_bytes": 2193,
+      "sha256_before": "ebe1cf2aef10ecd738378c407617b80b370d56795cbfe3f79f84c3b2e25e727f",
+      "sha256_after": "ebe1cf2aef10ecd738378c407617b80b370d56795cbfe3f79f84c3b2e25e727f",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/fundamentale Gedanken/Projekt_Kontinuum_Smartphone_Architektur_Aktualisiert.txt",
+        "archive_path": "14_documents/archive/legacy/Projekt_Kontinuum_Smartphone_Architektur_Aktualisiert.txt",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:52:00.290345+00:00",
+      "phase": "phase2",
+      "wave": 3,
+      "original_path": "14_documents/fundamentale Gedanken/Projekt_Kontinuum_Strategische_Roadmap_35_bis_40_Langfassung.md",
+      "archive_path": "14_documents/archive/legacy/Projekt_Kontinuum_Strategische_Roadmap_35_bis_40_Langfassung.md",
+      "reason": "working_note_or_historical_thought_document",
+      "size_bytes": 5460,
+      "sha256_before": "d49f3468308262b7b1a4fd23099dc7b4050ccdef9cbbcbc72cd64fba5181d63c",
+      "sha256_after": "d49f3468308262b7b1a4fd23099dc7b4050ccdef9cbbcbc72cd64fba5181d63c",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/fundamentale Gedanken/Projekt_Kontinuum_Strategische_Roadmap_35_bis_40_Langfassung.md",
+        "archive_path": "14_documents/archive/legacy/Projekt_Kontinuum_Strategische_Roadmap_35_bis_40_Langfassung.md",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:52:00.311492+00:00",
+      "phase": "phase2",
+      "wave": 3,
+      "original_path": "14_documents/fundamentale Gedanken/Roadmap nach Version 32.3.md",
+      "archive_path": "14_documents/archive/legacy/Roadmap nach Version 32.3.md",
+      "reason": "older_version_marker:32.3",
+      "size_bytes": 26128,
+      "sha256_before": "822944dc020e1f029928dd8e52b351501a9de05802540cb7187bb270ae9f03c6",
+      "sha256_after": "822944dc020e1f029928dd8e52b351501a9de05802540cb7187bb270ae9f03c6",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/fundamentale Gedanken/Roadmap nach Version 32.3.md",
+        "archive_path": "14_documents/archive/legacy/Roadmap nach Version 32.3.md",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:52:00.331700+00:00",
+      "phase": "phase2",
+      "wave": 3,
+      "original_path": "14_documents/fundamentale Gedanken/Roadmap Vorschlag vom 19.06.26.md",
+      "archive_path": "14_documents/archive/reports/Roadmap Vorschlag vom 19.06.26.md",
+      "reason": "dated_historical_report_or_note",
+      "size_bytes": 19398,
+      "sha256_before": "2a344e84b18f3200bc8c29a1ea9cc8236ba16befb0b5c71985ce399668bc15bf",
+      "sha256_after": "2a344e84b18f3200bc8c29a1ea9cc8236ba16befb0b5c71985ce399668bc15bf",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/fundamentale Gedanken/Roadmap Vorschlag vom 19.06.26.md",
+        "archive_path": "14_documents/archive/reports/Roadmap Vorschlag vom 19.06.26.md",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:52:00.353329+00:00",
+      "phase": "phase2",
+      "wave": 3,
+      "original_path": "14_documents/fundamentale Gedanken/Roadmap_Ergaenzung_20_06_2026.md",
+      "archive_path": "14_documents/archive/legacy/Roadmap_Ergaenzung_20_06_2026.md",
+      "reason": "working_note_or_historical_thought_document",
+      "size_bytes": 983,
+      "sha256_before": "59fd1dcc29ae756eacca5ca8bb0856bf83c07f607b3bf4d5cbec253e1d975f5e",
+      "sha256_after": "59fd1dcc29ae756eacca5ca8bb0856bf83c07f607b3bf4d5cbec253e1d975f5e",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/fundamentale Gedanken/Roadmap_Ergaenzung_20_06_2026.md",
+        "archive_path": "14_documents/archive/legacy/Roadmap_Ergaenzung_20_06_2026.md",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:52:00.375180+00:00",
+      "phase": "phase2",
+      "wave": 3,
+      "original_path": "14_documents/fundamentale Gedanken/Selbsterkenntnis bedeutet, das eige.txt",
+      "archive_path": "14_documents/archive/legacy/Selbsterkenntnis bedeutet, das eige.txt",
+      "reason": "working_note_or_historical_thought_document",
+      "size_bytes": 986,
+      "sha256_before": "914e126179192a69fc61fb207c047bb43419b413152e495624336978b48abd35",
+      "sha256_after": "914e126179192a69fc61fb207c047bb43419b413152e495624336978b48abd35",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/fundamentale Gedanken/Selbsterkenntnis bedeutet, das eige.txt",
+        "archive_path": "14_documents/archive/legacy/Selbsterkenntnis bedeutet, das eige.txt",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:52:00.397890+00:00",
+      "phase": "phase2",
+      "wave": 3,
+      "original_path": "14_documents/fundamentale Gedanken/Statusberichte Version 33.0.txt",
+      "archive_path": "14_documents/archive/reports/Statusberichte Version 33.0.txt",
+      "reason": "older_version_marker:33.0",
+      "size_bytes": 14126,
+      "sha256_before": "5c92c835747c2acd571ce736eb8cc2b0a2c3a7151847bb127acb2adb49d6ba58",
+      "sha256_after": "5c92c835747c2acd571ce736eb8cc2b0a2c3a7151847bb127acb2adb49d6ba58",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/fundamentale Gedanken/Statusberichte Version 33.0.txt",
+        "archive_path": "14_documents/archive/reports/Statusberichte Version 33.0.txt",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:52:00.423541+00:00",
+      "phase": "phase2",
+      "wave": 3,
+      "original_path": "14_documents/fundamentale Gedanken/Technisches_Referenzwerk_Kontinuum.md",
+      "archive_path": "14_documents/archive/legacy/Technisches_Referenzwerk_Kontinuum.md",
+      "reason": "working_note_or_historical_thought_document",
+      "size_bytes": 5509,
+      "sha256_before": "970b9ee2735958239378f564241aa953b8f7656bf4c0c2bfb9a4a08a2bae22a5",
+      "sha256_after": "970b9ee2735958239378f564241aa953b8f7656bf4c0c2bfb9a4a08a2bae22a5",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/fundamentale Gedanken/Technisches_Referenzwerk_Kontinuum.md",
+        "archive_path": "14_documents/archive/legacy/Technisches_Referenzwerk_Kontinuum.md",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:52:00.444431+00:00",
+      "phase": "phase2",
+      "wave": 3,
+      "original_path": "14_documents/fundamentale Gedanken/Technisches_Referenzwerk_Kontinuum_Revision_2_fuer_Version_50-100.md",
+      "archive_path": "14_documents/archive/legacy/Technisches_Referenzwerk_Kontinuum_Revision_2_fuer_Version_50-100.md",
+      "reason": "working_note_or_historical_thought_document",
+      "size_bytes": 4985,
+      "sha256_before": "f2da6d98bfad7aea00ad10c805c636d2f7714e6345a11db9502bb9f0cc8ce6f9",
+      "sha256_after": "f2da6d98bfad7aea00ad10c805c636d2f7714e6345a11db9502bb9f0cc8ce6f9",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/fundamentale Gedanken/Technisches_Referenzwerk_Kontinuum_Revision_2_fuer_Version_50-100.md",
+        "archive_path": "14_documents/archive/legacy/Technisches_Referenzwerk_Kontinuum_Revision_2_fuer_Version_50-100.md",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:52:00.466298+00:00",
+      "phase": "phase2",
+      "wave": 3,
+      "original_path": "14_documents/fundamentale Gedanken/Unter Bewusstsein versteht man die.txt",
+      "archive_path": "14_documents/archive/legacy/Unter Bewusstsein versteht man die.txt",
+      "reason": "working_note_or_historical_thought_document",
+      "size_bytes": 1594,
+      "sha256_before": "2f9fd417bf1e3e2603cda6839d25f580bf88431a14a8a527861f089a45a054d5",
+      "sha256_after": "2f9fd417bf1e3e2603cda6839d25f580bf88431a14a8a527861f089a45a054d5",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/fundamentale Gedanken/Unter Bewusstsein versteht man die.txt",
+        "archive_path": "14_documents/archive/legacy/Unter Bewusstsein versteht man die.txt",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:52:00.496464+00:00",
+      "phase": "phase2",
+      "wave": 3,
+      "original_path": "14_documents/fundamentale Gedanken/Version 19.5.md",
+      "archive_path": "14_documents/archive/legacy/Version 19.5.md",
+      "reason": "older_version_marker:19.5",
+      "size_bytes": 1180,
+      "sha256_before": "18ba5f7093c7541f2229032a282e81e789406066392125073435656b7571ed00",
+      "sha256_after": "18ba5f7093c7541f2229032a282e81e789406066392125073435656b7571ed00",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/fundamentale Gedanken/Version 19.5.md",
+        "archive_path": "14_documents/archive/legacy/Version 19.5.md",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:52:00.521632+00:00",
+      "phase": "phase2",
+      "wave": 3,
+      "original_path": "14_documents/fundamentale Gedanken/Version 22.6.md",
+      "archive_path": "14_documents/archive/legacy/Version 22.6.md",
+      "reason": "older_version_marker:22.6",
+      "size_bytes": 1593,
+      "sha256_before": "d656b1b24a21fa286edd345c5174adf47ec38344757a20d013506c8da0b7c083",
+      "sha256_after": "d656b1b24a21fa286edd345c5174adf47ec38344757a20d013506c8da0b7c083",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/fundamentale Gedanken/Version 22.6.md",
+        "archive_path": "14_documents/archive/legacy/Version 22.6.md",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:52:00.545785+00:00",
+      "phase": "phase2",
+      "wave": 3,
+      "original_path": "14_documents/fundamentale Gedanken/Version 30.0.txt",
+      "archive_path": "14_documents/archive/legacy/Version 30.0.txt",
+      "reason": "older_version_marker:30.0",
+      "size_bytes": 6168,
+      "sha256_before": "4733af3a9b3ad2da0b6478c3f53bd7bbad482ca10ef3e0eecac018d8465c32ee",
+      "sha256_after": "4733af3a9b3ad2da0b6478c3f53bd7bbad482ca10ef3e0eecac018d8465c32ee",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/fundamentale Gedanken/Version 30.0.txt",
+        "archive_path": "14_documents/archive/legacy/Version 30.0.txt",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:52:00.574672+00:00",
+      "phase": "phase2",
+      "wave": 3,
+      "original_path": "14_documents/fundamentale Gedanken/Version 31.0.txt",
+      "archive_path": "14_documents/archive/legacy/Version 31.0.txt",
+      "reason": "older_version_marker:31.0",
+      "size_bytes": 11698,
+      "sha256_before": "e858ce2b8b3111d402e1d2316b8fabd2d1d7f31db7d2a272de2d2dcdf85ff679",
+      "sha256_after": "e858ce2b8b3111d402e1d2316b8fabd2d1d7f31db7d2a272de2d2dcdf85ff679",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/fundamentale Gedanken/Version 31.0.txt",
+        "archive_path": "14_documents/archive/legacy/Version 31.0.txt",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:52:00.595741+00:00",
+      "phase": "phase2",
+      "wave": 3,
+      "original_path": "14_documents/fundamentale Gedanken/Version 32.0.txt",
+      "archive_path": "14_documents/archive/legacy/Version 32.0.txt",
+      "reason": "older_version_marker:32.0",
+      "size_bytes": 6329,
+      "sha256_before": "e4adc1e01b989a2212caa2b2c098d74bc2373cda2598b59061fa628b781b0dfe",
+      "sha256_after": "e4adc1e01b989a2212caa2b2c098d74bc2373cda2598b59061fa628b781b0dfe",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/fundamentale Gedanken/Version 32.0.txt",
+        "archive_path": "14_documents/archive/legacy/Version 32.0.txt",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:52:00.621491+00:00",
+      "phase": "phase2",
+      "wave": 3,
+      "original_path": "14_documents/fundamentale Gedanken/Version 32.1.txt",
+      "archive_path": "14_documents/archive/legacy/Version 32.1.txt",
+      "reason": "older_version_marker:32.1",
+      "size_bytes": 8162,
+      "sha256_before": "99f94bce463d3d79d19f669d0d14333a953bc113cd36029f63fd98a33a2d1750",
+      "sha256_after": "99f94bce463d3d79d19f669d0d14333a953bc113cd36029f63fd98a33a2d1750",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/fundamentale Gedanken/Version 32.1.txt",
+        "archive_path": "14_documents/archive/legacy/Version 32.1.txt",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:52:00.643279+00:00",
+      "phase": "phase2",
+      "wave": 3,
+      "original_path": "14_documents/fundamentale Gedanken/Version 32.2.txt",
+      "archive_path": "14_documents/archive/legacy/Version 32.2.txt",
+      "reason": "older_version_marker:32.2",
+      "size_bytes": 5950,
+      "sha256_before": "431b23368cde91a45e79e82a1f39ea3f4dfe194e8e0dbcd35f2a92e313a5fe12",
+      "sha256_after": "431b23368cde91a45e79e82a1f39ea3f4dfe194e8e0dbcd35f2a92e313a5fe12",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/fundamentale Gedanken/Version 32.2.txt",
+        "archive_path": "14_documents/archive/legacy/Version 32.2.txt",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:52:00.664060+00:00",
+      "phase": "phase2",
+      "wave": 3,
+      "original_path": "14_documents/fundamentale Gedanken/Versionsauftrag Version 33.0.txt",
+      "archive_path": "14_documents/archive/legacy/Versionsauftrag Version 33.0.txt",
+      "reason": "older_version_marker:33.0",
+      "size_bytes": 1321,
+      "sha256_before": "8b9f1ce42c6a92da212896e6810f74911fc5dde351c4ca2955c1f579b95abc4a",
+      "sha256_after": "8b9f1ce42c6a92da212896e6810f74911fc5dde351c4ca2955c1f579b95abc4a",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/fundamentale Gedanken/Versionsauftrag Version 33.0.txt",
+        "archive_path": "14_documents/archive/legacy/Versionsauftrag Version 33.0.txt",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:52:00.690255+00:00",
+      "phase": "phase2",
+      "wave": 3,
+      "original_path": "14_documents/fundamentale Gedanken/Vorbereitung Version 32.4.txt",
+      "archive_path": "14_documents/archive/legacy/Vorbereitung Version 32.4.txt",
+      "reason": "older_version_marker:32.4",
+      "size_bytes": 8393,
+      "sha256_before": "392646389b955c1e4ada0a0ae34e9d22758d1dba0f1d60b82e7bf3b024503972",
+      "sha256_after": "392646389b955c1e4ada0a0ae34e9d22758d1dba0f1d60b82e7bf3b024503972",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/fundamentale Gedanken/Vorbereitung Version 32.4.txt",
+        "archive_path": "14_documents/archive/legacy/Vorbereitung Version 32.4.txt",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:52:00.715703+00:00",
+      "phase": "phase2",
+      "wave": 3,
+      "original_path": "14_documents/fundamentale Gedanken/Was ich als Version 25.0 ansehen wü.txt",
+      "archive_path": "14_documents/archive/legacy/Was ich als Version 25.0 ansehen wü.txt",
+      "reason": "older_version_marker:25.0",
+      "size_bytes": 1079,
+      "sha256_before": "97839a422e46cfc87572a838c1b12095b14104fddc0d4e8258fd91a0ea7b876b",
+      "sha256_after": "97839a422e46cfc87572a838c1b12095b14104fddc0d4e8258fd91a0ea7b876b",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/fundamentale Gedanken/Was ich als Version 25.0 ansehen wü.txt",
+        "archive_path": "14_documents/archive/legacy/Was ich als Version 25.0 ansehen wü.txt",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:52:00.741943+00:00",
+      "phase": "phase2",
+      "wave": 3,
+      "original_path": "14_documents/fundamentale Gedanken/weitere Entwicklungsschritte ab Version 33.0.txt",
+      "archive_path": "14_documents/archive/legacy/weitere Entwicklungsschritte ab Version 33.0.txt",
+      "reason": "older_version_marker:33.0",
+      "size_bytes": 2022,
+      "sha256_before": "5723dc5ae409402034c088cf1b5a1b08ce760ebf389194ae880beb2f314324c7",
+      "sha256_after": "5723dc5ae409402034c088cf1b5a1b08ce760ebf389194ae880beb2f314324c7",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/fundamentale Gedanken/weitere Entwicklungsschritte ab Version 33.0.txt",
+        "archive_path": "14_documents/archive/legacy/weitere Entwicklungsschritte ab Version 33.0.txt",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:52:00.762062+00:00",
+      "phase": "phase2",
+      "wave": 3,
+      "original_path": "14_documents/fundamentale Gedanken/Wenn ich unsere Gespräche über Proj.txt",
+      "archive_path": "14_documents/archive/legacy/Wenn ich unsere Gespräche über Proj.txt",
+      "reason": "working_note_or_historical_thought_document",
+      "size_bytes": 3235,
+      "sha256_before": "f9d0f9e0ea5f3f44db88967038cbe7d56b43130b3f05b1f92a0326054a6f8a3a",
+      "sha256_after": "f9d0f9e0ea5f3f44db88967038cbe7d56b43130b3f05b1f92a0326054a6f8a3a",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/fundamentale Gedanken/Wenn ich unsere Gespräche über Proj.txt",
+        "archive_path": "14_documents/archive/legacy/Wenn ich unsere Gespräche über Proj.txt",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:52:00.782612+00:00",
+      "phase": "phase2",
+      "wave": 3,
+      "original_path": "14_documents/fundamentale Gedanken/Wiedereinstieg nach Version 32.3.txt",
+      "archive_path": "14_documents/archive/legacy/Wiedereinstieg nach Version 32.3.txt",
+      "reason": "older_version_marker:32.3",
+      "size_bytes": 1831,
+      "sha256_before": "8ee7febbd77995b833bb28bc51e49d03df39b21a4192299525e77ca22983baa7",
+      "sha256_after": "8ee7febbd77995b833bb28bc51e49d03df39b21a4192299525e77ca22983baa7",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/fundamentale Gedanken/Wiedereinstieg nach Version 32.3.txt",
+        "archive_path": "14_documents/archive/legacy/Wiedereinstieg nach Version 32.3.txt",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:52:00.809580+00:00",
+      "phase": "phase2",
+      "wave": 3,
+      "original_path": "14_documents/fundamentale Gedanken/Windows Startdateien Version 22.6.md",
+      "archive_path": "14_documents/archive/legacy/Windows Startdateien Version 22.6.md",
+      "reason": "older_version_marker:22.6",
+      "size_bytes": 663,
+      "sha256_before": "8c206717e46d8f4dfad63324764f57399a5ffba603a8035fbf1bb011ed940b8e",
+      "sha256_after": "8c206717e46d8f4dfad63324764f57399a5ffba603a8035fbf1bb011ed940b8e",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/fundamentale Gedanken/Windows Startdateien Version 22.6.md",
+        "archive_path": "14_documents/archive/legacy/Windows Startdateien Version 22.6.md",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:52:00.831727+00:00",
+      "phase": "phase2",
+      "wave": 3,
+      "original_path": "14_documents/fundamentale Gedanken/Zentrale Erkennung von Intent, Nutz.txt",
+      "archive_path": "14_documents/archive/legacy/Zentrale Erkennung von Intent, Nutz.txt",
+      "reason": "working_note_or_historical_thought_document",
+      "size_bytes": 382,
+      "sha256_before": "5ecbbd0a3e6cc168e076cef63f89a49b8ff14e408f6aa7cf6391cddc43d6ca29",
+      "sha256_after": "5ecbbd0a3e6cc168e076cef63f89a49b8ff14e408f6aa7cf6391cddc43d6ca29",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/fundamentale Gedanken/Zentrale Erkennung von Intent, Nutz.txt",
+        "archive_path": "14_documents/archive/legacy/Zentrale Erkennung von Intent, Nutz.txt",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:52:00.858449+00:00",
+      "phase": "phase2",
+      "wave": 3,
+      "original_path": "14_documents/interne_fehler_und_loesungen/2026_06_19_error_report.md",
+      "archive_path": "14_documents/archive/reports/2026_06_19_error_report.md",
+      "reason": "dated_historical_report_or_note",
+      "size_bytes": 232,
+      "sha256_before": "4dceca7f337069a8d81e9c5c9ca69448438d2f3c6078ddc4e7524ffcc4d9812f",
+      "sha256_after": "4dceca7f337069a8d81e9c5c9ca69448438d2f3c6078ddc4e7524ffcc4d9812f",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/interne_fehler_und_loesungen/2026_06_19_error_report.md",
+        "archive_path": "14_documents/archive/reports/2026_06_19_error_report.md",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:52:00.888510+00:00",
+      "phase": "phase2",
+      "wave": 3,
+      "original_path": "14_documents/interne_fehler_und_loesungen/2026_06_20_error_report.md",
+      "archive_path": "14_documents/archive/reports/2026_06_20_error_report.md",
+      "reason": "dated_historical_report_or_note",
+      "size_bytes": 232,
+      "sha256_before": "416c8498ea4a8ac28c20388933234a0113dc7151d17fe1cc9f7baf3b7507686d",
+      "sha256_after": "416c8498ea4a8ac28c20388933234a0113dc7151d17fe1cc9f7baf3b7507686d",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/interne_fehler_und_loesungen/2026_06_20_error_report.md",
+        "archive_path": "14_documents/archive/reports/2026_06_20_error_report.md",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:52:01.011158+00:00",
+      "phase": "phase2",
+      "wave": 3,
+      "original_path": "14_documents/pdf/Projekt_Kontinuum_22_9_Handbuch.pdf",
+      "archive_path": "14_documents/archive/legacy/Projekt_Kontinuum_22_9_Handbuch.pdf",
+      "reason": "older_version_marker:22.9",
+      "size_bytes": 2600,
+      "sha256_before": "0f0ba6fb31fef2f6502b018548bab7cf01056bffb3d5772b0725fd331f92c934",
+      "sha256_after": "0f0ba6fb31fef2f6502b018548bab7cf01056bffb3d5772b0725fd331f92c934",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/pdf/Projekt_Kontinuum_22_9_Handbuch.pdf",
+        "archive_path": "14_documents/archive/legacy/Projekt_Kontinuum_22_9_Handbuch.pdf",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:52:01.048313+00:00",
+      "phase": "phase2",
+      "wave": 3,
+      "original_path": "14_documents/pdf/Projekt_Kontinuum_22_9_Projektchronik.pdf",
+      "archive_path": "14_documents/archive/legacy/Projekt_Kontinuum_22_9_Projektchronik.pdf",
+      "reason": "older_version_marker:22.9",
+      "size_bytes": 2028,
+      "sha256_before": "ac3e81eaf8acd4bfc8a346ce421675f3d5242e73b2839ffc2329143231d68fee",
+      "sha256_after": "ac3e81eaf8acd4bfc8a346ce421675f3d5242e73b2839ffc2329143231d68fee",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/pdf/Projekt_Kontinuum_22_9_Projektchronik.pdf",
+        "archive_path": "14_documents/archive/legacy/Projekt_Kontinuum_22_9_Projektchronik.pdf",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:52:01.075699+00:00",
+      "phase": "phase2",
+      "wave": 3,
+      "original_path": "14_documents/pdf/Projekt_Kontinuum_Chatprotokoll_2026-06-06.pdf",
+      "archive_path": "14_documents/archive/reports/Projekt_Kontinuum_Chatprotokoll_2026-06-06.pdf",
+      "reason": "dated_historical_report_or_note",
+      "size_bytes": 3481,
+      "sha256_before": "348fdf816287a07abe24aeed17e4d9d923bc51986e9e9a64bad3d3f33a1d8684",
+      "sha256_after": "348fdf816287a07abe24aeed17e4d9d923bc51986e9e9a64bad3d3f33a1d8684",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/pdf/Projekt_Kontinuum_Chatprotokoll_2026-06-06.pdf",
+        "archive_path": "14_documents/archive/reports/Projekt_Kontinuum_Chatprotokoll_2026-06-06.pdf",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    }
+  ]
+}

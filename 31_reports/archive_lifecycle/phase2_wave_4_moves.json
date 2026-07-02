@@ -1,0 +1,196 @@
+{
+  "wave": 4,
+  "moved_count": 7,
+  "moves": [
+    {
+      "archive_path": "14_documents/archive/reports/Projekt_Kontinuum_Chatverlauf_2026-06-06.pdf",
+      "original_path": "14_documents/pdf/Projekt_Kontinuum_Chatverlauf_2026-06-06.pdf",
+      "phase": "phase2",
+      "reason": "dated_historical_report_or_note",
+      "references_before": [],
+      "references_updated": [],
+      "rollback": {
+        "archive_path": "14_documents/archive/reports/Projekt_Kontinuum_Chatverlauf_2026-06-06.pdf",
+        "original_path": "14_documents/pdf/Projekt_Kontinuum_Chatverlauf_2026-06-06.pdf",
+        "possible_until": "wave_completion_plus_24h"
+      },
+      "safety_check": {
+        "hash_verified_after_move": true,
+        "no_delete_performed": true,
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_did_not_exist_before_move": true,
+        "target_inside_archive_structure": true
+      },
+      "sha256_after": "dffc31a5141f5d88251079db1103582d472823bf8f1db34c5f8c28314af1a606",
+      "sha256_before": "dffc31a5141f5d88251079db1103582d472823bf8f1db34c5f8c28314af1a606",
+      "size_bytes": 4376,
+      "timestamp_utc": "2026-06-27T09:53:27.257775+00:00",
+      "verification_after_move": "pending_wave_verification",
+      "wave": 4
+    },
+    {
+      "archive_path": "14_documents/archive/reports/Projekt_Kontinuum_Chatverlauf_2026-06-09.pdf",
+      "original_path": "14_documents/pdf/Projekt_Kontinuum_Chatverlauf_2026-06-09.pdf",
+      "phase": "phase2",
+      "reason": "dated_historical_report_or_note",
+      "references_before": [],
+      "references_updated": [],
+      "rollback": {
+        "archive_path": "14_documents/archive/reports/Projekt_Kontinuum_Chatverlauf_2026-06-09.pdf",
+        "original_path": "14_documents/pdf/Projekt_Kontinuum_Chatverlauf_2026-06-09.pdf",
+        "possible_until": "wave_completion_plus_24h"
+      },
+      "safety_check": {
+        "hash_verified_after_move": true,
+        "no_delete_performed": true,
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_did_not_exist_before_move": true,
+        "target_inside_archive_structure": true
+      },
+      "sha256_after": "80388a57b1910cd0bc07dd6986c7bdcdfb1b13bc4d67c02600289548bd42c26b",
+      "sha256_before": "80388a57b1910cd0bc07dd6986c7bdcdfb1b13bc4d67c02600289548bd42c26b",
+      "size_bytes": 2116,
+      "timestamp_utc": "2026-06-27T09:53:27.281081+00:00",
+      "verification_after_move": "pending_wave_verification",
+      "wave": 4
+    },
+    {
+      "archive_path": "14_documents/archive/reports/Projekt_Kontinuum_Chronik_Aktualisiert_2026-06-06.pdf",
+      "original_path": "14_documents/pdf/Projekt_Kontinuum_Chronik_Aktualisiert_2026-06-06.pdf",
+      "phase": "phase2",
+      "reason": "dated_historical_report_or_note",
+      "references_before": [],
+      "references_updated": [],
+      "rollback": {
+        "archive_path": "14_documents/archive/reports/Projekt_Kontinuum_Chronik_Aktualisiert_2026-06-06.pdf",
+        "original_path": "14_documents/pdf/Projekt_Kontinuum_Chronik_Aktualisiert_2026-06-06.pdf",
+        "possible_until": "wave_completion_plus_24h"
+      },
+      "safety_check": {
+        "hash_verified_after_move": true,
+        "no_delete_performed": true,
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_did_not_exist_before_move": true,
+        "target_inside_archive_structure": true
+      },
+      "sha256_after": "cf3a0d8a6706a8fa32f3416a08b6850ce220dfbf8642835c5a473dfc7c677adb",
+      "sha256_before": "cf3a0d8a6706a8fa32f3416a08b6850ce220dfbf8642835c5a473dfc7c677adb",
+      "size_bytes": 4313,
+      "timestamp_utc": "2026-06-27T09:53:27.307840+00:00",
+      "verification_after_move": "pending_wave_verification",
+      "wave": 4
+    },
+    {
+      "archive_path": "14_documents/archive/reports/Projekt_Kontinuum_Handbuch_Aktualisiert_2026-06-09.pdf",
+      "original_path": "14_documents/pdf/Projekt_Kontinuum_Handbuch_Aktualisiert_2026-06-09.pdf",
+      "phase": "phase2",
+      "reason": "dated_historical_report_or_note",
+      "references_before": [],
+      "references_updated": [],
+      "rollback": {
+        "archive_path": "14_documents/archive/reports/Projekt_Kontinuum_Handbuch_Aktualisiert_2026-06-09.pdf",
+        "original_path": "14_documents/pdf/Projekt_Kontinuum_Handbuch_Aktualisiert_2026-06-09.pdf",
+        "possible_until": "wave_completion_plus_24h"
+      },
+      "safety_check": {
+        "hash_verified_after_move": true,
+        "no_delete_performed": true,
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_did_not_exist_before_move": true,
+        "target_inside_archive_structure": true
+      },
+      "sha256_after": "72552602039bf2a44add193c48d925f2e3a494094718fe41e7f069d232f8583c",
+      "sha256_before": "72552602039bf2a44add193c48d925f2e3a494094718fe41e7f069d232f8583c",
+      "size_bytes": 2258,
+      "timestamp_utc": "2026-06-27T09:53:27.329068+00:00",
+      "verification_after_move": "pending_wave_verification",
+      "wave": 4
+    },
+    {
+      "archive_path": "14_documents/archive/legacy/README_GUI_32_3.md",
+      "original_path": "14_documents/README_GUI_32_3.md",
+      "phase": "phase2",
+      "reason": "older_version_marker:32.3",
+      "references_before": [],
+      "references_updated": [],
+      "rollback": {
+        "archive_path": "14_documents/archive/legacy/README_GUI_32_3.md",
+        "original_path": "14_documents/README_GUI_32_3.md",
+        "possible_until": "wave_completion_plus_24h"
+      },
+      "safety_check": {
+        "hash_verified_after_move": true,
+        "no_delete_performed": true,
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_did_not_exist_before_move": true,
+        "target_inside_archive_structure": true
+      },
+      "sha256_after": "45fde9b3d1d03b3e858aeba39aea6ba61401d48bd343addf0c4941611dc64d44",
+      "sha256_before": "45fde9b3d1d03b3e858aeba39aea6ba61401d48bd343addf0c4941611dc64d44",
+      "size_bytes": 719,
+      "timestamp_utc": "2026-06-27T09:53:27.351425+00:00",
+      "verification_after_move": "pending_wave_verification",
+      "wave": 4
+    },
+    {
+      "archive_path": "14_documents/archive/legacy/README_GUI_34_0.md",
+      "original_path": "14_documents/README_GUI_34_0.md",
+      "phase": "phase2",
+      "reason": "older_version_marker:34.0",
+      "references_before": [],
+      "references_updated": [],
+      "rollback": {
+        "archive_path": "14_documents/archive/legacy/README_GUI_34_0.md",
+        "original_path": "14_documents/README_GUI_34_0.md",
+        "possible_until": "wave_completion_plus_24h"
+      },
+      "safety_check": {
+        "hash_verified_after_move": true,
+        "no_delete_performed": true,
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_did_not_exist_before_move": true,
+        "target_inside_archive_structure": true
+      },
+      "sha256_after": "2bdfe4cf58bcd575643f613410664f09b5173d261848a08c1dc5fd93fc69b32c",
+      "sha256_before": "2bdfe4cf58bcd575643f613410664f09b5173d261848a08c1dc5fd93fc69b32c",
+      "size_bytes": 477,
+      "timestamp_utc": "2026-06-27T09:53:27.374501+00:00",
+      "verification_after_move": "pending_wave_verification",
+      "wave": 4
+    },
+    {
+      "archive_path": "16_installation/archive/legacy/SETUP_ORACLE_CLOUD_32_3.bat",
+      "original_path": "16_installation/SETUP_ORACLE_CLOUD_32_3.bat",
+      "phase": "phase2",
+      "reason": "older_version_marker:32.3",
+      "references_before": [],
+      "references_updated": [],
+      "rollback": {
+        "archive_path": "16_installation/archive/legacy/SETUP_ORACLE_CLOUD_32_3.bat",
+        "original_path": "16_installation/SETUP_ORACLE_CLOUD_32_3.bat",
+        "possible_until": "wave_completion_plus_24h"
+      },
+      "safety_check": {
+        "hash_verified_after_move": true,
+        "no_delete_performed": true,
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_did_not_exist_before_move": true,
+        "target_inside_archive_structure": true
+      },
+      "sha256_after": "1c0006d9f811c23b00461a413584364520e64ddb00f10bade3d49364e263d697",
+      "sha256_before": "1c0006d9f811c23b00461a413584364520e64ddb00f10bade3d49364e263d697",
+      "size_bytes": 166,
+      "timestamp_utc": "2026-06-27T09:53:27.396953+00:00",
+      "verification_after_move": "pending_wave_verification",
+      "wave": 4
+    }
+  ],
+  "note": "Teilwelle; Runner stoppte danach vor weiteren Moves wegen unzulaessigem Zielsegment archive/tests."
+}

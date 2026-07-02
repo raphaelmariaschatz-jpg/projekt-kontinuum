@@ -1,0 +1,411 @@
+{
+  "wave": 1,
+  "moved_count": 15,
+  "moves": [
+    {
+      "timestamp_utc": "2026-06-27T09:48:34.394205+00:00",
+      "phase": "phase2",
+      "wave": 1,
+      "original_path": "13_tools/Kontinuum Tools/AUTH_MASTER_BUILDER_22_8.bat",
+      "archive_path": "13_tools/archive/legacy/AUTH_MASTER_BUILDER_22_8.bat",
+      "reason": "older_version_marker:22.8",
+      "size_bytes": 8284,
+      "sha256_before": "fab25508c0b58857051352d4bb789f42bcf5d4a2d9cc89cbed5a0b05dd1304ca",
+      "sha256_after": "fab25508c0b58857051352d4bb789f42bcf5d4a2d9cc89cbed5a0b05dd1304ca",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "13_tools/Kontinuum Tools/AUTH_MASTER_BUILDER_22_8.bat",
+        "archive_path": "13_tools/archive/legacy/AUTH_MASTER_BUILDER_22_8.bat",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:48:34.408976+00:00",
+      "phase": "phase2",
+      "wave": 1,
+      "original_path": "13_tools/Kontinuum Tools/AUTH_MASTER_BUILDER_22_8_FIXED.bat",
+      "archive_path": "13_tools/archive/legacy/AUTH_MASTER_BUILDER_22_8_FIXED.bat",
+      "reason": "older_version_marker:22.8",
+      "size_bytes": 6989,
+      "sha256_before": "78dbad87b58502d7c73b32438f0b7174ca154be9c24655081e31937d48570d6b",
+      "sha256_after": "78dbad87b58502d7c73b32438f0b7174ca154be9c24655081e31937d48570d6b",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "13_tools/Kontinuum Tools/AUTH_MASTER_BUILDER_22_8_FIXED.bat",
+        "archive_path": "13_tools/archive/legacy/AUTH_MASTER_BUILDER_22_8_FIXED.bat",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:48:34.429174+00:00",
+      "phase": "phase2",
+      "wave": 1,
+      "original_path": "13_tools/Kontinuum Tools/KONTINUUM_22_8_FINALIZER.bat",
+      "archive_path": "13_tools/archive/legacy/KONTINUUM_22_8_FINALIZER.bat",
+      "reason": "older_version_marker:22.8",
+      "size_bytes": 7447,
+      "sha256_before": "d73de6a5914f81b0f6378913ddad4d1d05e029ea0443f39cef4d2896479006a9",
+      "sha256_after": "d73de6a5914f81b0f6378913ddad4d1d05e029ea0443f39cef4d2896479006a9",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "13_tools/Kontinuum Tools/KONTINUUM_22_8_FINALIZER.bat",
+        "archive_path": "13_tools/archive/legacy/KONTINUUM_22_8_FINALIZER.bat",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:48:34.446269+00:00",
+      "phase": "phase2",
+      "wave": 1,
+      "original_path": "13_tools/Kontinuum Tools/KONTINUUM_22_8_FINALIZER_FIXED.bat",
+      "archive_path": "13_tools/archive/legacy/KONTINUUM_22_8_FINALIZER_FIXED.bat",
+      "reason": "older_version_marker:22.8",
+      "size_bytes": 6436,
+      "sha256_before": "ce5968c5c9ddb3395f68dc8c88daf06ea3cfbbb41e11c84d21066af7b9070d29",
+      "sha256_after": "ce5968c5c9ddb3395f68dc8c88daf06ea3cfbbb41e11c84d21066af7b9070d29",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "13_tools/Kontinuum Tools/KONTINUUM_22_8_FINALIZER_FIXED.bat",
+        "archive_path": "13_tools/archive/legacy/KONTINUUM_22_8_FINALIZER_FIXED.bat",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:48:34.472459+00:00",
+      "phase": "phase2",
+      "wave": 1,
+      "original_path": "13_tools/Kontinuum Tools/LOGIN_KONSOLIDIERUNG_22_8.bat",
+      "archive_path": "13_tools/archive/legacy/LOGIN_KONSOLIDIERUNG_22_8.bat",
+      "reason": "older_version_marker:22.8",
+      "size_bytes": 6302,
+      "sha256_before": "80659f507e25c5ccf96637a1d987f55bc78baee8da434814f4bd343d23fdbf5b",
+      "sha256_after": "80659f507e25c5ccf96637a1d987f55bc78baee8da434814f4bd343d23fdbf5b",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "13_tools/Kontinuum Tools/LOGIN_KONSOLIDIERUNG_22_8.bat",
+        "archive_path": "13_tools/archive/legacy/LOGIN_KONSOLIDIERUNG_22_8.bat",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:48:34.488344+00:00",
+      "phase": "phase2",
+      "wave": 1,
+      "original_path": "13_tools/Kontinuum Tools/LOGIN_MIGRATION_22_8.bat",
+      "archive_path": "13_tools/archive/legacy/LOGIN_MIGRATION_22_8.bat",
+      "reason": "older_version_marker:22.8",
+      "size_bytes": 4166,
+      "sha256_before": "1a3c9fc720c459eee596b47879352946fea157950679e6aeaf26d6ef9a632050",
+      "sha256_after": "1a3c9fc720c459eee596b47879352946fea157950679e6aeaf26d6ef9a632050",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "13_tools/Kontinuum Tools/LOGIN_MIGRATION_22_8.bat",
+        "archive_path": "13_tools/archive/legacy/LOGIN_MIGRATION_22_8.bat",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:48:34.506148+00:00",
+      "phase": "phase2",
+      "wave": 1,
+      "original_path": "13_tools/Kontinuum Tools/MASTER_AUSWAHL_22_8.bat",
+      "archive_path": "13_tools/archive/legacy/MASTER_AUSWAHL_22_8.bat",
+      "reason": "older_version_marker:22.8",
+      "size_bytes": 4853,
+      "sha256_before": "db6a0b314a42bcf0dad0cb177978e32c0ee8f3339a99f4edbd8154931874b726",
+      "sha256_after": "db6a0b314a42bcf0dad0cb177978e32c0ee8f3339a99f4edbd8154931874b726",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "13_tools/Kontinuum Tools/MASTER_AUSWAHL_22_8.bat",
+        "archive_path": "13_tools/archive/legacy/MASTER_AUSWAHL_22_8.bat",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:48:34.522776+00:00",
+      "phase": "phase2",
+      "wave": 1,
+      "original_path": "13_tools/Kontinuum Tools/RUNTIME_BUILDER_22_8.bat",
+      "archive_path": "13_tools/archive/legacy/RUNTIME_BUILDER_22_8.bat",
+      "reason": "older_version_marker:22.8",
+      "size_bytes": 6360,
+      "sha256_before": "5058de03efbad4957235aee945dbbdcb608aa2b4ef556c1a33b6c61271f60f62",
+      "sha256_after": "5058de03efbad4957235aee945dbbdcb608aa2b4ef556c1a33b6c61271f60f62",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "13_tools/Kontinuum Tools/RUNTIME_BUILDER_22_8.bat",
+        "archive_path": "13_tools/archive/legacy/RUNTIME_BUILDER_22_8.bat",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:48:34.541045+00:00",
+      "phase": "phase2",
+      "wave": 1,
+      "original_path": "13_tools/Kontinuum Tools/VOLLINTEGRATION_22_8.bat",
+      "archive_path": "13_tools/archive/legacy/VOLLINTEGRATION_22_8.bat",
+      "reason": "older_version_marker:22.8",
+      "size_bytes": 6032,
+      "sha256_before": "352f9ac22d3b03e0101e97ed21dd47dd1269522d382db5c4fad4f0706994b8a5",
+      "sha256_after": "352f9ac22d3b03e0101e97ed21dd47dd1269522d382db5c4fad4f0706994b8a5",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "13_tools/Kontinuum Tools/VOLLINTEGRATION_22_8.bat",
+        "archive_path": "13_tools/archive/legacy/VOLLINTEGRATION_22_8.bat",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:48:34.630535+00:00",
+      "phase": "phase2",
+      "wave": 1,
+      "original_path": "14_documents/fundamentale Gedanken/11-06-26.txt",
+      "archive_path": "14_documents/archive/legacy/11-06-26.txt",
+      "reason": "working_note_or_historical_thought_document",
+      "size_bytes": 8021,
+      "sha256_before": "3deab7367775ad76502031ea2b9bdc51a0a1eeab620d5987cf09602edcf96ed3",
+      "sha256_after": "3deab7367775ad76502031ea2b9bdc51a0a1eeab620d5987cf09602edcf96ed3",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/fundamentale Gedanken/11-06-26.txt",
+        "archive_path": "14_documents/archive/legacy/11-06-26.txt",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:48:34.689353+00:00",
+      "phase": "phase2",
+      "wave": 1,
+      "original_path": "14_documents/fundamentale Gedanken/13.06.26.txt",
+      "archive_path": "14_documents/archive/reports/13.06.26.txt",
+      "reason": "dated_historical_report_or_note",
+      "size_bytes": 20933,
+      "sha256_before": "b4128de96c9e195ca079065c8cf24c8b15c2ecd7478be812c3a77e6d00eb331f",
+      "sha256_after": "b4128de96c9e195ca079065c8cf24c8b15c2ecd7478be812c3a77e6d00eb331f",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/fundamentale Gedanken/13.06.26.txt",
+        "archive_path": "14_documents/archive/reports/13.06.26.txt",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:48:34.711116+00:00",
+      "phase": "phase2",
+      "wave": 1,
+      "original_path": "14_documents/fundamentale Gedanken/28.1 – Schutzgrenzen vervollständigen.txt",
+      "archive_path": "14_documents/archive/legacy/28.1 – Schutzgrenzen vervollständigen.txt",
+      "reason": "older_version_marker:28.1",
+      "size_bytes": 1248,
+      "sha256_before": "4d0f5a86d5da9630cc94828c608327a0008d54c9b8e8669585e0ed6ac0fe7d44",
+      "sha256_after": "4d0f5a86d5da9630cc94828c608327a0008d54c9b8e8669585e0ed6ac0fe7d44",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/fundamentale Gedanken/28.1 – Schutzgrenzen vervollständigen.txt",
+        "archive_path": "14_documents/archive/legacy/28.1 – Schutzgrenzen vervollständigen.txt",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:48:34.727939+00:00",
+      "phase": "phase2",
+      "wave": 1,
+      "original_path": "14_documents/fundamentale Gedanken/Aktueller Engpass.txt",
+      "archive_path": "14_documents/archive/legacy/Aktueller Engpass.txt",
+      "reason": "working_note_or_historical_thought_document",
+      "size_bytes": 572,
+      "sha256_before": "55190b998d44100c032a17a8977782ede274d722ec88559b887048ab58abafac",
+      "sha256_after": "55190b998d44100c032a17a8977782ede274d722ec88559b887048ab58abafac",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/fundamentale Gedanken/Aktueller Engpass.txt",
+        "archive_path": "14_documents/archive/legacy/Aktueller Engpass.txt",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:48:34.757589+00:00",
+      "phase": "phase2",
+      "wave": 1,
+      "original_path": "14_documents/fundamentale Gedanken/Analyse und Fehlerbehebungsplan sin.txt",
+      "archive_path": "14_documents/archive/legacy/Analyse und Fehlerbehebungsplan sin.txt",
+      "reason": "working_note_or_historical_thought_document",
+      "size_bytes": 2253,
+      "sha256_before": "f3d61d143f29425c6fdd9a71de4dccb4dc2d2f9a6620461db85c47bcf8644523",
+      "sha256_after": "f3d61d143f29425c6fdd9a71de4dccb4dc2d2f9a6620461db85c47bcf8644523",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/fundamentale Gedanken/Analyse und Fehlerbehebungsplan sin.txt",
+        "archive_path": "14_documents/archive/legacy/Analyse und Fehlerbehebungsplan sin.txt",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:48:34.785887+00:00",
+      "phase": "phase2",
+      "wave": 1,
+      "original_path": "14_documents/fundamentale Gedanken/Arbeitsschritte Codex Version 33.0.txt",
+      "archive_path": "14_documents/archive/legacy/Arbeitsschritte Codex Version 33.0.txt",
+      "reason": "older_version_marker:33.0",
+      "size_bytes": 5908,
+      "sha256_before": "4e38bbbdb83a6e9e5a74ccd7c23bc157024bc06c429fb213a487ca0aeab4b9fd",
+      "sha256_after": "4e38bbbdb83a6e9e5a74ccd7c23bc157024bc06c429fb213a487ca0aeab4b9fd",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "14_documents/fundamentale Gedanken/Arbeitsschritte Codex Version 33.0.txt",
+        "archive_path": "14_documents/archive/legacy/Arbeitsschritte Codex Version 33.0.txt",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    }
+  ]
+}

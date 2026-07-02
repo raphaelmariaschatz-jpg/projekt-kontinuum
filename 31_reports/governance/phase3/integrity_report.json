@@ -1,0 +1,9 @@
+{
+  "component": "CIC",
+  "name": "Canonical Integrity Checker",
+  "active": true,
+  "ok": true,
+  "checked": 10,
+  "issues": [],
+  "enforcement": "read_only_flagging_no_mutation"
+}

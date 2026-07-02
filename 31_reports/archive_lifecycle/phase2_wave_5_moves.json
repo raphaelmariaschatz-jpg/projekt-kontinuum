@@ -1,0 +1,546 @@
+{
+  "wave": 5,
+  "moved_count": 20,
+  "moves": [
+    {
+      "timestamp_utc": "2026-06-27T09:55:38.063677+00:00",
+      "phase": "phase2",
+      "wave": 5,
+      "original_path": "17_tests/test_v24_1_regressions.py",
+      "archive_path": "17_tests/archive/legacy/test_v24_1_regressions.py",
+      "reason": "older_version_marker:24.1",
+      "size_bytes": 3246,
+      "sha256_before": "7aee6d5772f32dac552f3a522f8051e1d1ec5df1c8e7ced6d1160c3a24a874b7",
+      "sha256_after": "7aee6d5772f32dac552f3a522f8051e1d1ec5df1c8e7ced6d1160c3a24a874b7",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "17_tests/test_v24_1_regressions.py",
+        "archive_path": "17_tests/archive/legacy/test_v24_1_regressions.py",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:55:38.091504+00:00",
+      "phase": "phase2",
+      "wave": 5,
+      "original_path": "17_tests/test_v28_0_persistent_self_model.py",
+      "archive_path": "17_tests/archive/legacy/test_v28_0_persistent_self_model.py",
+      "reason": "older_version_marker:28.0",
+      "size_bytes": 2706,
+      "sha256_before": "4d00ef23499c95e85e9621acda33d1ac5994eaf350f8426219389ea354c202f4",
+      "sha256_after": "4d00ef23499c95e85e9621acda33d1ac5994eaf350f8426219389ea354c202f4",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "17_tests/test_v28_0_persistent_self_model.py",
+        "archive_path": "17_tests/archive/legacy/test_v28_0_persistent_self_model.py",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:55:38.118483+00:00",
+      "phase": "phase2",
+      "wave": 5,
+      "original_path": "17_tests/test_v28_1_protection_boundaries.py",
+      "archive_path": "17_tests/archive/legacy/test_v28_1_protection_boundaries.py",
+      "reason": "older_version_marker:28.1",
+      "size_bytes": 3234,
+      "sha256_before": "c1c544d38ed4b7669b1f7ec0630f116ea38a0f9d1f27158d4b485112d0539bd5",
+      "sha256_after": "c1c544d38ed4b7669b1f7ec0630f116ea38a0f9d1f27158d4b485112d0539bd5",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "17_tests/test_v28_1_protection_boundaries.py",
+        "archive_path": "17_tests/archive/legacy/test_v28_1_protection_boundaries.py",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:55:38.145459+00:00",
+      "phase": "phase2",
+      "wave": 5,
+      "original_path": "17_tests/test_v28_2_epistemic_automation.py",
+      "archive_path": "17_tests/archive/legacy/test_v28_2_epistemic_automation.py",
+      "reason": "older_version_marker:28.2",
+      "size_bytes": 4230,
+      "sha256_before": "a1bb0c6d304c930961c96ee933b57d9404a62290ba83810f3fed6042c5703fce",
+      "sha256_after": "a1bb0c6d304c930961c96ee933b57d9404a62290ba83810f3fed6042c5703fce",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "17_tests/test_v28_2_epistemic_automation.py",
+        "archive_path": "17_tests/archive/legacy/test_v28_2_epistemic_automation.py",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:55:38.175400+00:00",
+      "phase": "phase2",
+      "wave": 5,
+      "original_path": "17_tests/test_v29_0_continuity_moral_foundation.py",
+      "archive_path": "17_tests/archive/legacy/test_v29_0_continuity_moral_foundation.py",
+      "reason": "older_version_marker:29.0",
+      "size_bytes": 4335,
+      "sha256_before": "6dc68e20ba22b1d2172bc46be339f1ec3b2bc87638872bb584082d1b8001f6f3",
+      "sha256_after": "6dc68e20ba22b1d2172bc46be339f1ec3b2bc87638872bb584082d1b8001f6f3",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "17_tests/test_v29_0_continuity_moral_foundation.py",
+        "archive_path": "17_tests/archive/legacy/test_v29_0_continuity_moral_foundation.py",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:55:38.199137+00:00",
+      "phase": "phase2",
+      "wave": 5,
+      "original_path": "17_tests/test_v29_1_foundation_decision_layer.py",
+      "archive_path": "17_tests/archive/legacy/test_v29_1_foundation_decision_layer.py",
+      "reason": "older_version_marker:29.1",
+      "size_bytes": 3371,
+      "sha256_before": "a5fa9b065fa3b5db08618474233b1ce61220032db7b6f9615da508d840104849",
+      "sha256_after": "a5fa9b065fa3b5db08618474233b1ce61220032db7b6f9615da508d840104849",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "17_tests/test_v29_1_foundation_decision_layer.py",
+        "archive_path": "17_tests/archive/legacy/test_v29_1_foundation_decision_layer.py",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:55:38.224359+00:00",
+      "phase": "phase2",
+      "wave": 5,
+      "original_path": "17_tests/test_v30_0_meaning_core.py",
+      "archive_path": "17_tests/archive/legacy/test_v30_0_meaning_core.py",
+      "reason": "older_version_marker:30.0",
+      "size_bytes": 2264,
+      "sha256_before": "7c9656b65940f6a736e194606fc8ddd67c44777f45be7ce6bde19bd18a72adbd",
+      "sha256_after": "7c9656b65940f6a736e194606fc8ddd67c44777f45be7ce6bde19bd18a72adbd",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "17_tests/test_v30_0_meaning_core.py",
+        "archive_path": "17_tests/archive/legacy/test_v30_0_meaning_core.py",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:55:38.340988+00:00",
+      "phase": "phase2",
+      "wave": 5,
+      "original_path": "17_tests/test_v31_0_motivation_core.py",
+      "archive_path": "17_tests/archive/legacy/test_v31_0_motivation_core.py",
+      "reason": "older_version_marker:31.0",
+      "size_bytes": 2353,
+      "sha256_before": "5646f3e3818a986e1d29a95b57307319cc3830697b0dd986cca55008f03925d2",
+      "sha256_after": "5646f3e3818a986e1d29a95b57307319cc3830697b0dd986cca55008f03925d2",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "17_tests/test_v31_0_motivation_core.py",
+        "archive_path": "17_tests/archive/legacy/test_v31_0_motivation_core.py",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:55:38.436796+00:00",
+      "phase": "phase2",
+      "wave": 5,
+      "original_path": "17_tests/test_v32_3_foundation_cycle_recovery.py",
+      "archive_path": "17_tests/archive/legacy/test_v32_3_foundation_cycle_recovery.py",
+      "reason": "older_version_marker:32.3",
+      "size_bytes": 1225,
+      "sha256_before": "90ba706977a2c6d98f6c560da1e5bbbc032dcb9d6f57ff37b0fa425950ac9649",
+      "sha256_after": "90ba706977a2c6d98f6c560da1e5bbbc032dcb9d6f57ff37b0fa425950ac9649",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "17_tests/test_v32_3_foundation_cycle_recovery.py",
+        "archive_path": "17_tests/archive/legacy/test_v32_3_foundation_cycle_recovery.py",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:55:38.481192+00:00",
+      "phase": "phase2",
+      "wave": 5,
+      "original_path": "17_tests/test_v32_3_foundation_knowledge_guard.py",
+      "archive_path": "17_tests/archive/legacy/test_v32_3_foundation_knowledge_guard.py",
+      "reason": "older_version_marker:32.3",
+      "size_bytes": 1638,
+      "sha256_before": "473f63f51712f7332f0a6cbc0c7d728b77bcbe5defd98a6f13c1425efb7be5d5",
+      "sha256_after": "473f63f51712f7332f0a6cbc0c7d728b77bcbe5defd98a6f13c1425efb7be5d5",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "17_tests/test_v32_3_foundation_knowledge_guard.py",
+        "archive_path": "17_tests/archive/legacy/test_v32_3_foundation_knowledge_guard.py",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:55:38.509978+00:00",
+      "phase": "phase2",
+      "wave": 5,
+      "original_path": "17_tests/test_v32_3_identity_routing.py",
+      "archive_path": "17_tests/archive/legacy/test_v32_3_identity_routing.py",
+      "reason": "older_version_marker:32.3",
+      "size_bytes": 1372,
+      "sha256_before": "d21a02b0963654cd7333d2141a65d024db9c6b2b46cbc6904ee417247e215cad",
+      "sha256_after": "d21a02b0963654cd7333d2141a65d024db9c6b2b46cbc6904ee417247e215cad",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "17_tests/test_v32_3_identity_routing.py",
+        "archive_path": "17_tests/archive/legacy/test_v32_3_identity_routing.py",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:55:38.543567+00:00",
+      "phase": "phase2",
+      "wave": 5,
+      "original_path": "17_tests/test_v32_3_knowledge_contamination_guard.py",
+      "archive_path": "17_tests/archive/legacy/test_v32_3_knowledge_contamination_guard.py",
+      "reason": "older_version_marker:32.3",
+      "size_bytes": 3344,
+      "sha256_before": "f3eb9cf5067eab59c543ab8c5ffb54ab7a07aaf1e4c722cfcb178107132dc098",
+      "sha256_after": "f3eb9cf5067eab59c543ab8c5ffb54ab7a07aaf1e4c722cfcb178107132dc098",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "17_tests/test_v32_3_knowledge_contamination_guard.py",
+        "archive_path": "17_tests/archive/legacy/test_v32_3_knowledge_contamination_guard.py",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:55:38.588637+00:00",
+      "phase": "phase2",
+      "wave": 5,
+      "original_path": "17_tests/test_v32_3_meaning_presentation.py",
+      "archive_path": "17_tests/archive/legacy/test_v32_3_meaning_presentation.py",
+      "reason": "older_version_marker:32.3",
+      "size_bytes": 1395,
+      "sha256_before": "231f845fe3b473a1e6ac6d2026fb16f474095d36ab1caaeeb036b83a45b3850b",
+      "sha256_after": "231f845fe3b473a1e6ac6d2026fb16f474095d36ab1caaeeb036b83a45b3850b",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "17_tests/test_v32_3_meaning_presentation.py",
+        "archive_path": "17_tests/archive/legacy/test_v32_3_meaning_presentation.py",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:55:38.615232+00:00",
+      "phase": "phase2",
+      "wave": 5,
+      "original_path": "17_tests/test_v32_3_semantic_search_validation.py",
+      "archive_path": "17_tests/archive/legacy/test_v32_3_semantic_search_validation.py",
+      "reason": "older_version_marker:32.3",
+      "size_bytes": 1373,
+      "sha256_before": "75e7eea51bd232602632fca017477ef844468a3bddcb57152ceef37003b76fc6",
+      "sha256_after": "75e7eea51bd232602632fca017477ef844468a3bddcb57152ceef37003b76fc6",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "17_tests/test_v32_3_semantic_search_validation.py",
+        "archive_path": "17_tests/archive/legacy/test_v32_3_semantic_search_validation.py",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:55:38.666065+00:00",
+      "phase": "phase2",
+      "wave": 5,
+      "original_path": "17_tests/test_v32_3_session_context.py",
+      "archive_path": "17_tests/archive/legacy/test_v32_3_session_context.py",
+      "reason": "older_version_marker:32.3",
+      "size_bytes": 1002,
+      "sha256_before": "83b5ca4709f4a14cc3ef0f5208ae95170a1f4bf1fd557b92cc1965f12f762375",
+      "sha256_after": "83b5ca4709f4a14cc3ef0f5208ae95170a1f4bf1fd557b92cc1965f12f762375",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "17_tests/test_v32_3_session_context.py",
+        "archive_path": "17_tests/archive/legacy/test_v32_3_session_context.py",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:55:38.704206+00:00",
+      "phase": "phase2",
+      "wave": 5,
+      "original_path": "17_tests/test_v32_4_version_consistency.py",
+      "archive_path": "17_tests/archive/legacy/test_v32_4_version_consistency.py",
+      "reason": "older_version_marker:32.4",
+      "size_bytes": 3779,
+      "sha256_before": "29fbab9f2c11a6a8acbd537acb6c9eaf560a48409a59e4c4bb677ecf67d96440",
+      "sha256_after": "29fbab9f2c11a6a8acbd537acb6c9eaf560a48409a59e4c4bb677ecf67d96440",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "17_tests/test_v32_4_version_consistency.py",
+        "archive_path": "17_tests/archive/legacy/test_v32_4_version_consistency.py",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:55:38.741890+00:00",
+      "phase": "phase2",
+      "wave": 5,
+      "original_path": "17_tests/test_v33_0_autonomous_diagnostics.py",
+      "archive_path": "17_tests/archive/legacy/test_v33_0_autonomous_diagnostics.py",
+      "reason": "older_version_marker:33.0",
+      "size_bytes": 3575,
+      "sha256_before": "4bc2b56d45e21d007469b0e69f31e4f8522a35c8ea2a30dc5f9c6879be6159d2",
+      "sha256_after": "4bc2b56d45e21d007469b0e69f31e4f8522a35c8ea2a30dc5f9c6879be6159d2",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "17_tests/test_v33_0_autonomous_diagnostics.py",
+        "archive_path": "17_tests/archive/legacy/test_v33_0_autonomous_diagnostics.py",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:55:38.773737+00:00",
+      "phase": "phase2",
+      "wave": 5,
+      "original_path": "17_tests/test_v33_0_version_consistency.py",
+      "archive_path": "17_tests/archive/legacy/test_v33_0_version_consistency.py",
+      "reason": "older_version_marker:33.0",
+      "size_bytes": 1668,
+      "sha256_before": "a41839a023245022a4a0deb131518301c12cfb242a60be93fa6b7d720f7d8db7",
+      "sha256_after": "a41839a023245022a4a0deb131518301c12cfb242a60be93fa6b7d720f7d8db7",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "17_tests/test_v33_0_version_consistency.py",
+        "archive_path": "17_tests/archive/legacy/test_v33_0_version_consistency.py",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:55:38.802933+00:00",
+      "phase": "phase2",
+      "wave": 5,
+      "original_path": "31_reports/MIGRATION_REPORT_2026-06-09.md",
+      "archive_path": "31_reports/archive/reports/MIGRATION_REPORT_2026-06-09.md",
+      "reason": "dated_historical_report_or_note",
+      "size_bytes": 1124,
+      "sha256_before": "16fefa2925c53d322e147559d986e732276e201c98e7c7d5230b33b6976f4a31",
+      "sha256_after": "16fefa2925c53d322e147559d986e732276e201c98e7c7d5230b33b6976f4a31",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "31_reports/MIGRATION_REPORT_2026-06-09.md",
+        "archive_path": "31_reports/archive/reports/MIGRATION_REPORT_2026-06-09.md",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    },
+    {
+      "timestamp_utc": "2026-06-27T09:55:38.837287+00:00",
+      "phase": "phase2",
+      "wave": 5,
+      "original_path": "31_reports/Projekt_Kontinuum_Architekturpruefung_2026-06-09.md",
+      "archive_path": "31_reports/archive/reports/Projekt_Kontinuum_Architekturpruefung_2026-06-09.md",
+      "reason": "dated_historical_report_or_note",
+      "size_bytes": 5658,
+      "sha256_before": "7c0b4f59460213d4912bbe46a7e120bd3f5378b7d8ff5d43c828122542fb44aa",
+      "sha256_after": "7c0b4f59460213d4912bbe46a7e120bd3f5378b7d8ff5d43c828122542fb44aa",
+      "safety_check": {
+        "phase1_safe_without_reference_update": true,
+        "source_existed_before_move": true,
+        "target_inside_archive_structure": true,
+        "target_did_not_exist_before_move": true,
+        "hash_verified_after_move": true,
+        "no_delete_performed": true
+      },
+      "references_before": [],
+      "references_updated": [],
+      "verification_after_move": "pending_wave_verification",
+      "rollback": {
+        "original_path": "31_reports/Projekt_Kontinuum_Architekturpruefung_2026-06-09.md",
+        "archive_path": "31_reports/archive/reports/Projekt_Kontinuum_Architekturpruefung_2026-06-09.md",
+        "possible_until": "wave_completion_plus_24h"
+      }
+    }
+  ]
+}
