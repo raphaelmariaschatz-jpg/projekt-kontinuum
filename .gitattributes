@@ -1,0 +1,21 @@
+# Textdateien
+* text=auto
+
+# Python
+*.py text eol=lf
+
+# Markdown
+*.md text eol=lf
+
+# JSON
+*.json text eol=lf
+*.jsonl text eol=lf
+
+# Windows Batch
+*.bat text eol=crlf
+
+# Binärdateien
+*.zip binary
+*.db binary
+*.sqlite binary
+*.gguf binary
