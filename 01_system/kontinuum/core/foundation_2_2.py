@@ -83,6 +83,20 @@ FOUNDATION_2_2_RULES: tuple[FoundationRule, ...] = (
         "Versuche es beim naechsten Mal immer besser zu machen.",
         "highest",
     ),
+    FoundationRule(
+        "FND-ID-049",
+        "canonical_active_directory",
+        "Canonical Active Directory Policy",
+        "Aktive Projektordner duerfen ausschliesslich aktuell kanonische Dateien enthalten; historische, ersetzte oder nicht mehr kanonische Artefakte gehoeren in die vorgesehenen archive-Strukturen.",
+        "highest",
+    ),
+    FoundationRule(
+        "FND-ID-050",
+        "canonical_change_policy",
+        "Canonical Change Policy",
+        "Kanonische Dateien duerfen nicht dauerhaft direkt und unkontrolliert veraendert werden; jede kanonische Aenderung benoetigt Proposal, Pre-Audit, Governance Review, kontrolliertes Update, CADP-/Dokumentationssync, Release-Integrity-Nachweis und Canonical Acceptance.",
+        "highest",
+    ),
 )
 
 

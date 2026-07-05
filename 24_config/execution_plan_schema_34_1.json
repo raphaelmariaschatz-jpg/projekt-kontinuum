@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0",
+  "release": "34.1",
+  "artifact": "ExecutionPlan",
+  "policy": "Execution Planner 1.0 beschreibt nur Planstruktur und fuehrt keine Agenten aus.",
+  "required_fields": [
+    "plan_id",
+    "request_id",
+    "created_at",
+    "required_capabilities",
+    "order",
+    "parallel_groups",
+    "estimated_priority",
+    "governance_level",
+    "expected_agents",
+    "status",
+    "steps",
+    "validation",
+    "sources"
+  ],
+  "step_required_fields": [
+    "step_id",
+    "capability_id",
+    "order",
+    "parallel_group",
+    "dependencies",
+    "governance_level",
+    "expected_agent",
+    "status",
+    "priority",
+    "validation"
+  ],
+  "status_values": [
+    "empty",
+    "ready",
+    "blocked"
+  ],
+  "step_status_values": [
+    "planned",
+    "blocked"
+  ],
+  "governance_levels": [
+    "none",
+    "standard",
+    "controlled",
+    "governance_required",
+    "foundation"
+  ],
+  "validation_checks": [
+    "foundation_rules_ok",
+    "governance_rules_ok",
+    "cam_status_ok",
+    "ccp_status_ok",
+    "capability_resolution_complete",
+    "missing_agents",
+    "cycles",
+    "duplicate_steps",
+    "duplicate_capabilities"
+  ],
+  "handoff_target": "future_orchestrator_core",
+  "executes_agents": false
+}

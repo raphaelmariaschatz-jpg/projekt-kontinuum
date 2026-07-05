@@ -1,6 +1,6 @@
 # Projekt Kontinuum – Konsolidierte Master-Roadmap 2026–2028
 
-**Stand:** 22.06.2026  
+**Stand:** 03.07.2026  
 **Vision und Schöpfer:** Raphael Schatz  
 **Ausgangspunkt:** Kontinuum 34.1 mit Foundation Reasoning Layer 4.1 und Release Integrity Framework 1.0 ist umgesetzt und verifiziert.  
 **Quellenbasis:** die bisherige konsolidierte `roadmap.md` sowie die sechs am 22.06.2026 aktualisierten Grundlagendokumente im Ordner `14_documents/fundamentale Gedanken`.
@@ -85,6 +85,55 @@ Zu den umgesetzten tragenden Komponenten gehören außerdem:
 
 Nächste CAM-Ausbaustufe: **CAM 1.3 – Canonical API Registry**.
 
+### Architekturentscheid 03.07.2026 – Orchestrator vor Agentenwachstum
+
+Der naechste grosse Entwicklungsschritt ist nicht primaer die Ergaenzung
+weiterer Agenten, sondern ein sauberer Orchestrator Core mit Capability
+Resolution. Agenten werden kuenftig als Anbieter von Faehigkeiten betrachtet;
+Capabilities sind die primaere Steuerungs- und Planungsgrundlage.
+
+Priorisierte Reihenfolge:
+
+1. Capability Resolution Engine 1.0 als read-only Resolver und
+   Empfehlungsschicht.
+2. Orchestrator Core 1.0 als regelgebundene Planungs- und Steuerungsschicht.
+3. Priorisierung und Governance-Check pro Capability-Schritt.
+4. Agentenauswahl ohne willkuerliche Agentenausfuehrung.
+5. Review- und CMM-Rueckfuehrung mit Provenienz.
+6. Erst danach weitere Spezialagenten oder externe Agentenbruecken.
+
+Zielarchitektur:
+
+```text
+User -> Request Router -> Capability Resolution Engine -> Orchestrator Core
+     -> Governance -> Agenten -> Review -> CMM / Learning
+```
+
+Orchestrator-Entscheidungen sind governancepflichtig, sobald sie
+Agentenketten, Schreiboperationen, externe Systeme, Review-Uebergaben oder
+CMM-/Learning-Handoffs vorbereiten.
+
+
+### Architekturabschluss 05.07.2026 - Beginn Phase 2
+
+Mit AGF 1.0 ist die grundlegende Architekturentwicklung abgeschlossen. Projekt Kontinuum wechselt offiziell von Phase 1 - Architekturentwicklung zu Phase 2 - Controlled Integration & Operation.
+
+Neue Hauptprioritaeten:
+
+1. Artifact Lifecycle Migration gemaess ALP 2.0 und Migration Plan 1.0.
+2. Runtime-Migration des Orchestrator Core mit Feature-Flag und Rueckfallstrategie.
+3. Regressionstests fuer Dialog, FileAgent, WebAgent, Knowledge, Memory, Status, Governance und Runtime.
+4. Runtime-Freigabe nach erfolgreicher kontrollierter Integration.
+5. Governance Dashboard / Operations Monitor.
+6. Canonical Data Management und Daten-Lineage fuer `32_data`.
+7. Performance, Laufzeitbeobachtung und Stabilisierung.
+8. Neue Agenten und Faehigkeiten nach AGF-Prozess.
+
+Phase-2-Leitlinie:
+
+```text
+Architektur nicht weiter ausdehnen, sondern kontrolliert integrieren, betreiben, messen und erweitern.
+```
 ## 4. Verbindliche Entwicklungs- und Release-Regeln
 
 Jede weitere Version muss:
@@ -573,16 +622,16 @@ Lokale Modellfamilien wie Qwen, Llama, Gemma und DeepSeek werden nicht pauschal 
 
 ## 12. Unmittelbar nächste Arbeitsrunde
 
-1. Vollständige grüne 34.1-Baseline und kanonischen Ist-Stand dokumentieren.
-2. Anforderungen und Bedrohungsmodell für die Import- und Quarantänezone von 35.0 festlegen.
-3. ClamAV-, YARA- und Sandbox-Optionen lokal auf Machbarkeit und Lizenz prüfen.
-4. priorisierte Formatmatrix mit Parsern, Testkorpus und Sicherheitsrisiken erstellen.
-5. ein gemeinsames Analyseergebnis-Schema für Inhalt, Provenienz, Vertrauen, Unsicherheit und Freigabestatus definieren.
-6. MVP für TXT/Markdown/PDF und Python-Quellcode in isolierter Umgebung bauen.
-7. Internal Error & Solution Center an strukturierte Codebefunde anbinden.
-8. GUI-Navigation und zentrale Aktivitäts-/Statusanzeige entwerfen.
-9. Sicherheits-, Integrations-, Regression- und Rollbacktests durchführen.
-10. Projektstatus, Chronik, Referenzwerk und Wiedereinstieg aktualisieren.
+1. Artifact Lifecycle Migration Plan 1.0 in freigegebene Migrationswellen ueberfuehren.
+2. Historische Tests, Tools, Agenten, Startskripte und Datenartefakte gemaess ALP 2.0 klassifizieren und absichern.
+3. Feature-Flag `orchestrator_runtime_enabled` pruefen oder einfuehren.
+4. Runtime-Migrationsbruecke `PromptOrchestrator -> Execution Planner -> Orchestrator Core` kontrolliert vorbereiten.
+5. Regressionstests fuer Dialog, FileAgent, WebAgent, Knowledge, Memory, Status, Governance und Runtime definieren und ausfuehren.
+6. Release Integrity um ALP-/AGF-Bezuege, Migration-IDs und Runtime-Gates schaerfen.
+7. Governance Dashboard / Operations Monitor entwerfen.
+8. Canonical Data Management und Daten-Lineage fuer `32_data` planen.
+9. Performance-, Stabilitaets- und Monitoring-Baselines erstellen.
+10. Danach funktionale Erweiterungen, neue Agenten und Import-/Quarantaene-Faehigkeiten nach AGF-Prozess priorisieren.
 
 ## 13. Gesamterfolgskriterien
 
@@ -606,3 +655,4 @@ Projekt Kontinuum soll Schritt für Schritt zu einer lokalen, sicheren, dialogf�
 
 **Erkennen – Schaffen – Vollenden**  
 **Der Weg ist das Ziel**
+

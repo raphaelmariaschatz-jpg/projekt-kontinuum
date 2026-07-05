@@ -11,6 +11,12 @@ Grundlagen:
 - Schöpferwissen und Identity Core
 - Foundation Rules und Leitprinzipien
 - Foundation 2.2 mit FND-ID-048 als eigenständigem Improvement Principle
+- FND-ID-049 / CADP 1.0 als Foundation-Regel fuer kanonisch reine aktive
+  Projektordner
+- FND-ID-050 / CCP 1.0 als Foundation-Regel fuer kontrollierte kanonische
+  Aenderungen
+- Architecture Governance Framework 1.0 als Architekturverfassung fuer
+  nachvollziehbare, pruefbare und Foundation-kompatible Architekturentscheidungen
 - Foundation-2.1-Kompatibilitätspfad für bestehende Importe
 - Moral Core
 - Foundation Memory
@@ -30,11 +36,19 @@ Systemweit verbindliche Strukturen:
 - Canonical Architecture Manager
 - Canonical Decision Engine 2.0 als Entscheidungsschicht fuer
   Projektartefakte
-- Artefakt-Lifecycle-Policy und Migrationsarchiv
+- Architecture Governance Framework 1.0 als uebergeordnete Governance-Richtlinie
+- Artifact Lifecycle Policy 2.0, Artefakt-Lifecycle-Policy und Migrationsarchiv
 - Internet Knowledge Governance 1.0 als Policy fuer kontrollierte
   Internet-Quellen, Provenienz, Review und Kanon-Uebernahme
 - Canonical Knowledge Decision Engine 1.0 als getrennte
   Wissensentscheidungsschicht ohne automatische Kanon-Uebernahme
+- CAIM als kanonische Agenten- und Capability-Quelle
+- Capability Resolution Engine 1.0 als read-only Empfehlungsschicht fuer
+  Capability-Aufloesung, Kandidatenpriorisierung und Governance-/Review-/
+  CMM-Vorbereitung
+- Orchestrator Core 1.0 als priorisierter Architekturmeilenstein fuer
+  regelgebundene Ausfuehrungsplanung nach Router-, CRE- und Governance-
+  Entscheidung
 
 Änderungspolitik: `release_controlled_migration`.
 
@@ -55,6 +69,10 @@ Austauschbare Implementierungen unter stabilen Verträgen:
   Extraktion, Hashing und Review-Uebergabe
 - `CanonicalKnowledgeDecisionEngine` als reine Bewertungs- und
   Review-Entscheidungsschicht fuer Wissensobjekte
+- `CapabilityResolutionEngine` als nicht-ausfuehrende Resolver-Schicht
+  zwischen Request Router, CAIM, Governance und Agenten
+- `PromptOrchestrator` als aktuelle Ausfuehrungsschicht und kuenftiger
+  Migrationsanker fuer Orchestrator Core 1.0
 
 Änderungspolitik: `replaceable_with_contract_checks`.
 
@@ -153,6 +171,56 @@ Review- und Provenienzartefakte als driftpflichtige Learning-/Governance-
 Artefakte. Automatisches Loeschen, automatisches Verschieben und automatische
 kanonische Wissensuebernahme bleiben ausgeschlossen.
 
+## Capability Resolution Engine 1.0
+
+Die Capability Resolution Engine 1.0 fuegt eine vorbereitende Resolver-Schicht
+zwischen Request Router und Orchestrator/Agentenausfuehrung ein. Sie arbeitet
+read-only, nutzt CAIM als bestehende Quelle fuer Agenten- und Capability-Daten
+und erzeugt strukturierte Empfehlungen statt direkter Ausfuehrung.
+
+Kanonischer Zielpfad:
+
+```text
+User -> Request Router -> Capability Resolution Engine -> Priorisierung
+     -> Governance -> Agent-Auswahl -> Review -> CMM / Learning
+```
+
+CRE 1.0 bewertet Single-Intent- und Multi-Intent-Eingaben, leitet
+Capabilities ab, fragt CAIM nach Kandidaten, priorisiert passende Agenten und
+markiert Governance-, Human-Approval-, Review- und CMM-Relevanz. Sie ersetzt
+den PromptOrchestrator noch nicht. Der aktuelle Multi-Intent-Fix fuer
+Projektordnerfreigabe plus Diagnostikbericht bleibt bis zur CRE-1.1-Migration
+ein kontrollierter Uebergangspfad.
+
+## Orchestrator Core 1.0 – Zielarchitektur
+
+Orchestrator Core 1.0 ist der naechste priorisierte Architekturbaustein nach
+CRE 1.0. Er soll nicht willkuerlich Agenten auswaehlen, sondern regelgebunden
+aus Router-, CRE-, Governance-, Review- und CMM-Signalen einen nachvollziehbaren
+Ausfuehrungsplan erzeugen.
+
+Abgrenzung:
+
+- Request Router klassifiziert Eingaben.
+- CRE loest Capabilities aus der Capability Registry und Kandidaten aus CAIM auf.
+- Governance entscheidet ueber blockieren, freigeben, menschliche Freigabe,
+  read-only Behandlung und Protokollierung.
+- Orchestrator Core plant und koordiniert die erlaubte Ausfuehrung.
+- Agenten sind Anbieter von Faehigkeiten, nicht die primaere Steuerungseinheit.
+- Review und CMM nehmen Ergebnisse nur nach Policy und Provenienz auf.
+
+Zielablauf:
+
+```text
+User -> Request Router -> Capability Resolution Engine -> Priorisierung
+     -> Governance -> Agent-Auswahl -> Review -> CMM / Learning
+```
+
+Orchestrator-Entscheidungen sind governancepflichtig, sobald sie mehr als eine
+read-only Antwort erzeugen, Agentenketten planen, Schreiboperationen
+vorbereiten, externe Systeme beruehren oder Ergebnisse an Review/CMM/Learning
+uebergeben.
+
 ## Kanonische Entscheidungsarchitektur CDE 2.0 / CKDE 1.0
 
 Kontinuum 34.1 trennt zwei Entscheidungswege verbindlich:
@@ -229,7 +297,23 @@ CAM ist eine read-only prüfende Kernkomponente. Er:
 - bildet alle vier Architekturebenen mit eigener Änderungspolitik ab;
 - überwacht die verbindliche Artifact Lifecycle Policy samt Archivpfaden,
   fünf Freigabebedingungen und dauerhaft aufbewahrten signierten Nachweisen;
+- überwacht CADP 1.0 als Foundation-Regel FND-ID-049 fuer kanonisch reine
+  aktive Projektordner, Archivpflicht, Referenzpruefung und Abschlussaudit;
+- überwacht CCP 1.0 als Foundation-Regel FND-ID-050 fuer Change Proposal,
+  Pre-Audit, Governance Review, kontrolliertes Update, CADP-/Dokumentationssync,
+  Release Integrity Gate und Canonical Acceptance;
 - liefert eine blockierende Prüfung an Release Integrity.
+
+CADP 1.0 ist eine technische Architekturregel, nicht nur eine Codex-
+Arbeitsanweisung. CAM prueft die Policy ueber
+`24_config/canonical_architecture_34_1.json`; Orchestrator Core 1.0 muss diese
+Regel kuenftig vor produktiven Archivierungs-, Migrations- und Release-
+Schritten beruecksichtigen.
+CCP 1.0 ergaenzt CADP 1.0. CADP regelt, wo aktive und historische Artefakte
+liegen duerfen; CCP regelt, wie kanonische Aenderungen entstehen, geprueft,
+kontrolliert uebernommen und akzeptiert werden. CAM prueft die Policy ueber
+`canonical_change_policy`; Orchestrator Core 1.0 muss diese Regel kuenftig vor
+produktiven kanonischen Aenderungen beruecksichtigen.
 
 CAM nimmt keine selbstständigen Architekturänderungen vor. Archivierungen und
 sonstige Änderungen erfolgen ausschließlich über kontrollierte Migrationen.
@@ -310,3 +394,102 @@ Das Release Integrity Framework nutzt
 `continuous_canonical_engine_check()`. HIGH_DRIFT und BLOCKING_DRIFT blockieren
 die Release-Freigabe; EXPECTED_DRIFT bleibt zulaessig, solange keine offenen
 Hooks oder blockierenden Findings vorliegen.
+
+## Nachtrag 2026-07-02 – Learning Agent 1.2 / Continuous Learning Governance 1.1
+
+Der Lernprozess ist ab Learning Agent 1.2 und Continuous Learning Governance
+(CLG) 1.1 als kontrollierter Governance-Pfad dokumentiert. Learning Agent 1.2
+bewertet Quellen weiterhin nur im Read-only-Proposal-Modus. CLG 1.1 ist keine
+Wissensbewertungsschicht, sondern die Orchestrierungs- und Governance-Schicht
+fuer Proposal-Lebenszyklen, Handoffs, Audit und Compliance.
+
+```text
+                    Foundation
+                         |
+                         v
+              Canonical Architecture
+                         |
+                         v
+                       CAM
+                         |
+                         v
+                 Governance Layer
+                         |
+        +----------------+----------------+
+        |                |                |
+        v                v                v
+ Request Router   Knowledge Agent   Memory Agent
+        |                |                |
+        +----------------+----------------+
+                         |
+                         v
+                Learning Agent 1.2
+                         |
+                         v
+                 Learning Queue
+                         |
+                         v
+       Continuous Learning Governance 1.1
+                         |
+                         v
+               Audit / Compliance / Drift
+```
+
+Kanonische Dateien des Learning-Governance-Pfads:
+
+- `12_agents/learning_agent_1_2.py`
+- `12_agents/continuous_learning_governance_1_1.py`
+- `33_learning/learning_queue.json`
+- `33_learning/learning_history.json`
+- `33_learning/governance_events.json`
+- `31_reports/learning_agent/learning_agent_1_2_status_report.md`
+- `31_reports/clg_1_1_status_report.md`
+
+Lifecycle:
+
+```text
+pending -> under_review -> approved -> knowledge_handoff -> memory_handoff -> completed
+pending -> rejected
+pending -> duplicate -> archived
+```
+
+Schutzgrenzen:
+
+- keine automatische Wissensuebernahme;
+- keine direkte Aenderung an `03_memory`, `04_knowledge` oder `32_data`;
+- Learning Agent erzeugt ausschliesslich Proposals;
+- CLG validiert Statuswechsel und dokumentiert Governance Events;
+- CAM, Knowledge Agent und Memory Agent werden nur ueber definierte Handoffs
+  adressiert.
+
+## Execution Planner 1.0
+
+Execution Planner 1.0 ist die deterministische Planungsschicht zwischen Capability Resolution Engine und Orchestrator Core. Er uebernimmt CRE-Resolutionen, erzeugt daraus ausschliesslich einen `ExecutionPlan` und startet keine Agenten.
+
+Kanonische Kette:
+
+```text
+User
+v
+Request Router
+v
+Capability Resolution Engine
+v
+Execution Planner
+v
+Orchestrator Core
+v
+Governance
+v
+Agent
+v
+Review
+v
+Canonical Memory Manager
+```
+
+CRE bleibt fuer Capabilities, Prioritaeten und Governance-Hinweise verantwortlich. Der Execution Planner bestimmt Reihenfolge, Abhaengigkeiten, Parallelgruppen, erwartete Agenten, Governance-Level und Planstatus. Runtime, Retry, Monitoring und Agentenstart bleiben ausserhalb des Planners und gehoeren erst in den zukuenftigen Orchestrator Core.
+
+
+
+

@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "creator": {
+    "id": "creator_001",
+    "name": "Raphael Schatz"
+  },
+  "user": {
+    "preferred_address": "Raphael"
+  },
+  "assistant": {
+    "name": "Kontinuum",
+    "short_name": "K"
+  },
+  "roles": {
+    "creator": [
+      "super_admin",
+      "system_owner"
+    ],
+    "assistant": [
+      "foundation_ai"
+    ]
+  },
+  "permissions": {
+    "creator": [
+      "full_system_control",
+      "configuration_write",
+      "governance_approval",
+      "foundation_approval",
+      "architecture_approval",
+      "agent_management"
+    ]
+  },
+  "system_identity": {
+    "foundation_component": "Canonical Identity Manager",
+    "version": "1.0"
+  },
+  "identity_versions": []
+}

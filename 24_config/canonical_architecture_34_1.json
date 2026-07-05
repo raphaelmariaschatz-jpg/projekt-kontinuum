@@ -1,551 +1,722 @@
 {
-  "version": "34.1",
-  "manager_version": "1.2",
-  "canonical_project_structure": "14_documents/PROJEKTSTRUKTUR_34_1.md",
-  "project_structure_archive": "02_versions/projektstrukturen",
-  "historical_project_structures": [
-    "PROJEKTSTRUKTUR_24_3.md",
-    "PROJEKTSTRUKTUR_25_0.md",
-    "PROJEKTSTRUKTUR_26_0.md",
-    "PROJEKTSTRUKTUR_27_0.md",
-    "PROJEKTSTRUKTUR_27_1.md",
-    "PROJEKTSTRUKTUR_27_2.md",
-    "PROJEKTSTRUKTUR_28_0.md",
-    "PROJEKTSTRUKTUR_28_1.md",
-    "PROJEKTSTRUKTUR_28_2.md",
-    "PROJEKTSTRUKTUR_29_0.md",
-    "PROJEKTSTRUKTUR_29_1.md",
-    "PROJEKTSTRUKTUR_30_0.md",
-    "PROJEKTSTRUKTUR_31_0.md",
-    "PROJEKTSTRUKTUR_32_0.md",
-    "PROJEKTSTRUKTUR_32_2.md",
-    "PROJEKTSTRUKTUR_32_3.md",
-    "PROJEKTSTRUKTUR_32_4.md",
-    "PROJEKTSTRUKTUR_33_0.md",
-    "PROJEKTSTRUKTUR_34_0.md"
-  ],
-  "change_policies": {
-    "foundation": "protected_migration_only",
-    "canonical": "release_controlled_migration",
-    "operational": "replaceable_with_contract_checks",
-    "learning": "dynamic_with_provenance_and_audit"
-  },
-  "layers": {
-    "foundation": [
-      {
-        "name": "Foundation Rules",
-        "path": "01_system/kontinuum/core/foundation_2_2.py"
-      },
-      {
-        "name": "Foundation 2.1 Compatibility",
-        "path": "01_system/kontinuum/core/foundation_2_1.py"
-      },
-      {
-        "name": "Creator Knowledge",
-        "path": "03_memory/core_foundations.json"
-      },
-      {
-        "name": "Moral Core",
-        "path": "01_system/kontinuum/core/moral_core.py"
-      },
-      {
-        "name": "Foundation Memory",
-        "path": "01_system/kontinuum/core/foundation_memory.py"
-      },
-      {
-        "name": "Identity Core",
-        "path": "03_memory/core_identity.json"
-      }
-    ],
-    "canonical": [
-      {
-        "name": "Projektstruktur",
-        "path": "14_documents/PROJEKTSTRUKTUR_34_1.md"
-      },
-      {
-        "name": "Architekturmodell",
-        "path": "14_documents/KANONISCHES_ARCHITEKTURMODELL_34_1.md"
-      },
-      {
-        "name": "CAM",
-        "path": "01_system/kontinuum/core/canonical_architecture.py"
-      },
-      {
-        "name": "Canonical Database Manager",
-        "path": "01_system/kontinuum/core/canonical_database.py"
-      },
-      {
-        "name": "Canonical Artifact Manager",
-        "path": "01_system/kontinuum/core/canonical_artifacts.py"
-      },
-      {
-        "name": "Canonical Decision Engine 2.0 Policy",
-        "path": "24_config/canonical_decision_engine_2_0.json"
-      },
-      {
-        "name": "Agent Registry",
-        "path": "01_system/kontinuum/agents/agent_registry.py"
-      },
-      {
-        "name": "API Registry",
-        "path": "24_config/canonical_api_registry_34_1.json"
-      },
-      {
-        "name": "Artifact Registry",
-        "path": "24_config/canonical_artifacts_34_1.json"
-      },
-      {
-        "name": "Artefakt-Lifecycle-Policy",
-        "path": "14_documents/ARBEITSREGEL_ARTEFAKT_LIFECYCLE_34_1.md"
-      },
-      {
-        "name": "Migration Artifacts",
-        "path": "02_versions/migration_artifacts"
-      },
-      {
-        "name": "Release Integrity",
-        "path": "01_system/kontinuum/core/release_integrity.py"
-      },
-      {
-        "name": "Continuous Governance System",
-        "path": "01_system/kontinuum/core/continuous_governance.py"
-      },
-      {
-        "name": "Continuous Governance Config",
-        "path": "24_config/continuous_governance_34_1.json"
-      },
-      {
-        "name": "Canonical Governance Baseline",
-        "path": "24_config/canonical_governance_baseline_34_1.json"
-      },
-      {
-        "name": "Internet Knowledge Governance Policy",
-        "path": "24_config/internet_knowledge_governance_1_0.json"
-      },
-      {
-        "name": "Canonical Knowledge Decision Engine 1.0 Policy",
-        "path": "24_config/canonical_knowledge_decision_engine_1_0.json"
-      },
-      {
-        "name": "Internet Learning Policy",
-        "path": "24_config/internet_learning_policy_34_1.json"
-      },
-      {
-        "name": "WebAgent 1.0 Policy",
-        "path": "24_config/web_agent_1_0.json"
-      },
-      {
-        "name": "FileAgent 1.0 Policy",
-        "path": "24_config/file_agent_1_0.json"
-      },
-      {
-        "name": "Continuous Canonical Engine Policy",
-        "path": "24_config/continuous_canonical_engine_34_1.json"
-      }
-    ],
-    "operational": [
-      {
-        "name": "Agenten",
-        "path": "01_system/kontinuum/agents"
-      },
-      {
-        "name": "GUI",
-        "path": "11_gui/desktop_gui.py"
-      },
-      {
-        "name": "Connectoren",
-        "path": "05_connectors"
-      },
-      {
-        "name": "Modelle",
-        "path": "07_models"
-      },
-      {
-        "name": "Tools",
-        "path": "01_system/kontinuum/tools"
-      },
-      {
-        "name": "Suchsystem",
-        "path": "01_system/kontinuum/core/search_router.py"
-      },
-      {
-        "name": "InternetLearningService",
-        "path": "01_system/kontinuum/core/internet_learning.py"
-      },
-      {
-        "name": "WebAgentService",
-        "path": "01_system/kontinuum/core/web_agent.py"
-      },
-      {
-        "name": "FileAgentService",
-        "path": "01_system/kontinuum/core/file_agent.py"
-      },
-      {
-        "name": "CanonicalKnowledgeDecisionEngine",
-        "path": "01_system/kontinuum/core/canonical_knowledge_decision.py"
-      },
-      {
-        "name": "Continuous Canonical Engine Runtime",
-        "path": "01_system/kontinuum/core/continuous_canonical_engine.py"
-      }
-    ],
-    "learning": [
-      {
-        "name": "Wissen",
-        "path": "04_knowledge"
-      },
-      {
-        "name": "Forschung",
-        "path": "26_research"
-      },
-      {
-        "name": "Chronik",
-        "path": "22_project_chronicle"
-      },
-      {
-        "name": "Lernprojekte",
-        "path": "06_learning"
-      },
-      {
-        "name": "Wissensgraph",
-        "path": "32_data"
-      },
-      {
-        "name": "Daten",
-        "path": "32_data"
-      },
-      {
-        "name": "Internet-Learning Queue",
-        "path": "32_data/internet_learning_queue"
-      },
-      {
-        "name": "Internet-Learning Review",
-        "path": "32_data/internet_learning_review"
-      },
-      {
-        "name": "WebAgent Sources",
-        "path": "32_data/web_agent_sources"
-      },
-      {
-        "name": "FileAgent Sources",
-        "path": "32_data/file_agent_sources"
-      },
-      {
-        "name": "FileAgent Review",
-        "path": "32_data/file_agent_review"
-      },
-      {
-        "name": "CKDE Knowledge Evaluations",
-        "path": "32_data"
-      },
-      {
-        "name": "CKDE Source Ratings",
-        "path": "32_data"
-      },
-      {
-        "name": "CKDE Knowledge Conflicts",
-        "path": "32_data"
-      },
-      {
-        "name": "CKDE Evaluation History",
-        "path": "32_data"
-      },
-      {
-        "name": "Canonical Event Bus Log",
-        "path": "31_reports/events/canonical_events.jsonl"
-      },
-      {
-        "name": "Canonical Event Processing Log",
-        "path": "31_reports/events/event_processing_log.jsonl"
-      },
-      {
-        "name": "Canonical Drift Log",
-        "path": "31_reports/drift/drift_events.jsonl"
-      },
-      {
-        "name": "Canonical Governance Hook Log",
-        "path": "31_reports/governance/governance_hooks.jsonl"
-      }
-    ]
-  },
-  "required_folders": [
-    "01_system/kontinuum/core",
-    "01_system/kontinuum/agents",
-    "02_versions/projektstrukturen",
-    "02_versions/migration_artifacts",
-    "03_memory",
-    "04_knowledge",
-    "05_connectors",
-    "06_learning",
-    "07_models",
-    "11_gui",
-    "14_documents",
-    "16_installation",
-    "22_project_chronicle",
-    "24_config",
-    "26_research",
-    "32_data",
-    "32_data/internet_learning_queue",
-    "32_data/internet_learning_review",
-    "32_data/web_agent_sources",
-    "32_data/file_agent_sources",
-    "32_data/file_agent_review",
-    "01_system/archive",
-    "02_versions/archive",
-    "03_memory/archive",
-    "04_knowledge/archive",
-    "05_connectors/archive",
-    "06_learning/archive",
-    "07_models/archive",
-    "08_workspace_index/archive",
-    "09_backups/archive",
-    "10_security/archive",
-    "11_gui/archive",
-    "12_agents/archive",
-    "13_tools/archive",
-    "14_documents/archive",
-    "15_exports/archive",
-    "16_installation/archive",
-    "17_tests/archive",
-    "18_autonomous_learning/archive",
-    "19_university_sources/archive",
-    "20_library_sources/archive",
-    "21_internet_sources/archive",
-    "22_project_chronicle/archive",
-    "23_recovery/archive",
-    "24_config/archive",
-    "25_voice/archive",
-    "26_research/archive",
-    "27_logs/archive",
-    "30_import/archive",
-    "31_reports/archive",
-    "32_data/archive",
-    "31_reports/governance",
-    "31_reports/events",
-    "31_reports/drift"
-  ],
-  "entrypoints": [
-    "11_gui/desktop_gui.py",
-    "16_installation/START_GUI.bat",
-    "16_installation/START_KONTINUUM_34_1.bat",
-    "16_installation/TEST_KONTINUUM_34_1.bat",
-    "16_installation/RELEASE_GATE_34_1.bat"
-  ],
-  "registries": [
-    "01_system/kontinuum/agents/agent_registry.py",
-    "01_system/kontinuum/tools/tool_registry.py",
-    "11_gui/gui_manifest.json",
-    "24_config/canonical_api_registry_34_1.json",
-    "24_config/canonical_artifacts_34_1.json",
-    "24_config/canonical_decision_engine_2_0.json",
-    "24_config/canonical_knowledge_decision_engine_1_0.json",
-    "24_config/web_agent_1_0.json",
-    "24_config/file_agent_1_0.json",
-    "24_config/continuous_governance_34_1.json",
-    "24_config/canonical_governance_baseline_34_1.json",
-    "24_config/continuous_canonical_engine_34_1.json"
-  ],
-  "artifact_lifecycle": {
-    "version": "CAM 1.1",
-    "policy": "24_config/retention_policy.json",
-    "documentation": "14_documents/ARBEITSREGEL_ARTEFAKT_LIFECYCLE_34_1.md",
-    "migration_archive": "02_versions/migration_artifacts",
-    "migration_report_backup": "09_backups/migration_reports",
-    "signed_evidence_archive": "02_versions/migration_artifacts/34_1_Foundation_2_2_CAM_1_1/release_evidence",
-    "required_signed_evidence": [
-      "baseline.json",
-      "audit_snapshot.json",
-      "release_gate.json"
-    ],
-    "release_requirements": [
-      "tests_green",
-      "status_green",
-      "release_gate_green",
-      "documentation_updated",
-      "codex_release_confirmed"
-    ],
-    "valuable_artifacts": "retain_until_release_then_archive",
-    "reproducible_caches": "delete_when_identified",
-    "audit_and_migration_records": "never_auto_delete",
-    "main_archive_roots": [
-      "01_system/archive",
-      "02_versions/archive",
-      "03_memory/archive",
-      "04_knowledge/archive",
-      "05_connectors/archive",
-      "06_learning/archive",
-      "07_models/archive",
-      "08_workspace_index/archive",
-      "09_backups/archive",
-      "10_security/archive",
-      "11_gui/archive",
-      "12_agents/archive",
-      "13_tools/archive",
-      "14_documents/archive",
-      "15_exports/archive",
-      "16_installation/archive",
-      "17_tests/archive",
-      "18_autonomous_learning/archive",
-      "19_university_sources/archive",
-      "20_library_sources/archive",
-      "21_internet_sources/archive",
-      "22_project_chronicle/archive",
-      "23_recovery/archive",
-      "24_config/archive",
-      "25_voice/archive",
-      "26_research/archive",
-      "27_logs/archive",
-      "30_import/archive",
-      "31_reports/archive",
-      "32_data/archive"
-    ],
-    "archive_structure_policy": "each_active_main_folder_has_archive_subfolder",
-    "active_area_policy": "productive_or_canonical_only",
-    "historical_artifact_policy": "archive_in_respective_main_folder_archive",
-    "pre_move_safety_check": [
-      "current_usage_checked",
-      "canonical_status_checked",
-      "dependencies_checked",
-      "references_checked",
-      "archive_is_safe"
-    ],
-    "post_archive_reference_check": [
-      "documentation",
-      "manifests",
-      "registries",
-      "configuration",
-      "start_scripts",
-      "tests",
-      "build_processes",
-      "release_files"
-    ],
-    "delete_policy": "manual_only_by_raphael",
-    "release_archive_review": "required_after_each_release"
-  },
-  "apis": [
-    {
-      "path": "01_system/kontinuum/core/foundation_2_2.py",
-      "symbols": [
-        "FoundationAPI",
-        "FoundationRegistry",
-        "FoundationStatusCenter"
-      ]
-    },
-    {
-      "path": "01_system/kontinuum/core/canonical_architecture.py",
-      "symbols": [
-        "CanonicalArchitectureManager"
-      ]
-    },
-    {
-      "path": "01_system/kontinuum/core/canonical_database.py",
-      "symbols": [
-        "CanonicalDatabaseManager"
-      ]
-    },
-    {
-      "path": "01_system/kontinuum/core/canonical_api_registry.py",
-      "symbols": [
-        "CanonicalAPIRegistryManager"
-      ]
-    },
-    {
-      "path": "01_system/kontinuum/core/canonical_artifacts.py",
-      "symbols": [
-        "CanonicalArtifactManager"
-      ]
-    },
-    {
-      "path": "01_system/kontinuum/core/release_integrity.py",
-      "symbols": [
-        "ReleaseIntegrityFramework"
-      ]
-    },
-    {
-      "path": "01_system/kontinuum/core/continuous_governance.py",
-      "symbols": [
-        "ContinuousGovernanceSystem",
-        "GovernanceDecision"
-      ]
-    }
-  ],
-  "api_registry": [
-    "FoundationAPI",
-    "FoundationRegistry",
-    "FoundationStatusCenter",
-    "CanonicalArchitectureManager",
-    "CanonicalDatabaseManager",
-    "CanonicalAPIRegistryManager",
-    "CanonicalArtifactManager",
-    "ReleaseIntegrityFramework",
-    "ContinuousGovernanceSystem",
-    "GovernanceDecision"
-  ],
-  "database": "32_data/kontinuum.db",
-  "required_tables": [
-    "audit_events",
-    "chronicle_entries",
-    "foundation_knowledge",
-    "foundation_memory",
-    "foundation_reasoning",
-    "foundation_decisions",
-    "knowledge_items",
-    "graph_nodes",
-    "graph_edges"
-  ],
-  "active_main_archive_roots": [
-    "01_system/archive",
-    "02_versions/archive",
-    "03_memory/archive",
-    "04_knowledge/archive",
-    "05_connectors/archive",
-    "06_learning/archive",
-    "07_models/archive",
-    "08_workspace_index/archive",
-    "09_backups/archive",
-    "10_security/archive",
-    "11_gui/archive",
-    "12_agents/archive",
-    "13_tools/archive",
-    "14_documents/archive",
-    "15_exports/archive",
-    "16_installation/archive",
-    "17_tests/archive",
-    "18_autonomous_learning/archive",
-    "19_university_sources/archive",
-    "20_library_sources/archive",
-    "21_internet_sources/archive",
-    "22_project_chronicle/archive",
-    "23_recovery/archive",
-    "24_config/archive",
-    "25_voice/archive",
-    "26_research/archive",
-    "27_logs/archive",
-    "30_import/archive",
-    "31_reports/archive",
-    "32_data/archive"
-  ],
-  "continuous_governance": {
-    "version": "1.0",
-    "module": "01_system/kontinuum/core/continuous_governance.py",
-    "configuration": "24_config/continuous_governance_34_1.json",
-    "documentation": "14_documents/PHASE3_CONTINUOUS_CANONICAL_GOVERNANCE_34_1.md",
-    "log": "31_reports/governance/phase3_continuous_governance_log.jsonl",
-    "mutation_policy": "read_only_classification; no_delete_no_auto_move; verified_change_only",
-    "phase2_batch_migration": "closed",
-    "baseline": "24_config/canonical_governance_baseline_34_1.json"
-  },
-  "continuous_canonical_engine": {
-    "version": "1.0",
-    "mode": "diagnostic_report_only",
-    "flow": "System Event -> Event Bus -> Canonical Decision Engine -> Drift Layer -> Governance Hooks -> Review/Gate/Release Decision",
-    "event_schema": "24_config/continuous_canonical_engine_34_1.json",
-    "release_gate_bridge": "ReleaseIntegrityFramework.continuous_canonical_engine_check",
-    "logs": [
-      "31_reports/events/canonical_events.jsonl",
-      "31_reports/events/event_processing_log.jsonl",
-      "31_reports/drift/drift_events.jsonl",
-      "31_reports/governance/governance_hooks.jsonl"
-    ]
-  }
+    "version":  "34.1",
+    "manager_version":  "1.2",
+    "canonical_project_structure":  "14_documents/PROJEKTSTRUKTUR_34_1.md",
+    "project_structure_archive":  "02_versions/projektstrukturen",
+    "historical_project_structures":  [
+                                          "PROJEKTSTRUKTUR_24_3.md",
+                                          "PROJEKTSTRUKTUR_25_0.md",
+                                          "PROJEKTSTRUKTUR_26_0.md",
+                                          "PROJEKTSTRUKTUR_27_0.md",
+                                          "PROJEKTSTRUKTUR_27_1.md",
+                                          "PROJEKTSTRUKTUR_27_2.md",
+                                          "PROJEKTSTRUKTUR_28_0.md",
+                                          "PROJEKTSTRUKTUR_28_1.md",
+                                          "PROJEKTSTRUKTUR_28_2.md",
+                                          "PROJEKTSTRUKTUR_29_0.md",
+                                          "PROJEKTSTRUKTUR_29_1.md",
+                                          "PROJEKTSTRUKTUR_30_0.md",
+                                          "PROJEKTSTRUKTUR_31_0.md",
+                                          "PROJEKTSTRUKTUR_32_0.md",
+                                          "PROJEKTSTRUKTUR_32_2.md",
+                                          "PROJEKTSTRUKTUR_32_3.md",
+                                          "PROJEKTSTRUKTUR_32_4.md",
+                                          "PROJEKTSTRUKTUR_33_0.md",
+                                          "PROJEKTSTRUKTUR_34_0.md"
+                                      ],
+    "change_policies":  {
+                            "foundation":  "protected_migration_only",
+                            "canonical":  "release_controlled_migration",
+                            "operational":  "replaceable_with_contract_checks",
+                            "learning":  "dynamic_with_provenance_and_audit"
+                        },
+    "layers":  {
+                   "foundation":  [
+                                      {
+                                          "name":  "Foundation Rules",
+                                          "path":  "01_system/kontinuum/core/foundation_2_2.py"
+                                      },
+                                      {
+                                          "name":  "Foundation 2.1 Compatibility",
+                                          "path":  "01_system/kontinuum/core/foundation_2_1.py"
+                                      },
+                                      {
+                                          "name":  "Foundation CADP 1.0",
+                                          "path":  "01_system/kontinuum/core/foundation_2_2.py"
+                                      },
+                                      {
+                                          "name":  "Creator Knowledge",
+                                          "path":  "03_memory/core_foundations.json"
+                                      },
+                                      {
+                                          "name":  "Moral Core",
+                                          "path":  "01_system/kontinuum/core/moral_core.py"
+                                      },
+                                      {
+                                          "name":  "Foundation Memory",
+                                          "path":  "01_system/kontinuum/core/foundation_memory.py"
+                                      },
+                                      {
+                                          "name":  "Identity Core",
+                                          "path":  "03_memory/core_identity.json"
+                                      }
+                                  ],
+                   "canonical":  [
+                                     {
+                                         "name":  "Projektstruktur",
+                                         "path":  "14_documents/PROJEKTSTRUKTUR_34_1.md"
+                                     },
+                                     {
+                                         "name":  "Architekturmodell",
+                                         "path":  "14_documents/KANONISCHES_ARCHITEKTURMODELL_34_1.md"
+                                     },
+                                     {
+                                         "name":  "CAM",
+                                         "path":  "01_system/kontinuum/core/canonical_architecture.py"
+                                     },
+                                     {
+                                         "name":  "Canonical Database Manager",
+                                         "path":  "01_system/kontinuum/core/canonical_database.py"
+                                     },
+                                     {
+                                         "name":  "Canonical Artifact Manager",
+                                         "path":  "01_system/kontinuum/core/canonical_artifacts.py"
+                                     },
+                                     {
+                                         "name":  "Canonical Decision Engine 2.0 Policy",
+                                         "path":  "24_config/canonical_decision_engine_2_0.json"
+                                     },
+                                     {
+                                         "name":  "Agent Registry",
+                                         "path":  "01_system/kontinuum/agents/agent_registry.py"
+                                     },
+                                     {
+                                         "name":  "API Registry",
+                                         "path":  "24_config/canonical_api_registry_34_1.json"
+                                     },
+                                     {
+                                         "name":  "Artifact Registry",
+                                         "path":  "24_config/canonical_artifacts_34_1.json"
+                                     },
+                                     {
+                                         "name":  "Artefakt-Lifecycle-Policy",
+                                         "path":  "14_documents/ARBEITSREGEL_ARTEFAKT_LIFECYCLE_34_1.md"
+                                     },
+                                     {
+                                         "name":  "Migration Artifacts",
+                                         "path":  "02_versions/migration_artifacts"
+                                     },
+                                     {
+                                         "name":  "Release Integrity",
+                                         "path":  "01_system/kontinuum/core/release_integrity.py"
+                                     },
+                                     {
+                                         "name":  "Continuous Governance System",
+                                         "path":  "01_system/kontinuum/core/continuous_governance.py"
+                                     },
+                                     {
+                                         "name":  "Continuous Governance Config",
+                                         "path":  "24_config/continuous_governance_34_1.json"
+                                     },
+                                     {
+                                         "name":  "Canonical Governance Baseline",
+                                         "path":  "24_config/canonical_governance_baseline_34_1.json"
+                                     },
+                                     {
+                                         "name":  "Internet Knowledge Governance Policy",
+                                         "path":  "24_config/internet_knowledge_governance_1_0.json"
+                                     },
+                                     {
+                                         "name":  "Canonical Knowledge Decision Engine 1.0 Policy",
+                                         "path":  "24_config/canonical_knowledge_decision_engine_1_0.json"
+                                     },
+                                     {
+                                         "name":  "Internet Learning Policy",
+                                         "path":  "24_config/internet_learning_policy_34_1.json"
+                                     },
+                                     {
+                                         "name":  "WebAgent 1.0 Policy",
+                                         "path":  "24_config/web_agent_1_0.json"
+                                     },
+                                     {
+                                         "name":  "FileAgent 1.0 Policy",
+                                         "path":  "24_config/file_agent_1_0.json"
+                                     },
+                                     {
+                                         "name":  "Continuous Canonical Engine Policy",
+                                         "path":  "24_config/continuous_canonical_engine_34_1.json"
+                                     },
+                                     {
+                                         "name":  "Capability Resolution Engine",
+                                         "path":  "01_system/kontinuum/core/capability_resolution_engine.py"
+                                     },
+                                     {
+                                         "name":  "Capability Registry",
+                                         "path":  "24_config/capability_registry_34_1.json"
+                                     },
+                                     {
+                                         "name":  "Execution Planner",
+                                         "path":  "01_system/kontinuum/core/execution_planner.py"
+                                     },
+                                     {
+                                         "name":  "Execution Plan Schema",
+                                         "path":  "24_config/execution_plan_schema_34_1.json"
+                                     },
+                                     {
+                                         "name":  "Orchestrator Core",
+                                         "path":  "01_system/kontinuum/core/orchestrator_core.py"
+                                     },
+                                     {
+                                         "name":  "Orchestrator Runtime Schema",
+                                         "path":  "24_config/orchestrator_runtime_schema_34_1.json"
+                                     }
+                                 ],
+                   "operational":  [
+                                       {
+                                           "name":  "Agenten",
+                                           "path":  "01_system/kontinuum/agents"
+                                       },
+                                       {
+                                           "name":  "GUI",
+                                           "path":  "11_gui/desktop_gui.py"
+                                       },
+                                       {
+                                           "name":  "Connectoren",
+                                           "path":  "05_connectors"
+                                       },
+                                       {
+                                           "name":  "Modelle",
+                                           "path":  "07_models"
+                                       },
+                                       {
+                                           "name":  "Tools",
+                                           "path":  "01_system/kontinuum/tools"
+                                       },
+                                       {
+                                           "name":  "Suchsystem",
+                                           "path":  "01_system/kontinuum/core/search_router.py"
+                                       },
+                                       {
+                                           "name":  "InternetLearningService",
+                                           "path":  "01_system/kontinuum/core/internet_learning.py"
+                                       },
+                                       {
+                                           "name":  "WebAgentService",
+                                           "path":  "01_system/kontinuum/core/web_agent.py"
+                                       },
+                                       {
+                                           "name":  "FileAgentService",
+                                           "path":  "01_system/kontinuum/core/file_agent.py"
+                                       },
+                                       {
+                                           "name":  "CanonicalKnowledgeDecisionEngine",
+                                           "path":  "01_system/kontinuum/core/canonical_knowledge_decision.py"
+                                       },
+                                       {
+                                           "name":  "Continuous Canonical Engine Runtime",
+                                           "path":  "01_system/kontinuum/core/continuous_canonical_engine.py"
+                                       }
+                                   ],
+                   "learning":  [
+                                    {
+                                        "name":  "Wissen",
+                                        "path":  "04_knowledge"
+                                    },
+                                    {
+                                        "name":  "Forschung",
+                                        "path":  "26_research"
+                                    },
+                                    {
+                                        "name":  "Chronik",
+                                        "path":  "22_project_chronicle"
+                                    },
+                                    {
+                                        "name":  "Lernprojekte",
+                                        "path":  "06_learning"
+                                    },
+                                    {
+                                        "name":  "Wissensgraph",
+                                        "path":  "32_data"
+                                    },
+                                    {
+                                        "name":  "Daten",
+                                        "path":  "32_data"
+                                    },
+                                    {
+                                        "name":  "Internet-Learning Queue",
+                                        "path":  "32_data/internet_learning_queue"
+                                    },
+                                    {
+                                        "name":  "Internet-Learning Review",
+                                        "path":  "32_data/internet_learning_review"
+                                    },
+                                    {
+                                        "name":  "WebAgent Sources",
+                                        "path":  "32_data/web_agent_sources"
+                                    },
+                                    {
+                                        "name":  "FileAgent Sources",
+                                        "path":  "32_data/file_agent_sources"
+                                    },
+                                    {
+                                        "name":  "FileAgent Review",
+                                        "path":  "32_data/file_agent_review"
+                                    },
+                                    {
+                                        "name":  "CKDE Knowledge Evaluations",
+                                        "path":  "32_data"
+                                    },
+                                    {
+                                        "name":  "CKDE Source Ratings",
+                                        "path":  "32_data"
+                                    },
+                                    {
+                                        "name":  "CKDE Knowledge Conflicts",
+                                        "path":  "32_data"
+                                    },
+                                    {
+                                        "name":  "CKDE Evaluation History",
+                                        "path":  "32_data"
+                                    },
+                                    {
+                                        "name":  "Canonical Event Bus Log",
+                                        "path":  "31_reports/events/canonical_events.jsonl"
+                                    },
+                                    {
+                                        "name":  "Canonical Event Processing Log",
+                                        "path":  "31_reports/events/event_processing_log.jsonl"
+                                    },
+                                    {
+                                        "name":  "Canonical Drift Log",
+                                        "path":  "31_reports/drift/drift_events.jsonl"
+                                    },
+                                    {
+                                        "name":  "Canonical Governance Hook Log",
+                                        "path":  "31_reports/governance/governance_hooks.jsonl"
+                                    }
+                                ]
+               },
+    "required_folders":  [
+                             "01_system/kontinuum/core",
+                             "01_system/kontinuum/agents",
+                             "02_versions/projektstrukturen",
+                             "02_versions/migration_artifacts",
+                             "03_memory",
+                             "04_knowledge",
+                             "05_connectors",
+                             "06_learning",
+                             "07_models",
+                             "11_gui",
+                             "14_documents",
+                             "16_installation",
+                             "22_project_chronicle",
+                             "24_config",
+                             "26_research",
+                             "32_data",
+                             "32_data/internet_learning_queue",
+                             "32_data/internet_learning_review",
+                             "32_data/web_agent_sources",
+                             "32_data/file_agent_sources",
+                             "32_data/file_agent_review",
+                             "01_system/archive",
+                             "02_versions/archive",
+                             "03_memory/archive",
+                             "04_knowledge/archive",
+                             "05_connectors/archive",
+                             "06_learning/archive",
+                             "07_models/archive",
+                             "08_workspace_index/archive",
+                             "09_backups/archive",
+                             "10_security/archive",
+                             "11_gui/archive",
+                             "12_agents/archive",
+                             "13_tools/archive",
+                             "14_documents/archive",
+                             "15_exports/archive",
+                             "16_installation/archive",
+                             "17_tests/archive",
+                             "18_autonomous_learning/archive",
+                             "19_university_sources/archive",
+                             "20_library_sources/archive",
+                             "21_internet_sources/archive",
+                             "22_project_chronicle/archive",
+                             "23_recovery/archive",
+                             "24_config/archive",
+                             "25_voice/archive",
+                             "26_research/archive",
+                             "27_logs/archive",
+                             "30_import/archive",
+                             "31_reports/archive",
+                             "32_data/archive",
+                             "31_reports/governance",
+                             "31_reports/events",
+                             "31_reports/drift"
+                         ],
+    "entrypoints":  [
+                        "11_gui/desktop_gui.py",
+                        "16_installation/START_GUI.bat",
+                        "16_installation/START_KONTINUUM_34_1.bat",
+                        "16_installation/TEST_KONTINUUM_34_1.bat",
+                        "16_installation/RELEASE_GATE_34_1.bat"
+                    ],
+    "registries":  [
+                       "01_system/kontinuum/agents/agent_registry.py",
+                       "01_system/kontinuum/tools/tool_registry.py",
+                       "11_gui/gui_manifest.json",
+                       "24_config/canonical_api_registry_34_1.json",
+                       "24_config/canonical_artifacts_34_1.json",
+                       "24_config/canonical_decision_engine_2_0.json",
+                       "24_config/canonical_knowledge_decision_engine_1_0.json",
+                       "24_config/web_agent_1_0.json",
+                       "24_config/file_agent_1_0.json",
+                       "24_config/continuous_governance_34_1.json",
+                       "24_config/canonical_governance_baseline_34_1.json",
+                       "24_config/continuous_canonical_engine_34_1.json",
+                       "24_config/capability_registry_34_1.json",
+                       "24_config/execution_plan_schema_34_1.json",
+                       "24_config/orchestrator_runtime_schema_34_1.json"
+                   ],
+    "artifact_lifecycle":  {
+                               "version":  "CAM 1.1",
+                               "policy":  "24_config/retention_policy.json",
+                               "documentation":  "14_documents/ARBEITSREGEL_ARTEFAKT_LIFECYCLE_34_1.md",
+                               "migration_archive":  "02_versions/migration_artifacts",
+                               "migration_report_backup":  "09_backups/migration_reports",
+                               "signed_evidence_archive":  "02_versions/migration_artifacts/34_1_Foundation_2_2_CAM_1_1/release_evidence",
+                               "required_signed_evidence":  [
+                                                                "baseline.json",
+                                                                "audit_snapshot.json",
+                                                                "release_gate.json"
+                                                            ],
+                               "release_requirements":  [
+                                                            "tests_green",
+                                                            "status_green",
+                                                            "release_gate_green",
+                                                            "documentation_updated",
+                                                            "codex_release_confirmed"
+                                                        ],
+                               "valuable_artifacts":  "retain_until_release_then_archive",
+                               "reproducible_caches":  "delete_when_identified",
+                               "audit_and_migration_records":  "never_auto_delete",
+                               "main_archive_roots":  [
+                                                          "01_system/archive",
+                                                          "02_versions/archive",
+                                                          "03_memory/archive",
+                                                          "04_knowledge/archive",
+                                                          "05_connectors/archive",
+                                                          "06_learning/archive",
+                                                          "07_models/archive",
+                                                          "08_workspace_index/archive",
+                                                          "09_backups/archive",
+                                                          "10_security/archive",
+                                                          "11_gui/archive",
+                                                          "12_agents/archive",
+                                                          "13_tools/archive",
+                                                          "14_documents/archive",
+                                                          "15_exports/archive",
+                                                          "16_installation/archive",
+                                                          "17_tests/archive",
+                                                          "18_autonomous_learning/archive",
+                                                          "19_university_sources/archive",
+                                                          "20_library_sources/archive",
+                                                          "21_internet_sources/archive",
+                                                          "22_project_chronicle/archive",
+                                                          "23_recovery/archive",
+                                                          "24_config/archive",
+                                                          "25_voice/archive",
+                                                          "26_research/archive",
+                                                          "27_logs/archive",
+                                                          "30_import/archive",
+                                                          "31_reports/archive",
+                                                          "32_data/archive"
+                                                      ],
+                               "archive_structure_policy":  "each_active_main_folder_has_archive_subfolder",
+                               "active_area_policy":  "productive_or_canonical_only",
+                               "historical_artifact_policy":  "archive_in_respective_main_folder_archive",
+                               "pre_move_safety_check":  [
+                                                             "current_usage_checked",
+                                                             "canonical_status_checked",
+                                                             "dependencies_checked",
+                                                             "references_checked",
+                                                             "archive_is_safe"
+                                                         ],
+                               "post_archive_reference_check":  [
+                                                                    "documentation",
+                                                                    "manifests",
+                                                                    "registries",
+                                                                    "configuration",
+                                                                    "start_scripts",
+                                                                    "tests",
+                                                                    "build_processes",
+                                                                    "release_files"
+                                                                ],
+                               "delete_policy":  "manual_only_by_raphael",
+                               "release_archive_review":  "required_after_each_release"
+                           },
+    "canonical_active_directory_policy":  {
+                                              "version":  "CADP 1.0",
+                                              "foundation_rule":  "FND-ID-049",
+                                              "active_area_policy":  "canonical_only",
+                                              "historical_artifact_policy":  "archive_only",
+                                              "replacement_action":  "move_previous_version_to_archive",
+                                              "post_move_audit":  "required",
+                                              "monitoring_authority":  "CAM_OR_ORCHESTRATOR_CORE",
+                                              "required_archive_roots":  [
+                                                                             "01_system/archive",
+                                                                             "02_versions/archive",
+                                                                             "03_memory/archive",
+                                                                             "04_knowledge/archive",
+                                                                             "05_connectors/archive",
+                                                                             "06_learning/archive",
+                                                                             "07_models/archive",
+                                                                             "08_workspace_index/archive",
+                                                                             "09_backups/archive",
+                                                                             "10_security/archive",
+                                                                             "11_gui/archive",
+                                                                             "12_agents/archive",
+                                                                             "13_tools/archive",
+                                                                             "14_documents/archive",
+                                                                             "15_exports/archive",
+                                                                             "16_installation/archive",
+                                                                             "17_tests/archive",
+                                                                             "18_autonomous_learning/archive",
+                                                                             "19_university_sources/archive",
+                                                                             "20_library_sources/archive",
+                                                                             "21_internet_sources/archive",
+                                                                             "22_project_chronicle/archive",
+                                                                             "23_recovery/archive",
+                                                                             "24_config/archive",
+                                                                             "25_voice/archive",
+                                                                             "26_research/archive",
+                                                                             "27_logs/archive",
+                                                                             "30_import/archive",
+                                                                             "31_reports/archive",
+                                                                             "32_data/archive"
+                                                                         ],
+                                              "reference_check_scopes":  [
+                                                                             "documentation",
+                                                                             "canonical_manifests",
+                                                                             "cam_registrations",
+                                                                             "architecture_models",
+                                                                             "handbooks",
+                                                                             "project_chronicle",
+                                                                             "release_files",
+                                                                             "configuration",
+                                                                             "required_paths",
+                                                                             "registry_entries",
+                                                                             "scripts",
+                                                                             "internal_references"
+                                                                         ],
+                                              "audit_checks":  [
+                                                                   "no_outdated_files_in_active_area",
+                                                                   "all_references_valid",
+                                                                   "no_duplicate_active_versions",
+                                                                   "no_orphan_paths",
+                                                                   "manifest_filesystem_consistency"
+                                                               ]
+                                          },
+    "canonical_change_policy":  {
+                                    "version":  "CCP 1.0",
+                                    "foundation_rule":  "FND-ID-050",
+                                    "change_flow":  [
+                                                        "Change Proposal",
+                                                        "Pre-Audit",
+                                                        "Governance Review",
+                                                        "Controlled Canonical Update",
+                                                        "CADP Archive / Path Sync",
+                                                        "Documentation Sync",
+                                                        "Release Integrity Gate",
+                                                        "Canonical Acceptance"
+                                                    ],
+                                    "proposal_required_fields":  [
+                                                                     "affected_file",
+                                                                     "reason",
+                                                                     "goal",
+                                                                     "architecture_component",
+                                                                     "expected_impact",
+                                                                     "required_follow_up_checks"
+                                                                 ],
+                                    "pre_audit_checks":  [
+                                                             "no_invalid_paths",
+                                                             "no_conflicting_architecture_terms",
+                                                             "no_duplicate_active_canonical_files",
+                                                             "no_open_legacy_references",
+                                                             "cadp_1_0_not_violated",
+                                                             "foundation_rules_not_violated"
+                                                         ],
+                                    "governance_review_checks":  [
+                                                                     "foundation_compatible",
+                                                                     "canonical_architecture_compatible",
+                                                                     "no_policy_violation",
+                                                                     "no_uncontrolled_drift",
+                                                                     "documentation_and_manifest_impact_checked"
+                                                                 ],
+                                    "controlled_update":  "required_after_pre_audit_and_governance_review",
+                                    "cadp_link":  "required_when_file_replaced",
+                                    "documentation_sync":  "required",
+                                    "release_integrity_gate":  "required_or_documented",
+                                    "canonical_acceptance":  "all_checks_completed_or_justified",
+                                    "monitoring_authority":  "CAM_OR_ORCHESTRATOR_CORE"
+                                },
+    "apis":  [
+                 {
+                     "path":  "01_system/kontinuum/core/foundation_2_2.py",
+                     "symbols":  [
+                                     "FoundationAPI",
+                                     "FoundationRegistry",
+                                     "FoundationStatusCenter"
+                                 ]
+                 },
+                 {
+                     "path":  "01_system/kontinuum/core/canonical_architecture.py",
+                     "symbols":  [
+                                     "CanonicalArchitectureManager"
+                                 ]
+                 },
+                 {
+                     "path":  "01_system/kontinuum/core/canonical_database.py",
+                     "symbols":  [
+                                     "CanonicalDatabaseManager"
+                                 ]
+                 },
+                 {
+                     "path":  "01_system/kontinuum/core/canonical_api_registry.py",
+                     "symbols":  [
+                                     "CanonicalAPIRegistryManager"
+                                 ]
+                 },
+                 {
+                     "path":  "01_system/kontinuum/core/canonical_artifacts.py",
+                     "symbols":  [
+                                     "CanonicalArtifactManager"
+                                 ]
+                 },
+                 {
+                     "path":  "01_system/kontinuum/core/release_integrity.py",
+                     "symbols":  [
+                                     "ReleaseIntegrityFramework"
+                                 ]
+                 },
+                 {
+                     "path":  "01_system/kontinuum/core/continuous_governance.py",
+                     "symbols":  [
+                                     "ContinuousGovernanceSystem",
+                                     "GovernanceDecision"
+                                 ]
+                 },
+                 {
+                     "path":  "01_system/kontinuum/core/capability_resolution_engine.py",
+                     "symbols":  [
+                                     "CapabilityResolutionEngine"
+                                 ]
+                 },
+                 {
+                     "path":  "01_system/kontinuum/core/execution_planner.py",
+                     "symbols":  [
+                                     "ExecutionPlanner",
+                                     "ExecutionPlan",
+                                     "ExecutionStep"
+                                 ]
+                 },
+                 {
+                     "path":  "01_system/kontinuum/core/orchestrator_core.py",
+                     "symbols":  [
+                                     "OrchestratorCore",
+                                     "ExecutionRun",
+                                     "ExecutionStepRun",
+                                     "ExecutionTask",
+                                     "ExecutionResult",
+                                     "OrchestratorError"
+                                 ]
+                 }
+             ],
+    "api_registry":  [
+                         "FoundationAPI",
+                         "FoundationRegistry",
+                         "FoundationStatusCenter",
+                         "CanonicalArchitectureManager",
+                         "CanonicalDatabaseManager",
+                         "CanonicalAPIRegistryManager",
+                         "CanonicalArtifactManager",
+                         "ReleaseIntegrityFramework",
+                         "ContinuousGovernanceSystem",
+                         "GovernanceDecision",
+                         "CapabilityResolutionEngine",
+                         "ExecutionPlanner",
+                         "ExecutionPlan",
+                         "ExecutionStep",
+                         "OrchestratorCore",
+                         "ExecutionRun",
+                         "ExecutionStepRun",
+                         "ExecutionTask",
+                         "ExecutionResult",
+                         "OrchestratorError"
+                     ],
+    "database":  "32_data/kontinuum.db",
+    "required_tables":  [
+                            "audit_events",
+                            "chronicle_entries",
+                            "foundation_knowledge",
+                            "foundation_memory",
+                            "foundation_reasoning",
+                            "foundation_decisions",
+                            "knowledge_items",
+                            "graph_nodes",
+                            "graph_edges"
+                        ],
+    "active_main_archive_roots":  [
+                                      "01_system/archive",
+                                      "02_versions/archive",
+                                      "03_memory/archive",
+                                      "04_knowledge/archive",
+                                      "05_connectors/archive",
+                                      "06_learning/archive",
+                                      "07_models/archive",
+                                      "08_workspace_index/archive",
+                                      "09_backups/archive",
+                                      "10_security/archive",
+                                      "11_gui/archive",
+                                      "12_agents/archive",
+                                      "13_tools/archive",
+                                      "14_documents/archive",
+                                      "15_exports/archive",
+                                      "16_installation/archive",
+                                      "17_tests/archive",
+                                      "18_autonomous_learning/archive",
+                                      "19_university_sources/archive",
+                                      "20_library_sources/archive",
+                                      "21_internet_sources/archive",
+                                      "22_project_chronicle/archive",
+                                      "23_recovery/archive",
+                                      "24_config/archive",
+                                      "25_voice/archive",
+                                      "26_research/archive",
+                                      "27_logs/archive",
+                                      "30_import/archive",
+                                      "31_reports/archive",
+                                      "32_data/archive"
+                                  ],
+    "continuous_governance":  {
+                                  "version":  "1.0",
+                                  "module":  "01_system/kontinuum/core/continuous_governance.py",
+                                  "configuration":  "24_config/continuous_governance_34_1.json",
+                                  "documentation":  "14_documents/PHASE3_CONTINUOUS_CANONICAL_GOVERNANCE_34_1.md",
+                                  "log":  "31_reports/governance/phase3_continuous_governance_log.jsonl",
+                                  "mutation_policy":  "read_only_classification; no_delete_no_auto_move; verified_change_only",
+                                  "phase2_batch_migration":  "closed",
+                                  "baseline":  "24_config/canonical_governance_baseline_34_1.json"
+                              },
+    "continuous_canonical_engine":  {
+                                        "version":  "1.0",
+                                        "mode":  "diagnostic_report_only",
+                                        "flow":  "System Event -\u003e Event Bus -\u003e Canonical Decision Engine -\u003e Drift Layer -\u003e Governance Hooks -\u003e Review/Gate/Release Decision",
+                                        "event_schema":  "24_config/continuous_canonical_engine_34_1.json",
+                                        "release_gate_bridge":  "ReleaseIntegrityFramework.continuous_canonical_engine_check",
+                                        "logs":  [
+                                                     "31_reports/events/canonical_events.jsonl",
+                                                     "31_reports/events/event_processing_log.jsonl",
+                                                     "31_reports/drift/drift_events.jsonl",
+                                                     "31_reports/governance/governance_hooks.jsonl"
+                                                 ]
+                                    }
 }

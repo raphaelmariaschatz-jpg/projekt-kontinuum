@@ -33,8 +33,21 @@ class RequestRouter:
         "gitagentstatus",
         "cgmstatus",
         "codeagentstatus",
+        "agent integration status",
+        "caim status",
+        "caimstatus",
+        "agent registry status",
         "fundamentzyklenstatus",
         "routingstatus",
+        "crestatus",
+        "cre status",
+        "capabilitystatus",
+        "executionplanstatus",
+        "execution planner status",
+        "plannerstatus",
+        "orchestratorstatus",
+        "orchestrator core status",
+        "runtime status",
     }
     CHANGE_MARKERS = (
         "korrigiere",
@@ -123,6 +136,18 @@ class RequestRouter:
         "welche sprache ist",
         "codeagent ",
     )
+    CHEMISTRY_MARKERS = (
+        "chemie",
+        "chemistry",
+        "stoff",
+        "summenformel",
+        "cas",
+        "molekül",
+        "molekuel",
+        "gefahrstoff",
+        "ethanol",
+        "natriumchlorid",
+    )
     WEB_MARKERS = (
         "webseite",
         "internet",
@@ -136,6 +161,8 @@ class RequestRouter:
         "internetsuche",
     )
     MEMORY_MARKERS = ("memory", "gedächtnis", "gedaechtnis", "erinnerung", "merke ")
+    IDENTITY_MARKERS = ("identity:", "creator:", "assistant:", "preferred_address:", "short_name:", "role:", "roles:")
+    CONFIG_MARKERS = ("config:", "configuration:", "settings:", "system:")
     DIAGNOSIS_MARKERS = ("diagnose", "diagnostik", "fehleranalyse", "status prüfen", "status pruefen")
     ADMIN_MARKERS = ("versionen", "agenten", "systemstatus", "wartungsmodus", "gitstatus")
     PROGRAMMING_MARKERS = ("programmiere", "entwickle", "python ", "python:", "code", "skript")
@@ -152,7 +179,7 @@ class RequestRouter:
         "welche ",
         "warum ",
     )
-    WINDOWS_PATH = re.compile(r"(?i)\b[a-z]:[\\/][^\s\"']+")
+    WINDOWS_PATH = re.compile(r"(?i)\b[a-z]:[\\/][^\r\n\"']+")
     FILE_SUFFIX = re.compile(r"(?i)(?:^|[\\/\s\"'])([^\\/\s\"']+\.(?:pdf|docx|txt|md|json|csv|html|htm|py|js|css|log|xlsx))\b")
     IMAGE_SUFFIX = re.compile(r"(?i)(?:^|[\\/\s\"'])([^\\/\s\"']+\.(?:png|jpg|jpeg|webp|bmp|gif|tiff|tif))\b")
     CODE_SUFFIX = re.compile(r"(?i)(?:^|[\\/\s\"'])([^\\/\s\"']+\.(?:py|js|jsx|ts|tsx|html|css|sh|bat|ps1|json|yaml|yml|toml|ini|md|txt|env\.example))\b")
@@ -193,6 +220,15 @@ class RequestRouter:
             return RouteDecision("Git", "git_agent", "Git-Leseauftrag erkannt; GitAgent arbeitet read-only.", ["CGM 2.0"], ["StatusAgent"])
         if self._looks_like_code_agent(raw):
             return RouteDecision("Codeanalyse", "code_agent", "Code-/Projektanalyseauftrag erkannt; CodeAgent arbeitet read-only.", ["FileAgent", "DevelopmentAgent"], ["FileAgent"])
+        chemistry_capability = self._chemistry_capability(raw)
+        if chemistry_capability:
+            return RouteDecision(
+                "Chemie",
+                "capability:" + chemistry_capability,
+                "Chemie-Capability erkannt; CAIM soll einen aktiven Spezialagenten auswaehlen.",
+                ["KnowledgeAgent", "ResearchAgent"],
+                ["KnowledgeAgent"],
+            )
         if command_value.endswith("status"):
             return RouteDecision("Statusabfrage", "status_agent", "Statusbefehle haben höchste Priorität.", ["CanonicalEngine"], ["SystemAgent"])
         if self._looks_like_file(raw):
@@ -201,12 +237,28 @@ class RequestRouter:
             return RouteDecision("Webauftrag", "web_agent", "URL/Web-/Internetauftrag erkannt.", ["LearningAgent"], ["KnowledgeAgent"])
         if any(marker in value for marker in self.LEARNING_MARKERS):
             return RouteDecision("Lernauftrag", "learning_agent", "Lernverb erkannt.", ["WebAgent", "FileAgent"], ["KnowledgeAgent"])
+        if self._looks_like_identity_config(raw):
+            return RouteDecision(
+                "Identity/Config",
+                "identity_manager",
+                "Strukturierte Identity-/Konfigurationsdaten erkannt.",
+                ["MemoryAgent", "ConfigFallback"],
+                ["MemoryAgent"],
+            )
         if any(marker in value for marker in self.GOVERNANCE_MARKERS):
             return RouteDecision("Governance", "canonical_engine", "Governance/Foundation/Canonical-Bezug erkannt.", ["StatusAgent"], ["KnowledgeAgent"])
         if any(marker in value for marker in self.DIAGNOSIS_MARKERS):
             return RouteDecision("Diagnose", "diagnostic_agent", "Diagnosemarker erkannt.", ["StatusAgent"], ["SystemAgent"])
         if any(marker in value for marker in self.MEMORY_MARKERS):
             return RouteDecision("Memory", "memory_agent", "Memory-/Erinnerungsbezug erkannt.", ["KnowledgeAgent"], ["KnowledgeAgent"])
+        if self._looks_like_structured_config(raw):
+            return RouteDecision(
+                "Konfiguration",
+                "config_fallback",
+                "Strukturierte YAML/JSON-artige Konfiguration erkannt.",
+                ["IdentityManager", "MemoryAgent"],
+                ["MemoryAgent"],
+            )
         if any(marker in value for marker in self.ADMIN_MARKERS):
             return RouteDecision("Administration", "admin_agent", "Administrationsbefehl erkannt.", ["StatusAgent"], ["SystemAgent"])
         if self._looks_like_code(raw):
@@ -256,7 +308,7 @@ class RequestRouter:
 
     def _looks_like_math(self, text: str) -> bool:
         value = normalize(text)
-        if any(marker in value for marker in ("berechne", "rechne", "wieviel ist", "wie viel ist", "wurzel", "prozent")):
+        if any(marker in value for marker in ("berechne", "rechne", "wieviel ist", "wie viel ist", "wurzel", "sqrt", "√", "prozent")):
             return True
         return bool(self.MATH_EXPRESSION.search(text or ""))
 
@@ -266,9 +318,37 @@ class RequestRouter:
             re.search(r"(?i)\bersetze\s+regel\s+\S+\s+durch\b", text or "")
         )
 
+    def _looks_like_identity_config(self, text: str) -> bool:
+        value = (text or "").casefold()
+        if re.search(r"(?im)^\s*(identity|creator|preferred_address|assistant|role|roles)\s*:", text or ""):
+            return True
+        return sum(1 for marker in self.IDENTITY_MARKERS if marker in value) >= 3
+
+    def _looks_like_structured_config(self, text: str) -> bool:
+        value = (text or "").casefold()
+        lines = [line for line in (text or "").splitlines() if line.strip()]
+        yaml_like = len(lines) >= 2 and sum(1 for line in lines if ":" in line) >= 2
+        json_like = value.strip().startswith("{") and value.strip().endswith("}")
+        return (yaml_like or json_like) and any(marker in value for marker in self.CONFIG_MARKERS + self.IDENTITY_MARKERS)
+
     def _looks_like_vision(self, text: str) -> bool:
         value = normalize(text or "")
         return any(marker in value for marker in self.VISION_MARKERS) or bool(self.IMAGE_SUFFIX.search(text or ""))
+
+    def _chemistry_capability(self, text: str) -> str:
+        value = normalize(text or "")
+        raw = text or ""
+        if not any(marker in value for marker in self.CHEMISTRY_MARKERS) and not re.search(r"\b\d{2,7}-\d{2}-\d\b", raw):
+            return ""
+        if re.search(r"\b\d{2,7}-\d{2}-\d\b", raw) or "cas" in value:
+            return "chemistry.cas"
+        if any(marker in value for marker in ("sicherheit", "gefahr", "gefahrstoff", "safety")):
+            return "chemistry.safety"
+        if "summenformel" in value or re.search(r"\b(?:[A-Z][a-z]?\d*){2,}\b", raw):
+            return "chemistry.formula"
+        if any(marker in value for marker in ("eigenschaft", "properties", "molare masse", "aggregatzustand")):
+            return "chemistry.properties"
+        return "chemistry.lookup"
 
     def _looks_like_git(self, text: str) -> bool:
         value = normalize(text or "")

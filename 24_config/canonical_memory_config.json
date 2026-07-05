@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "memory_classes": [
+    "agent_state",
+    "conversation",
+    "governance",
+    "identity",
+    "knowledge",
+    "learning",
+    "project",
+    "system",
+    "temporary",
+    "user_preferences"
+  ],
+  "entries": [],
+  "last_updated": "",
+  "hash": "567dbc4801dc3be50aa529efe0634fb6edbc34ac765288855ad2d386ce10b844"
+}

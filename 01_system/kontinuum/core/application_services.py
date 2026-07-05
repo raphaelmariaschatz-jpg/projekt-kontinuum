@@ -53,6 +53,7 @@ class ResponseRecorder:
         local_agents = {
             "archive_search",
             "foundation",
+            "identity_manager",
             "identity_router",
             "local_knowledge",
             "local_math",
@@ -120,7 +121,18 @@ class ResponseRecorder:
             ])
             return f"{answer}\n\n{report}"
         local_used = agent in local_agents
-        memory_used = agent in {"archive_search", "foundation", "identity_router", "local_knowledge", "local_truth", "memory", "search", "session"}
+        memory_used = agent in {"archive_search", "foundation", "identity_manager", "identity_router", "local_knowledge", "local_truth", "memory", "search", "session"}
+        if agent == "identity_manager":
+            report = "\n".join([
+                "Quellen:",
+                "- lokale Datei: ja",
+                "- lokale Datenbank: nein",
+                "- Memory: ja",
+                "- Internet: nein",
+                "- Web-Ergebnisse: 0",
+                f"- Suchmodus: {mode}",
+            ])
+            return f"{answer}\n\n{report}"
         report = "\n".join([
             "Quellen:",
             f"- lokale Datenbank: {'ja' if local_used else 'nein'}",
@@ -166,6 +178,29 @@ class CommandService:
             return (
                 engine.format_status() if engine else "Continuous Canonical Engine ist nicht angebunden."
             ), "continuous_canonical_engine"
+        if lower in {"identity status", "identitystatus", "identitätsstatus", "identitaetsstatus"}:
+            manager = getattr(self.system, "identity_manager", None)
+            return (manager.format_status() if manager else "IdentityManager ist nicht angebunden."), "identity_manager"
+        if lower in {"memory status", "memorystatus", "cmm status", "cmmstatus"}:
+            manager = getattr(self.system, "canonical_memory_manager", None)
+            return (manager.format_status() if manager else "Canonical Memory Manager ist nicht angebunden."), "memory"
+        if lower in {"orchestratorstatus", "orchestrator core status", "runtime status"}:
+            orchestrator = getattr(self.system, "orchestrator_core", None)
+            return (orchestrator.format_status() if orchestrator else "Orchestrator Core ist nicht angebunden."), "orchestrator_core"
+        if lower in {"executionplanstatus", "execution planner status", "plannerstatus"}:
+            planner = getattr(self.system, "execution_planner", None)
+            return (planner.format_status() if planner else "Execution Planner ist nicht angebunden."), "execution_planner"
+        if lower in {"crestatus", "cre status", "capabilitystatus", "capability resolution status"}:
+            engine = getattr(self.system, "capability_resolution_engine", None)
+            return (engine.format_status() if engine else "Capability Resolution Engine ist nicht angebunden."), "capability_resolution_engine"
+        if lower in {"agent integration status", "caim status", "agent registry status", "caimstatus"}:
+            manager = getattr(self.system, "canonical_agent_integration_manager", None)
+            return (
+                manager.format_status() if manager else "Canonical Agent Integration Manager ist nicht angebunden."
+            ), "canonical_agent_integration_manager"
+        if lower in {"memory statistics", "memorystatistics", "memory statistik", "memorystatistik", "cmm statistics", "cmmstatistics"}:
+            manager = getattr(self.system, "canonical_memory_manager", None)
+            return (manager.format_statistics() if manager else "Canonical Memory Manager ist nicht angebunden."), "memory"
         if lower.startswith("archivsuche "):
             result = self.system.search_router.search_archive(text[12:].strip())
             return self.system.search_router.format(result), "archive_search"
@@ -314,6 +349,18 @@ class PromptOrchestrator:
     def handle(self, text: str) -> str:
         intent = self.system.conversation.classify(text)
         decision = self.request_router.decide(text, intent)
+        capability_engine = getattr(self.system, "capability_resolution_engine", None)
+        if capability_engine:
+            resolution = capability_engine.resolve(text, intent, decision)
+            self.system.last_capability_resolution = resolution
+            capability = resolution.get("required_capability", "")
+            if capability and capability != "unknown":
+                decision.sources.append(f"CRE:{capability}")
+            planner = getattr(self.system, "execution_planner", None)
+            if planner:
+                plan = planner.plan_from_resolutions([resolution])
+                self.system.last_execution_plan = plan
+                decision.sources.append(f"ExecutionPlanner:{plan.get('status', '')}")
         self.system.conversation.log_turn("user", text, intent)
         self.system.agent_config["conversation"] = self.system.conversation.context_for_agents()
         if intent.name not in {"command", "memory.store"}:
@@ -332,7 +379,10 @@ class PromptOrchestrator:
         file_agent = getattr(self.system, "file_agent", None)
         if file_agent and file_agent.looks_like_file_command(text):
             result = file_agent.handle_command(text)
-            return self.recorder.finish(result.get("message", "FileAgent konnte den Auftrag nicht verarbeiten."), "file_agent", intent)
+            file_answer = result.get("message", "FileAgent konnte den Auftrag nicht verarbeiten.")
+            if result.get("ok") and self._wants_function_test_report(text):
+                file_answer = self._combine_file_and_diagnostic(file_answer, self._build_function_test_report())
+            return self.recorder.finish(file_answer, "file_agent", intent)
         source_command = self._source_command(text)
         selected_mode = self._selected_mode()
         if not source_command and selected_mode != "Automatisch":
@@ -409,6 +459,13 @@ class PromptOrchestrator:
 
     def _handle_routed(self, text: str, intent: Intent, decision) -> tuple[str, str] | None:
         selected = decision.selected_agent
+        if selected.startswith("capability:"):
+            capability = selected.split(":", 1)[1]
+            result = self._handle_capability(capability, text)
+            if result:
+                decision.sources.append(f"CAIM:{capability}")
+                return result.answer, result.agent
+            return self._routing_diagnosis(decision, selected), "router"
         if selected == "status_agent":
             if normalize(text).strip() == "routingstatus":
                 return self.request_router.format_status(), "router"
@@ -449,12 +506,18 @@ class PromptOrchestrator:
             if answer:
                 decision.sources.append("FormulaEngine")
                 return answer, "math_agent"
+            decision.sources.append("FormulaEngine:unresolved")
+            return "Die Rechenaufgabe wurde erkannt, aber die Formel-Engine konnte sie noch nicht lösen.", "math_agent"
         if selected == "file_agent":
             file_agent = getattr(self.system, "file_agent", None)
             if file_agent:
                 result = file_agent.handle_command(text)
                 decision.sources.append(result.get("path") or result.get("file_name") or "FileAgent")
-                return result.get("message", "Datei konnte nicht gelesen werden: unbekannter Grund."), "file_agent"
+                file_answer = result.get("message", "Datei konnte nicht gelesen werden: unbekannter Grund.")
+                if result.get("ok") and self._wants_function_test_report(text):
+                    decision.sources.append("interne Diagnostik")
+                    file_answer = self._combine_file_and_diagnostic(file_answer, self._build_function_test_report())
+                return file_answer, "file_agent"
         if selected == "web_agent":
             web_agent = getattr(self.system, "web_agent", None)
             if web_agent:
@@ -466,10 +529,33 @@ class PromptOrchestrator:
             if result:
                 decision.sources.append("LearningAgent")
                 return result.answer, "learning_agent"
+        if selected == "identity_manager":
+            result = self._handle_identity_manager(text)
+            if result:
+                decision.sources.append("IdentityManager")
+                return result, "identity_manager"
+            result = self._handle_named_agent("memory", f"speichere {text}")
+            if result:
+                decision.sources.append("MemoryAgent")
+                return result.answer, "memory"
+        if selected in {"memory_agent", "config_fallback"}:
+            if selected == "config_fallback":
+                identity_result = self._handle_identity_manager(text)
+                if identity_result:
+                    decision.sources.append("IdentityManager")
+                    return identity_result, "identity_manager"
+            result = self._handle_named_agent("memory", text)
+            if not result:
+                result = self._handle_named_agent("memory", f"speichere {text}")
+            if result:
+                decision.sources.append("MemoryAgent")
+                return result.answer, "memory"
         if selected == "knowledge_agent":
             answer = self._answer_knowledge(text, intent, decision)
             if answer:
                 return answer, "knowledge_agent"
+        if selected:
+            return self._routing_diagnosis(decision, selected), "router"
         return None
 
     def _handle_named_agent(self, name: str, text: str):
@@ -478,6 +564,180 @@ class PromptOrchestrator:
             return None
         result = agent.handle(text)
         return result if result and result.handled else None
+
+    def _handle_capability(self, capability: str, text: str):
+        manager = getattr(self.system, "canonical_agent_integration_manager", None)
+        if not manager:
+            return None
+        candidates = manager.find_by_capability(capability)
+        for candidate in candidates:
+            if not manager.can_execute(candidate.get("id", "")):
+                continue
+            agent = next((item for item in self.system.agents if item.name == candidate.get("name")), None)
+            if not agent:
+                continue
+            result = agent.handle(text)
+            if result and result.handled:
+                return result
+        return None
+
+    def _handle_identity_manager(self, text: str) -> str | None:
+        manager = getattr(self.system, "identity_manager", None)
+        if not manager or not manager.can_handle(text):
+            return None
+        result = manager.save_from_text(text)
+        if not result.get("ok"):
+            return None
+        identity = result["identity"]
+        creator = identity.get("creator", {}).get("name", "Raphael Schatz")
+        address = identity.get("user", {}).get("preferred_address", "Raphael")
+        assistant = identity.get("assistant", {}).get("name", "Kontinuum")
+        short_name = identity.get("assistant", {}).get("short_name", "K")
+        return (
+            f"Ich habe die kanonische Identität gespeichert: Creator {creator}, "
+            f"bevorzugte Anrede {address}, Systemname {assistant}/{short_name}."
+        )
+
+    def _wants_function_test_report(self, text: str) -> bool:
+        normalized = normalize(text)
+        triggers = (
+            "vollstandiger funktionstest",
+            "vollstaendiger funktionstest",
+            "vollständiger funktionstest",
+            "funktionen prufen",
+            "funktionen pruefen",
+            "funktionen prüfen",
+            "selftest",
+            "diagnostikbericht",
+            "gefundene fehler",
+            "schwachstellen",
+            "gewunschte erweiterungen",
+            "gewünschte erweiterungen",
+        )
+        return any(trigger in normalized for trigger in triggers)
+
+    def _build_function_test_report(self) -> str:
+        diagnostics = self._run_available_diagnostics()
+        status_checks = self._collect_function_test_statuses()
+        findings = diagnostics.get("findings", []) if isinstance(diagnostics, dict) else []
+        errors = self._diagnostic_errors(findings)
+        weaknesses = self._diagnostic_weaknesses(diagnostics, status_checks)
+        extensions = self._diagnostic_extensions(status_checks)
+        return "\n".join([
+            "[DIAGNOSTIKBERICHT]",
+            "Ein vollständiger automatischer Funktionstest ist noch nicht vollständig angebunden. Ausgeführt wurden verfügbare interne Checks.",
+            "",
+            "Ausgeführte Checks:",
+            *[f"- {item}" for item in status_checks],
+            "",
+            "1. Gefundene Fehler:",
+            *[f"- {item}" for item in errors],
+            "2. Gefundene Schwachstellen:",
+            *[f"- {item}" for item in weaknesses],
+            "3. Gewünschte Erweiterungen:",
+            *[f"- {item}" for item in extensions],
+        ])
+
+    def _run_available_diagnostics(self) -> dict:
+        diagnostics = getattr(self.system, "autonomous_diagnostics", None)
+        if not diagnostics:
+            return {"ok": False, "findings": [], "message": "Autonomous Diagnostics ist nicht angebunden."}
+        try:
+            return diagnostics.run("user.function_test_report")
+        except Exception as exc:
+            return {
+                "ok": False,
+                "findings": [{
+                    "title": "Autonomous Diagnostics konnte nicht ausgeführt werden",
+                    "severity": "HIGH",
+                    "area": "diagnostics",
+                    "impact": "Der interne Diagnosecheck brach ab.",
+                    "cause": str(exc),
+                }],
+                "message": f"Autonomous Diagnostics fehlgeschlagen: {exc}",
+            }
+
+    def _collect_function_test_statuses(self) -> list[str]:
+        checks: list[tuple[str, object, tuple[str, ...]]] = [
+            ("Systemstatus", self.system, ("status",)),
+            ("CAIM-Status", getattr(self.system, "canonical_agent_integration_manager", None), ("format_status", "status")),
+            ("CMM/Memory-Status", getattr(self.system, "canonical_memory_manager", None), ("format_status", "status")),
+            ("CIM/Identity-Status", getattr(self.system, "identity_manager", None), ("format_status", "status")),
+            ("Routingstatus", self.request_router, ("format_status", "status")),
+            ("CodeAgent-Status", getattr(self.system, "code_agent", None), ("format_status", "status")),
+        ]
+        results = []
+        for label, target, method_names in checks:
+            method_name = next((name for name in method_names if target and hasattr(target, name)), "")
+            if not target or not method_name:
+                results.append(f"{label}: nicht angebunden")
+                continue
+            try:
+                value = getattr(target, method_name)()
+                results.append(f"{label}: verfügbar ({self._brief_status(value)})")
+            except Exception as exc:
+                results.append(f"{label}: Fehler beim Abruf ({type(exc).__name__}: {exc})")
+        return results
+
+    @staticmethod
+    def _brief_status(value) -> str:
+        if isinstance(value, dict):
+            if "ok" in value:
+                return "ok" if value.get("ok") else "prüfen"
+            if "active" in value:
+                return "aktiv" if value.get("active") else "inaktiv"
+            return f"{len(value)} Statusfelder"
+        text = " ".join(str(value).split())
+        return text[:120] + ("..." if len(text) > 120 else "")
+
+    @staticmethod
+    def _diagnostic_errors(findings: list[dict]) -> list[str]:
+        if not findings:
+            return ["Keine kritischen Fehler in den verfügbaren internen Checks gemeldet."]
+        errors = []
+        for item in findings[:8]:
+            title = item.get("title") or item.get("code") or "Diagnosefund"
+            severity = item.get("severity") or item.get("severity_label") or "unbewertet"
+            area = item.get("area") or "unbekannter Bereich"
+            evidence = item.get("evidence") or item.get("cause") or ""
+            suffix = f" Evidenz: {evidence}" if evidence else ""
+            errors.append(f"{title} ({area}, Schweregrad: {severity}).{suffix}")
+        return errors
+
+    @staticmethod
+    def _diagnostic_weaknesses(diagnostics: dict, status_checks: list[str]) -> list[str]:
+        weaknesses = []
+        if diagnostics and diagnostics.get("message"):
+            weaknesses.append(str(diagnostics["message"]))
+        unavailable = [item for item in status_checks if "nicht angebunden" in item or "Fehler beim Abruf" in item]
+        weaknesses.extend(unavailable)
+        if not weaknesses:
+            weaknesses.append("Keine zusätzlichen Schwachstellen aus den verfügbaren Statuschecks abgeleitet.")
+        return weaknesses
+
+    @staticmethod
+    def _diagnostic_extensions(status_checks: list[str]) -> list[str]:
+        extensions = [
+            "Vollständigen TestAgent anbinden, der Funktions-, Integrations- und Regressionstests koordiniert.",
+            "Diagnostikbericht um konkrete Testskript-Ergebnisse und priorisierte Reparaturvorschläge erweitern.",
+        ]
+        if any(item.startswith("CodeAgent-Status: nicht angebunden") for item in status_checks):
+            extensions.append("CodeAgent-Status in den Funktionstestbericht integrieren, sobald der Agent angebunden ist.")
+        return extensions
+
+    @staticmethod
+    def _combine_file_and_diagnostic(file_answer: str, diagnostic_report: str) -> str:
+        return f"{file_answer.rstrip()}\n\n{diagnostic_report.strip()}"
+
+    @staticmethod
+    def _routing_diagnosis(decision, expected_agent: str) -> str:
+        return "\n".join([
+            "Der Router hat den Auftrag erkannt, aber es wurde keine ausführende Agentenantwort erzeugt.",
+            f"- erkannter Intent: {decision.request_class}",
+            f"- erwarteter Agent: {expected_agent}",
+            "- Grund: Für diese Route wurde kein angebundener Agent oder Fallback mit `handled=True` gefunden.",
+            "- empfohlene Reparatur: Agent im System registrieren oder Route auf IdentityManager/MemoryAgent/ConfigFallback abbilden.",
+        ])
 
     def _answer_knowledge(self, text: str, intent: Intent, decision) -> str | None:
         local = self.local_knowledge.answer(text)

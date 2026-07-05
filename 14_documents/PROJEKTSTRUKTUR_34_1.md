@@ -1,6 +1,6 @@
 # Projektstruktur 34.1 – Release Integrity Framework
 
-Stand: 2026-06-21
+Stand: 2026-07-03
 
 Kontinuum 34.1 übernimmt Foundation Reasoning 4.1 unverändert aus der Vorversion
 und ergänzt ein technisch erzwungenes Release Integrity Framework 1.0 sowie den
@@ -54,11 +54,16 @@ Eine Freigabe wird nur erteilt, wenn alle verbindlichen Gates erfolgreich sind:
 6. vollständige aktive Testsuite mit festem Zeitlimit pro Test;
 7. Versions-, Manifest-, Datei- und Einstiegspfadkonsistenz;
 8. vorhandene Releasechronik und kanonische Wiedereinstiegspunkte.
-9. vollständige Foundation-Core-Pflichtprüfung einschließlich FND-ID-048;
+9. vollständige Foundation-Core-Pflichtprüfung einschließlich FND-ID-048 und
+   FND-ID-049 / CADP 1.0 und FND-ID-050 / CCP 1.0;
 10. Foundation 2.2 als aktives Kernmodul mit schmalem
     Foundation-2.1-Kompatibilitätspfad;
 11. CAM-1.1-Prüfung der Artifact Lifecycle Policy, Archivpfade,
     Freigabebedingungen und signierten Nachweise.
+12. CAM-Pruefung von CADP 1.0: aktive Projektordner enthalten nur kanonische
+    Dateien; historische Artefakte liegen in `archive`; Referenzen, doppelte
+    aktive Versionen, verwaiste Pfade und Manifest-/Dateisystem-Konsistenz
+    werden geprueft.
 12. CAM-1.2-Prüfung des kanonischen SQLite-Vertrags einschließlich Tabellen,
     Spalten, Indizes, Trigger, FTS und Datendomänen.
 10. CAM-Prüfung von Projektstruktur, Archiv, APIs, Startpunkten, Ordnern,
@@ -81,6 +86,8 @@ Freigabe: JA
 - `24_config/canonical_architecture_34_1.json`: kanonisches Architekturmanifest
 - `01_system/kontinuum/core/foundation_2_2.py`: aktives Foundation-Kernmodul
 - `01_system/kontinuum/core/foundation_2_1.py`: Kompatibilitäts-Re-Export
+- `FND-ID-049`: CADP 1.0 als Foundation-Regel fuer kanonisch reine aktive
+  Projektordner
 - `01_system/kontinuum/core/canonical_database.py`: read-only Canonical
   Database Manager 1.2
 - `24_config/canonical_decision_engine_2_0.json`: CDE-2.0-Policy fuer
@@ -107,6 +114,13 @@ Freigabe: JA
   Datei-, Ordner- und Upload-Lernquellen
 - `24_config/file_agent_1_0.json`: FileAgent-Policy mit erlaubten Wurzeln,
   Dateitypen, Groessenlimit und Review-Modus
+- `01_system/kontinuum/core/capability_resolution_engine.py`: Capability
+  Resolution Engine 1.0 als read-only Empfehlungs- und Priorisierungsschicht
+  zwischen Request Router, CAIM, Governance, Agenten, Review und CMM
+- `14_documents/CAPABILITY_RESOLUTION_ENGINE_1_0.md`: technische
+  CRE-Architekturdokumentation
+- `01_system/kontinuum/core/application_services.py`: heutiger
+  PromptOrchestrator und Migrationsanker fuer Orchestrator Core 1.0
 - `32_data/internet_learning_queue/`: Queue fuer neue Internet-Learning-Funde
 - `32_data/internet_learning_review/`: Review-Ablage fuer pending Funde
 - `32_data/web_agent_sources/`: gespeicherte WebAgent-Quellennachweise mit URL,
@@ -189,6 +203,47 @@ Wenn TkDND verfuegbar ist, koennen Dateien oder Ordner auch per Drag-and-Drop
 ins Eingabefeld uebernommen werden; andernfalls bleiben die Buttons als
 Fallback aktiv.
 
+## Capability Resolution Engine 1.0
+
+Die Capability Resolution Engine 1.0 ist als read-only Empfehlungsschicht
+kanonisch vorbereitet. Sie ersetzt weder Request Router noch PromptOrchestrator
+und fuehrt keine Agenten eigenmaechtig aus. CRE 1.0 kann einzelne und mehrere
+Intent-Segmente bewerten, daraus Capabilities ableiten, CAIM nach passenden
+Agenten fragen, Kandidaten priorisieren und Hinweise fuer Governance, Review
+und CMM erzeugen.
+
+Zielpfad:
+
+```text
+User -> Request Router -> Capability Resolution Engine -> Priorisierung
+     -> Governance -> Agent-Auswahl -> Review -> CMM / Learning
+```
+
+Der aktuelle Multi-Intent-Fix fuer Projektordnerfreigabe plus Diagnostikbericht
+bleibt als stabiler Uebergangspfad bestehen. Die naechste Ausbaustufe migriert
+diese Sonderlogik auf CRE-Planung mit getrennten Capabilities wie
+`project.access`, `file.status` und `diagnostics.run`.
+
+## Orchestrator Core 1.0 – geplanter Steuerungsbaustein
+
+Orchestrator Core 1.0 ist als naechster Architekturmeilenstein priorisiert. Er
+soll den bestehenden PromptOrchestrator regelgebunden erweitern und aus
+Router-, CRE- und Governance-Ergebnissen einen nachvollziehbaren
+Ausfuehrungsplan erstellen.
+
+Der Orchestrator Core:
+
+- verarbeitet Single-Intent- und Multi-Intent-Plaene;
+- nutzt Capabilities als primaere Planungseinheit;
+- behandelt Agenten als Anbieter von Faehigkeiten;
+- respektiert Governance-Entscheidungen fuer Blockieren, Freigeben,
+  Human-Approval, Protokollierung und Review;
+- uebergibt Ergebnisse nur policykonform an Review, CMM oder Learning Layer.
+
+Orchestrator Core 1.0 ist kein Freibrief fuer automatische Agentenketten. Jede
+schreibende, externe, governancepflichtige oder reviewpflichtige Ausfuehrung
+bleibt an Freigabe, Audit und bestehende Schutzregeln gebunden.
+
 ## CDE 2.0 und CKDE 1.0
 
 CDE 2.0 und CKDE 1.0 sind getrennte kanonische Entscheidungspfade.
@@ -238,3 +293,19 @@ Die Dateien `canonical_events.jsonl`, `event_processing_log.jsonl`,
 `drift_events.jsonl` und `governance_hooks.jsonl` sind append-only
 Auditnachweise. Sie duerfen nicht automatisch bereinigt, verschoben oder
 verdichtet werden.
+
+## Execution Planner 1.0
+
+Execution Planner 1.0 ist als kanonischer Core-Baustein registriert:
+
+- `01_system/kontinuum/core/execution_planner.py`: deterministischer Planer fuer CRE-Resolutionen.
+- `24_config/execution_plan_schema_34_1.json`: Strukturvertrag fuer `ExecutionPlan`.
+- `17_tests/test_execution_planner_1_0.py`: Regressionstests fuer Planerzeugung, Reihenfolge, Parallelisierung, Governance-Blockierung, unbekannte Capabilities, fehlende Agenten, Zyklen, leere Plaene und fehlende Agentenausfuehrung.
+
+Die Architekturfolge lautet:
+
+```text
+User -> Request Router -> Capability Resolution Engine -> Execution Planner
+     -> Orchestrator Core -> Governance -> Agent -> Review
+     -> Canonical Memory Manager
+```

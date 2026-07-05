@@ -191,6 +191,148 @@ class CanonicalArchitectureManager:
             "release_requirements": policy.get("release_requirements", []),
         }
 
+    def canonical_active_directory_check(self) -> dict:
+        policy = self.config.get("canonical_active_directory_policy", {})
+        required_values = {
+            "foundation_rule": "FND-ID-049",
+            "active_area_policy": "canonical_only",
+            "historical_artifact_policy": "archive_only",
+            "replacement_action": "move_previous_version_to_archive",
+            "post_move_audit": "required",
+            "monitoring_authority": "CAM_OR_ORCHESTRATOR_CORE",
+        }
+        invalid_values = {
+            key: {"expected": expected, "actual": policy.get(key)}
+            for key, expected in required_values.items()
+            if policy.get(key) != expected
+        }
+        archive_roots = policy.get("required_archive_roots", [])
+        missing_archives = [
+            relative
+            for relative in archive_roots
+            if not (self.root / relative).is_dir()
+        ]
+        required_reference_scopes = {
+            "documentation",
+            "canonical_manifests",
+            "cam_registrations",
+            "architecture_models",
+            "handbooks",
+            "project_chronicle",
+            "release_files",
+            "configuration",
+            "required_paths",
+            "registry_entries",
+            "scripts",
+            "internal_references",
+        }
+        reference_scopes = set(policy.get("reference_check_scopes", []))
+        missing_reference_scopes = sorted(required_reference_scopes - reference_scopes)
+        required_audit_checks = {
+            "no_outdated_files_in_active_area",
+            "all_references_valid",
+            "no_duplicate_active_versions",
+            "no_orphan_paths",
+            "manifest_filesystem_consistency",
+        }
+        audit_checks = set(policy.get("audit_checks", []))
+        missing_audit_checks = sorted(required_audit_checks - audit_checks)
+        return {
+            "ok": (
+                not invalid_values
+                and not missing_archives
+                and not missing_reference_scopes
+                and not missing_audit_checks
+            ),
+            "policy_version": policy.get("version", ""),
+            "foundation_rule": policy.get("foundation_rule", ""),
+            "invalid_values": invalid_values,
+            "required_archive_roots": len(archive_roots),
+            "missing_archives": missing_archives,
+            "missing_reference_scopes": missing_reference_scopes,
+            "missing_audit_checks": missing_audit_checks,
+            "active_area_policy": policy.get("active_area_policy", ""),
+            "historical_artifact_policy": policy.get("historical_artifact_policy", ""),
+            "monitoring_authority": policy.get("monitoring_authority", ""),
+        }
+
+    def canonical_change_policy_check(self) -> dict:
+        policy = self.config.get("canonical_change_policy", {})
+        required_values = {
+            "foundation_rule": "FND-ID-050",
+            "controlled_update": "required_after_pre_audit_and_governance_review",
+            "cadp_link": "required_when_file_replaced",
+            "documentation_sync": "required",
+            "release_integrity_gate": "required_or_documented",
+            "canonical_acceptance": "all_checks_completed_or_justified",
+            "monitoring_authority": "CAM_OR_ORCHESTRATOR_CORE",
+        }
+        invalid_values = {
+            key: {"expected": expected, "actual": policy.get(key)}
+            for key, expected in required_values.items()
+            if policy.get(key) != expected
+        }
+        required_flow = [
+            "Change Proposal",
+            "Pre-Audit",
+            "Governance Review",
+            "Controlled Canonical Update",
+            "CADP Archive / Path Sync",
+            "Documentation Sync",
+            "Release Integrity Gate",
+            "Canonical Acceptance",
+        ]
+        flow = policy.get("change_flow", [])
+        flow_ok = flow == required_flow
+        required_proposal_fields = {
+            "affected_file",
+            "reason",
+            "goal",
+            "architecture_component",
+            "expected_impact",
+            "required_follow_up_checks",
+        }
+        proposal_fields = set(policy.get("proposal_required_fields", []))
+        missing_proposal_fields = sorted(required_proposal_fields - proposal_fields)
+        required_pre_audit_checks = {
+            "no_invalid_paths",
+            "no_conflicting_architecture_terms",
+            "no_duplicate_active_canonical_files",
+            "no_open_legacy_references",
+            "cadp_1_0_not_violated",
+            "foundation_rules_not_violated",
+        }
+        pre_audit_checks = set(policy.get("pre_audit_checks", []))
+        missing_pre_audit_checks = sorted(required_pre_audit_checks - pre_audit_checks)
+        required_governance_checks = {
+            "foundation_compatible",
+            "canonical_architecture_compatible",
+            "no_policy_violation",
+            "no_uncontrolled_drift",
+            "documentation_and_manifest_impact_checked",
+        }
+        governance_checks = set(policy.get("governance_review_checks", []))
+        missing_governance_checks = sorted(required_governance_checks - governance_checks)
+        return {
+            "ok": (
+                not invalid_values
+                and flow_ok
+                and not missing_proposal_fields
+                and not missing_pre_audit_checks
+                and not missing_governance_checks
+            ),
+            "policy_version": policy.get("version", ""),
+            "foundation_rule": policy.get("foundation_rule", ""),
+            "invalid_values": invalid_values,
+            "flow_ok": flow_ok,
+            "missing_proposal_fields": missing_proposal_fields,
+            "missing_pre_audit_checks": missing_pre_audit_checks,
+            "missing_governance_checks": missing_governance_checks,
+            "controlled_update": policy.get("controlled_update", ""),
+            "cadp_link": policy.get("cadp_link", ""),
+            "release_integrity_gate": policy.get("release_integrity_gate", ""),
+            "monitoring_authority": policy.get("monitoring_authority", ""),
+        }
     def layer_status(self) -> dict:
         result = {}
         configured = self.config.get("layers", {})
@@ -229,6 +371,8 @@ class CanonicalArchitectureManager:
         apis = self.api_check()
         database = self.database_schema_check()
         artifact_lifecycle = self.artifact_lifecycle_check()
+        canonical_active_directory = self.canonical_active_directory_check()
+        canonical_change_policy = self.canonical_change_policy_check()
         layers = self.layer_status()
         checks = {
             "project_structure": project_structure["ok"],
@@ -240,6 +384,8 @@ class CanonicalArchitectureManager:
             "apis": apis["ok"],
             "database_schema": database["ok"],
             "artifact_lifecycle": artifact_lifecycle["ok"],
+            "canonical_active_directory": canonical_active_directory["ok"],
+            "canonical_change_policy": canonical_change_policy["ok"],
             "layers": all(item["ok"] for item in layers.values()),
         }
         return {
@@ -257,6 +403,8 @@ class CanonicalArchitectureManager:
             "apis": apis,
             "database_schema": database,
             "artifact_lifecycle": artifact_lifecycle,
+            "canonical_active_directory": canonical_active_directory,
+            "canonical_change_policy": canonical_change_policy,
             "layers": layers,
             "mutation_policy": "read_only_verification; controlled_migration_only",
         }
@@ -277,5 +425,9 @@ class CanonicalArchitectureManager:
             f"{status['database_schema']['ok']}.\n"
             f"- Artifact Lifecycle Policy={status['artifact_lifecycle']['ok']}; "
             "wertvolle Artefakte werden archiviert und nie automatisch geloescht.\n"
+            f"- CADP={status['canonical_active_directory']['ok']}; aktive Ordner enthalten nur kanonische Dateien, "
+            "historische Artefakte gehoeren in archive-Strukturen.\n"
+            f"- CCP={status['canonical_change_policy']['ok']}; kanonische Aenderungen folgen Proposal, "
+            "Pre-Audit, Governance Review und Release Integrity Gate.\n"
             "- Aenderungen erfolgen ausschliesslich ueber kontrollierte Migrationen."
         )

@@ -104,13 +104,24 @@ class ReleaseIntegrityFramework:
     def foundation_core_check(self) -> dict:
         rules = {rule.rule_id: rule for rule in FOUNDATION_2_2_RULES}
         rule = rules.get("FND-ID-048")
+        cadp_rule = rules.get("FND-ID-049")
+        ccp_rule = rules.get("FND-ID-050")
         required_paths = self.config.get("foundation_required_paths", [])
         missing = [relative for relative in required_paths if not (self.root / relative).is_file()]
+        required_foundation_rules = set(self.config.get("required_foundation_rules", ["FND-ID-048"]))
+        missing_foundation_rules = sorted(rule_id for rule_id in required_foundation_rules if rule_id not in rules)
         checks = {
             "rule_present": bool(rule),
             "rule_class": bool(rule and rule.foundation_class == "improvement"),
             "rule_text": bool(rule and rule.content == "Versuche es beim naechsten Mal immer besser zu machen."),
             "highest_protection": bool(rule and rule.protection_level == "highest"),
+            "cadp_rule_present": bool(cadp_rule),
+            "cadp_rule_class": bool(cadp_rule and cadp_rule.foundation_class == "canonical_active_directory"),
+            "cadp_highest_protection": bool(cadp_rule and cadp_rule.protection_level == "highest"),
+            "ccp_rule_present": bool(ccp_rule),
+            "ccp_rule_class": bool(ccp_rule and ccp_rule.foundation_class == "canonical_change_policy"),
+            "ccp_highest_protection": bool(ccp_rule and ccp_rule.protection_level == "highest"),
+            "required_foundation_rules": not missing_foundation_rules,
             "improvement_class": ImprovementFoundation.RULE_ID == "FND-ID-048",
             "foundation_version": ImprovementFoundation.VERSION == "2.2",
             "migration_manager": FoundationMigrationManager.MIGRATION_ID == "foundation-2.2-fnd-id-048",
@@ -122,8 +133,11 @@ class ReleaseIntegrityFramework:
         return {
             "ok": all(checks.values()),
             "rule_id": "FND-ID-048",
+            "cadp_rule_id": "FND-ID-049",
+            "ccp_rule_id": "FND-ID-050",
             "checks": checks,
             "missing": missing,
+            "missing_foundation_rules": missing_foundation_rules,
         }
 
     def canonical_architecture_check(self) -> dict:

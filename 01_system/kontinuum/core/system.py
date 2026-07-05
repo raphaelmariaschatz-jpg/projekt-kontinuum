@@ -9,6 +9,9 @@ from kontinuum.tools.tool_registry import build_tools
 from kontinuum.version import APP_VERSION
 
 from .application_services import PromptOrchestrator
+from .capability_resolution_engine import CapabilityResolutionEngine
+from .execution_planner import ExecutionPlanner
+from .orchestrator_core import OrchestratorCore
 from .search_router import SearchRouter
 from .conversation import ConversationManager, Intent, normalize
 from .continuous_learning import ContinuousLearningService
@@ -38,6 +41,9 @@ from .motivation_explanation import MotivationExplanationCore
 from .temporal_relevance import TemporalRelevanceCore
 from .session_context import SessionContext
 from .identity_router import IdentityRouter
+from .identity_manager import IdentityManager
+from kontinuum.foundation.canonical_memory_manager import CanonicalMemoryManager
+from kontinuum.foundation.canonical_agent_integration_manager import CanonicalAgentIntegrationManager
 from .knowledge_contamination_guard import KnowledgeContaminationGuard
 from .foundation_knowledge_guard import FoundationKnowledgeGuard
 from .foundation_integrity import FoundationIntegrityCore
@@ -110,7 +116,31 @@ class KontinuumSystem:
             self.knowledge_platform,
         )
         self.agent_config["epistemic_actions"] = self.epistemic_actions
-        self.identity = self._load_identity()
+        self.identity_manager = IdentityManager(self.path_tools, self.storage)
+        self.identity = self.identity_manager.to_legacy_identity()
+        self.agent_config["identity_manager"] = self.identity_manager
+        self.canonical_memory_manager = CanonicalMemoryManager(
+            self.path_tools,
+            self.storage,
+            self.identity_manager,
+        )
+        self.agent_config["canonical_memory_manager"] = self.canonical_memory_manager
+        self.canonical_agent_integration_manager = CanonicalAgentIntegrationManager(
+            self.path_tools,
+            self.storage,
+            self.identity_manager,
+        )
+        self.agent_config["canonical_agent_integration_manager"] = self.canonical_agent_integration_manager
+        self.capability_resolution_engine = CapabilityResolutionEngine(
+            self.canonical_agent_integration_manager,
+            path_tools=self.path_tools,
+        )
+        self.agent_config["capability_resolution_engine"] = self.capability_resolution_engine
+        self.execution_planner = ExecutionPlanner(
+            self.capability_resolution_engine,
+            path_tools=self.path_tools,
+        )
+        self.agent_config["execution_planner"] = self.execution_planner
         self.session_context = SessionContext(self.identity)
         self.session_context.bind({})
         self.identity_router = IdentityRouter(self.session_context, self.identity)
@@ -310,6 +340,9 @@ class KontinuumSystem:
                 "vision_agent": lambda: self.vision_agent.status(),
                 "code_agent": lambda: self.code_agent.status(),
                 "canonical_git_manager": lambda: self.canonical_git_manager.status(),
+                "canonical_agent_integration_manager": lambda: self.canonical_agent_integration_manager.status(),
+                "capability_resolution_engine": lambda: self.capability_resolution_engine.status(),
+                "orchestrator_core": lambda: self.orchestrator_core.status(),
                 "knowledge_platform": lambda: self.knowledge_platform.status(),
                 "continuity": lambda: self.continuity_core.status(),
                 "moral": lambda: self.moral_core.status(),
@@ -342,6 +375,11 @@ class KontinuumSystem:
         self.conversation.bind_user(self.session_context.current())
         self.memory_core.session_id = self.conversation.session_id
         self.agents = build_agents(storage=self.storage, tools=self.tools, config=self.agent_config)
+        self.orchestrator_core = OrchestratorCore(
+            self.agents,
+            schema_path=self.path_tools.paths()["config"] / OrchestratorCore.SCHEMA_FILE,
+        )
+        self.agent_config["orchestrator_core"] = self.orchestrator_core
         self.agent_router = AgentRouter(self.agents)
         self.modules = ModuleView(self.agents)
         self.prompt_orchestrator = PromptOrchestrator(self)
@@ -433,9 +471,13 @@ class KontinuumSystem:
             "vision_agent": self.vision_agent.status(),
             "code_agent": self.code_agent.status(),
             "canonical_git_manager": self.canonical_git_manager.status(),
+            "canonical_agent_integration_manager": self.canonical_agent_integration_manager.status(),
+            "capability_resolution_engine": self.capability_resolution_engine.status(),
+            "orchestrator_core": self.orchestrator_core.status(),
             "self_knowledge": self.self_knowledge.profile(),
             "consciousness": self.consciousness.profile(),
             "memory_core": self.memory_core.status(),
+            "canonical_memory_manager": self.canonical_memory_manager.status(),
             "knowledge_platform": self.knowledge_platform.status(),
             "knowledge_self_model": self.knowledge_intelligence.self_model(),
             "epistemic_actions": self.epistemic_actions.status(),
@@ -447,6 +489,7 @@ class KontinuumSystem:
             "foundation_memory": self.foundation_memory.status(),
             "foundation_query": self.foundation_query.status(),
             "foundation_reasoning": self.foundation_reasoning.status(),
+            "canonical_identity_manager": self.identity_manager.status(),
             "foundation_2_2": self.foundation_status_center.status(),
             "foundation_2_1": self.foundation_status_center.status(),
             "canonical_architecture": self.canonical_architecture.status(),

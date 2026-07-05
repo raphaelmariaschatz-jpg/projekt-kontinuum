@@ -27,7 +27,7 @@ with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as temporary_root:
         status = system.status()["foundation_2_2"]
         assert status["version"] == "2.2"
         assert status["active"] is True
-        assert status["registry"]["rules"] == 48
+        assert status["registry"]["rules"] == 50
         assert status["components"]["foundation_registry"] is True
         assert status["components"]["rule_engine"] is True
         assert status["components"]["foundation_api"] is True
@@ -50,6 +50,16 @@ with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as temporary_root:
         assert rule_48["foundation_class"] == "improvement"
         assert rule_48["protection_level"] == "highest"
 
+        rule_49 = system.foundation_api.get_rule("FND-ID-049")
+        assert rule_49["foundation_class"] == "canonical_active_directory"
+        assert rule_49["protection_level"] == "highest"
+        assert "archive" in rule_49["content"]
+
+        rule_50 = system.foundation_api.get_rule("FND-ID-050")
+        assert rule_50["foundation_class"] == "canonical_change_policy"
+        assert rule_50["protection_level"] == "highest"
+        assert "Pre-Audit" in rule_50["content"]
+
         rule = system.foundation_api.get_rule("FND-ID-001")
         assert rule["foundation_class"] == "creator"
         assert "Raphael Schatz" in rule["content"]
@@ -65,13 +75,15 @@ with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as temporary_root:
 
         answer = system.ask("foundationstatus")
         assert "Foundation Status Center 2.2: aktiv" in answer
-        assert "Registry: 48 Regeln" in answer
+        assert "Registry: 50 Regeln" in answer
         assert "FND-ID-048: aktiv" in answer
         assert "Foundation ist als aktiver Systembestandteil verankert" in answer
 
         rules = system.ask("foundationregeln")
-        assert "Foundation Registry 2.2: 48 aktive Regeln" in rules
+        assert "Foundation Registry 2.2: 50 aktive Regeln" in rules
         assert "FND-ID-001" in rules
+        assert "FND-ID-049" in rules
+        assert "FND-ID-050" in rules
 
         api_status = system.ask("foundationapi status")
         assert "Foundation API 2.2: aktiv" in api_status

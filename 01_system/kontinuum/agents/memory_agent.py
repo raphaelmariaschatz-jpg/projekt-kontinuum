@@ -17,7 +17,20 @@ class MemoryAgent(BaseAgent):
         return (
             normalized.startswith(("merke ", "merke dir ", "speichere ", "was weisst du uber ",
                                    "aktualisiere erinnerung ", "vergiss ", "verknupfe erinnerungen "))
-            or normalized in {"zeige projekterinnerungen", "zeige offene punkte", "prufe widerspruche", "gedachtnisstatus"}
+            or normalized in {
+                "zeige projekterinnerungen",
+                "zeige offene punkte",
+                "prufe widerspruche",
+                "gedachtnisstatus",
+                "identitystatus",
+                "identitatsstatus",
+                "memory status",
+                "memorystatus",
+                "memory statistics",
+                "memorystatistics",
+                "memory statistik",
+                "memorystatistik",
+            }
         )
 
     def handle(self, prompt: str) -> AgentResult:
@@ -27,13 +40,36 @@ class MemoryAgent(BaseAgent):
         text = prompt.strip()
         lower = text.casefold()
         owner = self.config.get("conversation", {}).get("user", {}).get("full_name", "") or "Raphael"
-        if lower.startswith(("merke dir ", "merke ", "speichere ")):
+        identity_manager = self.config.get("identity_manager")
+        canonical_memory = self.config.get("canonical_memory_manager")
+        if lower in {"memory status", "memorystatus"}:
+            answer = canonical_memory.format_status() if canonical_memory else "Canonical Memory Manager ist nicht angebunden."
+        elif lower in {"memory statistics", "memorystatistics", "memory statistik", "memorystatistik"}:
+            answer = canonical_memory.format_statistics() if canonical_memory else "Canonical Memory Manager ist nicht angebunden."
+        elif lower in {"identitystatus", "identitätsstatus", "identitatsstatus"}:
+            if not identity_manager:
+                answer = "Canonical Identity Manager ist nicht angebunden."
+            else:
+                view = identity_manager.memory_view()
+                answer = (
+                    "Canonical Identity Manager 1.0:\n"
+                    f"- Creator: {view['creator'].get('name', '')}\n"
+                    f"- bevorzugte Anrede: {view['user'].get('preferred_address', '')}\n"
+                    f"- Assistant: {view['assistant'].get('name', '')}/{view['assistant'].get('short_name', '')}\n"
+                    f"- Rollen: {view['roles']}\n"
+                    f"- Speicherpfad: {view['path']}\n"
+                    f"- Hash: {view['hash']}"
+                )
+        elif lower.startswith(("merke dir ", "merke ", "speichere ")):
             content = re.sub(r"^(?:merke\s+dir|merke|speichere)\s+", "", text, flags=re.I)
-            result = core.remember(content, owner=owner, explicit=True)
-            platform = self.config.get("knowledge_platform")
-            if platform and result.get("id"):
-                platform.integrate_memory(result)
-            answer = self._decision_answer(result)
+            if identity_manager and identity_manager.can_handle(content):
+                answer = "Identitätsdaten sind schreibgeschützt für MemoryAgent. Änderungen erfolgen ausschließlich über den Canonical Identity Manager."
+            else:
+                result = core.remember(content, owner=owner, explicit=True)
+                platform = self.config.get("knowledge_platform")
+                if platform and result.get("id"):
+                    platform.integrate_memory(result)
+                answer = self._decision_answer(result)
         elif lower.startswith(("was weißt du über ", "was weisst du über ", "was weisst du uber ")):
             term = re.sub(r"^was\s+wei(?:ß|ss)t\s+du\s+(?:über|uber)\s+", "", text, flags=re.I).strip(" .?!")
             platform = self.config.get("knowledge_platform")

@@ -1,0 +1,124 @@
+{
+  "schema_version": "1.0",
+  "release": "34.1",
+  "artifact": "ExecutionRun",
+  "policy": "Orchestrator Core 1.0 fuehrt ausschliesslich validierte ExecutionPlans aus.",
+  "input_artifact": "ExecutionPlan",
+  "runtime_objects": [
+    "ExecutionRun",
+    "ExecutionTask",
+    "ExecutionResult"
+  ],
+  "required_run_fields": [
+    "run_id",
+    "plan_id",
+    "request_id",
+    "started_at",
+    "finished_at",
+    "status",
+    "tasks",
+    "results",
+    "errors",
+    "fallbacks",
+    "governance_decisions",
+    "review_handoff_ready",
+    "cmm_handoff_ready",
+    "parallel_groups",
+    "started_steps",
+    "agent_status",
+    "runtime_mode",
+    "sources"
+  ],
+  "required_task_fields": [
+    "task_id",
+    "step_id",
+    "capability_id",
+    "expected_agent",
+    "actual_agent",
+    "status",
+    "governance_decision",
+    "fallback_allowed",
+    "fallback_used",
+    "started_at",
+    "finished_at",
+    "duration_seconds"
+  ],
+  "required_result_fields": [
+    "task_id",
+    "step_id",
+    "capability_id",
+    "expected_agent",
+    "actual_agent",
+    "status",
+    "handled",
+    "answer",
+    "error",
+    "fallback_used",
+    "governance_decision",
+    "review_handoff_ready",
+    "cmm_handoff_ready"
+  ],
+  "status_values": [
+    "rejected",
+    "completed",
+    "completed_with_errors",
+    "failed"
+  ],
+  "task_status_values": [
+    "pending",
+    "completed",
+    "completed_with_fallback",
+    "failed",
+    "governance_blocked"
+  ],
+  "error_classes": [
+    "missing_plan_fields",
+    "missing_plan_identity",
+    "plan_not_ready",
+    "plan_validation_not_ok",
+    "empty_plan",
+    "empty_or_invalid_parallel_groups",
+    "parallel_groups_do_not_match_steps",
+    "blocked_step",
+    "missing_expected_agent",
+    "step_governance_blocked",
+    "execution_not_allowed_by_plan",
+    "runtime_governance_blocked",
+    "missing_agent",
+    "agent_unavailable",
+    "agent_no_response",
+    "handled_false",
+    "invalid_result",
+    "empty_result",
+    "timeout",
+    "agent_error"
+  ],
+  "fallback_rules": {
+    "free_agent_search": false,
+    "allowed_sources": [
+      "step_id",
+      "capability_id",
+      "expected_agent"
+    ],
+    "requires_governance_ok": true,
+    "document_fallback": true,
+    "foundation_steps_allow_fallback": false
+  },
+  "handoff_fields": {
+    "review_handoff_ready": "true only after successful execution",
+    "cmm_handoff_ready": "false in 1.0; CMM storage waits for review approval"
+  },
+  "runtime_guards": {
+    "accepts_only_validated_execution_plan": true,
+    "detects_capabilities": false,
+    "plans": false,
+    "calls_cre": false,
+    "free_agent_search": false,
+    "writes_cmm": false,
+    "implements_review_logic": false
+  },
+  "parallelization": {
+    "reads_parallel_groups": true,
+    "version_1_0_execution": "sequential_with_parallel_group_structure"
+  }
+}

@@ -1,0 +1,947 @@
+{
+  "schema_version": "1.0",
+  "release": "34.1",
+  "source": "24_config/canonical_agents.json",
+  "policy": "CRE 1.0 registriert nur bereits vorhandene CAIM-Capabilities.",
+  "capabilities": [
+    {
+      "capability_id": "api_registry.read",
+      "name": "Api Registry Read",
+      "description": "Verwaltet kanonische API- und Schnittstellenregistrierung.",
+      "supported_intents": [
+        "command",
+        "dialog.follow_up",
+        "dialog.question",
+        "governance.review"
+      ],
+      "priority": 30,
+      "governance_level": "standard",
+      "allowed_agents": [
+        "canonical_api_registry"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok"
+      ]
+    },
+    {
+      "capability_id": "api_registry.status",
+      "name": "Api Registry Status",
+      "description": "Verwaltet kanonische API- und Schnittstellenregistrierung.",
+      "supported_intents": [
+        "command",
+        "dialog.follow_up",
+        "dialog.question",
+        "governance.review"
+      ],
+      "priority": 30,
+      "governance_level": "standard",
+      "allowed_agents": [
+        "canonical_api_registry"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok"
+      ]
+    },
+    {
+      "capability_id": "architecture.read",
+      "name": "Architecture Read",
+      "description": "Verwaltet kanonische Architekturregeln und Strukturstatus.",
+      "supported_intents": [
+        "command",
+        "dialog.follow_up",
+        "dialog.question",
+        "governance.review"
+      ],
+      "priority": 30,
+      "governance_level": "standard",
+      "allowed_agents": [
+        "canonical_architecture"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok"
+      ]
+    },
+    {
+      "capability_id": "architecture.status",
+      "name": "Architecture Status",
+      "description": "Verwaltet kanonische Architekturregeln und Strukturstatus.",
+      "supported_intents": [
+        "command",
+        "dialog.follow_up",
+        "dialog.question",
+        "governance.review"
+      ],
+      "priority": 30,
+      "governance_level": "standard",
+      "allowed_agents": [
+        "canonical_architecture"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok"
+      ]
+    },
+    {
+      "capability_id": "artifacts.read",
+      "name": "Artifacts Read",
+      "description": "Verwaltet kanonische Artefakte und Artefaktstatus.",
+      "supported_intents": [
+        "command",
+        "dialog.follow_up",
+        "dialog.question",
+        "governance.review"
+      ],
+      "priority": 30,
+      "governance_level": "standard",
+      "allowed_agents": [
+        "canonical_artifacts"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok"
+      ]
+    },
+    {
+      "capability_id": "artifacts.status",
+      "name": "Artifacts Status",
+      "description": "Verwaltet kanonische Artefakte und Artefaktstatus.",
+      "supported_intents": [
+        "command",
+        "dialog.follow_up",
+        "dialog.question",
+        "governance.review"
+      ],
+      "priority": 30,
+      "governance_level": "standard",
+      "allowed_agents": [
+        "canonical_artifacts"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok"
+      ]
+    },
+    {
+      "capability_id": "canonical_identity.read",
+      "name": "Canonical Identity Read",
+      "description": "Kanonische Identitätsinstanz für Creator, Rollen und Systemidentität.",
+      "supported_intents": [
+        "command",
+        "dialog.follow_up",
+        "dialog.question"
+      ],
+      "priority": 20,
+      "governance_level": "controlled",
+      "allowed_agents": [
+        "canonical_identity_manager"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok",
+        "governance_review_required"
+      ]
+    },
+    {
+      "capability_id": "canonical_identity.status",
+      "name": "Canonical Identity Status",
+      "description": "Kanonische Identitätsinstanz für Creator, Rollen und Systemidentität.",
+      "supported_intents": [
+        "command",
+        "dialog.follow_up",
+        "dialog.question"
+      ],
+      "priority": 20,
+      "governance_level": "controlled",
+      "allowed_agents": [
+        "canonical_identity_manager"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok",
+        "governance_review_required"
+      ]
+    },
+    {
+      "capability_id": "canonical_identity.write",
+      "name": "Canonical Identity Write",
+      "description": "Kanonische Identitätsinstanz für Creator, Rollen und Systemidentität.",
+      "supported_intents": [
+        "command",
+        "dialog.thought"
+      ],
+      "priority": 20,
+      "governance_level": "controlled",
+      "allowed_agents": [
+        "canonical_identity_manager"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok",
+        "governance_review_required"
+      ]
+    },
+    {
+      "capability_id": "canonical_memory.read",
+      "name": "Canonical Memory Read",
+      "description": "Verwaltet kanonische Memory-Einträge mit Hash und Governance.",
+      "supported_intents": [
+        "command",
+        "dialog.follow_up",
+        "dialog.question"
+      ],
+      "priority": 20,
+      "governance_level": "controlled",
+      "allowed_agents": [
+        "canonical_memory_manager"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok",
+        "governance_review_required"
+      ]
+    },
+    {
+      "capability_id": "canonical_memory.status",
+      "name": "Canonical Memory Status",
+      "description": "Verwaltet kanonische Memory-Einträge mit Hash und Governance.",
+      "supported_intents": [
+        "command",
+        "dialog.follow_up",
+        "dialog.question"
+      ],
+      "priority": 20,
+      "governance_level": "controlled",
+      "allowed_agents": [
+        "canonical_memory_manager"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok",
+        "governance_review_required"
+      ]
+    },
+    {
+      "capability_id": "canonical_memory.write",
+      "name": "Canonical Memory Write",
+      "description": "Verwaltet kanonische Memory-Einträge mit Hash und Governance.",
+      "supported_intents": [
+        "command",
+        "dialog.thought"
+      ],
+      "priority": 20,
+      "governance_level": "controlled",
+      "allowed_agents": [
+        "canonical_memory_manager"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok",
+        "governance_review_required"
+      ]
+    },
+    {
+      "capability_id": "chemistry.cas",
+      "name": "Chemistry Cas",
+      "description": "Read-only Spezialagent fuer Stoffnamen, Summenformeln, CAS-Nummern, einfache Stoffeigenschaften und Sicherheitsfelder.",
+      "supported_intents": [
+        "command",
+        "dialog.follow_up",
+        "dialog.question"
+      ],
+      "priority": 40,
+      "governance_level": "governance_required",
+      "allowed_agents": [
+        "chemistry_agent"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok",
+        "governance_review_required"
+      ]
+    },
+    {
+      "capability_id": "chemistry.formula",
+      "name": "Chemistry Formula",
+      "description": "Read-only Spezialagent fuer Stoffnamen, Summenformeln, CAS-Nummern, einfache Stoffeigenschaften und Sicherheitsfelder.",
+      "supported_intents": [
+        "command",
+        "dialog.follow_up",
+        "dialog.question"
+      ],
+      "priority": 40,
+      "governance_level": "governance_required",
+      "allowed_agents": [
+        "chemistry_agent"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok",
+        "governance_review_required"
+      ]
+    },
+    {
+      "capability_id": "chemistry.lookup",
+      "name": "Chemistry Lookup",
+      "description": "Read-only Spezialagent fuer Stoffnamen, Summenformeln, CAS-Nummern, einfache Stoffeigenschaften und Sicherheitsfelder.",
+      "supported_intents": [
+        "command",
+        "dialog.follow_up",
+        "dialog.question"
+      ],
+      "priority": 40,
+      "governance_level": "governance_required",
+      "allowed_agents": [
+        "chemistry_agent"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok",
+        "governance_review_required"
+      ]
+    },
+    {
+      "capability_id": "chemistry.properties",
+      "name": "Chemistry Properties",
+      "description": "Read-only Spezialagent fuer Stoffnamen, Summenformeln, CAS-Nummern, einfache Stoffeigenschaften und Sicherheitsfelder.",
+      "supported_intents": [
+        "command",
+        "dialog.follow_up",
+        "dialog.question"
+      ],
+      "priority": 40,
+      "governance_level": "governance_required",
+      "allowed_agents": [
+        "chemistry_agent"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok",
+        "governance_review_required"
+      ]
+    },
+    {
+      "capability_id": "chemistry.safety",
+      "name": "Chemistry Safety",
+      "description": "Read-only Spezialagent fuer Stoffnamen, Summenformeln, CAS-Nummern, einfache Stoffeigenschaften und Sicherheitsfelder.",
+      "supported_intents": [
+        "command",
+        "dialog.follow_up",
+        "dialog.question"
+      ],
+      "priority": 40,
+      "governance_level": "governance_required",
+      "allowed_agents": [
+        "chemistry_agent"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok",
+        "governance_review_required"
+      ]
+    },
+    {
+      "capability_id": "code.inspect",
+      "name": "Code Inspect",
+      "description": "Analysiert Quellcode und Projektstruktur read-only.",
+      "supported_intents": [
+        "command",
+        "dialog.follow_up",
+        "dialog.question"
+      ],
+      "priority": 40,
+      "governance_level": "standard",
+      "allowed_agents": [
+        "code_agent"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok"
+      ]
+    },
+    {
+      "capability_id": "code.map",
+      "name": "Code Map",
+      "description": "Analysiert Quellcode und Projektstruktur read-only.",
+      "supported_intents": [
+        "command",
+        "dialog.follow_up",
+        "dialog.question"
+      ],
+      "priority": 40,
+      "governance_level": "standard",
+      "allowed_agents": [
+        "code_agent"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok"
+      ]
+    },
+    {
+      "capability_id": "code.status",
+      "name": "Code Status",
+      "description": "Analysiert Quellcode und Projektstruktur read-only.",
+      "supported_intents": [
+        "command",
+        "dialog.follow_up",
+        "dialog.question"
+      ],
+      "priority": 40,
+      "governance_level": "standard",
+      "allowed_agents": [
+        "code_agent"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok"
+      ]
+    },
+    {
+      "capability_id": "database.read",
+      "name": "Database Read",
+      "description": "Verwaltet kanonische Datenbankstruktur und Datenbankstatus.",
+      "supported_intents": [
+        "command",
+        "dialog.follow_up",
+        "dialog.question",
+        "governance.review"
+      ],
+      "priority": 30,
+      "governance_level": "standard",
+      "allowed_agents": [
+        "canonical_database"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok"
+      ]
+    },
+    {
+      "capability_id": "database.status",
+      "name": "Database Status",
+      "description": "Verwaltet kanonische Datenbankstruktur und Datenbankstatus.",
+      "supported_intents": [
+        "command",
+        "dialog.follow_up",
+        "dialog.question",
+        "governance.review"
+      ],
+      "priority": 30,
+      "governance_level": "standard",
+      "allowed_agents": [
+        "canonical_database"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok"
+      ]
+    },
+    {
+      "capability_id": "file.learn",
+      "name": "File Learn",
+      "description": "Liest lokale Dateien und Ordner im Projektkontext.",
+      "supported_intents": [
+        "command",
+        "dialog.thought"
+      ],
+      "priority": 70,
+      "governance_level": "controlled",
+      "allowed_agents": [
+        "file_agent"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok",
+        "governance_review_required"
+      ]
+    },
+    {
+      "capability_id": "file.read",
+      "name": "File Read",
+      "description": "Liest lokale Dateien und Ordner im Projektkontext.",
+      "supported_intents": [
+        "command",
+        "dialog.follow_up",
+        "dialog.question"
+      ],
+      "priority": 40,
+      "governance_level": "standard",
+      "allowed_agents": [
+        "file_agent"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok"
+      ]
+    },
+    {
+      "capability_id": "file.status",
+      "name": "File Status",
+      "description": "Liest lokale Dateien und Ordner im Projektkontext.",
+      "supported_intents": [
+        "command",
+        "dialog.follow_up",
+        "dialog.question"
+      ],
+      "priority": 40,
+      "governance_level": "standard",
+      "allowed_agents": [
+        "file_agent"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok"
+      ]
+    },
+    {
+      "capability_id": "git.inspect",
+      "name": "Git Inspect",
+      "description": "Stellt read-only Git-Status und Repositorydiagnosen bereit.",
+      "supported_intents": [
+        "command",
+        "dialog.follow_up",
+        "dialog.question"
+      ],
+      "priority": 40,
+      "governance_level": "standard",
+      "allowed_agents": [
+        "git_agent"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok"
+      ]
+    },
+    {
+      "capability_id": "git.status",
+      "name": "Git Status",
+      "description": "Stellt read-only Git-Status und Repositorydiagnosen bereit.",
+      "supported_intents": [
+        "command",
+        "dialog.follow_up",
+        "dialog.question"
+      ],
+      "priority": 40,
+      "governance_level": "standard",
+      "allowed_agents": [
+        "git_agent"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok"
+      ]
+    },
+    {
+      "capability_id": "governance.api",
+      "name": "Governance Api",
+      "description": "Verwaltet kanonische API- und Schnittstellenregistrierung.",
+      "supported_intents": [
+        "command",
+        "governance.review"
+      ],
+      "priority": 10,
+      "governance_level": "governance_required",
+      "allowed_agents": [
+        "canonical_api_registry"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok",
+        "governance_review_required"
+      ]
+    },
+    {
+      "capability_id": "governance.architecture",
+      "name": "Governance Architecture",
+      "description": "Verwaltet kanonische Architekturregeln und Strukturstatus.",
+      "supported_intents": [
+        "command",
+        "governance.review"
+      ],
+      "priority": 10,
+      "governance_level": "governance_required",
+      "allowed_agents": [
+        "canonical_architecture"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok",
+        "governance_review_required"
+      ]
+    },
+    {
+      "capability_id": "governance.artifacts",
+      "name": "Governance Artifacts",
+      "description": "Verwaltet kanonische Artefakte und Artefaktstatus.",
+      "supported_intents": [
+        "command",
+        "governance.review"
+      ],
+      "priority": 10,
+      "governance_level": "governance_required",
+      "allowed_agents": [
+        "canonical_artifacts"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok",
+        "governance_review_required"
+      ]
+    },
+    {
+      "capability_id": "governance.database",
+      "name": "Governance Database",
+      "description": "Verwaltet kanonische Datenbankstruktur und Datenbankstatus.",
+      "supported_intents": [
+        "command",
+        "governance.review"
+      ],
+      "priority": 10,
+      "governance_level": "governance_required",
+      "allowed_agents": [
+        "canonical_database"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok",
+        "governance_review_required"
+      ]
+    },
+    {
+      "capability_id": "governance.git",
+      "name": "Governance Git",
+      "description": "Stellt read-only Git-Status und Repositorydiagnosen bereit.",
+      "supported_intents": [
+        "command",
+        "governance.review"
+      ],
+      "priority": 10,
+      "governance_level": "governance_required",
+      "allowed_agents": [
+        "git_agent"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok",
+        "governance_review_required"
+      ]
+    },
+    {
+      "capability_id": "identity.read",
+      "name": "Identity Read",
+      "description": "Verwaltet die kanonische Identität und Rolleninformationen.",
+      "supported_intents": [
+        "command",
+        "dialog.follow_up",
+        "dialog.question"
+      ],
+      "priority": 20,
+      "governance_level": "controlled",
+      "allowed_agents": [
+        "identity_manager"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok",
+        "governance_review_required"
+      ]
+    },
+    {
+      "capability_id": "identity.status",
+      "name": "Identity Status",
+      "description": "Verwaltet die kanonische Identität und Rolleninformationen.",
+      "supported_intents": [
+        "command",
+        "dialog.follow_up",
+        "dialog.question"
+      ],
+      "priority": 20,
+      "governance_level": "controlled",
+      "allowed_agents": [
+        "identity_manager"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok",
+        "governance_review_required"
+      ]
+    },
+    {
+      "capability_id": "identity.write",
+      "name": "Identity Write",
+      "description": "Verwaltet die kanonische Identität und Rolleninformationen.",
+      "supported_intents": [
+        "command",
+        "dialog.thought"
+      ],
+      "priority": 20,
+      "governance_level": "controlled",
+      "allowed_agents": [
+        "identity_manager"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok",
+        "governance_review_required"
+      ]
+    },
+    {
+      "capability_id": "knowledge.integrate",
+      "name": "Knowledge Integrate",
+      "description": "Steuert Lernaufträge und Wissensintegration.",
+      "supported_intents": [
+        "command",
+        "dialog.thought"
+      ],
+      "priority": 70,
+      "governance_level": "controlled",
+      "allowed_agents": [
+        "learning_agent"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok",
+        "governance_review_required"
+      ]
+    },
+    {
+      "capability_id": "learning.run",
+      "name": "Learning Run",
+      "description": "Steuert Lernaufträge und Wissensintegration.",
+      "supported_intents": [
+        "command",
+        "dialog.thought"
+      ],
+      "priority": 70,
+      "governance_level": "controlled",
+      "allowed_agents": [
+        "learning_agent"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok",
+        "governance_review_required"
+      ]
+    },
+    {
+      "capability_id": "learning.status",
+      "name": "Learning Status",
+      "description": "Steuert Lernaufträge und Wissensintegration.",
+      "supported_intents": [
+        "command",
+        "dialog.follow_up",
+        "dialog.question"
+      ],
+      "priority": 40,
+      "governance_level": "standard",
+      "allowed_agents": [
+        "learning_agent"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok"
+      ]
+    },
+    {
+      "capability_id": "memory.read",
+      "name": "Memory Read",
+      "description": "Verwaltet Erinnerungsbefehle und Memory-Zugriffe.",
+      "supported_intents": [
+        "command",
+        "dialog.follow_up",
+        "dialog.question"
+      ],
+      "priority": 40,
+      "governance_level": "standard",
+      "allowed_agents": [
+        "memory"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok"
+      ]
+    },
+    {
+      "capability_id": "memory.status",
+      "name": "Memory Status",
+      "description": "Verwaltet Erinnerungsbefehle und Memory-Zugriffe.",
+      "supported_intents": [
+        "command",
+        "dialog.follow_up",
+        "dialog.question"
+      ],
+      "priority": 40,
+      "governance_level": "standard",
+      "allowed_agents": [
+        "memory"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok"
+      ]
+    },
+    {
+      "capability_id": "memory.write",
+      "name": "Memory Write",
+      "description": "Verwaltet Erinnerungsbefehle und Memory-Zugriffe.",
+      "supported_intents": [
+        "command",
+        "dialog.thought"
+      ],
+      "priority": 70,
+      "governance_level": "controlled",
+      "allowed_agents": [
+        "memory"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok",
+        "governance_review_required"
+      ]
+    },
+    {
+      "capability_id": "source.capture",
+      "name": "Source Capture",
+      "description": "Liest Webadressen und Internetquellen kontrolliert ein.",
+      "supported_intents": [
+        "command",
+        "dialog.thought"
+      ],
+      "priority": 70,
+      "governance_level": "controlled",
+      "allowed_agents": [
+        "web_agent"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok",
+        "governance_review_required"
+      ]
+    },
+    {
+      "capability_id": "vision.inspect",
+      "name": "Vision Inspect",
+      "description": "Analysiert lokale Bilddateien read-only.",
+      "supported_intents": [
+        "command",
+        "dialog.follow_up",
+        "dialog.question"
+      ],
+      "priority": 40,
+      "governance_level": "standard",
+      "allowed_agents": [
+        "vision_agent"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok"
+      ]
+    },
+    {
+      "capability_id": "vision.status",
+      "name": "Vision Status",
+      "description": "Analysiert lokale Bilddateien read-only.",
+      "supported_intents": [
+        "command",
+        "dialog.follow_up",
+        "dialog.question"
+      ],
+      "priority": 40,
+      "governance_level": "standard",
+      "allowed_agents": [
+        "vision_agent"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok"
+      ]
+    },
+    {
+      "capability_id": "web.read",
+      "name": "Web Read",
+      "description": "Liest Webadressen und Internetquellen kontrolliert ein.",
+      "supported_intents": [
+        "command",
+        "dialog.follow_up",
+        "dialog.question"
+      ],
+      "priority": 40,
+      "governance_level": "standard",
+      "allowed_agents": [
+        "web_agent"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok"
+      ]
+    },
+    {
+      "capability_id": "web.status",
+      "name": "Web Status",
+      "description": "Liest Webadressen und Internetquellen kontrolliert ein.",
+      "supported_intents": [
+        "command",
+        "dialog.follow_up",
+        "dialog.question"
+      ],
+      "priority": 40,
+      "governance_level": "standard",
+      "allowed_agents": [
+        "web_agent"
+      ],
+      "prerequisites": [
+        "foundation_rules_ok",
+        "cam_status_ok",
+        "ccp_status_ok"
+      ]
+    }
+  ]
+}

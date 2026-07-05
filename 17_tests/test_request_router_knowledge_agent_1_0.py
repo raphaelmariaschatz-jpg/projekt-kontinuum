@@ -33,6 +33,10 @@ with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as temporary:
         "Lernstatus.": ("Statusabfrage", "status_agent"),
         "CanonicalEngineStatus.": ("Governance", "canonical_engine"),
         "126 × 254,87": ("Rechenaufgabe", "math_agent"),
+        "was ergibt die Wurzel aus 9": ("Rechenaufgabe", "math_agent"),
+        "Quadratwurzel aus 16": ("Rechenaufgabe", "math_agent"),
+        "sqrt(25)": ("Rechenaufgabe", "math_agent"),
+        "3 * 7": ("Rechenaufgabe", "math_agent"),
     }
     for prompt, expected in examples.items():
         decision = router.decide(prompt, conversation.classify(prompt))
@@ -46,5 +50,24 @@ with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as temporary:
 
     math = FormulaEngine().answer("126 × 254,87")
     assert math == "126 × 254,87 = 32 113,62"
+
+    engine = FormulaEngine()
+    regressions = {
+        "was ergibt die Wurzel aus 9": "3",
+        "Quadratwurzel aus 16": "4",
+        "sqrt(25)": "5",
+        "3 * 7": "21",
+        "√9": "3",
+        "wurzel 9": "3",
+    }
+    forbidden = (
+        "Der Router hat den Auftrag erkannt",
+        "keine ausführende Agentenantwort",
+        "kein angebundener Agent",
+    )
+    for prompt, expected in regressions.items():
+        answer = engine.answer(prompt)
+        assert answer and expected in answer, (prompt, answer)
+        assert not any(message in answer for message in forbidden), (prompt, answer)
 
 print("Kontinuum Request Router & KnowledgeAgent 1.0 tests passed")

@@ -404,3 +404,239 @@
 - Governance-Bewertung: konform mit Phase 3 Continuous Canonical Governance,
   da Queue, Review, Provenienz, Bandbreitenlimit und Startpfad sichtbar,
   dokumentiert und gatepflichtig sind.
+
+# Meilenstein Learning Governance 1.2 / CLG 1.1 – kontrollierter Lern-Governance-Pfad (2026-07-02)
+
+Projekt Kontinuum erhielt einen eigenstaendigen, kanonisch nachvollziehbaren
+Lern-Governance-Pfad. Learning Agent 1.2 bleibt vollstaendig read-only im
+Proposal-Modus und erzeugt Proposal-IDs, Queue-Eintraege, History,
+Provenance, Confidence und Statusreports. Continuous Learning Governance 1.1
+ist als getrennte Orchestrierungs- und Governance-Schicht hinzugekommen.
+
+Architekturstand:
+
+```text
+Foundation -> Canonical Architecture -> CAM -> Governance Layer
+           -> Request Router / Knowledge Agent / Memory Agent
+           -> Learning Agent 1.2 -> Learning Queue
+           -> CLG 1.1 -> Audit / Compliance / Drift
+```
+
+Wichtige Artefakte:
+
+- `12_agents/learning_agent_1_2.py`
+- `12_agents/continuous_learning_governance_1_1.py`
+- `17_tests/test_learning_agent_1_2.py`
+- `17_tests/test_continuous_learning_governance_1_1.py`
+- `33_learning/learning_queue.json`
+- `33_learning/learning_history.json`
+- `33_learning/governance_events.json`
+- `31_reports/learning_agent/learning_agent_1_2_status_report.md`
+- `31_reports/clg_1_1_status_report.md`
+
+Governance-Ergebnis:
+
+- Learning Agent erzeugt ausschliesslich `pending`-Proposals.
+- CLG validiert den Lifecycle `pending -> under_review -> approved -> knowledge_handoff -> memory_handoff -> completed` sowie Ablehnung, Duplikat und Archivierung.
+- Knowledge Agent, Memory Agent und CAM werden nur per Handoff adressiert.
+- Keine automatische Wissensuebernahme und keine produktive Aenderung an
+  `03_memory`, `04_knowledge` oder `32_data`.
+- Tests fuer Learning Agent 1.2, CLG 1.0 und CLG 1.1 bestanden.
+
+# Meilenstein IdentityManager / CIM 34.1 - Abschluss der kanonischen Identitaetsbindung (2026-07-02)
+
+Projekt Kontinuum erhielt mit IdentityManager/CIM 34.1 eine stabile,
+systemweit gebundene Identitaetsverwaltung fuer Creator-, User- und
+Assistant-Identitaet. Die Router-/Agentenuebergabe fuer strukturierte
+Identity-Auftraege wurde geschlossen und der Statuspfad dokumentiert.
+
+Abschlussstand:
+
+- Der Router erkennt `identity:`-Bloecke und leitet sie an den IdentityManager
+  weiter.
+- Der IdentityManager ist systemweit gebunden und wird beim Systemstart fuer
+  die lokale Identitaet verwendet.
+- `24_config/canonical_identity_34_1.json` ist fuer den 34.1-Abschluss die
+  kanonische Quelle der gespeicherten Identitaetsdaten.
+- `preferred_address` greift in normalen Antworten, insbesondere in der
+  Bereitschaftsantwort.
+- Der Statusbefehl `identity status` ist verfuegbar.
+- Vor dem Ueberschreiben bestehender Identitaetsdaten ist ein Backup aktiv.
+- Der Regressionstest `17_tests/test_identity_config_routing_34_1.py` wurde
+  erfolgreich ausgefuehrt.
+- Die Syntaxpruefung der geaenderten IdentityManager-/Router-/Systemmodule
+  wurde erfolgreich ausgefuehrt.
+
+Verifikationsstatus:
+
+- Regressionstest: bestanden.
+- Syntaxpruefung: bestanden.
+- Ergebnis: IdentityManager/CIM 34.1 ist als abgeschlossener, dokumentierter
+  Foundation-Baustein fuer Identitaet, Anrede und Statusabfrage verankert.
+
+# Meilenstein Multi-Intent-Fix und Capability Resolution Engine 1.0 (2026-07-03)
+
+Projekt Kontinuum erhielt eine erste technische Grundlage fuer die Capability
+Resolution Engine 1.0. Der Ausbau folgt der Architekturentscheidung, nicht
+primaer weitere Agenten zu ergaenzen, sondern vorhandene und kuenftige
+Faehigkeiten besser aufzuloesen, zu priorisieren und Governance-/Review-/CMM-
+Anbindung vorzubereiten.
+
+Zielpfad:
+
+```text
+User -> Request Router -> Capability Resolution Engine -> Orchestrator Core
+     -> Governance -> Agenten -> Review -> CMM / Learning
+```
+
+Abschlussstand:
+
+- CRE 1.0 ist als read-only Empfehlungsschicht unter
+  `01_system/kontinuum/core/capability_resolution_engine.py` angelegt.
+- CRE nutzt CAIM read-only als bestehende Quelle fuer Agenten- und
+  Capability-Daten.
+- CRE fuehrt keine Agenten eigenmaechtig aus.
+- Single-Intent- und Multi-Intent-Aufloesung werden unterstuetzt.
+- Empfehlungen enthalten Capability, Kandidaten, priorisierten Agenten,
+  Governance-Pflicht, Human-Approval, Review-Pflicht und CMM-Relevanz.
+- Der Multi-Intent-Fix fuer Projektordnerfreigabe plus Diagnostikbericht ist
+  regressionsgesichert und bleibt als Uebergangspfad aktiv.
+- Dokumentation wurde in CRE-Dokument, Architekturmodell, Projektstruktur,
+  Projektstatus, Handbuch und Ordnerstruktur synchronisiert.
+
+Wichtige Artefakte:
+
+- `01_system/kontinuum/core/capability_resolution_engine.py`
+- `17_tests/test_capability_resolution_engine_1_0.py`
+- `17_tests/test_multi_intent_file_diagnostics_34_1.py`
+- `14_documents/CAPABILITY_RESOLUTION_ENGINE_1_0.md`
+
+Verifikation:
+
+- `test_capability_resolution_engine_1_0.py`: bestanden.
+- `test_multi_intent_file_diagnostics_34_1.py`: bestanden.
+- `test_canonical_agent_integration_manager_1_0.py`: bestanden.
+- `test_request_router_knowledge_agent_1_0.py`: bestanden.
+- `test_file_agent_1_0.py`: bestanden.
+
+# Architekturentscheid Orchestrator Core 1.0 / Capability-first-Steuerung (2026-07-03)
+
+Der naechste grosse Entwicklungsschritt wurde als Orchestrator-Architektur
+festgelegt. Projekt Kontinuum soll nicht primaer durch immer mehr Agenten
+wachsen, sondern durch eine sauberere Steuerung vorhandener und kuenftiger
+Faehigkeiten.
+
+Entscheidung:
+
+- Capabilities werden zur primaeren Steuerungseinheit.
+- Agenten sind Anbieter von Faehigkeiten, nicht selbst die zentrale
+  Steuerungslogik.
+- CRE 1.0 bleibt der vorbereitende read-only Resolver.
+- Orchestrator Core 1.0 wird als naechster priorisierter Baustein geplant.
+- Governance entscheidet ueber Blockieren, Freigeben, Protokollieren,
+  Human-Approval, Review und CMM-/Learning-Handoffs.
+- Multi-Intent-Auftraege sollen kuenftig als Capability-Plan verarbeitet
+  werden, nicht als Sonderfall einzelner Agentenpfade.
+
+Zielpfad:
+
+```text
+User -> Request Router -> Capability Resolution Engine -> Orchestrator Core
+     -> Governance -> Agenten -> Review -> CMM / Learning
+```
+
+Dokumentationssync:
+
+- Kanonisches Architekturmodell: Orchestrator Core und CRE eingeordnet.
+- Handbuch: Orchestrator Core 1.0 mit Zweck, Aufgaben und Grenzen ergaenzt.
+- Roadmap: Orchestrator Core 1.0 als priorisierter Architekturmeilenstein
+  aufgenommen.
+- Phase-5-Dokumentation: Trennung Agent/Capability und Orchestrator-
+  Governance ergaenzt.
+- Lifecycle-/Governance-Regel: Orchestrator-Entscheidungen als
+  governancepflichtige Architekturartefakte dokumentiert.
+
+# Meilenstein Capability Resolution Engine 1.0 Registry-Verankerung (2026-07-04)
+
+CRE 1.0 wurde nach CCP 1.0 als kanonische, deterministische Capability-Schicht
+finalisiert. Die Ablaufkette lautet nun:
+
+```text
+User -> Request Router -> Capability Resolution Engine -> Priorisierung
+     -> Governance -> Agent-Auswahl -> Review -> CMM / Learning
+```
+
+Umgesetzt:
+
+- `01_system/kontinuum/core/capability_resolution_engine.py` nutzt eine
+  kanonische Capability Registry und CAIM read-only fuer Agentenkandidaten.
+- `24_config/capability_registry_34_1.json` registriert 46 bereits vorhandene
+  CAIM-Capabilities; keine Fantasie-Capabilities wurden angelegt.
+- Request Router und PromptOrchestrator protokollieren CRE-Resolutionen
+  kompatibel, ohne bestehende Agentenpfade zu ersetzen.
+- CAM und Release Integrity kennen CRE-Core und Capability Registry als
+  kanonische/releasekritische Pfade.
+- Tests pruefen Registry, Lookup, Governance-Gate, Router -> CRE, CRE -> Agent,
+  unbekannte Capability und fehlende Ausfuehrungsberechtigung.
+
+# Meilenstein Execution Planner 1.0 - Abschluss der deterministischen Planungsschicht (2026-07-05)
+
+Execution Planner 1.0 wurde als reine Planungsschicht zwischen CRE und zukuenftigem Orchestrator Core abgeschlossen. Der Planner erzeugt ausschliesslich einen `ExecutionPlan` mit Plan-ID, Request-ID, Zeitstempel, benoetigten Capabilities, Reihenfolge, Parallelgruppen, Prioritaet, Governance-Level, erwarteten Agenten, Status, Schritten und Validierung.
+
+Kanonische Kette:
+
+```text
+User -> Request Router -> Capability Resolution Engine -> Execution Planner
+     -> Orchestrator Core -> Governance -> Agent -> Review
+     -> Canonical Memory Manager
+```
+
+Abschlussstand:
+
+- `01_system/kontinuum/core/execution_planner.py` bleibt frei von Agentenausfuehrung, Runtime-Logik und Geschaeftslogik.
+- CRE liefert Capabilities, Prioritaeten und Governance-Hinweise.
+- Der Planner bestimmt deterministisch Planstruktur, Abhaengigkeiten und Parallelgruppen.
+- CAM und Release Integrity kennen Planner-Core und Execution-Plan-Schema als kanonische Artefakte.
+- `17_tests/test_execution_planner_1_0.py` prueft Planerzeugung, Reihenfolge, Parallelisierung, Governance-Blockierung, unbekannte Capability, fehlenden Agenten, Zyklus, leeren Plan und keine Agentenausfuehrung.
+
+Offene Punkte fuer Execution Planner 2.0 bleiben echte Planoptimierung, feinere Governance-Klassen, Orchestrator-Handoff-Vertrag, persistierte Planhistorie und UI-/Monitoring-Sicht auf Planvalidierung.
+
+# Meilenstein Orchestrator Core 1.0 - Execution Runtime (2026-07-05)
+
+Orchestrator Core 1.0 wurde als reine Execution Runtime fuer validierte ExecutionPlans angelegt. Die Komponente erkennt keine Capabilities, erzeugt keine Plaene, ruft CRE nicht direkt auf und trifft keine freie Agentenwahl.
+
+Abschlussstand:
+
+- `01_system/kontinuum/core/orchestrator_core.py` nimmt validierte `ExecutionPlan`s entgegen und erzeugt `ExecutionRun`s.
+- `24_config/orchestrator_runtime_schema_34_1.json` beschreibt den Runtime-Vertrag.
+- `17_tests/test_orchestrator_core_1_0.py` prueft Planannahme, Planablehnung, Agentenstart, Ergebnisempfang, handled-Auswertung, Fallback, Timeout, Governance-Blockierung, Parallelgruppen und die Trennung von CRE/Planner.
+- Review- und CMM-Uebergabe werden nur vorbereitet; keine Review-Bewertung und keine dauerhafte CMM-Speicherung erfolgen im Orchestrator.
+# Meilenstein Architekturphase abgeschlossen - Uebergang zu Controlled Integration & Operation (2026-07-05)
+
+Mit Einfuehrung des Architecture Governance Framework (AGF) 1.0 verfuegt Projekt Kontinuum erstmals ueber eine vollstaendig definierte kanonische Architektur einschliesslich Foundation, Canonical Layer, CAM, CCP, CADP, ALP 2.0, Artifact Lifecycle Migration Plan 1.0, Capability Resolution Engine, Execution Planner, Orchestrator Core, Runtime-Schema, Governance, Release Integrity, Canonical Memory und Architekturverfassung.
+
+Damit endet die Phase des grundlegenden Architekturaufbaus. Der offizielle Abschlussbericht liegt unter `31_reports/ARCHITECTURE_PHASE_COMPLETION_REPORT_34_1.md`.
+
+Neue Projektphase:
+
+```text
+Phase 2 - Controlled Integration & Operation
+```
+
+Der Schwerpunkt der weiteren Entwicklung verlagert sich auf:
+
+- kontrollierte Runtime-Integration;
+- Anwendung des Artifact Lifecycle Migration Plan 1.0;
+- Stabilisierung der aktiven Projektstruktur;
+- Regressionstests und Release-Freigaben;
+- Monitoring und Governance Dashboard / Operations Monitor;
+- kontrollierte Evolution der Architektur;
+- funktionale Erweiterungen in Agenten, Lernen, Datenmanagement und Betrieb.
+
+Kurzform:
+
+```text
+Phase 1: Architektur erschaffen.
+Phase 2: Architektur leben.
+```
+

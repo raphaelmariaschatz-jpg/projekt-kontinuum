@@ -1,13 +1,14 @@
-# Projekt Kontinuum 32.4 - Benutzerhandbuch
+# Projekt Kontinuum 34.1 - Benutzerhandbuch
 
-Stand: 2026-06-18
+Stand: 2026-07-04
 
 Aktiver Architekturbericht: `14_documents/PROJEKTSTRUKTUR_34_1.md`
 Historische Projektstrukturen: `02_versions/projektstrukturen/`
 
-Kontinuum 32.4 ist eine reine Verifikations- und Dokumentationsversion. Sie
-ergänzt keine neue Funktionsschicht. Neue Knowledge-Platform-Chronikeinträge
-werden vor Speicherung ereignisbasiert komprimiert.
+Kontinuum 34.1 ist der aktive kanonische Stand mit Release Integrity,
+Continuous Canonical Governance, CAIM, CRE 1.0 und vorbereitetem Orchestrator
+Core 1.0. Historische 32.x-Staende bleiben archiviert und sind keine aktiven
+Einstiegspunkte mehr.
 
 ## Runtime Hardening / Knowledge Contamination Guard
 
@@ -106,21 +107,21 @@ sind kein Nachweis subjektiven Bewusstseins.
 GUI:
 
 ```text
-16_installation\START_GUI_32_4.bat
-16_installation\START_KONTINUUM_32_4.bat
-16_installation\TEST_KONTINUUM_32_4.bat
+16_installation\START_GUI_34_1.bat
+16_installation\START_KONTINUUM_34_1.bat
+16_installation\TEST_KONTINUUM_34_1.bat
 ```
 
 CLI:
 
 ```text
-16_installation\START_KONTINUUM_32_4.bat <Befehl>
+16_installation\START_KONTINUUM_34_1.bat <Befehl>
 ```
 
 Vollständige Testsuite:
 
 ```text
-16_installation\TEST_KONTINUUM_32_4.bat
+16_installation\TEST_KONTINUUM_34_1.bat
 ```
 
 Alle drei Einstiegspunkte bestimmen die Projektwurzel relativ zum Ordner
@@ -552,7 +553,7 @@ Einrichtung:
 2. OCI CLI außerhalb des Projekts konfigurieren:
 
 ```text
-16_installation\SETUP_ORACLE_CLOUD_32_4.bat
+16_installation\SETUP_ORACLE_CLOUD_23.bat
 ```
 
 3. Region, Compartment-OCID und Tenancy-OCID in
@@ -775,7 +776,59 @@ Der Moral Core liefert funktionale, nachvollziehbare Regelbewertungen. Er
 behauptet weder subjektive Moral noch Bewusstsein. Klare Verletzungen von
 Identität, Sicherheit, Rollen oder Chronik werden blockiert.
 
-## 11. Wichtige Pfade
+## 12. Capability Resolution Engine 1.0
+
+Die Capability Resolution Engine 1.0 ist die vorbereitende Aufloesungsschicht
+fuer Faehigkeiten. Sie fuehrt keine Agenten aus, sondern erzeugt strukturierte
+Empfehlungen fuer Router, Orchestrator, Governance, Review und CMM.
+
+CRE 1.0 nutzt `24_config/capability_registry_34_1.json` als kanonische
+Quelle fuer Capabilities und CAIM read-only als Quelle fuer erlaubte Agenten.
+Sie kann Single-Intent- und Multi-Intent-Eingaben bewerten, passende
+Capabilities ableiten, Kandidaten priorisieren und kennzeichnen, ob Governance,
+menschliche Freigabe, Review oder CMM-Relevanz vorliegt.
+
+Der Zielablauf lautet:
+
+```text
+User -> Request Router -> Capability Resolution Engine -> Priorisierung
+     -> Governance -> Agent-Auswahl -> Review -> CMM / Learning
+```
+
+Der aktuelle Multi-Intent-Fix fuer Projektordnerfreigabe plus
+Diagnostikbericht bleibt aktiv und regressionsgesichert. Perspektivisch wird
+dieser Sonderfall durch CRE-Planung ersetzt: `project.access`, `file.status`
+und `diagnostics.run` werden dann als getrennte Capability-Schritte bewertet.
+
+## 13. Orchestrator Core 1.0
+
+Orchestrator Core 1.0 ist der priorisierte naechste Steuerungsbaustein. Er soll
+den heutigen PromptOrchestrator nicht durch freie Willkuer ersetzen, sondern
+ihn zu einer regelgebundenen Planungs- und Koordinationsschicht weiterentwickeln.
+
+Aufgaben:
+
+- CRE-Empfehlungen zu einem Ausfuehrungsplan ordnen;
+- Prioritaeten, Abhaengigkeiten und Multi-Intent-Schritte beruecksichtigen;
+- Governance-Entscheidungen einholen und respektieren;
+- erlaubte Agenten als Anbieter von Capabilities auswaehlen;
+- Ergebnisse in Review, CMM oder Learning Layer nur mit Provenienz und Policy
+  uebergeben;
+- blockierte, reviewpflichtige oder unklare Schritte transparent melden.
+
+Grenzen:
+
+- kein Umgehen von CAIM, Governance, Review oder CMM;
+- keine willkuerliche Agentenausfuehrung;
+- keine automatische Schreib- oder externe Ausfuehrung ohne Freigabe;
+- keine Aufhebung bestehender FileAgent-, WebAgent-, Learning- oder Foundation-
+  Schutzregeln.
+
+Der Orchestrator entscheidet kuenftig regelgebunden ueber Faehigkeiten,
+Prioritaeten, Agenten und Ausfuehrung. Die Primaereinheit ist die Capability,
+nicht der Agentenname.
+
+## 14. Wichtige Pfade
 
 - kanonische Strukturübersicht: `14_documents\ORDNERSTRUKTUR_23.md`
 - Laufzeitkern: `01_system\kontinuum`
@@ -787,11 +840,15 @@ Identität, Sicherheit, Rollen oder Chronik werden blockiert.
 - aktive Auth-Datei: `32_data\auth_config.json`
 - Loginprotokoll: `27_logs\auth_audit.log`
 - Oracle-Kostenfreigabe: `01_system\kontinuum\core\auth.py`,
-  `01_system\kontinuum\__main__.py` und `11_gui\desktop_gui_32_4.py`
+  `01_system\kontinuum\__main__.py` und `11_gui\desktop_gui_34_1.py`
 - Datenbank: `32_data\kontinuum.db`
 - Conversation-Kern: `01_system\kontinuum\core\conversation.py`
 - Memory-Core: `01_system\kontinuum\core\memory_core.py`
 - Memory-Agent: `01_system\kontinuum\agents\memory_agent.py`
+- Capability Resolution Engine: `01_system\kontinuum\core\capability_resolution_engine.py`
+- CRE-Dokumentation: `14_documents\CAPABILITY_RESOLUTION_ENGINE_1_0.md`
+- heutiger PromptOrchestrator / Migrationsanker fuer Orchestrator Core:
+  `01_system\kontinuum\core\application_services.py`
 - Wissensnotizbuch: `01_system\kontinuum\tools\notebook_tools.py`
 - Notebook-Agent: `01_system\kontinuum\agents\notebook_agent.py`
 - Suchanbieter-Router: `01_system\kontinuum\tools\search_engine_tools.py`
@@ -815,7 +872,7 @@ Identität, Sicherheit, Rollen oder Chronik werden blockiert.
 - dynamisches Selbstmodell: `32_data\self_model.json`
 - funktionales Bewusstseinsmodell: `32_data\consciousness_model.json`
 - Lernkonfiguration: `24_config\continuous_learning.json`
-- GUI: `11_gui\desktop_gui_32_4.py`
+- GUI: `11_gui\desktop_gui_34_1.py`
 - Tests: `17_tests`
 - Entwicklungssandbox: `13_tools\development_sandbox`
 - Sandbox-Konfiguration: `24_config\development_sandbox.json`
@@ -828,12 +885,12 @@ Identität, Sicherheit, Rollen oder Chronik werden blockiert.
 - Oracle-Cloud-Connector: `05_connectors\README_ORACLE_CLOUD.md`
 - Oracle-Cloud-Arbeitsbereich: `13_tools\oracle_cloud_workspace`
 - Oracle-Cloud-Audit: `27_logs\oracle_cloud_audit.log`
-- Oracle-Cloud-Einrichtung: `16_installation\SETUP_ORACLE_CLOUD_32_4.bat`
-- Start-, CLI- und Test-Einstiegspunkte: `16_installation\*_32_4.bat`
+- Oracle-Cloud-Einrichtung: `16_installation\SETUP_ORACLE_CLOUD_23.bat`
+- Start-, CLI- und Test-Einstiegspunkte: `16_installation\*_34_1.bat`
 - lokaler Passwort-Reset: `10_security\PASSWORT_ZURUECKSETZEN_23.ps1`
 - Auth-Sicherungen: `10_security\backups`
 
-## 12. Sicherheitsregeln
+## 15. Sicherheitsregeln
 
 - Passwörter und Recovery-Keys niemals im Klartext dokumentieren.
 - Unbekannten Python-Code nicht ausführen.
@@ -853,7 +910,7 @@ Identität, Sicherheit, Rollen oder Chronik werden blockiert.
 - Funktionale KI-Fähigkeiten nicht mit subjektivem Erleben gleichsetzen.
 - Wirkung, Kompetenz und Selbstaussagen nur evidenzbasiert behandeln.
 
-## 13. Lokale PowerShell-Laufzeit
+## 16. Lokale PowerShell-Laufzeit
 
 PowerShell 7.6.2 ist als Benutzerinstallation vorhanden:
 
@@ -864,7 +921,7 @@ C:\Users\Raphael\AppData\Local\Programs\PowerShell\7.6.2\pwsh.exe
 Die ausführbare Datei wurde nach der Installation als gültig von Microsoft
 signiert geprüft und der Installationsordner dem Benutzer-`PATH` hinzugefügt.
 
-## 14. Sicherer Wartungsmodus und Aufbewahrung
+## 17. Sicherer Wartungsmodus und Aufbewahrung
 
 ```text
 wartungsmodus status
@@ -891,3 +948,75 @@ Nie automatisch gelöscht werden:
 Ältere Funktionsbackups werden nur als manuell zu prüfende Hinweise gemeldet.
 Die Policy liegt in `24_config\retention_policy.json`; Ausführungen werden in
 `27_logs\maintenance_cleanup_audit.log` protokolliert.
+
+## Nachtrag 2026-07-02 – Learning Agent 1.2 und Continuous Learning Governance (CLG) 1.1
+
+Der kontrollierte Lernpfad besteht aus zwei getrennten Rollen:
+
+- Learning Agent 1.2 klassifiziert Quellen, berechnet Confidence, erzeugt
+  Proposal-IDs und schreibt ausschliesslich `pending`-Eintraege in die Learning
+  Queue.
+- CLG 1.1 steuert den Governance-Lifecycle, validiert Statuswechsel,
+  dokumentiert Handoffs und erzeugt Audit-Ereignisse. CLG bewertet keine
+  Quellen und uebernimmt kein Wissen.
+
+Wichtige Dateien:
+
+```text
+12_agents\learning_agent_1_2.py
+12_agents\continuous_learning_governance_1_1.py
+33_learning\learning_queue.json
+33_learning\learning_history.json
+33_learning\governance_events.json
+31_reports\learning_agent\learning_agent_1_2_status_report.md
+31_reports\clg_1_1_status_report.md
+```
+
+Diagnose und Tests:
+
+```text
+python 17_tests\test_learning_agent_1_2.py
+python 17_tests\test_continuous_learning_governance_1_1.py
+```
+
+Governance Environment im CLG-Report:
+
+```text
+Queue:   33_learning/learning_queue.json
+History: 33_learning/learning_history.json
+Audit:   33_learning/governance_events.json
+Version: CLG 1.1
+```
+
+Administrativer Ablauf:
+
+```text
+Neue Quelle
+  -> Learning Agent 1.2
+  -> Learning Queue
+  -> CLG 1.1
+  -> Governance Review
+  -> Knowledge Agent Handoff
+  -> Memory Agent Handoff
+  -> Audit / Compliance / Drift
+```
+
+Schutzregeln:
+
+- keine automatische Wissensuebernahme;
+- keine CLG-Schreiboperation nach `03_memory`, `04_knowledge` oder `32_data`;
+- keine automatische Reparatur von Queue, History oder Audit;
+- ungueltige Statuswechsel werden blockiert und nur gemeldet;
+- `governance_events.json` ist als Audit-Log append-only zu behandeln.
+
+## Execution Planner 1.0
+
+Execution Planner 1.0 erzeugt aus CRE-Ergebnissen einen deterministischen `ExecutionPlan`. Er ist ueber den Statusbefehl `executionplanstatus` beziehungsweise `plannerstatus` sichtbar und arbeitet im Modus `deterministic_plan_only`.
+
+Der Planner fuehrt keine Agenten aus. Er enthaelt keine Runtime-Logik und keine Geschaeftslogik, sondern dokumentiert benoetigte Capabilities, Reihenfolge, Parallelgruppen, Governance-Level, erwartete Agenten und Validierungsergebnisse. Der Orchestrator Core erhaelt spaeter diesen Plan als Eingabe.
+
+## Orchestrator Core 1.0 Runtime
+
+Orchestrator Core 1.0 ist ueber `orchestratorstatus` sichtbar. Er akzeptiert nur validierte `ExecutionPlan`s, startet die im Plan erwarteten Agenten, wertet `handled=True` und `handled=False` aus, dokumentiert Fehler, Fallbacks, Governance-Entscheidungen und erzeugt einen `ExecutionRun`.
+
+Der Orchestrator ruft CRE nicht direkt auf, plant nicht selbst und sucht keine Agenten frei. Fallbacks sind nur ueber konfigurierte Fallback-Regeln und Governance-Erlaubnis zulaessig.

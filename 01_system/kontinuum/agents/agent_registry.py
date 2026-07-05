@@ -27,6 +27,7 @@ from .vision_agent import VisionAgent
 from .git_agent import GitAgent
 from .canonical_git_agent import CanonicalGitAgent
 from .code_agent import CodeAgent
+from .chemistry_agent import ChemistryAgent
 
 
 @dataclass(frozen=True)
@@ -43,6 +44,7 @@ AGENT_ROUTES = [
     AgentRoute(CodexAgent, 10, ("command",)),
     AgentRoute(GitAgent, 12),
     AgentRoute(CodeAgent, 14),
+    AgentRoute(ChemistryAgent, 16, ("command", "dialog.question", "dialog.follow_up", "dialog.thought")),
     AgentRoute(PythonAgent, 20, ("command",)),
     AgentRoute(WingetAgent, 30, ("command",)),
     AgentRoute(MaintenanceAgent, 32, ("command",)),

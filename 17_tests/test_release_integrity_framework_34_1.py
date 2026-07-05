@@ -110,6 +110,80 @@ with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as temporary:
             "valuable_artifacts": "retain_until_release_then_archive",
             "audit_and_migration_records": "never_auto_delete"
         },
+        "canonical_active_directory_policy": {
+            "version": "CADP 1.0",
+            "foundation_rule": "FND-ID-049",
+            "active_area_policy": "canonical_only",
+            "historical_artifact_policy": "archive_only",
+            "replacement_action": "move_previous_version_to_archive",
+            "post_move_audit": "required",
+            "monitoring_authority": "CAM_OR_ORCHESTRATOR_CORE",
+            "required_archive_roots": [],
+            "reference_check_scopes": [
+                "documentation",
+                "canonical_manifests",
+                "cam_registrations",
+                "architecture_models",
+                "handbooks",
+                "project_chronicle",
+                "release_files",
+                "configuration",
+                "required_paths",
+                "registry_entries",
+                "scripts",
+                "internal_references"
+            ],
+            "audit_checks": [
+                "no_outdated_files_in_active_area",
+                "all_references_valid",
+                "no_duplicate_active_versions",
+                "no_orphan_paths",
+                "manifest_filesystem_consistency"
+            ]
+        },
+        "canonical_change_policy": {
+            "version": "CCP 1.0",
+            "foundation_rule": "FND-ID-050",
+            "change_flow": [
+                "Change Proposal",
+                "Pre-Audit",
+                "Governance Review",
+                "Controlled Canonical Update",
+                "CADP Archive / Path Sync",
+                "Documentation Sync",
+                "Release Integrity Gate",
+                "Canonical Acceptance"
+            ],
+            "proposal_required_fields": [
+                "affected_file",
+                "reason",
+                "goal",
+                "architecture_component",
+                "expected_impact",
+                "required_follow_up_checks"
+            ],
+            "pre_audit_checks": [
+                "no_invalid_paths",
+                "no_conflicting_architecture_terms",
+                "no_duplicate_active_canonical_files",
+                "no_open_legacy_references",
+                "cadp_1_0_not_violated",
+                "foundation_rules_not_violated"
+            ],
+            "governance_review_checks": [
+                "foundation_compatible",
+                "canonical_architecture_compatible",
+                "no_policy_violation",
+                "no_uncontrolled_drift",
+                "documentation_and_manifest_impact_checked"
+            ],
+            "controlled_update": "required_after_pre_audit_and_governance_review",
+            "cadp_link": "required_when_file_replaced",
+            "documentation_sync": "required",
+            "release_integrity_gate": "required_or_documented",
+            "canonical_acceptance": "all_checks_completed_or_justified",
+            "monitoring_authority": "CAM_OR_ORCHESTRATOR_CORE"
+        },
         "change_policies": {
             "foundation": "protected_migration_only",
             "canonical": "release_controlled_migration",
@@ -295,6 +369,11 @@ with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as temporary:
             "01_system/kontinuum/core/foundation_2_1.py",
             "17_tests/test_probe.py"
         ],
+        "required_foundation_rules": [
+            "FND-ID-048",
+            "FND-ID-049",
+            "FND-ID-050"
+        ],
         "chronicle_paths": [
             "22_project_chronicle/EINSTIEGSPUNKTE_NAECHSTE_SITZUNG.md",
             "22_project_chronicle/RELEASE_34_1.md"
@@ -322,6 +401,10 @@ with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as temporary:
     assert report["gates"]["continuous_canonical_engine"]
     assert report["gates"]["artifact_lifecycle"]
     assert report["evidence"]["foundation_core"]["rule_id"] == "FND-ID-048"
+    assert report["evidence"]["foundation_core"]["cadp_rule_id"] == "FND-ID-049"
+    assert report["evidence"]["foundation_core"]["ccp_rule_id"] == "FND-ID-050"
+    assert report["evidence"]["foundation_core"]["checks"]["ccp_rule_present"]
+    assert report["evidence"]["canonical_architecture"]["canonical_active_directory"]["ok"]
     assert report["evidence"]["canonical_architecture"]["project_structure"]["active_count"] == 1
     assert report["evidence"]["canonical_api_registry"]["api_count"] == 1
     assert report["evidence"]["canonical_artifacts"]["artifact_count"] == 1
