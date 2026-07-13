@@ -179,3 +179,14 @@ Aktive Nachweise:
 - `31_reports/events/event_processing_log.jsonl`
 - `31_reports/drift/drift_events.jsonl`
 - `31_reports/governance/governance_hooks.jsonl`
+
+
+## Integration Canonical Intellectual Property Ledger (CIPL) 1.0
+
+CIPL 1.0 erweitert Phase 3 um eine reine Herkunfts- und Urheberdokumentation fuer wesentliche Architekturartefakte. Die Governance-Komponente nutzt `24_config/canonical_ip_ledger_1_0.json` als Single Source of Truth und `14_documents/CANONICAL_IP_LEDGER_1_0.md` als fachliche Dokumentation.
+
+CIPL dokumentiert Ursprung, Creator Identity, Begruendung, Version, Kontext, optionale Git-Referenzen und Projektchronik-Bezug. Die Creator Identity `RMS-0001` verweist intern kanonisch auf Raphael Maria Schatz.
+
+CIPL veraendert keine Governance-Regeln. Es gibt keine Rechtepruefung, keine Runtime-Integration, keine automatische Git-Auswertung, keine Datenmigration und keine Aenderung an CAM, CRE, Foundation oder Orchestrator.
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

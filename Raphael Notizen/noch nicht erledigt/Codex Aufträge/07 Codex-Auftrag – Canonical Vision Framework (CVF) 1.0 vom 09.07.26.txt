@@ -1,0 +1,260 @@
+# Codex-Auftrag – Canonical Vision Framework (CVF) 1.0
+
+## Ziel des Auftrags
+
+Bitte prüfe und konzipiere das neue Architekturkonzept:
+
+```text
+Canonical Vision Framework (CVF) 1.0
+```
+
+Das Canonical Vision Framework soll die langfristige Vision und den übergeordneten Sinn von Projekt Kontinuum definieren.
+
+Es beschreibt nicht die technische Architektur oder einzelne Funktionen, sondern den dauerhaften Orientierungsrahmen, an dem sich alle zukünftigen Entwicklungen ausrichten.
+
+---
+
+# Grundsatz
+
+Projekt Kontinuum verfolgt das Ziel, Menschen dabei zu unterstützen,
+
+* informierter,
+* kritischer,
+* kreativer,
+* verantwortungsbewusster,
+* selbstständiger
+
+zu denken und zu handeln.
+
+K soll Wissen nicht ersetzen, sondern Menschen befähigen, eigenes Wissen aufzubauen und fundierte Entscheidungen zu treffen.
+
+---
+
+# Vision
+
+Die Vision von Projekt Kontinuum besteht darin, ein lernendes KI-System zu entwickeln, das Menschen langfristig dabei unterstützt,
+
+* Wissen zu verstehen,
+* Zusammenhänge zu erkennen,
+* Probleme strukturiert zu lösen,
+* verantwortungsvoll mit KI umzugehen,
+* lebenslang zu lernen,
+* und informierte Entscheidungen zu treffen.
+
+Die technische Entwicklung dient stets diesem übergeordneten Zweck.
+
+---
+
+# Leitprinzipien
+
+Bitte prüfe die Aufnahme folgender kanonischer Leitprinzipien:
+
+* Der Mensch bleibt verantwortlich.
+* KI unterstützt, ersetzt aber nicht eigenständiges Denken.
+* Transparenz vor Intransparenz.
+* Nachvollziehbarkeit vor Komplexität.
+* Qualität vor Geschwindigkeit.
+* Lernen vor bloßer Automatisierung.
+* Sicherheit vor Bequemlichkeit.
+* Governance vor Autonomie.
+* Nachhaltige Architektur vor kurzfristigen Lösungen.
+
+---
+
+# Langfristige Ziele
+
+Bitte prüfe folgende Zielbereiche:
+
+### Wissensentwicklung
+
+* Wissen verständlich vermitteln
+* Zusammenhänge sichtbar machen
+* kritisches Denken fördern
+
+---
+
+### Kompetenzentwicklung
+
+* lebenslanges Lernen unterstützen
+* KI-Kompetenz fördern
+* Problemlösungskompetenz entwickeln
+
+---
+
+### Architekturentwicklung
+
+* stabile Foundation
+* kanonische Governance
+* nachvollziehbare Evolution
+* langfristige Wartbarkeit
+
+---
+
+### Gesellschaftlicher Nutzen
+
+Projekt Kontinuum soll einen Beitrag leisten zu:
+
+* verantwortungsvollem KI-Einsatz
+* digitaler Bildung
+* Transparenz
+* Wissenszugang
+* informierten Entscheidungen
+
+---
+
+# Beziehung zu bestehenden Frameworks
+
+Bitte prüfe folgende Einordnung:
+
+```text
+Canonical Vision Framework (CVF)
+            │
+Canonical Intelligence Framework (CIF)
+            │
+Canonical Cognitive Pipeline (CCP)
+            │
+Canonical AI Competency Framework (CAICF)
+            │
+Capability Resolution Engine
+            │
+Execution Planner
+            │
+Orchestrator Core
+            │
+Learning Layer
+            │
+User
+```
+
+Das CVF definiert den Zweck.
+
+Das CIF definiert die Intelligenz.
+
+Die CCP definiert den Denkprozess.
+
+Das CAICF definiert die Kompetenzentwicklung.
+
+---
+
+# Beziehung zur Canonical Architecture
+
+Bitte prüfe die Beziehungen zu:
+
+* Foundation Layer
+* Governance Layer
+* Canonical Architecture
+* Canonical Development Framework (CDF)
+* Canonical Development Governance (CDG)
+* Canonical Intelligence Framework (CIF)
+* Canonical Cognitive Pipeline (CCP)
+* Canonical AI Competency Framework (CAICF)
+* Learning Layer
+* Canonical Memory
+* CAM
+* ALP
+* Release Integrity
+* Meta-Reasoning
+* Reflection
+* Projektchronik
+* Canonical Glossary
+
+---
+
+# Arbeitsauftrag
+
+In dieser Phase erfolgt **keine Implementierung**.
+
+Bitte:
+
+1. analysiere das Vision-Konzept
+2. prüfe die Einordnung innerhalb der Canonical Architecture
+3. definiere Vision, Mission und Leitprinzipien
+4. identifiziere notwendige Schnittstellen
+5. grenze CVF gegenüber Foundation, Governance und CIF klar ab
+6. prüfe langfristige Erweiterbarkeit
+7. erstelle einen kanonischen Implementierungsplan
+8. dokumentiere Risiken und offene Fragen
+
+---
+
+# Erwartete Dateien
+
+Bitte prüfe, ob folgende Dateien sinnvoll sind:
+
+```text
+14_documents/CANONICAL_VISION_FRAMEWORK_1_0.md
+24_config/canonical_vision_framework_1_0.json
+31_reports/cvf_1_0_status_report.md
+```
+
+Optional:
+
+```text
+14_documents/CVF_IMPLEMENTATION_PLAN_1_0.md
+24_config/cvf_principles_1_0.json
+```
+
+---
+
+# Erwartetes JSON-Grundschema
+
+Das Framework sollte mindestens enthalten:
+
+* Vision
+* Mission
+* Leitprinzipien
+* langfristige Ziele
+* Beziehungen zur Canonical Architecture
+* Bezug zu Governance
+* Erweiterungspunkte
+
+---
+
+# Leitplanken
+
+Erlaubt:
+
+* Architekturkonzept
+* Dokumentation
+* JSON-Schema
+* Statusbericht
+* Glossar-Ergänzung
+* Implementierungsplan
+
+Nicht erlaubt:
+
+* Runtime-Änderungen
+* Änderungen produktiver Komponenten
+* Refactorings
+* Datenbankmigrationen
+* neue Agentenimplementierungen
+
+---
+
+# Entscheidungskriterium
+
+Das Canonical Vision Framework soll nur dann als GO bewertet werden, wenn es:
+
+* die langfristige Ausrichtung von Projekt Kontinuum klar beschreibt,
+* mit Foundation und Governance vereinbar ist,
+* die übrigen Frameworks sinnvoll orientiert,
+* keine technischen Komponenten ersetzt,
+* langfristig stabil und zeitlos formuliert ist.
+
+---
+
+# Erwartetes Ergebnis
+
+Bitte liefere:
+
+1. Bestandsanalyse
+2. Architektur-Einordnung
+3. Vision, Mission und Leitprinzipien
+4. Beziehungen zu den übrigen Frameworks
+5. Vorschlag für Dokumente und JSON-Strukturen
+6. Risiken und offene Fragen
+7. Empfehlung: GO / NO-GO / SPÄTER
+8. Kanonischen Implementierungsplan
+9. Statusbericht unter `31_reports`, falls umgesetzt.
+
+Ziel ist ein übergeordneter Orientierungsrahmen, der Projekt Kontinuum langfristig eine klare Richtung gibt und sicherstellt, dass technische Innovation stets den grundlegenden Zielen und Werten des Projekts dient.

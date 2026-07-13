@@ -37,3 +37,6 @@ bewertet.
 32.2 ist kein weiterer Bewertungs-Core im Sinne von "mehr Scores", sondern
 eine Härtung der vorhandenen Bedeutungsschicht. K kann nun zwischen
 historischer Speicherung und aktueller Relevanz unterscheiden.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

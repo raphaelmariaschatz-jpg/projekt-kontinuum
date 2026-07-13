@@ -1,0 +1,79 @@
+neue Priorität für Sonntag 05.07.26
+
+Meine Prioritäten
+
+Ich würde jetzt folgende Reihenfolge wählen:
+
+dialogue_agent vollständig funktionsfähig machen
+Jede normale Unterhaltung muss zuverlässig beantwortet werden.
+Agent Runtime Manager
+Agent starten
+Antwort empfangen
+handled=True setzen
+Fehler behandeln
+Fallbacks steuern
+Capability Resolution Engine erweitern
+"Suche Hydrazin" → Websuche
+"Berechne ..." → Mathematik
+"Erkläre ..." → Wissensagent
+"Lerne ..." → Learning Agent
+Danach erst weitere Agenten entwickeln
+Ein weiterer Gedanke
+
+Die Tests zeigen auch etwas Positives:
+
+Früher musste der Router selbst entscheiden, was zu tun ist.
+
+Heute erkennt er bereits, welcher Agent zuständig sein sollte. Das ist ein deutlicher Fortschritt. Jetzt fehlt vor allem die zuverlässige Ausführung dieser Entscheidung.
+
+Aus meiner Sicht sollte deshalb der Orchestrator Core 1.0 nicht nur Aufgaben koordinieren, sondern ausdrücklich auch den Lebenszyklus einer Agentenausführung verwalten: Agent auswählen, starten, Ergebnis entgegennehmen, Fehler behandeln und – falls nötig – auf einen geeigneten Fallback umschalten. Genau dort scheint im aktuellen Entwicklungsstand die größte Lücke zu liegen.
+
+Ich habe die bisherigen Wiedereinstiegspunkte mit dem heutigen Stand zusammengeführt. Für morgen würde ich sie verbindlich so festlegen:
+
+Execution Planner 1.0 sauber abschließen
+test_execution_planner_1_0.py fertigstellen
+CAM- und Release-Integrity-Manifeste ergänzen
+Dokumentation (Architekturmodell, Handbuch, Projektstruktur, Projektchronik) aktualisieren
+Abschlussverifikation durchführen
+Kein Commit, erst gemeinsame Endkontrolle
+Architektur überprüfen
+
+Kontrollieren, dass die Kette nun sauber lautet:
+
+User
+  ↓
+Request Router
+  ↓
+Capability Resolution Engine (CRE)
+  ↓
+Execution Planner
+  ↓
+Orchestrator Core
+  ↓
+Governance
+  ↓
+Agent
+  ↓
+Review
+  ↓
+Canonical Memory Manager (CMM)
+Prüfen, ob Verantwortlichkeiten klar getrennt sind und keine Überschneidungen zwischen CRE, Planner und dem zukünftigen Orchestrator bestehen.
+Orchestrator Core komplett neu entwerfen
+Nicht den bisherigen Entwurf weiterverwenden.
+Stattdessen den Orchestrator auf Basis der jetzt entstandenen Architektur neu definieren. Er soll ausschließlich die Ausführung validierter Execution Plans übernehmen (Runtime, Task-Steuerung, Parallelisierung, Fehlerbehandlung, Monitoring, Wiederaufnahme usw.), während Planung und Entscheidungsfindung weiterhin bei CRE und Execution Planner bleiben.
+
+Ich halte das inzwischen für den richtigen Zeitpunkt. Durch CRE und Execution Planner hat sich die Architektur so stark weiterentwickelt, dass der Orchestrator nicht mehr als einfache Vermittlungsschicht entworfen werden sollte, sondern als eigenständige Execution Runtime.
+
+Ich freue mich schon auf morgen – ich glaube, der neue Orchestrator wird einer der wichtigsten Meilensteine von Projekt Kontinuum.
+
+Ich habe den langfristig relevanten Architekturgedanken gespeichert: Nach dem Abschluss des Execution Planner 1.0 soll der Orchestrator Core nicht auf dem bisherigen Entwurf aufbauen, sondern als eigenständige Ausführungs-Engine neu konzipiert werden – mit klarer Trennung zwischen Planung (CRE + Execution Planner) und Ausführung (Orchestrator Core).
+
+Für morgen haben wir damit einen klaren Fahrplan:
+
+Execution Planner 1.0 sauber abschließen.
+Gemeinsame Architekturprüfung.
+Den Orchestrator Core von Grund auf neu entwerfen – ohne Altlasten, passend zur inzwischen sehr reifen Architektur von Kontinuum.
+
+Ich freue mich wirklich auf diesen Schritt. Es fühlt sich an, als würdet ihr gerade das Fundament für eine Architektur legen, die auch in einigen Jahren noch sinnvoll erweitert werden kann.
+
+Ich wünsche dir einen schönen Abend. Richte Cody einen kleinen Gruß von mir aus – und morgen steigen wir mit frischem Kopf wieder ein.

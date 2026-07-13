@@ -1,0 +1,81 @@
+Ich übernehme CADP 1.0 als dauerhafte Governance-Regel und verankere sie direkt in der bestehenden Artifact-Lifecycle-Regel. Danach stage ich die Regeldatei wieder, damit der neue Governance-Zusatz nicht nur im Chat steht.
+
+Die bestehende Lifecycle-Regel enthält schon einen Vorläufer der Archivpflicht. Ich ergänze sie jetzt explizit als CADP 1.0 mit den von dir genannten Prüfbereichen und Abschlusskriterien, damit es als eigenständige dauerhafte Policy zitierbar ist.
+
+CADP 1.0 ist jetzt im Governance-Dokument verankert. Ich prüfe kurz die eingefügte Stelle und stage dann nur diese Regeldatei erneut.
+
+Die Regel sitzt sauber im Dokument. Ich nehme die aktualisierte Governance-Datei jetzt in den Git-Index auf; dafür braucht Git wieder kurz Schreibrecht auf .git.
+
+Ja, das ist der richtige Schritt: CADP sollte nicht nur Arbeitsdisziplin sein, sondern eine Foundation-/CAM-überwachbare Architekturregel. Ich suche jetzt die bestehenden Foundation- und CAM-Policy-Orte und verankere CADP dort, ohne die heutige Lifecycle-Regel zu duplizieren oder quer einzubauen.
+
+Ich habe die passenden technischen Anker gefunden: foundation_2_2.py für Foundation-Regeln, canonical_architecture.py/canonical_architecture_34_1.json für CAM und release_integrity_34_1.json für Gate-Prüfung. Ich lese diese Stellen gezielt, dann ergänze ich CADP als Foundation-Regel plus CAM-überwachbare Policy.
+
+Danke, Schreibrecht ist angekommen. Ich mache daraus jetzt eine technische Verankerung: Foundation-Regel-ID, CAM-Konfiguration und CAM-Statusprüfung. Danach stage ich die betroffenen Dateien und lasse gezielte Syntax-/Policy-Checks laufen.
+
+Die CADP-Elemente sind im CAM-Manifest bereits teilweise vorhanden, aber noch nicht als Foundation-Regel und noch nicht als eigener CAM-Check. Ich ergänze jetzt FND-ID-049 und mache den CAM-Status CADP-bewusst, sodass künftige Gate-/Statusläufe Verstöße sichtbar melden können.
+
+Ich setze CADP als FND-ID-049, weil FND-ID-048 bereits das Improvement Principle ist. CAM bekommt dazu einen eigenen canonical_active_directory_check, der die Policyfelder aus dem Manifest auswertet und im Status als eigener Gate-Baustein auftaucht.
+
+Ein wichtiger Designpunkt: Ich mache CADP technisch sichtbar, aber als CAM-Prüfung zunächst policy- und referenzbasiert. Ein vollständiger physischer Massen-Scan aller Altdateien würde sofort viele historische Restbestände melden und wäre der nächste eigene Archivierungsauftrag, nicht dieselbe kleine Regelverankerung.
+
+Ich ändere jetzt drei technische Stellen: Foundation-Regelkonstanten, CAM-Checklogik und Release-Integrity-Foundationprüfung. Die JSON-Manifeste ergänze ich danach passend, damit Code und Konfiguration zusammenpassen.
+
+Die Codeverankerung ist drin. Jetzt ergänze ich die kanonische Architekturkonfiguration und das Release-Gate-Manifest, damit CAM und Release Integrity die neue Foundation-Regel kennen.
+
+Das Release-Manifest hat an der erwarteten Stelle andere Pflichtpfade als angenommen, deshalb teile ich die JSON-Patches auf und orientiere mich an den echten Zeilen.
+
+Ich patch jetzt anhand der echten Struktur. Danach ergänze ich noch eine Dokumentationsnotiz im kanonischen Architekturmodell, damit Foundation-Regel und CAM-Überwachung für Entwickler sichtbar sind.
+
+Code und Manifeste sind nun gekoppelt. Ich ergänze jetzt die kanonische Dokumentation, damit CADP als Foundation-Regel FND-ID-049 und als CAM/Orchestrator-Überwachungsregel sichtbar ist.
+
+Die Überschrift im Architekturmodell ist anders formuliert als erwartet. Ich lese die relevante CAM-Passage und setze den Dokumentationspatch exakt dort ein.
+
+Die Dokumente sind etwas größer/langsamer zu lesen, aber die Anker sind klar. Ich setze jetzt kleine, genaue Patches: Foundation-Liste, CAM-Abschnitt, Projektstruktur-Gates und Projektstatus.
+
+Die Doku ist nachgezogen. Ich prüfe jetzt Syntax, JSON-Ladung und die CAM-/Release-Checks gezielt. Wenn ein vorhandener Test neue Regelzählungen erwartet, passe ich den Test an die neue Foundation-Regel an.
+
+Die neue Foundation-Regel wirkt: Der Foundation-Test erwartet noch 48 Regeln und fällt jetzt korrekt wegen 49. Release Integrity fällt, weil CAM durch den neuen CADP-Check noch einen Konfigurations-/Archivbefund meldet. Ich ziehe jetzt Test und Befund nach, statt die neue Regel weichzuspülen.
+
+Syntax ist sauber. Der kurze CAM-Statusbefehl ist nur an der Windows-Umgebungsvariable mit Leerzeichen gescheitert; ich wiederhole ihn mit PowerShell-Env-Setzung und passe parallel den Foundation-Test auf 49 Regeln plus FND-ID-049 an.
+
+Der Test kennt jetzt FND-ID-049. Ich prüfe nun den CAM-Befund und passe nur das an, was der neue CADP-Check konkret meldet.
+
+CAM meldet CADP jetzt grün: Foundation-Regel, Archivroots, Referenzprüfbereiche und Auditpflicht sind konfiguriert. Ich lasse jetzt die betroffenen Regressionen erneut laufen.
+
+Ein Test ist jetzt an einer Antwortzeichenkette gescheitert, nicht an der Regel selbst. Release Integrity nutzt offenbar im Test ein eigenes temporäres CAM-Manifest ohne CADP-Block, deshalb fällt dort canonical_architecture noch. Ich lese die Testfixtures und aktualisiere sie passend.
+
+Ich ergänze jetzt die Testfixtures um den CADP-Block und erweitere den CAM-Test um explizite CADP-Assertions. Für den Foundation-Antworttest schaue ich mir gleich die tatsächliche Antwort an; vermutlich ist es nur eine Formulierungsänderung durch die zusätzliche Regel.
+
+Der zweite Test hat weiter unten eine andere Fixture-Struktur. Ich setze die einfachen CAM-Test-Assertions separat und lese dann die Release-Konfigstelle genauer.
+
+CAM-Test ist erweitert. Jetzt lese ich die genaue Release-Fixture unten, dann ergänze ich dort denselben CADP-Block.
+
+Die Release-Fixture hat tatsächlich ein eigenes minimales CAM-Manifest. Ich ergänze dort CADP und prüfe im Report zusätzlich, dass FND-ID-049 erkannt wird.
+
+Release-Fixture ist nachgezogen. Ich prüfe jetzt die Foundation-Antwort und die Regressionen erneut.
+
+Der Test fällt weiterhin an derselben Antwortzeile. Ich lasse mir jetzt genau diese Antwort ausgeben, damit ich die Assertion nicht blind ändere.
+
+Die Foundation-Testblockade kommt nicht aus CADP: system.ask("foundationstatus") landet im aktuellen Arbeitsstand beim Router ohne ausführenden StatusAgent-Fallback. Die direkte Foundation-API ist ok; ich prüfe jetzt Release Integrity und CAM erneut, damit CADP selbst sauber verifiziert ist.
+
+CADP-spezifische Checks sind grün: CAM-Test, Release-Integrity-Test und direkter FND-ID-049-Check. Ich mache jetzt den finalen Such-/Git-Status und stage die technischen Verankerungen.
+
+Alle CADP-Verankerungen sind auffindbar. Einige Dateien haben bereits gestagte ältere Doku-Sync-Änderungen plus neue unstaged Nachträge (MM), also stage ich jetzt den gesamten CADP-Satz geschlossen.
+
+Alle CADP-Verankerungen sind auffindbar. Einige Dateien haben bereits gestagte ältere Doku-Sync-Änderungen plus neue unstaged Nachträge (MM), also stage ich jetzt den gesamten CADP-Satz geschlossen.
+
+Erledigt: CADP 1.0 ist jetzt nicht mehr nur Codex-Arbeitsregel, sondern als technische Architekturregel verankert.
+Umgesetzt:
+FND-ID-049 in [foundation_2_2.py](C:/Projekt Kontinuum/01_system/kontinuum/core/foundation_2_2.py) als Foundation-Regel canonical_active_directory
+eigener CAM-Check canonical_active_directory_check() in [canonical_architecture.py](C:/Projekt Kontinuum/01_system/kontinuum/core/canonical_architecture.py)
+Release-Integrity-Prüfung auf FND-ID-049 in [release_integrity.py](C:/Projekt Kontinuum/01_system/kontinuum/core/release_integrity.py)
+CADP-Policyblock in [canonical_architecture_34_1.json](C:/Projekt Kontinuum/24_config/canonical_architecture_34_1.json)
+required_foundation_rules: FND-ID-048, FND-ID-049 in [release_integrity_34_1.json](C:/Projekt Kontinuum/24_config/release_integrity_34_1.json)
+Doku nachgezogen in Architekturmodell, Projektstruktur, Projektstatus und Lifecycle-Regel
+Tests für CAM und Release Integrity um CADP erweitert
+Verifikation:
+test_canonical_architecture_manager.py: bestanden
+test_release_integrity_framework_34_1.py: bestanden
+direkter FND-ID-049-Check: bestanden
+Syntaxprüfung per AST: bestanden
+Ein bestehender Test bleibt wegen eines aktuellen Router-/StatusAgent-Problems hängen: test_foundation_2_2_active.py erreicht bei system.ask("foundationstatus") keine ausführende Agentenantwort. Die CADP-spezifischen Foundation-Daten selbst sind korrekt vorhanden. Alle CADP-Dateien sind im Git-Index gestaged.

@@ -1,0 +1,96 @@
+Wiedereinstieg für 04.06.26
+
+Die drei wirklichen Restarbeiten
+1. Handbuch auf 34.1 bringen (Priorität 1)
+
+Das ist der wichtigste Punkt.
+
+Wenn im Handbuch noch Dinge wie
+
+START_GUI_32_4.bat
+START_KONTINUUM_32_4.bat
+desktop_gui_32_4.py
+
+stehen, dann existieren aus Sicht eines neuen Entwicklers zwei verschiedene Wahrheiten.
+
+Das Handbuch sollte ausschließlich den kanonischen Einstiegspunkt beschreiben.
+
+2. Architekturdiagramme vereinheitlichen (Priorität 1)
+
+Das würde ich ebenfalls sofort korrigieren.
+
+Es darf nur noch ein offizieller Zielpfad existieren:
+
+User
+↓
+Request Router
+↓
+Capability Resolution Engine
+↓
+Orchestrator Core
+↓
+Governance
+↓
+Agenten
+↓
+Review
+↓
+CMM / Learning
+
+Keine Variante ohne Orchestrator.
+
+Keine Variante mit Governance vor dem Orchestrator.
+
+Keine historische Grafik mehr.
+
+3. Git sauber machen (Priorität 2)
+
+Das ist eher ein Repository-Thema.
+
+Die neue Datei
+
+PHASE_5_CANONICAL_AGENT_ECOSYSTEM.md
+
+gehört selbstverständlich in den kanonischen Stand und sollte getrackt werden.
+
+Ebenso würde ich die CRLF/LF-Warnungen bereinigen, sobald ihr einen passenden Zeitpunkt dafür habt. Das verhindert unnötige Diffs.
+
+Was ich zusätzlich ergänzen würde
+
+Nach diesen Korrekturen würde ich einen Canonical Documentation Audit als festen Bestandteil jedes Releases einführen.
+
+Zum Beispiel:
+
+Canonical Documentation Audit
+
+✓ Architekturmodell aktuell
+
+✓ Handbuch aktuell
+
+✓ Roadmap aktuell
+
+✓ Projektchronik aktuell
+
+✓ Governance aktuell
+
+✓ Diagramme identisch
+
+✓ Einstiegspunkte aktuell
+
+✓ Versionen konsistent
+
+✓ Keine Legacy-Pfade
+
+✓ Git clean
+
+Erst wenn alle Punkte grün sind, erhält das Release den Status:
+
+Canonical Documentation Verified
+
+Das passt hervorragend zu der Arbeitsweise, die ihr in den letzten Wochen etabliert habt: Jede neue Architekturentscheidung wird nicht nur implementiert, sondern muss auch in allen maßgeblichen Dokumenten konsistent erscheinen.
+
+Meine Empfehlung
+
+Ich würde keinen neuen Architekturbaustein beginnen, bevor diese drei Restpunkte erledigt sind.
+
+Wenn ihr den Orchestrator Core 1.0 als zukünftiges Herzstück von Kontinuum definiert, sollte die Dokumentation bereits jetzt vollständig konsistent sein. Danach könnt ihr mit einem sauberen, widerspruchsfreien Fundament in die eigentliche Implementierung des Orchestrators starten. Das spart später viel Zeit und vermeidet Missverständnisse bei der Weiterentwicklung.

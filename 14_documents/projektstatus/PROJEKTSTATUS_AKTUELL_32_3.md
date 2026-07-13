@@ -59,3 +59,6 @@ projektquellenstatus
 - `22_project_chronicle\EINSTIEGSPUNKTE_NAECHSTE_SITZUNG.md`
 - `22_project_chronicle\RELEASE_32_3_RUNTIME_HARDENING.md`
 - `31_reports\ARCHITEKTURBERICHT_PROJEKT_KONTINUUM_23.md`
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

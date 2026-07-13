@@ -114,9 +114,9 @@ Agentenketten, Schreiboperationen, externe Systeme, Review-Uebergaben oder
 CMM-/Learning-Handoffs vorbereiten.
 
 
-### Architekturabschluss 05.07.2026 - Beginn Phase 2
+### Architekturabschluss 05.07.2026 / Erweiterung 09.07.2026 - Phase 2: Controlled Integration, Operation & Cognitive Evolution
 
-Mit AGF 1.0 ist die grundlegende Architekturentwicklung abgeschlossen. Projekt Kontinuum wechselt offiziell von Phase 1 - Architekturentwicklung zu Phase 2 - Controlled Integration & Operation.
+Mit AGF 1.0 ist die grundlegende Architekturentwicklung abgeschlossen. Projekt Kontinuum wechselt offiziell von Phase 1 - Architekturentwicklung zu Phase 2 - Controlled Integration, Operation & Cognitive Evolution.
 
 Neue Hauptprioritaeten:
 
@@ -126,13 +126,43 @@ Neue Hauptprioritaeten:
 4. Runtime-Freigabe nach erfolgreicher kontrollierter Integration.
 5. Governance Dashboard / Operations Monitor.
 6. Canonical Data Management und Daten-Lineage fuer `32_data`.
-7. Performance, Laufzeitbeobachtung und Stabilisierung.
-8. Neue Agenten und Faehigkeiten nach AGF-Prozess.
+7. Performanceoptimierung, Laufzeitbeobachtung und Stabilisierung.
+8. Neue Agenten und Faehigkeiten nach AGF- und CDG-Prozess.
+9. Canonical Cognitive Pipeline als kanonische Denk- und Verarbeitungsstruktur.
+10. Canonical Language Understanding als vorgelagerte Sprach- und Bedeutungsverarbeitung.
+11. Transformer-basierte Tokenisierung als architektonisch eingeordnete Sprachvorverarbeitung.
+12. Semantische Repraesentation fuer Intent-Erkennung, Kontextanalyse und Capability Resolution.
+13. Kognitive Review-Schleifen fuer Planen, Handeln, Pruefen, Erinnern und Lernen.
+14. Kontrolliertes Lernen mit Provenienz, Review und Governance.
+15. Selbstreflexionsvorbereitung als spaetere Phase-2-/Phase-3-Faehigkeit.
+
+Die neuen kognitiven Themen sind keine sofortigen Implementierungsauftraege. Sie bilden Phase-2-Architektur- und Integrationsprioritaeten, die kontrolliert, dokumentiert, getestet und governancepflichtig eingefuehrt werden muessen.
+
+Zielbild des kognitiven Flusses:
+
+```text
+User Input
+-> Canonical Language Understanding
+-> Tokenisierung / Transformer
+-> Semantische Repraesentation
+-> Canonical Cognitive Pipeline
+-> Capability Resolution Engine
+-> Execution Planner
+-> Governance
+-> Orchestrator Core
+-> Runtime / Agenten
+-> Review
+-> Canonical Memory
+-> Learning / Reflection
+```
 
 Phase-2-Leitlinie:
 
 ```text
 Architektur nicht weiter ausdehnen, sondern kontrolliert integrieren, betreiben, messen und erweitern.
+Phase 1: Architektur erschaffen.
+Phase 2: Architektur leben.
+Phase 2 erweitert diesen Gedanken um die kontrollierte kognitive Evolution von K.
 ```
 ## 4. Verbindliche Entwicklungs- und Release-Regeln
 
@@ -656,3 +686,6 @@ Projekt Kontinuum soll Schritt für Schritt zu einer lokalen, sicheren, dialogf�
 **Erkennen – Schaffen – Vollenden**  
 **Der Weg ist das Ziel**
 
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

@@ -1,0 +1,44 @@
+Codex-Auftrag – Dauerhafte Archivstruktur und Lifecycle-Regel für Projekt Kontinuum 27.06.26
+
+Ich setze das als dauerhafte Projektregel um, nicht nur als lose Notiz. Dafür schaue ich zuerst nach der bestehenden Governance-/Strukturdokumentation und nach passenden Stellen, an denen Codex-Regeln und Release-Prozess tatsächlich verankert sind.
+
+Die Gesamtsuche ist groß genug, dass sie in den Timeout läuft. Ich gehe jetzt schmaler über die Hauptordner und suche gezielt nach Struktur-, Governance- und Release-Dateien, damit wir nicht blind im Projekt wühlen.
+
+du hast Vollzugriff auf c:\Projekt Kontinuum
+
+Ich habe bereits eine passende bestehende Datei gefunden: ARBEITSREGEL_ARTEFAKT_LIFECYCLE_34_1.md. Ich prüfe sie zusammen mit Projektstruktur und Release-Gate, damit die neue Archivregel dort landet, wo zukünftige Codex-Arbeiten sie auch wiederfinden.
+
+Danke, das hilft: Ich behandle C:\Projekt Kontinuum jetzt als Zielwurzel und fordere für Schreibzugriffe gezielt erhöhte Rechte an, weil die aktuelle Codex-Sandbox außerhalb des temporären Arbeitsordners sonst nur lesen darf. Inhaltlich verankere ich die Regel an drei Stellen: Governance-Dokument, kanonische Projektstruktur und Release-Gate-Prüfung.
+
+Die vorhandene Architektur ist schon recht nah an deinem Ziel, aber noch zu punktuell: Sie schützt Migrationen und Reports, nicht jeden aktiven Hauptordner. Ich ergänze jetzt eine allgemeine archive-Pflicht pro Hauptordner und lasse das Release-Gate diese Struktur prüfen.
+
+Ich mache jetzt die Änderungen. Es werden keine historischen Dateien verschoben oder gelöscht; ich lege nur die Archivstruktur an und mache die Regel prüfbar, damit spätere Archivierungen kontrolliert über Sicherheitsprüfung und Pfadprüfung laufen.
+
+Die erste Umsetzung ist drin: 30 archive-Ordner wurden angelegt, und die Regel ist in Governance, Retention-Policy, Architekturmanifest und CAM-Prüfer verankert. Ich prüfe jetzt Syntax und gezielte Tests, weil gerade die Release-Gates keine hübsche Deko sein sollen, sondern wirklich bei Regelverstoß anschlagen.
+
+Die Verifikation ist gerade nicht an der Änderung gescheitert, sondern an Windows-Quoting für C:\Projekt Kontinuum mit Leerzeichen. Ich starte dieselben Prüfungen sauber über PowerShell neu.
+
+Erledigt. Die Archivregel ist jetzt dauerhaft im Projekt verankert und technisch prüfbar.
+Umgesetzt in C:\Projekt Kontinuum:
+In allen 30 aktiven Hauptordnern wurde ein Unterordner archive angelegt.
+Die Regel wurde in der Governance dokumentiert:C:\Projekt Kontinuum\14_documents\ARBEITSREGEL_ARTEFAKT_LIFECYCLE_34_1.md
+C:\Projekt Kontinuum\14_documents\PROJEKTSTRUKTUR_34_1.md
+
+Die Policy wurde maschinenlesbar verankert:C:\Projekt Kontinuum\24_config\retention_policy.json
+C:\Projekt Kontinuum\24_config\canonical_architecture_34_1.json
+C:\Projekt Kontinuum\24_config\release_integrity_34_1.json
+
+Der Canonical Architecture Manager prüft jetzt die Pflichtstruktur Hauptordner/archive über main_archive_roots_check() in:C:\Projekt Kontinuum\01_system\kontinuum\core\canonical_architecture.py
+
+Wichtig: Ich habe keine historischen Dateien verschoben und nichts gelöscht. Die neue Regel schreibt vor, dass künftige Archivierungen erst nach Sicherheitsprüfung erfolgen und danach Pfade in Dokumentation, Manifesten, Registries, Konfigurationen, Startern, Tests, Build- und Release-Dateien aktualisiert werden.
+Verifikation ist grün:
+py_compile bestanden
+test_canonical_architecture_manager.py bestanden
+test_release_integrity_framework_34_1.py bestanden
+test_canonical_artifacts_manager.py bestanden
+test_v34_1_version_consistency.py bestanden
+status_check_34_1.py: Status: VERIFIZIERT, Freigabe: JA
+Hinweis: C:\Projekt Kontinuum ist in dieser Umgebung kein Git-Repository, daher konnte ich keinen Git-Diff ausgeben.
+
+
+

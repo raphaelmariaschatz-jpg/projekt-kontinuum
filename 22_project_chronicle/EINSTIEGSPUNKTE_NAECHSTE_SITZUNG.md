@@ -86,3 +86,6 @@ Naechster sinnvoller Einstieg:
 
 Keine automatische Massenaufnahme, keine automatische Archivierung und keine
 Gate-Umgehung.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

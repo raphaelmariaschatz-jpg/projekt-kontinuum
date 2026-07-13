@@ -86,3 +86,6 @@ Ein echtes Vision-Modell kann spaeter als austauschbarer Analyse-Provider angebu
 - `analyze_image()` liest und prueft Quelle/Metadaten.
 - ein separater Vision-Provider beschreibt Inhalte nur, wenn explizit aktiviert.
 - dauerhafte Memory-/Knowledge-Uebernahme bleibt ein eigener, bestaetigter Schritt.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

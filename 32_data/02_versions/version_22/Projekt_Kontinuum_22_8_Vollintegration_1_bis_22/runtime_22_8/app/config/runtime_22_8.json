@@ -1,0 +1,11 @@
+{
+  "version": "22.8",
+  "name": "Projekt Kontinuum 22.8 Vollintegration 1 bis 22",
+  "creator": "Raphael Schatz",
+  "superadmin": "Raphael Schatz",
+  "principles": ["Erkennen - Schaffen - Vollenden", "Der Weg ist das Ziel"],
+  "base_runtime": "version_18_x",
+  "security_basis": "version_6_3_plus_version_9_plus_22_x",
+  "legacy_versions": "../legacy_versions",
+  "status": "runtime_candidate"
+}

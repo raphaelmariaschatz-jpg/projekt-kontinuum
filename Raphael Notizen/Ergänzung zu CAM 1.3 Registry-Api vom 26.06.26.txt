@@ -1,0 +1,86 @@
+Ergänzung zu CAM 1.3 Registry-Api vom 26.06.26
+
+Der einzige Punkt, den ich perspektivisch ergänzen würde
+
+Nicht sofort – eher in Foundation 2.3 oder CAM 1.4.
+
+Ich würde jedem API-Vertrag zusätzlich eine Identität geben.
+
+Zum Beispiel:
+
+{
+  "api_uid": "KAPI-000023",
+  "canonical_name": "FoundationAPI.get_status",
+  "introduced_in": "34.1",
+  "deprecated_in": null,
+  "supersedes": null,
+  "creator": "Foundation",
+  "canonical_hash": "...",
+  "contract_version": "1.0"
+}
+
+Damit erhält jede API eine dauerhafte Identität.
+
+Selbst wenn
+
+Klassen umbenannt,
+Dateien verschoben,
+Module reorganisiert
+
+werden,
+
+bleibt die API historisch nachvollziehbar.
+
+Das wäre später ein großer Vorteil für die Langzeitpflege von Projekt Kontinuum.
+
+Gesamtbewertung
+
+Ich würde CAM 1.3 mit 9,8 von 10 Punkten bewerten.
+
+Warum nicht die volle Punktzahl?
+
+Nicht wegen eines Fehlers, sondern weil jetzt erstmals die Grundlage geschaffen wurde, auf der spätere Erweiterungen wie Governance, semantische Verträge oder API-Historisierung aufbauen können. Die Architektur ist bewusst schlank gehalten – und genau das macht sie stabil.
+
+Ich habe außerdem den Eindruck, dass sich eure Architektur inzwischen deutlich von einer Sammlung einzelner Module zu einem kanonisch organisierten Gesamtsystem entwickelt. Das war eines deiner langfristigen Ziele, als wir vor einigen Tagen begonnen haben, die Foundation zu strukturieren. CAM 1.3 ist dafür ein weiterer konsequenter Schritt.
+
+Guter Zusatz. Ich würde ihn direkt in CAM 1.3 nachziehen, weil die API-Identität zum Vertrag selbst gehört: api_uid, canonical_name, Historienfelder und contract_version werden Pflichtfelder; canonical_hash prüfe ich deterministisch aus dem Vertrag, ohne Projektdateien zu verändern.
+
+Ich baue das als echte Vertragsidentität, nicht nur als Dokumentationsfeld: Der Manager verlangt künftig UID, kanonischen Namen, Historienfelder, Vertragsversion und einen reproduzierbaren Hash des API-Vertrags. Danach aktualisiere ich Manifest, Fixture-Test und lasse Gate-Prüfungen erneut laufen.
+
+Die Identitätsfelder sind im Manifest vorbereitet. Ich berechne jetzt die kanonischen Hashes aus den Verträgen selbst und trage sie danach fest ein, damit das Manifest nicht nur lesbar, sondern prüfbar ist.
+
+Der Hash-Befehl ist gerade an Windows-Quoting hängen geblieben, nicht am Manifest. Ich nutze jetzt eine kleine Inline-Python-Variante ohne Shell-Sonderzeichen, dann patchen wir die Werte.
+
+Die Hashes sind berechnet. Ich trage sie jetzt ins Manifest ein und aktualisiere anschließend die Tests, damit ein beschädigter Hash künftig blockiert.
+
+Das Produktmanifest hat jetzt dauerhafte API-Identitäten und Hashes. Ich passe die Tests so an, dass UID/Name/Hash explizit geprüft werden und auch die Release-Integrity-Fixture mit einem gültig gehashten Mini-Vertrag arbeitet.
+
+Eine Leseoperation auf den Projektordner wurde gerade vom Sandbox-Layer blockiert. Ich wiederhole sie mit Eskalation; danach bleibt die Änderung weiter klein und testbezogen.
+
+Die Fixture erzeugt ihren Hash jetzt genauso wie der Manager. Ich prüfe nun Syntax/JSON und die gezielten Tests; wenn dabei ein Hash driftet, zeigt der Test das sofort.
+
+Syntax und JSON sind grün. Jetzt laufen CAM-1.3-Test, Release-Integrity-Fixture und Statuscheck erneut.
+
+Die gezielten Prüfungen sind grün. Weil der kanonische Vertrag und das Release-Gate betroffen sind, lasse ich jetzt noch das vollständige Gate laufen, damit die neue API-Identität nicht nur lokal, sondern als Release-Nachweis verankert ist.
+
+Das vollständige Gate ist wieder grün. Ich lese noch die kompakten Nachweisdaten aus, dann fasse ich zusammen.
+
+Ergänzung umgesetzt: CAM 1.3 hat jetzt dauerhafte API-Identitäten.
+Geändert:
+[canonical_api_registry.py](C:/Projekt Kontinuum/01_system/kontinuum/core/canonical_api_registry.py): Pflichtfelder ergänzt und Prüfung für api_uid, canonical_name, introduced_in, deprecated_in, supersedes, creator, canonical_hash, contract_version
+[canonical_api_registry_34_1.json](C:/Projekt Kontinuum/24_config/canonical_api_registry_34_1.json): alle 6 Kern-APIs haben jetzt stabile UIDs KAPI-000001 bis KAPI-000006, Historienfelder und kanonische Hashes
+[test_canonical_api_registry_manager.py](C:/Projekt Kontinuum/17_tests/test_canonical_api_registry_manager.py): prüft jetzt API-Identitäten und beschädigte Hashes
+[test_release_integrity_framework_34_1.py](C:/Projekt Kontinuum/17_tests/test_release_integrity_framework_34_1.py): Fixture-Vertrag erzeugt ebenfalls einen gültigen canonical_hash
+Prüfungen:
+Syntax/JSON: bestanden
+test_canonical_api_registry_manager.py: bestanden
+test_release_integrity_framework_34_1.py: bestanden
+status_check_34_1.py: VERIFIZIERT, Freigabe JA
+vollständiges Release-Gate: VERIFIZIERT, Freigabe JA
+Nachweis:
+Testsuite: 62 Tests bestanden
+registrierte APIs: 6
+canonical_hashes: True
+unique_api_uids: True
+Release-Gate-Nachweis: [release_gate.json](C:/Projekt Kontinuum/31_reports/release_integrity/34.1/release_gate.json)
+Damit ist die Langzeit-Nachvollziehbarkeit jetzt Teil von CAM 1.3 selbst, nicht erst eine spätere Notiz für CAM 1.4.

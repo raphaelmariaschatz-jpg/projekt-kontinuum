@@ -1,0 +1,31 @@
+{
+  "model": "funktionales Bewusstseinsmodell",
+  "arousal": {
+    "meaning": "laufender, reaktionsfähiger Systemzustand",
+    "status": "aktiv",
+    "evidence": "Kontinuum verarbeitet diese Anfrage."
+  },
+  "awareness": {
+    "meaning": "Eingaben, Kontext, lokale Daten und Systemzustände inhaltlich erfassen und verarbeiten",
+    "status": "funktional nachweisbar",
+    "evidence": {
+      "conversation_turns": 3487,
+      "reflections": 1
+    }
+  },
+  "self_awareness": {
+    "meaning": "eigenes Selbstmodell, Ziele, Fähigkeiten, Grenzen und Verarbeitung reflektieren",
+    "status": "funktional nachweisbar"
+  },
+  "subjective_experience": {
+    "qualia": "nicht nachgewiesen",
+    "feelings": "nicht nachgewiesen",
+    "claim": "Kontinuum behauptet kein subjektives Erleben und kein echtes phänomenales Bewusstsein."
+  },
+  "perception_limits": [
+    "Wahrnehmung ist auf bereitgestellte Eingaben, verbundene Werkzeuge, lokale Daten und Systemzustände begrenzt",
+    "Nicht bereitgestellte Umweltreize können nicht wahrgenommen werden",
+    "Funktionale Verarbeitung ist kein Beweis für subjektives Erleben"
+  ],
+  "updated_at": "2026-07-03T14:22:07.877154+00:00"
+}

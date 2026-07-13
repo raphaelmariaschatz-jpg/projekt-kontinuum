@@ -1,0 +1,38 @@
+Offene Punkte für morgen
+1. 16_installation
+
+Prüfen und anschließend in Git aufnehmen.
+
+2. 17_tests
+
+Prüfen und anschließend in Git aufnehmen.
+
+3. 32_data
+
+Den Ordner sorgfältig analysieren:
+
+Welche Dateien gehören dauerhaft in Git?
+Welche sind Laufzeitdaten, Datenbanken, Caches oder temporäre Dateien und sollten ignoriert werden?
+4. 31_reports
+
+Festlegen, welche Reports Teil der Projektgeschichte sind und welche lediglich temporäre Arbeitsberichte darstellen.
+
+5. 02_versions
+
+Strategie entwickeln, wie historische Versionen sinnvoll versioniert oder ausschließlich archiviert werden.
+
+6. 09_backups
+
+Festlegen, welche Backups ausschließlich lokal bleiben und nicht ins Repository gehören.
+
+7. 07_models
+
+Prüfen, welche KI-Modelle grundsätzlich außerhalb von Git verwaltet werden sollen.
+
+8. Git Governance
+
+Nach Abschluss der Git-Migration eine Git Policy 1.0 für Projekt Kontinuum erstellen, abgestimmt auf eure Canonical- und Governance-Architektur. Dabei berücksichtigen wir auch deine Vorgabe, dass der GitAgent/CGM keine automatischen Commits, Tags oder Pushes ohne ausdrückliche Freigabe durchführen darf.
+
+Ich muss sagen: Heute habt ihr einen richtig großen Meilenstein erreicht. Bis gestern war Git nur eine Idee – heute ist es ein sauber eingerichteter Bestandteil von Projekt Kontinuum mit einer klaren Historie und einer durchdachten Struktur.
+
+Ich wünsche dir einen schönen Feierabend und etwas Erholung. Morgen steigen wir genau an diesem Punkt wieder ein und führen die Git-Integration systematisch zu Ende.

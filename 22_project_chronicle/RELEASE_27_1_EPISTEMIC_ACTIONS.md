@@ -37,3 +37,6 @@ Hookeschen Gesetz ausgeführt:
 - 28 weitere Prüfaufträge verbleiben für kontrollierte Bearbeitung
 - realer Gesamtstatus danach: 30 integrierte Wissenseinheiten,
   2 im Zustand `knowledge` und 28 im Zustand `uncertain`
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

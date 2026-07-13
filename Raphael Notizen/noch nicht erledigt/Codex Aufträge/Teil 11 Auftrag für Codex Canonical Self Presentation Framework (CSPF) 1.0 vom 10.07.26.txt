@@ -1,0 +1,471 @@
+# Codex-Auftrag – Teil 11
+
+# Canonical Presentation Lifecycle & Evolution (CPLE) 1.0
+
+## Ziel
+
+Entwickle innerhalb des **Canonical Self-Presentation Framework (CSPF) 1.0** einen vollständigen **Canonical Presentation Lifecycle & Evolution (CPLE) 1.0**.
+
+CPLE definiert den vollständigen Lebenszyklus jeder kanonischen Selbstpräsentation – von ihrer ersten Definition über Erweiterungen und Qualitätsverbesserungen bis hin zur kontrollierten Ablösung oder Archivierung.
+
+Die Selbstpräsentation darf niemals als statischer Text verstanden werden.
+
+Sie ist ein langfristig gepflegtes, versioniertes, auditierbares und vollständig nachvollziehbares Systemartefakt.
+
+---
+
+# Grundprinzipien
+
+Jede kanonische Selbstpräsentation besitzt einen vollständigen Lebenszyklus.
+
+Dieser umfasst insbesondere:
+
+* Erstellung
+* Validierung
+* Freigabe
+* Veröffentlichung
+* Nutzung
+* Qualitätsüberwachung
+* Weiterentwicklung
+* Versionierung
+* Migration
+* Archivierung
+* Historisierung
+
+Keine Änderung darf unkontrolliert erfolgen.
+
+---
+
+# Ziel des CPLE
+
+CPLE soll sicherstellen, dass:
+
+* sich die Identität niemals unbeabsichtigt verändert,
+* neue Fähigkeiten integriert werden können,
+* ältere Präsentationen reproduzierbar bleiben,
+* alle Änderungen nachvollziehbar dokumentiert werden,
+* jede Version dauerhaft rekonstruierbar bleibt.
+
+---
+
+# Lebenszyklusphasen
+
+Definiere mindestens folgende Phasen.
+
+---
+
+## Phase 1 – Initial Definition
+
+Erstellung der ersten kanonischen Präsentation.
+
+Dabei werden erzeugt:
+
+* Canonical Presentation ID
+* Version
+* Baseline
+* Sprachprofile
+* Persona-Profile
+* Rollen
+* Metadaten
+
+---
+
+## Phase 2 – Validation
+
+Vor Freigabe erfolgt die vollständige Prüfung.
+
+Zu validieren sind unter anderem:
+
+* Struktur
+* Vollständigkeit
+* Konsistenz
+* Sprachqualität
+* Sicherheitsrichtlinien
+* Identitätsregeln
+* Canonical Compliance
+
+---
+
+## Phase 3 – Release
+
+Nach erfolgreicher Validierung erfolgt die Freigabe.
+
+Dabei wird festgelegt:
+
+* aktive Version
+* Freigabestatus
+* Veröffentlichungsdatum
+* unterstützte Editionen
+* unterstützte Profile
+
+---
+
+## Phase 4 – Runtime Operation
+
+Während des Betriebs wird kontinuierlich überwacht:
+
+* Nutzung
+* Performance
+* Verständlichkeit
+* Profiltreue
+* Fehler
+* Fallbacks
+* Qualitätsmetriken
+
+---
+
+## Phase 5 – Continuous Improvement
+
+Verbesserungen dürfen jederzeit vorgeschlagen werden.
+
+Diese entstehen beispielsweise durch:
+
+* neue Fähigkeiten
+* neue Sprachen
+* bessere Formulierungen
+* neue Rollen
+* neue Zielgruppen
+* Barrierefreiheit
+* Optimierungen
+
+Verbesserungen erzeugen jedoch niemals automatisch eine neue aktive Version.
+
+---
+
+## Phase 6 – Controlled Evolution
+
+Neue Versionen entstehen ausschließlich kontrolliert.
+
+Jede Änderung wird klassifiziert.
+
+Zum Beispiel:
+
+Major
+
+* grundlegende Identitätsänderungen
+
+Minor
+
+* neue Fähigkeiten
+
+Patch
+
+* sprachliche Verbesserungen
+
+Hotfix
+
+* Fehlerkorrekturen
+
+---
+
+## Phase 7 – Migration
+
+Neue Versionen müssen bestehende Systeme berücksichtigen.
+
+CPLE soll definieren:
+
+* Kompatibilität
+* Migration
+* Rückwärtskompatibilität
+* Deprecation
+* Upgrade-Regeln
+
+---
+
+## Phase 8 – Retirement
+
+Veraltete Präsentationen dürfen deaktiviert werden.
+
+Sie bleiben jedoch vollständig erhalten.
+
+Keine Version darf gelöscht werden.
+
+---
+
+## Phase 9 – Archive
+
+Historische Präsentationen werden archiviert.
+
+Archivierte Versionen müssen:
+
+* lesbar
+* reproduzierbar
+* prüfbar
+* referenzierbar
+
+bleiben.
+
+---
+
+# Versionierungsmodell
+
+Definiere ein kanonisches Versionsschema.
+
+Beispielsweise:
+
+Major.Minor.Patch
+
+Zusätzlich:
+
+Presentation Revision
+
+Profile Revision
+
+Language Revision
+
+Voice Revision
+
+Persona Revision
+
+Alle Revisionen müssen separat nachvollziehbar bleiben.
+
+---
+
+# Evolution Rules
+
+Definiere verbindliche Evolutionsregeln.
+
+Beispiele:
+
+Neue Fähigkeiten ergänzen.
+
+Bestehende Aussagen niemals stillschweigend verändern.
+
+Identität bleibt stabil.
+
+Persönlichkeit entwickelt sich kontrolliert.
+
+Historie bleibt vollständig.
+
+Keine inkonsistenten Mischversionen.
+
+---
+
+# Canonical Identity Preservation
+
+Die Kernidentität muss dauerhaft erhalten bleiben.
+
+Sie umfasst insbesondere:
+
+Mission
+
+Werte
+
+Verhaltensprinzipien
+
+Persönlichkeitskern
+
+ethische Grundlagen
+
+Systemidentität
+
+Diese Elemente dürfen nur über definierte Governance-Prozesse geändert werden.
+
+---
+
+# Change Classification
+
+Jede Änderung erhält:
+
+Change-ID
+
+Kategorie
+
+Priorität
+
+Risiko
+
+Auswirkung
+
+Kompatibilität
+
+Autor
+
+Zeitpunkt
+
+Freigabestatus
+
+---
+
+# Traceability
+
+Jede Änderung muss vollständig zurückverfolgt werden.
+
+Mindestens:
+
+welche Datei
+
+welches Profil
+
+welche Persona
+
+welche Sprache
+
+welche Ausgabe
+
+welcher Abschnitt
+
+geändert wurde.
+
+---
+
+# Quality Evolution
+
+Definiere kontinuierliche Qualitätsmetriken.
+
+Zum Beispiel:
+
+Lesbarkeit
+
+Verständlichkeit
+
+Natürlichkeit
+
+Dialogqualität
+
+Persönlichkeitskonsistenz
+
+Antwortkonsistenz
+
+Profiltreue
+
+Barrierefreiheit
+
+Lokalisierungsqualität
+
+---
+
+# Regression Protection
+
+Neue Versionen dürfen keine bestehenden Eigenschaften verschlechtern.
+
+Definiere Regressionstests für:
+
+Persönlichkeit
+
+Tonfall
+
+Identität
+
+Sicherheitsregeln
+
+Profile
+
+Sprachausgabe
+
+Kinderprofile
+
+Expertenprofile
+
+Seniorprofile
+
+---
+
+# Compatibility Matrix
+
+Erstelle Regeln zur Kompatibilität zwischen:
+
+Versionen
+
+Personas
+
+Sprachen
+
+Stimmen
+
+Editionen
+
+Fähigkeiten
+
+Rollen
+
+---
+
+# Historical Replay
+
+CPLE soll ermöglichen:
+
+„Präsentiere dich exakt wie Version 1.2.3."
+
+oder
+
+„Nutze das Forschungsprofil aus CSPF-Version 2.0."
+
+Alle historischen Varianten müssen reproduzierbar bleiben.
+
+---
+
+# Evolution Policies
+
+Definiere Richtlinien für:
+
+Feature Introduction
+
+Feature Deprecation
+
+Feature Replacement
+
+Language Expansion
+
+Persona Expansion
+
+Voice Expansion
+
+Accessibility Expansion
+
+Edition Expansion
+
+---
+
+# Audit Integration
+
+Alle Evolutionsschritte müssen auditierbar sein.
+
+Insbesondere:
+
+wer
+
+wann
+
+warum
+
+was
+
+wie
+
+geändert hat.
+
+---
+
+# Dokumentationsanforderungen
+
+Erstelle mindestens:
+
+* CANONICAL_PRESENTATION_LIFECYCLE_1_0.md
+* canonical_presentation_lifecycle_1_0.json
+* lifecycle_state_machine.md
+* lifecycle_transition_matrix.md
+* evolution_rules.md
+* compatibility_matrix.md
+* change_classification.md
+* regression_policy.md
+* historical_replay.md
+* lifecycle_validation_report.md
+
+---
+
+# Integration
+
+CPLE muss vollständig mit allen bisherigen CSPF-Komponenten zusammenarbeiten, insbesondere:
+
+* Canonical Identity Framework (CIF)
+* Canonical Self Model (CSM)
+* Canonical Capability Presentation (CCP)
+* Canonical Persona System (CPS)
+* Canonical Profile Engine (CPE)
+* Canonical Runtime & Dynamic Presentation (CRDP)
+* Canonical Governance (CG)
+* Canonical Personality, Communication Style & Behavioral Consistency (CPCB)
+* Canonical Context Awareness & Adaptive Communication (CCAAC)
+
+CPLE bildet den verbindlichen Evolutions- und Lebenszyklusrahmen für sämtliche kanonischen Selbstpräsentationen innerhalb des CSPF und stellt sicher, dass Identität, Qualität, Nachvollziehbarkeit und langfristige Weiterentwicklung dauerhaft gewährleistet sind.

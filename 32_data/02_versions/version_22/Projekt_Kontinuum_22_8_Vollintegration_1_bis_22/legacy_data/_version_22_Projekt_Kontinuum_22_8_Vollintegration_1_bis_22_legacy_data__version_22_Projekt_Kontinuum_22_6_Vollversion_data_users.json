@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "username": "Raphael",
+      "role": "creator",
+      "password": {
+        "salt": "a53403fc35edc4166f199f8b1b7bc080",
+        "hash": "8f73b2e5c8907a092d31cda9c25210c2279dc969086b37d6e573b70c21f7b4d3"
+      },
+      "recovery_key": {
+        "salt": "1737c9dab5793f39a58b765849fce44e",
+        "hash": "805ec66e5bb22b9cf31ce775cbcbb109c67f27e7d2535df3de3425166e36b7d9"
+      }
+    }
+  ]
+}

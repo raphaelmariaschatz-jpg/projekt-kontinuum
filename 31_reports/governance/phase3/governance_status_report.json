@@ -1,7 +1,7 @@
 {
   "kind": "kontinuum.phase3.governance_status",
   "version": "34.1",
-  "created_at": "2026-06-30T10:23:00.262836+00:00",
+  "created_at": "2026-07-05T12:48:58.208131+00:00",
   "component": "CGM",
   "name": "Canonical Governance Monitor",
   "active": true,
@@ -26,7 +26,7 @@
     "counts": {
       "HIGH": 0,
       "MEDIUM": 6,
-      "LOW": 0
+      "LOW": 5
     },
     "findings": [
       {
@@ -66,7 +66,7 @@
         "severity": "MEDIUM",
         "path": "31_reports/governance/phase3_continuous_governance_log.jsonl",
         "expected_sha256": "eddbe675024b49ec553d2079237e3cc9d1b375dc6621b5887e0a3400c352c6a7",
-        "actual_sha256": "494dfa30c1a47250ad5bf11e565a60fbe91ae7bd414bd8243b6473ea70bbf98a",
+        "actual_sha256": "8736bc1b7cdb8879eb5e5c41f8ff9117397fa06938c2817ff224da7c4da668f4",
         "message": "Artefakt weicht vom Baseline-Hash ab."
       },
       {
@@ -76,9 +76,45 @@
         "expected_sha256": "68e0421023a1cb09d33260cf97c69659e53b54506b7b69f23a2ce20e12207504",
         "actual_sha256": "dd6cd53d6aa59914dbc1b49ccdf0c4bc9c265dd7b41c4b85f1eb05f521130628",
         "message": "Artefakt weicht vom Baseline-Hash ab."
+      },
+      {
+        "type": "unmanaged_top_level_entry",
+        "severity": "LOW",
+        "path": "14_documents/change_agent",
+        "message": "Ueberwachter Bereich enthaelt nicht registrierten Top-Level-Eintrag."
+      },
+      {
+        "type": "unmanaged_top_level_entry",
+        "severity": "LOW",
+        "path": "24_config/history",
+        "message": "Ueberwachter Bereich enthaelt nicht registrierten Top-Level-Eintrag."
+      },
+      {
+        "type": "unmanaged_top_level_entry",
+        "severity": "LOW",
+        "path": "31_reports/canonical_data_manager",
+        "message": "Ueberwachter Bereich enthaelt nicht registrierten Top-Level-Eintrag."
+      },
+      {
+        "type": "unmanaged_top_level_entry",
+        "severity": "LOW",
+        "path": "31_reports/git",
+        "message": "Ueberwachter Bereich enthaelt nicht registrierten Top-Level-Eintrag."
+      },
+      {
+        "type": "unmanaged_top_level_entry",
+        "severity": "LOW",
+        "path": "31_reports/learning_agent",
+        "message": "Ueberwachter Bereich enthaelt nicht registrierten Top-Level-Eintrag."
       }
     ],
-    "unmanaged_top_level_entries": []
+    "unmanaged_top_level_entries": [
+      "14_documents/change_agent",
+      "24_config/history",
+      "31_reports/canonical_data_manager",
+      "31_reports/git",
+      "31_reports/learning_agent"
+    ]
   },
   "integrity": {
     "component": "CIC",
@@ -89,7 +125,7 @@
     "issues": [],
     "enforcement": "read_only_flagging_no_mutation"
   },
-  "baseline_compliance_score": 10,
+  "baseline_compliance_score": 0,
   "reports": {
     "governance_status": "31_reports/governance/phase3/governance_status_report.json",
     "drift": "31_reports/governance/phase3/drift_report.json",

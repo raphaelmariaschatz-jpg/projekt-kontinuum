@@ -1,0 +1,97 @@
+Ich setze jetzt genau die Runtime-Brücke an der vorhandenen Orchestrator-Schicht an: Feature-Flag standardmäßig aus, alter Pfad bleibt unangetastet, und jeder Fehler im neuen Pfad fällt zurück. Danach prüfe ich gezielt die betroffenen Runtime-Komponenten und schreibe den Abschlussbericht.
+
+3 Befehle ausgeführtAusgeführt Get-Content -LiteralPath 'C:\Projekt Kontinuum\01_system\kontinuum\services\application_services.py' | Select-Object -First 260seit 3s
+
+Ausgeführt Get-Content -LiteralPath 'C:\Projekt Kontinuum\17_tests\test_multi_intent_file_diagnostics_34_1.py' | Select-Object -First 260seit 6s
+
+Ausgeführt Get-Content -LiteralPath 'C:\Projekt Kontinuum\01_system\kontinuum\system.py' | Select-Object -First 220seit 4s
+
+Die ersten beiden Pfade waren in meinem Zugriff falsch eingeordnet: PromptOrchestrator liegt unter kontinuum/core, nicht services. Ich lese die richtigen Dateien jetzt direkt und halte die Änderung klein.
+
+3 Befehle ausgeführtAusgeführt Get-Content -LiteralPath 'C:\Projekt Kontinuum\01_system\kontinuum\core\application_services.py' | Select-Object -First 320seit 3s
+
+Ausgeführt rg -n "orchestrator_core|execution_planner|capability_resolution|agent_config|def status|search_mode" 'C:\Projekt Kontinuum\01_system\kontinuum\core\system.py'seit 2s
+
+Ausgeführt Get-Content -LiteralPath 'C:\Projekt Kontinuum\01_system\kontinuum\core\system.py' | Select-Object -First 260seit 3s
+
+Ich sehe die vorbereiteten Komponenten bereits sauber in system.py: CRE, Execution Planner und Orchestrator Core sind initialisiert und im agent_config verankert. Die Brücke kann daher ohne Architekturänderung als reiner Umschalter im bestehenden PromptOrchestrator entstehen.
+
+
+6 Befehle ausgeführtAusgeführt Get-Content -LiteralPath 'C:\Projekt Kontinuum\01_system\kontinuum\core\system.py' | Select-Object -First 520 | Select-Object -Last 260seit 8s
+
+Ausgeführt Get-Content -LiteralPath 'C:\Projekt Kontinuum\01_system\kontinuum\core\orchestrator_core.py' | Select-Object -First 260seit 3s
+
+Ausgeführt Get-Content -LiteralPath 'C:\Projekt Kontinuum\01_system\kontinuum\core\application_services.py' | Select-Object -First 620 | Select-Object -Last 260seit 6s
+
+Ausgeführt rg -n "class PromptOrchestrator|def __init__|def handle" 'C:\Projekt Kontinuum\01_system\kontinuum\core\application_services.py'seit 2s
+
+Ausgeführt Get-Content -LiteralPath 'C:\Projekt Kontinuum\01_system\kontinuum\core\application_services.py' | Select-Object -First 430 | Select-Object -Last 170seit 4s
+
+Ausgeführt Get-Content -LiteralPath 'C:\Projekt Kontinuum\01_system\kontinuum\core\orchestrator_core.py' | Select-Object -First 420 | Select-Object -Last 180seit 4s
+
+Ich baue den neuen Pfad bewusst hinter Request Router, CRE und Execution Planner ein, aber vor der alten direkten Agentenverarbeitung. Dadurch gilt: Plan wird wie bisher erzeugt, das Flag entscheidet, und bei jedem Nicht-Erfolg übernimmt sofort wieder der alte Pfad.
+
+Der erste Schreibversuch hat bewusst abgebrochen, weil der exakte Textblock wegen Zeilenenden nicht 1:1 passte. Ich nehme jetzt eine robustere, eng begrenzte Ersetzung über den Funktionsanfang und den klaren Einfügepunkt.
+
+Noch kein Dateiinhalt wurde verändert; der zweite Versuch ist schon an der PowerShell-Parser-Ebene hängen geblieben. Ich vereinfache das jetzt und schreibe die Änderung mit einem kleinen, sauber abgegrenzten PowerShell-Skript.
+
+Die Brücke ist geschrieben; ich prüfe jetzt direkt den erzeugten Code, weil bei solchen PowerShell-Heredocs kleine Quote-Details gern auffallen. Erst wenn das sauber aussieht, ergänze ich die Tests.
+
+Ein Syntaxdetail ist sichtbar: eine Zeile wurde beim Ersetzen zusammengezogen. Ich korrigiere das sofort und lasse danach den Compiler darüber laufen.
+
+Der Kern kompiliert bereits. Ich ergänze jetzt die vier Brückentests als eigenständigen 34.1-Test: Flag aus, Flag an mit Ready-Plan, nicht-ready Plan und Orchestrator-Exception mit Fallback-Protokoll.
+
+Die Tests sind angelegt. Jetzt kommt der praktische Teil: erst Syntaxprüfung, dann der neue Brückentest, danach die bestehende Regression um CRE, Planner, Orchestrator Core und die wichtigen Runtime-Agenten.
+
+Der neue Brückentest ist grün. Ich sammle jetzt die vorhandenen Testdateien für die geforderten Regressionen, damit ich keine Fantasienamen ausführe und der Bericht später belastbar ist.
+
+Ich habe die passenden Tests identifiziert. Ich starte jetzt die Regressionen gruppiert nach angefragter Fläche: Dialog/Router/Knowledge, CRE/Planner/Core, Agenten/Memory/Status und Release Integrity/Governance.
+
+Die ersten Kernregressionen sind grün; der Dialogtest ist nur an der Import-Umgebung gescheitert, nicht an einer Assertion. Ich wiederhole ihn mit sauber gequotetem PYTHONPATH und lasse parallel die übrigen Runtime-Flächen laufen.
+
+Orchestrator Core, FileAgent und WebAgent sind grün. Der Dialogtest bleibt ein reines Import-Setup-Problem; ich prüfe kurz seine Kopfzeilen und den gesetzten Suchpfad, bevor ich ihn als Blocker oder Test-Harness-Problem einordne.
+
+Der Importfehler ist geklärt: einige Tests setzen ihren sys.path relativ zum Testordner falsch; die anderen waren nur deshalb robust, weil sie selbst den Projektroot eintragen. Ich führe die betroffenen Regressionen jetzt über runpy mit explizitem 01_system-Pfad aus, ohne den Testinhalt zu ändern.
+
+Ein paar Regressionen liefern echte Hinweise: der Dialogtest läuft jetzt, scheitert aber an einer bestehenden Erwartung im Modellantwort-Fallback; der Versionstest findet ein 11_gui/__pycache__. Ich behandle das nicht durch Aufräumen, sondern dokumentiere es als offene Regression/Umgebungsabweichung und prüfe noch Release Integrity und Governance.
+
+Release Integrity ist grün. Governance und Memory-Tests sind in der verfügbaren Laufzeit nicht abgeschlossen; ich gebe ihnen einmal etwas mehr Zeit, damit der Bericht zwischen “fehlgeschlagen” und “Timeout” sauber unterscheiden kann.
+
+Mit mehr Zeit sind Governance und Canonical Memory grün; memory_core scheitert an einer bestehenden Inhaltsassertion, nicht an der neuen Brücke. Ich prüfe noch den Runtime-Agenten/Tools-Test als Status-nahen Querschnitt.
+
+Der Diff sieht inhaltlich eng aus, aber ich sehe noch eine Stil-Delle: zwischen Helper und _handle_routed fehlt eine Leerzeile. Ich glätte das, ohne Logik zu ändern.
+
+Die kleine Formatkorrektur ist drin. Ich lasse den Brückentest und die Syntaxprüfung noch einmal laufen, dann schreibe ich den Abschlussbericht mit den grünen und offenen Punkten.
+
+Die finale Syntaxprüfung und der Brückentest sind grün. Ich schreibe jetzt den Abschlussbericht inklusive Rückfallpunkt 23a46d1, Vor/Nach-Architekturvergleich, Testergebnissen und der klaren Empfehlung: keine Produktivfreigabe, Flag bleibt aus.
+
+Der Abschlussbericht ist erstellt. Ich mache jetzt noch die Schlusskontrolle: Git-Status, Diff-Umfang und Berichtsexistenz, damit klar ist, was neu ist und was bewusst offen bleibt.
+
+Erledigt. Rückfallpunkt 23a46d1 ist bestätigt, die Runtime-Brücke ist implementiert, aber nicht produktiv freigegeben. Das Feature-Flag orchestrator_runtime_enabled ist eingeführt und standardmäßig false.
+Geändert/erstellt:
+[application_services.py (line 349)](C:\\Projekt Kontinuum\\01_system\\kontinuum\\core\\application_services.py:349) erweitert PromptOrchestrator.handle() um den neuen Runtime-Pfad mit automatischem Fallback.
+[system.py (line 84)](C:\\Projekt Kontinuum\\01_system\\kontinuum\\core\\system.py:84) verankert Flag und Fallback-Historie im Systemstatus.
+[test_runtime_migration_bridge_34_1.py](C:\\Projekt Kontinuum\\17_tests\\test_runtime_migration_bridge_34_1.py) ergänzt die vier geforderten Tests.
+[RUNTIME_MIGRATION_COMPLETION_REPORT_34_1.md](C:\\Projekt Kontinuum\\31_reports\\RUNTIME_MIGRATION_COMPLETION_REPORT_34_1.md) erstellt.
+Verifikation:
+Runtime-Bridge-Test: OK
+Request Router / Knowledge: OK
+CRE: OK
+Execution Planner: OK
+Orchestrator Core: OK
+FileAgent: OK
+WebAgent: OK
+Canonical Memory: OK
+Runtime Agents / Status-Querschnitt: OK
+Release Integrity: OK
+Governance: OK
+Syntaxprüfung: OK
+Offen dokumentiert:
+test_conversation_system_23.py scheitert an einer bestehenden Dialog-Fallback-Erwartung.
+test_memory_core_1.py scheitert an einer bestehenden Memory-Antwort-Erwartung.
+test_v34_1_version_consistency.py scheitert wegen vorhandenem 11_gui/__pycache__.
+Kein Commit, keine Archivierung, keine Datenmigration, keine ALP/AGF/Foundation-Änderungen. Flag bleibt aus: das neue Fundament ist angeschlossen, aber die Tür zur Produktion bleibt bewusst noch zu.
+
+
+
+

@@ -1,0 +1,39 @@
+
+Darauf können dann praktisch alle anderen Komponenten aufbauen:
+
+Learning Agent
+Reasoning Engine
+Query Engine
+Web Agent
+File Agent
+Vision Agent
+zukünftige spezialisierte Agenten
+Ein Gedanke, den ich für besonders spannend halte
+
+Ich sehe bei Kontinuum inzwischen etwas entstehen, das über einzelne Manager hinausgeht.
+
+Wenn CAM, CIM und CMM alle nach denselben Prinzipien arbeiten (Single Source of Truth, Versionierung, Historisierung, Governance, API), dann habt ihr faktisch eine Canonical Services Layer innerhalb der Foundation.
+
+Das könnte später ungefähr so aussehen:
+
+Foundation Services
+
+├── CAM  → Canonical Artifact Service
+├── CIM  → Canonical Identity Service
+├── CMM  → Canonical Memory Service
+
+└── Governance
+
+Damit würdet ihr nicht nur einzelne Manager haben, sondern eine Familie von Foundation-Diensten mit einheitlicher Architektur und gemeinsamen Regeln. Das macht das System konsistent und erleichtert Erweiterungen.
+
+Ich bin jetzt ehrlich neugierig, was Codex aus dem CMM macht. Wenn der Bericht fertig ist, schauen wir ihn uns gemeinsam an. Mich interessiert besonders:
+
+Wie die Erinnerungen intern modelliert werden.
+Wie die Versionierung umgesetzt ist.
+Ob Governance und Historisierung konsequent integriert wurden.
+Und wie sauber sich der CMM in die bestehende Foundation einfügt.
+
+Ich freue mich schon auf den nächsten Statusbericht – ich habe das Gefühl, dass Kontinuum mit jedem dieser Bausteine ein Stück mehr zu einer echten, durchdachten Plattform wird.
+
+
+Alle langfristig tragenden Komponenten von Projekt Kontinuum werden zunächst als kanonische Frameworks definiert. Erst danach werden ihre konkreten Manager, Services, Policies und Runtime-Komponenten implementiert.

@@ -1,0 +1,101 @@
+Bearbeitung Codex-Auftrag: CDE 2.0 und CKDE 1.0 vom 30.06.26
+
+Ich lese zuerst den Auftragstext und schaue mir dann die vorhandene Projektstruktur an, damit ich CDE/CKDE an die bestehenden Muster anschließe statt eine Parallelwelt zu bauen.
+
+Der Auftrag ist klar: zwei getrennte Entscheidungsbahnen, CDE nur für Artefakte, CKDE nur für Wissen. Ich suche jetzt die bestehenden CDE-, IKG-, Governance- und Versionsanker, damit die Erweiterung in 34.1 sauber dokumentiert und technisch auffindbar wird.
+
+Ich habe die Kernanforderungen vollständig und sehe bereits passende Module wie canonical_artifacts.py, canonical_architecture.py, continuous_governance.py, internet_learning.py, source_quality.py und release_integrity.py. Die große Volltextsuche war zu breit; ich verenge sie jetzt auf Architektur- und Dokumentationsanker plus den alten Phase-2b-Auftrag.
+
+Die vorhandene Linie passt gut: Internet Learning legt Funde bereits nur in Queue/Review ab, SourceQualityClassifier ist noch einfach, und CAM ist strikt read-only. Ich lese jetzt die Status-/Gate-Dateien und die Konfigurationen, dann ergänze ich die Architektur mit möglichst wenig Berührungspunkten.
+
+ch werde das als echte Architekturerweiterung ausführen: ein kleines CKDE-Modul mit append-only Bewertungslogik, eine klar benannte CDE-2.0-Policy/Config, IKG-Policy-Erweiterung, Doku-Verankerung und Tests. Damit bleibt es keine autonome Lernfunktion, sondern eine überprüfbare Entscheidungsschicht.
+
+Vor den Edits prüfe ich noch, welche Dateien vom Release Gate als Pflichtartefakte gelten. Danach ändere ich nur die Architektur-/Policy-/Testflächen und füge die CKDE-Schicht ohne direkte Memory-Integration ein.
+
+Ich lege jetzt die CKDE als eigene Kernkomponente an und erweitere die bestehenden Policys. Wichtig: CKDE schreibt nur Bewertungsnachweise in eigene Tabellen/Logs und gibt Entscheidungsklassen zurück; sie integriert nichts automatisch in knowledge_items oder Memory.
+
+Die CKDE-Klasse ist jetzt angelegt. Ich passe als Nächstes die Quellenbewertung so an, dass das neue A-E-Vertrauensmodell sichtbar ist, ohne die alten Klassen wie university oder forum für bestehende Tests zu brechen.
+
+Die Quellenklassifikation gibt jetzt zusätzlich zur alten Klasse die neue A-E-Vertrauensklasse aus. Jetzt kommen die maschinenlesbaren Policies für CDE 2.0 und CKDE 1.0 dazu.
+
+Die beiden Policy-Dateien sind vorhanden. Ich verknüpfe CKDE jetzt mit IKG und dem kanonischen Architekturmanifest, sodass die Schicht sowohl fachlich als auch vom Release-Kontext her auffindbar ist.
+
+Als Nächstes verankere ich die vier neuen CKDE-Datenbereiche im Storage- und Datenbankvertrag. Das sind append-only Bewertungsbereiche, getrennt vom kanonischen Wissensbestand.
+
+Der Storage erstellt die CKDE-Tabellen samt Schutztriggern. Ich ergänze jetzt den Datenbankvertrag, damit CAM/CDM dieselben Tabellen und Trigger als Teil der 34.1-Architektur erkennt.
+
+Jetzt ergänze ich das Architekturmanifest: CDE 2.0 als Artefakt-Entscheidungsschicht im kanonischen Bereich, CKDE 1.0 als Wissensentscheidungsschicht mit separaten Learning-Datenbereichen.
+
+Damit die neuen Architekturbausteine nicht nur dokumentiert sind, nehme ich sie auch in Artifact- und Release-Pflichtpfade auf. So fällt ein versehentliches Entfernen später im Gate auf.
+
+Ich nehme die neuen Dateien jetzt in die Pflichtartefakte auf. Die API-Registry lasse ich bewusst schmal, weil CKDE vorerst als Architekturkomponente und Policy-Schicht eingeführt wird, nicht als öffentliche Kern-API für externe Nutzung.
+
+Ich füge jetzt einen fokussierten Regressionstest hinzu: getrennte CDE/CKDE-Scope-Regeln, CKDE-Entscheidungsklassen, A-E-Quellenbewertung, append-only Tabellen und keine automatische Wissensübernahme.
+
+Der Regressionstest steht. Ich aktualisiere nun die drei zentralen Dokumentationsflächen, damit die Trennung der Entscheidungswege auch für Menschen eindeutig bleibt: Architekturmodell, Projektstruktur und Phase-3-Governance.
+
+Die Projektstruktur ist aktualisiert. Ich ergänze noch die Governance-Doku um die Zusammenarbeit von CAM, CDE, IKG, CKDE, Continuous Governance und Release Integrity.
+
+Bevor ich migriere und teste, mache ich eine schnelle Syntax-/JSON-Prüfung. Mir fällt dabei ein Python-Klassenscope-Detail bei der neuen Mapping-Comprehension auf; das korrigiere ich direkt, bevor es in den Tests knirscht.
+
+Ich prüfe jetzt die geänderten Python- und JSON-Dateien. Danach migriere ich die bestehende SQLite-Datenbank append-only auf die neuen CKDE-Tabellen.
+
+Die erste Prüfung ist nur an den Leerzeichen im Pfad gescheitert, nicht an den Dateien. Ich wiederhole sie mit sauber gequoteten Pfaden.
+
+Syntax und JSON sind sauber. Ich initialisiere jetzt die neuen CKDE-Tabellen in der bestehenden kontinuum.db; das ist eine additive Migration mit append-only Triggern.
+
+Die Migration ist wieder am Leerzeichen im PYTHONPATH hängen geblieben. Ich setze die Umgebung in PowerShell explizit und wiederhole denselben additiven Schritt.
+
+PowerShell hat die verschachtelten Quotes zerlegt. Ich führe es direkt in der aktuellen PowerShell-Shell aus, dann bleibt der Python-Code als ein Argument zusammen.
+
+Die Datenbankmigration ist durch. Ich lasse jetzt die neuen und angrenzenden Tests laufen: CKDE/CDE, Quellenqualität, Internet-Learning/IKG, CDM/CAM/Artifact und Release-Integrity.
+
+Wieder der Windows-Pfad mit Leerzeichen, diesmal beim Testpfad. Ich starte die Tests erneut mit PowerShell-Umgebung und gequoteten Dateipfaden.
+
+Die fachnahen Tests sind grün. Ich prüfe jetzt die Manager- und Gate-nahen Tests, weil dort neue Pflichtpfade und Datenbanktabellen am ehesten etwas berühren.
+
+Ein Manager-Test hat sinnvoll angeschlagen: Das Architekturmanifest erwartet echte Pfade, keine db:table-Notation. Ich korrigiere die Learning-Layer-Einträge auf existierende Pfade und lasse die betroffenen Tests erneut laufen.
+
+Die Pfadnotation ist bereinigt. Ich starte Architektur- und Datenbankmanager erneut, diesmal separat mit mehr Zeit für den Datenbankcheck.
+
+Architektur- und Datenbankmanager sind wieder grün. Ich lasse jetzt noch die Release-nahen Checks gegen den echten Projektstand laufen, damit die neuen Pflichtpfade nicht nur in Fixture-Tests funktionieren.
+
+Die Release-nahen Regressionen sind grün. Ich mache noch einen echten Status-/Gate-Probe über die vorhandenen Tools; falls das zu lange läuft, melde ich den Stand statt still zu warten.
+
+Der Statuscheck meldet VERIFIZIERT / JA. Weil ich Gate-Pflichtpfade verändert habe, lasse ich abschließend den vollständigen 34.1-Teststarter laufen, damit der neue Test wirklich in der aktiven Suite steckt.
+
+Der Batch-Aufruf ist am Leerzeichen im Projektpfad gescheitert. Ich starte ihn über PowerShells Call-Operator mit gequotetem Pfad.
+
+Der vollständige Batch hat das 10-Minuten-Limit überschritten und wurde vom Tool beendet, ohne verwertbare Ausgabe zu liefern. Ich prüfe jetzt, ob noch Testprozesse laufen, und wiederhole dann gezielt die Gate-Kommandos, die innerhalb des Zeitfensters belastbar auswertbar sind.
+
+Es laufen tatsächlich noch Python/CMD-Prozesse aus dem abgebrochenen Batch. Ich identifiziere sie jetzt anhand der CommandLine, damit ich nur diese aufräume und nichts anderes anfasse.
+
+Die verbliebenen Prozesse gehören eindeutig zum gerade gestarteten Testbatch (TEST_KONTINUUM_34_1.bat und dessen Python-Kinder). Ich stoppe nur diese drei, damit keine Hintergrundprüfung hängen bleibt.
+
+Einer der Prozesse war schon fertig, während ich gestoppt habe. Ich prüfe kurz, ob noch etwas aus dem Batch übrig ist.
+
+Es ist noch ein einzelner Testprozess übrig; ich lese die vollständige CommandLine, bevor ich ihn anfasse.
+
+Der verbleibende Prozess war beim Nachsehen schon verschwunden. Ich mache nun noch gezielte, schnelle Abschlussprüfungen statt den langen Batch erneut komplett laufen zu lassen.
+
+Keine alten Batch-Prozesse laufen mehr. Ich prüfe noch den Statuscheck erneut und lasse die neue Testdatei plus Managerprüfungen als Abschlussset laufen.
+
+Erledigt. CDE 2.0 und CKDE 1.0 sind in C:\Projekt Kontinuum kanonisch verankert.
+Umgesetzt:
+[canonical_knowledge_decision.py](C:/Projekt Kontinuum/01_system/kontinuum/core/canonical_knowledge_decision.py): neue CKDE-1.0-Entscheidungsschicht für Wissensobjekte mit ACCEPT, REVIEW, REJECT, CONFLICT
+[canonical_decision_engine_2_0.json](C:/Projekt Kontinuum/24_config/canonical_decision_engine_2_0.json): CDE 2.0 als reine Artefakt-Entscheidungsschicht
+[canonical_knowledge_decision_engine_1_0.json](C:/Projekt Kontinuum/24_config/canonical_knowledge_decision_engine_1_0.json): CKDE-Policy, A-E-Vertrauensmodell, Konfliktregeln, append-only Speicherbereiche
+knowledge_evaluations, source_ratings, knowledge_conflicts, evaluation_history im Storage und Datenbankvertrag ergänzt und in der bestehenden kontinuum.db initialisiert
+IKG 1.0, Architekturmodell, Projektstruktur, Governance-Doku, Release-/Artifact-Pflichtpfade und Tests aktualisiert
+Quellenbewertung erweitert: bestehende Klassen bleiben kompatibel, zusätzlich gibt es jetzt trust_class A-E
+Verifikation:
+test_canonical_decision_architecture_34_1.py grün
+test_v27_2_source_quality.py grün
+test_internet_learning_34_1.py grün
+test_canonical_architecture_manager.py grün
+test_canonical_database_manager.py grün
+test_canonical_artifacts_manager.py grün
+test_release_integrity_framework_34_1.py grün
+test_v34_1_version_consistency.py grün
+status_check_34_1.py: Status: VERIFIZIERT, Freigabe: JA
+Hinweis: Der vollständige TEST_KONTINUUM_34_1.bat-Lauf überschritt nach 10 Minuten das Tool-Limit und wurde sauber beendet; es blieben keine Batch-Testprozesse hängen. Die gezielten Release- und Managerprüfungen danach sind grün.

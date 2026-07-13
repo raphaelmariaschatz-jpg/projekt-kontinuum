@@ -22,3 +22,6 @@ Nicht dauerhaft gespeichert werden:
 Die aktive Laufzeit erzwingt diese Regel: `research.web`-Inhalte werden vom
 Speicher abgelehnt; Recherche-Fundstellen werden in der Tabelle `sources`
 gespeichert.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

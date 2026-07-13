@@ -1,0 +1,50 @@
+{
+  "schema": "projekt-kontinuum.cmibf.release-manifest.v1",
+  "tool": "CMIBF Release Finalizer 1.0",
+  "release_id": "CMIBF_1_0_20260712_170045",
+  "release_version": "1.0",
+  "release_status": "FINAL",
+  "timestamp": "2026-07-12T17:00:48.0073680+02:00",
+  "approved_by": "Raphael Maria Schatz",
+  "source": {
+    "path": "C:\\Projekt Kontinuum\\14_documents\\fundamentale Gedanken\\CMIBF\\CANONICAL_MASTER_IMPLEMENTATION_BLUEPRINT_FRAMEWORK_1_0_REPAIRED.md",
+    "file_name": "CANONICAL_MASTER_IMPLEMENTATION_BLUEPRINT_FRAMEWORK_1_0_REPAIRED.md",
+    "size_bytes": 273686,
+    "sha256": "359873A13D86015B70E13B7C4912101AE8DCEAE9C6D19695D2D6F0CF3A0DA5C5"
+  },
+  "canonical_artifact": {
+    "artifact_id": "PK-FW-META-001",
+    "canonical_name": "Canonical Master Implementation Blueprint Framework",
+    "abbreviation": "CMIBF",
+    "version": "1.0",
+    "file_name": "CANONICAL_MASTER_IMPLEMENTATION_BLUEPRINT_FRAMEWORK_1_0.md",
+    "size_bytes": 273686,
+    "sha256": "359873A13D86015B70E13B7C4912101AE8DCEAE9C6D19695D2D6F0CF3A0DA5C5",
+    "encoding": "UTF-8",
+    "immutable_copy": true
+  },
+  "validation": {
+    "validator": "CMIBF Release Validator 1.0",
+    "validator_exit_code": 1,
+    "errors": 0,
+    "warnings": 3,
+    "information": 5,
+    "lines": 10872,
+    "headings": 386,
+    "result": "APPROVED_WITH_WARNINGS",
+    "report_markdown": "validation/CMIBF_RELEASE_VALIDATION_REPORT.md",
+    "report_json": "validation/CMIBF_RELEASE_VALIDATION_REPORT.json"
+  },
+  "warning_approval": {
+    "required": true,
+    "mode": "ALL_WARNINGS_EXPLICITLY_APPROVED",
+    "approved_codes": [],
+    "reason": "Die drei Duplicate-Heading-Warnungen wurden redaktionell geprüft und freigegeben.",
+    "approved_by": "Raphael Maria Schatz",
+    "approved_at": "2026-07-12T17:00:48.0073680+02:00"
+  },
+  "package": {
+    "zip_created": true,
+    "read_only_requested": true
+  }
+}

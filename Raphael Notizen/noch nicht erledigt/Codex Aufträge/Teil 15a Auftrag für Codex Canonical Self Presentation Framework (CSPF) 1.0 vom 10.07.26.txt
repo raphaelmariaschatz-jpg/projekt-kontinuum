@@ -1,0 +1,279 @@
+Codex-Auftrag Teil 15a – Canonical Self-Presentation API Contracts & SDK (CSPACS) 1.0
+Bestandteil des Canonical Self-Presentation Framework (CSPF) 1.0
+Zielsetzung
+
+Entwickle die Komponente Canonical Self-Presentation API Contracts & SDK (CSPACS) 1.0 als verbindliche öffentliche Vertragsschicht des Canonical Self-Presentation Framework (CSPF) 1.0.
+
+Diese Komponente definiert sämtliche extern sichtbaren Schnittstellen des CSPF. Sie beschreibt ausschließlich die öffentlichen API-Verträge sowie die daraus ableitbaren Software Development Kits (SDKs). Interne Implementierungen dürfen jederzeit ausgetauscht oder erweitert werden, sofern sie die definierten Contracts vollständig erfüllen.
+
+Die Architektur muss vollständig kanonisch, versionsstabil, sprachunabhängig, erweiterbar und auditierbar ausgelegt sein.
+
+Architekturziele
+
+Die API-Contract-Schicht muss folgende Eigenschaften erfüllen:
+
+eindeutige und stabile öffentliche Schnittstellen
+vollständige Trennung zwischen Contract und Implementierung
+sprachunabhängige Nutzbarkeit
+automatische Generierung von SDKs
+maschinenlesbare API-Spezifikationen
+konsistente Datenmodelle
+standardisierte Fehlerbehandlung
+vollständige Rückwärtskompatibilität innerhalb einer Major-Version
+vollständige Integration in die Canonical-Governance des CSPF
+Architekturmodell
+
+Die API-Contract-Schicht ist zwischen dem internen CSPF-Kern und allen externen Integrationen einzuordnen.
+
+Canonical Self-Presentation Core
+            │
+            ▼
+Canonical API Contracts
+            │
+            ▼
+Canonical SDK Layer
+            │
+            ▼
+Applications • Agenten • Frameworks • Dienste
+
+Die Contract-Schicht bildet die alleinige öffentliche Zugriffsebene auf das CSPF.
+
+Öffentliche API-Domänen
+
+Definiere mindestens folgende API-Bereiche:
+
+Identity API
+
+Bereitstellung von:
+
+Canonical Identity
+Framework-Version
+unterstützte Präsentationsprofile
+verfügbare Fähigkeiten
+aktueller Präsentationsstatus
+Presentation API
+
+Standardisierte Operationen:
+
+generatePresentation()
+generateSummary()
+generateVoicePresentation()
+generateContextPresentation()
+Profile API
+
+Operationen:
+
+listProfiles()
+loadProfile()
+validateProfile()
+compareProfiles()
+Context API
+
+Operationen:
+
+resolveContext()
+detectAudience()
+determinePresentationMode()
+Validation API
+
+Operationen:
+
+validatePresentation()
+validateProfile()
+validateManifest()
+Capability API
+
+Operationen:
+
+listCapabilities()
+queryCapability()
+checkCompatibility()
+Runtime API
+
+Operationen:
+
+activatePresentation()
+deactivatePresentation()
+reloadPresentation()
+Diagnostics API
+
+Operationen:
+
+health()
+readiness()
+status()
+diagnostics()
+Einheitliches Request-Modell
+
+Alle öffentlichen APIs müssen einem identischen Request-Modell folgen.
+
+Mindestens:
+
+API-Version
+Request-ID
+Canonical-ID
+Client-ID
+Zeitstempel
+gewünschte Operation
+Parameter
+Kontextinformationen
+Metadaten
+
+Das Modell muss erweiterbar sein, ohne bestehende Clients zu beeinträchtigen.
+
+Einheitliches Response-Modell
+
+Alle APIs liefern dieselbe Grundstruktur zurück.
+
+Mindestens:
+
+Status
+Request-ID
+Zeitstempel
+Framework-Version
+Canonical-ID
+Ergebnisdaten (Payload)
+Warnungen
+Fehler
+Metadaten
+
+Die Antwortstruktur darf sich zwischen einzelnen APIs nicht unterscheiden.
+
+Kanonisches Fehlermodell
+
+Entwickle ein einheitliches Fehlerkonzept.
+
+Mindestens:
+
+SUCCESS
+INVALID_PROFILE
+PROFILE_NOT_FOUND
+INVALID_CONTEXT
+VALIDATION_FAILED
+UNSUPPORTED_VERSION
+ACCESS_FORBIDDEN
+SIGNATURE_INVALID
+CAPABILITY_NOT_AVAILABLE
+INTERNAL_ERROR
+
+Jeder Fehler muss besitzen:
+
+eindeutige Fehler-ID
+Fehlerklasse
+Schweregrad
+Beschreibung
+empfohlene Wiederherstellungsmaßnahme
+Audit-Code
+Datenmodell
+
+Alle öffentlichen Objekte müssen als kanonische Datentypen beschrieben werden.
+
+Zu definieren sind insbesondere:
+
+Presentation
+Profile
+Identity
+Capability
+Context
+ValidationResult
+Diagnostics
+RuntimeStatus
+
+Für jeden Datentyp sind Struktur, Pflichtfelder, optionale Felder, Validierungsregeln und Versionierung festzulegen.
+
+SDK-Architektur
+
+Die API-Contracts müssen automatisch in sprachspezifische SDKs überführt werden können.
+
+Mindestens vorzusehen:
+
+Python
+C#
+Java
+JavaScript / TypeScript
+Go
+Rust
+
+Alle SDKs müssen funktional identisch sein. Sprachspezifische Sonderfunktionen sind unzulässig.
+
+Maschinenlesbare Spezifikationen
+
+Automatisch zu erzeugen sind:
+
+OpenAPI
+JSON Schema
+YAML
+Markdown-Referenzdokumentation
+
+Alle Spezifikationen müssen konsistent aus derselben kanonischen Quelle generiert werden.
+
+Kompatibilitätsprinzipien
+
+Die API-Contract-Schicht muss folgende Regeln einhalten:
+
+keine Breaking Changes innerhalb einer Major-Version
+additive Erweiterungen bevorzugen
+Deprecation nur über definierte Übergangsphasen
+vollständige Versionskennzeichnung aller Contracts
+eindeutige Contract-Identitäten
+Testanforderungen
+
+Automatisch zu generieren:
+
+Unit Tests
+Contract Tests
+Integration Tests
+Regression Tests
+Kompatibilitätstests
+Serialisierungs-/Deserialisierungstests
+Schema-Validierungstests
+Dokumentation
+
+Automatisch zu erzeugen:
+
+vollständige API-Referenz
+SDK-Handbuch
+Datenmodell-Dokumentation
+Integrationsbeispiele
+Beispielprojekte
+Sequenzdiagramme
+Changelog
+Migrationsleitfäden
+Integrationsanforderungen
+
+Die API-Contract-Schicht muss ohne Anpassungen mit folgenden CSPF-Komponenten zusammenarbeiten:
+
+Canonical Governance
+Canonical Validation & Certification
+Canonical Security & Trust
+Canonical Context Awareness
+Canonical Runtime
+Canonical Personality
+Canonical Knowledge Representation
+Canonical Authentication Framework
+Canonical Licence Management Framework
+
+Es dürfen keine direkten Abhängigkeiten zu konkreten Implementierungen bestehen.
+
+Qualitätsanforderungen
+
+Die Implementierung muss:
+
+vollständig kanonisch aufgebaut sein,
+modular und austauschbar bleiben,
+deterministisches Verhalten gewährleisten,
+vollständig dokumentiert sein,
+auditierbar und testbar sein,
+langfristige API-Stabilität unterstützen.
+Abschlussbedingungen
+
+Die Implementierung gilt nur dann als abgeschlossen, wenn:
+
+sämtliche öffentlichen API-Verträge vollständig definiert sind,
+ein einheitliches Request-, Response- und Fehlermodell implementiert wurde,
+alle kanonischen Datentypen spezifiziert sind,
+sprachunabhängige SDKs aus einer gemeinsamen Contract-Definition generiert werden können,
+OpenAPI-, JSON-Schema- und YAML-Spezifikationen automatisch erzeugt werden,
+umfassende Test- und Dokumentationsartefakte generiert werden,
+keine projektspezifischen oder sprachgebundenen Abhängigkeiten bestehen,
+die Komponente vollständig in das Canonical Self-Presentation Framework (CSPF) 1.0 integrierbar ist.

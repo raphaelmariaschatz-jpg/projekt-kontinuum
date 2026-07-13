@@ -1,3 +1,5 @@
+# © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.
+
 """Compatibility path for integrations that still import Foundation 2.1.
 
 Foundation 2.2 is the active implementation. This module intentionally

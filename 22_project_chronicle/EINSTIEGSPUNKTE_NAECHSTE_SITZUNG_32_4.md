@@ -63,3 +63,6 @@ Core, keine Sprach-zu-Code-Funktion und kein Security Core begonnen.
 
 Bei Stream-, Compact- oder Disconnect-Fehlern gilt der Stand als nicht
 verifiziert.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

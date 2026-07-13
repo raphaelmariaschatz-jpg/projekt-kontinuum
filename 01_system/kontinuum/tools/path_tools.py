@@ -1,4 +1,6 @@
-﻿from __future__ import annotations
+# © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.
+
+from __future__ import annotations
 import os
 from pathlib import Path
 
@@ -51,4 +53,3 @@ class PathTools:
 
     def map_legacy_path(self, value: str) -> str:
         return value.replace("E:\\Projekt Kontinuum", str(self.root)).replace("29_memory", "03_memory")
-

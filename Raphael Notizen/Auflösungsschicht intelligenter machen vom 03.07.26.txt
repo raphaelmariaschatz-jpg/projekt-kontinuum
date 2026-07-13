@@ -1,0 +1,83 @@
+Auflösungsschicht intelligenter machen vom 03.07.26
+
+Ja, das ist ein guter nächster Schritt: nicht Agenten stapeln, sondern die Auflösungsschicht intelligenter machen. Ich prüfe zuerst CAIM, Router, AgentRegistry und die jüngsten Multi-Intent-Stellen, dann setze ich eine read-only CRE 1.0 daneben, ohne CAIM umzubauen.
+
+Bestand wirkt klar: CAIM hält kanonische Agentenspezifikationen und find_by_capability, Router erzeugt teils schon capability:*, Orchestrator führt diese aktuell direkt über CAIM aus. Ich lese die CAIM-Methoden noch punktgenau, dann lege ich die CRE als eigenes read-only Modul unter 01_system/kontinuum/core an, weil sie zur Runtime-Orchestrierung gehört und nicht nur ein Toolskript ist.
+
+ch werde jetzt vier Stellen ändern bzw. neu anlegen: neues Runtime-Modul 01_system/kontinuum/core/capability_resolution_engine.py, schmale System-Anbindung in 01_system/kontinuum/core/system.py, Tests unter 17_tests/test_capability_resolution_engine_1_0.py und die Dokumentation 14_documents/CAPABILITY_RESOLUTION_ENGINE_1_0.md. CAIM selbst bleibt unverändert; die Engine liest nur über dessen bestehende Methoden.
+
+Das Grundmodul steht jetzt read-only. Ich binde es als Systemkomponente ein, damit CRE künftig im Runtime-Kontext verfügbar ist, aber noch keine produktiven Agenten steuert oder ausführt.
+
+Ja, genau diese Richtung nehme ich: CRE 1.0 ist erst der Resolver und Empfehlungsgenerator, noch keine neue Ausführungslogik. Der jetzige Multi-Intent-Fix bleibt stabil, und der nächste Umbau kann dann später kontrolliert von if file_agent zu CapabilityResolver.resolve_many() wandern.
+
+Ich erstelle jetzt die CRE-Testabdeckung: direkte Einzelauflösung, Multi-Intent-Splitting, unbekannte Capability, mehrere Kandidaten, Governance/Human-Approval, read-only Diagnostik und CAIM-Fallback ohne CAIM.
+
+Beim Testdesign fällt eine kleine, aber wichtige Multi-Intent-Nuance auf: natürliche deutsche Prompts trennen oft mit Komma plus Verb oder „und erstelle“. Ich erweitere den Splitter genau für solche Sequenzen, ohne Windows-Pfade auseinanderzuschneiden.
+
+Jetzt laufen zuerst die neuen CRE-Tests. Danach prüfe ich die bestehende Multi-Intent/FileAgent-Regression und CAIM-Tests, weil genau diese Grenzen durch die neue Schicht nicht kippen dürfen.
+
+Die bestehenden Multi-Intent- und CAIM-Tests sind grün. Der neue CRE-Test war zu streng: Mit Router ist „unbekannt“ selten wirklich unbekannt, weil der Router sauber auf Dialog fallbackt. Ich passe den Unknown-Test deshalb auf CRE ohne Router an; das ist die korrekte Fallback-Situation.
+
+Der Test ist korrigiert. Ich lasse CRE jetzt erneut laufen und danach die Router-/FileAgent-Regressionen, damit die neue Schicht keine alte Entscheidung verschiebt.
+
+Router/FileAgent bleiben grün. CRE fällt noch im Splitter: Der Beispielprompt wird noch nicht in drei Segmente zerlegt. Ich prüfe die tatsächlichen Segmente und schärfe nur diese Segmentierung.
+
+Der schnelle Inline-Check ist an der Windows-Env-Setzung mit Leerzeichen im Pfad hängen geblieben, nicht am Code. Ich nutze dafür kurz PowerShell-Syntax und ändere danach gezielt.
+
+Der Splitter hatte zwei kleine Kanten: Semikolon wurde wegen Wortgrenze nicht getrennt, und „teste danach den FileAgent“ wurde ungünstig geteilt. Beides ist jetzt geglättet; ich prüfe CRE erneut.
+
+Die Segmentierung passt jetzt exakt. Der Test-Fake selbst hatte für „FileAgent testen“ keine file.status-Capability registriert; ich ergänze das im Fake-CAIM, weil genau diese Capability im echten CAIM beim FileAgent vorhanden ist
+
+Fake-CAIM ist korrigiert. Ich lasse jetzt die CRE-Suite und die wichtigsten Nachbarregressionen noch einmal gemeinsam laufen.
+
+Die Nachbarregressionen bleiben grün. CRE bewertet Governance aktuell zu konservativ: Wenn irgendein nachrangiger Kandidat Governance braucht, markiert sie den ganzen Intent. Für Priorisierung ist sinnvoller: Capability-Regel oder empfohlener Kandidat entscheidet. Ich passe das an.
+
+Governance-Entscheidung folgt jetzt der Capability selbst oder dem priorisierten Kandidaten. Ich wiederhole die Tests und nehme danach die Dokumentation auf.
+
+Die Kern- und Regressionstests sind grün. Ich ergänze jetzt die kurze Architektur-Dokumentation mit Zweck, CAIM-Verhältnis, Grenzen und 1.1-Ausblick.
+
+Die Dokumentation ist ergänzt. Ich mache jetzt den Abschlussscan: Status, Diff-Statistik und noch einmal die wichtigsten Tests in einer letzten Runde, damit der Bericht belastbar ist.
+
+Abschlussscan zeigt: Der Arbeitsbaum enthält weiterhin viele vorherige uncommitted Änderungen aus der laufenden v34.1-Arbeit. Für CRE neu sind das Modul, Test und Doku; system.py war bereits verändert, ich habe dort nur die CRE-Anbindung ergänzt. Ich räume noch einen ungenutzten Import im neuen Modul auf.
+
+Der neue Code ist sauberer. Ich starte jetzt die finale Testgruppe: CRE, Multi-Intent/FileAgent, CAIM, Router und FileAgent.
+
+Alle finalen Tests sind grün. Ich hole noch den letzten Status, dann fasse ich dir geordnet nach deinem gewünschten Ergebnisbericht zusammen.
+
+CRE 1.0 ist angelegt: read-only, CAIM-basiert, ohne produktive Agentenausführung. Der Multi-Intent-Fix bleibt stabil; die neue Engine bereitet jetzt genau die spätere Architektur vor, in der solche Kombinationsfälle als Capability-Plan statt Sonderfall-if laufen.
+1. Geänderte Dateien
+[system.py](C:\\Projekt Kontinuum\\01_system\\kontinuum\\core\\system.py)
+CRE als Systemkomponente angebunden: system.capability_resolution_engine, agent_config, Status/Persistent-Self-Model-Provider.
+2. Neue Dateien
+[capability_resolution_engine.py](C:\\Projekt Kontinuum\\01_system\\kontinuum\\core\\capability_resolution_engine.py)
+[test_capability_resolution_engine_1_0.py](C:\\Projekt Kontinuum\\17_tests\\test_capability_resolution_engine_1_0.py)
+[CAPABILITY_RESOLUTION_ENGINE_1_0.md](C:\\Projekt Kontinuum\\14_documents\\CAPABILITY_RESOLUTION_ENGINE_1_0.md)
+3. Erkannte bestehende Strukturen
+CAIM ist bereits kanonische Quelle für Agenten/Capabilities: find_by_capability, can_execute, governance_required, read_only.
+RequestRouter erzeugt bereits teils Capability-Routen, z. B. capability:chemistry.lookup.
+PromptOrchestrator._handle_capability() nutzt CAIM direkt zur Agentenauswahl.
+AgentRouter hat Prioritäten und Intent-Filter, aber noch keine Capability-Resolution-Schicht.
+canonical_agents.json enthält Capability-Daten als vorhandene Wissensbasis.
+4. Implementierte CRE-1.0-Funktionen
+resolve(...) für Single Intent.
+resolve_many(...) für Multi Intent.
+Capability-Ableitung aus Routerentscheidung, Agentenroute oder einfachen Markern.
+CAIM-Adapter read-only.
+Kandidatenranking mit Score.
+Empfehlungen: required_capability, candidate_agents, recommended_agent, priority, governance_required, human_approval_required, read_only, review_required, cmm_relevant, execution_allowed.
+Keine Agentenausführung.
+5. Testergebnisse
+Grün:
+test_capability_resolution_engine_1_0.py
+test_multi_intent_file_diagnostics_34_1.py
+test_canonical_agent_integration_manager_1_0.py
+test_request_router_knowledge_agent_1_0.py
+test_file_agent_1_0.py
+6. Offene Punkte
+CRE wird noch nicht produktiv vom PromptOrchestrator zur Ausführung verwendet.
+Multi-Intent-Ausführung läuft noch über den bisherigen Fix.
+Governance ist vorbereitet, aber noch keine vollständige Policy-Engine.
+Review/CMM werden empfohlen, aber noch nicht automatisch aus CRE-Ergebnissen beschrieben.
+Arbeitsbaum war vorher schon deutlich dirty; ich habe bestehende Änderungen nicht zurückgesetzt.
+7. Empfehlung CRE 1.1
+Als nächstes: CRE-Ergebnisse im Orchestrator protokollieren und optional einen Ausführungsplan erzeugen lassen. Danach den FileAgent+Diagnostik-Sonderfall auf resolve_many() migrieren: project.access + diagnostics.run werden dann Capability-Schritte statt Speziallogik.

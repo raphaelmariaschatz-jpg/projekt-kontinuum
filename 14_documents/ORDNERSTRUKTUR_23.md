@@ -1,6 +1,6 @@
 # Projekt Kontinuum 34.1 - Kanonische Ordnerstruktur
 
-Stand: 2026-06-24
+Stand: 2026-07-03
 
 Diese Übersicht beschreibt die aktive Projektwurzel. Rekursive Dateidumps,
 Sicherungsinhalte, Laufzeit-Caches und generierte Daten sind keine
@@ -69,6 +69,10 @@ C:\Projekt Kontinuum
 01_system\kontinuum\core\temporal_relevance.py
 `-- Relevanz über Zeit: Kantenstatus, Chronikprägung, Wissenslückenpriorität
 
+01_system\kontinuum\core\capability_resolution_engine.py
+`-- CRE 1.0: read-only Capability-Aufloesung, CAIM-Kandidaten, Priorisierung,
+    Governance-/Review-/CMM-Empfehlungen ohne Agentenausfuehrung
+
 01_system\kontinuum\tools\search_engine_tools.py
 `-- Suchanbieter-Router: lokal, Notebook, Universität, arXiv, Semantic Scholar, Brave, DuckDuckGo
 
@@ -117,6 +121,9 @@ C:\Projekt Kontinuum
 14_documents\projektstatus
 `-- gebündelte aktuelle Projektstatus-Dateien und Verknüpfungen zu Wiedereinstiegspunkten
 
+14_documents\CAPABILITY_RESOLUTION_ENGINE_1_0.md
+`-- kanonische CRE-1.0-Dokumentation
+
 09_backups
 `-- self_extension_*          datierte Rollback-Sicherungen vor Promotion
 ```
@@ -163,3 +170,6 @@ C:\Projekt Kontinuum
   Projektstrukturen oder fehlenden historischen Archivständen.
 - `__pycache__`, Datenbankinhalte und Sicherungsbäume gehören nicht in eine
   kanonische Strukturübersicht.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

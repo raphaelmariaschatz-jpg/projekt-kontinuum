@@ -75,6 +75,14 @@ with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as temporary:
     agent = FileAgentService(paths, storage=storage, continuous_learning=learning, canonical_engine=canonical_engine)
     conversation = ConversationManager(storage, {"name": "Kontinuum", "creator": "Raphael"}, "34.1")
 
+    assert FileAgentService._extract_path(r"du hast Lese-Vollzugriff auf c:\Projekt Kontinuum", folder=True) == r"C:\Projekt Kontinuum"
+    assert FileAgentService._extract_path(r'du hast Lese-Vollzugriff auf "C:\Projekt Kontinuum"', folder=True) == r"C:\Projekt Kontinuum"
+    assert FileAgentService._extract_path("du hast Lese-Vollzugriff auf C:/Projekt Kontinuum", folder=True) == "C:/Projekt Kontinuum"
+    assert FileAgentService._extract_path(
+        r"lies Datei C:\Projekt Kontinuum\30_import\test.txt"
+    ) == r"C:\Projekt Kontinuum\30_import\test.txt"
+    assert FileAgentService._extract_path("lies Datei 30_import/test.txt") == "30_import/test.txt"
+
     assert conversation.classify("lies Datei 30_import/test.txt").input_type == "command"
     assert agent.looks_like_file_command("lerne aus Datei 30_import/beispiel.md")
 
@@ -136,6 +144,19 @@ with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as temporary:
     assert status["ok"]
     assert "FileAgent aktiv: ja" in status["message"]
     assert "Duplikate erkannt" in status["message"]
+
+    project_with_space = root / "Projekt Kontinuum"
+    project_with_space.mkdir()
+    access_result = agent.handle_command(f"der Pfad {project_with_space} ist hiermit für dich freigegeben")
+    assert access_result["ok"], access_result
+    assert Path(access_result["path"]) == project_with_space.resolve()
+    assert str(project_with_space.resolve()) in agent.config["allowed_roots"]
+    persisted_policy = json.loads((root / "24_config" / "file_agent_1_0.json").read_text(encoding="utf-8"))
+    assert str(project_with_space.resolve()) in persisted_policy["allowed_roots"]
+
+    truncated = agent.handle_command(r"lies Datei C:\Projekt")
+    assert not truncated["ok"]
+    assert FileAgentService.PATH_SPACE_HINT in truncated["message"]
 
     with sqlite3.connect(paths.paths()["data"] / "kontinuum.db") as database:
         assert database.execute("SELECT COUNT(*) FROM sources WHERE kind = 'research.source'").fetchone()[0] >= 6

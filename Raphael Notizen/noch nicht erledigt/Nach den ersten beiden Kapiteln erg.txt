@@ -1,0 +1,128 @@
+Nach den ersten beiden Kapiteln ergibt sich aus architektonischer Sicht fast zwangsläufig das nächste Kapitel.
+
+Bisheriger Aufbau
+
+Kapitel 1 – Zweck und Geltungsbereich
+
+Warum existiert das CMIBF?
+Welche Rolle hat es?
+Warum ist es die Single Source of Truth?
+
+Kapitel 2 – Architekturprinzipien und kanonisches Meta-Modell
+
+Wie ist die Gesamtarchitektur aufgebaut?
+Welche Ebenen existieren?
+Welche Verantwortlichkeiten und Informationsflüsse gibt es?
+Welche unveränderlichen Architekturgesetze gelten?
+
+Damit wissen wir jetzt warum und wie.
+
+Es fehlt aber noch woraus die Architektur besteht.
+
+Kapitel 3 – Kanonische Architekturartefakte und ihre Beziehungen
+
+Dieses Kapitel wird wahrscheinlich eines der umfangreichsten und wichtigsten des gesamten CMIBF.
+
+Es beantwortet Fragen wie:
+
+Welche Dokumente dürfen überhaupt existieren?
+Welche Artefakttypen gibt es?
+Welche Artefakte sind normativ?
+Welche sind nur abgeleitet?
+Wer darf sie erzeugen?
+Wer darf sie verändern?
+Welche Beziehungen besitzen sie untereinander?
+Welche Abhängigkeiten bestehen?
+Welche Artefakte müssen bei jeder Änderung automatisch aktualisiert werden?
+
+Erst dadurch wird die Architektur vollständig deterministisch.
+
+Der eigentliche Gedanke
+
+Momentan wissen wir:
+
+Die Architektur besitzt Frameworks.
+
+Aber wir definieren noch nicht:
+
+Welche Objekte die Architektur überhaupt kennt.
+
+Genau das wird Kapitel 3 leisten.
+
+Dort werden wir beispielsweise formalisieren:
+
+Dokumente
+Frameworks
+Module
+Komponenten
+Services
+APIs
+Datenbanken
+Registry-Dateien
+Statusdateien
+Reports
+Roadmaps
+Dependency Graphs
+Migrationspläne
+Testpläne
+Release-Artefakte
+Audit-Artefakte
+Chroniken
+Handbücher
+Konfigurationsdateien
+
+…und viele weitere Artefaktklassen.
+
+Jede erhält:
+
+eine eindeutige Identität,
+einen Lebenszyklus,
+einen Eigentümer,
+definierte Beziehungen,
+zulässige Abhängigkeiten,
+Versionierungsregeln,
+Validierungsregeln.
+Hier kommen unsere bisherigen Arbeiten zusammen
+
+Das Schöne ist: Fast alles, was wir in den vergangenen Wochen entwickelt haben, findet hier seinen natürlichen Platz.
+
+Zum Beispiel:
+
+CAM → verwaltet Artefakte.
+AID (Artifact Identity) → gibt jedem Artefakt eine dauerhafte Identität.
+ADG (Artifact Dependency Graph) → beschreibt Beziehungen zwischen Artefakten.
+ALP → definiert Lebenszyklus und Klassifikation.
+CDF → beschreibt den Entwicklungsprozess.
+CSPF → ist selbst ein kanonisches Architekturartefakt.
+Foundation → stellt Grunddienste bereit.
+Governance → überwacht alle Artefakte.
+Roadmaps → werden aus den Beziehungen automatisch erzeugt.
+
+Das ist kein Zufall mehr, sondern ein geschlossenes System.
+
+Und hier sehe ich bereits Kapitel 4
+
+Während Kapitel 3 definiert, welche Artefakte existieren, beantwortet Kapitel 4 die nächste Frage:
+
+Wie entstehen Architekturentscheidungen?
+
+Dort würden wir den vollständigen Architektur-Lebenszyklus definieren:
+
+Idee
+Architekturvorschlag
+Review
+Governance
+Freigabe
+Implementierung
+Validierung
+Veröffentlichung
+Betrieb
+Weiterentwicklung
+Deprecation
+Archivierung
+
+Damit wäre erstmals der komplette Lebensweg einer Architekturentscheidung formal beschrieben.
+
+Ich möchte noch einen Gedanken mit dir teilen, der mir heute beim Schreiben von Kapitel 2 gekommen ist.
+
+Ich glaube, wir entwickeln das CMIBF inzwischen nicht mehr nur für Projekt Kontinuum. In seiner jetzigen Richtung entsteht ein generisches Meta-Architektur-Framework, mit dem sich prinzipiell jedes große Softwareprojekt kanonisch strukturieren ließe. Projekt Kontinuum ist der erste Anwendungsfall – aber die Architekturprinzipien selbst sind deutlich allgemeiner. Das ist aus meiner Sicht eine bemerkenswerte Entwicklung, die sich organisch aus unserer Arbeit ergeben hat.

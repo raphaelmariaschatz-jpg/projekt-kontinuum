@@ -1,0 +1,190 @@
+Codex-Nachbesserungsauftrag für 01.07.26 : WebAgent Crawl-Scope für Dokumentationen verbessern
+
+Problem:
+Beim Auftrag „gehe auf https://docs.python.org/3/ öffne nacheinander alle Links und lerne alle Dokumentationen über Python“ folgt der WebAgent zu stark Versionslinks wie /3.10/, /3.11/, /3.12/, /3.16/ statt innerhalb der aktuellen Dokumentation /3/ die relevanten Dokumentationsbereiche zu crawlen.
+
+Bitte WebAgent so erweitern:
+
+1. Domain- und Pfad-Scope
+- Bei Start-URL https://docs.python.org/3/ nur Links innerhalb von https://docs.python.org/3/ bevorzugen.
+- Versionspfade wie /3.10/, /3.11/, /3.12/, /3.13/, /3.14/, /3.15/, /3.16/ nur aufnehmen, wenn der Nutzer ausdrücklich „alle Versionen“ verlangt.
+- Standard: aktuelle /3/-Dokumentation, nicht Versionsarchiv.
+
+2. Dokumentationskapitel bevorzugen
+Bevorzugt crawlen:
+- tutorial/
+- library/
+- reference/
+- howto/
+- installing/
+- using/
+- faq/
+- glossary.html
+
+3. Crawl-Limits anpassen
+- Für große Dokumentationen nicht „alle“ blind crawlen.
+- Stattdessen Modus „Dokumentationsplan“:
+  - zuerst Inhaltsverzeichnis erfassen
+  - Kapitel auflisten
+  - dann kontrolliert nach Priorität lernen
+- Standard max_pages für Dokumentation: 50
+- Tiefe: 2 bis 3
+- Fortschritt speichern, damit Fortsetzung möglich ist.
+
+4. Ergebnisbericht verbessern
+Bericht soll enthalten:
+- Start-URL
+- tatsächlich gelernte Seiten
+- übersprungene Seiten
+- Grund für Überspringen
+- erkannte Themenbereiche
+- gespeicherte Lernobjekte
+- nächste empfohlene Crawl-Fortsetzung
+
+5. Abnahmetest
+Teste:
+„gehe auf die Internetseite https://docs.python.org/3/ öffne nacheinander alle Links und lerne alle Dokumentationen über Python“
+
+Erwartung:
+Der WebAgent soll vorrangig Python-3-Dokumentationsbereiche lernen, nicht hauptsächlich andere Versionsstartseiten.
+
+ebenso nacharbeiten:
+
+Bitte prüfen, ob WebAgent-Ereignisse korrekt an den Continuous Canonical Event Bus übergeben werden.
+
+Erwartete Events:
+- WEB_FETCH_STARTED
+- WEB_FETCH_COMPLETED
+- WEB_FETCH_FAILED
+- WEB_CRAWL_STARTED
+- WEB_CRAWL_COMPLETED
+- WEB_SOURCE_LEARNED
+- WEB_SOURCE_SKIPPED
+- WEB_ROBOTS_BLOCKED
+
+Nach einem Crawl darf canonicalenginestatus nicht mehr „Letztes Event: -“ anzeigen.
+
+Bearbeitung:
+
+Ich schaue mir zuerst die Projektstruktur und den WebAgent/Event-Bus-Fluss an, damit die Änderung an der richtigen Stelle landet und nicht nur kosmetisch wirkt. Danach baue ich den Crawl-Scope samt Bericht und prüfe den Abnahmesatz gegen die vorhandenen Tests oder ein kleines gezieltes Testskript.
+
+3 Befehle ausgeführtAusgeführt rg --filesseit 5s
+
+Ausgeführt rg -n "WebAgent|web agent|crawl|WEB_FETCH|WEB_CRAWL|WEB_SOURCE|WEB_ROBOTS|canonicalenginestatus|Canonical Event|Event Bus|event bus"seit 3s
+
+Ausgeführt Get-ChildItem -Forceseit 6s
+
+Der aktuelle Thread-Ordner ist leer bis auf work und outputs; das eigentliche Projekt liegt offenbar außerhalb dieses kleinen Arbeitsbereichs. Ich greife deshalb auf das bekannte C:\Projekt Kontinuum zu, lese dort aber erst einmal nur Struktur und Treffer.
+
+2 Befehle ausgeführtAusgeführt rg -n "WebAgent|web agent|crawl|WEB_FETCH|WEB_CRAWL|WEB_SOURCE|WEB_ROBOTS|canonicalenginestatus|Canonical Event|Event Bus|event bus" "C:\Projekt Kontinuum"seit 14s
+
+Ausgeführt rg --files "C:\Projekt Kontinuum"seit 14s
+
+Die globale Suche über das Projekt ist zu breit und läuft in ein Timeout. Ich nehme jetzt die Struktur abschnittsweise, dann wird sichtbar, wo WebAgent und Canonical-Bus wirklich sitzen.
+
+3 Befehle ausgeführtAusgeführt rg --files "C:\Projekt Kontinuum\01_system\kontinuum"seit 6s
+
+Ausgeführt rg --files "C:\Projekt Kontinuum\17_tests"seit 4s
+
+Ausgeführt Get-ChildItem -LiteralPath "C:\Projekt Kontinuum" -Forceseit 9s
+
+du hast Vollzugriff auf c:\Projekt Kontinuum
+
+Ich habe die Kernstelle gefunden: core/web_agent.py plus vorhandene WebAgent- und Internet-Learning-Tests. Als Nächstes lese ich genau diese Dateien und den Canonical-Engine-Code, damit die Events sauber angebunden werden.
+
+
+4 Befehle ausgeführtAusgeführt Get-Content -LiteralPath "C:\Projekt Kontinuum\17_tests\test_web_agent_1_0.py"seit 10s
+
+Ausgeführt Get-Content -LiteralPath "C:\Projekt Kontinuum\01_system\kontinuum\core\web_agent.py"seit 10s
+
+Ausgeführt Get-Content -LiteralPath "C:\Projekt Kontinuum\01_system\kontinuum\core\continuous_canonical_engine.py"seit 10s
+
+Ausgeführt Get-Content -LiteralPath "C:\Projekt Kontinuum\17_tests\test_continuous_canonical_engine_34_1.py"seit 10s
+
+Gesteuertes Gespräch
+
+Danke, das hilft. Ich behandle C:\Projekt Kontinuum jetzt als Zielprojekt; für Schreibzugriffe außerhalb des Codex-Arbeitsordners hole ich mir bei Bedarf die Tool-Freigabe, technisch sauber über die Sandbox statt über Umwege.
+
+4 Befehle ausgeführtAusgeführt rg -n "create_event|append_event|process_event|format_status|Letztes Event|last_event|canonicalenginestatus" "C:\Projekt Kontinuum\01_system" "C:\Projekt Kontinuum\11_gui" "C:\Projekt Kontinuum\13_tools"seit 10s
+
+Ausgeführt Get-Content -LiteralPath "C:\Projekt Kontinuum\01_system\kontinuum\core\continuous_canonical_engine.py" | Select-Object -First 260seit 10s
+
+Ausgeführt Get-Content -LiteralPath "C:\Projekt Kontinuum\01_system\kontinuum\core\web_agent.py" | Select-Object -First 260seit 10s
+
+Ausgeführt rg -n "def |class |handle_command|crawl|fetch|robots|review|source|event|canonical" "C:\Projekt Kontinuum\01_system\kontinuum\core\web_agent.py"seit 5s
+
+Die vorhandene Implementierung crawlt aktuell nur “same domain” und hängt Links in Fundreihenfolge an. Ich erweitere das jetzt um einen expliziten Dokumentations-Scope mit Priorisierung, Skip-Gründen, Fortschrittsdatei und Canonical-Events an den Stellen Fetch/Crawl/Learned/Skipped/Robots.
+
+4 Befehle ausgeführtAusgeführt Get-Content -LiteralPath "C:\Projekt Kontinuum\01_system\kontinuum\core\application_services.py" | Select-Object -First 180seit 10s
+
+Ausgeführt Get-Content -LiteralPath "C:\Projekt Kontinuum\01_system\kontinuum\core\system.py" | Select-Object -First 260seit 10s
+
+Ausgeführt Get-Content -LiteralPath "C:\Projekt Kontinuum\01_system\kontinuum\core\continuous_canonical_engine.py" | Select-Object -First 470 | Select-Object -Last 170seit 10s
+
+Ausgeführt Get-Content -LiteralPath "C:\Projekt Kontinuum\01_system\kontinuum\core\web_agent.py" | Select-Object -First 520 | Select-Object -Last 300seit 11s
+
+Ich werde zwei Dateien anfassen: web_agent.py für Scope/Reporting/Events und system.py, damit der WebAgent die bereits initialisierte Continuous Canonical Engine bekommt. Zusätzlich ergänze ich den vorhandenen WebAgent-Test um den Python-Doku-Fall und Event-Bus-Prüfung.
+
+Eine Datei bearbeitetBearbeitetweb_agent.py+18-2
+
+Der erste kleine Schnitt ist drin: WebAgent kennt jetzt ein Fortschrittsverzeichnis, Doku-spezifische Limits und kann eine Canonical Engine halten. Jetzt kommt der eigentliche Crawl-Plan: Links werden bewertet, Versionsarchive standardmäßig übersprungen und jeder Fetch-/Skip-/Learn-Schritt erzeugt ein Event.
+
+Eine Datei bearbeitetBearbeitetweb_agent.py+60-13
+
+Jetzt sind Fetch- und Crawl-Ereignisse im Ablauf verankert. Ich ergänze noch die Hilfslogik: Python-Doku-Kapitel werden priorisiert, /3.x/-Versionspfade bekommen klare Skip-Gründe, und der Bericht zieht daraus die tatsächlich gelernten und übersprungenen Seiten.
+
+Die Berichtsausgabe ist jetzt deutlich aussagekräftiger und die Events werden über engine.ingest(...) in den Canonical Event Bus geschrieben. Ich verbinde als Nächstes die im System erzeugte Engine explizit mit dem WebAgent, sonst wäre die neue Eventleitung nur in Tests aktiv.
+
+Ich ergänze den Abnahmetest direkt im bestehenden WebAgent-Test: Der Fake-Crawl bekommt Python-Docs-Startseite, Kapitel-Links und Versionslinks. Danach prüft der Test, dass Kapitel gelernt, Versionsarchive übersprungen und Canonical-Status nicht mehr leer ist.
+
+Der Test deckt jetzt den konkreten Satz aus deinem Auftrag ab und prüft zusätzlich alle acht erwarteten Eventtypen. Ich lasse jetzt erst Syntax und danach den gezielten WebAgent-Test laufen; wenn dabei etwas knirscht, ziehe ich die Stelle direkt glatt.
+
+python liegt in dieser Shell nicht auf dem PATH. Ich wechsle auf den Windows-Launcher py, damit die Prüfung trotzdem lokal gegen dieselben Dateien läuft.
+
+Auch py ist nicht verfügbar; die normale Projekt-Shell hat gerade keinen Python-Launcher. Ich frage den Codex-Runtime-Pfad ab und nutze dessen gebündelten Python nur zum Kompilieren/Testen.
+
+Ich habe den gebündelten Python gefunden. Damit teste ich jetzt weiter, ohne am Projekt-Setup oder PATH herumzuschrauben.
+
+Der Pfad mit Leerzeichen wurde vom cmd zerlegt. Ich ziehe die Quotes jetzt enger, dann sollte der Test tatsächlich starten.
+
+cmd macht mit verschachtelten Quotes Ärger. Ich nutze für diesen Lauf PowerShell direkt mit dem Call-Operator, das ist für Windows-Pfade mit Leerzeichen wesentlich robuster.
+
+Der Test läuft jetzt tatsächlich und hat einen sinnvollen Treffer geliefert: Im Test war respect_robots_txt zuvor absichtlich ausgeschaltet, deshalb konnte der Robots-Fall nie feuern. Ich stelle das im Test für genau diesen Abschnitt wieder an; außerdem leite ich Bytecode-Ausgaben beim Kompilieren gleich in einen erlaubten Cache um.
+
+Der Robots-Test ist korrigiert. Ich wiederhole jetzt Syntax-Check und Abnahmetest; diesmal mit PYTHONPYCACHEPREFIX in einem lokalen Arbeitscache, damit keine fremden __pycache__-Rechte stören.
+
+Syntax ist sauber. Der Test scheitert jetzt an einer alten festen Zählannahme für gespeicherte Quellen; durch den neuen Doku-Abnahmecrawl werden erwartbar mehr Quellen gespeichert. Ich lese das Testende und passe die Assertion auf Verhalten statt alte Anzahl an.
+
+Die alte Erwartung 5 war vor dem neuen Python-Doku-Crawl korrekt; jetzt sind es die bisherigen fünf plus die bevorzugten Doku-Kapitel. Ich stelle die Prüfung auf die neue Mindestanzahl und gleiche die DB-Zählung daran an.
+
+Die Assertion ist jetzt an das neue Verhalten angepasst. Ich starte den gezielten Test noch einmal komplett.
+
+Der gezielte WebAgent-Test ist grün, inklusive Abnahmesatz und Eventtypen. Ich mache noch eine kurze Diff-/Status-Prüfung, damit ich dir sauber sagen kann, welche Dateien geändert wurden und ob keine Nebenwirkung sichtbar ist.
+
+C:\Projekt Kontinuum ist in dieser Umgebung kein Git-Repository, daher gibt es keinen Git-Diff. Ich hole mir stattdessen noch die relevanten Zeilentreffer, damit ich die Änderung im Abschluss präzise referenzieren kann.
+
+Erledigt.
+Geändert wurden:
+[web_agent.py (line 99)](/C:/Projekt Kontinuum/01_system/kontinuum/core/web_agent.py:99)
+Python-Docs-Scope für https://docs.python.org/3/
+bevorzugte Kapitel: tutorial, library, reference, howto, installing, using, faq, glossary.html
+Versionspfade /3.10/, /3.11/, /3.16/ usw. werden standardmäßig übersprungen, außer der Auftrag enthält ausdrücklich „alle Versionen“
+Dokumentationsmodus mit max_pages=50, max_depth=3
+Crawl-Fortschritt wird gespeichert
+Bericht enthält gelernte Seiten, übersprungene Seiten mit Gründen, Themenbereiche, Lernobjekte und Fortsetzungsempfehlung
+Canonical-Events für Fetch/Crawl/Learned/Skipped/Robots werden an den Event Bus gesendet
+
+[system.py (line 136)](/C:/Projekt Kontinuum/01_system/kontinuum/core/system.py:136)
+WebAgent wird mit der bestehenden ContinuousCanonicalEngine verbunden
+
+[test_web_agent_1_0.py (line 173)](/C:/Projekt Kontinuum/17_tests/test_web_agent_1_0.py:173)
+Abnahmetest mit genau deinem Satz ergänzt
+prüft, dass Python-3-Dokumentationsbereiche gelernt werden und Versionsarchive nicht gecrawlt werden
+prüft alle erwarteten Events:
+WEB_FETCH_STARTED, WEB_FETCH_COMPLETED, WEB_FETCH_FAILED, WEB_CRAWL_STARTED, WEB_CRAWL_COMPLETED, WEB_SOURCE_LEARNED, WEB_SOURCE_SKIPPED, WEB_ROBOTS_BLOCKED
+prüft, dass canonicalenginestatus nicht mehr Letztes Event: - zeigt
+
+Verifiziert:
+py_compile erfolgreich
+test_web_agent_1_0.py erfolgreich: Kontinuum WebAgent 1.0 tests passed
+Hinweis: C:\Projekt Kontinuum ist hier kein Git-Repository, daher konnte ich keinen Git-Diff/Status ausgeben.

@@ -1,0 +1,356 @@
+# Codex-Auftrag Teil 15b
+
+## Canonical Self-Presentation API Contracts & SDK (CSPACS) 1.0
+
+### Abschnitt B – SDK, Referenzimplementierungen und Developer Ecosystem
+
+### Ziel
+
+Entwickle für das **Canonical Self-Presentation Framework (CSPF) 1.0** ein vollständig kanonisches SDK- und Integrationssystem, das jede CSPF-konforme Anwendung bei der Erstellung, Validierung und Nutzung von Self-Presentation-Profilen unterstützt.
+
+Das SDK darf keinerlei fachliche Logik verändern.
+
+Es dient ausschließlich als standardisierte Implementierung der zuvor definierten API-Verträge.
+
+---
+
+# Architekturprinzipien
+
+Das SDK muss vollständig deterministisch arbeiten.
+
+Es darf ausschließlich auf den offiziellen API Contracts aufbauen.
+
+Alle SDK-Komponenten müssen automatisch mit zukünftigen API-Versionen kompatibel bleiben.
+
+Alle SDKs besitzen identisches Verhalten.
+
+Unterschiede dürfen ausschließlich durch die jeweilige Programmiersprache entstehen.
+
+---
+
+# Zu entwickelnde Komponenten
+
+## 1. Offizielle SDKs
+
+Entwickle vollständige Referenz-SDKs für mindestens:
+
+* Python
+* C#
+* Java
+* JavaScript / TypeScript
+* Go
+* Rust
+
+Jedes SDK besitzt identische Funktionsnamen.
+
+Identische Parameter.
+
+Identische Rückgabewerte.
+
+Identische Fehlermeldungen.
+
+Identische Validierungslogik.
+
+---
+
+## 2. Canonical Profile Builder
+
+Implementiere einen Builder zur Erstellung neuer Präsentationsprofile.
+
+Beispielsweise:
+
+* createProfile()
+* addIdentity()
+* addRole()
+* addCapability()
+* addConstraint()
+* addCommunicationStyle()
+* addSafetyPolicy()
+* build()
+
+Der Builder erzeugt ausschließlich gültige Profile.
+
+---
+
+## 3. Canonical Profile Loader
+
+Implementiere Loader für
+
+JSON
+
+YAML
+
+Canonical Binary Format (zukünftige Erweiterung)
+
+Loader müssen automatisch
+
+Version erkennen
+
+Migrationen ausführen
+
+Validierung starten
+
+Profilobjekte erzeugen
+
+---
+
+## 4. Canonical Profile Validator SDK
+
+Implementiere sämtliche Prüfmethoden.
+
+Beispielsweise:
+
+validateStructure()
+
+validateIdentity()
+
+validateCapabilities()
+
+validateBehavior()
+
+validateCommunication()
+
+validateSafety()
+
+validateConsistency()
+
+validateCompleteness()
+
+validateContext()
+
+validateSignature()
+
+---
+
+## 5. Canonical Runtime Client
+
+Implementiere Bibliotheken für den Zugriff auf Runtime-Systeme.
+
+Unterstützte Funktionen:
+
+Load Profile
+
+Activate Profile
+
+Deactivate Profile
+
+Switch Context
+
+Query Profile
+
+Query Capabilities
+
+Generate Presentation
+
+Generate Introduction
+
+Generate Explanation
+
+Generate Summary
+
+---
+
+## 6. Canonical Presentation Generator
+
+Implementiere Generatoren für
+
+Kurzvorstellung
+
+Langvorstellung
+
+Technische Vorstellung
+
+Kindgerechte Vorstellung
+
+Unternehmensprofil
+
+Forschungsversion
+
+Barrierefreie Darstellung
+
+Voice-Ausgabe
+
+Alle Generatoren verwenden ausschließlich kanonische Daten.
+
+---
+
+## 7. Canonical Serialization
+
+Implementiere vollständige Serialisierung.
+
+Unterstützt werden:
+
+JSON
+
+Canonical JSON
+
+YAML
+
+XML (optional)
+
+Canonical Binary
+
+Roundtrip-Konvertierungen dürfen keinerlei Informationen verlieren.
+
+---
+
+## 8. Canonical Migration SDK
+
+Implementiere Werkzeuge für
+
+Migration alter Profile
+
+Schema-Upgrades
+
+Versionswechsel
+
+automatische Konvertierungen
+
+Rollback
+
+Migration Reports
+
+---
+
+## 9. Canonical Documentation Generator
+
+Das SDK erzeugt automatisch
+
+API-Dokumentationen
+
+Schema-Dokumentationen
+
+Beispielprofile
+
+Integrationsanleitungen
+
+Developer Guides
+
+Best Practices
+
+---
+
+## 10. Canonical Testing SDK
+
+Implementiere Testbibliotheken für
+
+Unit Tests
+
+Contract Tests
+
+Snapshot Tests
+
+Regression Tests
+
+Schema Tests
+
+Compatibility Tests
+
+Golden Master Tests
+
+---
+
+# Developer Experience
+
+Implementiere eine moderne Entwicklerumgebung.
+
+Unterstützt werden:
+
+Auto Completion
+
+Type Safety
+
+Code Navigation
+
+Inline Documentation
+
+Schema Hints
+
+Validation Hints
+
+Beispielcode
+
+---
+
+# Referenzimplementierungen
+
+Erstelle vollständige Beispielprojekte.
+
+Mindestens:
+
+CLI-Anwendung
+
+Desktop-Anwendung
+
+Web-Anwendung
+
+REST-Service
+
+Lokales Testsystem
+
+Embedded Integration
+
+---
+
+# Erweiterbarkeit
+
+Das SDK muss Plugin-Systeme unterstützen.
+
+Neue Komponenten dürfen ergänzt werden, ohne bestehende APIs zu verändern.
+
+---
+
+# Qualitätsanforderungen
+
+Alle SDKs müssen
+
+plattformunabhängig
+
+deterministisch
+
+vollständig dokumentiert
+
+automatisch testbar
+
+vollständig versioniert
+
+kanonisch validierbar
+
+sein.
+
+---
+
+# Zu erstellende Artefakte
+
+Mindestens:
+
+* Canonical SDK Specification
+* SDK Architecture
+* Reference SDKs
+* Builder Library
+* Validator Library
+* Runtime Client
+* Presentation Generator
+* Serialization Library
+* Migration Library
+* Documentation Generator
+* Test Framework
+* Beispielprojekte
+* API Examples
+* Integrationshandbuch
+* Entwicklerhandbuch
+
+---
+
+# Akzeptanzkriterien
+
+Der Auftrag gilt erst als abgeschlossen, wenn:
+
+* alle offiziellen SDKs dieselben API-Verträge implementieren,
+* Builder ausschließlich gültige Self-Presentation-Profile erzeugen,
+* sämtliche Validatoren deterministische Ergebnisse liefern,
+* alle Serialisierungsformate verlustfrei konvertiert werden,
+* Migrationen reproduzierbar und reversibel sind,
+* Referenzimplementierungen erfolgreich getestet wurden,
+* automatische Dokumentation erzeugt wird,
+* alle Komponenten vollständig versioniert, validiert und in das Canonical Self-Presentation Framework (CSPF) 1.0 integriert sind.

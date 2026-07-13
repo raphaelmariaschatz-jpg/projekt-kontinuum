@@ -1,0 +1,303 @@
+Codex-Auftrag – Wiedereinstieg Projekt Kontinuum – 05.07.2026 ab 13:00 Uhr
+
+Ausgangslage
+
+Die heutige Entwicklungsphase wurde erfolgreich abgeschlossen.
+
+Erreichte Meilensteine:
+
+* Execution Planner 1.0 vollständig implementiert und verifiziert.
+* Architekturprüfung erfolgreich abgeschlossen.
+* Orchestrator Core 1.0 als neue Execution Runtime entwickelt.
+* Runtime-Schema, Tests, CAM, Release Integrity und Dokumentation aktualisiert.
+* Migrationsstrategie für den alten PromptOrchestrator erstellt.
+* Git-Kontrollsicherung durchgeführt.
+
+Die Runtime-Migration wird bewusst noch nicht begonnen.
+
+Vorher soll die Projektstruktur wieder vollständig kanonisch werden.
+
+────────────────────────────────────────
+
+PHASE 1
+Projektweite Artefakt-Lifecycle-Prüfung
+
+Diese Phase besitzt jetzt höchste Priorität.
+
+Projektregel:
+
+In aktiven Projektordnern darf grundsätzlich nur die aktuelle kanonische Version einer Komponente liegen.
+
+Historische Versionen gehören ausschließlich in vorgesehene Archiv- bzw. Versionsbereiche.
+
+Zu prüfen sind insbesondere:
+
+* 12_agents
+* 13_tools
+* 14_documents
+* 16_installation
+* 17_tests
+* 22_project_chronicle
+* 24_config
+* 31_reports
+* 32_data
+
+Aufgaben:
+
+1.
+
+Projektweiten Scan durchführen.
+
+Suche insbesondere nach:
+
+* *_1_0.*
+* *_1_1.*
+* *_1_2.*
+* *_23.*
+* *_24.*
+* *_34_0.*
+* *_34_1.*
+* mehreren Versionen derselben Komponente
+* historischen Release-Dateien
+* mehrfach vorhandenen Projektartefakten
+
+2.
+
+Für jede Fundgruppe bestimmen:
+
+* aktuelle kanonische Datei
+* historische Datei
+* aktiv benötigte Datei
+* archivierungsfähige Datei
+* unklarer Sonderfall
+
+3.
+
+Zusätzlich prüfen:
+
+Verwenden aktive Komponenten noch Versionsnummern im Dateinamen?
+
+Beispiele:
+
+learning_agent_1_2.py
+
+continuous_learning_governance_1_1.py
+
+Falls ja:
+
+Empfehlen, ob künftig stattdessen stabile kanonische Namen verwendet werden sollten, z. B.
+
+learning_agent.py
+
+continuous_learning_governance.py
+
+Historische Versionen gehören ausschließlich ins Archiv.
+
+4.
+
+Vor jeder Empfehlung prüfen:
+
+* Imports
+* Tests
+* CAM
+* Release Integrity
+* Dokumentation
+* Startskripte
+* Konfigurationsdateien
+
+5.
+
+Noch keinerlei Änderungen durchführen.
+
+Nicht verschieben.
+
+Nicht löschen.
+
+Keine Pfade ändern.
+
+Kein Commit.
+
+Nur analysieren und berichten.
+
+────────────────────────────────────────
+
+PHASE 2
+
+Architektur-Baseline erzeugen
+
+Nach Abschluss der Analyse:
+
+Erstelle:
+
+31_reports/
+
+ARCHITECTURE_BASELINE_PRE_RUNTIME_MIGRATION_34_1.md
+
+Inhalt:
+
+* vorhandene Core-Komponenten
+* aktuelle Architektur
+* vollständige Ablaufkette
+* bekannte Altpfade
+* Risiken
+* Migrationsstrategie
+* Feature-Flag
+* Rückfallstrategie
+
+Dieses Dokument dient als offizieller Vorher-/Nachher-Vergleich für die Runtime-Migration.
+
+────────────────────────────────────────
+
+PHASE 3
+
+Vorbereitung der Runtime-Migration
+
+Noch keine Migration durchführen.
+
+Nur prüfen:
+
+Existiert bereits ein Feature-Flag
+
+orchestrator_runtime_enabled
+
+Falls nicht:
+
+nur dokumentieren,
+
+nicht implementieren.
+
+Prüfen:
+
+welche Stelle später zuerst umgestellt werden muss.
+
+Zielarchitektur:
+
+Prompt
+
+↓
+
+Request Router
+
+↓
+
+Capability Resolution Engine
+
+↓
+
+Execution Planner
+
+↓
+
+Orchestrator Core
+
+↓
+
+Governance
+
+↓
+
+Agent
+
+↓
+
+Review
+
+↓
+
+Canonical Memory Manager
+
+Der alte Direktpfad bleibt bis zur erfolgreichen Migration vollständig erhalten.
+
+────────────────────────────────────────
+
+PHASE 4
+
+Abschlussbericht
+
+Bitte berichten:
+
+1.
+
+Ergebnis der Artefakt-Lifecycle-Prüfung
+
+2.
+
+Liste aller Verstöße gegen die Projektregel
+
+3.
+
+Empfohlene Archivierungsmaßnahmen
+
+4.
+
+Empfohlene kanonische Dateinamen
+
+5.
+
+Risiken einer automatischen Bereinigung
+
+6.
+
+Status der Architektur-Baseline
+
+7.
+
+Empfehlung, ob die Runtime-Migration nun gefahrlos begonnen werden kann
+
+────────────────────────────────────────
+
+Wichtige Regeln
+
+Keine Runtime-Migration.
+
+Keine Dateien verschieben.
+
+Keine Dateien löschen.
+
+Keine Imports ändern.
+
+Keine Pfade ändern.
+
+Keine Commits.
+
+Keine Archivierung.
+
+Nur analysieren, dokumentieren und berichten.
+
+Die Runtime-Migration wird erst nach gemeinsamer Freigabe begonnen.
+
+Umsetzung:
+
+Ich bin da. Ich lese zuerst die von dir genannten Notizen und prüfe dann, wie der Auftrag daran anschließt; falls der Zugriff außerhalb des aktuellen Workspace eine Freigabe braucht, fordere ich sie direkt über das Tool an.
+
+Danke, die Richtung ist klar: erst Lifecycle-Audit ohne Bereinigung, danach nur das Baseline-Dokument als neues Artefakt, keine Migration. Ich scanne jetzt die aktiven Ordner und ziehe zusätzlich Referenzen aus Imports, Tests, CAM/Manifesten, Startskripten und Doku heran, damit die Empfehlungen nicht nur nach Dateinamen geraten sind.
+
+Der erste Scan bestätigt schon die Kernspur: besonders 12_agents, 16_installation, 17_tests, 22_project_chronicle, 24_config, 31_reports und 32_data enthalten aktive Dateien mit Versionsstand im Namen. Der Rohscan ist riesig, deshalb verdichte ich jetzt bewusst: erst aktive Pfade ohne Archiv-/Versionsbereiche, dann separat legitime Archiv-/Historienbereiche.
+
+Der verdichtete Scan zeigt zwei unterschiedliche Klassen: echte aktive Verstöße im Wurzelbereich der aktiven Ordner, und sehr große Altbestände, die immerhin unter archive, history oder 02_versions liegen. Auffällig ist aber 32_data: dort gibt es zusätzlich flach abgelegte _02_versions_...-Spiegeldateien direkt im aktiven Datenordner, das ist wahrscheinlich der heikelste Lifecycle-Kandidat.
+
+Die Manifeste bestätigen eine interessante Spannung: release_integrity_34_1.json erlaubt einige 34.0/34.1-Dateinamen ausdrücklich als Release- und Testartefakte, während die aktive Ordnerregel trotzdem historische Parallelstände verbietet. Ich prüfe deshalb jetzt nicht blind „alles mit Version weg“, sondern trenne kanonisch referenzierte Dateien von echten Altständen.
+
+Referenzprüfung: learning_agent_1_2.py und continuous_learning_governance_1_1.py sind aktuell dokumentiert, aber ältere 1.0/1.1-Stände werden nur noch durch ihre eigenen Tests adressiert. Das spricht für „1.2 bzw. 1.1 aktiv, ältere Dateien archivierungsfähig“, aber wegen der Tests nicht automatisch verschieben, bevor Teststrategie geklärt ist.
+
+32_data ist jetzt sauber quantifiziert: 4.120 Dateien direkt im aktiven Datenordner, davon 3.969 _version_*-Spiegel, 82 _02_versions_*-Spiegel und 6 _legacy_versions_*-Spiegel. Das ist kein kleiner Randfund, sondern ein struktureller aktiver Altbestand, der vor Migration zumindest in eine Archiv-/Versionslogik eingeordnet werden sollte.
+
+Ich habe genug Kontext fuer die Baseline: CRE, Execution Planner und Orchestrator Core existieren und werden initialisiert; der PromptOrchestrator erzeugt bereits einen Execution Plan, fuehrt ihn aber noch nicht ueber OrchestratorCore aus. Ich schreibe jetzt nur das geforderte Baseline-Dokument unter 31_reports, keine Code- oder Pfadaenderungen.
+
+Baseline ist erstellt. Ich mache noch eine kurze Abschlusskontrolle: Datei vorhanden, Feature-Flag-Befund festhalten, Git-Status nur zur Einordnung, dann fasse ich die Verstossgruppen und Empfehlungen zusammen.
+
+Erledigt. Ich habe die projektweite Artefakt-Lifecycle-Prüfung durchgeführt, nichts verschoben, nichts gelöscht, keine Imports/Pfade geändert und keinen Commit gemacht. Neu erstellt wurde nur die angeforderte Baseline: [ARCHITECTURE_BASELINE_PRE_RUNTIME_MIGRATION_34_1.md](C:/Projekt Kontinuum/31_reports/ARCHITECTURE_BASELINE_PRE_RUNTIME_MIGRATION_34_1.md).
+Ergebnis
+Die Projektregel ist aktuell verletzt. Hauptverstöße:
+12_agents: parallele aktive Versionen learning_agent_1_0.py, learning_agent_1_1.py, learning_agent_1_2.py sowie continuous_learning_governance_1_0.py, continuous_learning_governance_1_1.py. Aktiv/kanonisch wirken learning_agent_1_2.py und continuous_learning_governance_1_1.py; ältere Versionen sind archivierungsfähig, aber Tests referenzieren sie noch direkt.
+16_installation: mehrere aktive Start-/Testskripte von 23 bis 34_1; kanonisch sind die 34_1-Skripte plus START_GUI.bat.
+13_tools: mehrere status_check_*; status_check_34_1.py ist aktuell, 34_0 und ältere sind historische Kandidaten.
+14_documents und 22_project_chronicle: mehrere historische Status-, README-, Einstiegspunkt- und Release-Dateien liegen aktiv neben 34_1.
+17_tests: viele versionierte historische Tests liegen aktiv. Einige sind bewusst Regression/Release-Abdeckung, andere sind Legacy-Kandidaten.
+24_config: viele versionierte Konfigurationsdateien sind kanonisch referenziert und sollten nicht pauschal bereinigt werden.
+32_data: kritischster Strukturfund: 4.120 Dateien direkt im aktiven Datenordner, davon 3.969 _version_*, 82 _02_versions_*, 6 _legacy_versions_*. Das wirkt wie flach abgelegte historische Spiegeldateien und sollte vor Migration sauber archiviert oder in eine Datenversionsstruktur überführt werden.
+Empfehlung
+Keine automatische Bereinigung. Zuerst eine Freigabe-Matrix je Gruppe erstellen: aktiv behalten, historisch aber referenziert, nach Test-/Doku-Anpassung archivieren, unklar. Besonders Tests und Release Integrity müssen vor jeder Archivierung angepasst oder bewusst als Legacy-Ausnahmen markiert werden.
+Empfohlene kanonische Namen für künftige aktive Komponenten: learning_agent.py, continuous_learning_governance.py, stabile Startskripte wie START_KONTINUUM.bat/TEST_KONTINUUM.bat; Versionen nur in Archiv-/Releasebereichen.
+Runtime-Migration
+Noch nicht gefahrlos beginnen. Die Architektur ist bereit genug für die nächste Integrationsphase, aber der Lifecycle-Zustand ist nicht sauber. Außerdem existiert orchestrator_runtime_enabled derzeit nicht, außer in der neu erstellten Baseline als dokumentierter Befund. Erste spätere Umstellstelle ist PromptOrchestrator.handle() in 01_system/kontinuum/core/application_services.py, direkt nach der Planerzeugung und vor dem bisherigen Direktpfad.

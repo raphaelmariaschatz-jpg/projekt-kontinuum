@@ -41,3 +41,6 @@ Stand: 2026-06-17
 
 32.3 ist eine Laufzeit- und Wissenshärtung. Es schützt die erklärbare
 Identitätsarchitektur, behauptet aber kein subjektives Bewusstsein.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

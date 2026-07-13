@@ -1,0 +1,48 @@
+{
+  "initialized": true,
+  "users": [
+    {
+      "id": "user_superadmin_raphael",
+      "name": "Raphael Schatz",
+      "role": "SuperAdmin",
+      "permissions": [
+        "ALL"
+      ],
+      "salt": "c124e5c7c21e83d6988fa771243b3887",
+      "password_hash": "91033970c23bf38ca2aeb7f3ab9210376784e9474a1239f4e4c6a007a39aa9e7",
+      "created_at": "2026-06-06T15:54:58",
+      "is_only_superadmin": true
+    }
+  ],
+  "failed_attempts": 0,
+  "policy": {
+    "max_failed_attempts": 5,
+    "session_timeout_seconds": 1800,
+    "password_hashing": "sha256_with_salt",
+    "superadmin_fixed": "Raphael Schatz",
+    "applies_to_future_versions": true
+  },
+  "recovery": {
+    "enabled": true,
+    "recovery_hash": "8928c329886b9bda325a835595e3a53cc01fc5c3798771521cce8bc3bbc0942e",
+    "recovery_salt": "a87bda07e2f2702423935ea4e3a7617c",
+    "created_at": "2026-06-06T15:54:58"
+  },
+  "two_factor": {
+    "enabled": false,
+    "method": "totp",
+    "secret": null
+  },
+  "trusted_devices": [
+    {
+      "id": "a3edb133469cb84ac33d4fee",
+      "name": "DESKTOP-A9ILBRK",
+      "trusted": true,
+      "created_at": "2026-06-06T15:54:58"
+    }
+  ],
+  "integrity": {
+    "baseline": {},
+    "last_check": null
+  }
+}

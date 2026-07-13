@@ -1,0 +1,13 @@
+{
+  "initialized": false,
+  "users": [],
+  "policy": {
+    "session_timeout_seconds": 1800,
+    "superadmin_fixed": "Raphael Schatz"
+  },
+  "trusted_devices": [],
+  "integrity": {
+    "baseline": {},
+    "last_check": null
+  }
+}

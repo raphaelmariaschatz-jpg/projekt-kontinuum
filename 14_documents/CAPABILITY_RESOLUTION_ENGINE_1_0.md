@@ -100,3 +100,6 @@ Empfohlene Schritte:
 4. Governance-Policy als eigene Bewertungsstufe zwischen CRE und Agentenausfuehrung schalten.
 5. Review-Queue und CMM-Kandidaten strukturiert aus CRE-Ergebnissen erzeugen.
 6. Capability-Marker durch kanonische Capability-Definitionen aus CAIM oder einer separaten Capability Registry ersetzen.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

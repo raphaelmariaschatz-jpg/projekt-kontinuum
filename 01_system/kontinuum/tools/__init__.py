@@ -1,3 +1,5 @@
+# © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.
+
 from .path_tools import PathTools
 from .json_tools import JsonTools
 from .search_tools import SearchTools

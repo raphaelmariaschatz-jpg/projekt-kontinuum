@@ -1,3 +1,5 @@
+# © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.
+
 from __future__ import annotations
 from .base_agent import BaseAgent, AgentResult
 from kontinuum.version import APP_VERSION

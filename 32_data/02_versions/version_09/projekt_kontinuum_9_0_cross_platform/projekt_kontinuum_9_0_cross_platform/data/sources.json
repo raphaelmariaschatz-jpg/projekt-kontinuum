@@ -1,0 +1,74 @@
+[
+  {
+    "id": "src_1",
+    "title": "Search | arXiv e-print repository",
+    "url": "https://arxiv.org/search/?query=Mathematik&searchtype=all",
+    "trust_level": "B",
+    "tags": [
+      "gui",
+      "lernen",
+      "mathematik"
+    ],
+    "created_at": "2026-06-06T15:58:21"
+  },
+  {
+    "id": "src_2",
+    "title": "Mathematik - Search Results - PubMed",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/?term=Mathematik",
+    "trust_level": "B",
+    "tags": [
+      "gui",
+      "lernen",
+      "mathematik"
+    ],
+    "created_at": "2026-06-06T15:58:21"
+  },
+  {
+    "id": "src_3",
+    "title": "Internet Archive: Digital Library of Free & Borrowable Texts, Movies, Music & Wayback Machine",
+    "url": "https://archive.org/search?query=Mathematik",
+    "trust_level": "B",
+    "tags": [
+      "gui",
+      "lernen",
+      "mathematik"
+    ],
+    "created_at": "2026-06-06T15:58:21"
+  },
+  {
+    "id": "src_4",
+    "title": "Search | arXiv e-print repository",
+    "url": "https://arxiv.org/search/?query=https%3A%2F%2Falphacephei.com%2Fvosk%2Fmodels&searchtype=all",
+    "trust_level": "B",
+    "tags": [
+      "gui",
+      "lernen",
+      "https://alphacephei.com/vosk/models"
+    ],
+    "created_at": "2026-06-06T16:02:01"
+  },
+  {
+    "id": "src_5",
+    "title": "https://alphacephei.com/vosk/models - Search Results - PubMed",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/?term=https%3A%2F%2Falphacephei.com%2Fvosk%2Fmodels",
+    "trust_level": "B",
+    "tags": [
+      "gui",
+      "lernen",
+      "https://alphacephei.com/vosk/models"
+    ],
+    "created_at": "2026-06-06T16:02:01"
+  },
+  {
+    "id": "src_6",
+    "title": "Internet Archive: Digital Library of Free & Borrowable Texts, Movies, Music & Wayback Machine",
+    "url": "https://archive.org/search?query=https%3A%2F%2Falphacephei.com%2Fvosk%2Fmodels",
+    "trust_level": "B",
+    "tags": [
+      "gui",
+      "lernen",
+      "https://alphacephei.com/vosk/models"
+    ],
+    "created_at": "2026-06-06T16:02:01"
+  }
+]

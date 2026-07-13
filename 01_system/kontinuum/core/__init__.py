@@ -1,3 +1,5 @@
+# © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.
+
 """Core runtime for Projekt Kontinuum."""
 
 __all__ = ["KontinuumSystem"]

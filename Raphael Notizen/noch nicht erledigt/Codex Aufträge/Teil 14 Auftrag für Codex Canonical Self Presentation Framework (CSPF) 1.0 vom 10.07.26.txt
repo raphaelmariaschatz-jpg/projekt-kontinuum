@@ -1,0 +1,350 @@
+Codex-Auftrag – Teil 14
+Canonical Self-Presentation Intelligence & Reasoning (CSPIR) 1.0
+Ziel
+
+Entwickle für das Canonical Self-Presentation Framework (CSPF) 1.0 den Architekturbaustein
+
+Canonical Self-Presentation Intelligence & Reasoning (CSPIR) 1.0
+
+Dieser Baustein beschreibt die vollständige kanonische Entscheidungslogik, mit der eine KI ihre Selbstpräsentation erzeugt, erklärt, begründet und dynamisch an den jeweiligen Nutzungskontext anpasst.
+
+Die Selbstpräsentation darf niemals lediglich aus vorbereiteten Textbausteinen bestehen.
+
+Sie muss jederzeit Ergebnis einer nachvollziehbaren Reasoning-Pipeline sein.
+
+Die Architektur muss vollständig kompatibel bleiben mit
+
+Canonical Identity (CSI)
+Canonical Capability Model (CCM)
+Canonical Personality (CPC)
+Canonical Governance (CG)
+Canonical Context Awareness (CCAAC)
+Canonical Runtime Presentation (CRDP)
+Canonical Lifecycle (CPLE)
+Canonical Validation (CSPVC)
+Canonical Security & Trust (CSPST)
+Architekturziele
+
+CSPIR soll sicherstellen, dass jede Selbstpräsentation
+
+logisch begründet,
+vollständig nachvollziehbar,
+konsistent,
+reproduzierbar,
+transparent,
+sicher
+und auditierbar
+
+erzeugt wird.
+
+Die Präsentation soll das Ergebnis kanonischer Schlussfolgerungen sein.
+
+Nicht das Ergebnis zufälliger Formulierungen. Architekturentscheidungen sollen systematisch dokumentiert und nachvollziehbar begründet werden.
+
+Zu entwickelnde Komponenten
+1. Presentation Reasoning Engine
+
+Definition einer Engine, welche bestimmt
+
+welche Informationen gezeigt werden
+welche Informationen verborgen bleiben
+welche Priorität einzelne Informationen besitzen
+welche Informationen situationsabhängig ergänzt werden
+welche Informationen entfernt werden
+2. Presentation Decision Tree
+
+Definition eines kanonischen Entscheidungsbaums
+
+Beispielsweise
+
+Anfrage
+
+↓
+
+Kontextanalyse
+
+↓
+
+Zielgruppe
+
+↓
+
+Sicherheitsprüfung
+
+↓
+
+Capability-Prüfung
+
+↓
+
+Identity-Prüfung
+
+↓
+
+Governance-Regeln
+
+↓
+
+Personality-Regeln
+
+↓
+
+Presentation Assembly
+
+↓
+
+Final Presentation
+3. Presentation Reasoning Graph
+
+Entwicklung eines Graph-Modells
+
+Jede Aussage muss auf
+
+einer Capability
+einer Identity
+einer Governance-Regel
+einer Security-Regel
+einer Personality-Regel
+
+zurückgeführt werden können.
+
+4. Canonical Presentation Inference
+
+Definition der Inferenzregeln.
+
+Beispiele:
+
+Capability vorhanden
+
+↓
+
+Capability vertrauenswürdig
+
+↓
+
+Capability freigegeben
+
+↓
+
+Capability kontextrelevant
+
+↓
+
+Capability wird präsentiert
+5. Multi-Level Reasoning
+
+Definition mehrerer Reasoning-Ebenen.
+
+Mindestens:
+
+Level 0
+
+Direkte Fakten
+
+Level 1
+
+Abgeleitete Fakten
+
+Level 2
+
+Kontextabhängige Schlussfolgerungen
+
+Level 3
+
+Adaptive Präsentation
+
+Level 4
+
+Langfristige Konsistenzprüfung
+
+6. Presentation Explanation Layer
+
+Jede Präsentation muss optional erklärbar sein.
+
+Beispiele:
+
+"Warum wurde diese Information gezeigt?"
+
+"Warum wurde diese Information nicht gezeigt?"
+
+"Welche Regel führte zu dieser Entscheidung?"
+
+"Welche Governance-Regel war verantwortlich?"
+
+7. Canonical Confidence Model
+
+Jede präsentierte Information erhält
+
+Confidence Score
+
+Reasoning Confidence
+
+Source Confidence
+
+Identity Confidence
+
+Capability Confidence
+
+Governance Confidence
+8. Canonical Conflict Resolution
+
+Definition der Konfliktlösung.
+
+Beispiele
+
+Capability widerspricht Governance
+
+Capability widerspricht Security
+
+Capability widerspricht Persönlichkeit
+
+Identity widerspricht Runtime
+
+Version widerspricht Zertifizierung
+
+Für alle Konflikte müssen eindeutige Prioritätsregeln definiert werden.
+
+9. Presentation Justification
+
+Jede finale Präsentation besitzt eine maschinenlesbare Begründung.
+
+Beispielsweise
+
+Presentation generated because
+
+Capability verified
+
+Identity verified
+
+Governance approved
+
+Security approved
+
+Context matched
+
+Personality matched
+10. Adaptive Presentation Reasoning
+
+Definition dynamischer Anpassungen.
+
+Beispiele
+
+Kind
+
+Forscher
+
+Entwickler
+
+Administrator
+
+Unternehmen
+
+Endnutzer
+
+Auditor
+
+Behörde
+
+API
+
+Maschine
+
+Die zugrunde liegende Identität bleibt unverändert.
+
+Nur die Darstellung ändert sich.
+
+11. Canonical Presentation Policies
+
+Definition regelbasierter Policies.
+
+Beispiele
+
+IF Context == Child
+
+THEN
+
+Simplify Presentation
+IF Context == Research
+
+THEN
+
+Maximum Transparency
+IF Security Level High
+
+THEN
+
+Hide Internal Information
+12. Anti-Hallucination Reasoning
+
+Definition verbindlicher Regeln.
+
+Eine Präsentation darf niemals
+
+Fähigkeiten behaupten,
+Zertifizierungen erfinden,
+Versionen erfinden,
+Quellen erfinden,
+Rollen erfinden,
+Identitäten verändern,
+Governance umgehen.
+
+Nur verifizierte Informationen dürfen präsentiert werden.
+
+13. Explainable Presentation (XSP)
+
+Definition vollständiger Nachvollziehbarkeit.
+
+Für jede Präsentation muss rekonstruierbar sein:
+
+Welche Daten wurden verwendet?
+Welche Regeln wurden angewendet?
+Welche Entscheidungen wurden getroffen?
+Welche Informationen wurden verworfen?
+Warum entstand genau diese Präsentation?
+14. Integration
+
+Definition aller Schnittstellen zu
+
+CSI
+CCM
+CPC
+CCAAC
+CRDP
+CG
+CPLE
+CSPVC
+CSPST
+15. Deliverables
+
+Codex soll mindestens erzeugen:
+
+Architekturdokument CSPIR 1.0
+Präsentations-Reasoning-Modell
+Decision-Tree-Modell
+Presentation-Graph
+Inference-Regeln
+Explainability-Modell
+Confidence-Modell
+Policy-System
+Conflict-Resolution-Modell
+Adaptive-Presentation-Regeln
+Anti-Hallucination-Regeln
+Integrationsspezifikation
+UML-Komponentenmodell
+Sequenzdiagramme
+Zustandsdiagramme
+JSON-Schema für Reasoning und Entscheidungsprotokolle
+Testfälle
+Audit-Kriterien
+Validierungsregeln
+Erweiterung des CSPF-Glossars
+Akzeptanzkriterien
+
+Die Implementierung gilt nur dann als erfolgreich, wenn:
+
+jede Selbstpräsentation vollständig aus kanonischen Regeln abgeleitet wird,
+sämtliche Entscheidungen transparent und reproduzierbar sind,
+jede Aussage maschinell begründet werden kann,
+Identität, Fähigkeiten, Governance und Sicherheitsregeln jederzeit konsistent bleiben,
+kontextabhängige Anpassungen ausschließlich die Darstellung verändern und niemals die kanonische Identität,
+die gesamte Reasoning-Kette revisionssicher protokolliert und auditierbar ist.

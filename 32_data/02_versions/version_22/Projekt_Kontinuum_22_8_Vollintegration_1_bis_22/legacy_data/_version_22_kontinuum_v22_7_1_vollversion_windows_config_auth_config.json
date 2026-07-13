@@ -1,0 +1,15 @@
+{
+  "username": "Raphael",
+  "full_name": "Raphael Schatz",
+  "role": "SUPERADMIN",
+  "is_superadmin": true,
+  "password_hash": "dbaf14199f3ee1b13a059e8793e5c4420c9f08a1b4df0157aa7c0f36b1b41b4e",
+  "recovery_key_hash": "e42534b2379c18a1c98eec25eb7392a6db32bb84db191982404fb4784ee6abbc",
+  "permissions": {
+    "can_manage_connectors": true,
+    "can_search_internet": true,
+    "can_use_local_workspace": true,
+    "can_execute_admin_commands": true,
+    "requires_confirmation_for_risky_actions": true
+  }
+}

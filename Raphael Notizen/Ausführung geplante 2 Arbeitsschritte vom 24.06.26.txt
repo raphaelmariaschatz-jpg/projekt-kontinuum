@@ -1,0 +1,33 @@
+Ausführung geplante 2 Arbeitsschritte vom 24.06.26
+
+Ich nehme beide offiziell vorgemerkten Schritte jetzt als zusammenhängende Weiterentwicklung auf: zuerst kanonisiere ich die Projektstrukturdateien einschließlich Release-Prüfung, danach entwerfe und verankere ich das vierstufige Architekturmodell samt erster belastbarer CAM-Kernkomponente. Bestehende historische Inhalte bleiben erhalten – sie wechseln nur kontrolliert ins Versionsarchiv.
+
+Die Inventur bestätigt den Kernbefund: Im aktiven Dokumentationsordner liegen 20 konkurrierende Projektstrukturdateien; 34.1 ist die gültige kanonische. Für CAM wähle ich eine prüfende, nicht autonom verändernde erste Version: Sie besitzt ein explizites Architekturmanifest, erkennt Abweichungen und Duplikate, prüft Pfade, APIs, Startpunkte und Datenbankschema und liefert Nachweise an Status und Release Integrity. Archivierung bleibt ein kontrollierter Migrationsschritt.
+
+Die Architekturdefinition ist jetzt an die tatsächlichen Kontinuum-Pfade angepasst – etwa 03_memory/core_identity.json, 04_knowledge, 06_learning, 07_models und 26_research. Als Nächstes aktiviere ich CAM und führe die kontrollierte Archivmigration der 19 historischen Strukturdateien durch.
+
+Die Kernprüfung ist bereits grün: CAM erkennt exakt eine aktive Struktur, bestätigt 19 archivierte Stände und schlägt bei einem simulierten Duplikat korrekt Alarm. Foundation 2.1 und das erweiterte Release-Framework bleiben ebenfalls grün. Ich bereinige jetzt noch die aktiven Handbuch-/Ordnerverweise und ergänze die sichtbare CAM-Abfrage, bevor die komplette Release-Suite läuft.
+
+Wichtig für Codex:
+Die Umsetzung sollte nicht nur Dateien verschieben, sondern auch Release-Integrity, Altversionssuche, Dokumentation, Statusprüfung und möglichst einen ersten Canonical Architecture Manager berücksichtigen.
+
+Genau – und so behandle ich es bereits: Die Verschiebung ist nur die Migration. Verbindlich werden zusätzlich CAM-Duplikaterkennung, historische Ausnahmebehandlung der Altversionssuche, aktualisierte Dokumentationspfade, zentrale Statusprüfung und ein blockierendes Release-Integrity-Gate. Der gerade gefundene Testfehler betrifft nur isolierte Temporärinstallationen ohne CAM-Manifest; ich trenne dort sauber „nicht konfiguriert“ von der realen Projektprüfung und ziehe danach die Vollverifikation durch.
+
+Der aktive Dokumentationspfad ist jetzt sauber: keine der zentralen Einstiegsdateien verweist mehr auf historische Strukturen im aktiven Ordner. Die Versionsprüfung erzwingt zusätzlich exakt PROJEKTSTRUKTUR_34_1.md plus 19 Archivstände. Jetzt folgt das vollständige Release-Gate – damit werden auch Altversionssuche, sämtliche Regressionen, Status und CAM gemeinsam geprüft.
+
+Das ist die richtige Zieltrennung. CAM überwacht diese Bereiche bereits weitgehend, aber ich schärfe das Manifest jetzt exakt auf deine Liste: Creator Knowledge und Identity Core getrennt, API Registry ausdrücklich, Connectoren und Modelle im Operational Layer sowie Wissensgraph im Learning Layer. Parallel behebe ich den einzigen verbliebenen Gate-Befund: Die Altversionssuche muss archivierte Projektstrukturen als historische Artefakte behandeln, statt sie als aktive Altversionen zu werten.
+
+Die gewünschte Bereichsliste ist nun explizit im CAM-Manifest und durch Tests abgesichert. Die gezielte Vorprüfung ist grün: Altversionssuche hat null aktive Befunde, historische Projektstrukturen sind als Archivwurzel ausgewiesen, und CAM bestätigt alle vier Ebenen. Ich starte jetzt den abschließenden vollständigen Gate-Lauf.Beide Arbeitsschritte sind vollständig umgesetzt.
+Exakt eine aktive Projektstruktur: PROJEKTSTRUKTUR_34_1.md
+19 historische Strukturen nach 02_versions/projektstrukturen archiviert
+Altversionssuche behandelt das Archiv als historischen Bereich
+CAM 1.0 implementiert
+Vier Ebenen vollständig überwacht: Foundation, Canonical, Operational, Learning
+Duplikate, APIs, Registries, Startpunkte, Ordner und Datenbankschema werden geprüft
+Statusprüfung und Release Integrity erweitert
+Gesamte Testsuite bestanden
+Release-Status: VERIFIZIERT
+Freigabe: JA
+CAM-Status: VERIFIZIERT
+
+

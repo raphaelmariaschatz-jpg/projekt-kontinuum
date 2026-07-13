@@ -1,3 +1,5 @@
+# © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.
+
 from __future__ import annotations
 
 import ast
@@ -124,6 +126,9 @@ class FormulaEngine:
         if expression:
             try:
                 value = self.calculate(expression)
+                sqrt_value = self._sqrt_argument(expression)
+                if sqrt_value:
+                    return f"Die Wurzel aus {sqrt_value} ist {self._format_number(value)}."
                 return f"{self.format_math(expression)} = {self._format_number(value)}"
             except (ValueError, SyntaxError, ZeroDivisionError, OverflowError):
                 pass
@@ -142,7 +147,11 @@ class FormulaEngine:
             .replace("^", "**").replace("²", "**2").replace("³", "**3").replace(",", ".").replace("√", "sqrt")
         )
         normalized = re.sub(r"(?i)\bwurzel\s*\(", "sqrt(", normalized)
+        normalized = re.sub(r"(?i)\bquadratwurzel\s+aus\s+(\d+(?:\.\d+)?)", r"sqrt(\1)", normalized)
+        normalized = re.sub(r"(?i)\bwurzel\s+aus\s+(\d+(?:\.\d+)?)", r"sqrt(\1)", normalized)
         normalized = re.sub(r"(?i)\bwurzel\s+(\d+(?:\.\d+)?)", r"sqrt(\1)", normalized)
+        normalized = re.sub(r"(?i)\bsqrt\s*\(?\s*(\d+(?:\.\d+)?)\s*\)?", r"sqrt(\1)", normalized)
+        normalized = re.sub(r"(?i)√\s*(\d+(?:\.\d+)?)", r"sqrt(\1)", normalized)
         normalized = re.sub(r"(\d+(?:\.\d+)?)\s*%", r"(\1/100)", normalized)
         normalized = re.sub(r"(?<=\d)\s*[xX]\s*(?=\d)", "*", normalized)
         node = ast.parse(normalized, mode="eval")
@@ -296,8 +305,19 @@ class FormulaEngine:
 
     @classmethod
     def format_math(cls, expression: str) -> str:
-        value = expression.replace("**", "^").replace("*", " · ")
+        value = re.sub(r"\s*\*\s*", " · ", expression.replace("**", "^"))
         return re.sub(r"\^([0-9()+-]+)", lambda match: match.group(1).translate(cls.SUPERSCRIPT), value)
+
+    @staticmethod
+    def _sqrt_argument(expression: str) -> str:
+        match = re.search(
+            r"(?i)(?:quadratwurzel\s+aus|wurzel\s+aus|wurzel)\s+(\d+(?:[,.]\d+)?)|sqrt\s*\(\s*(\d+(?:[,.]\d+)?)\s*\)|√\s*(\d+(?:[,.]\d+)?)",
+            expression.strip(),
+        )
+        if not match:
+            return ""
+        value = next(group for group in match.groups() if group)
+        return value.replace(".", ",")
 
     @staticmethod
     def _extract_math_expression(text: str) -> str:
@@ -305,7 +325,16 @@ class FormulaEngine:
         if match:
             return match.group(1).strip()
         candidate = (text or "").strip().rstrip("=?!.")
-        candidate = re.sub(r"(?i)^(was ergibt|ergibt|wie viel sind|wieviel sind)\s+", "", candidate).strip()
+        candidate = re.sub(r"(?i)^(was ergibt|ergibt|wie viel sind|wieviel sind|was ist|wie lautet)\s+", "", candidate).strip()
+        percent_match = re.search(r"(?i)(\d+(?:[,.]\d+)?)\s*(?:%|prozent)\s+(?:von|aus)\s+(\d+(?:[,.]\d+)?)", candidate)
+        if percent_match:
+            return f"({percent_match.group(1)}/100)*{percent_match.group(2)}"
+        sqrt_match = re.search(
+            r"(?i)(quadratwurzel\s+aus\s+\d+(?:[,.]\d+)?|wurzel\s+aus\s+\d+(?:[,.]\d+)?|sqrt\s*\(?\s*\d+(?:[,.]\d+)?\s*\)?|√\s*\d+(?:[,.]\d+)?|wurzel\s+\d+(?:[,.]\d+)?)",
+            candidate,
+        )
+        if sqrt_match:
+            return sqrt_match.group(1).strip()
         allowed = re.fullmatch(r"[0-9\s,.+\-*/×xX·÷^%()√²³]+", candidate)
         return candidate if allowed and re.search(r"[+\-*/×xX·÷^%√²³]", candidate) else ""
 

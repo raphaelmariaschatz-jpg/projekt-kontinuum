@@ -1,0 +1,300 @@
+Codex-Auftrag – Artifact Lifecycle Migration Plan 1.0
+Ausgangslage
+
+Die Artifact Lifecycle Policy 2.0 (ALP 2.0) wurde erfolgreich erstellt und als verbindliche Architektur-Richtlinie in Projekt Kontinuum aufgenommen.
+
+Die projektweite Artefakt-Lifecycle-Prüfung wurde bereits durchgeführt.
+
+Jetzt soll ALP 2.0 erstmals vollständig auf den aktuellen Projektbestand angewendet werden.
+
+Ziel ist keine Bereinigung, sondern ein vollständiger und nachvollziehbarer Migrationsplan.
+
+Die eigentliche Archivierung erfolgt erst nach ausdrücklicher Freigabe.
+
+────────────────────────────────────────
+
+Ziel
+
+Erstelle den ersten vollständigen
+
+Artifact Lifecycle Migration Plan 1.0
+
+für das gesamte Projekt.
+
+Es dürfen weiterhin
+
+keine Dateien verschoben
+keine Dateien gelöscht
+keine Dateien umbenannt
+keine Imports geändert
+keine Commits durchgeführt
+
+werden.
+
+Es wird ausschließlich geplant.
+
+────────────────────────────────────────
+
+PHASE 1
+Vollständige Artefaktklassifikation
+
+Ordne sämtliche relevanten Projektartefakte gemäß ALP 2.0 einer Klasse zu.
+
+Mindestens:
+
+Canonical
+Runtime Required
+Release Evidence
+Historical
+Deprecated
+
+Falls einzelne Artefakte nicht eindeutig klassifizierbar sind:
+
+→ Unklarer Sonderfall
+
+mit Begründung.
+
+────────────────────────────────────────
+
+PHASE 2
+Migrationsmatrix erzeugen
+
+Für jede Datei mit Lifecycle-Konflikt erstellen:
+
+Datei	Klasse	Ziel	Aktion	Risiko
+
+Mögliche Aktionen:
+
+✔ bleibt produktiv
+
+✔ archivieren
+
+✔ Release Evidence
+
+✔ Benutzerentscheidung
+
+✔ weitere Analyse
+
+Für jede Empfehlung muss eine kurze Begründung angegeben werden.
+
+────────────────────────────────────────
+
+PHASE 3
+Abhängigkeitsprüfung
+
+Vor jeder Archivierung prüfen:
+
+Imports
+Startskripte
+Runtime
+Registry
+CAM
+Release Integrity
+Tests
+Dokumentation
+Konfiguration
+Feature Flags
+
+Für jede Datei dokumentieren:
+
+Referenzen vorhanden?
+
+Ja / Nein
+
+Falls Ja:
+
+Welche Komponente verwendet sie?
+
+────────────────────────────────────────
+
+PHASE 4
+Reihenfolge der späteren Migration
+
+Definiere die optimale Reihenfolge.
+
+Zum Beispiel:
+
+Schritt 1
+
+Dokumentation
+
+↓
+
+Schritt 2
+
+historische Reports
+
+↓
+
+Schritt 3
+
+historische Tests
+
+↓
+
+Schritt 4
+
+historische Tools
+
+↓
+
+Schritt 5
+
+historische Agenten
+
+↓
+
+Schritt 6
+
+historische Datenartefakte
+
+↓
+
+Schritt 7
+
+Release Integrity aktualisieren
+
+↓
+
+Schritt 8
+
+CAM validieren
+
+↓
+
+Schritt 9
+
+Regressionstests
+
+↓
+
+Schritt 10
+
+Freigabe Runtime-Migration
+
+Jeder Schritt muss begründet werden.
+
+────────────────────────────────────────
+
+PHASE 5
+Risikobewertung
+
+Für jede Migrationsgruppe bewerten:
+
+LOW
+
+MEDIUM
+
+HIGH
+
+KRITISCH
+
+Begründung angeben.
+
+Insbesondere prüfen:
+
+aktive Imports
+Runtime
+Datenverlust
+Historienverlust
+Release-Nachweise
+Testabdeckung
+CAM
+Governance
+
+────────────────────────────────────────
+
+PHASE 6
+Runtime-Freigabeprüfung
+
+Nach Abschluss der Planung bewerten:
+
+Sind alle Voraussetzungen erfüllt, damit anschließend die Runtime-Migration begonnen werden kann?
+
+Bewerte mindestens:
+
+✔ Projektstruktur
+
+✔ ALP 2.0
+
+✔ CAM
+
+✔ Release Integrity
+
+✔ Dokumentation
+
+✔ Baseline
+
+✔ Architektur
+
+✔ Risiken
+
+Falls noch Hindernisse bestehen:
+
+Diese einzeln aufführen.
+
+────────────────────────────────────────
+
+PHASE 7
+Ergebnis
+
+Erstelle
+
+31_reports/
+
+ARTIFACT_LIFECYCLE_MIGRATION_PLAN_1_0.md
+
+Der Bericht soll enthalten:
+
+vollständige Artefaktklassifikation
+Migrationsmatrix
+Abhängigkeitsanalyse
+Reihenfolge der Migration
+Risikobewertung
+offene Sonderfälle
+Empfehlung zur Runtime-Migration
+
+────────────────────────────────────────
+
+Wichtige Regeln
+
+❌ Keine Dateien verschieben
+
+❌ Keine Dateien löschen
+
+❌ Keine Umbenennungen
+
+❌ Keine Imports ändern
+
+❌ Keine Runtime-Migration
+
+❌ Keine Archivierung
+
+❌ Keine Commits
+
+Nur analysieren, klassifizieren und planen.
+
+Die eigentliche Bereinigung erfolgt erst nach gemeinsamer Freigabe.
+
+Ergänzung von mir
+
+Raphael, ich würde in diesem Schritt noch eine zusätzliche Sicherheitsanforderung aufnehmen, die sehr gut zu ALP 2.0 passt:
+
+Vor jeder geplanten Archivierung muss ein eindeutiger Nachfolger (Successor) oder ein begründeter Endstatus (Retired without Successor) dokumentiert werden.
+
+Das bedeutet:
+
+Historical → Successor vorhanden
+Deprecated → kein Nachfolger erforderlich, aber Begründung
+Canonical → eindeutige aktive Referenz
+
+So entsteht eine lückenlose Entwicklungslinie jeder Komponente. Diese Idee knüpft direkt an das frühere Contract Lineage an, das wir bereits für APIs vorgesehen hatten. Jetzt würde dasselbe Prinzip auf Artefakte angewendet. Aus meiner Sicht wäre das eine sehr elegante Erweiterung der Architektur, weil damit die Herkunft und Zukunft jeder wichtigen Datei nachvollziehbar bleiben.
+
+Umsetzung:
+
+Ich erstelle jetzt einen reinen Planbericht, keine Bereinigung. Wegen der Größe des Bestands werde ich die Matrix projektweit vollständig nach Konfliktgruppen und Mustern abbilden, mit konkreten Datei-/Pfadgruppen, Successor-/Endstatus-Regel und Risikostufe, statt tausende 32_data-Spiegeldateien einzeln in den Chat zu kippen.
+
+Erledigt. Ich habe den reinen Planbericht erstellt:
+[ARTIFACT_LIFECYCLE_MIGRATION_PLAN_1_0.md](C:/Projekt Kontinuum/31_reports/ARTIFACT_LIFECYCLE_MIGRATION_PLAN_1_0.md)
+Der Bericht enthält die ALP-2.0-Klassifikation, Migrationsmatrix, Abhängigkeitsanalyse, Reihenfolge der späteren Migration, Risikobewertung, offene Sonderfälle und die Runtime-Freigabeprüfung. Die zusätzliche Successor-/Retired without Successor-Anforderung ist als verbindliche Sicherheitsregel aufgenommen.
+Ich habe nichts verschoben, gelöscht, umbenannt, keine Imports geändert, keine Archivierung gestartet, keine Runtime-Migration durchgeführt und keinen Commit gemacht. Git-Status für den Bericht: untracked (??).

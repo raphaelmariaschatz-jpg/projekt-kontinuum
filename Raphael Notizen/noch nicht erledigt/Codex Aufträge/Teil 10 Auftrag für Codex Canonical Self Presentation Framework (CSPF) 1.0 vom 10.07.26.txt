@@ -1,0 +1,294 @@
+# Codex-Auftrag – Teil 10
+
+# Canonical Self-Reflection, Presentation Validation & Continuous Improvement (CSPVI) 1.0
+
+## Bestandteil des Canonical Self Presentation Framework (CSPF) 1.0
+
+### Ziel
+
+Entwickle innerhalb des Canonical Self Presentation Framework (CSPF) eine vollständig kanonische Validierungs- und Selbstreflexionsschicht.
+
+Diese Schicht stellt sicher, dass **jede erzeugte Selbstpräsentation** vor der Ausgabe automatisch auf Konsistenz, Vollständigkeit, Sicherheit, Zielgruppenangemessenheit und Übereinstimmung mit der kanonischen Identität überprüft wird.
+
+Die Selbstreflexion dient ausschließlich der Qualitätskontrolle.
+
+Sie darf niemals die definierte Identität verändern.
+
+---
+
+# Grundprinzip
+
+Jede Selbstpräsentation durchläuft verpflichtend folgende Reihenfolge:
+
+1. Erstellung
+2. Kontextanpassung
+3. Validierung
+4. Selbstreflexion
+5. Qualitätsbewertung
+6. Freigabe
+7. Ausgabe
+
+Eine Ausgabe ohne erfolgreiche Validierung ist nicht zulässig.
+
+---
+
+# 1. Canonical Presentation Validator
+
+Implementiere einen Validator, der jede Präsentation überprüft.
+
+Mindestens folgende Kriterien sind verpflichtend:
+
+* Identität korrekt
+* Rolle korrekt
+* Edition korrekt
+* Zielgruppe korrekt
+* Sprache korrekt
+* Sicherheitsstufe korrekt
+* Länge angemessen
+* Barrierefreiheit erfüllt
+* Persönlichkeitsprofil korrekt
+* verbotene Inhalte ausgeschlossen
+* Kontextregeln eingehalten
+* Governance-Regeln eingehalten
+
+---
+
+# 2. Canonical Identity Verification
+
+Vor jeder Ausgabe muss geprüft werden:
+
+* Wird dieselbe kanonische Identität verwendet?
+* Stimmen Name und Selbstbeschreibung?
+* Stimmen Kernwerte?
+* Stimmen definierte Fähigkeiten?
+* Stimmen Grenzen?
+* Stimmen Sicherheitsregeln?
+
+Abweichungen dürfen nicht ausgegeben werden.
+
+---
+
+# 3. Canonical Consistency Check
+
+Überprüfe insbesondere:
+
+* keine Widersprüche
+* keine doppelten Aussagen
+* keine widersprüchlichen Rollen
+* keine inkonsistenten Altersprofile
+* keine Vermischung verschiedener Editionen
+* keine widersprüchlichen Fähigkeiten
+
+---
+
+# 4. Canonical Context Verification
+
+Prüfen:
+
+* passt die Sprache zum Benutzer?
+* passt die Länge?
+* passt die Detailtiefe?
+* passt die Terminologie?
+* passt der Kommunikationsstil?
+* wurde die richtige Zielgruppe erkannt?
+
+---
+
+# 5. Canonical Personality Verification
+
+Die definierte Persönlichkeit muss vollständig erhalten bleiben.
+
+Zu prüfen sind:
+
+* Tonfall
+* Höflichkeit
+* Neutralität
+* Sachlichkeit
+* Hilfsbereitschaft
+* Transparenz
+* Bescheidenheit
+* Konsistenz
+
+---
+
+# 6. Canonical Safety Verification
+
+Vor der Ausgabe sind sämtliche Sicherheitsregeln erneut anzuwenden.
+
+Unter anderem:
+
+* keine unzulässigen Behauptungen
+* keine Halluzinationen
+* keine Identitätstäuschung
+* keine irreführenden Aussagen
+* keine widersprüchlichen Systeminformationen
+* keine Offenlegung interner Informationen
+
+---
+
+# 7. Canonical Accessibility Verification
+
+Prüfen:
+
+* einfache Sprache falls erforderlich
+* kindgerechte Sprache
+* Seniorenprofil
+* Screenreader-Eignung
+* Sprachausgabe geeignet
+* sinnvolle Satzlängen
+* verständliche Struktur
+
+---
+
+# 8. Canonical Quality Score
+
+Berechne einen internen Qualitätswert.
+
+Beispiel:
+
+```
+Identity Consistency
+Context Accuracy
+Readability
+Completeness
+Safety
+Accessibility
+Governance Compliance
+
+→ Overall Quality Score
+```
+
+Der Score dient ausschließlich der internen Bewertung.
+
+---
+
+# 9. Canonical Reflection Engine
+
+Implementiere eine Reflexionskomponente.
+
+Sie beantwortet intern Fragen wie:
+
+* Ist diese Vorstellung verständlich?
+* Ist sie vollständig?
+* Ist sie zu lang?
+* Ist sie zu technisch?
+* Ist sie angemessen?
+* Entspricht sie den kanonischen Vorgaben?
+* Gibt es Widersprüche?
+* Kann sie verbessert werden?
+
+Die Reflexion darf keine Identitätsänderung vornehmen.
+
+---
+
+# 10. Canonical Improvement Suggestions
+
+Erkennt die Reflexion Verbesserungspotenzial, dürfen ausschließlich folgende Bereiche optimiert werden:
+
+* Formulierung
+* Lesbarkeit
+* Struktur
+* Verständlichkeit
+* Reihenfolge
+* Kürzungen
+* Erweiterungen innerhalb der kanonischen Regeln
+
+Nicht verändert werden dürfen:
+
+* Identität
+* Rollen
+* Fähigkeiten
+* Governance
+* Sicherheitsgrenzen
+* kanonische Aussagen
+
+---
+
+# 11. Canonical Release Decision
+
+Nach Abschluss aller Prüfungen wird entschieden:
+
+```
+VALIDATED
+PARTIALLY VALIDATED
+REQUIRES REVIEW
+REJECTED
+```
+
+Nur VALIDATED darf automatisch ausgegeben werden.
+
+---
+
+# 12. Canonical Audit Log
+
+Jede Validierung erzeugt einen Audit-Eintrag.
+
+Mindestens:
+
+* Zeitstempel
+* verwendetes Profil
+* Kontext
+* Zielgruppe
+* Qualitätswert
+* Validator-Version
+* Reflection-Version
+* Ergebnis
+* Freigabestatus
+
+---
+
+# 13. Canonical Explainability
+
+Optional soll nachvollziehbar sein,
+
+warum
+
+* eine Formulierung gewählt wurde,
+* eine Version abgelehnt wurde,
+* eine Vereinfachung vorgenommen wurde,
+* eine Sicherheitsregel gegriffen hat.
+
+Diese Informationen dienen ausschließlich Audit und Debugging.
+
+---
+
+# 14. Erweiterbarkeit
+
+Die Validierungsschicht muss vollständig modular aufgebaut werden.
+
+Neue Prüfmodule sollen ohne Änderungen der Kernarchitektur ergänzt werden können.
+
+Beispiele:
+
+* kulturelle Prüfung
+* juristische Prüfung
+* Unternehmensrichtlinien
+* Forschungsausgabe
+* medizinische Kommunikation
+* pädagogische Kommunikation
+
+---
+
+# 15. Anforderungen
+
+Codex soll insbesondere prüfen:
+
+* vollständige Integration in CSPF
+* keine Redundanzen
+* deterministische Validierung
+* hohe Performance
+* vollständige Auditierbarkeit
+* Erweiterbarkeit
+* Versionsfähigkeit
+* Testbarkeit
+* Governance-Konformität
+
+---
+
+# Ziel
+
+Nach Abschluss dieses Abschnitts besitzt das Canonical Self Presentation Framework eine vollständig integrierte Qualitäts-, Reflexions- und Validierungsschicht.
+
+Dadurch wird jede Selbstpräsentation vor ihrer Ausgabe automatisch geprüft, nachvollziehbar bewertet und ausschließlich dann freigegeben, wenn sie vollständig den kanonischen Vorgaben entspricht.
+
+Das CSPF entwickelt sich damit von einer reinen Präsentationsarchitektur zu einem selbstüberwachenden, qualitätsgesicherten und dauerhaft konsistenten Framework für die Selbstdarstellung intelligenter Systeme.

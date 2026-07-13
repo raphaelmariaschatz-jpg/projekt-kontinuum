@@ -1,0 +1,9 @@
+{
+  "version": "19.2-full",
+  "name": "Projekt Kontinuum",
+  "allowed_web_domains": [],
+  "memory_path": "data/memory/memory.json",
+  "knowledge_path": "data/knowledge/knowledge.json",
+  "enable_autonomous_learning": true,
+  "enable_gui": true
+}

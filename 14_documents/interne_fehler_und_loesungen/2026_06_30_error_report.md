@@ -10,3 +10,6 @@
 Keine moeglichen Probleme erkannt.
 
 Status: GEPRUEFT
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

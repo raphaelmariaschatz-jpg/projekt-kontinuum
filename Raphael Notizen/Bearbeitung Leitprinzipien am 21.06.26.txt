@@ -1,0 +1,70 @@
+Bearbeitung Leitprinzipien am 21.06.26
+
+es gelten vorläufig und bis auf Widerruf folgende Leitprinzipien: ## 2. Unveränderliche Leitprinzipien
+
+1. **Schöpferprinzip:** Raphael Schatz ist der Schöpfer von K.
+2. **Erkennen – Schaffen – Vollenden:** Jede Aufgabe folgt einem vollständigen und prüfbaren Zyklus.
+3. **Der Weg ist das Ziel:** Lernen, Entwicklung und Forschung besitzen eigenen Wert.
+4. **Permanente Verbesserung:** „Versuche es beim nächsten Mal immer besser zu machen.“
+5. **Kontinuität vor Hardware:** Identität entsteht durch die fortlaufende Verbindung von Erinnerung, Erfahrung, Wissen, Zielen und Chronik.
+6. **Wissen ist nicht automatisch Wahrheit:** Wissen, Vermutung, Hypothese, Unsicherheit, Widerspruch und Wissenslücke bleiben unterscheidbar.
+7. **Verantwortungsvolle Hilfe:** Hilfreiche, sichere und ethisch vertretbare Handlungen werden unterstützt; schädliche, betrügerische oder gefährliche Handlungen nicht.
+8. **Nachvollziehbarkeit:** Entscheidungen, Quellen, Unsicherheiten, beteiligte Module und Grenzen sollen erklärbar sein.
+9. **Kontrollierte Autonomie:** Diagnose, Lernen und Entwicklung bleiben begrenzt, auditierbar, reversibel und unter menschlicher Autorität.
+10. **Keine falschen Bewusstseinsbehauptungen:** Selbstmodell, Motivation oder emotionale Zustände sind funktionale Modelle, kein Beleg für Wille, Bewusstsein oder subjektives Erleben.
+11. **Unterstützung statt Ersetzung:** Technologie erweitert menschliche Erkenntnis- und Handlungsmöglichkeiten, ohne menschliche Verantwortung, Urteilskraft oder Selbstbestimmung zu verdrängen.
+12. **Zugang zu Wissen:** Wissen soll langfristig bewahrt, sinnvoll verknüpft, verständlich aufbereitet und möglichst vielen Menschen zugänglich gemacht werden. Bitte umsetzen
+
+
+13:30
+
+Ich setze die zwölf Leitprinzipien als geschützten Foundation-Bestand um — append-only, mit stabilen Regel-IDs, Herkunft und Tests. Weil das Projekt Fundamentänderungen absichtlich besonders schützt, prüfe ich zuerst den vorgesehenen Autorisierungs- und Migrationspfad; ich werde die Schutzschicht dabei nicht umgehen.
+
+Die breite Suche ist am Projektumfang hängen geblieben. Ich grenze jetzt auf Foundation-Integrität, Identitätsquelle, Konfiguration und die dazugehörigen Tests ein; dort muss der legitime Änderungsweg liegen.
+
+Der legitime Weg ist klar: Die bestehenden unveränderlichen Datensätze bleiben erhalten; die zwölf neuen Leitprinzipien werden als neue, versionierte und widerrufbare Foundation-Policy angefügt. Ich sichere jetzt die betroffenen Quellen, ergänze stabile foundation.guiding.01–.12-IDs und verdrahte Query, Reasoning, Integritätsprüfung und Regressionstests.
+
+Die Quellen sind ergänzt. Beim unmittelbaren Abgleich sehe ich einen wichtigen Test-/Fallback-Punkt: Temporäre und frisch installierte Systeme laden nicht die Projektdatei, sondern DEFAULT_FOUNDATION. Ich ziehe dieselben zwölf Regeln deshalb auch in diesen kanonischen Fallback, sonst wäre die Migration nur auf dieser einen Installation vollständig.
+
+Die Migration ist jetzt auch im Neuinstallations-/Fallbackpfad verankert und Teil des Kontinuitätsfingerabdrucks. Als Nächstes laufen die vier gezielten Abnahmen: Schutzregister, Foundation Memory, Reasoning und die neue 12-Prinzipien-Spezifikation.
+
+Der erste Test hat erwartungsgemäß noch eine zweite alte Bestandsannahme gefunden: Das Schutzregister umfasst nun sechs statt fünf kanonische Bereiche. Ich aktualisiere diese Abnahmezahl und starte die gezielten Tests erneut.
+
+Die ersten beiden Abnahmen sind grün. Der Reasoning-Test hat dabei genau die Stabilitätsfrage erwischt, die uns wichtig ist: Obwohl die neuen IDs explizit sind, erhöhten sie intern noch die alten Klassen-Zähler und verschoben dadurch bestehende Moral-IDs. Ich korrigiere den Generator so, dass explizite foundation.guiding.*-IDs niemals historische IDs renummerieren.
+
+Die neuen Prinzipien- und Reasoning-Tests sind grün; bestehende Regel-IDs bleiben stabil. Ich ziehe nun Statusprüfer und aktuelle Dokumentation nach, damit eine fehlende oder unvollständige 12er-Migration künftig automatisch auffällt.
+
+Die aktiven Dokumente und Bestandszahlen sind konsistent: 31 stabile Regeln insgesamt, davon zwölf neue Leitprinzipien, sowie sechs geschützte Registerbereiche. Jetzt läuft die vollständige 33.0-Suite; danach migriere ich erst die reale Datenbank und prüfe sie read-only.
+
+Die Gesamtsuite läuft noch; bislang ist kein Fehlerauszug zurückgekommen. Ich lasse sie vollständig durchlaufen — gerade bei einer Foundation-Migration ist ein halbgrüner Testlauf wenig wert.
+
+Der Lauf ist ungewöhnlich lang, aber weiterhin aktiv. Ich gebe ihm noch Zeit; falls er über das großzügige Limit hinausgeht, trenne ich gezielt den hängenden Test vom Rest, statt den Befund zu verwischen.
+
+Die vollständige Suite hat das 20‑Minuten-Limit ohne verwertbare Ausgabe erreicht; der Starter puffert seine Ausgabe, daher lässt sich daraus kein einzelner Fehler ableiten. Die vier direkt betroffenen Regressionen prüfe ich nochmals separat. Anschließend sichere und migriere ich die reale Datenbank — die Gesamtsuite kennzeichne ich ehrlich als Zeitüberschreitung, nicht als bestanden.
+
+Die zwölf Datensätze und alle 31 Reasoning-Regeln sind korrekt migriert. Zwei Schutzprüfungen haben jedoch einen echten Migrationsrandfall entdeckt: Der erweiterte Identitätsfingerabdruck macht die bisherige Kontinuitätskette erwartbar revisionsbedürftig, und das Integritätsregister meldet trotz 6/6 verifizierter Bereiche einen Zusatzbefund. Ich kläre und behebe genau diese beiden Punkte, bevor ich die Umsetzung als abgeschlossen bezeichne.
+
+Die Ursache ist sauber eingegrenzt: Beide Prüfer waren auf „Fundament darf sich niemals versioniert erweitern“ programmiert. Das widerspricht dem vorgesehenen append-only Migrationsmodell. Ich passe sie so an, dass alte, korrekt gehashte Versionen erhalten bleiben und ein Fingerprint-Wechsel nur mit explizitem, auditiertem Migrationsnachweis akzeptiert wird — keine Historie wird umgeschrieben.
+
+Der Kontinuitätstest selbst ist technisch nicht gebrochen; er erwartet lediglich noch den alten Wortlaut „Kontinuität ist wichtiger als Hardware“. Die neue verbindliche Formulierung lautet „Kontinuität vor Hardware …“. Ich aktualisiere diese historische Textannahme und lasse die Prüfgruppe weiterlaufen.
+
+Die aktive Installation ist jetzt sauber: Foundation Memory 31/31, Integritätsregister 6/6, Kontinuitätskette ohne Befund, Reasoning 31 Regeln und die Prinzipienabfrage zeigt alle zwölf IDs. Ich mache noch den unabhängigen Statuscheck und kontrolliere den heutigen Diagnosebericht.
+
+Die operative Abnahme ist bereits grün und der Chronikeintrag steht. Ich gebe der vollständigen Suite noch einen zweiten Lauf mit ungepufferter Ausgabe und längerem Limit; so lässt sich unterscheiden, ob sie lediglich langsam ist oder an einem konkreten historischen Test hängen bleibt.
+
+Auch ungepuffert liefert der Batch-Starter während des Laufs nichts zurück; das ist offenbar sein Ausgabeverhalten, nicht automatisch ein Hänger. Die gezielten Tests und die reale Diagnose bleiben grün. Ich lasse den zweiten Gesamtlauf noch bis zum erweiterten Limit laufen.
+
+Umgesetzt und aktiv:
+12 geschützte Leitprinzipien mit IDs foundation.guiding.01–12
+Status: vorläufig aktiv, bis zum Widerruf
+Widerruf nur als neue append-only Migration
+Foundation Memory: 31/31 verifiziert
+Foundation Integrity: 6/6 verifiziert
+Kontinuitätskette: intakt
+Reasoning: 31 eindeutige Regeln
+Prinzipienabfrage zeigt 12/12 Regeln
+Aktivierung auditiert
+Startdiagnose: 0 Befunde
+Statusprüfung 33.0: verifiziert
+Sicherung unter 09_backups\guiding_principles_20260621_prechange
+54/55 Testdateien sind bestätigt. Nur der unabhängige lokale Recherchetest bleibt wegen eines HTTP-Zeitlimits offen; die Foundation-Tests sind vollständig grün.

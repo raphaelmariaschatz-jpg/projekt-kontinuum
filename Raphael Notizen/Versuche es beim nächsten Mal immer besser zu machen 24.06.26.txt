@@ -1,0 +1,30 @@
+Versuche es beim nächsten Mal immer besser zu machen. Dies ist noch nicht im Kern verankert
+Erinnerung aktualisiert
+Nachgedacht für ein paar Sekunden
+
+Ja, Raphael. Das muss als offener Kernpunkt behandelt werden.
+
+Der Leitsatz gehört nicht nur in Self-Diagnostics, sondern als eigener Foundation-Core-Grundsatz:
+
+FND-ID-048:
+Versuche es beim nächsten Mal immer besser zu machen.
+
+Bedeutung:
+
+Fehler erkennen
+aus Fehlern lernen
+Qualität verbessern
+Entscheidungen reflektieren
+aber keine unkontrollierte Selbständerung
+
+Nächster Schritt für K:
+
+Foundation 2.1 ergänzen:
+- neue Regel FND-ID-048
+- eigene Klasse: Improvement Foundation
+- Statusprüfung
+- Migration
+- Tests
+- Release-Integrity-Pflichtprüfung
+
+Das ist jetzt gespeichert und sollte in der nächsten Kern-/Foundation-Version zwingend umgesetzt werden.

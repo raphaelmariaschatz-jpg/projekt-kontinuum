@@ -1,0 +1,244 @@
+{
+  "schema_version": "1.0",
+  "agents": [
+    {
+      "id": "agent_memory",
+      "name": "memory",
+      "type": "internal",
+      "status": "active",
+      "version": "1.0",
+      "description": "Verwaltet Erinnerungsbefehle und Memory-Zugriffe.",
+      "capabilities": [
+        "memory.read",
+        "memory.write",
+        "memory.status"
+      ],
+      "allowed_tools": [],
+      "governance_required": false,
+      "read_only": false,
+      "entrypoint": "kontinuum.agents.memory_agent.MemoryAgent"
+    },
+    {
+      "id": "agent_web",
+      "name": "web_agent",
+      "type": "internal",
+      "status": "active",
+      "version": "1.0",
+      "description": "Liest Webadressen und Internetquellen kontrolliert ein.",
+      "capabilities": [
+        "web.read",
+        "web.status",
+        "source.capture"
+      ],
+      "allowed_tools": [],
+      "governance_required": false,
+      "read_only": false,
+      "entrypoint": "kontinuum.core.web_agent.WebAgentService"
+    },
+    {
+      "id": "agent_file",
+      "name": "file_agent",
+      "type": "internal",
+      "status": "active",
+      "version": "1.0",
+      "description": "Liest lokale Dateien und Ordner im Projektkontext.",
+      "capabilities": [
+        "file.read",
+        "file.learn",
+        "file.status"
+      ],
+      "allowed_tools": [],
+      "governance_required": false,
+      "read_only": false,
+      "entrypoint": "kontinuum.core.file_agent.FileAgentService"
+    },
+    {
+      "id": "agent_vision",
+      "name": "vision_agent",
+      "type": "internal",
+      "status": "active",
+      "version": "1.0",
+      "description": "Analysiert lokale Bilddateien read-only.",
+      "capabilities": [
+        "vision.inspect",
+        "vision.status"
+      ],
+      "allowed_tools": [],
+      "governance_required": false,
+      "read_only": false,
+      "entrypoint": "kontinuum.core.vision_agent.VisionAgentService"
+    },
+    {
+      "id": "agent_git",
+      "name": "git_agent",
+      "type": "internal",
+      "status": "active",
+      "version": "1.0",
+      "description": "Stellt read-only Git-Status und Repositorydiagnosen bereit.",
+      "capabilities": [
+        "git.status",
+        "git.inspect",
+        "governance.git"
+      ],
+      "allowed_tools": [],
+      "governance_required": false,
+      "read_only": false,
+      "entrypoint": "kontinuum.core.git_agent.GitAgentService"
+    },
+    {
+      "id": "agent_code",
+      "name": "code_agent",
+      "type": "internal",
+      "status": "active",
+      "version": "1.0",
+      "description": "Analysiert Quellcode und Projektstruktur read-only.",
+      "capabilities": [
+        "code.inspect",
+        "code.map",
+        "code.status"
+      ],
+      "allowed_tools": [],
+      "governance_required": false,
+      "read_only": false,
+      "entrypoint": "kontinuum.core.code_agent.CodeAgentService"
+    },
+    {
+      "id": "agent_learning",
+      "name": "learning_agent",
+      "type": "internal",
+      "status": "active",
+      "version": "1.0",
+      "description": "Steuert Lernaufträge und Wissensintegration.",
+      "capabilities": [
+        "learning.run",
+        "learning.status",
+        "knowledge.integrate"
+      ],
+      "allowed_tools": [],
+      "governance_required": false,
+      "read_only": false,
+      "entrypoint": "kontinuum.agents.learning_agent.LearningAgent"
+    },
+    {
+      "id": "manager_identity",
+      "name": "identity_manager",
+      "type": "foundation",
+      "status": "active",
+      "version": "1.0",
+      "description": "Verwaltet die kanonische Identität und Rolleninformationen.",
+      "capabilities": [
+        "identity.read",
+        "identity.write",
+        "identity.status"
+      ],
+      "allowed_tools": [],
+      "governance_required": false,
+      "read_only": false,
+      "entrypoint": "kontinuum.core.identity_manager.IdentityManager"
+    },
+    {
+      "id": "manager_canonical_memory",
+      "name": "canonical_memory_manager",
+      "type": "foundation",
+      "status": "active",
+      "version": "1.0",
+      "description": "Verwaltet kanonische Memory-Einträge mit Hash und Governance.",
+      "capabilities": [
+        "canonical_memory.read",
+        "canonical_memory.write",
+        "canonical_memory.status"
+      ],
+      "allowed_tools": [],
+      "governance_required": false,
+      "read_only": false,
+      "entrypoint": "kontinuum.foundation.canonical_memory_manager.CanonicalMemoryManager"
+    },
+    {
+      "id": "manager_canonical_identity",
+      "name": "canonical_identity_manager",
+      "type": "foundation",
+      "status": "active",
+      "version": "1.0",
+      "description": "Kanonische Identitätsinstanz für Creator, Rollen und Systemidentität.",
+      "capabilities": [
+        "canonical_identity.read",
+        "canonical_identity.write",
+        "canonical_identity.status"
+      ],
+      "allowed_tools": [],
+      "governance_required": false,
+      "read_only": false,
+      "entrypoint": "kontinuum.foundation.canonical_identity_manager.CanonicalIdentityManager"
+    },
+    {
+      "id": "manager_canonical_artifacts",
+      "name": "canonical_artifacts",
+      "type": "foundation",
+      "status": "active",
+      "version": "1.0",
+      "description": "Verwaltet kanonische Artefakte und Artefaktstatus.",
+      "capabilities": [
+        "artifacts.read",
+        "artifacts.status",
+        "governance.artifacts"
+      ],
+      "allowed_tools": [],
+      "governance_required": false,
+      "read_only": false,
+      "entrypoint": "kontinuum.core.canonical_artifacts.CanonicalArtifactManager"
+    },
+    {
+      "id": "manager_canonical_architecture",
+      "name": "canonical_architecture",
+      "type": "foundation",
+      "status": "active",
+      "version": "1.0",
+      "description": "Verwaltet kanonische Architekturregeln und Strukturstatus.",
+      "capabilities": [
+        "architecture.read",
+        "architecture.status",
+        "governance.architecture"
+      ],
+      "allowed_tools": [],
+      "governance_required": false,
+      "read_only": false,
+      "entrypoint": "kontinuum.core.canonical_architecture.CanonicalArchitectureManager"
+    },
+    {
+      "id": "manager_canonical_api_registry",
+      "name": "canonical_api_registry",
+      "type": "foundation",
+      "status": "active",
+      "version": "1.0",
+      "description": "Verwaltet kanonische API- und Schnittstellenregistrierung.",
+      "capabilities": [
+        "api_registry.read",
+        "api_registry.status",
+        "governance.api"
+      ],
+      "allowed_tools": [],
+      "governance_required": false,
+      "read_only": false,
+      "entrypoint": "kontinuum.core.canonical_api_registry.CanonicalAPIRegistryManager"
+    },
+    {
+      "id": "manager_canonical_database",
+      "name": "canonical_database",
+      "type": "foundation",
+      "status": "active",
+      "version": "1.0",
+      "description": "Verwaltet kanonische Datenbankstruktur und Datenbankstatus.",
+      "capabilities": [
+        "database.read",
+        "database.status",
+        "governance.database"
+      ],
+      "allowed_tools": [],
+      "governance_required": false,
+      "read_only": false,
+      "entrypoint": "kontinuum.core.canonical_database.CanonicalDatabaseManager"
+    }
+  ],
+  "last_updated": "2026-07-03T05:46:17.620082+00:00",
+  "hash": "7d9f52baa88cfe9abc35e666651e9c82564d93e067d441d2129a3349f6f66ae0"
+}

@@ -1,0 +1,142 @@
+{
+  "Mathematik": {
+    "goal": true,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open_topics": []
+  },
+  "Physik": {
+    "goal": true,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open_topics": []
+  },
+  "Chemie": {
+    "goal": true,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open_topics": []
+  },
+  "Biologie": {
+    "goal": true,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open_topics": []
+  },
+  "Astronomie": {
+    "goal": true,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open_topics": []
+  },
+  "Geologie": {
+    "goal": true,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open_topics": []
+  },
+  "Medizin": {
+    "goal": true,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open_topics": []
+  },
+  "Informatik": {
+    "goal": true,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open_topics": []
+  },
+  "Optik": {
+    "goal": true,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open_topics": []
+  },
+  "Mechanik": {
+    "goal": true,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open_topics": []
+  },
+  "Elektrotechnik": {
+    "goal": true,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open_topics": []
+  },
+  "Architektur": {
+    "goal": true,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open_topics": []
+  },
+  "Bauwesen": {
+    "goal": true,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open_topics": []
+  },
+  "Landwirtschaft": {
+    "goal": true,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open_topics": []
+  },
+  "Geschichte": {
+    "goal": true,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open_topics": []
+  },
+  "Philosophie": {
+    "goal": true,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open_topics": []
+  },
+  "Psychologie": {
+    "goal": true,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open_topics": []
+  },
+  "Sprachwissenschaft": {
+    "goal": true,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open_topics": []
+  },
+  "Soziologie": {
+    "goal": true,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open_topics": []
+  },
+  "Ökonomie": {
+    "goal": true,
+    "status_percent": 0,
+    "sources": [],
+    "learned_topics": [],
+    "open_topics": []
+  }
+}

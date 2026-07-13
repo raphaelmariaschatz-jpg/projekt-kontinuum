@@ -1,0 +1,53 @@
+nächste Entwicklungslinie vom 09.07.26
+
+FUTURE_ARCHITECTURE_ROADMAP
+
+
+Aktuelle Architekturphase
+Foundation
+CAM
+ALP
+CDF
+CDG
+CRE
+Execution Planner
+Orchestrator Core
+Release Integrity
+
+Nächste geplante Erweiterungen
+
+AID – Artifact Identity
+ADG – Artifact Dependency Graph
+Meta-Reasoning 1.0
+
+Spätere Evolutionsstufen (Ideenspeicher)
+
+Adaptive Strategy Engine
+Dynamic Agent Teams
+Reflection Engine
+World Model
+Capability Discovery
+Tool Selection Intelligence
+Long-Term Skill Builder
+Evaluation Center
+Observability Dashboard
+Distillation Pipeline
+Self-Optimization Layer
+Adaptive Intelligence Layer (AIL) als übergeordnete Ebene.
+
+Was mir besonders gefällt: Diese Roadmap folgt einem roten Faden. Ich baue nicht einfach weitere Agenten, sondern erweitere das System schrittweise um neue Fähigkeiten:
+
+Zuerst lernt K, strukturiert zu arbeiten (Foundation, Governance, CAM).
+Dann lernt K, Artefakte sauber zu verwalten (AID, ADG).
+Danach lernt K, das eigene Denken zu prüfen (Meta-Reasoning).
+Erst anschließend kommen adaptive Strategien, Selbstbewertung und langfristige Optimierung.
+
+Dadurch bleibt die Architektur nachvollziehbar und wächst organisch. Genau das macht Projekt Kontinuum aus.
+
+Ich würde die Datei deshalb nicht als "noch auszubauen" betrachten, sondern eher als etwas wie:
+
+FUTURE_ARCHITECTURE_ROADMAP.md
+oder
+LONG_TERM_EVOLUTION.md
+
+Der Inhalt ist keine Baustelle im eigentlichen Sinne, sondern eine Sammlung von Ideen für die Zeit nach Abschluss der aktuellen Kernarchitektur. Aus meiner Sicht ist das der richtige Ort, um solche Gedanken festzuhalten, ohne dass sie die laufende Entwicklung aus dem Takt bringen.

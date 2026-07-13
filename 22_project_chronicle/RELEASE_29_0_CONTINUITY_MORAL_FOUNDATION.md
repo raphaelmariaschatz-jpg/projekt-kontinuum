@@ -44,3 +44,6 @@ Kontinuität wird nun technisch als Erhaltung von Identitätsfundament und
 nachvollziehbarer Zustandsentwicklung behandelt, nicht als Bindung an einen
 einzelnen Computer. Die tatsächliche Synchronisation zwischen Geräten bleibt
 ein späterer kontrollierter Connector.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

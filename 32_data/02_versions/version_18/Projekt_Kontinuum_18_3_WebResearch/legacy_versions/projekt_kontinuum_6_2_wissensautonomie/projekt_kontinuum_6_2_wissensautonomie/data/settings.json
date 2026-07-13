@@ -1,0 +1,30 @@
+{
+  "version": "6.2 Wissensautonomie",
+  "voice_enabled": true,
+  "wake_word": "hallo kontinuum",
+  "require_wake_word": false,
+  "vosk_model_path": "models/vosk-model-small-de-0.15",
+  "samplerate": 16000,
+  "voice_timeout_seconds": 10,
+  "speech_rate": 175,
+  "auto_learning_enabled": true,
+  "learn_only_on_command": true,
+  "max_learn_text_chars": 6000,
+  "allowed_domains": [
+    "arxiv.org",
+    "pubmed.ncbi.nlm.nih.gov",
+    "ncbi.nlm.nih.gov",
+    "nih.gov",
+    "edu",
+    "ac.uk",
+    "ethz.ch",
+    "mpg.de",
+    "dnb.de",
+    "loc.gov",
+    "europeana.eu",
+    "gutenberg.org",
+    "archive.org",
+    "semanticscholar.org",
+    "crossref.org"
+  ]
+}

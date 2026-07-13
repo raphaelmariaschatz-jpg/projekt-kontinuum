@@ -39,3 +39,6 @@ Ergaenzter Test:
 - `17_tests/test_response_policy_manager_1_0.py`
 
 Geprueft werden Foundation Memory, FileAgent, WebAgent, KnowledgeAgent, Router-Echo und ein sauberer negativer Fall mit konkreter Dateiursache.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

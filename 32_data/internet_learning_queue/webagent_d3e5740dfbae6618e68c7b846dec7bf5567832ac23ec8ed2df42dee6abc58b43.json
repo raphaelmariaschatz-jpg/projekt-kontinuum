@@ -1,0 +1,92 @@
+{
+  "url": "https://docs.python.org/3/download.html",
+  "title": "Download — Python 3.14.6 documentation",
+  "topic": "Crawl https://docs.python.org/3/",
+  "retrieved_at": "2026-06-30T10:35:07.982908+00:00",
+  "sha256": "fd52b0a8dd647da3e99c3a8ccb81cca95032cc15d89a66b54bd598949e69fe03",
+  "summary": "Navigation Download Python 3.14 documentation Problems Navigation Last updated on: Jun 30, 2026 (10:27 UTC). Download an archive containing all the documentation for this version of Python: See the directory listing for file sizes. Open an issue if you have comments or suggestions for the Python documentation. index modules | Python » 3.14.6 Documentation » Download | Theme Auto Light Dark | index modules | Python » 3.14.6 Documentation » Download | Theme Auto Light Dark | make dist-pdf Doc/",
+  "learning_summary": "Download — Python 3.14.6 documentation: Navigation Download Python 3.14 documentation Problems Navigation Last updated on: Jun 30, 2026 (10:27 UTC). Download an archive containing all the documentation for this version of Python: See the directory listing for file sizes. Open an issue if you have comments or suggestions for the Python documentation. index modules | Python » 3.14.6 Documentation » Download | Theme Auto Light Dark | index modules | Python » 3.14.6 Documentation » Download | Theme Auto Light Dark | make dist-pdf Doc/",
+  "http_status": 200,
+  "links": [
+    {
+      "url": "https://www.python.org/",
+      "text": "Navigation"
+    },
+    {
+      "url": "https://docs.python.org/3/genindex.html",
+      "text": "index"
+    },
+    {
+      "url": "https://docs.python.org/3/py-modindex.html",
+      "text": "modules |"
+    },
+    {
+      "url": "https://docs.python.org/3/index.html",
+      "text": "3.14.6 Documentation » Download | Theme Auto Light Dark | Download Python 3.14 documentation Last updated on: Jun 30, 2026 (10:27 UTC). Download an archive cont"
+    },
+    {
+      "url": "https://docs.python.org/3/archives/python-3.14-docs-html.zip",
+      "text": "Download"
+    },
+    {
+      "url": "https://docs.python.org/3/archives/python-3.14-docs-html.tar.bz2",
+      "text": "Download Plain text"
+    },
+    {
+      "url": "https://docs.python.org/3/archives/python-3.14-docs-text.zip",
+      "text": "Download"
+    },
+    {
+      "url": "https://docs.python.org/3/archives/python-3.14-docs-text.tar.bz2",
+      "text": "Download Texinfo"
+    },
+    {
+      "url": "https://docs.python.org/3/archives/python-3.14-docs-texinfo.zip",
+      "text": "Download"
+    },
+    {
+      "url": "https://docs.python.org/3/archives/python-3.14-docs-texinfo.tar.bz2",
+      "text": "Download EPUB"
+    },
+    {
+      "url": "https://docs.python.org/3/archives/python-3.14-docs.epub",
+      "text": "Download We no longer provide pre-built PDFs of the documentation.\nTo build a PDF archive, follow the instructions in the"
+    },
+    {
+      "url": "https://devguide.python.org/documentation/start-documenting/",
+      "text": "Developer's Guide and run make dist-pdf in the Doc/ directory of a copy of the CPython repository. See the"
+    },
+    {
+      "url": "https://docs.python.org/3.14/archives/",
+      "text": "directory listing for file sizes. Problems"
+    },
+    {
+      "url": "https://docs.python.org/3/bugs.html",
+      "text": "Open an issue if you have comments or suggestions for the Python documentation. « Navigation"
+    },
+    {
+      "url": "https://docs.python.org/3/copyright.html",
+      "text": "Copyright 2001 Python Software Foundation. This page is licensed under the Python Software Foundation License Version 2. Examples, recipes, and other code in th"
+    },
+    {
+      "url": "https://docs.python.org/license.html",
+      "text": "History and License for more information. The Python Software Foundation is a non-profit corporation."
+    },
+    {
+      "url": "https://www.python.org/psf/donations/",
+      "text": "Please donate. Last updated on Jun 30, 2026 (10:27 UTC)."
+    },
+    {
+      "url": "https://docs.python.org/bugs.html",
+      "text": "Found a bug ? Created using"
+    },
+    {
+      "url": "https://www.sphinx-doc.org/",
+      "text": "Sphinx 8.2.3."
+    }
+  ],
+  "review_required": true,
+  "write_to_memory_directly": false,
+  "status": "queued_for_review",
+  "policy": "web_agent_1_0"
+}

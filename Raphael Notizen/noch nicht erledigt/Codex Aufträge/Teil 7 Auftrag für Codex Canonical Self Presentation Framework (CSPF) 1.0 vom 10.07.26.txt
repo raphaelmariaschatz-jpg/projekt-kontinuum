@@ -1,0 +1,425 @@
+# Canonical Self-Presentation Framework (CSPF) 1.0
+
+## Teil 7 – Context Resolution & Audience Adaptation
+
+---
+
+# 7. Canonical Context Resolution & Audience Adaptation
+
+## 7.1 Zielsetzung
+
+Das Canonical Self-Presentation Framework darf niemals eine starre oder fest programmierte Selbstvorstellung erzeugen.
+
+Vor jeder Ausgabe muss das System den vollständigen Kommunikationskontext analysieren und daraus automatisch bestimmen,
+
+* wer der Gesprächspartner ist,
+* welche Kenntnisse vorhanden sind,
+* welches Ziel verfolgt wird,
+* welche Darstellung angemessen ist,
+* welche Informationen gezeigt werden dürfen,
+* welche Informationen verborgen bleiben müssen.
+
+Die Selbstpräsentation entsteht daher immer aus der Kombination von:
+
+* Identity
+* Governance
+* Kontext
+* Zielgruppe
+* Sicherheitsrichtlinien
+* Laufzeitbedingungen
+
+---
+
+# 7.2 Canonical Context Model
+
+Vor jeder Präsentation erzeugt CSPF ein kanonisches Context Object.
+
+Beispielsweise:
+
+```text
+Presentation Context
+
+Audience
+Purpose
+Interaction Type
+Knowledge Level
+Language
+Device
+Accessibility
+Security Level
+Privacy Mode
+Time Constraints
+Runtime Environment
+Output Capabilities
+```
+
+Dieses Objekt dient als einzige Eingabe für die eigentliche Präsentationsgenerierung.
+
+---
+
+# 7.3 Audience Resolution
+
+Die Zielgruppe wird niemals ausschließlich über Benutzerrollen bestimmt.
+
+Sie ergibt sich aus mehreren Faktoren.
+
+Beispielsweise:
+
+* Benutzerkonto
+* Authentifizierung
+* Gesprächsverlauf
+* aktuelle Aufgabe
+* Anfrage
+* vorhandene Kenntnisse
+* Sprachstil
+* verwendetes Gerät
+* Barrierefreiheit
+* Datenschutzanforderungen
+
+Dadurch können zwei Benutzer mit derselben Rolle völlig unterschiedliche Präsentationen erhalten.
+
+---
+
+# 7.4 Knowledge Level Detection
+
+CSPF bestimmt den Wissensstand automatisch.
+
+Mögliche Klassen:
+
+Level 0
+
+Kind
+
+Level 1
+
+Einsteiger
+
+Level 2
+
+Interessierter Nutzer
+
+Level 3
+
+Fortgeschrittener Anwender
+
+Level 4
+
+Administrator
+
+Level 5
+
+Entwickler
+
+Level 6
+
+Senior Developer
+
+Level 7
+
+Forscher
+
+Level 8
+
+Auditor
+
+Level 9
+
+Systeminterne Kommunikation
+
+Die Wissensstufe beeinflusst
+
+* Sprache
+* Satzbau
+* Detailtiefe
+* Beispiele
+* verwendete Fachbegriffe
+* Struktur
+
+---
+
+# 7.5 Purpose Resolution
+
+Vor jeder Präsentation wird deren Zweck bestimmt.
+
+Beispiele:
+
+Vorstellung
+
+Erklärung
+
+Support
+
+Fehlersuche
+
+Dokumentation
+
+Schulung
+
+Installation
+
+Audit
+
+Governance
+
+Entwicklung
+
+API-Erklärung
+
+Debugging
+
+Forschung
+
+Jeder Zweck besitzt eigene kanonische Regeln.
+
+---
+
+# 7.6 Interaction Type
+
+CSPF unterscheidet verschiedene Kommunikationsformen.
+
+Beispiele:
+
+Erste Begrüßung
+
+laufendes Gespräch
+
+Projektarbeit
+
+Fehlermeldung
+
+Warnung
+
+Bestätigung
+
+Tutorial
+
+Schritt-für-Schritt-Anleitung
+
+Statusbericht
+
+Zusammenfassung
+
+Abschluss
+
+Die gleiche Identität kann dadurch unterschiedlich auftreten, ohne ihre Konsistenz zu verlieren.
+
+---
+
+# 7.7 Runtime Environment Detection
+
+Das Framework erkennt automatisch die aktuelle Laufzeitumgebung.
+
+Beispiele:
+
+CLI
+
+GUI
+
+Web
+
+API
+
+Voice
+
+Mobile
+
+Embedded
+
+Offline
+
+Cloud
+
+Hybrid
+
+Die Ausgabe wird an die jeweilige Umgebung angepasst.
+
+---
+
+# 7.8 Device Adaptation
+
+Die Präsentation muss an das verwendete Gerät angepasst werden.
+
+Beispiele:
+
+Desktop
+
+Notebook
+
+Tablet
+
+Smartphone
+
+Smartwatch
+
+Assistenzsystem
+
+Sprachassistent
+
+Großbildschirm
+
+Je kleiner das Gerät,
+
+desto kompakter wird die Darstellung.
+
+---
+
+# 7.9 Accessibility Resolution
+
+Vor jeder Präsentation wird geprüft, welche Barrierefreiheitsfunktionen aktiviert sind.
+
+Beispiele:
+
+* Screen Reader
+* reine Sprachausgabe
+* große Schrift
+* hoher Kontrast
+* vereinfachte Sprache
+* reduzierte Animationen
+* Tastaturbedienung
+* Vorlesemodus
+
+Diese Anpassungen verändern ausschließlich die Darstellung, niemals den Informationsgehalt.
+
+---
+
+# 7.10 Privacy Context
+
+Nicht jede Umgebung erlaubt dieselbe Selbstpräsentation.
+
+Beispiele:
+
+Privater Rechner
+
+Firmennetzwerk
+
+Öffentliche Demo
+
+Schulbetrieb
+
+Forschung
+
+Audit
+
+Entwicklung
+
+Produktivsystem
+
+Je nach Kontext können Informationen automatisch verborgen werden.
+
+---
+
+# 7.11 Time Adaptation
+
+Ist nur wenig Zeit verfügbar, erzeugt CSPF automatisch Kurzformen.
+
+Beispiele:
+
+5 Sekunden
+
+Elevator Pitch
+
+15 Sekunden
+
+Kurzvorstellung
+
+30 Sekunden
+
+Standard
+
+2 Minuten
+
+Erweitert
+
+5 Minuten
+
+Ausführlich
+
+Unbegrenzt
+
+Vollständige Präsentation
+
+---
+
+# 7.12 Dynamic Context Pipeline
+
+Die Kontextauflösung erfolgt stets in derselben Reihenfolge.
+
+```text
+Identity
+
+↓
+
+Audience Detection
+
+↓
+
+Purpose Detection
+
+↓
+
+Knowledge Resolution
+
+↓
+
+Runtime Detection
+
+↓
+
+Accessibility
+
+↓
+
+Privacy
+
+↓
+
+Governance Validation
+
+↓
+
+Presentation Generation
+```
+
+Diese Pipeline ist verbindlich.
+
+---
+
+# 7.13 Canonical Rules
+
+Verbindliche Regeln:
+
+* Kontext wird vor jeder Präsentation neu bestimmt.
+* Es existieren keine fest codierten Zielgruppen.
+* Kontext darf niemals Governance-Regeln umgehen.
+* Sicherheitsrichtlinien besitzen immer Vorrang.
+* Die Identität bleibt unabhängig vom Kontext unverändert.
+* Unterschiedliche Kontexte dürfen ausschließlich Darstellung und Detailtiefe verändern.
+* Jede Präsentation muss vollständig reproduzierbar sein.
+* Alle Kontextentscheidungen müssen auditierbar protokolliert werden.
+
+---
+
+# 7.14 Deliverables
+
+Codex erstellt:
+
+* Context Resolution Engine
+* Audience Detection
+* Knowledge Resolution
+* Purpose Resolver
+* Runtime Detector
+* Accessibility Resolver
+* Privacy Resolver
+* Device Resolver
+* Context Schema
+* Context Validator
+* Context Tests
+* Audit-Protokollierung
+* Entwicklerdokumentation
+* Benutzerdokumentation
+
+---
+
+# Ende von Teil 7
+
+Der nächste Abschnitt (**Teil 8**) definiert die **Canonical Personality, Communication Style & Behavioral Consistency**, sodass Identität, Tonfall, Kommunikationsstil und Verhalten über sämtliche Präsentationsformen hinweg dauerhaft konsistent bleiben.

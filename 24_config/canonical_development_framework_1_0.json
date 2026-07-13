@@ -1,0 +1,103 @@
+{
+    "framework_id":  "CDF-1.0",
+    "title":  "Canonical Development Framework",
+    "project":  "Projekt Kontinuum",
+    "version":  "1.0",
+    "canonical_since":  "2026-07-09",
+    "status":  "active",
+    "component_type":  "documentation_and_governance",
+    "runtime_effect":  "none",
+    "foundation_effect":  "none",
+    "agent_effect":  "none",
+    "api_effect":  "none",
+    "database_effect":  "none",
+    "import_effect":  "none",
+    "test_effect":  "none",
+    "migration_effect":  "none",
+    "commit_effect":  "none",
+    "human_readable_documentation":  "14_documents/CANONICAL_DEVELOPMENT_FRAMEWORK_1_0.md",
+    "machine_readable_manifest":  "24_config/canonical_development_framework_1_0.json",
+    "status_report":  "31_reports/cdf_1_0_status_report.md",
+    "governance_layers":  {
+                              "agf":  "Architecture Governance - regelt Architektur",
+                              "cdg":  "Development Governance - regelt Entwicklung",
+                              "cks":  "Knowledge Governance - regelt Architekturwissen"
+                          },
+    "relationship_to_cdg":  {
+                                "cdg_role":  "verbindliches Entwicklungsregelwerk mit Regel-IDs",
+                                "cdf_role":  "praktischer Entwicklungsrahmen fuer Phasen, Pruefungen, Rollen und Abschlussformen",
+                                "replacement":  false
+                            },
+    "rule_areas":  [
+                       {
+                           "id":  "A",
+                           "name":  "Architekturregeln",
+                           "purpose":  "Wie K aufgebaut ist und welche strukturellen Grenzen gelten",
+                           "primary_sources":  [
+                                                   "AGF 1.0",
+                                                   "Canonical Architecture Model 34.1",
+                                                   "CG 1.0",
+                                                   "CAMap 1.0"
+                                               ]
+                       },
+                       {
+                           "id":  "B",
+                           "name":  "Governance-Regeln",
+                           "purpose":  "Wie Aenderungen kontrolliert und freigegeben werden",
+                           "primary_sources":  [
+                                                   "CDG 1.0",
+                                                   "AGF 1.0",
+                                                   "ALP 2.0",
+                                                   "CADP 1.0",
+                                                   "CCP-Policy",
+                                                   "Release Integrity"
+                                               ]
+                       },
+                       {
+                           "id":  "C",
+                           "name":  "Entwicklungsregeln",
+                           "purpose":  "Wie Codex und Raphael gemeinsam am Projekt arbeiten",
+                           "primary_sources":  [
+                                                   "CDG 1.0",
+                                                   "Projektchronik",
+                                                   "Roadmap",
+                                                   "CKS 1.0",
+                                                   "Statusberichte"
+                                               ]
+                       }
+                   ],
+    "work_cycle":  [
+                       {
+                           "phase":  "Orientierung",
+                           "purpose":  "Auftrag, betroffene Schichten und erlaubte Aenderungsart klaeren"
+                       },
+                       {
+                           "phase":  "Konsistenzpruefung",
+                           "purpose":  "bestehende Quellen, Begriffe und Statuslage pruefen"
+                       },
+                       {
+                           "phase":  "Kanonische Einordnung",
+                           "purpose":  "Aenderung oder Artefakt einer Schicht und einem Zweck zuordnen"
+                       },
+                       {
+                           "phase":  "Umsetzung",
+                           "purpose":  "nur die erlaubte Aenderung ausfuehren"
+                       },
+                       {
+                           "phase":  "Abschlusspruefung",
+                           "purpose":  "Ergebnis pruefbar abschliessen"
+                       }
+                   ],
+    "codex_work_rules":  [
+                             "bestehende kanonische Quellen zuerst lesen",
+                             "keine historischen Dateien ungefragt veraendern",
+                             "CAM, ALP und CADP bei Artefaktfragen beachten",
+                             "AGF bei Architekturwirkung beachten",
+                             "CDG bei Entwicklungswirkung beachten",
+                             "CKS bei Wissenswirkung beachten",
+                             "Release Integrity bei Freigabe- oder Releasewirkung beachten",
+                             "Roadmap und Projektchronik als aktuelle Orientierung verwenden",
+                             "grosse Auftraege phasenweise abschliessen",
+                             "keine halbfertigen Zustaende ohne dokumentierten Wiedereinstiegspunkt hinterlassen"
+                         ]
+}

@@ -1,0 +1,341 @@
+# Codex-Auftrag: CDE 2.0 und CKDE 1.0 – Kanonische Entscheidungsarchitektur für Projekt Kontinuum
+
+## Ziel
+
+Bitte die bisherige **Canonical Decision Engine (CDE)** aus Phase 2b auf die aktuelle Architektur (Version 34.1) überführen und ihren Verantwortungsbereich eindeutig definieren.
+
+Zusätzlich soll die **Canonical Knowledge Decision Engine (CKDE) 1.0** als eigenständige Wissens-Entscheidungsschicht eingeführt werden.
+
+Es handelt sich um eine **Architekturerweiterung**, nicht um eine neue autonome Lernfunktion.
+
+---
+
+# Hintergrund
+
+Mit Phase 2a wurde die kanonische Datenreinheit geschaffen.
+
+Mit Phase 2b entstand die Canonical Decision Engine für Datei-Lebenszyklen.
+
+Inzwischen besitzt Kontinuum zusätzlich:
+
+* Continuous Canonical Governance
+* Canonical Architecture Manager
+* Canonical Artifact Manager
+* Internet Learning
+* Internet Knowledge Governance (IKG 1.0)
+* Provenienzsystem
+* Queue-/Review-Workflow
+
+Dadurch soll die ursprüngliche Idee der Phase 2b auf die heutige Gesamtarchitektur erweitert werden.
+
+---
+
+# 1. CDE 2.0 – Canonical Decision Engine
+
+Die CDE bleibt ausschließlich für Projektartefakte verantwortlich.
+
+Entscheidungen über:
+
+* Dateien
+* Dokumente
+* Reports
+* Konfigurationen
+* Skripte
+* Manifeste
+* Projektstruktur
+* Archivierung
+* Konsolidierung
+* Review-Markierungen
+
+Die bisherigen Sicherheitsregeln bleiben unverändert:
+
+* keine automatische Löschung
+* keine automatische Konsolidierung
+* vollständige Nachvollziehbarkeit
+* append-only Logging
+* Canonical-Governance beachten
+
+---
+
+# 2. CKDE 1.0 – Canonical Knowledge Decision Engine
+
+Bitte als neue eigenständige Architekturkomponente ergänzen.
+
+Verantwortlich ausschließlich für Wissensobjekte.
+
+Nicht für Dateien.
+
+Nicht für Dokumente.
+
+Nicht für Quellcode.
+
+---
+
+## Aufgaben
+
+Für jedes neu erkannte Wissenselement automatisch bewerten:
+
+* Quellenqualität
+* Evidenz
+* Aktualität
+* Vollständigkeit
+* Provenienz
+* Konsistenz
+* Governance-Konformität
+* Konflikte
+* Vertrauensniveau
+
+---
+
+## Entscheidungsklassen
+
+CKDE entscheidet ausschließlich zwischen:
+
+* ACCEPT
+* REVIEW
+* REJECT
+* CONFLICT
+
+Keine automatische Übernahme in den kanonischen Wissensbestand.
+
+---
+
+# 3. Architektur
+
+Bitte folgende Schichten dokumentieren:
+
+```text
+Internet
+        ↓
+Internet Learning
+        ↓
+IKG 1.0
+        ↓
+CKDE 1.0
+        ↓
+Review Queue
+        ↓
+Governance Review
+        ↓
+Canonical Knowledge
+```
+
+Parallel dazu:
+
+```text
+Projektdateien
+        ↓
+CAM
+        ↓
+CDE 2.0
+        ↓
+Archiv / Aktiv / Review
+```
+
+Beide Entscheidungswege sollen vollständig voneinander getrennt bleiben.
+
+---
+
+# 4. Zusammenarbeit
+
+Bitte dokumentieren, wie folgende Komponenten zusammenarbeiten:
+
+* CAM
+* CDE
+* IKG
+* CKDE
+* Continuous Canonical Governance
+* Release Integrity Framework
+
+---
+
+# 5. Datenhaltung
+
+Neue Bereiche:
+
+* knowledge_evaluations
+* source_ratings
+* knowledge_conflicts
+* evaluation_history
+
+Alle Bewertungen:
+
+* append-only
+* versioniert
+* auditierbar
+* reproduzierbar
+
+---
+
+# 6. Quellenbewertung
+
+Bitte ein mehrstufiges Vertrauensmodell einführen.
+
+Beispielsweise:
+
+Klasse A
+
+* Universitäten
+* wissenschaftliche Publikationen
+* Behörden
+* offizielle Dokumentationen
+
+Klasse B
+
+* Fachbücher
+* Fachorganisationen
+* technische Standards
+
+Klasse C
+
+* etablierte Fachportale
+* Wikipedia
+* seriöse Nachrichtenquellen
+
+Klasse D
+
+* Foren
+* Communitys
+* Reddit
+
+Klasse E
+
+* Social Media
+* unbekannte Quellen
+
+Die Bewertungsparameter sollen später erweiterbar bleiben.
+
+---
+
+# 7. Konfliktmanagement
+
+Widersprüchliche Informationen dürfen niemals automatisch entschieden werden.
+
+Stattdessen:
+
+* beide Quellen speichern
+* beide Provenienzen sichern
+* Konflikt protokollieren
+* Governance-Review erzeugen
+
+---
+
+# 8. GUI
+
+Bitte neue Ansicht ergänzen:
+
+**Knowledge Governance**
+
+anzeigen:
+
+* Quelle
+* Bewertung
+* Vertrauensklasse
+* Evidenz
+* Konflikte
+* Provenienz
+* Reviewstatus
+
+---
+
+# 9. Dokumentation
+
+Bitte aktualisieren:
+
+* Architekturmodell
+* Projektstruktur
+* Governance-Dokumentation
+* IKG 1.0
+* CAM-Dokumentation
+* CDE-Dokumentation
+* GUI-Dokumentation
+* Projektchronik
+
+---
+
+# 10. Tests
+
+Bitte Regressionstests ergänzen:
+
+* CDE-Dateientscheidungen
+* CKDE-Wissensentscheidungen
+* Quellenklassifikation
+* Konflikterkennung
+* Provenienzprüfung
+* Governanceprüfung
+* Append-only-Verhalten
+* Release-Gates
+
+---
+
+# 11. Canonical-Gates
+
+Bitte erweitern.
+
+Die Gates prüfen künftig zusätzlich:
+
+* CDE vorhanden
+* CKDE vorhanden
+* Bewertungsprotokolle vorhanden
+* Quellenbewertungen vollständig
+* Konflikte nachvollziehbar
+* Provenienz vollständig
+* Governance eingehalten
+
+---
+
+## Wichtige Vorgaben
+
+* Keine automatische Wissensübernahme.
+* Keine Löschung bestehender Daten.
+* Keine Änderung bestehender Governance-Regeln.
+* Vollständige Nachvollziehbarkeit aller Entscheidungen.
+* Alle Bewertungen müssen auditierbar und reproduzierbar sein.
+* CDE und CKDE besitzen klar getrennte Verantwortungsbereiche.
+
+## Ziel
+
+Nach Abschluss besitzt Projekt Kontinuum eine einheitliche kanonische Entscheidungsarchitektur:
+
+* **CDE 2.0** verwaltet den Lebenszyklus aller Projektartefakte.
+* **CKDE 1.0** verwaltet den Lebenszyklus allen neu gewonnenen Wissens.
+
+Damit werden sowohl Dateien als auch Wissen nach denselben Governance-Grundsätzen bewertet, jedoch durch spezialisierte Entscheidungsinstanzen mit klar getrennten Verantwortlichkeiten.
+
+Ich würde den Auftrag in drei klar getrennte Arbeitspakete aufteilen:
+
+CDE 2.0 refaktorieren
+Phase-2b auf die aktuelle 34.1-Architektur übertragen.
+Nur Entscheidungen über Projektartefakte.
+CKDE 1.0 entwerfen
+Architektur und Schnittstellen.
+Noch keine komplexen Bewertungsalgorithmen, sondern zunächst die Struktur.
+Integration und Kanonisierung
+Dokumentation.
+Tests.
+Release-Gates.
+Projektchronik.
+Abschlussbericht.
+
+So bleibt jeder Schritt überschaubar und ihr könnt nach jedem Abschnitt prüfen, ob alles weiterhin stabil läuft.
+
+Was ich langfristig ergänzen würde
+
+Jetzt, wo Internet-Learning dauerhaft aktiv ist, sehe ich drei nächste Qualitätsstufen:
+
+Quellenreputation
+Nicht nur erlaubte Quellen, sondern ein Vertrauensprofil pro Quelle.
+Lernstatistik
+Wie viele Quellen wurden besucht?
+Wie viele Einträge wurden verworfen?
+Wie viele warten auf Review?
+Wie viele wurden kanonisch übernommen?
+Lern-Dashboard
+Eine kleine Statusübersicht mit Kennzahlen wie:
+Internet-Learning: Aktiv
+Queue: 12 Einträge
+Review offen: 5
+Kanonisch übernommen: 2
+Letzte Synchronisation: vor 15 Minuten
+
+Das wären eher Komfort- und Transparenzfunktionen als neue Kernlogik.

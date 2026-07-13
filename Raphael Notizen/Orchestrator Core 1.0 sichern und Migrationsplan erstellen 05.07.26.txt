@@ -1,0 +1,76 @@
+Orchestrator Core 1.0 sichern und Migrationsplan erstellen 05.07.26
+
+Ziel:
+Keine weitere Implementierung. Nur den heutigen Orchestrator-Core-Stand prüfen und einen kontrollierten Migrationsplan für den alten PromptOrchestrator-Direktpfad erstellen.
+
+Aufgaben:
+
+1. Git-Status prüfen.
+2. Kurz prüfen, ob Orchestrator Core, Schema und Tests vorhanden sind.
+3. Keine Dateien ändern, außer optional eine kurze Migrationsnotiz.
+4. Altpfade auflisten:
+
+   * _handle_routed
+   * _handle_named_agent
+   * _handle_capability
+   * agent_router.route
+   * file_agent.handle_command
+   * web_agent.handle_command
+5. Migrationsplan erstellen:
+
+   * welche Stelle zuerst umgestellt werden sollte
+   * welche Tests vorher nötig sind
+   * welche Risiken bestehen
+   * welche Rückfallstrategie sinnvoll ist
+6. Kein Commit.
+
+Regeln:
+
+* Keine Implementierung.
+* Keine Migration.
+* Keine Architekturänderung.
+* Keine Archivierung.
+* Nur prüfen und berichten.
+
+Umsetzung:
+
+Kurzprüfung
+Git-Status: stark schmutzig, viele bestehende Änderungen und untracked Dateien. Kein Commit durchgeführt.
+Orchestrator-Artefakte vorhanden:
+01_system/kontinuum/core/orchestrator_core.py: vorhanden
+24_config/orchestrator_runtime_schema_34_1.json: vorhanden
+17_tests/test_orchestrator_core_1_0.py: vorhanden
+Kernklassen vorhanden:
+OrchestratorCore
+ExecutionRun
+ExecutionTask
+ExecutionResult
+OrchestratorError
+Altpfade
+In [application_services.py (line 377)](C:/Projekt Kontinuum/01_system/kontinuum/core/application_services.py:377) bestehen noch direkte Runtime-Pfade:
+web_agent.handle_command: Zeilen 377 und 524
+file_agent.handle_command: Zeilen 381 und 514
+agent_router.route: Zeilen 431 und 454
+_handle_routed: Zeile 460
+_handle_named_agent: Zeile 561
+_handle_capability: Zeile 568
+Migrationsplan
+Zuerst nicht die Agenten anfassen, sondern PromptOrchestrator.handle() umrüsten: Nach CRE → ExecutionPlanner soll bei plan.status == ready der neue orchestrator_core.run(plan, payload) als kontrollierter Pfad genutzt werden.
+
+Vorher Tests ergänzen:
+Dialog-/Statusbefehle bleiben stabil.
+FileAgent/WebAgent-Aufträge werden als ExecutionPlan ausgeführt.
+handled=False nutzt nur erlaubten Fallback.
+Blockierte Governance verhindert Agentenstart.
+Alter Direktpfad bleibt per Feature-Flag oder Fallback abschaltbar.
+
+Risiken:Viele Spezialfälle liegen noch in application_services.py.
+File/Web-Agenten haben eigene handle_command-Schnittstellen, nicht nur agent.handle.
+Direkte Memory-/Knowledge-Pfade könnten unbeabsichtigt weiterlaufen.
+Der Worktree ist bereits stark verändert; Migration sollte erst nach gemeinsamer Kontrollsicherung erfolgen.
+
+Rückfallstrategie:Feature-Flag: orchestrator_runtime_enabled.
+Bei Orchestrator-Fehler sauber auf bisherigen Direktpfad zurückfallen, aber mit sichtbarer Quelle OrchestratorFallback.
+Direktpfad erst entfernen, wenn Regressionstests für File/Web/Knowledge/Memory/Status grün sind.
+
+Empfehlung: Als nächstes nur eine kleine Migrationsbrücke bauen, nicht den Direktpfad löschen.

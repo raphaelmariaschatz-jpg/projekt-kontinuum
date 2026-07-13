@@ -1,0 +1,9 @@
+{
+  "version": "13.0 Human Civilization & Consciousness Core",
+  "windows_supported": true,
+  "android_supported": true,
+  "human_core": true,
+  "civilization_core": true,
+  "superadmin": "Raphael Schatz",
+  "ollama_model": "llama3.2"
+}

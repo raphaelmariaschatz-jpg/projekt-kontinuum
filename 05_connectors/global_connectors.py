@@ -1,3 +1,12 @@
+Status: AUFBEWAHREN
+Kategorie: nützlicher historischer/experimenteller Connector
+Nicht löschen.
+Nicht produktiv aktivieren.
+Später als Vorlage für einen kanonischen Global Knowledge Discovery Connector verwenden.
+
+
+
+
 #!/usr/bin/env python3
 """Low-volume discovery connector for global public knowledge APIs."""
 

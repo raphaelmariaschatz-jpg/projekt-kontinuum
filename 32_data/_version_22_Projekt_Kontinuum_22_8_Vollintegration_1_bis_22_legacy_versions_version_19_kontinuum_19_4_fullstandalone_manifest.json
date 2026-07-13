@@ -1,0 +1,16 @@
+{
+  "name": "Projekt Kontinuum",
+  "version": "19.4",
+  "type": "FULL_STANDALONE",
+  "created": "2026-06-06T17:02:42",
+  "contains": [
+    "All prior 19.1-19.3 features",
+    "Natural language router",
+    "Question answering for core knowledge",
+    "Calculator recognition",
+    "Research term recognition without URL",
+    "URL and file detection",
+    "GUI background thread",
+    "BAT files"
+  ]
+}

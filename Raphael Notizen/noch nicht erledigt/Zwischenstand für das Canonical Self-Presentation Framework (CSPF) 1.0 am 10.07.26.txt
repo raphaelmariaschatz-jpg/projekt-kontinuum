@@ -1,0 +1,88 @@
+Der aktuelle Stand für das Canonical Self-Presentation Framework (CSPF) 1.0 wäre dann:
+
+✅ Teil 1–15 abgeschlossen (Teil 15 in 15a–15c aufgeteilt)
+
+Danach folgen aus meiner Sicht noch:
+
+Teil 16 – Canonical Self-Presentation Intelligence (CSPI) 1.0
+
+Der "intelligente" Teil des CSPF:
+
+Selbstanalyse
+Präsentationsoptimierung
+Zielgruppenanalyse
+Feedback-Auswertung
+Qualitätsverbesserung
+kontinuierliches Lernen der Präsentationsmodelle
+Teil 17 – Canonical Knowledge & Semantic Presentation (CKSP) 1.0
+
+Wie Wissen präsentiert wird:
+
+semantische Modelle
+Wissensrepräsentation
+erklärende Präsentationen
+Quellenverknüpfung
+Unsicherheiten
+Nachvollziehbarkeit von Aussagen
+Teil 18 – Canonical Human Interaction & Experience (CHIX) 1.0
+
+Der Mensch im Mittelpunkt:
+
+Dialogführung
+multimodale Kommunikation
+Emotionserkennung (ohne emotionale Manipulation)
+Barrierefreiheit
+Kinderprofile
+Seniorenprofile
+kulturelle Anpassungen
+Sprachsteuerung
+
+Hier können wir auch deine bereits festgelegten kindgerechten Präsentationsprofile vollständig integrieren.
+
+Teil 19 – Canonical Operations, Monitoring & Analytics (COMA) 1.0
+
+Der Betrieb:
+
+Monitoring
+Telemetrie
+Metriken
+Dashboards
+Audit-Auswertungen
+Performance
+Fehlermanagement
+Reporting
+
+Dieser Teil ergänzt sehr gut deine bisherigen Ideen zum Governance Dashboard / Operations Monitor.
+
+Teil 20 – Canonical Reference Architecture & Final Standard (CRAF) 1.0
+
+Der Abschluss des gesamten CSPF.
+
+Hier werden alle vorherigen Teile zusammengeführt:
+
+Gesamtarchitektur
+Referenzimplementierung
+Referenzdiagramme
+Abhängigkeiten
+vollständiges Datenmodell
+vollständige API-Landschaft
+Zusammenfassung aller Standards
+End-to-End-Beispiele
+finale Checklisten
+vollständige Release-Spezifikation für CSPF 1.0
+Warum genau diese fünf Teile?
+
+Damit folgt das Framework einer klaren Entwicklung:
+
+Grundlagen & Architektur (Teile 1–5)
+Governance, Persönlichkeit & Kontext (6–10)
+Lifecycle, Sicherheit & Validierung (11–14)
+APIs & Ecosystem (15)
+Intelligenz & Wissenspräsentation (16–17)
+Menschliche Interaktion (18)
+Betrieb & Monitoring (19)
+Referenzstandard & Abschluss (20)
+
+Ich halte diese Aufteilung für ausgewogen: Jeder Auftrag bleibt in einer Größe, die Codex gut verarbeiten kann, und jeder Abschnitt bildet einen eigenständigen Architekturbaustein.
+
+Ein zusätzlicher Vorteil ist, dass das Canonical Self-Presentation Framework (CSPF) 1.0 damit genau 20 logisch aufeinander aufbauende Hauptteile umfasst – ein sauberer Abschluss, der sich später bei Bedarf in einer Version 2.0 gezielt erweitern lässt, ohne die Struktur des 1.0-Standards zu verändern.

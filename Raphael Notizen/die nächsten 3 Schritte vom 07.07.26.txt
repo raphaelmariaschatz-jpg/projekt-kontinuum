@@ -1,0 +1,21 @@
+🥇 1. CDG 1.0
+Kanonische Entwicklungsverfassung erstellen.
+
+↓
+
+🥈 2. Architekturabschluss Phase 1
+Offizieller Übergang zu Phase 2 einschließlich CCP, CLU und Transformer-Architektur.
+
+↓
+
+🥉 3. CDF 1.0
+Gesamtes Entwicklungsökosystem von Projekt Kontinuum kanonisch beschreiben und alle Governance-Bausteine in einem Framework zusammenführen.
+
+wird ersetzt durch:
+
+
+Copyright- und Eigentumskennzeichnung
+Canonical Intellectual Property Ledger (CIPL) 1.0
+Canonical Development Governance (CDG) 1.0
+Abschluss der Architekturphase → Phase 2 „Controlled Integration & Operation“
+Canonical Development Framework (CDF) 1.0

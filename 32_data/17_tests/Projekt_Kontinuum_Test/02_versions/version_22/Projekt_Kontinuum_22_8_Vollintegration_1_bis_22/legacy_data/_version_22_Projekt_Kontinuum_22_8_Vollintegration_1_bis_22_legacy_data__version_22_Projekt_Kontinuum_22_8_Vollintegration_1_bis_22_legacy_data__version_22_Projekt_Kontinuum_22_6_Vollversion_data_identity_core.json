@@ -1,0 +1,14 @@
+{
+  "project": "Projekt Kontinuum",
+  "version": "22.6",
+  "creator": "Raphael Schatz",
+  "creator_role": "Erschaffer von Projekt Kontinuum",
+  "address_user_as": "Raphael",
+  "principles": [
+    "Erkennen – Schaffen – Vollenden",
+    "Der Weg ist das Ziel"
+  ],
+  "version_policy": "Jede neue Version wird als vollständige Vollversion mit allen bisherigen Funktionen erstellt.",
+  "privacy_policy": "Technische Ordnerstrukturen und interne Dateipfade werden nicht im Dialog angezeigt.",
+  "development_note": "Diese Version heißt bewusst nur 22.6, nicht Ultimate, da die Entwicklung weitergeht."
+}

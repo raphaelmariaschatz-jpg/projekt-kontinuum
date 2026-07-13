@@ -1,0 +1,34 @@
+Codex-Auftrag 1 – Phase 3 Stabilization Policy vom 28.06.26
+
+Ich setze die drei Aufträge als kleine Governance-Erweiterung um: erst vorhandene Phase-3-Reports und Hashes einsammeln, dann die neuen Dateien lokal bauen, dann kontrolliert nach C:\Projekt Kontinuum kopieren und den Statuscheck erneut laufen lassen.
+
+Die bestehende Konfiguration bestätigt die Komponenten CGM/DDE/CIC/GEL und den Read-only-Charakter der Baseline. Jetzt lese ich die aktuellen Reportwerte, damit Stable-Run und Summary nicht nur Textschablonen sind, sondern den tatsächlichen Betriebszustand abbilden.
+
+Der aktuelle MEDIUM-Drift ist genau der Fall, den du beschrieben hast: sechs Hash-Abweichungen, aber keine HIGH-Findings und keine unmanaged Top-Level-Einträge. Ich generiere jetzt daraus die Policy, Stable-Run-Baseline und den menschenlesbaren Summary-Report.
+
+Vor den Dateischreibungen lege ich die Artefakte erst im Arbeitsordner an und kopiere sie danach nach C:\Projekt Kontinuum. So bleibt klar, was neu erzeugt wurde, und die finalen Dateien werden anschließend als read-only markiert.
+
+Der Generator ist angelegt. Ich lasse ihn jetzt laufen, prüfe die JSON-Dateien syntaktisch und kopiere die drei fertigen Artefakte danach in die vorgesehenen Projektpfade. Die Artefakte sind erzeugt. Ich validiere jetzt kurz Inhalt und JSON-Parse, bevor ich sie ins Projekt übernehme.
+
+Die Markdown-Zusammenfassung sieht sauber aus. Die JSON-Pretty-Ausgabe war nur zu groß für den kurzen Lauf; ich prüfe die Dateien jetzt parse-only ohne Ausgabe. PowerShell ist hier schneller als der Python-Startup auf dieser Maschine. Ich nehme die JSON-Validierung mit ConvertFrom-Json und kopiere danach. JSON ist gültig: Policy ACTIVE, Stable-Run Stable, beide read-only markiert im Inhalt. Jetzt übernehme ich die drei Dateien in die Zielordner und setze zusätzlich das Windows-ReadOnly-Attribut.
+
+Die Dateien liegen jetzt im Projekt und sind auf Dateisystemebene read-only. Ich mache noch die Abschlussprüfung: Existenz, Attribute, JSON-Parse und dann den 34.1-Statuscheck. Die drei Zielartefakte sind vorhanden, gültig und read-only. Jetzt kommt der Live-Statuscheck; ich erwarte weiterhin VERIFIZIERT / JA, wobei der bestehende MEDIUM-Drift durch die neue Policy dokumentiert ist.
+
+Ein wichtiger kleiner Haken: Der Statuscheck aktualisiert die Governance-Reports, dadurch wären die zuvor gespeicherten Report-Hashes in der Stable-Run-Datei nicht mehr der allerletzte Stand. Ich regeneriere Stable-Run und Summary jetzt direkt nach dem grünen Statuscheck und überschreibe nur diese abgeleiteten Artefakte noch einmal read-only.
+
+Die abgeleiteten Dateien sind jetzt nach dem grünen Statuscheck neu geschrieben. Ich prüfe zum Schluss, dass die Stable-Run-Hashes mit den aktuellen Report-Dateien übereinstimmen.
+
+Erledigt. Die drei Phase-3-Artefakte sind in C:\Projekt Kontinuum angelegt und als read-only markiert:
+[phase3_stabilization_policy_34_1.json](C:/Projekt Kontinuum/24_config/phase3_stabilization_policy_34_1.json)
+[phase3_stable_run_34_1.json](C:/Projekt Kontinuum/24_config/phase3_stable_run_34_1.json)
+[phase3_governance_summary_34_1.md](C:/Projekt Kontinuum/22_project_chronicle/phase3_governance_summary_34_1.md)
+Der Live-Statuscheck lief grün:
+Kontinuum 34.1 Statusprüfung
+Status: VERIFIZIERT
+Freigabe: JA
+Wichtig: Ich habe die Stable-Run-Datei nach dem Statuscheck noch einmal regeneriert, damit die gespeicherten Report-Hashes dem aktuellen Stand entsprechen. Abschlussprüfung: alle gespeicherten Hashes in phase3_stable_run_34_1.json matchen die aktuellen Governance-Reports und die Canonical Baseline.
+
+
+
+
+

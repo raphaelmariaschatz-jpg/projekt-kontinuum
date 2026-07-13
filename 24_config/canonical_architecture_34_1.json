@@ -169,6 +169,13 @@
                                      {
                                          "name":  "Orchestrator Runtime Schema",
                                          "path":  "24_config/orchestrator_runtime_schema_34_1.json"
+                                     },
+                                     {
+                                         "name":  "Canonical Intellectual Property Ledger",
+                                         "path":  "24_config/canonical_ip_ledger_1_0.json",
+                                         "documentation":  "14_documents/CANONICAL_IP_LEDGER_1_0.md",
+                                         "role":  "governance_provenance_ledger",
+                                         "runtime_effect":  "none"
                                      }
                                  ],
                    "operational":  [

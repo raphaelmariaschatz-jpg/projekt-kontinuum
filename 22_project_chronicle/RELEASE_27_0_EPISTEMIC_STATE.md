@@ -30,3 +30,6 @@ Nach der Aktivierung auf dem bestehenden Wissensbestand:
 - 44 aktive epistemische Prüf- und Meta-Lernlücken sichtbar
 - historische Versionsübergänge erfolgreich von aktuellen Konflikten getrennt
 - Kontrolllauf bestätigte keine Selbstreintegration durch epistemische Abfragen
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

@@ -1,0 +1,129 @@
+{
+  "curricula": {
+    "Naturwissenschaften": {
+      "Mathematik": {
+        "status": "angelegt",
+        "progress_percent": 0,
+        "first_steps": [
+          "Grundbegriffe von Mathematik sammeln",
+          "zentrale Teilgebiete von Mathematik strukturieren",
+          "Quellen zu Mathematik bewerten",
+          "Mathematik mit anderen Wissensgebieten verknüpfen"
+        ]
+      },
+      "Physik": {
+        "status": "angelegt",
+        "progress_percent": 0,
+        "first_steps": [
+          "Grundbegriffe von Physik sammeln",
+          "zentrale Teilgebiete von Physik strukturieren",
+          "Quellen zu Physik bewerten",
+          "Physik mit anderen Wissensgebieten verknüpfen"
+        ]
+      },
+      "Chemie": {
+        "status": "angelegt",
+        "progress_percent": 0,
+        "first_steps": [
+          "Grundbegriffe von Chemie sammeln",
+          "zentrale Teilgebiete von Chemie strukturieren",
+          "Quellen zu Chemie bewerten",
+          "Chemie mit anderen Wissensgebieten verknüpfen"
+        ]
+      },
+      "Biologie": {
+        "status": "angelegt",
+        "progress_percent": 0,
+        "first_steps": [
+          "Grundbegriffe von Biologie sammeln",
+          "zentrale Teilgebiete von Biologie strukturieren",
+          "Quellen zu Biologie bewerten",
+          "Biologie mit anderen Wissensgebieten verknüpfen"
+        ]
+      },
+      "Geologie": {
+        "status": "angelegt",
+        "progress_percent": 0,
+        "first_steps": [
+          "Grundbegriffe von Geologie sammeln",
+          "zentrale Teilgebiete von Geologie strukturieren",
+          "Quellen zu Geologie bewerten",
+          "Geologie mit anderen Wissensgebieten verknüpfen"
+        ]
+      },
+      "Astronomie": {
+        "status": "angelegt",
+        "progress_percent": 0,
+        "first_steps": [
+          "Grundbegriffe von Astronomie sammeln",
+          "zentrale Teilgebiete von Astronomie strukturieren",
+          "Quellen zu Astronomie bewerten",
+          "Astronomie mit anderen Wissensgebieten verknüpfen"
+        ]
+      },
+      "Astrophysik": {
+        "status": "angelegt",
+        "progress_percent": 0,
+        "first_steps": [
+          "Grundbegriffe von Astrophysik sammeln",
+          "zentrale Teilgebiete von Astrophysik strukturieren",
+          "Quellen zu Astrophysik bewerten",
+          "Astrophysik mit anderen Wissensgebieten verknüpfen"
+        ]
+      },
+      "Medizin": {
+        "status": "angelegt",
+        "progress_percent": 0,
+        "first_steps": [
+          "Grundbegriffe von Medizin sammeln",
+          "zentrale Teilgebiete von Medizin strukturieren",
+          "Quellen zu Medizin bewerten",
+          "Medizin mit anderen Wissensgebieten verknüpfen"
+        ]
+      },
+      "Informatik": {
+        "status": "angelegt",
+        "progress_percent": 0,
+        "first_steps": [
+          "Grundbegriffe von Informatik sammeln",
+          "zentrale Teilgebiete von Informatik strukturieren",
+          "Quellen zu Informatik bewerten",
+          "Informatik mit anderen Wissensgebieten verknüpfen"
+        ]
+      },
+      "Materialwissenschaft": {
+        "status": "angelegt",
+        "progress_percent": 0,
+        "first_steps": [
+          "Grundbegriffe von Materialwissenschaft sammeln",
+          "zentrale Teilgebiete von Materialwissenschaft strukturieren",
+          "Quellen zu Materialwissenschaft bewerten",
+          "Materialwissenschaft mit anderen Wissensgebieten verknüpfen"
+        ]
+      },
+      "Umweltwissenschaft": {
+        "status": "angelegt",
+        "progress_percent": 0,
+        "first_steps": [
+          "Grundbegriffe von Umweltwissenschaft sammeln",
+          "zentrale Teilgebiete von Umweltwissenschaft strukturieren",
+          "Quellen zu Umweltwissenschaft bewerten",
+          "Umweltwissenschaft mit anderen Wissensgebieten verknüpfen"
+        ]
+      },
+      "Raumfahrttechnik": {
+        "status": "angelegt",
+        "progress_percent": 0,
+        "first_steps": [
+          "Grundbegriffe von Raumfahrttechnik sammeln",
+          "zentrale Teilgebiete von Raumfahrttechnik strukturieren",
+          "Quellen zu Raumfahrttechnik bewerten",
+          "Raumfahrttechnik mit anderen Wissensgebieten verknüpfen"
+        ]
+      }
+    }
+  },
+  "progress": {
+    "Naturwissenschaften": 0
+  }
+}

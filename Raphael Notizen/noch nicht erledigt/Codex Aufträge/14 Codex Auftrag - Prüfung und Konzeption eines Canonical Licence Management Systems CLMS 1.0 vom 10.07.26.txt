@@ -1,0 +1,248 @@
+# Codex-Prüfauftrag – Canonical Licence Management System Framework (CLMSF) 1.0 10.07.26
+
+## Ziel
+
+Prüfe und entwerfe ein **Canonical Licence Management System Framework (CLMSF) 1.0** als kanonischen Architekturbaustein von **Projekt Kontinuum**.
+
+Es soll **keine konkrete Implementierung** eines Lizenzsystems erfolgen.
+
+Ziel ist die Entwicklung eines langfristig stabilen Frameworks, das die kanonischen Regeln, Verantwortlichkeiten, Komponenten und Erweiterungspunkte für sämtliche zukünftigen Lizenzmechanismen definiert.
+
+Das Framework soll dieselbe Rolle übernehmen wie das Canonical Development Framework (CDF) und das Canonical Authentication Framework (CAF).
+
+---
+
+## Grundsatz
+
+Das CLMSF definiert ausschließlich die Architektur.
+
+Konkrete Manager, Services oder Runtime-Komponenten werden erst in späteren Entwicklungsphasen implementiert.
+
+Das Framework bildet die verbindliche Grundlage für alle zukünftigen Lizenzfunktionen innerhalb von Projekt Kontinuum.
+
+---
+
+# Prüfauftrag
+
+Analysiere die bestehende Architektur vollständig.
+
+Untersuche insbesondere:
+
+* Foundation Layer
+* Canonical Layer
+* Operational Layer
+* Learning Layer
+* Governance
+* CAM
+* CDF
+* CAF
+* CCP
+* bestehende Registry- und Manager-Strukturen
+* Release-Integrity
+* vorhandene Policies
+* Konfigurationsdateien
+* Dokumentation
+* Architekturdiagramme
+
+Prüfe, wie sich ein kanonisches Lizenzframework sauber integrieren lässt, ohne bestehende Komponenten zu verändern oder Verantwortlichkeiten zu vermischen.
+
+---
+
+# Zu prüfende Architektur
+
+Entwerfe eine mögliche Zielarchitektur für das CLMSF.
+
+Mindestens folgende Bereiche sollen bewertet werden:
+
+## 1. Canonical Licence Identity
+
+Definition einer eindeutigen Lizenzidentität.
+
+Zu prüfen:
+
+* Licence-ID
+* Typ
+* Version
+* Besitzer
+* Herkunft
+* Historie
+* Status
+* Gültigkeit
+
+---
+
+## 2. Canonical Licence Registry
+
+Konzeption einer zentralen Registry.
+
+Zu prüfen:
+
+* Registrierung
+* Versionierung
+* Suche
+* Historie
+* Integritätsprüfung
+* Referenzen
+
+---
+
+## 3. Canonical Licence Lifecycle
+
+Definition des vollständigen Lebenszyklus.
+
+Mögliche Zustände:
+
+* Draft
+* Active
+* Suspended
+* Expired
+* Revoked
+* Archived
+
+Prüfen, ob weitere Zustände sinnvoll sind.
+
+---
+
+## 4. Canonical Licence Validation
+
+Prüfen, wie zukünftige Validierungen erfolgen könnten.
+
+Beispiele:
+
+* Signaturprüfung
+* Ablaufdatum
+* Integrität
+* Berechtigungen
+* Kompatibilität
+* Vertrauensstatus
+
+Es erfolgt keine Implementierung.
+
+---
+
+## 5. Canonical Licence Policies
+
+Definition möglicher Richtlinien.
+
+Beispiele:
+
+* Vergabe
+* Nutzung
+* Übertragung
+* Sperrung
+* Verlängerung
+* Widerruf
+* Archivierung
+
+---
+
+## 6. Canonical Licence Audit
+
+Prüfen, wie sämtliche Lizenzereignisse revisionssicher dokumentiert werden können.
+
+Mögliche Inhalte:
+
+* Zeitstempel
+* Aktion
+* Benutzer
+* Quelle
+* Ergebnis
+* Historie
+
+---
+
+## 7. Canonical Licence Security
+
+Untersuchen:
+
+* Manipulationsschutz
+* Integrität
+* Signaturen
+* Hash-Verfahren
+* Vertrauensketten
+* Schutz vor Duplikaten
+
+---
+
+## 8. Canonical Licence Compliance
+
+Prüfen, wie Compliance-Regeln integriert werden können.
+
+Beispiele:
+
+* Lizenzbedingungen
+* Open-Source-Kompatibilität
+* Unternehmensrichtlinien
+* Forschungslizenzen
+* Private Nutzung
+
+---
+
+## 9. Canonical Licence Export
+
+Bewerten, wie Lizenzinformationen künftig exportiert werden können.
+
+Mögliche Formate:
+
+* JSON
+* Markdown
+* Reports
+* Audit-Protokolle
+
+---
+
+## 10. Erweiterbarkeit
+
+Das Framework muss ausdrücklich auf zukünftige Erweiterungen vorbereitet werden.
+
+Beispiele:
+
+* digitale Signaturen
+* Mehrmandantenfähigkeit
+* Cloud-Deployment
+* Offline-Betrieb
+* Unternehmenslizenzen
+* Forschungslizenzen
+* Privatlizenzen
+* API-Anbindung
+* externe Lizenzserver
+
+---
+
+# Architekturprinzipien
+
+Das CLMSF muss:
+
+* vollständig kanonisch aufgebaut sein,
+* modular erweiterbar sein,
+* strikt von Runtime-Komponenten getrennt bleiben,
+* keine bestehenden Verantwortlichkeiten verletzen,
+* mit CAM, CDF, CAF und CCP kompatibel sein,
+* auditierbar sein,
+* releasefähig sein,
+* langfristig stabil bleiben.
+
+---
+
+# Erwartetes Ergebnis
+
+Erstelle einen vollständigen Architekturvorschlag für **CLMSF 1.0**.
+
+Der Bericht soll enthalten:
+
+* Architekturübersicht
+* Verantwortlichkeiten
+* Komponentenmodell
+* Beziehungen zu bestehenden Frameworks
+* Erweiterungspunkte
+* Risiken
+* Empfehlungen
+* Integrationsstrategie
+* mögliche Dateistruktur
+* erforderliche Dokumente
+* Konfigurationsdateien
+* Statusbericht
+
+Es dürfen **keine produktiven Änderungen** vorgenommen werden.
+
+Es erfolgt ausschließlich Analyse, Architekturentwurf und Vorbereitung einer späteren kanonischen Implementierung.

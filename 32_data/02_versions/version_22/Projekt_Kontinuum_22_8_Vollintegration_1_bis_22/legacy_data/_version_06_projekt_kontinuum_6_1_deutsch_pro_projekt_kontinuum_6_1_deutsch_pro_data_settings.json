@@ -1,0 +1,14 @@
+{
+  "version": "6.1 Deutsch Pro",
+  "voice_enabled": true,
+  "voice_language": "de-DE",
+  "wake_word": "hallo kontinuum",
+  "require_wake_word": false,
+  "vosk_model_path": "models/vosk-model-small-de-0.15",
+  "samplerate": 16000,
+  "voice_timeout_seconds": 10,
+  "speech_rate": 175,
+  "auto_link": true,
+  "agents_enabled": true,
+  "network_enabled": true
+}

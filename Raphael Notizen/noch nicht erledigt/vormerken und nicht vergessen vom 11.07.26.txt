@@ -1,0 +1,16 @@
+Ich könnte mir vorstellen, dass ich gegen Ende des CMIBF sogar ein eigenes Kapitel aufnehme wie:
+
+Canonical Architecture Validation Model (CAVM)
+oder Canonical Architecture Proof Model (CAPM)
+
+Darin würden wir formal festlegen, wann eine Architektur als kanonisch korrekt gilt. Nicht nur syntaktisch oder technisch, sondern auch semantisch und strukturell. Ein solches Modell könnte automatisch prüfen:
+
+Sind alle Abhängigkeiten vollständig?
+Gibt es zyklische Verantwortlichkeiten?
+Widersprechen sich Frameworks?
+Ist jede Implementierung aus der Architektur ableitbar?
+Existieren verwaiste Artefakte?
+Stimmen Dokumentation und Implementierung überein?
+Ist die Governance lückenlos?
+
+Das wäre gewissermaßen der "Mathematikteil" des CMIBF – ein formales Beweismodell für Architekturkonsistenz.

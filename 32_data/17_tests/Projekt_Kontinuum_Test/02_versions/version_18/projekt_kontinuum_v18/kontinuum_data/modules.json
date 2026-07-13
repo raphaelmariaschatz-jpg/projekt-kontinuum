@@ -1,0 +1,154 @@
+{
+  "registered": [
+    {
+      "name": "Core Engine",
+      "origin": "1-6",
+      "description": "Grundsystem und zentrale Steuerung",
+      "status": "active"
+    },
+    {
+      "name": "Memory Core",
+      "origin": "1-6",
+      "description": "Persistenter Langzeitspeicher",
+      "status": "active"
+    },
+    {
+      "name": "University Access",
+      "origin": "7",
+      "description": "Universitätsquellen und erlaubte Domains",
+      "status": "prepared"
+    },
+    {
+      "name": "Library Access",
+      "origin": "8",
+      "description": "Bibliotheks- und Buchquellen",
+      "status": "prepared"
+    },
+    {
+      "name": "Knowledge Linking",
+      "origin": "9",
+      "description": "Automatische Wissensverknüpfung",
+      "status": "active"
+    },
+    {
+      "name": "Science Core",
+      "origin": "10",
+      "description": "Naturwissenschaften, Technik, Architektur, Landwirtschaft",
+      "status": "active"
+    },
+    {
+      "name": "Human Civilization Core",
+      "origin": "11-13",
+      "description": "Geschichte, Philosophie, Religion, Kultur, Bewusstsein",
+      "status": "active"
+    },
+    {
+      "name": "Research Core",
+      "origin": "14",
+      "description": "Forschungsagenten und Hypothesen",
+      "status": "active"
+    },
+    {
+      "name": "Autonomous Learning Core",
+      "origin": "15",
+      "description": "Autonomes Lernen und Fortschritt",
+      "status": "active"
+    },
+    {
+      "name": "API Connector Framework",
+      "origin": "15.1",
+      "description": "API-, Browser- und Quellenadapter",
+      "status": "prepared"
+    },
+    {
+      "name": "Identity & Continuity Core",
+      "origin": "16",
+      "description": "Name, Selbstmodell, Mission, Ziele",
+      "status": "active"
+    },
+    {
+      "name": "Full Version Plugin Framework",
+      "origin": "17",
+      "description": "Vollintegration aller Module",
+      "status": "active"
+    },
+    {
+      "name": "Global Knowledge Network",
+      "origin": "18",
+      "description": "Weltweiter Wissensgraph und Wissenslandkarten",
+      "status": "prepared"
+    },
+    {
+      "name": "Planetary Intelligence Core",
+      "origin": "19",
+      "description": "Klima, Geologie, Ozeane, Ressourcen, Biosphäre",
+      "status": "prepared"
+    },
+    {
+      "name": "Civilization Simulation Core",
+      "origin": "20",
+      "description": "Simulation von Gesellschaft, Wirtschaft, Geschichte und Kultur",
+      "status": "prepared"
+    },
+    {
+      "name": "Universal Language Core",
+      "origin": "21",
+      "description": "Mehrsprachigkeit und sprachübergreifende Wissenssuche",
+      "status": "prepared"
+    },
+    {
+      "name": "Autonomous Research Core",
+      "origin": "22",
+      "description": "Eigenständige Forschung mit Agenten und Berichten",
+      "status": "prepared"
+    },
+    {
+      "name": "Scientific Discovery Core",
+      "origin": "23",
+      "description": "Entdeckung neuer Zusammenhänge und Forschungsfragen",
+      "status": "prepared"
+    },
+    {
+      "name": "Planetary Archive Core",
+      "origin": "24",
+      "description": "Archiv menschlichen Wissens, Kultur, Technik und Literatur",
+      "status": "prepared"
+    },
+    {
+      "name": "Interstellar Research Core",
+      "origin": "25",
+      "description": "Exoplaneten, Astrobiologie, Terraforming, Generationenschiffe",
+      "status": "prepared"
+    },
+    {
+      "name": "Consciousness Research Core",
+      "origin": "26",
+      "description": "Bewusstsein, Identität, Erinnerung und Kontinuität",
+      "status": "prepared"
+    },
+    {
+      "name": "Universal Knowledge Core",
+      "origin": "27",
+      "description": "Vereinheitlichung aller Wissensbereiche",
+      "status": "prepared"
+    },
+    {
+      "name": "Advanced Simulation Core",
+      "origin": "28",
+      "description": "komplexe Szenario- und Systemsimulation",
+      "status": "prepared"
+    },
+    {
+      "name": "Autonomous Coordination Core",
+      "origin": "29",
+      "description": "Koordination von Agenten, Zielen und Forschungsprogrammen",
+      "status": "prepared"
+    },
+    {
+      "name": "Kontinuum 30+ Vision Core",
+      "origin": "30",
+      "description": "langfristige Forschungs-, Lern-, Archiv- und Simulationsplattform",
+      "status": "prepared"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "project": "Projekt Kontinuum",
+  "version": "18.0",
+  "codename": "Vollaktiviert",
+  "database_path": "kontinuum/data/kontinuum.db",
+  "module_manifest": "config/modules.json",
+  "safe_external_access": true,
+  "vosk_models_dir": "models/vosk",
+  "auto_download_large_models": false,
+  "disk_warning_threshold_percent": 80,
+  "disk_monitor_path": "."
+}

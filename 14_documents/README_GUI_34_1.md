@@ -45,3 +45,6 @@ Kompatibilitätsweiterleitungen auf `START_GUI.bat`.
   letzte Events, Drift-Status, offene Governance-Hooks, blockierende Findings
   und die letzte Gate-Entscheidung. Die Anzeige ist diagnostisch und fuehrt
   keine automatische Kanonisierung aus.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

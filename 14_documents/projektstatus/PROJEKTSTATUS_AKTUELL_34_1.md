@@ -69,3 +69,6 @@ signierte Gate-Bericht Baseline, Audit-Snapshot, Backup-Verifikation,
 Rollback-Probe, Altversionssuche, vollständige Testsuite, Pfadkonsistenz und
 Chronikmigration gemeinsam bestätigt. Ein übersprungener Testlauf führt
 zwingend zu `NICHT VERIFIZIERT / Freigabe: NEIN`.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

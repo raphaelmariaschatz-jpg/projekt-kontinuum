@@ -136,3 +136,16 @@ analyse_*.txt
 
 # KI-/Sprachmodelle
 07_models/
+# Lokale große Laufzeitdateien
+02_versions/version_23/Kontinuum_23_0_Vollversion/13_tools/codex_cli/codex.exe
+32_data/kontinuum.db
+
+# Große lokale Modelle und Archive
+07_models/archived_models/*.zip
+
+# Lokale Datenbanken und Sicherungskopien
+32_data/*.db
+09_backups/**/32_data/*.db
+
+# Lokale ausführbare Codex-Dateien
+**/codex_cli/codex.exe

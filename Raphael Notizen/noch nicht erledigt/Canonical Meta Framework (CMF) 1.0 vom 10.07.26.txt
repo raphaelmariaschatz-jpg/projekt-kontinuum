@@ -1,0 +1,17 @@
+Canonical Meta Framework (CMF) 1.0 vom 10.07.26
+
+noch zu erstellen
+
+Das CMF würde keine neuen Funktionen definieren.
+
+Es würde ausschließlich beschreiben,
+
+wie alle Canonical Frameworks zusammenarbeiten,
+welche Frameworks welche Verantwortung besitzen,
+welche Abhängigkeiten erlaubt sind,
+welche Schichten existieren,
+welche Frameworks Grundlage anderer Frameworks sind,
+welche Integrationsregeln gelten,
+und wie zukünftige Frameworks überhaupt entstehen dürfen.
+
+Im Grunde wäre das die "Verfassung" aller Canonical Frameworks.

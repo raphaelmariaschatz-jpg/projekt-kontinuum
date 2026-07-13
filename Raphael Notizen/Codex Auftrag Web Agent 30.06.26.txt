@@ -1,0 +1,179 @@
+Codex Auftrag: Web Agent 30.06.26
+
+Codex-Auftrag: Web Agent 1.0 für Kontinuum implementieren
+
+Codex-Auftrag: Web Agent 1.0 – echte URL-, Crawl- und Lernfähigkeit für Kontinuum
+
+Ziel:
+Bitte implementiere einen eigenständigen WebAgent für Kontinuum 34.1+, der echte Webseiten abrufen, Inhalte extrahieren, Links erkennen, kontrolliert crawlen, Lerninhalte zusammenfassen und kanonisch in das Lern-/Memory-/Knowledge-System übergeben kann.
+
+Ausgangsproblem:
+Aktuell erkennt Kontinuum Internetbefehle, ruft viele URLs aber nicht wirklich ab. Direkte URLs werden teilweise nur lokal als Memory-Treffer wiedergegeben. Befehle wie:
+- lerne auch hier: <URL>
+- lies diese Webseite: <URL>
+- öffne alle Links auf folgender Webseite und lerne den Inhalt
+- nutze zum Lernen auch <URL>
+müssen als echte WebAgent-Aufträge behandelt werden, nicht als normale lokale Suchanfragen.
+
+Pflichtfunktionen:
+
+1. URL-Erkennung
+- Erkenne URLs zuverlässig in Nutzereingaben.
+- Trenne Web-Befehle von lokaler Suche.
+- Sobald eine URL vorhanden ist, hat direkter URL-Abruf Vorrang vor arXiv, Semantic Scholar, Brave oder DuckDuckGo.
+
+2. Direkter Webseitenabruf
+- Implementiere HTTP-GET mit Timeout, User-Agent und Fehlerbehandlung.
+- Unterstütze mindestens HTML, Text und einfache Dokumentationsseiten.
+- Speichere Status: HTTP-Code, Titel, Haupttext, erkannte Links, Abrufzeitpunkt, Quelle.
+
+3. Inhalts-Extraktion
+- Entferne Navigation, Footer, Scripts, Styles.
+- Extrahiere Seitentitel, Überschriften, Absätze, Listen und Codeblöcke.
+- Erzeuge eine Kurz-Zusammenfassung und eine Lernzusammenfassung.
+
+4. Lernübergabe
+- Übergib extrahierte Inhalte an das bestehende Lernsystem.
+- Speichere Quelle, URL, Titel, Thema, Kurzinhalt, Hash und Zeitstempel.
+- Verhindere Doppelaufnahme durch URL-/Content-Hash.
+
+5. Crawl-Modus
+- Für Befehle wie „öffne alle Links“:
+  - Starte auf der angegebenen Seite.
+  - Extrahiere interne Links.
+  - Begrenze Crawl sicher durch:
+    - max_pages Standard: 20
+    - max_depth Standard: 2
+    - gleiche Domain bevorzugt
+    - robots.txt respektieren, soweit möglich
+    - keine Downloads großer Dateien ohne Freigabe
+  - Gib Fortschritt und Ergebnis aus.
+
+6. WebAgent-Status
+- Neuer Befehl:
+  webagentstatus
+- Ausgabe:
+  - WebAgent aktiv: ja/nein
+  - letzter Abruf
+  - letzte URL
+  - letzte Fehler
+  - gespeicherte Webquellen
+  - Crawl-Limits
+  - verfügbare Provider
+
+7. Fehlerausgabe verbessern
+- Wenn Brave-Key fehlt oder Semantic Scholar 429 liefert, darf das direkte URL-Lernen trotzdem funktionieren.
+- Providerfehler sollen WebAgent nicht blockieren.
+
+8. Abnahmetests
+Bitte Tests ergänzen für:
+- lerne auch hier: https://www.python.org/
+- nutze zum Lernen auch https://www.jetbrains.com/help/pycharm/getting-started.html
+- öffne nacheinander alle Links auf folgender Webseite und lerne den Inhalt https://docs.python.org/3/library/index.html
+- webagentstatus
+- binomische Formeln nach vorherigem Mathematik-Lernstatus
+
+Wichtig:
+Keine riskante Vollautomatik. Der WebAgent soll kontrolliert und protokolliert arbeiten.
+Keine bestehende Governance umgehen.
+Keine ungeprüfte Massenaufnahme.
+Alle Webinhalte müssen mit Quelle, Zeitstempel und Hash gespeichert werden.
+
+Ergebnis:
+Bitte erst read-only/diagnostisch integrieren, dann aktivierbar machen.
+Am Ende einen Bericht erstellen:
+14_documents/web_agent_1_0_umsetzung_<datum>.md
+
+Bearbeitung:
+
+Verstanden. Ich behandle das als neue, kontrollierte WebAgent-Schicht: erst bestehendes Routing/Lernen lesen, dann eine read-only/diagnostische Web-Fetch/Crawl-Komponente einhängen, aktivierbar halten und mit Tests plus Umsetzungsbericht abschließen.
+
+Ich sehe den entscheidenden Haken: Befehle mit URLs laufen bisher durch Command-/Search-/Research-Routing, bevor ein direkter URL-Abruf Vorrang bekommen kann. Ich lese jetzt die Systemverdrahtung und Agents genauer, dann setze ich den WebAgent vor die lokale Suche.
+
+Die bestehende web_tools.fetch_text kann schon einfache Seiten lesen, aber sie speichert nicht kanonisch, erkennt Links kaum und hängt nicht vor Suchproviderfehlern. Ich baue deshalb einen eigenen WebAgentService im Core, mit HTML-Parser, URL-/Crawl-Routing, Queue/Review-Übergabe und Statusbefehl.
+
+Ich setze die neue Schicht so, dass URL-haltige Eingaben bereits in der Intent-Erkennung als Web-Befehl gelten. In der Ausführung bekommt WebAgentService Vorrang vor SearchEngine/ResearchAgent, speichert Nachweise und legt Inhalte nur in Queue/Review bzw. Quellenreferenzen ab, solange keine Governance-Freigabe vorliegt.
+
+Der WebAgent-Core ist angelegt. Ich verdrahte ihn jetzt im Systemstatus und im Prompt-Orchestrator, inklusive webagentstatus und direktem URL-Vorrang vor Suchmaschinen.
+
+Die Intent-Erkennung gibt URL-Eingaben jetzt als Command weiter. Als Nächstes hänge ich WebAgentService an KontinuumSystem und nehme ihn in den Status auf.
+
+Jetzt setze ich die eigentliche Vorrangregel: Wenn eine URL in der Nutzereingabe steht, wird zuerst der WebAgent gefragt; Suchprovider wie Brave/Semantic Scholar kommen dabei gar nicht in die Quere.
+
+Damit Antworten nicht fälschlich „Internet: nein“ ausweisen, passe ich den Quellenfuß für web_agent an. Danach kommen Config, Release-Pfade und Tests.
+
+Ich lege jetzt die WebAgent-Policy an: aktivierbar, aber standardmäßig im diagnostischen Review-Modus ohne direkte Memory- oder Kanon-Übernahme.
+
+Die Abnahmetests baue ich ohne echtes Netz, aber mit denselben Ziel-URLs. So testen wir URL-Routing, Fetch/Extract/Store/Crawl deterministisch; echte Netzfehler oder fehlende Providerkeys können die Tests nicht verfälschen.
+
+Der Test deckt die geforderten Beispielbefehle ab, ohne reale Webseiten im Testlauf zu benötigen. Ich verankere WebAgent jetzt in Architektur-/Release-Konfigurationen und der aktiven Versionskonsistenz.
+
+WebAgent ist nun im Architektur- und Artifact-Manifest. Ich ergänze die Release-Pflichtpfade und den bestehenden Versionskonsistenztest.
+
+Ich erstelle den neuen Datenordner und dokumentiere die WebAgent-Schicht in den kanonischen Dokumenten plus dem geforderten Umsetzungsbericht.
+
+Der Datenordner ist da. Ich schreibe jetzt die Dokumentation so, dass WebAgent klar von SearchEngine, Internet Learning, IKG und CKDE abgegrenzt bleibt.
+
+Der Projektstruktur-Abschnitt hat inzwischen leicht andere Zeilenumbrüche als erwartet. Ich lese den relevanten Ausschnitt und patch dann passend.
+
+Ich habe den passenden Kontext. Jetzt füge ich WebAgent in genau diesen Komponentenblock und als eigenen Abschnitt vor CDE/CKDE ein.
+
+Die Projektstruktur ist aktualisiert. Ich ergänze Phase-3-Governance um die WebAgent-Regeln und schreibe anschließend den geforderten Umsetzungsbericht.
+
+Ich erstelle jetzt den Abschlussbericht unter 14_documents/web_agent_1_0_umsetzung_2026_06_30.md mit Architektur, Sicherheitsgrenzen, Dateien und Tests.
+
+Ich habe den WebAgent 1.0 weitgehend implementiert, aber ich wurde beim abschließenden Manifest-Nachtrag und bei der Verifikation durch den Approval-/Usage-Limiter gestoppt. Ich darf das laut Systemhinweis nicht über Umwege wiederholen.
+Bereits umgesetzt:
+Neuer Core: C:\Projekt Kontinuum\01_system\kontinuum\core\web_agent.py
+Neue Policy: C:\Projekt Kontinuum\24_config\web_agent_1_0.json
+Neuer Test: C:\Projekt Kontinuum\17_tests\test_web_agent_1_0.py
+Neuer Bericht: C:\Projekt Kontinuum\14_documents\web_agent_1_0_umsetzung_2026_06_30.md
+Routing angepasst:URL-haltige Eingaben werden als Command erkannt
+WebAgent bekommt Vorrang vor lokaler Suche und Suchprovidern
+webagentstatus ergänzt
+
+Systemstatus ergänzt um web_agent
+Architektur-/Governance-/Projektstruktur-Doku erweitert
+32_data/web_agent_sources angelegt
+Release-/Architekturconfigs teilweise ergänzt
+Nicht abgeschlossen wegen Tool-Limit:
+Abschließender Artifact-Manifest-Nachtrag für den Bericht wurde abgelehnt
+Compile-/JSON-/Testläufe konnten nicht mehr ausgeführt werden
+Daher ist der Stand noch nicht verifiziert
+Wichtig: Bitte später mit neuem Toolbudget fortsetzen lassen. Nächster sinnvoller Schritt ist: Syntax prüfen, test_web_agent_1_0.py laufen lassen, Manager-/Statuschecks ausführen und danach den Bericht optional noch ins Artifact-Manifest aufnehmen.
+
+Raphael: bitte beende den Auftrag
+
+Ich nehme den WebAgent-Auftrag wieder auf und mache ihn sauber zu Ende: erst Ist-Stand der bereits geschriebenen Dateien prüfen, dann fehlende Verankerung ergänzen, danach Syntax/JSON/Tests und Statuscheck.
+
+Der Ist-Stand ist besser als beim Abbruch: WebAgent-Core, Config, Test und Release-Pflichtpfade sind bereits drin; sogar Core/Config stehen schon im Artifact-Manifest. Es fehlt nur noch die optionale saubere Aufnahme des Umsetzungsberichts als Dokumentationsartefakt, dann prüfe ich alles.
+
+Der Bericht ist jetzt auch als Dokumentationsartefakt registriert. Ich starte nun die maschinellen Prüfungen: Python-Compile, JSON-Validierung und den neuen WebAgent-Test.
+
+Die Kernprüfungen sind grün. Ich lasse jetzt die angrenzenden Regressionen laufen: Versionskonsistenz, Architekturmanager, Artifact-Manager und Statuscheck.
+
+Der Projektstatus ist wieder VERIFIZIERT / JA. Ich prüfe noch das Release-Integrity-Fixture und einmal die echte Systemverdrahtung von webagentstatus, dann ist der Auftrag rund geschlossen.
+
+Erledigt. WebAgent 1.0 ist jetzt sauber abgeschlossen und verifiziert.
+Umgesetzt:
+C:\Projekt Kontinuum\01_system\kontinuum\core\web_agent.py
+C:\Projekt Kontinuum\24_config\web_agent_1_0.json
+C:\Projekt Kontinuum\17_tests\test_web_agent_1_0.py
+C:\Projekt Kontinuum\14_documents\web_agent_1_0_umsetzung_2026_06_30.md
+webagentstatus verdrahtet
+URL-haltige Eingaben bekommen Vorrang vor lokaler Suche, Brave, Semantic Scholar, arXiv und DuckDuckGo
+kontrollierter Crawl mit max_pages=20, max_depth=2, gleicher Domain, robots.txt soweit möglich, Download-Blockaden
+Speicherung mit URL, Titel, Thema, Zeitstempel, Hash, Zusammenfassungen, Queue/Review und Quellenreferenz
+keine direkte Memory-Schreibung, keine automatische kanonische Wissensübernahme
+WebAgent in Architektur, Governance, Projektstruktur, Release-Pflichten und Artifact-Manifest verankert
+Verifikation grün:
+Python-Compile der geänderten Core-Dateien
+JSON-Validierung der geänderten Configs
+test_web_agent_1_0.py
+test_v34_1_version_consistency.py
+test_canonical_architecture_manager.py
+test_canonical_artifacts_manager.py
+test_release_integrity_framework_34_1.py
+echter Systemtest: webagentstatus
+status_check_34_1.py: Status: VERIFIZIERT, Freigabe: JA
+Der Auftrag ist damit abgeschlossen.

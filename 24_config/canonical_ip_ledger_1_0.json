@@ -1,0 +1,167 @@
+{
+  "ledger_version": "1.0",
+  "component_id": "CIPL-1.0",
+  "component_name": "Canonical Intellectual Property Ledger",
+  "project_name": "Projekt Kontinuum",
+  "purpose": "Kanonisches Herkunfts- und Urheberregister fuer wesentliche Architekturentscheidungen, Konzepte und Kernartefakte.",
+  "scope": "documentation_and_governance_only",
+  "non_goals": [
+    "license_management",
+    "drm",
+    "rights_enforcement",
+    "security_system",
+    "user_management",
+    "runtime_control",
+    "automatic_git_analysis",
+    "legal_assessment"
+  ],
+  "creator": {
+    "name": "Raphael Maria Schatz",
+    "creator_id": "RMS-0001",
+    "identity_scope": "internal_canonical_reference_only",
+    "legal_identity_note": "Diese ID ersetzt keine juristischen Identitaetsnachweise."
+  },
+  "project_owner": "Raphael Maria Schatz",
+  "copyright_holder": "Raphael Maria Schatz",
+  "copyright_notice": "© 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.",
+  "first_release": "2026-07-09",
+  "canonical_since": "2026-07-09",
+  "architecture_generation": "34.1",
+  "governance_reference": [
+    "14_documents/KANONISCHES_ARCHITEKTURMODELL_34_1.md",
+    "14_documents/PHASE3_CONTINUOUS_CANONICAL_GOVERNANCE_34_1.md",
+    "24_config/canonical_architecture_34_1.json"
+  ],
+  "project_chronicle_reference": [
+    "22_project_chronicle/PROJEKTCHRONIK_23.md",
+    "22_project_chronicle/RELEASE_34_1_GOVERNANCE_PHASE_CLOSURE.md",
+    "22_project_chronicle/RELEASE_34_1_RELEASE_INTEGRITY_FRAMEWORK.md"
+  ],
+  "integration": {
+    "git": "optional_reference_fields_only_no_automatic_evaluation",
+    "project_chronicle": "chronicle_reference_without_chronicle_mutation",
+    "canonical_architecture_manager": "documented_governance_artifact_no_runtime_change",
+    "release_integrity": "future_documentation_check_candidate_no_gate_change",
+    "canonical_governance": "provenance_layer_for_architecture_origin_metadata"
+  },
+  "provenance_record_schema": {
+    "artifact_id": "string",
+    "artifact_name": "string",
+    "artifact_type": "architecture_decision|concept|core_artifact|governance_document|manifest",
+    "origin": "string",
+    "creator_id": "string",
+    "author": "string",
+    "created_at": "date_or_datetime_string",
+    "version": "string",
+    "rationale": "string",
+    "context": "string",
+    "related_components": [
+      "string"
+    ],
+    "git_reference": {
+      "first_commit": "optional_string_or_null",
+      "architecture_commit": "optional_string_or_null",
+      "reference_hash": "optional_string_or_null",
+      "note": "manual_reference_only_no_automatic_git_lookup"
+    },
+    "historical_development": [
+      "string"
+    ],
+    "chronicle_reference": [
+      "string"
+    ],
+    "governance_reference": [
+      "string"
+    ],
+    "migration_required": false
+  },
+  "prepared_architecture_artifacts": [
+    {
+      "artifact_id": "CAM",
+      "artifact_name": "Canonical Architecture Manager",
+      "artifact_type": "core_artifact",
+      "provenance_status": "prepared_no_migration",
+      "creator_id": "RMS-0001",
+      "git_reference": null
+    },
+    {
+      "artifact_id": "CRE",
+      "artifact_name": "Capability Resolution Engine",
+      "artifact_type": "core_artifact",
+      "provenance_status": "prepared_no_migration",
+      "creator_id": "RMS-0001",
+      "git_reference": null
+    },
+    {
+      "artifact_id": "EXECUTION_PLANNER",
+      "artifact_name": "Execution Planner",
+      "artifact_type": "core_artifact",
+      "provenance_status": "prepared_no_migration",
+      "creator_id": "RMS-0001",
+      "git_reference": null
+    },
+    {
+      "artifact_id": "ORCHESTRATOR_CORE",
+      "artifact_name": "Orchestrator Core",
+      "artifact_type": "core_artifact",
+      "provenance_status": "prepared_no_migration",
+      "creator_id": "RMS-0001",
+      "git_reference": null
+    },
+    {
+      "artifact_id": "CCP",
+      "artifact_name": "Controlled Canonical Patch",
+      "artifact_type": "architecture_decision",
+      "provenance_status": "prepared_no_migration",
+      "creator_id": "RMS-0001",
+      "git_reference": null
+    },
+    {
+      "artifact_id": "CDF",
+      "artifact_name": "Canonical Decision Framework",
+      "artifact_type": "architecture_decision",
+      "provenance_status": "prepared_no_migration",
+      "creator_id": "RMS-0001",
+      "git_reference": null
+    },
+    {
+      "artifact_id": "CDG",
+      "artifact_name": "Canonical Data Governance",
+      "artifact_type": "governance_document",
+      "provenance_status": "prepared_no_migration",
+      "creator_id": "RMS-0001",
+      "git_reference": null
+    },
+    {
+      "artifact_id": "FOUNDATION",
+      "artifact_name": "Foundation",
+      "artifact_type": "concept",
+      "provenance_status": "prepared_no_migration",
+      "creator_id": "RMS-0001",
+      "git_reference": null
+    },
+    {
+      "artifact_id": "GOVERNANCE",
+      "artifact_name": "Canonical Governance",
+      "artifact_type": "concept",
+      "provenance_status": "prepared_no_migration",
+      "creator_id": "RMS-0001",
+      "git_reference": null
+    },
+    {
+      "artifact_id": "CANONICAL_LIFECYCLE",
+      "artifact_name": "Canonical Lifecycle",
+      "artifact_type": "architecture_decision",
+      "provenance_status": "prepared_no_migration",
+      "creator_id": "RMS-0001",
+      "git_reference": null
+    }
+  ],
+  "mutation_policy": {
+    "runtime_changes": "forbidden",
+    "automatic_migration": "forbidden",
+    "automatic_git_evaluation": "forbidden",
+    "existing_history_migration": "not_required",
+    "documentation_updates": "allowed_under_governance_review"
+  }
+}

@@ -1,3 +1,5 @@
+# © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.
+
 from __future__ import annotations
 
 from .error_classification import DiagnosticFinding

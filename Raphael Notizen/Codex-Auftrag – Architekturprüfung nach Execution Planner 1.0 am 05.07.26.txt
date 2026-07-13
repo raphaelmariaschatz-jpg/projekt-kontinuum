@@ -1,0 +1,79 @@
+Codex-Auftrag – Architekturprüfung nach Execution Planner 1.0 am 05.07.26
+
+Prüfe nach Abschluss des Execution Planner 1.0 die aktuelle Architektur von Projekt Kontinuum.
+
+Ziel:
+Feststellen, ob die neue Kette aus Request Router, CRE, Execution Planner und künftigem Orchestrator Core sauber getrennt, kanonisch dokumentiert und technisch konsistent ist.
+
+Prüfpunkte:
+
+1. Prüfe die kanonische Ablaufkette:
+   User → Request Router → Capability Resolution Engine → Execution Planner → Orchestrator Core → Governance → Agent → Review → Canonical Memory Manager
+
+2. Prüfe die Verantwortlichkeiten:
+
+* CRE: Capability-Erkennung, Priorisierung, Governance-Hinweise
+* Execution Planner: deterministischer ExecutionPlan
+* Orchestrator Core: künftig nur Ausführung validierter ExecutionPlans
+* Governance: Freigabe, Blockierung, Audit
+* Agenten: fachliche Ausführung
+* Review: Ergebnisprüfung
+* CMM: kanonische Speicherung
+
+3. Suche nach Überschneidungen:
+
+* Agentenausführung im Planner
+* Planungslogik im Orchestrator
+* Runtime-Logik in CRE
+* Governance-Umgehung
+* direkte Agentenempfehlungen, die den Planner umgehen
+
+4. Prüfe kanonische Artefakte:
+
+* Architekturmodell
+* Handbuch
+* Projektstruktur
+* Projektchronik
+* CAM-Manifeste
+* Release-Integrity
+* Execution-Plan-Schema
+* Tests
+
+5. Erstelle einen Architekturbericht mit:
+
+* Status: bestanden / eingeschränkt / nicht bestanden
+* gefundene Überschneidungen
+* fehlende Dokumentationspunkte
+* technische Risiken
+* Empfehlung, ob der Orchestrator Core neu entworfen werden darf
+
+Regeln:
+
+* Keine Änderungen durchführen.
+* Keine Commits.
+* Nur lesen, prüfen und berichten.
+* Keine Orchestrator-Implementierung.
+
+Umsetzung:
+
+Architekturbericht
+Status: eingeschränkt bestanden.
+Die neue Zielkette ist im Execution-Planner-Abschluss korrekt dokumentiert:
+User → Request Router → CRE → Execution Planner → Orchestrator Core → Governance → Agent → Review → Canonical Memory Manager
+Sie steht korrekt in [PROJEKTCHRONIK_23.md (line 589)](C:/Projekt Kontinuum/22_project_chronicle/PROJEKTCHRONIK_23.md:589), [PROJEKTSTRUKTUR_34_1.md (line 308)](C:/Projekt Kontinuum/14_documents/PROJEKTSTRUKTUR_34_1.md:308) und im neuen Planner-Abschnitt des Architekturmodells. Technisch sind CRE und Planner sauber angebunden in [system.py (line 133)](C:/Projekt Kontinuum/01_system/kontinuum/core/system.py:133).
+Bestanden
+Planner startet keine Agenten: [execution_planner.py (line 175)](C:/Projekt Kontinuum/01_system/kontinuum/core/execution_planner.py:175) meldet executes_agents: False.
+Tests decken ausdrücklich „keine Agentenausführung“ ab: [test_execution_planner_1_0.py (line 128)](C:/Projekt Kontinuum/17_tests/test_execution_planner_1_0.py:128).
+Schema ist konsistent: [execution_plan_schema_34_1.json (line 55)](C:/Projekt Kontinuum/24_config/execution_plan_schema_34_1.json:55) setzt executes_agents auf false.
+CAM und Release Integrity enthalten Planner-Core, Schema und Test: [canonical_architecture_34_1.json (line 158)](C:/Projekt Kontinuum/24_config/canonical_architecture_34_1.json:158), [release_integrity_34_1.json (line 127)](C:/Projekt Kontinuum/24_config/release_integrity_34_1.json:127).
+Gefundene Überschneidungen
+Der aktuelle PromptOrchestrator erzeugt zwar einen ExecutionPlan, nutzt ihn aber noch nicht als Ausführungseingabe. Danach läuft weiterhin der alte direkte Routing-/Agentenpfad weiter: [application_services.py (line 356)](C:/Projekt Kontinuum/01_system/kontinuum/core/application_services.py:356) und [application_services.py (line 458)](C:/Projekt Kontinuum/01_system/kontinuum/core/application_services.py:458).
+CRE liefert weiterhin recommended_agent und execution_allowed: [capability_resolution_engine.py (line 183)](C:/Projekt Kontinuum/01_system/kontinuum/core/capability_resolution_engine.py:183). Das ist für CRE 1.0 noch erklärbar, sollte aber beim Orchestrator-Neuentwurf zu „erwartete Agenten im Plan“ statt direkter Ausführungsempfehlung verschoben werden.
+Einige ältere Dokuabschnitte beschreiben noch den Orchestrator als Planer, z. B. [HANDBUCH_23.md (line 805)](C:/Projekt Kontinuum/14_documents/HANDBUCH_23.md:805) und [KANONISCHES_ARCHITEKTURMODELL_34_1.md (line 194)](C:/Projekt Kontinuum/14_documents/KANONISCHES_ARCHITEKTURMODELL_34_1.md:194). Das widerspricht der neuen Trennung teilweise.
+Technische Risiken
+Der Plan wird aktuell protokolliert, aber nicht gatekeeping-wirksam verwendet.
+Governance wird im Planner validiert, aber die echte Ausführung läuft noch über alte direkte Pfade.
+Der Worktree ist stark schmutzig; viele Artefakte sind geändert oder untracked. Für den Orchestrator-Neuentwurf sollte vorher ein gemeinsamer Kontrollstand festgelegt werden.
+Empfehlung
+Ja, der Orchestrator Core darf jetzt konzeptionell neu entworfen werden, aber noch nicht als Implementation gestartet werden, bevor die Doku-Widersprüche bereinigt sind.
+Die richtige Zieldefinition lautet: Orchestrator Core = reine Execution Runtime für validierte ExecutionPlans. Keine Capability-Erkennung, keine Planerzeugung, keine freie Agentenwahl.

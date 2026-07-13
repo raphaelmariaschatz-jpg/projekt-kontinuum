@@ -1,3 +1,5 @@
+# © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.
+
 from __future__ import annotations
 
 import json
@@ -84,6 +86,8 @@ class KontinuumSystem:
         self.lifecycle_state = "initializing"
         self.tools = build_tools(root=root)
         self.search_mode = "Automatisch"
+        self.orchestrator_runtime_enabled = False
+        self.orchestrator_runtime_fallbacks = []
         self.path_tools = self.tools["path_tools"]
         self.path_tools.ensure_all()
         self.storage = Storage(self.path_tools.paths()["data"] / "kontinuum.db")
@@ -101,6 +105,7 @@ class KontinuumSystem:
         self.search_router = SearchRouter(self.path_tools, self.storage)
         self.tools["search_engine_tools"].bind_local_router(self.search_router)
         self.agent_config = {"version": self.version}
+        self.agent_config["orchestrator_runtime_enabled"] = self.orchestrator_runtime_enabled
         self.agent_config["memory_core"] = self.memory_core
         self.agent_config["knowledge_platform"] = self.knowledge_platform
         self.agent_config["knowledge_intelligence"] = self.knowledge_intelligence
@@ -473,6 +478,8 @@ class KontinuumSystem:
             "canonical_git_manager": self.canonical_git_manager.status(),
             "canonical_agent_integration_manager": self.canonical_agent_integration_manager.status(),
             "capability_resolution_engine": self.capability_resolution_engine.status(),
+            "orchestrator_runtime_enabled": self.orchestrator_runtime_enabled,
+            "orchestrator_runtime_fallbacks": list(self.orchestrator_runtime_fallbacks[-5:]),
             "orchestrator_core": self.orchestrator_core.status(),
             "self_knowledge": self.self_knowledge.profile(),
             "consciousness": self.consciousness.profile(),

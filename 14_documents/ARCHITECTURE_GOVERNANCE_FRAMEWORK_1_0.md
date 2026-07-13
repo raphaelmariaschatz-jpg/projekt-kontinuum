@@ -6,26 +6,79 @@ Geltungsbereich: gesamte Architektur von Projekt Kontinuum
 
 ## 1. Zweck
 
-Das Architecture Governance Framework 1.0, kurz AGF 1.0, ist die Architekturverfassung von Projekt Kontinuum. Es legt dauerhaft fest, wie sich die Architektur selbst weiterentwickeln darf.
+Das Architecture Governance Framework 1.0, kurz AGF 1.0, ist die Governance-Richtlinie fuer Architekturentscheidungen von Projekt Kontinuum. Seit der kanonischen Uebernahme des Canonical Master Implementation Blueprint Framework (CMIBF) 1.0 gilt: Das CMIBF ist die alleinige Architekturverfassung und einzige normative Architekturquelle von Projekt Kontinuum. AGF 1.0 konkretisiert Governance-Regeln unterhalb des CMIBF und darf dem CMIBF nicht widersprechen.
 
 AGF 1.0 definiert Regeln. Es fuehrt keine Runtime-Migration durch, verschiebt keine Dateien, loescht keine Dateien, benennt keine Dateien um und aendert keine Imports.
+
+## 1.1 Canonical Architecture First Principle (AFP)
+
+Das Canonical Architecture First Principle ist verbindlich fuer jede Architektur-, Entwicklungs-, Validierungs-, Release- und Evolutionsarbeit:
+
+```text
+Idee
+-> Architekturanalyse
+-> CMIBF-Definition oder CMIBF-Erweiterung
+-> Architekturpruefung
+-> Freigabe
+-> CAC
+-> kanonische Artefakte
+-> Implementierung
+-> Validierung und Tests
+-> Release
+-> Betrieb
+-> Monitoring
+-> kontrollierte Evolution
+```
+
+Architektur entsteht ausschliesslich im CMIBF. Code, Tests, Konfigurationen, Registries, Dependency Graphs, Ontologien, Reports und andere abgeleitete Artefakte besitzen keine eigenstaendige normative Architekturautoritaet. Implementierungen duerfen nur auf einer definierten, geprueften und freigegebenen CMIBF-Grundlage entstehen.
+
+## 1.2 Canonical AI Working Protocol (CAWP)
+
+Das Canonical AI Working Protocol 1.0 ist die verbindliche Governance-Schicht fuer das Arbeitsverhalten aller KI-Systeme. Es steht direkt unter dem AFP und vor der technischen Ableitung durch den CAC:
+
+```text
+CMIBF
+-> AFP
+-> CAWP
+-> CAC
+```
+
+CAWP legt Kommunikationsregeln, Architekturdisziplin, Traceability, Qualitaets-Gates, Fehlerkultur und Abschlussverhalten fuer KI-Systeme fest. Es besitzt keine eigene Architekturautoritaet und darf keine CMIBF-Regeln ersetzen.
+
+## 1.3 Rolle des Canonical Architecture Compiler (CAC)
+
+Der Canonical Architecture Compiler ist ein Compiler, kein freier Artefaktgenerator und kein eigenstaendiger Architekt. Seine Verarbeitungskette lautet:
+
+```text
+CMIBF-Quellmodell
+-> Syntaxanalyse
+-> semantische Analyse
+-> Regelvalidierung
+-> Inkonsistenzpruefung
+-> deterministische Ableitungen
+-> Compliance- und Buildberichte
+```
+
+Der CAC interpretiert ausschliesslich freigegebene CMIBF-Regeln. Er darf keine Architekturprinzipien erfinden, keine Architekturentscheidungen treffen und keine inkonsistenten oder nicht deterministisch ableitbaren Artefakte erzeugen.
 
 ## 2. Unveraenderliche Architekturgrundsaetze
 
 Die folgenden Grundsaetze gelten dauerhaft und duerfen nur durch geschuetzte Foundation-Migration erweitert werden:
 
-1. Foundation besitzt hoechste Prioritaet.
-2. Jede aktive Komponente besitzt genau einen kanonischen Zweck.
-3. Jede aktive Komponente besitzt genau einen kanonischen Speicherort.
-4. Jede Architekturentscheidung muss nachvollziehbar, ueberpruefbar und mit den bestehenden Foundation-Regeln vereinbar sein.
-5. Architekturaenderungen erfolgen ausschliesslich kontrolliert.
-6. Planung und Runtime bleiben strikt getrennt.
-7. CAM verwaltet Artefakte, nicht fachliche Runtime-Entscheidungen.
-8. Governance ueberwacht Regelkonformitaet.
-9. Release Integrity prueft Freigabefaehigkeit.
-10. Neue Komponenten duerfen nur eingefuehrt werden, wenn sie einen klar abgegrenzten Verantwortungsbereich besitzen, keine bestehende Verantwortung unnoetig duplizieren und sich nachvollziehbar in die kanonische Architektur einfuegen.
+1. CMIBF besitzt als Architekturverfassung und normative Architekturquelle Vorrang vor allen abgeleiteten Dokumenten, Artefakten und Implementierungen.
+2. Foundation besitzt hoechste Prioritaet innerhalb der durch das CMIBF definierten Architekturordnung.
+3. Architektur geht jeder Implementierung voraus.
+4. Jede aktive Komponente besitzt genau einen kanonischen Zweck.
+5. Jede aktive Komponente besitzt genau einen kanonischen Speicherort.
+6. Jede Architekturentscheidung muss aus dem CMIBF ableitbar, nachvollziehbar, ueberpruefbar und mit den bestehenden Foundation-Regeln vereinbar sein.
+7. Architekturaenderungen erfolgen ausschliesslich kontrolliert im CMIBF.
+8. Planung und Runtime bleiben strikt getrennt.
+9. CAM verwaltet Artefakte, nicht fachliche Runtime-Entscheidungen.
+10. Governance ueberwacht Regelkonformitaet.
+11. Release Integrity prueft Freigabefaehigkeit.
+12. Neue Komponenten duerfen nur eingefuehrt werden, wenn sie einen klar abgegrenzten Verantwortungsbereich besitzen, keine bestehende Verantwortung unnoetig duplizieren, eine freigegebene CMIBF-Grundlage besitzen und sich nachvollziehbar in die kanonische Architektur einfuegen.
 
-Diese Grundsaetze bilden die oberste Architekturordnung nach Foundation-Regeln und vor operativen Implementierungsentscheidungen.
+Diese Grundsaetze stehen unter der Architekturautoritaet des CMIBF und vor operativen Implementierungsentscheidungen.
 
 ## 3. Architekturrollen
 
@@ -392,10 +445,42 @@ Eskalation: gesamte Kette bis Benutzerentscheidung.
 
 Freigabe: ausschliesslich Raphael oder ausdruecklich definierte hoechste Governance-Freigabe.
 
+## 5.5 AFP-Architektur-Gates
+
+Jede Entwicklung muss die folgenden Gates in der angegebenen Reihenfolge bestehen:
+
+1. Architekturbedarf: Vor technischer Arbeit ist zu pruefen, ob eine Architekturentscheidung oder Architekturaenderung erforderlich ist.
+2. CMIBF-Abdeckung: Es muss eine gueltige, eindeutige und freigegebene CMIBF-Grundlage vorhanden sein oder zuerst geschaffen werden.
+3. Architekturpruefung: Die CMIBF-Definition muss auf Konsistenz, Vollstaendigkeit, Abhaengigkeiten und Regelkonformitaet geprueft sein.
+4. Architekturfreigabe: Ohne dokumentierte Freigabe darf keine Implementierung erfolgen.
+5. CAC-Validierung: Der CAC muss die freigegebene Architektur ohne Syntax-, Semantik-, Konsistenz- oder AFP-Verstoss verarbeiten koennen.
+6. Implementierungsvalidierung: Die Implementierung muss auf die freigegebene Architektur zurueckfuehrbar sein.
+7. Release-Konformitaet: Release ist nur zulaessig, wenn Architektur, abgeleitete Artefakte, Implementierung und Tests konsistent sind.
+8. Evolution: Betriebs- und Monitoring-Erkenntnisse muessen erneut den AFP-Zyklus durchlaufen und duerfen nicht direkt in Codeaenderungen uebergehen.
+
+## 5.6 AFP-Verletzungen und Ablehnungsbedingungen
+
+Folgende Faelle gelten als Architekturverletzungen:
+
+- Implementierung ohne freigegebene CMIBF-Grundlage;
+- Architekturentscheidungen im Quellcode;
+- nachtraegliche Legitimierung nicht freigegebener Architektur;
+- direkte Bearbeitung abgeleiteter kanonischer Artefakte;
+- Umgehung des CAC;
+- CAC-Ableitung trotz Inkonsistenz;
+- eigenstaendige Architekturinterpretation durch den CAC;
+- nicht dokumentierte Architekturaenderungen;
+- Release bei widerspruechlichem Architekturstand;
+- Refactoring mit Architekturwirkung ohne vorherige CMIBF-Aenderung;
+- direkte Umsetzung von Monitoring-Erkenntnissen ohne erneuten AFP-Zyklus.
+
+Der CAC muss die Verarbeitung mindestens ablehnen bei fehlender CMIBF-Definition, fehlender Freigabe, syntaktisch oder semantisch ungueltiger Architekturdefinition, unaufgeloesten Abhaengigkeiten, konkurrierenden normativen Architekturquellen, direkten Aenderungen an abgeleiteten Artefakten, fehlender Herkunft oder Traceability, Implementierungsanforderungen ohne Architekturgrundlage, erkennbaren AFP-Verstoessen und nicht deterministisch ableitbaren Architekturartefakten.
+
 ## 6. Release Governance
 
 Ein offizielles Architektur-Release darf nur erfolgen, wenn alle Pflichtbereiche konform sind:
 
+- CMIBF/AFP: Architekturgrundlage definiert, geprueft, freigegeben und ohne AFP-Verletzung.
 - Foundation: keine Regelverletzung, geschuetzte Regeln konsistent.
 - CAM: Artefakte klassifiziert, Speicherorte eindeutig, Lifecycle-Konflikte dokumentiert.
 - ALP: Canonical, Runtime Required, Release Evidence, Historical und Deprecated getrennt.
@@ -407,7 +492,7 @@ Ein offizielles Architektur-Release darf nur erfolgen, wenn alle Pflichtbereiche
 - Governance: Eskalationen geschlossen oder als offene Risiken dokumentiert.
 - Migrationen: Migrationsplan, Migration-IDs, Successor/Endstatus und Freigaben vorhanden.
 
-Ein Release darf nicht erfolgen, wenn kritische Architekturkonflikte offen sind oder wenn Runtime, Foundation, Datenprovenienz oder Release Evidence ungeklaert sind.
+Ein Release darf nicht erfolgen, wenn kritische Architekturkonflikte offen sind, wenn ein AFP-Gate nicht bestanden wurde oder wenn Runtime, Foundation, Datenprovenienz oder Release Evidence ungeklaert sind.
 
 ## 7. Erweiterungsprozess
 
@@ -434,18 +519,20 @@ Regeln:
 5. Jede Erweiterung mit Release-Wirkung benoetigt Release-Integrity-Pruefung.
 6. Jede Erweiterung mit Foundation-Wirkung benoetigt geschuetzte Migration und Benutzerfreigabe.
 
-## 8. Architekturverfassung
+## 8. Architekturordnung unter dem CMIBF
 
-Projekt Kontinuum besitzt nicht nur eine Architektur, sondern eine verbindliche Architekturordnung.
+Projekt Kontinuum besitzt nicht nur eine Architektur, sondern eine verbindliche Architekturordnung. Diese Architekturordnung wird durch das CMIBF als Architekturverfassung definiert. AGF beschreibt die Governance dieser Ordnung und bleibt dem CMIBF untergeordnet.
 
 ### Leitprinzipien
 
 - Foundation schuetzt Identitaet, Regeln und Grundsaetze.
+- CMIBF definiert die normative Architektur.
+- AFP erzwingt Architektur vor Implementierung.
 - Canonical Layer definiert die stabilen Vertraege.
 - Operational Layer darf austauschbar sein, solange Vertraege eingehalten werden.
 - Learning Layer darf dynamisch sein, bleibt aber provenance- und auditpflichtig.
 - Jede aktive Datei und Komponente hat einen eindeutigen Zweck und Speicherort.
-- Jede Architekturentscheidung ist nachvollziehbar, pruefbar und foundation-kompatibel.
+- Jede Architekturentscheidung ist aus dem CMIBF ableitbar, nachvollziehbar, pruefbar und foundation-kompatibel.
 
 ### Architekturphilosophie
 
@@ -453,8 +540,9 @@ Kontinuum waechst nicht durch unkontrollierte Erweiterung, sondern durch kontrol
 
 ### Verantwortlichkeiten
 
-- Foundation setzt Grenzen.
-- AGF definiert die Architekturordnung.
+- CMIBF definiert die Architekturordnung.
+- Foundation setzt Grenzen innerhalb der CMIBF-Architektur.
+- AGF definiert Governance-Regeln fuer die Architekturordnung.
 - CAM ordnet Artefakte.
 - ALP regelt Lebenszyklen.
 - CCP regelt kanonische Aenderungen.
@@ -470,6 +558,9 @@ Kontinuum waechst nicht durch unkontrollierte Erweiterung, sondern durch kontrol
 ### Schutzmechanismen
 
 - keine Runtime-Aenderung ohne Freigabe;
+- keine Implementierung ohne freigegebene CMIBF-Grundlage;
+- keine Umgehung des AFP-Zyklus;
+- keine CAC-Verarbeitung bei AFP-Verletzung;
 - keine Archivierung ohne Successor oder Endstatus;
 - keine neue Komponente ohne abgegrenzten Verantwortungsbereich;
 - keine aktive Datei ohne eindeutigen Zweck und Speicherort;
@@ -483,3 +574,6 @@ Architekturentscheidungen werden erst kanonisch, wenn sie dokumentiert, geprueft
 ## 9. Abschlussregel
 
 AGF 1.0 ist ab seiner Aufnahme in die kanonische Architektur die uebergeordnete Governance-Richtlinie fuer die Weiterentwicklung von Projekt Kontinuum. Es soll die Architektur stabilisieren und den Schwerpunkt kuenftiger Arbeit auf kontrollierte Runtime-Integration, Governance-Operations und funktionalen Ausbau verlagern.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

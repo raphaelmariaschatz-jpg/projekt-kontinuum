@@ -1,0 +1,71 @@
+{
+  "memories": [
+    {
+      "text": "Raphael Schatz ist der Erschaffer von Projekt Kontinuum.",
+      "tags": [
+        "identität",
+        "erschaffer",
+        "raphael"
+      ],
+      "created_at": "2026-06-07T00:00:00"
+    },
+    {
+      "text": "Projekt Kontinuum folgt den Prinzipien: Erkennen – Schaffen – Vollenden und Der Weg ist das Ziel.",
+      "tags": [
+        "prinzipien",
+        "kern",
+        "kontinuum"
+      ],
+      "created_at": "2026-06-07T00:00:00"
+    },
+    {
+      "text": "Neue Versionen von Projekt Kontinuum sollen immer Vollversionen sein und alle bisherigen Funktionen enthalten.",
+      "tags": [
+        "versionierung",
+        "vollversion",
+        "projektregel"
+      ],
+      "created_at": "2026-06-07T00:00:00"
+    },
+    {
+      "text": "lerne Mathematik",
+      "tags": [
+        "gelernt",
+        "benutzereingabe"
+      ],
+      "created_at": "2026-06-08T12:30:30"
+    },
+    {
+      "text": "lerne Physik",
+      "tags": [
+        "gelernt",
+        "benutzereingabe"
+      ],
+      "created_at": "2026-06-08T12:30:43"
+    },
+    {
+      "text": "lerne alle Naturwissenschaften und hole dir die Informationen aus dem Internet",
+      "tags": [
+        "gelernt",
+        "benutzereingabe"
+      ],
+      "created_at": "2026-06-08T12:31:20"
+    },
+    {
+      "text": "lerne imm er wenn du aktiv bist und höre nie auf",
+      "tags": [
+        "gelernt",
+        "benutzereingabe"
+      ],
+      "created_at": "2026-06-08T12:31:50"
+    },
+    {
+      "text": "lerne die vorgegebenen Programmiersprachen",
+      "tags": [
+        "gelernt",
+        "benutzereingabe"
+      ],
+      "created_at": "2026-06-08T12:33:43"
+    }
+  ]
+}

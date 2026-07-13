@@ -172,3 +172,6 @@ Leitsatz:
 
 > Das System darf wachsen, aber nicht vom Referenzzustand abweichen, ohne es
 > sichtbar zu machen.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

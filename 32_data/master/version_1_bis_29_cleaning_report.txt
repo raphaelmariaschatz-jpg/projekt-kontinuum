@@ -1,0 +1,25 @@
+Bereinigung version_1_bis_29.json
+=================================
+Ursprüngliche Top-Level-Einträge: 4116
+Entfernte leere Reste: 3155
+Entfernte exakte Duplikate: 855
+Behaltene eindeutige Inhalte: 106
+
+Neue Hauptbereiche:
+- structure_policy: Objekt
+- core_identity: 6 Einträge
+- security: 3 Einträge
+- connectors: 1 Einträge
+- knowledge: 6 Einträge
+- memory: 6 Einträge
+- learning: 7 Einträge
+- versions: 37 Einträge
+- archives: 1 Einträge
+- graphs: 5 Einträge
+- other: 34 Einträge
+
+Hinweise:
+- 29_memory wurde auf 03_memory umgestellt.
+- Häufige Umlaut-/Mojibake-Fehler wurden korrigiert.
+- Passwort-Hash und Recovery-Key-Hash wurden nicht in Klartext umgewandelt.
+- Die Datei ist jetzt als strukturierter Master-Import besser nutzbar.

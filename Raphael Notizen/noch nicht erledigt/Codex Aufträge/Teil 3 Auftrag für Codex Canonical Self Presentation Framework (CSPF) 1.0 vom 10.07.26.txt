@@ -1,0 +1,645 @@
+# Codex-Auftrag – Canonical Self Presentation Framework (CSPF) 1.0
+
+## Teil 3 von X
+
+### Governance • Sicherheit • Qualitätskontrolle • Integration
+
+---
+
+# Ziel
+
+Das Canonical Self Presentation Framework (CSPF) ist nicht lediglich ein Modul zur Ausgabe von Informationen über K.
+
+Es ist die einzige autorisierte Quelle sämtlicher Selbstdarstellungen des Systems.
+
+Teil 3 definiert deshalb sämtliche Regeln für
+
+* Governance
+* Sicherheit
+* Datenschutz
+* Integrität
+* Auditierbarkeit
+* Versionsverwaltung
+* Integration
+* Qualitätssicherung
+* Freigabeprozesse
+
+Kein Modul darf diese Regeln umgehen.
+
+---
+
+# Kapitel 1
+
+## Canonical Source of Truth
+
+Es darf genau eine kanonische Quelle existieren.
+
+Beispielsweise:
+
+```
+24_config/
+    canonical_self_presentation_framework_1_0.json
+```
+
+oder
+
+```
+14_documents/
+    CANONICAL_SELF_PRESENTATION_FRAMEWORK_1_0.md
+```
+
+Alle weiteren Dateien besitzen ausschließlich dokumentierenden Charakter.
+
+---
+
+# Kapitel 2
+
+## Ausschließliches Zugriffsmodell
+
+Folgende Komponenten dürfen ausschließlich über CSPF Informationen über K abrufen:
+
+* GUI
+* REST API
+* CLI
+* Voice Interface
+* Web Interface
+* Mobile Apps
+* Exportmodule
+* Reports
+* Debugausgaben
+* Assistenzsysteme
+* zukünftige Schnittstellen
+
+Direkte Texte außerhalb des CSPF sind nicht zulässig.
+
+---
+
+# Kapitel 3
+
+## Schreibschutz
+
+Produktiv darf kein Modul Laufzeitänderungen an den Profilen durchführen.
+
+Schreibzugriff besitzen ausschließlich:
+
+* Creator
+* Administrator
+* autorisierte Wartungswerkzeuge
+* dokumentierte Migrationen
+
+Alle anderen Komponenten besitzen Read-Only-Zugriff.
+
+---
+
+# Kapitel 4
+
+## Rollenmodell
+
+Mindestens folgende Rollen sind vorzusehen:
+
+* Creator
+* Super Administrator
+* Administrator
+* Entwickler
+* Auditor
+* Tester
+* Standardbenutzer
+* Gast
+* Kind
+* API Client
+* zukünftige Rollen
+
+Jede Rolle besitzt definierte Sichtbarkeiten.
+
+---
+
+# Kapitel 5
+
+## Sichtbarkeitsregeln
+
+Nicht jede Rolle darf sämtliche Informationen sehen.
+
+Beispiele:
+
+Gast
+
+* Kurzbeschreibung
+
+Benutzer
+
+* Standardprofil
+
+Administrator
+
+* technische Informationen
+
+Auditor
+
+* vollständige Historie
+
+Kind
+
+* ausschließlich kindgerechte Inhalte
+
+---
+
+# Kapitel 6
+
+## Sicherheitsklassifikation
+
+Jeder Präsentationsbaustein erhält eine Sicherheitsstufe.
+
+Beispielsweise:
+
+PUBLIC
+
+INTERNAL
+
+ADMIN
+
+SYSTEM
+
+CONFIDENTIAL
+
+RESTRICTED
+
+Diese Einstufung wird vor jeder Ausgabe geprüft.
+
+---
+
+# Kapitel 7
+
+## Kinderschutz
+
+Das Kindprofil besitzt höchste Priorität.
+
+Verbindlich:
+
+keine
+
+* Administratorbegriffe
+
+* Sicherheitswarnungen
+
+* interne Architektur
+
+* komplexe Fachbegriffe
+
+* unnötige technische Details
+
+Ausgabe ausschließlich
+
+* verständlich
+* positiv
+* altersgerecht
+* eindeutig
+
+---
+
+# Kapitel 8
+
+## Datenschutz
+
+Selbstpräsentationen dürfen niemals enthalten:
+
+Passwörter
+
+Tokens
+
+Schlüssel
+
+interne Dateipfade
+
+lokale Benutzerkonten
+
+personenbezogene Daten
+
+interne Logs
+
+Debuginformationen
+
+temporäre Zustände
+
+---
+
+# Kapitel 9
+
+## Integritätsprüfung
+
+Vor jeder Ausgabe prüft CSPF:
+
+Profil vorhanden
+
+Version gültig
+
+Schema gültig
+
+keine beschädigten Daten
+
+keine fehlenden Felder
+
+keine verbotenen Inhalte
+
+keine widersprüchlichen Informationen
+
+---
+
+# Kapitel 10
+
+## Konsistenzprüfung
+
+Alle Varianten müssen logisch konsistent bleiben.
+
+Beispielsweise darf
+
+Kurzprofil
+
+nicht behaupten
+
+"K besitzt Emotionen"
+
+während
+
+Technikprofil
+
+dies verneint.
+
+Alle Profile müssen denselben Wahrheitskern besitzen.
+
+---
+
+# Kapitel 11
+
+## Sprachkonsistenz
+
+Alle Übersetzungen müssen denselben Informationsgehalt besitzen.
+
+Unterschiede dürfen ausschließlich stilistisch sein.
+
+Keine Sprache darf
+
+mehr
+
+oder
+
+weniger
+
+Informationen enthalten.
+
+---
+
+# Kapitel 12
+
+## Versionskontrolle
+
+Jedes Profil besitzt
+
+Version
+
+Historie
+
+Änderungsdatum
+
+Autor
+
+Freigabestatus
+
+Prüfstatus
+
+Migration
+
+Kompatibilität
+
+---
+
+# Kapitel 13
+
+## Audit Trail
+
+Jede Änderung wird protokolliert.
+
+Mindestens:
+
+Zeit
+
+Autor
+
+Grund
+
+alte Version
+
+neue Version
+
+betroffene Profile
+
+Prüfer
+
+Freigabe
+
+Rollbackpunkt
+
+---
+
+# Kapitel 14
+
+## Rollback
+
+Jede Version muss vollständig wiederherstellbar sein.
+
+Keine Änderung darf irreversibel sein.
+
+---
+
+# Kapitel 15
+
+## Canonical Validation
+
+Ein Validator überprüft automatisch:
+
+Schema
+
+Pflichtfelder
+
+Referenzen
+
+Textlängen
+
+Sprachen
+
+Sicherheitsstufen
+
+Kindprofile
+
+Sprachausgaben
+
+Exports
+
+Signaturen
+
+Integrität
+
+---
+
+# Kapitel 16
+
+## Automatische Tests
+
+Verbindliche Testklassen:
+
+Unit Tests
+
+Integration Tests
+
+Regression Tests
+
+Localization Tests
+
+Accessibility Tests
+
+Security Tests
+
+Schema Tests
+
+Migration Tests
+
+Voice Tests
+
+GUI Tests
+
+API Tests
+
+Export Tests
+
+---
+
+# Kapitel 17
+
+## Performance
+
+Selbstvorstellungen müssen
+
+ohne merkliche Verzögerung
+
+bereitgestellt werden.
+
+Ziele:
+
+Cachefähigkeit
+
+geringer Speicherbedarf
+
+schnelle Initialisierung
+
+keine redundanten Berechnungen
+
+---
+
+# Kapitel 18
+
+## Logging
+
+Es dürfen ausschließlich technische Ereignisse protokolliert werden.
+
+Nicht protokolliert werden dürfen:
+
+gesprochene Inhalte
+
+personenbezogene Daten
+
+private Informationen
+
+Kinderdialoge
+
+---
+
+# Kapitel 19
+
+## Integration mit bestehenden Frameworks
+
+CSPF ist vollständig mit folgenden Frameworks zu integrieren:
+
+Foundation
+
+CDF
+
+CDG
+
+CAM
+
+CRE
+
+Execution Planner
+
+Orchestrator Core
+
+CLMSF
+
+CAF
+
+CCP
+
+Learning Agent
+
+Governance Dashboard
+
+Artifact Identity
+
+Artifact Dependency Graph
+
+Canonical Glossary
+
+Release Integrity
+
+Audit Framework
+
+Memory
+
+Reasoning
+
+Identity
+
+Knowledge Graph
+
+---
+
+# Kapitel 20
+
+## Export
+
+Alle Profile müssen exportierbar sein.
+
+Mindestens:
+
+JSON
+
+Markdown
+
+HTML
+
+PDF
+
+Text
+
+Voice Package
+
+API Response
+
+---
+
+# Kapitel 21
+
+## Import
+
+Importe dürfen ausschließlich erfolgen, wenn
+
+Schema gültig
+
+Version kompatibel
+
+Integrität bestätigt
+
+Signatur gültig
+
+keine Konflikte vorhanden
+
+---
+
+# Kapitel 22
+
+## Erweiterbarkeit
+
+Neue Profile dürfen ergänzt werden,
+
+ohne bestehende Profile zu verändern.
+
+Dies gilt insbesondere für
+
+zukünftige Identitätsstufen
+
+neue Sprachen
+
+Barrierefreiheit
+
+Assistenzsysteme
+
+Robotik
+
+AR
+
+VR
+
+XR
+
+Agent-to-Agent-Kommunikation
+
+---
+
+# Kapitel 23
+
+## Qualitätsrichtlinien
+
+Jede Selbstvorstellung muss
+
+korrekt
+
+verständlich
+
+konsistent
+
+vollständig
+
+barrierearm
+
+mehrsprachig
+
+wahrheitsgemäß
+
+prüfbar
+
+nachvollziehbar
+
+kanonisch
+
+sein.
+
+---
+
+# Kapitel 24
+
+## Freigabekriterien
+
+CSPF 1.0 gilt erst dann als freigegeben, wenn
+
+alle Profile implementiert sind,
+
+alle Rollen geprüft wurden,
+
+alle Exporte funktionieren,
+
+alle Sprachversionen validiert wurden,
+
+alle Sicherheitstests bestanden wurden,
+
+alle Kindprofile geprüft wurden,
+
+alle Integrationsprüfungen erfolgreich sind,
+
+die Dokumentation vollständig ist,
+
+sämtliche Auditregeln erfüllt werden,
+
+und keine Komponente mehr eigene Selbstdarstellungen erzeugt.
+
+---
+
+# Arbeitsauftrag für Codex
+
+Prüfe die bestehende Architektur von Projekt Kontinuum vollständig darauf, ob sämtliche Anforderungen dieses dritten Teils des Canonical Self Presentation Frameworks erfüllt werden können.
+
+Erstelle keine produktive Implementierung ohne vorherige Architekturprüfung.
+
+Identifiziere sämtliche Abweichungen, Risiken, Redundanzen und Integrationspunkte.
+
+Erarbeite einen vollständigen Architekturbericht mit konkreten Empfehlungen zur kanonischen Umsetzung. Die Ergebnisse müssen kompatibel mit Foundation, CDF, CDG, CAM, CAF, CLMSF, CRE, Execution Planner, Orchestrator Core und allen bestehenden Governance-Komponenten von Projekt Kontinuum sein.
+
+Ziel ist eine revisionssichere, auditierbare und langfristig erweiterbare Architektur, in der jede Form der Selbstdarstellung ausschließlich über das Canonical Self Presentation Framework gesteuert wird.

@@ -1,0 +1,214 @@
+# Codex Execution Prompt – Phase 3 vom 27.06.26
+
+## System Stabilization & Continuous Canonical Governance
+
+## Ziel
+
+Implementiere Phase 3 des Projekts „Kontinuum“ als übergeordnete Stabilisierungsschicht für das bestehende System.
+
+Ziel ist nicht Feature-Erweiterung, sondern die Einführung eines **kontinuierlich laufenden Governance- und Stabilitätslayers**, der die Canonical Governance Baseline 34.1 als unveränderlichen Referenzzustand nutzt.
+
+---
+
+## 0. Ausgangsbasis (verbindlich)
+
+* Canonical Governance Baseline:
+  `24_config/canonical_governance_baseline_34_1.json`
+* Status: IMMUTABLE / READ-ONLY REFERENZ
+* Alle Systemzustände werden gegen diese Baseline verglichen
+
+---
+
+## 1. Kernziel von Phase 3
+
+Aufbau eines kontinuierlichen Systems zur:
+
+* Stabilisierung der Systemarchitektur
+* Erkennung von Drift gegenüber Baseline 34.1
+* Durchsetzung von Governance-Regeln in Echtzeit oder Near-Realtime
+* Sicherstellung der Canonical-Konformität aller Artefakte
+* Protokollierung aller Abweichungen
+
+---
+
+## 2. Neue Systemkomponenten
+
+Implementiere folgende Module als logische oder physische Komponenten:
+
+### 2.1 Canonical Governance Monitor (CGM)
+
+Aufgaben:
+
+* kontinuierlicher Vergleich aller relevanten Systemartefakte gegen Baseline 34.1
+* Identifikation von:
+
+  * Strukturdrift
+  * Artefaktdrift
+  * Regelabweichungen
+* Generierung von Governance Reports
+
+---
+
+### 2.2 Drift Detection Engine (DDE)
+
+Aufgaben:
+
+* Berechnung von Abweichungen zwischen:
+
+  * aktueller Systemstruktur
+  * canonical_governance_baseline_34_1.json
+* Klassifikation von Drift:
+
+  * LOW (kosmetisch)
+  * MEDIUM (strukturell)
+  * HIGH (architektonisch kritisch)
+
+---
+
+### 2.3 Canonical Integrity Checker (CIC)
+
+Aufgaben:
+
+* Validierung aller neuen oder geänderten Artefakte
+* Prüfung auf:
+
+  * Konformität zur Baseline
+  * korrekte Zuordnung in Governance-Struktur
+  * Einhaltung Canonical Naming / Registry Regeln
+* Blockieren oder Flaggen nicht-konformer Artefakte (read-only enforcement layer)
+
+---
+
+### 2.4 Governance Event Logger (GEL)
+
+Aufgaben:
+
+* Protokollierung aller Governance-relevanten Ereignisse:
+
+  * Drift erkannt
+  * Baseline Vergleich durchgeführt
+  * Artefakt validiert
+  * Regelverstoß erkannt
+* Speicherung in auditierbarer Chronik
+
+---
+
+## 3. Systemverhalten (zwingend)
+
+Das System muss ab Phase 3:
+
+* kontinuierlich gegen Baseline 34.1 prüfen
+* keine stillen strukturellen Änderungen zulassen
+* jede Abweichung dokumentieren
+* Governance-Status jederzeit exportierbar machen
+* Baseline niemals überschreiben oder modifizieren
+
+---
+
+## 4. Governance-Modell
+
+Einführung eines dauerhaften Stabilitätsmodells:
+
+* Baseline Layer → 34.1 (immutable)
+* Monitoring Layer → CGM + DDE + CIC
+* Event Layer → GEL
+* Operational Layer → bestehendes System
+
+---
+
+## 5. Ausgabeanforderungen
+
+Das System muss regelmäßig erzeugen:
+
+* Governance Status Report
+* Drift Report
+* Integrity Report
+* Baseline Compliance Score
+
+---
+
+## 6. Abschlusskriterien Phase 3
+
+Phase 3 gilt als implementiert, wenn:
+
+* CGM aktiv
+* DDE aktiv
+* CIC aktiv
+* GEL aktiv
+* Baseline 34.1 als Referenz fix integriert
+* erste vollständige Driftanalyse erfolgreich durchgeführt
+* Governance-Reports generierbar
+
+---
+
+## 7. Leitprinzip
+
+> „Das System darf wachsen, aber nicht vom Referenzzustand abweichen, ohne es sichtbar zu machen.“
+
+---
+
+Ich setze Phase 3 jetzt als echte Stabilisierungsschicht um und prüfe zuerst, was aus 34.1 bereits vorhanden ist, damit ich nicht versehentlich ein zweites Governance-System daneben baue. Danach ergänze ich gezielt CGM, DDE, CIC und GEL um die Baseline 34.1 als unveränderliche Referenz.
+
+Es gibt bereits ein continuous_governance.py, also ist Phase 3 offenbar teilweise angelegt. Ich lese jetzt diese Implementierung und die vorhandenen Tests; dann entscheide ich, ob ich erweitere oder nur die fehlenden Phase-3-Verträge nachziehe.
+
+Die vorhandene Schicht ist ein guter Kern, aber sie bildet CGM/DDE/CIC/GEL noch nicht als explizite Komponenten ab und exportiert noch keine vollständigen Status-, Drift-, Integrity- und Compliance-Reports. Ich erweitere daher das bestehende Modul statt ein neues Parallelmodell zu schaffen.
+
+Ich werde die neuen Komponenten im bestehenden continuous_governance.py unterbringen: ein immutable Baseline-Objekt, GEL für JSONL-Audits, DDE mit LOW/MEDIUM/HIGH, CIC für Artefaktprüfung und CGM als orchestrierende Monitor-Schicht. Danach ergänze ich den Statuscheck und Tests, damit Phase 3 nicht nur beschrieben, sondern ausführbar nachweisbar ist.
+
+Ich nehme die Änderung jetzt in mehreren kleinen Patches vor, damit die bestehende 34.1-Logik stabil bleibt. Der erste Patch fügt die Bausteine selbst hinzu; danach verdrahte ich sie im ContinuousGovernanceSystem.
+
+Wichtiger Punkt: Weil die Baseline 34.1 immutable bleibt, wird jede Implementierungsänderung an überwachten Dateien als Drift sichtbar. Ich werte deshalb „Phase 3 aktiv“ getrennt von „keine Drift vorhanden“ aus: das System ist erfolgreich, wenn es Drift zuverlässig erkennt, klassifiziert, protokolliert und reportet.
+
+Die Komponenten sind jetzt verdrahtet. Ich lasse als Nächstes die vorhandenen Phase-3-Tests laufen; falls sie noch auf das alte „driftfrei == ok“-Verständnis festgenagelt sind, passe ich die Tests auf das neue Baseline-konforme Verhalten an.
+
+Der direkte python-Aufruf ist in dieser Shell nicht auf dem PATH. Ich suche kurz den verfügbaren Python-Runner und nutze dann denselben Testpfad damit weiter.
+
+Das ist nur ein Windows-Quoting-Thema wegen des Leerzeichens in C:\Projekt Kontinuum. Ich wechsle auf PowerShells Call-Operator mit sauber gequoteten Pfaden.
+
+Die Tests brauchen Schreibzugriff in C:\Projekt Kontinuum, weil GEL in das Governance-Log schreibt und Reports exportiert. Ich führe die Verifikation deshalb mit Eskalation aus; die aktiven Änderungen sind genau diese Audit-/Report-Artefakte plus die Moduländerung.
+
+Der Testfehler zeigt eine gute Rückwärtskompatibilitätskante: bestehende Verbraucher erwarten nach classify_and_log den Klassifikationsdatensatz als letzte Logzeile. Ich drehe die Reihenfolge so, dass GEL-Ereignisse erhalten bleiben, aber der alte Vertrag stabil bleibt.
+
+du hast ja auch Schreibzugriff
+
+Ja, genau: mit Eskalation habe ich jetzt Schreibzugriff auf C:\Projekt Kontinuum und nutze ihn für die Implementierung, Logs, Reports und Tests. Ich habe gerade eine Rückwärtskompatibilität im Governance-Log korrigiert und lasse die Phase-3-Verifikation jetzt erneut laufen.
+
+Die bestehende Regression ist grün. Ich ergänze jetzt noch explizite Assertions für CGM, DDE, CIC, GEL, Baseline-Score und Report-Export, damit die neuen Phase-3-Abschlusskriterien direkt im Test abgedeckt sind.
+
+Die Tests decken die neuen Komponenten jetzt direkt ab. Als Nächstes verdrahte ich den allgemeinen status_check_34_1.py, damit die Phase-3-Schicht auch in der normalen Statusprüfung als Pflichtgate auftaucht.
+
+status_check_34_1.py prüft Phase 3 jetzt als Pflichtbestandteil: CGM/DDE/CIC/GEL, immutable Baseline und Reportfähigkeit. Ich lasse nun Test, Statuscheck und einen direkten Report-Export laufen.
+
+Test und Statuscheck sind grün. Ich ergänze noch die Konfiguration und Dokumentation, damit die neuen Komponenten nicht nur im Code existieren, sondern auch als Phase-3-Modell und Ausgabecontract kanonisch beschrieben sind.
+
+Ich erweitere jetzt continuous_governance_34_1.json um die expliziten Phase-3-Komponenten, Report-Ziele und Naming-Marker. Danach laufen die Prüfungen erneut, weil JSON-Patches gern kleinlich sind.
+
+Die Konfiguration kennt jetzt CGM/DDE/CIC/GEL und die vier Reporttypen. Ich dokumentiere denselben Vertrag in der Phase-3-Dokumentation, damit Betrieb, Code und Config zusammenpassen.
+
+Dokumentation und Konfiguration sind aktualisiert. Ich lasse jetzt noch einmal Syntaxprüfung, Phase-3-Test und Statuscheck laufen; danach schaue ich in die erzeugten Reports, um die erste vollständige Driftanalyse zu bestätigen.
+
+Alle Prüfungen sind grün. Ich lese jetzt die generierten Phase-3-Reports aus, besonders Driftklassifikation und Compliance Score, damit der Abschluss nicht nur „Test bestanden“, sondern operational nachgewiesen ist.
+
+Die erste Driftanalyse arbeitet wie gewünscht: Sie sieht die Änderungen gegen die eingefrorene Baseline und klassifiziert sie als MEDIUM. Ich schärfe noch die Report-Semantik: ok soll bedeuten „Monitor lief erfolgreich“, während drift_free separat sagt, ob Abweichungen vorhanden sind.
+
+Damit bleibt die Drift sichtbar, aber der Monitor selbst wird nicht als defekt markiert, nur weil er Abweichungen korrekt gefunden hat. Ich regeneriere die Reports und prüfe den finalen Status.
+
+Der parallele Report-Read war zu früh und hat noch die vorherige Datei erwischt. Ich lese den Report jetzt sequenziell nach den abgeschlossenen Prüfungen.
+
+Phase 3 ist implementiert und verifiziert.
+Umgesetzt in:
+[continuous_governance.py](C:/Projekt Kontinuum/01_system/kontinuum/core/continuous_governance.py): CGM, DDE, CIC, GEL, immutable Baseline-Referenz, Reportexport, Compliance Score
+[continuous_governance_34_1.json](C:/Projekt Kontinuum/24_config/continuous_governance_34_1.json): Phase-3-Komponenten, Baseline-Referenz, Reportziele, Naming-Marker
+[status_check_34_1.py](C:/Projekt Kontinuum/13_tools/status_check_34_1.py): Phase 3 als Pflichtprüfung integriert
+[test_continuous_governance_34_1.py](C:/Projekt Kontinuum/17_tests/test_continuous_governance_34_1.py): Tests für CGM/DDE/CIC/GEL, Reports und Baseline-Score erweitert
+[PHASE3_CONTINUOUS_CANONICAL_GOVERNANCE_34_1.md](C:/Projekt Kontinuum/14_documents/PHASE3_CONTINUOUS_CANONICAL_GOVERNANCE_34_1.md): Architekturvertrag dokumentiert
+Erzeugte Reports:
+31_reports/governance/phase3/governance_status_report.json
+31_reports/governance/phase3/drift_report.json
+31_reports/governance/phase3/integrity_report.json
+31_reports/governance/phase3/baseline_compliance_score.json
+Verifikation:
+py_compile: bestanden
+test_continuous_governance_34_1.py: bestanden
+status_check_34_1.py: Status: VERIFIZIERT, Freigabe: JA
+Die Baseline canonical_governance_baseline_34_1.json wurde nicht überschrieben. Die erste vollständige Driftanalyse ist gelaufen: CGM aktiv, DDE aktiv, CIC aktiv, GEL aktiv; Drift wird aktuell als MEDIUM sichtbar gemacht, weil die neue Phase-3-Implementierung bewusst nach der eingefrorenen Baseline entstanden ist.

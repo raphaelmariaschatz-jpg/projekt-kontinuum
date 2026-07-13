@@ -23,3 +23,6 @@ Nachweise werden nicht verändert oder gelöscht.
 Technische Regel-IDs: `foundation.guiding.01` bis
 `foundation.guiding.12`. Autorisierungsreferenz:
 `creator-directive-2026-06-21`.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

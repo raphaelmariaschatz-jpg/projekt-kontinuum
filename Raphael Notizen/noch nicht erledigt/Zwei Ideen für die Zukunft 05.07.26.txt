@@ -1,0 +1,396 @@
+Zwei Ideen für die Zukunft 05.07.26
+
+Beim Lesen sind mir zwei mögliche Erweiterungen eingefallen.
+
+1. Artifact Identity (AID)
+
+Momentan klassifiziert ALP Dateien.
+
+Später könnte jede Datei zusätzlich eine dauerhafte Identität erhalten.
+
+Beispielsweise:
+
+Artifact-ID: AID-00482
+
+Name:
+learning_agent.py
+
+Klasse:
+Canonical
+
+Status:
+Runtime Required
+
+Nachfolger:
+learning_agent.py
+
+Vorgänger:
+learning_agent_1_2.py
+
+Historie:
+1.0
+1.1
+1.2
+Canonical
+
+Dadurch wäre jede Entwicklung vollständig nachvollziehbar, selbst wenn Dateinamen geändert werden.
+
+Das würde hervorragend zu CAM passen.
+
+2. Artifact Dependency Graph (ADG)
+
+ALP beschreibt den Lebenszyklus.
+
+Der nächste logische Schritt wäre,
+
+die Beziehungen zwischen Artefakten sichtbar zu machen.
+
+Beispielsweise:
+
+learning_agent.py
+
+↓
+
+Registry
+
+↓
+
+Runtime
+
+↓
+
+Review
+
+↓
+
+Memory
+
+↓
+
+Release Integrity
+
+Dann könnte CAM vor jeder Archivierung sofort erkennen:
+
+Welche Komponenten wären betroffen?
+
+Das wäre eine sehr mächtige Erweiterung.
+
+Noch eine kleine formale Beobachtung
+
+Mir ist aufgefallen, dass Codex den Begriff "Compatibility Required" in den Ausnahmen verwendet, obwohl diese Klasse in den fünf offiziellen Artefaktklassen nicht definiert wurde.
+
+Das ist kein Fehler, aber ich würde für Konsistenz sorgen:
+
+Entweder den Begriff durch Runtime Required oder Release Evidence ersetzen, wenn er dort fachlich hineinpasst.
+Oder Compatibility Required als sechste, klar definierte Artefaktklasse einführen.
+
+Ich würde zunächst die erste Variante bevorzugen. So bleibt das Modell schlanker.
+
+
+
+05. Juli 2026 – Mit dem Abschluss von AGF 1.0 und dem offiziellen Übergang in Phase 2 wurde Projekt Kontinuum von einem Architekturprojekt zu einem systematisch geführten KI-Engineering-Projekt.
+
+
+Auftrag für Codex:
+
+
+# Codex-Auftrag – Konzeption von Artifact Identity (AID) 1.0 und Artifact Dependency Graph (ADG) 1.0
+
+## Ziel des Auftrags
+
+Bitte prüfe und konzipiere zwei mögliche Erweiterungen für die bestehende kanonische Artefaktverwaltung von Projekt Kontinuum:
+
+1. **Artifact Identity (AID) 1.0**
+2. **Artifact Dependency Graph (ADG) 1.0**
+
+Diese Erweiterungen sollen **noch nicht produktiv tief integriert**, sondern zunächst architektonisch sauber bewertet, eingeordnet und als kanonische Folgebausteine vorbereitet werden.
+
+---
+
+## Ausgangslage
+
+Aktuell existieren bzw. entstehen im Projekt bereits folgende relevante Konzepte:
+
+* **ALP – Artifact Lifecycle Policy**
+
+  * klassifiziert Dateien und Artefakte nach Lebenszyklus, Status und Archivierungslogik.
+
+* **CAM – Canonical Artifact Manager**
+
+  * verwaltet kanonische Artefakte, Manifestlogik, aktive Dateien, historische Artefakte und Archivierungsregeln.
+
+* **CDF – Canonical Development Framework**
+
+  * definiert den kanonischen Entwicklungsrahmen.
+
+* **CDG – Canonical Development Governance**
+
+  * soll die verbindliche Entwicklungs-Governance für Codex und künftige Arbeitsschritte bilden.
+
+Die neuen Bausteine sollen diese Architektur **ergänzen**, nicht ersetzen.
+
+---
+
+# Teil 1: Artifact Identity (AID) 1.0
+
+## Grundidee
+
+Momentan klassifiziert ALP Dateien.
+Künftig soll jedes relevante Artefakt zusätzlich eine **dauerhafte Identität** erhalten.
+
+Diese Identität soll unabhängig vom aktuellen Dateinamen bestehen bleiben.
+
+Beispiel:
+
+```yaml
+Artifact-ID: AID-00482
+Name: learning_agent.py
+Klasse: Canonical
+Status: Runtime Required
+Nachfolger: learning_agent.py
+Vorgänger: learning_agent_1_2.py
+Historie:
+  - 1.0
+  - 1.1
+  - 1.2
+  - Canonical
+```
+
+## Ziel von AID
+
+AID soll ermöglichen:
+
+* dauerhafte Nachvollziehbarkeit jedes Artefakts
+* klare Linie zwischen Vorgänger, Nachfolger und kanonischer Version
+* Schutz vor Identitätsverlust bei Umbenennungen
+* bessere Release-Integrity-Prüfung
+* bessere Archivierungsentscheidungen durch CAM
+* langfristige Versions- und Herkunftsverfolgung
+
+---
+
+# Teil 2: Artifact Dependency Graph (ADG) 1.0
+
+## Grundidee
+
+ALP beschreibt den Lebenszyklus eines Artefakts.
+ADG soll zusätzlich die **Beziehungen zwischen Artefakten** sichtbar machen.
+
+Beispiel:
+
+```text
+learning_agent.py
+↓
+Registry
+↓
+Runtime
+↓
+Review
+↓
+Memory
+↓
+Release Integrity
+```
+
+## Ziel von ADG
+
+ADG soll ermöglichen:
+
+* Sichtbarkeit technischer und logischer Abhängigkeiten
+* Prüfung, welche Komponenten bei Archivierung betroffen wären
+* bessere Risikoanalyse vor Verschieben, Umbenennen oder Entfernen von Dateien
+* Unterstützung für CAM, Release Integrity und Governance
+* Grundlage für spätere Architekturvisualisierung
+* Schutz vor unbeabsichtigten Laufzeitbrüchen
+
+---
+
+## Arbeitsauftrag an Codex
+
+Bitte führe eine strukturierte Architekturprüfung durch.
+
+### 1. Bestand prüfen
+
+Prüfe relevante Dateien und Konzepte im Projekt, insbesondere:
+
+* ALP / Artifact Lifecycle Policy
+* CAM / Canonical Artifact Manager
+* CDF / Canonical Development Framework
+* CDG / Canonical Development Governance
+* Release Integrity
+* Canonical Glossary
+* Architekturmodell
+* Handbuch
+* Projektchronik
+* relevante JSON-Konfigurationen unter `24_config`
+* relevante Dokumente unter `14_documents`
+* relevante Reports unter `31_reports`
+
+Ziel: Feststellen, wo AID und ADG sinnvoll andocken können.
+
+---
+
+### 2. AID 1.0 konzipieren
+
+Bitte entwerfe ein schlankes, kanonisches Konzept für **Artifact Identity 1.0**.
+
+Zu prüfen:
+
+* Benötigt AID ein eigenes Manifest?
+* Sollte AID Teil von CAM werden oder als eigener Unterbaustein geführt werden?
+* Welche Felder sind minimal erforderlich?
+* Wie wird eine dauerhafte Artifact-ID vergeben?
+* Wie werden Vorgänger/Nachfolger abgebildet?
+* Wie wird Historie dargestellt?
+* Wie wird verhindert, dass AID mit Dateinamen verwechselt wird?
+* Wie verhält sich AID zu ALP-Klassen?
+* Wie verhält sich AID zu Release Integrity?
+
+Erwartetes Ergebnis:
+
+* Vorschlag für ein kanonisches AID-Schema
+* Vorschlag für Speicherort, z. B.:
+
+```text
+24_config/artifact_identity_1_0.json
+14_documents/ARTIFACT_IDENTITY_1_0.md
+31_reports/aid_1_0_status_report.md
+```
+
+---
+
+### 3. ADG 1.0 konzipieren
+
+Bitte entwerfe ein schlankes, kanonisches Konzept für **Artifact Dependency Graph 1.0**.
+
+Zu prüfen:
+
+* Welche Arten von Abhängigkeiten sollen erfasst werden?
+* Sollen Abhängigkeiten technisch, logisch oder governance-bezogen klassifiziert werden?
+* Wie erkennt CAM vor Archivierung betroffene Artefakte?
+* Wie werden direkte und indirekte Abhängigkeiten dargestellt?
+* Wie wird verhindert, dass ADG zu komplex wird?
+* Wie kann ADG später visualisiert werden?
+* Wie verhält sich ADG zu CAM, ALP, CDF, CDG und Release Integrity?
+
+Mögliche Beziehungstypen:
+
+```text
+runtime_depends_on
+registered_by
+validated_by
+documented_by
+supersedes
+superseded_by
+requires_config
+requires_test
+release_checked_by
+governed_by
+```
+
+Erwartetes Ergebnis:
+
+* Vorschlag für ein kanonisches ADG-Schema
+* Vorschlag für Speicherort, z. B.:
+
+```text
+24_config/artifact_dependency_graph_1_0.json
+14_documents/ARTIFACT_DEPENDENCY_GRAPH_1_0.md
+31_reports/adg_1_0_status_report.md
+```
+
+---
+
+## Wichtige Leitplanken
+
+Bitte keine große Runtime-Migration durchführen.
+
+Dieser Auftrag ist zunächst:
+
+* konzeptionell
+* prüfend
+* architektonisch vorbereitend
+* dokumentierend
+* risikoarm
+
+Erlaubt sind:
+
+* neue Konzeptdokumente
+* neue JSON-Schema- oder Manifestvorschläge
+* Statusberichte
+* Glossar-Ergänzungen
+* Architekturverweise
+* klare Empfehlungen
+
+Nicht erlaubt ohne gesonderte Freigabe:
+
+* produktive Runtime-Umbauten
+* tiefgreifende CAM-Integration
+* automatische Datei-Verschiebungen
+* Löschungen
+* aggressive Refactorings
+* Änderungen an Laufzeitpfaden ohne ausdrückliche Notwendigkeit
+
+---
+
+## Erwartete Ausgabe
+
+Bitte liefere am Ende:
+
+1. Eine kurze Bestandsanalyse
+2. Eine klare Empfehlung:
+
+   * AID 1.0 sofort vorbereiten?
+   * ADG 1.0 sofort vorbereiten?
+   * Reihenfolge: AID zuerst, ADG danach oder beide gemeinsam?
+3. Vorschlag für neue Dateien
+4. Vorschlag für JSON-Strukturen
+5. Risiken und offene Fragen
+6. Konkrete nächste Schritte
+7. Einen Statusbericht unter `31_reports`, falls umgesetzt
+
+---
+
+## Entscheidungskriterium
+
+Die Erweiterungen sollen nur dann als GO bewertet werden, wenn sie:
+
+* CAM logisch stärken
+* ALP nicht ersetzen, sondern ergänzen
+* Release Integrity verbessern
+* Archivierungsentscheidungen sicherer machen
+* kanonisch sauber dokumentierbar sind
+* die Architektur nicht unnötig verkomplizieren
+
+Ziel ist nicht mehr Komplexität, sondern bessere Nachvollziehbarkeit, Sicherheit und langfristige Ordnung.
+
+---
+
+## Gewünschtes Ergebnis
+
+Am Ende soll klar sein, ob Projekt Kontinuum künftig folgende neue Architekturbausteine aufnehmen soll:
+
+```text
+AID 1.0 – Artifact Identity
+ADG 1.0 – Artifact Dependency Graph
+```
+
+Diese Bausteine sollen als mögliche nächste Entwicklungsstufe nach CAM / ALP / CDF / CDG vorbereitet werden.
+
+Das ist bewusst als Vorbereitungsauftrag formuliert, nicht als harter Umsetzungsauftrag. So bleibt Codex kontrolliert und macht keine übereilten Runtime-Eingriffe.
+
+
+
+AID und ADG könnten in Zukunft gemeinsam den Grundstein für eine Art Architectural Knowledge Graph (AKG) bilden.
+
+Man könnte sich die Entwicklung wie folgt vorstellen:
+
+ALP → Wann lebt ein Artefakt? (Lebenszyklus)
+CAM → Wo befindet sich das Artefakt? (Verwaltung)
+AID → Wer ist das Artefakt? (Identität)
+ADG → Mit wem steht es in Beziehung? (Abhängigkeiten)
+AKG → Wie hängt die gesamte Architektur als Wissensnetz zusammen?
+
+Ein solcher Wissensgraph würde K irgendwann ermöglichen, Architektur nicht nur zu speichern, sondern zu verstehen und ihre Auswirkungen zu analysieren. Das passt bemerkenswert gut zu deinem ursprünglichen Ziel, K den "Draufblick" zu geben – nicht nur auf einzelne Dateien, sondern auf das Gesamtsystem.
+
+Ich würde diesen Gedanken allerdings bewusst noch nicht umsetzen. Im Moment ist er eher ein Fernziel. Erst wenn CAM, CDF, CDG, AID und ADG stabil etabliert sind, wäre ein AKG ein sinnvoller nächster Evolutionsschritt. So bleibt eure Architektur schlank, nachvollziehbar und kontrolliert – genau so, wie ihr sie bisher aufgebaut habt.

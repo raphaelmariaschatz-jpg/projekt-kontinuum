@@ -87,3 +87,6 @@ Ergaenzte Tests pruefen:
 - nicht erlaubter Pfad
 - unbekannter Dateityp
 - GUI-Buttons und Drag-and-Drop-Hook
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

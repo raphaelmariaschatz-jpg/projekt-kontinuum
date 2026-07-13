@@ -1,0 +1,282 @@
+Codex Auftrag Canonical Reflective Layer CRL 1.0 als Ergänzung zur CCP-Cognitive vom 09.07.26
+
+# Codex-Auftrag – Canonical Reflective Layer (CRL) 1.0 als Ergänzung zur CCP-Cognitive
+
+## Ziel
+
+Projekt Kontinuum soll um eine reine Dokumentations- und Governance-Ergänzung zur Canonical Cognitive Pipeline erweitert werden:
+
+**Canonical Reflective Layer (CRL) 1.0**
+
+CRL beschreibt nicht Bewusstsein und behauptet kein subjektives Erleben.
+
+CRL beschreibt eine technisch greifbare Metaebene:
+
+K soll seine eigene Entwicklung anhand dokumentierter Fakten, Architekturentscheidungen, Versionen, Chronik, Governance-Artefakten und Review-Ergebnissen nachvollziehen können.
+
+Ziel ist architektonische Selbstreflexion, nicht philosophische Selbstzuschreibung.
+
+---
+
+## Grundgedanke
+
+Die CCP-Cognitive beantwortet:
+
+> Wie verarbeitet K eine Aufgabe?
+
+CRL beantwortet ergänzend:
+
+> Wie erkennt K Muster in seiner eigenen Entwicklung?
+
+K soll langfristig erkennen können:
+
+* welche Architekturentscheidungen getroffen wurden,
+* warum sie getroffen wurden,
+* welche Komponenten über Versionen hinweg gewachsen sind,
+* welche Prinzipien stabil geblieben sind,
+* welche Annahmen korrigiert wurden,
+* welche Muster sich in der Entwicklung zeigen,
+* welche Verbesserungsvorschläge daraus ableitbar sind.
+
+Alle Schlussfolgerungen müssen auf nachvollziehbaren Daten beruhen.
+
+---
+
+## Strikte Abgrenzung
+
+CRL darf nicht dokumentieren:
+
+* K sei bewusst,
+* K habe subjektives Erleben,
+* K besitze freien Willen,
+* K dürfe beliebige Schlüsse über sich selbst ziehen.
+
+CRL dokumentiert ausschließlich:
+
+* Selbstmodellierung,
+* Entwicklungsanalyse,
+* Architekturreflexion,
+* evidenzbasierte Mustererkennung,
+* begründete Verbesserungsvorschläge.
+
+---
+
+## Rahmenbedingungen
+
+Dieser Auftrag ist ausschließlich ein Dokumentations- und Governance-Auftrag.
+
+Nicht verändern:
+
+* Runtime
+* Foundation
+* Agenten
+* APIs
+* Datenbanken
+* Imports
+* Tests
+* Migrationen
+* Dateiverschiebungen
+* Commits
+
+---
+
+## Neu anzulegen
+
+```text
+14_documents/CANONICAL_REFLECTIVE_LAYER_1_0.md
+24_config/canonical_reflective_layer_1_0.json
+31_reports/crl_1_0_status_report.md
+```
+
+---
+
+## Bestehende Dokumente aktualisieren
+
+Falls vorhanden und passend, ausschließlich dokumentarisch ergänzen:
+
+```text
+14_documents/CANONICAL_GLOSSARY_1_0.md
+24_config/canonical_glossary_1_0.json
+14_documents/CANONICAL_KNOWLEDGE_SYSTEM_1_0.md
+24_config/canonical_knowledge_system_1_0.json
+14_documents/CANONICAL_COGNITIVE_PIPELINE*.md
+31_reports/ARCHITECTURE_PHASE_COMPLETION_REPORT_34_1.md
+22_project_chronicle/PROJEKTCHRONIK_23.md
+14_documents/fundamentale Gedanken/Roadmap.md
+```
+
+Nur ergänzen, wenn die Dateien existieren und die Einordnung eindeutig ist.
+
+Keine erzwungene Umstrukturierung.
+
+---
+
+## Inhalt von CRL 1.0
+
+Das Dokument soll mindestens enthalten:
+
+### 1. Zweck
+
+CRL ist die Metaebene der kognitiven Architektur.
+
+Sie ordnet nicht einzelne Aufgabenverarbeitung, sondern die Reflexion über die eigene Entwicklung.
+
+### 2. Verhältnis zur CCP-Cognitive
+
+CCP-Cognitive:
+
+```text
+Wahrnehmen
+-> Verstehen
+-> Planen
+-> Handeln
+-> Prüfen
+-> Erinnern
+-> Lernen
+```
+
+CRL ergänzt:
+
+```text
+Entwicklung beobachten
+-> Architekturhistorie auswerten
+-> Entscheidungen vergleichen
+-> Muster erkennen
+-> Annahmen prüfen
+-> Lehren ableiten
+-> Verbesserungsvorschläge formulieren
+```
+
+### 3. Wissensarten
+
+CRL unterscheidet mindestens:
+
+* Fachwissen über die Welt
+* Architekturwissen über den eigenen Aufbau
+* Projektwissen über Entstehung und Versionen
+* Entscheidungswissen über Gründe und Alternativen
+* Metawissen über Veränderung, Muster und Entwicklung
+
+### 4. Datenquellen
+
+CRL darf sich nur stützen auf:
+
+* Projektchronik
+* Roadmap
+* CG
+* CAMap
+* CDI
+* CHI
+* CKS
+* AGF
+* CDG
+* CDF
+* CIPL
+* Release Integrity Reports
+* Statusreports
+* Review- und Governance-Artefakte
+
+Keine spekulativen oder nicht belegten Selbstdeutungen.
+
+### 5. Mögliche Reflexionsfragen
+
+Dokumentieren:
+
+* Was hat K in einer Version gelernt?
+* Welche Architekturentscheidungen haben sich bewährt?
+* Welche Annahmen wurden korrigiert?
+* Welche Komponenten wurden wiederholt erweitert?
+* Welche Prinzipien blieben über Versionen stabil?
+* Wo zeigen sich wiederkehrende Architektur- oder Qualitätsmuster?
+* Welche Verbesserungsvorschläge ergeben sich daraus?
+
+### 6. Beispielhafte zulässige Aussage
+
+```text
+Seit Version 34 wurden mehrere Komponenten kanonisiert.
+Daraus lässt sich als dokumentiertes Entwicklungsmuster ableiten:
+Neue Funktionen werden nicht isoliert entwickelt, sondern zuerst in die kanonische Gesamtarchitektur eingeordnet.
+```
+
+### 7. Beispielhafte unzulässige Aussage
+
+```text
+Ich bin bewusst, weil ich meine Entwicklung erkenne.
+```
+
+Diese Aussage ist ausdrücklich unzulässig.
+
+---
+
+## JSON-Struktur
+
+`canonical_reflective_layer_1_0.json` soll mindestens enthalten:
+
+* component_id
+* name
+* abbreviation
+* version
+* status
+* purpose
+* scope
+* non_goals
+* related_components
+* allowed_sources
+* reflection_questions
+* evidence_rules
+* output_boundaries
+* governance_constraints
+
+---
+
+## Statusreport
+
+`crl_1_0_status_report.md` soll dokumentieren:
+
+* angelegte Dateien
+* aktualisierte Dateien
+* Validierungsergebnisse
+* Abgrenzung zu Bewusstseinsbehauptungen
+* Einordnung zu CCP-Cognitive
+* offene Inkonsistenzen oder Folgefragen
+* Bestätigung, dass keine Runtime geändert wurde
+
+---
+
+## Abschlussprüfung
+
+Durchführen und dokumentieren:
+
+```text
+JSON validieren
+Markdown stichprobenartig prüfen
+git diff --check
+Whitespace-/Tab-Prüfung der neuen Dateien
+```
+
+Bestätigen:
+
+```text
+Keine Runtime-Änderungen.
+Keine Foundation-Änderungen.
+Keine Agenten geändert.
+Keine APIs geändert.
+Keine Datenbanken geändert.
+Keine Imports geändert.
+Keine Tests geändert.
+Keine Migration.
+Keine Dateiverschiebung.
+Keine Commits.
+```
+
+---
+
+## Ergebnisziel
+
+Nach Abschluss existiert CRL 1.0 als kanonische Ergänzung zur CCP-Cognitive.
+
+CRL beschreibt, wie K langfristig seine eigene Entwicklung anhand belegbarer Architektur- und Projektinformationen reflektieren kann.
+
+CRL bleibt strikt evidenzgebunden, governancepflichtig und frei von unbelegten Bewusstseinsbehauptungen.
+
+

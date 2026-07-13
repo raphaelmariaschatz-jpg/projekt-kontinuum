@@ -1,0 +1,15 @@
+{
+  "username": "Raphael Schatz",
+  "full_name": "Raphael Schatz",
+  "role": "SUPERADMIN",
+  "is_superadmin": true,
+  "password_hash": "$argon2id$v=19$m=65536,t=3,p=2$+FwzIO3mcUDfaFaVEtFunQ$qs/pWOn5MMv3wWz1CyCw0bJFna8Io9HCxJykA1fdG+E",
+  "recovery_key_hash": "e42534b2379c18a1c98eec25eb7392a6db32bb84db191982404fb4784ee6abbc",
+  "permissions": {
+    "can_manage_connectors": true,
+    "can_search_internet": true,
+    "can_use_local_workspace": true,
+    "can_execute_admin_commands": true,
+    "requires_confirmation_for_risky_actions": true
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "nodes": [
+    {
+      "id": "Mathematik",
+      "category": "science"
+    },
+    {
+      "id": "Physik",
+      "category": "science"
+    },
+    {
+      "id": "Chemie",
+      "category": "science"
+    },
+    {
+      "id": "Biologie",
+      "category": "science"
+    },
+    {
+      "id": "Geologie",
+      "category": "science"
+    },
+    {
+      "id": "Astronomie",
+      "category": "science"
+    },
+    {
+      "id": "Astrophysik",
+      "category": "science"
+    },
+    {
+      "id": "Medizin",
+      "category": "science"
+    },
+    {
+      "id": "Informatik",
+      "category": "science"
+    },
+    {
+      "id": "Materialwissenschaft",
+      "category": "science"
+    },
+    {
+      "id": "Umweltwissenschaft",
+      "category": "science"
+    },
+    {
+      "id": "Raumfahrttechnik",
+      "category": "science"
+    },
+    {
+      "id": "Naturwissenschaften",
+      "category": "concept"
+    },
+    {
+      "id": "den Aufstieg und Fall des römischen Reiches",
+      "category": "research_topic"
+    },
+    {
+      "id": "Photosynthese",
+      "category": "concept"
+    },
+    {
+      "id": "Photonen",
+      "category": "concept"
+    },
+    {
+      "id": "Elektronenanregung",
+      "category": "concept"
+    },
+    {
+      "id": "Quantenmechanik",
+      "category": "concept"
+    },
+    {
+      "id": "Energieumwandlung",
+      "category": "concept"
+    }
+  ],
+  "edges": [
+    {
+      "source": "Naturwissenschaften",
+      "relation": "enthält",
+      "target": "Mathematik"
+    },
+    {
+      "source": "Mathematik",
+      "relation": "enthält",
+      "target": "Physik"
+    },
+    {
+      "source": "Physik",
+      "relation": "enthält",
+      "target": "Chemie"
+    },
+    {
+      "source": "Chemie",
+      "relation": "enthält",
+      "target": "Biologie"
+    },
+    {
+      "source": "Biologie",
+      "relation": "enthält",
+      "target": "Geologie"
+    },
+    {
+      "source": "Geologie",
+      "relation": "enthält",
+      "target": "Astronomie"
+    },
+    {
+      "source": "Astronomie",
+      "relation": "enthält",
+      "target": "Astrophysik"
+    },
+    {
+      "source": "Astrophysik",
+      "relation": "enthält",
+      "target": "Medizin"
+    },
+    {
+      "source": "Medizin",
+      "relation": "enthält",
+      "target": "Informatik"
+    },
+    {
+      "source": "Informatik",
+      "relation": "enthält",
+      "target": "Materialwissenschaft"
+    },
+    {
+      "source": "Materialwissenschaft",
+      "relation": "enthält",
+      "target": "Umweltwissenschaft"
+    },
+    {
+      "source": "Umweltwissenschaft",
+      "relation": "enthält",
+      "target": "Raumfahrttechnik"
+    },
+    {
+      "source": "Photosynthese",
+      "relation": "verbunden_mit",
+      "target": "Photonen"
+    },
+    {
+      "source": "Photonen",
+      "relation": "verbunden_mit",
+      "target": "Elektronenanregung"
+    },
+    {
+      "source": "Elektronenanregung",
+      "relation": "verbunden_mit",
+      "target": "Quantenmechanik"
+    },
+    {
+      "source": "Quantenmechanik",
+      "relation": "verbunden_mit",
+      "target": "Energieumwandlung"
+    }
+  ]
+}

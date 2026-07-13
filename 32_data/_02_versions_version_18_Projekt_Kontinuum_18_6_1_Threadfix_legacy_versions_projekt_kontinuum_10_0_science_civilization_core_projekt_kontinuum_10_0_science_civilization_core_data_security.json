@@ -1,0 +1,28 @@
+{
+  "initialized": false,
+  "users": [],
+  "failed_attempts": 0,
+  "policy": {
+    "max_failed_attempts": 5,
+    "session_timeout_seconds": 1800,
+    "password_hashing": "sha256_with_salt",
+    "superadmin_fixed": "Raphael Schatz",
+    "applies_to_future_versions": true
+  },
+  "recovery": {
+    "enabled": true,
+    "recovery_hash": null,
+    "recovery_salt": null,
+    "created_at": null
+  },
+  "two_factor": {
+    "enabled": false,
+    "method": "totp",
+    "secret": null
+  },
+  "trusted_devices": [],
+  "integrity": {
+    "baseline": {},
+    "last_check": null
+  }
+}

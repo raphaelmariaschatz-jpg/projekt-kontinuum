@@ -1,0 +1,178 @@
+# Codex-Auftrag – Konzeptprüfung Meta-Reasoning 1.0 für Projekt Kontinuum
+
+## Ziel des Auftrags
+
+Bitte prüfe und konzipiere einen möglichen Architekturbaustein:
+
+```text
+Meta-Reasoning 1.0
+```
+
+Dieser Baustein soll K künftig ermöglichen, nicht nur Antworten, Entscheidungen oder Schlussfolgerungen zu erzeugen, sondern auch die eigene Denk- und Entscheidungslogik zu prüfen.
+
+---
+
+## Grundidee
+
+Meta-Reasoning bedeutet:
+
+```text
+K denkt nicht nur über eine Aufgabe nach,
+sondern prüft auch, wie K zu dieser Einschätzung gekommen ist.
+```
+
+Ziel ist nicht Bewusstsein, sondern bessere Selbstprüfung, Fehlererkennung, Begründbarkeit und Governance.
+
+---
+
+## Leitfrage
+
+Kann Projekt Kontinuum einen schlanken, kanonischen Meta-Reasoning-Baustein erhalten, der folgende Fragen prüft?
+
+```text
+Warum wurde diese Antwort gewählt?
+Welche Annahmen wurden getroffen?
+Welche Unsicherheiten bestehen?
+Welche Alternativen wurden verworfen?
+Welche Regeln oder Governance-Vorgaben waren beteiligt?
+Ist die Schlussfolgerung stabil, riskant oder revisionsbedürftig?
+```
+
+---
+
+## Mögliche Aufgaben von Meta-Reasoning 1.0
+
+Bitte prüfen:
+
+1. **Reasoning Review**
+
+   * Bewertung der eigenen Schlussfolgerung
+   * Erkennung schwacher oder unvollständiger Begründungen
+
+2. **Assumption Tracking**
+
+   * Sichtbarmachung getroffener Annahmen
+   * Kennzeichnung unsicherer Annahmen
+
+3. **Confidence Assessment**
+
+   * Einschätzung, ob eine Antwort sicher, mittel sicher oder unsicher ist
+
+4. **Alternative Path Review**
+
+   * Prüfung, ob andere Lösungswege existieren
+   * Dokumentation, warum ein Weg bevorzugt wurde
+
+5. **Governance Alignment**
+
+   * Prüfung gegen CDF, CDG, Foundation, CAM, ALP und Release Integrity
+   * Keine Entscheidung außerhalb kanonischer Regeln
+
+6. **Revision Trigger**
+
+   * Erkennen, wann eine Antwort, Entscheidung oder Architekturannahme später erneut geprüft werden sollte
+
+---
+
+## Einordnung in die bestehende Architektur
+
+Bitte prüfe die Beziehung zu:
+
+* Foundation Layer
+* Reasoning Core
+* Query System
+* Capability Resolution Engine
+* Execution Planner
+* Orchestrator Core
+* CDF – Canonical Development Framework
+* CDG – Canonical Development Governance
+* CAM – Canonical Artifact Manager
+* Release Integrity
+* Projektchronik
+* Audit / Review-Komponenten
+
+Meta-Reasoning soll bestehende Komponenten nicht ersetzen, sondern als prüfende Reflexionsschicht ergänzen.
+
+---
+
+## Wichtige Abgrenzung
+
+Meta-Reasoning 1.0 ist zunächst kein autonomes Bewusstseinsmodul.
+
+Nicht Ziel dieses Auftrags:
+
+* keine Simulation von Bewusstsein
+* keine emotionale Selbstdeutung
+* keine unkontrollierte Selbstmodifikation
+* keine Runtime-Migration
+* keine tiefgreifende Änderung bestehender Antwortlogik
+* keine neue Agentenflut
+
+Ziel ist eine kontrollierte Architekturprüfung für:
+
+```text
+Selbstprüfung
+Begründbarkeit
+Fehlerreduktion
+Entscheidungsqualität
+Governance-Konformität
+```
+
+---
+
+## Erwartete Ergebnisse
+
+Bitte liefere:
+
+1. Bestandsanalyse vorhandener Reasoning-, Review- und Governance-Strukturen
+2. Bewertung, ob Meta-Reasoning 1.0 sinnvoll ist
+3. Vorschlag für minimale Aufgaben und Grenzen
+4. Vorschlag für mögliche Dateien, z. B.:
+
+```text
+14_documents/META_REASONING_1_0.md
+24_config/meta_reasoning_1_0.json
+31_reports/meta_reasoning_1_0_status_report.md
+```
+
+5. Vorschlag für ein schlankes JSON-Schema
+6. Risiken und Schutzmaßnahmen
+7. Empfehlung: GO / NO-GO / SPÄTER
+8. Konkrete nächste Schritte
+
+---
+
+## Leitplanken
+
+Erlaubt:
+
+* Konzeptdokumente
+* Statusbericht
+* Glossar-Ergänzung
+* Architekturverweis
+* JSON-Schema-Vorschlag
+* risikoarme Dokumentation
+
+Nicht erlaubt ohne gesonderte Freigabe:
+
+* produktive Runtime-Änderungen
+* automatische Selbstbewertung im Livebetrieb
+* Selbstmodifikation
+* Änderung von Orchestrator-, Planner- oder CRE-Logik
+* Änderungen an aktiven Entscheidungswegen
+* Löschungen oder Datei-Verschiebungen
+
+---
+
+## Entscheidungskriterium
+
+Meta-Reasoning 1.0 ist nur sinnvoll, wenn es:
+
+* K stabiler macht
+* Entscheidungen nachvollziehbarer macht
+* Governance stärkt
+* Fehler früh erkennt
+* bestehende Architektur ergänzt
+* keine unkontrollierte Komplexität erzeugt
+
+Ziel ist nicht mehr Mystik, sondern bessere Kontrolle über Denken, Prüfen und Entscheiden.

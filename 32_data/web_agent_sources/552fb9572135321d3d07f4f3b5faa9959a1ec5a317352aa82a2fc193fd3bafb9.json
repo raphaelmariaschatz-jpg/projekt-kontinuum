@@ -1,0 +1,236 @@
+{
+  "url": "https://docs.python.org/3.15/",
+  "title": "3.15.0b3 Documentation",
+  "topic": "Crawl https://docs.python.org/3/",
+  "retrieved_at": "2026-06-30T10:35:08.607603+00:00",
+  "sha256": "a5ff362e55cce873ff1068214d6c4a272d6db95d0c0e704b9754b4e1d0a120cf",
+  "summary": "Navigation Python 3.15.0b3 documentation Download Docs by version Other resources Navigation Welcome! This is the official documentation for Python 3.15.0b3. Documentation sections: Other resources: Indices, glossary, and search: Project information: Download these documents index modules | Python » 3.15.0b3 Documentation » | Theme Auto Light Dark | What's new in Python 3.15? Or all \"What's new\" documents since Python 2.0 Tutorial Start here: a tour of Python's syntax and features Library reference Standard library and builtins Language reference Syntax and language elements Python setup and usage How to install, configure, and use Python Python HOWTOs In-depth topic manuals Installing Pytho",
+  "learning_summary": "3.15.0b3 Documentation: Navigation Python 3.15.0b3 documentation Download Docs by version Other resources Navigation Welcome! This is the official documentation for Python 3.15.0b3. Documentation sections: Other resources: Indices, glossary, and search: Project information: Download these documents index modules | Python » 3.15.0b3 Documentation » | Theme Auto Light Dark | What's new in Python 3.15?",
+  "http_status": 200,
+  "links": [
+    {
+      "url": "https://www.python.org/",
+      "text": ""
+    },
+    {
+      "url": "https://docs.python.org/3.15/download.html",
+      "text": ""
+    },
+    {
+      "url": "https://docs.python.org/3.16/",
+      "text": ""
+    },
+    {
+      "url": "https://docs.python.org/3.15/",
+      "text": ""
+    },
+    {
+      "url": "https://docs.python.org/3.14/",
+      "text": ""
+    },
+    {
+      "url": "https://docs.python.org/3.13/",
+      "text": ""
+    },
+    {
+      "url": "https://docs.python.org/3.12/",
+      "text": ""
+    },
+    {
+      "url": "https://docs.python.org/3.11/",
+      "text": ""
+    },
+    {
+      "url": "https://docs.python.org/3.10/",
+      "text": ""
+    },
+    {
+      "url": "https://docs.python.org/3.9/",
+      "text": ""
+    },
+    {
+      "url": "https://docs.python.org/3.8/",
+      "text": ""
+    },
+    {
+      "url": "https://docs.python.org/3.7/",
+      "text": ""
+    },
+    {
+      "url": "https://docs.python.org/3.6/",
+      "text": ""
+    },
+    {
+      "url": "https://docs.python.org/3.5/",
+      "text": ""
+    },
+    {
+      "url": "https://docs.python.org/3.4/",
+      "text": ""
+    },
+    {
+      "url": "https://docs.python.org/3.3/",
+      "text": ""
+    },
+    {
+      "url": "https://docs.python.org/3.2/",
+      "text": ""
+    },
+    {
+      "url": "https://docs.python.org/3.1/",
+      "text": ""
+    },
+    {
+      "url": "https://docs.python.org/3.0/",
+      "text": ""
+    },
+    {
+      "url": "https://docs.python.org/2.7/",
+      "text": ""
+    },
+    {
+      "url": "https://docs.python.org/2.6/",
+      "text": ""
+    },
+    {
+      "url": "https://www.python.org/doc/versions/",
+      "text": ""
+    },
+    {
+      "url": "https://peps.python.org/",
+      "text": ""
+    },
+    {
+      "url": "https://wiki.python.org/moin/BeginnersGuide",
+      "text": ""
+    },
+    {
+      "url": "https://wiki.python.org/moin/PythonBooks",
+      "text": ""
+    },
+    {
+      "url": "https://www.python.org/doc/av/",
+      "text": ""
+    },
+    {
+      "url": "https://devguide.python.org/",
+      "text": "Navigation"
+    },
+    {
+      "url": "https://docs.python.org/3.15/genindex.html",
+      "text": "index"
+    },
+    {
+      "url": "https://docs.python.org/3.15/py-modindex.html",
+      "text": "modules |"
+    },
+    {
+      "url": "https://docs.python.org/3.15/whatsnew/3.15.html",
+      "text": "What's new in Python 3.15? Or"
+    },
+    {
+      "url": "https://docs.python.org/3.15/whatsnew/index.html",
+      "text": "all \"What's new\" documents since Python 2.0"
+    },
+    {
+      "url": "https://docs.python.org/3.15/tutorial/index.html",
+      "text": "Tutorial Start here: a tour of Python's syntax and features"
+    },
+    {
+      "url": "https://docs.python.org/3.15/library/index.html",
+      "text": "Library reference Standard library and builtins"
+    },
+    {
+      "url": "https://docs.python.org/3.15/reference/index.html",
+      "text": "Language reference Syntax and language elements"
+    },
+    {
+      "url": "https://docs.python.org/3.15/using/index.html",
+      "text": "Python setup and usage How to install, configure, and use Python"
+    },
+    {
+      "url": "https://docs.python.org/3.15/howto/index.html",
+      "text": "Python HOWTOs In-depth topic manuals"
+    },
+    {
+      "url": "https://docs.python.org/3.15/installing/index.html",
+      "text": "Installing Python modules Third-party modules and PyPI.org"
+    },
+    {
+      "url": "https://docs.python.org/3.15/extending/index.html",
+      "text": "Extending and embedding For C/C++ programmers"
+    },
+    {
+      "url": "https://docs.python.org/3.15/c-api/index.html",
+      "text": "Python's C API C API reference"
+    },
+    {
+      "url": "https://docs.python.org/3.15/faq/index.html",
+      "text": "FAQs Frequently asked questions (with answers!)"
+    },
+    {
+      "url": "https://docs.python.org/3.15/deprecations/index.html",
+      "text": "Deprecations Deprecated functionality Other resources:"
+    },
+    {
+      "url": "https://packaging.python.org",
+      "text": "Python Packaging User Guide Resources relating to Python packaging"
+    },
+    {
+      "url": "https://typing.python.org",
+      "text": "Static Typing with Python Information and guides about Python type safety Indices, glossary, and search:"
+    },
+    {
+      "url": "https://docs.python.org/3.15/glossary.html",
+      "text": "Glossary Terms explained"
+    },
+    {
+      "url": "https://docs.python.org/3.15/search.html",
+      "text": "Search page Search this documentation"
+    },
+    {
+      "url": "https://docs.python.org/3.15/contents.html",
+      "text": "Complete table of contents All sections and subsections Project information:"
+    },
+    {
+      "url": "https://docs.python.org/3.15/bugs.html",
+      "text": "Reporting issues"
+    },
+    {
+      "url": "https://devguide.python.org/documentation/help-documenting/",
+      "text": "Contributing to docs"
+    },
+    {
+      "url": "https://docs.python.org/3.15/license.html",
+      "text": "History and license of Python"
+    },
+    {
+      "url": "https://docs.python.org/3.15/copyright.html",
+      "text": "Copyright"
+    },
+    {
+      "url": "https://docs.python.org/3.15/about.html",
+      "text": "About the documentation Download"
+    },
+    {
+      "url": "https://docs.python.org/license.html",
+      "text": "History and License for more information. The Python Software Foundation is a non-profit corporation."
+    },
+    {
+      "url": "https://www.python.org/psf/donations/",
+      "text": "Please donate. Last updated on Jun 30, 2026 (10:17 UTC)."
+    },
+    {
+      "url": "https://docs.python.org/bugs.html",
+      "text": "Found a bug ? Created using"
+    },
+    {
+      "url": "https://www.sphinx-doc.org/",
+      "text": "Sphinx 8.2.3."
+    }
+  ],
+  "review_required": true,
+  "write_to_memory_directly": false,
+  "status": "queued_for_review",
+  "policy": "web_agent_1_0"
+}

@@ -1,0 +1,72 @@
+Sehr guter Befund von Codex. Das ist genau der richtige nächste Schritt: CAM 1.3 nicht in CAM hineinmischen, sondern als eigene Canonical API Registry nach dem CAM/CDM-Muster bauen.
+
+Wichtigste Entscheidung:
+
+CAM 1.3 = Canonical API Registry
+Read-only, maschinenprüfbar, release-relevant, aber noch ohne Governance-Logik.
+Der spätere System Governance Layer kommt darüber und nutzt dann CAM/CDM/API-Registry als technische Grundlage.
+
+Hier ist der passende Codex-Auftrag:
+
+Codex-Auftrag: CAM 1.3 – Canonical API Registry read-only umsetzen
+
+Bitte setze CAM 1.3 als eigenständige Canonical API Registry um, nach dem bestehenden CAM-1.2/CDM-Muster.
+
+Ziele:
+
+Neue Manifestdatei anlegen:
+24_config/canonical_api_registry_34_1.json
+Neuen read-only Manager anlegen:
+01_system/kontinuum/core/canonical_api_registry.py
+Scope der ersten Version streng auf release-relevante Kern-APIs begrenzen:
+FoundationRegistry
+FoundationAPI
+FoundationStatusCenter
+CanonicalArchitectureManager
+CanonicalDatabaseManager
+ReleaseIntegrityFramework
+Der Manager darf keine Projektdateien verändern.
+Nur lesen, prüfen, Status liefern.
+Der API-Vertrag soll maschinenprüfbar sein und pro API mindestens enthalten:
+api_id
+symbol
+owner
+responsibility
+path
+kind
+version
+stability
+inputs
+outputs / required_keys
+dependencies
+foundation_relevance
+security_class
+mutation_policy
+test_coverage
+change_policy
+Prüfungen:
+fehlt Symbol?
+wurde Signatur verändert?
+fehlen Pflichtmethoden?
+fehlt erwarteter Rückgabetyp oder Pflichtschlüssel?
+ist Stabilitäts- oder Sicherheitsklasse unzulässig verändert?
+fehlt Testreferenz?
+verletzt eine API ihre Mutationspolitik?
+Systemintegration:
+CanonicalAPIRegistryManager als Statuskomponente in system.py ergänzen, analog CAM/CDM.
+Release-Integrity um CAM 1.3 erweitern, aber zunächst nur read-only prüfend.
+Bestehende CAM/CDM-Funktionen nicht umbauen, nur sauber ergänzen.
+Tests:
+Mindestens einen Test für erfolgreiches Laden des API-Manifests.
+Mindestens einen Test für Statusausgabe.
+Mindestens einen Test für fehlende oder ungültige API-Definition.
+
+Bitte zuerst eine kurze Bestandsprüfung machen, dann gezielt implementieren, danach Tests ausführen und berichten:
+
+geänderte/neu angelegte Dateien
+Testergebnis
+offene Risiken
+ob CAM 1.3 release-gate-fähig ist
+
+Meine Einschätzung: Ja, freigeben.
+Das ist sauber, klein genug, passt zu Foundation 2.2 und bereitet später Governance vor, ohne das System jetzt zu überladen.

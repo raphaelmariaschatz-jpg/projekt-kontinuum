@@ -1,0 +1,24 @@
+{
+  "package_id": "CMIBF-1.0-ZIP-00",
+  "package_number": 0,
+  "package_count": 17,
+  "title": "Titelblatt, Präambel und Versionshistorie",
+  "canonical_target": "CANONICAL_MASTER_IMPLEMENTATION_BLUEPRINT_FRAMEWORK_1_0.md",
+  "project": "Projekt Kontinuum",
+  "creator_and_author": "Raphael Maria Schatz",
+  "created_date": "2026-07-12",
+  "encoding": "UTF-8",
+  "status": "canonical_consolidation_component",
+  "merge_files": [
+    "000_TITELBLATT.md",
+    "001_PRAEAMBEL.md",
+    "002_VERSIONSHISTORIE.md"
+  ],
+  "support_files": [
+    "README.md",
+    "SOURCE_BASIS.md",
+    "MERGE_ORDER.txt",
+    "SHA256SUMS.txt"
+  ],
+  "next_package": "CMIBF-1.0-ZIP-01"
+}

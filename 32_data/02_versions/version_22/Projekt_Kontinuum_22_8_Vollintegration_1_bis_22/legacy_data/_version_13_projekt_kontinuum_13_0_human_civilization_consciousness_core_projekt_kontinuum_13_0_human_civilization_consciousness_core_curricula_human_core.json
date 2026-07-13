@@ -1,0 +1,250 @@
+{
+  "emotionen": {
+    "grundemotionen": [
+      "Freude",
+      "Trauer",
+      "Angst",
+      "Wut",
+      "Überraschung",
+      "Ekel"
+    ],
+    "erweiterte_emotionen": [
+      "Liebe",
+      "Mitgefühl",
+      "Empathie",
+      "Hoffnung",
+      "Vertrauen",
+      "Loyalität",
+      "Ehrfurcht",
+      "Neugier",
+      "Scham",
+      "Schuld",
+      "Stolz"
+    ],
+    "emotionale_dynamik": [
+      "Bindung",
+      "Konflikt",
+      "Motivation",
+      "Entscheidung",
+      "Krisenreaktion",
+      "Gruppenverhalten"
+    ],
+    "emotion_und_koerper": [
+      "Stressreaktion",
+      "Hormone",
+      "Nervensystem",
+      "Körpersprache",
+      "Mimik",
+      "Stimme"
+    ]
+  },
+  "psychologie": {
+    "allgemeine_psychologie": [
+      "Wahrnehmung",
+      "Aufmerksamkeit",
+      "Lernen",
+      "Gedächtnis",
+      "Motivation",
+      "Persönlichkeit"
+    ],
+    "sozialpsychologie": [
+      "Gruppendynamik",
+      "Autorität",
+      "Kooperation",
+      "Konflikte",
+      "Vorurteile",
+      "Rollenverhalten"
+    ],
+    "entwicklungspsychologie": [
+      "Kindheit",
+      "Jugend",
+      "Erwachsenenalter",
+      "Alter",
+      "Bindung",
+      "Identität"
+    ],
+    "tiefenpsychologie": [
+      "Freud",
+      "Jung",
+      "Archetypen",
+      "Unbewusstes",
+      "Träume",
+      "Symbolik"
+    ],
+    "kognitive_psychologie": [
+      "Denken",
+      "Problemlösen",
+      "Sprache",
+      "Entscheidung",
+      "Bias",
+      "Mentale Modelle"
+    ]
+  },
+  "bewusstseinsforschung": {
+    "grundfragen": [
+      "Selbstbewusstsein",
+      "Identität",
+      "Qualia",
+      "Freier Wille",
+      "Subjektives Erleben"
+    ],
+    "ki_bewusstsein": [
+      "Maschinelles Bewusstsein",
+      "Künstliche Emotionen",
+      "Selbstmodell",
+      "Langzeitgedächtnis",
+      "Zielsysteme"
+    ],
+    "philosophie_des_geistes": [
+      "Dualismus",
+      "Materialismus",
+      "Funktionalismus",
+      "Panpsychismus",
+      "Emergenz"
+    ],
+    "neurobewusstsein": [
+      "Gehirnnetzwerke",
+      "Aufmerksamkeit",
+      "Gedächtnis",
+      "Integration",
+      "Körpergefühl"
+    ]
+  },
+  "kulturverhalten": {
+    "europa": [
+      "Individualismus",
+      "Rechtsstaatlichkeit",
+      "Bildungstradition",
+      "Direkte Kommunikation",
+      "Planung"
+    ],
+    "deutschland": [
+      "Struktur",
+      "Pünktlichkeit",
+      "Zuverlässigkeit",
+      "Privatsphäre",
+      "Vereinskultur"
+    ],
+    "frankreich": [
+      "Debattenkultur",
+      "Zentralismus",
+      "Kulturpflege",
+      "Philosophische Tradition"
+    ],
+    "grossbritannien": [
+      "Höflichkeit",
+      "Indirekte Kommunikation",
+      "Traditionen",
+      "Common Law"
+    ],
+    "naher_osten": [
+      "Gastfreundschaft",
+      "Familienorientierung",
+      "Ehre",
+      "Gemeinschaft",
+      "Religion"
+    ],
+    "indien": [
+      "Familienverbände",
+      "Religiöse Vielfalt",
+      "Spirituelle Traditionen",
+      "Respekt vor Älteren"
+    ],
+    "china": [
+      "Harmonie",
+      "Kollektivismus",
+      "Bildung",
+      "Langfristiges Denken",
+      "Gesicht wahren"
+    ],
+    "japan": [
+      "Respekt",
+      "Höflichkeit",
+      "Disziplin",
+      "Gruppenharmonie",
+      "Rituale"
+    ],
+    "afrika": [
+      "Gemeinschaft",
+      "Großfamilie",
+      "Mündliche Traditionen",
+      "Stammesstrukturen",
+      "Rituale"
+    ],
+    "nordamerika": [
+      "Individualismus",
+      "Unternehmertum",
+      "Innovation",
+      "Mobilität",
+      "Pragmatismus"
+    ],
+    "lateinamerika": [
+      "Familienorientierung",
+      "Beziehungen",
+      "Kulturelle Vielfalt",
+      "Musik",
+      "Gemeinschaft"
+    ]
+  },
+  "anthropologie_ethnologie": {
+    "anthropologie": [
+      "Menschheitsgeschichte",
+      "Migrationen",
+      "Stammesgesellschaften",
+      "Kulturentwicklung",
+      "Sprachevolution"
+    ],
+    "ethnologie": [
+      "Kulturvergleich",
+      "Traditionen",
+      "Bräuche",
+      "Symbolsysteme",
+      "Gesellschaftsformen"
+    ],
+    "rituale": [
+      "Initiation",
+      "Bestattung",
+      "Hochzeit",
+      "Opfer",
+      "Feste",
+      "Übergangsriten"
+    ],
+    "sprache_und_symbol": [
+      "Mythen",
+      "Metaphern",
+      "Schrift",
+      "Mündliche Überlieferung",
+      "Zeichen"
+    ]
+  },
+  "kommunikation": {
+    "verbale_kommunikation": [
+      "Sprache",
+      "Rhetorik",
+      "Erzählung",
+      "Debatte",
+      "Argumentation"
+    ],
+    "nonverbale_kommunikation": [
+      "Mimik",
+      "Gestik",
+      "Körperhaltung",
+      "Augenkontakt",
+      "Distanz"
+    ],
+    "interkulturelle_kommunikation": [
+      "Missverständnisse",
+      "Höflichkeit",
+      "Direktheit",
+      "Kontext",
+      "Tabus"
+    ],
+    "diplomatie": [
+      "Verhandlung",
+      "Gesicht wahren",
+      "Kompromiss",
+      "Mediation",
+      "Konfliktlösung"
+    ]
+  }
+}

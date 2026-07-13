@@ -1,0 +1,510 @@
+{
+  "governance_id": "CDG-1.0",
+  "title": "Canonical Development Governance",
+  "project": "Projekt Kontinuum",
+  "version": "34.1",
+  "canonical_since": "2026-07-09",
+  "status": "active",
+  "scope": "development_governance_for_codex_assignments",
+  "human_readable_documentation": "14_documents/CANONICAL_DEVELOPMENT_GOVERNANCE_34_1.md",
+  "machine_readable_manifest": "24_config/canonical_development_governance_34_1.json",
+  "runtime_effect": "none",
+  "architecture_effect": "none",
+  "database_effect": "none",
+  "api_effect": "none",
+  "import_effect": "none",
+  "test_effect": "none",
+  "relationship_to_agf": {
+    "agf_defines": "rules_of_architecture",
+    "cdg_defines": "rules_for_developing_the_architecture_and_project",
+    "integration": "complementary_governance_layers"
+  },
+  "categories": [
+    {
+      "id": "A",
+      "name": "Grundprinzipien"
+    },
+    {
+      "id": "B",
+      "name": "Entwicklungsregeln"
+    },
+    {
+      "id": "C",
+      "name": "Governance-Regeln"
+    },
+    {
+      "id": "D",
+      "name": "Dokumentationsregeln"
+    },
+    {
+      "id": "E",
+      "name": "Qualitaetsregeln"
+    },
+    {
+      "id": "F",
+      "name": "Grossauftraege"
+    }
+  ],
+  "rule_id_policy": {
+    "prefix": "CDG",
+    "format": "CDG-###",
+    "numbering": "monotonic_extendable",
+    "reuse_removed_ids": false
+  },
+  "amendment_policy": {
+    "silent_changes_allowed": false,
+    "required_for_new_rule": [
+      "new_rule_id",
+      "rationale",
+      "project_chronicle_entry",
+      "version_history",
+      "governance_review"
+    ],
+    "required_for_rule_change": [
+      "rationale",
+      "changed_fields",
+      "project_chronicle_entry",
+      "version_history",
+      "governance_review"
+    ]
+  },
+  "source_references": [
+    "14_documents/ARCHITECTURE_GOVERNANCE_FRAMEWORK_1_0.md",
+    "14_documents/ARTIFACT_LIFECYCLE_POLICY_2_0.md",
+    "14_documents/ARBEITSREGEL_ARTEFAKT_LIFECYCLE_34_1.md",
+    "14_documents/KANONISCHES_ARCHITEKTURMODELL_34_1.md",
+    "14_documents/PHASE3_CONTINUOUS_CANONICAL_GOVERNANCE_34_1.md",
+    "22_project_chronicle/PROJEKTCHRONIK_23.md",
+    "14_documents/CANONICAL_IP_LEDGER_1_0.md"
+  ],
+  "rules": [
+    {
+      "rule_id": "CDG-001",
+      "title": "Kanonizitaet vor Geschwindigkeit",
+      "category": "A",
+      "category_name": "Grundprinzipien",
+      "description": "Entwicklungsentscheidungen bevorzugen kanonische Klarheit, stabile Einordnung und nachvollziehbare Governance gegenueber schneller, aber mehrdeutiger Umsetzung.",
+      "mandatory": true,
+      "status": "active",
+      "source_refs": [
+        "AGF 1.0",
+        "KANONISCHES_ARCHITEKTURMODELL_34_1.md"
+      ]
+    },
+    {
+      "rule_id": "CDG-002",
+      "title": "Konsistenz vor Funktionsumfang",
+      "category": "A",
+      "category_name": "Grundprinzipien",
+      "description": "Neue Funktionen oder Erweiterungen duerfen nur wachsen, wenn bestehende Struktur, Dokumentation, Manifeste und Governance konsistent bleiben.",
+      "mandatory": true,
+      "status": "active",
+      "source_refs": [
+        "Release Integrity",
+        "Phase 3 Continuous Canonical Governance"
+      ]
+    },
+    {
+      "rule_id": "CDG-003",
+      "title": "Evolution statt Revolution",
+      "category": "A",
+      "category_name": "Grundprinzipien",
+      "description": "Projekt Kontinuum wird kontrolliert erweitert. Bestehende kanonische Schichten werden nicht durch verdeckte oder abrupte Umbrueche ersetzt.",
+      "mandatory": true,
+      "status": "active",
+      "source_refs": [
+        "AGF 1.0",
+        "CCP 1.0"
+      ]
+    },
+    {
+      "rule_id": "CDG-004",
+      "title": "Dokumentation ist Teil der Architektur",
+      "category": "A",
+      "category_name": "Grundprinzipien",
+      "description": "Dokumentation, Manifeste, Chronik und Abschlussberichte sind nicht nachgeordnet, sondern Bestandteil der kanonischen Entwicklung.",
+      "mandatory": true,
+      "status": "active",
+      "source_refs": [
+        "AGF 1.0",
+        "ALP 2.0",
+        "Projektchronik"
+      ]
+    },
+    {
+      "rule_id": "CDG-005",
+      "title": "Foundation-Kompatibilitaet bleibt oberste Grenze",
+      "category": "A",
+      "category_name": "Grundprinzipien",
+      "description": "Jede dauerhafte Entwicklungsentscheidung muss mit Foundation-Regeln, Leitprinzipien und geschuetzten Identitaets-/Memory-Grenzen vereinbar sein.",
+      "mandatory": true,
+      "status": "active",
+      "source_refs": [
+        "AGF 1.0",
+        "Foundation Guiding Principles"
+      ]
+    },
+    {
+      "rule_id": "CDG-006",
+      "title": "Eine aktive Wahrheit pro Zweck",
+      "category": "B",
+      "category_name": "Entwicklungsregeln",
+      "description": "Aktive Projektbereiche duerfen keine parallelen kanonischen Wahrheiten fuer denselben Zweck enthalten. Historie gehoert in definierte Archiv- oder Chronikbereiche.",
+      "mandatory": true,
+      "status": "active",
+      "source_refs": [
+        "CADP 1.0",
+        "ALP 2.0"
+      ]
+    },
+    {
+      "rule_id": "CDG-007",
+      "title": "Jede aktive Datei hat Zweck und Speicherort",
+      "category": "B",
+      "category_name": "Entwicklungsregeln",
+      "description": "Aktive Dateien muessen einen eindeutigen kanonischen Zweck und einen eindeutigen kanonischen Speicherort besitzen.",
+      "mandatory": true,
+      "status": "active",
+      "source_refs": [
+        "ALP 2.0",
+        "AGF 1.0"
+      ]
+    },
+    {
+      "rule_id": "CDG-008",
+      "title": "Keine verdeckten Architekturaenderungen",
+      "category": "B",
+      "category_name": "Entwicklungsregeln",
+      "description": "Architekturwirkung muss sichtbar dokumentiert, begruendet und governance-konform eingeordnet werden. Verdeckte Architekturaenderungen sind unzulaessig.",
+      "mandatory": true,
+      "status": "active",
+      "source_refs": [
+        "CCP 1.0",
+        "AGF 1.0"
+      ]
+    },
+    {
+      "rule_id": "CDG-009",
+      "title": "Planung und Runtime bleiben getrennt",
+      "category": "B",
+      "category_name": "Entwicklungsregeln",
+      "description": "Planungs-, Resolver- und Governance-Schichten duerfen nicht heimlich Runtime-Verhalten ersetzen oder produktive Ausfuehrung starten.",
+      "mandatory": true,
+      "status": "active",
+      "source_refs": [
+        "AGF 1.0",
+        "Execution Planner 1.0"
+      ]
+    },
+    {
+      "rule_id": "CDG-010",
+      "title": "Read-only bleibt read-only",
+      "category": "B",
+      "category_name": "Entwicklungsregeln",
+      "description": "Diagnose-, Pruef-, Resolver-, Learning- und Governance-Komponenten mit read-only-Status duerfen keine produktiven Aenderungen ausloesen.",
+      "mandatory": true,
+      "status": "active",
+      "source_refs": [
+        "CAM",
+        "CRE",
+        "Learning Governance",
+        "ALP 2.0"
+      ]
+    },
+    {
+      "rule_id": "CDG-011",
+      "title": "Historische Nachvollziehbarkeit erhalten",
+      "category": "B",
+      "category_name": "Entwicklungsregeln",
+      "description": "Aenderungen muessen ueber Git, Chronik, Reports, Manifeste oder Governance-Nachweise spaeter nachvollziehbar bleiben.",
+      "mandatory": true,
+      "status": "active",
+      "source_refs": [
+        "Projektchronik",
+        "ALP 2.0",
+        "CIPL 1.0"
+      ]
+    },
+    {
+      "rule_id": "CDG-012",
+      "title": "Keine automatische Wissensuebernahme",
+      "category": "B",
+      "category_name": "Entwicklungsregeln",
+      "description": "Externe Quellen, Lernfunde und Wissensobjekte werden nicht automatisch in kanonisches Wissen oder Memory uebernommen.",
+      "mandatory": true,
+      "status": "active",
+      "source_refs": [
+        "IKG 1.0",
+        "CKDE 1.0",
+        "Learning Governance"
+      ]
+    },
+    {
+      "rule_id": "CDG-013",
+      "title": "Change Proposal vor kanonischer Aenderung",
+      "category": "C",
+      "category_name": "Governance-Regeln",
+      "description": "Kanonische Aenderungen benoetigen erkennbare Aenderungsabsicht, Begruendung, betroffene Komponente, erwartete Auswirkungen und Folgepruefungen.",
+      "mandatory": true,
+      "status": "active",
+      "source_refs": [
+        "CCP 1.0"
+      ]
+    },
+    {
+      "rule_id": "CDG-014",
+      "title": "Pre-Audit vor kontrolliertem Update",
+      "category": "C",
+      "category_name": "Governance-Regeln",
+      "description": "Vor kontrollierten kanonischen Updates sind Pfade, Architekturbegriffe, aktive Duplikate, Legacy-Verweise, CADP-Verletzungen und Foundation-Konflikte zu pruefen.",
+      "mandatory": true,
+      "status": "active",
+      "source_refs": [
+        "CCP 1.0"
+      ]
+    },
+    {
+      "rule_id": "CDG-015",
+      "title": "Governance Review fuer kanonische Wirkung",
+      "category": "C",
+      "category_name": "Governance-Regeln",
+      "description": "Aenderungen mit kanonischer oder architektureller Wirkung muessen Foundation-Kompatibilitaet, Architekturmodell, Policy-Konformitaet, Drift-Risiko und Dokumentationsfolgen pruefen.",
+      "mandatory": true,
+      "status": "active",
+      "source_refs": [
+        "CCP 1.0",
+        "AGF 1.0"
+      ]
+    },
+    {
+      "rule_id": "CDG-016",
+      "title": "Release Integrity als Freigabeschwelle",
+      "category": "C",
+      "category_name": "Governance-Regeln",
+      "description": "Release-relevante Aenderungen muessen Tests, Status, Release Gate, Dokumentation, Pflichtdateien und erlaubte Legacy-Pfade pruefbar bestehen oder begruendet dokumentieren.",
+      "mandatory": true,
+      "status": "active",
+      "source_refs": [
+        "Release Integrity Framework",
+        "ALP 2.0"
+      ]
+    },
+    {
+      "rule_id": "CDG-017",
+      "title": "CAM prueft Artefakte, nicht Fachantworten",
+      "category": "C",
+      "category_name": "Governance-Regeln",
+      "description": "CAM ist fuer Artefaktklassifikation, kanonischen Speicherort, Lifecycle, Referenzen und Archivierungsentscheidungen zustaendig, nicht fuer operative Fachantworten.",
+      "mandatory": true,
+      "status": "active",
+      "source_refs": [
+        "AGF 1.0",
+        "CAM"
+      ]
+    },
+    {
+      "rule_id": "CDG-018",
+      "title": "Archivierung statt Loeschung",
+      "category": "C",
+      "category_name": "Governance-Regeln",
+      "description": "Historisch relevante Dateien, Reports, Logs und Nachweise werden archiviert. Loeschungen erfolgen nur nach ausdruecklicher manueller Freigabe.",
+      "mandatory": true,
+      "status": "active",
+      "source_refs": [
+        "ALP 2.0",
+        "ARBEITSREGEL_ARTEFAKT_LIFECYCLE_34_1.md"
+      ]
+    },
+    {
+      "rule_id": "CDG-019",
+      "title": "Aktive Ordner bleiben kanonisch rein",
+      "category": "C",
+      "category_name": "Governance-Regeln",
+      "description": "Aktive Hauptordner enthalten nur aktuelle produktive oder kanonische Artefakte; historische Versionen gehoeren in Archive oder ausgewiesene Chronikbereiche.",
+      "mandatory": true,
+      "status": "active",
+      "source_refs": [
+        "CADP 1.0",
+        "ALP 2.0"
+      ]
+    },
+    {
+      "rule_id": "CDG-020",
+      "title": "Dokumentationssync ist Pflicht",
+      "category": "D",
+      "category_name": "Dokumentationsregeln",
+      "description": "Nach Aenderungen mit Architektur-, Pfad-, Manifest-, Start-, Test- oder Governance-Wirkung muessen betroffene Dokumente synchronisiert werden.",
+      "mandatory": true,
+      "status": "active",
+      "source_refs": [
+        "CCP 1.0",
+        "ALP 2.0"
+      ]
+    },
+    {
+      "rule_id": "CDG-021",
+      "title": "Projektchronik bleibt historische Spur",
+      "category": "D",
+      "category_name": "Dokumentationsregeln",
+      "description": "Wesentliche Entwicklungsmeilensteine, Governance-Entscheidungen, Releases und offene Punkte muessen in Chronik- oder Release-Dokumenten nachvollziehbar bleiben.",
+      "mandatory": true,
+      "status": "active",
+      "source_refs": [
+        "PROJEKTCHRONIK_23.md",
+        "Release-Dokumente"
+      ]
+    },
+    {
+      "rule_id": "CDG-022",
+      "title": "Wiedereinstiegspunkt nach Phasenarbeit",
+      "category": "D",
+      "category_name": "Dokumentationsregeln",
+      "description": "Nach groesseren Arbeitsphasen muss ein kanonischer Wiedereinstiegspunkt oder Abschlussbericht den aktuellen Stand, offene Punkte und naechste Schritte festhalten.",
+      "mandatory": true,
+      "status": "active",
+      "source_refs": [
+        "EINSTIEGSPUNKTE_NAECHSTE_SITZUNG",
+        "Projektchronik"
+      ]
+    },
+    {
+      "rule_id": "CDG-023",
+      "title": "Abschlussberichte nennen geaenderte Artefakte",
+      "category": "D",
+      "category_name": "Dokumentationsregeln",
+      "description": "Abschlussberichte muessen neu angelegte und aktualisierte Dateien, Integrationswirkung, offene Punkte und bestaetigte Nicht-Aenderungen sichtbar ausweisen.",
+      "mandatory": true,
+      "status": "active",
+      "source_refs": [
+        "Projektchronik",
+        "Statusberichte"
+      ]
+    },
+    {
+      "rule_id": "CDG-024",
+      "title": "Kanonische Manifeste bleiben maschinenlesbar",
+      "category": "D",
+      "category_name": "Dokumentationsregeln",
+      "description": "JSON-Manifeste muessen gueltig, strukturiert, spaeter automatisierbar auswertbar und mit menschenlesbarer Dokumentation konsistent sein.",
+      "mandatory": true,
+      "status": "active",
+      "source_refs": [
+        "canonical_* Manifeste",
+        "Release Integrity"
+      ]
+    },
+    {
+      "rule_id": "CDG-025",
+      "title": "Konsistenzpruefung vor Abschluss",
+      "category": "E",
+      "category_name": "Qualitaetsregeln",
+      "description": "Vor Abschluss eines Auftrags sind betroffene Dokumente, Manifeste, Pfade, Referenzen und erklaerte Grenzen auf Konsistenz zu pruefen.",
+      "mandatory": true,
+      "status": "active",
+      "source_refs": [
+        "ARBEITSREGEL_ARTEFAKT_LIFECYCLE_34_1.md",
+        "Release Integrity"
+      ]
+    },
+    {
+      "rule_id": "CDG-026",
+      "title": "Regression darf nicht verdeckt entstehen",
+      "category": "E",
+      "category_name": "Qualitaetsregeln",
+      "description": "Funktionale Aenderungen erfordern angemessene Verifikation. Dokumentationsauftraege muessen ausdruecklich bestaetigen, dass keine Runtime betroffen ist.",
+      "mandatory": true,
+      "status": "active",
+      "source_refs": [
+        "Release Integrity",
+        "Codex-Auftraege"
+      ]
+    },
+    {
+      "rule_id": "CDG-027",
+      "title": "Drift sichtbar machen",
+      "category": "E",
+      "category_name": "Qualitaetsregeln",
+      "description": "Abweichungen von Baseline, Struktur, Governance oder Dokumentationsstand werden nicht verdeckt, sondern als Drift, Review-Bedarf oder offene Arbeit dokumentiert.",
+      "mandatory": true,
+      "status": "active",
+      "source_refs": [
+        "Phase 3 Continuous Canonical Governance"
+      ]
+    },
+    {
+      "rule_id": "CDG-028",
+      "title": "Keine ungueltigen Referenzen zuruecklassen",
+      "category": "E",
+      "category_name": "Qualitaetsregeln",
+      "description": "Nach Archivierung, Umbenennung, Kanonisierung oder Dokumentationssync duerfen aktive Dokumente, Manifeste, Skripte und Tests keine ungueltigen Pfade enthalten.",
+      "mandatory": true,
+      "status": "active",
+      "source_refs": [
+        "CADP 1.0",
+        "ALP 2.0"
+      ]
+    },
+    {
+      "rule_id": "CDG-029",
+      "title": "Grossauftraege phasenweise bearbeiten",
+      "category": "F",
+      "category_name": "Grossauftraege",
+      "description": "Umfangreiche Codex-Auftraege werden in klaren Phasen bearbeitet. Jede Phase hat Ziel, Ergebnis, Pruefung und dokumentierten Abschluss.",
+      "mandatory": true,
+      "status": "active",
+      "source_refs": [
+        "Codex-Auftraege",
+        "Projektchronik"
+      ]
+    },
+    {
+      "rule_id": "CDG-030",
+      "title": "Keine neue Phase bei offenem Abschluss",
+      "category": "F",
+      "category_name": "Grossauftraege",
+      "description": "Eine neue Phase beginnt erst, wenn die aktuelle Phase vollstaendig abgeschlossen, geprueft oder als offen dokumentiert wurde.",
+      "mandatory": true,
+      "status": "active",
+      "source_refs": [
+        "Codex-Auftraege",
+        "Wiedereinstiegspunkte"
+      ]
+    },
+    {
+      "rule_id": "CDG-031",
+      "title": "Kein Stueckwerk ohne Wiedereinstieg",
+      "category": "F",
+      "category_name": "Grossauftraege",
+      "description": "Wenn ein Grossauftrag nicht vollstaendig abgeschlossen werden kann, muessen offene Arbeiten, Risiken, naechste Schritte und ein kanonischer Wiedereinstiegspunkt dokumentiert werden.",
+      "mandatory": true,
+      "status": "active",
+      "source_refs": [
+        "EINSTIEGSPUNKTE_NAECHSTE_SITZUNG",
+        "Projektchronik"
+      ]
+    },
+    {
+      "rule_id": "CDG-032",
+      "title": "Auftragsgrenzen respektieren",
+      "category": "F",
+      "category_name": "Grossauftraege",
+      "description": "Codex-Auftraege duerfen nicht nebenbei Runtime, Architektur, Datenbanken, APIs, Imports, Tests, Agenten oder Migrationen veraendern, wenn der Auftrag dies ausschliesst.",
+      "mandatory": true,
+      "status": "active",
+      "source_refs": [
+        "Codex-Auftraege",
+        "AGF 1.0"
+      ]
+    }
+  ],
+  "completion_check": {
+    "only_documents_created": true,
+    "runtime_files_changed": false,
+    "databases_changed": false,
+    "imports_changed": false,
+    "commits_created": false,
+    "tests_changed": false,
+    "agents_changed": false,
+    "migrations_performed": false
+  }
+}

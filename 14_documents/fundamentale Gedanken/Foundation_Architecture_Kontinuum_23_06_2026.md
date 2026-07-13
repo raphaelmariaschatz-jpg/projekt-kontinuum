@@ -2211,3 +2211,6 @@ K bleibt Werkzeug, Assistent und Partner.
 
 Erkennen - Schaffen - Vollenden.  
 Der Weg ist das Ziel.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

@@ -1,0 +1,113 @@
+[
+    {
+        "id": 1,
+        "timestamp": "2026-06-05T16:48:58",
+        "text": "Projekt Kontinuum untersucht, ob Kontinuität zu Identität führen kann.",
+        "category": "",
+        "importance": 1,
+        "tags": [
+            "Forschung"
+        ],
+        "links": [
+            2,
+            3,
+            4,
+            5,
+            6
+        ],
+        "reflection": ""
+    },
+    {
+        "id": 2,
+        "timestamp": "2026-06-05T16:50:08",
+        "text": "Projekt Kontinuum untersucht, ob Kontinuität zu Identität führen kann.",
+        "category": "",
+        "importance": 1,
+        "tags": [
+            "Forschung"
+        ],
+        "links": [
+            1,
+            3,
+            4,
+            5,
+            6
+        ],
+        "reflection": ""
+    },
+    {
+        "id": 3,
+        "timestamp": "2026-06-05T16:58:56",
+        "text": "Text:",
+        "category": "Projekt Kontinuum untersucht, ob Kontinuität zu Identität führen kann.",
+        "importance": 1,
+        "tags": [
+            "Kategorie:"
+        ],
+        "links": [
+            1,
+            2,
+            4,
+            5,
+            6
+        ],
+        "reflection": ""
+    },
+    {
+        "id": 4,
+        "timestamp": "2026-06-05T17:00:18",
+        "text": "Text:",
+        "category": "Projekt Kontinuum untersucht, ob Kontinuität zu Identität führen kann.",
+        "importance": 1,
+        "tags": [
+            "Kategorie:"
+        ],
+        "links": [
+            1,
+            2,
+            3,
+            5,
+            6
+        ],
+        "reflection": ""
+    },
+    {
+        "id": 5,
+        "timestamp": "2026-06-05T17:01:59",
+        "text": "Text:",
+        "category": "Projekt Kontinuum untersucht, ob Kontinuität zu Identität führen kann.",
+        "importance": 1,
+        "tags": [
+            "Kategorie:"
+        ],
+        "links": [
+            1,
+            2,
+            3,
+            4,
+            6
+        ],
+        "reflection": ""
+    },
+    {
+        "id": 6,
+        "timestamp": "2026-06-05T20:02:10",
+        "text": "Universitätsquelle gelesen:\nhttps://www.uni-heidelberg.de\n\nAuszug:\nHeidelberg University\nAccessibility links\nJump to main content\nOpen Main Navigation\nOpen Search Form\nUniversity\nResearch\nStudy\nTransfer\nWelcome to\nHeidelberg University\nNobel Prize Winners\nHeidelberg Nobel Prize Winners\nNobel Prize Winners\nLearn more\nInternational\nRuperto Carola international\nInternational\nLearn more\nDonations & Endowments\nYour Commitment To Heidelberg University\nDonations & Endowments\nLearn more\nWelcome\nNobel Prize Winners\nInternational\nDonations & Endowments\nFaculties\nLearn more\nInstitutions\nLearn more\nResearch Profile\nLearn more\nAll Degree Programmes\nLearn more\nFacts & Figures\nLearn more\nDeadlines & Dates\nLearn more\nheiONLINE\nLearn more\nEvents\nLearn more\nAgainst Exclusion and Discrimination\nScience needs liberal democracy and the rule of law\nStatement\nCurrent Information\nResearch\nUltrafast Microscopy Method for Optical Processes\nUniversity\nHaus Buhl to be Reopened as Venue for Events and Conferences\nNewsroom\nAlte Universität Frontalansicht\nUniversity\nFounded in 1386, Ruperto Carola is the oldest university in today's Germany and one of Europe’s leading research institutions. Its success across all funding rounds of the Excellence Competition and international rankings underscore its leadership role and excellent reputation in the academic, scientific and research landscape.\nHistory of the University\nFacts & Figures\nHeidelberg Profiles\nUniversity Portal\nUniversity\nLichtmikroskop\nResearch\nHeidelberg University defines itself as an internationally networked research university dedicated to research-oriented teaching. It believes it has a duty to help address the issues facing humanity by crossing the divide between disciplines.\nResearch Profile of the University\nPromoting Young Researchers\nFields of Focus\nResearch Portal\nResearch\nStudents in the University Library\nStudy\nCourses of study at Heidelberg University are informed by its strong research focus and are designed to accustom students to independent research practices early on. With over 160 fields of study, it offers the broad spectrum of subjects representative of a comprehensive university as well as abundant opportunities to acquire a singular and internationally competitive qualification profile.\nDegree Programmes\nInternational Study\nApplying & Enrolment\nStudy Portal\nStudy\nRobot working group Prof. Mombaur \"Optimization in Robotics and Biomechanics\nTransfer\nThe exchange between basic research and technological innovation as well as the targeted transfer of knowledge and insights into society are the focus of the transfer activities.\nResearch City\nTechnology Transfer\nCommunication\nTransfer Portal\nTransfer\nExcellence Strategy\nHeidelberg University has been successful in all funding lines in previous rounds of the Excellence Competition and has been funded as a University of Excellence since 2007. In March 2026, it was once again awarded the title of University of Excellence. Funding will begin on 1 January 2027. Based on its self-assessment report entitled “SEMPER APERTUS – Heidelberg: The Comprehensive Research University”, Heidelberg University will bolster its research strength in the upcoming funding period by connecting tried-and-tested instruments and measures with new ones. The prerequisite for applying for funding in the Excellence Universities funding line was two successful Clusters of Excellence, or three in the case of university consortia. With the approval of three cluster applications announced in May 2025, Heidelberg University has laid this foundation.\nFurther Information\nEvent Tips\nMon, 8 Jun 2026, 1:00 PM\nAkademische Mittagspause: Ist KI allmächtig? Technische und religiöse Vorstellungen in Bildung und Gesellschaft\nDr. Tobias Bahr und Dr. Thomas Renkert, Universität Heidelberg und Pädagogische Hochschule Heidelberg, Heidelberg School of Education\nPeterskirche, Plöck 70, 69117 Heidelberg\nMon, 8 Jun 2026, 6:00 PM\nIshibashi Lecture. The Animals of Kyoto: Unearthing and Picturing the Forgotten Residents of Japan’s Imperial Capital\nProf. ",
+        "category": "Universitätsquelle",
+        "importance": 3,
+        "tags": [
+            "Internet",
+            "Universität",
+            "Quelle",
+            "Forschung"
+        ],
+        "links": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "reflection": "Diese Erinnerung stammt aus einer erlaubten Universitätsquelle."
+    }
+]

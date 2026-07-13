@@ -289,3 +289,6 @@ neuen Spezialagenten produktiv zu schalten.
 Phase 5.2 priorisiert Orchestrator Core 1.0: Multi-Intent-Planung,
 Governance-Check, Agentenkoordination, Review und CMM-Rueckfuehrung. Weitere
 Spezialagenten folgen erst nach dieser Steuerungsschicht.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

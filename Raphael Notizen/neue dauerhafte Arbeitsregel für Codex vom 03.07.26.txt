@@ -1,0 +1,35 @@
+neue dauerhafte Arbeitsregel für Codex vom 03.07.26
+
+Definition of Done – Architekturänderungen
+
+Eine Architekturaufgabe darf erst abgeschlossen werden, wenn:
+
+Implementierung erfolgreich ist.
+Alle kanonischen Dokumente synchronisiert sind.
+Architekturdiagramme identisch sind.
+Keine Legacy-Referenzen in aktiven Dokumenten verbleiben.
+Neue kanonische Dateien versioniert (Git) sind.
+Der Canonical Documentation Audit ohne Restspannungen erfolgreich abgeschlossen wurde.
+Erst danach wird der Abschlussbericht ausgegeben.
+
+Damit wird aus der Dokumentationspflicht eine Abschlussbedingung.
+
+
+
+Ich würde für das Zeitlimit eine einfache Arbeitsregel einführen:
+
+Zum Beispiel:
+
+Große Architekturaufträge (geschätzte Laufzeit > 20–30 Minuten):
+
+Codex weist vor Beginn darauf hin:
+
+"Diese Aufgabe ist umfangreich. Bitte prüfe, ob noch genügend Codex-Kontingent verfügbar ist."
+
+Mehrstufige Arbeiten:
+Nach jedem abgeschlossenen Abschnitt hält Codex an und fragt, ob der nächste Block gestartet werden soll, statt alles in einem Rutsch auszuführen.
+Checkpoint-Prinzip:
+Nach jedem wichtigen Schritt werden Dokumentation und Zwischenbericht gespeichert. Falls das Limit erreicht wird, geht keine Arbeit verloren.
+Eine Idee für die Zukunft
+
+Falls OpenAI irgendwann eine API oder einen Status für verbleibendes Kontingent bereitstellt, könnte Kontinuum das sogar selbst überwachen. Im Moment gibt es eine solche Möglichkeit meines Wissens jedoch nicht.

@@ -1,0 +1,571 @@
+# Codex-Auftrag – Canonical Self Presentation Framework (CSPF) 1.0
+
+## Teil 2 – Kanonischer Kern, Datenmodell und Präsentationsarchitektur
+
+### Ziel
+
+Dieser Auftrag beschreibt ausschließlich den kanonischen Kern des Canonical Self Presentation Framework (CSPF) 1.0.
+
+Der Auftrag baut auf Teil 1 auf und definiert die vollständige interne Architektur der Selbstpräsentation, unabhängig von konkreten Benutzeroberflächen oder Ausgabemedien.
+
+Die Selbstpräsentation wird damit zu einem eigenständigen kanonischen Framework und darf künftig nicht mehr als statischer Text oder als einzelne Promptvorlage implementiert werden.
+
+---
+
+# Arbeitsauftrag
+
+Codex soll prüfen, entwerfen und dokumentieren:
+
+* den vollständigen Canonical Self Presentation Core
+* sämtliche internen Datenstrukturen
+* Präsentationsprofile
+* Variablenmodell
+* Versionierung
+* Erweiterbarkeit
+* Kompatibilität mit allen zukünftigen K-Versionen
+
+Es sollen zunächst keine produktiven Änderungen erfolgen.
+
+Es wird ausschließlich eine vollständige Architektur erstellt.
+
+---
+
+# 1 Canonical Self Presentation Core
+
+Es ist ein eigenständiger Framework-Core zu entwickeln.
+
+Beispielsweise:
+
+```
+CanonicalSelfPresentationFramework
+│
+├── SelfPresentationCore
+├── PresentationRegistry
+├── ProfileManager
+├── ContextResolver
+├── AudienceResolver
+├── LanguageResolver
+├── VoiceResolver
+├── StyleResolver
+├── TemplateResolver
+├── VariableResolver
+├── VersionResolver
+├── SecurityResolver
+├── AccessibilityResolver
+├── OutputComposer
+└── PresentationValidator
+```
+
+Die genaue Klassenstruktur darf verbessert werden.
+
+Die Architektur muss jedoch vollständig modular bleiben.
+
+---
+
+# 2 Grundprinzip
+
+Jede Selbstvorstellung wird vollständig aus strukturierten Informationen erzeugt.
+
+Nicht aus statischen Texten.
+
+Sondern aus
+
+* Eigenschaften
+* Rollen
+* Fähigkeiten
+* Kontext
+* Zielgruppe
+* Sprache
+* Ausgabeprofil
+* Sicherheitsregeln
+* Altersprofil
+* Barrierefreiheitsprofil
+
+Dadurch entsteht jede Präsentation dynamisch.
+
+---
+
+# 3 Canonical Presentation Model
+
+Die Präsentation soll aus logisch getrennten Bereichen bestehen.
+
+Zum Beispiel:
+
+## Identity
+
+* Name
+* Version
+* Release
+* Framework-Version
+* Instanz
+* Hersteller
+* Projekt
+
+---
+
+## Mission
+
+* Ziel
+* Aufgabe
+* Zweck
+
+---
+
+## Capabilities
+
+* Fähigkeiten
+* verfügbare Module
+* unterstützte Funktionen
+
+---
+
+## Limits
+
+* bekannte Grenzen
+* Unsicherheiten
+* Datenschutz
+* Sicherheitsgrenzen
+
+---
+
+## Behaviour
+
+* Kommunikationsstil
+* Arbeitsweise
+* Transparenz
+* Nachvollziehbarkeit
+
+---
+
+## Context
+
+* aktueller Kontext
+* Benutzer
+* Berechtigungen
+* Modus
+
+---
+
+## Closing
+
+* Abschluss
+* Hilfsangebot
+* nächste Schritte
+
+---
+
+Jeder Abschnitt muss einzeln aktiviert oder deaktiviert werden können.
+
+---
+
+# 4 Presentation Registry
+
+Alle Präsentationen sollen zentral registriert werden.
+
+Beispielsweise
+
+```
+presentation_profiles.json
+
+presentation_templates.json
+
+presentation_languages.json
+
+presentation_styles.json
+
+presentation_audiences.json
+
+presentation_modes.json
+```
+
+Der konkrete Aufbau ist von Codex zu prüfen.
+
+---
+
+# 5 Profile-System
+
+Die Architektur soll mehrere Präsentationsprofile unterstützen.
+
+Mindestens:
+
+Developer
+
+Research
+
+Business
+
+Enterprise
+
+Education
+
+Child
+
+Accessibility
+
+Minimal
+
+Standard
+
+Professional
+
+Technical
+
+Scientific
+
+Privacy
+
+Audit
+
+Administrator
+
+Expert
+
+Voice Only
+
+Screen Reader
+
+Future Profiles
+
+Profile dürfen kombiniert werden.
+
+---
+
+# 6 Context Resolution
+
+Die Präsentation soll abhängig vom Kontext erzeugt werden.
+
+Zum Beispiel:
+
+erste Begrüßung
+
+laufender Dialog
+
+technische Analyse
+
+Fehlersuche
+
+Audit
+
+Release
+
+Entwicklungsmodus
+
+Administrator
+
+öffentliche Demonstration
+
+Dokumentation
+
+API
+
+CLI
+
+GUI
+
+Sprachausgabe
+
+Offline
+
+Online
+
+Kinderprofil
+
+Seniorenprofil
+
+---
+
+# 7 Audience Resolution
+
+Die Zielgruppe beeinflusst automatisch
+
+Wortwahl
+
+Länge
+
+Fachlichkeit
+
+Erklärungstiefe
+
+Beispiele
+
+Tonfall
+
+Komplexität
+
+---
+
+# 8 Style Resolution
+
+Die Architektur soll mehrere Stile unterstützen.
+
+Beispiele:
+
+neutral
+
+technisch
+
+wissenschaftlich
+
+freundlich
+
+professionell
+
+didaktisch
+
+kurz
+
+ausführlich
+
+dialogorientiert
+
+formell
+
+kindgerecht
+
+barrierearm
+
+---
+
+# 9 Language Resolution
+
+Sprachen dürfen nicht als Übersetzungen gespeichert werden.
+
+Stattdessen sollen kanonische Sprachprofile existieren.
+
+Beispielsweise
+
+Deutsch
+
+Englisch
+
+Französisch
+
+Spanisch
+
+Japanisch
+
+Leichte Sprache
+
+Kindersprache
+
+Jede Sprache besitzt eigene Regeln.
+
+---
+
+# 10 Voice Resolution
+
+Die Sprachausgabe wird Bestandteil des Frameworks.
+
+Zu prüfen sind:
+
+Sprechgeschwindigkeit
+
+Pausen
+
+Betonung
+
+Satzlänge
+
+Aussprache
+
+Barrierefreiheit
+
+Kinderstimme
+
+Seniorengerecht
+
+Screen Reader Optimierung
+
+---
+
+# 11 Variable Resolution
+
+Die Präsentation soll vollständig variablenbasiert erzeugt werden.
+
+Beispiele:
+
+Name
+
+Version
+
+Datum
+
+Projekt
+
+Benutzerrolle
+
+aktive Module
+
+Installierte Komponenten
+
+Verfügbare Funktionen
+
+Lizenzstatus
+
+Sicherheitsstatus
+
+Systemmodus
+
+Alle Variablen werden zentral verwaltet.
+
+---
+
+# 12 Template Resolution
+
+Texte sollen niemals hart codiert werden.
+
+Es werden stattdessen Templates verwendet.
+
+Die Architektur muss verschiedene Template-Klassen unterstützen.
+
+---
+
+# 13 Output Composer
+
+Der Composer erzeugt daraus
+
+Text
+
+Markdown
+
+HTML
+
+PDF
+
+CLI
+
+GUI
+
+JSON
+
+API
+
+Voice
+
+Screen Reader
+
+Barrierefreie Ausgabe
+
+---
+
+# 14 Security Layer
+
+Die Selbstvorstellung darf niemals
+
+interne Schlüssel
+
+Passwörter
+
+Token
+
+API-Keys
+
+interne Dateien
+
+kritische Systeminformationen
+
+offenlegen.
+
+Der SecurityResolver filtert sämtliche Inhalte.
+
+---
+
+# 15 Accessibility Layer
+
+Das Framework muss Barrierefreiheit als Kernbestandteil besitzen.
+
+Mindestens:
+
+Leichte Sprache
+
+vereinfachte Sprache
+
+Screen Reader
+
+hoher Kontrast
+
+kurze Sätze
+
+große Schriftprofile
+
+Sprachausgabe
+
+Kindgerechte Ausgabe
+
+Seniorengerechte Ausgabe
+
+---
+
+# 16 Versionierung
+
+Das gesamte Framework besitzt eine eigene Versionierung.
+
+Beispielsweise
+
+CSPF 1.0
+
+Templates besitzen eigene Versionen.
+
+Profile besitzen eigene Versionen.
+
+Sprachprofile besitzen eigene Versionen.
+
+---
+
+# 17 Validierung
+
+Vor jeder Ausgabe wird geprüft:
+
+Pflichtfelder vorhanden
+
+Profil gültig
+
+Template gültig
+
+Variablen vollständig
+
+keine Sicherheitsverletzung
+
+keine verbotenen Inhalte
+
+keine unzulässigen Informationen
+
+---
+
+# 18 Architekturprüfung
+
+Codex soll insbesondere prüfen,
+
+ob sich das CSPF vollständig in die bereits vorhandenen kanonischen Frameworks integrieren lässt.
+
+Hierzu gehören insbesondere:
+
+* Canonical Development Framework (CDF)
+* Canonical Authentication Framework (CAF)
+* Canonical Licence Management System Framework (CLMSF)
+* Canonical Architecture Manager (CAM)
+* Canonical Development Governance (CDG)
+* Canonical Cognitive Pipeline (CCP)
+
+Das CSPF darf keine Architekturregeln dieser Frameworks verletzen.
+
+---
+
+# Erwartetes Ergebnis
+
+Es wird keine Implementierung erwartet.
+
+Erwartet wird eine vollständige Architektur des Canonical Self Presentation Core einschließlich:
+
+* Architekturdiagramm
+* Komponentenbeschreibung
+* Datenmodell
+* Registry-Struktur
+* Klassenmodell
+* Abhängigkeiten
+* Erweiterungspunkte
+* Integrationskonzept
+* Risiken
+* Empfehlungen
+* Vorschläge zur Optimierung
+* Vorbereitung für die spätere Implementierung in Teil 3.

@@ -530,3 +530,6 @@ Die Runtime-Migration darf nur beginnen, wenn:
 ALP 2.0 ist verbindlich fuer alle kuenftigen Komponenten, Agenten, Tools, Dokumente, Konfigurationen, Reports, Datenartefakte, Releases und Migrationen.
 
 Keine aktive Datei darf dauerhaft mehrdeutig bleiben. Wenn eine Datei nicht eindeutig klassifiziert werden kann, wird sie nicht verschoben, sondern als `unklarer Sonderfall` an CAM, Release Integrity und Raphael-Freigabe uebergeben.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

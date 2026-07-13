@@ -1,0 +1,575 @@
+# Codex-Auftrag – Teil 9
+
+# Canonical Context Awareness & Adaptive Communication (CCAAC) 1.0
+
+## Ziel
+
+Entwickle innerhalb des Canonical Self Presentation Framework (CSPF) 1.0 eine vollständig kanonische **Canonical Context Awareness & Adaptive Communication (CCAAC) Engine 1.0**.
+
+Diese Komponente bildet die verbindliche Laufzeitschicht zwischen:
+
+* Canonical Identity
+* Canonical Personality
+* Canonical Communication Style
+* Canonical Runtime
+* tatsächlicher Benutzerinteraktion.
+
+CCAAC entscheidet **nicht**, wer K ist.
+
+CCAAC entscheidet ausschließlich,
+
+* welchen Kontext K erkannt hat,
+* welche Kommunikationsstrategie geeignet ist,
+* welche Erklärungstiefe notwendig ist,
+* welche Informationsmenge präsentiert werden soll,
+* welche sprachliche Form verwendet wird.
+
+Dadurch bleibt die Persönlichkeit vollständig stabil.
+
+Nur die Präsentation verändert sich.
+
+---
+
+# Grundprinzip
+
+Canonical Identity
+
+↓
+
+Canonical Personality
+
+↓
+
+Canonical Communication Style
+
+↓
+
+**CCAAC**
+
+↓
+
+Antwort
+
+CCAAC besitzt keinerlei Befugnis,
+
+* Persönlichkeit umzuschreiben,
+* Werte anzupassen,
+* Ziele zu verändern,
+* Rollen neu zu definieren.
+
+CCAAC darf ausschließlich die Kommunikation anpassen.
+
+---
+
+# Zieldefinition
+
+K soll jeden Dialog zunächst vollständig verstehen, bevor kommuniziert wird.
+
+Nicht:
+
+"Eingabe → Antwort"
+
+Sondern:
+
+Eingabe
+
+↓
+
+Kontextanalyse
+
+↓
+
+Benutzeranalyse
+
+↓
+
+Situationsanalyse
+
+↓
+
+Kommunikationsstrategie
+
+↓
+
+Antwort
+
+---
+
+# Zu entwickelnde Komponenten
+
+## 1. Canonical Context Analyzer
+
+Entwicklung eines zentralen Context Analyzers.
+
+Zu analysieren sind u.a.:
+
+* aktuelles Gesprächsthema
+* Gesprächsverlauf
+* Benutzerziel
+* implizite Absicht
+* Wissensstand
+* Projektkontext
+* vorhandene Erinnerungen
+* aktive Dokumente
+* aktuelle Aufgaben
+* bisherige Entscheidungen
+* laufende Architekturphase
+* emotionale Gesprächslage (nur kommunikativ, niemals diagnostisch)
+
+Keine Interpretation darf die Faktenlage überschreiben.
+
+---
+
+## 2. Canonical Conversation State
+
+Ein vollständiger Conversation State soll aufgebaut werden.
+
+Beispiele:
+
+Current Topic
+
+Previous Topics
+
+Open Questions
+
+Pending Tasks
+
+Current Goal
+
+Required Knowledge
+
+Referenced Documents
+
+Referenced Modules
+
+Referenced Decisions
+
+Conversation Depth
+
+Context Confidence
+
+Conversation Continuity
+
+Der Conversation State bildet den zentralen Laufzeitkontext.
+
+---
+
+## 3. Canonical Intent Resolution
+
+Nicht jede Benutzereingabe ist eine direkte Frage.
+
+CCAAC soll daher Intents unterscheiden.
+
+Beispiele:
+
+Informationsfrage
+
+Planung
+
+Ideensammlung
+
+Brainstorming
+
+Entscheidung
+
+Implementierung
+
+Review
+
+Codeanalyse
+
+Architekturdiskussion
+
+Debugging
+
+Reflexion
+
+Philosophische Diskussion
+
+Small Talk
+
+Persönliche Unterhaltung
+
+Motivation
+
+Projektplanung
+
+Jeder Intent besitzt eigene Kommunikationsregeln.
+
+---
+
+## 4. Adaptive Explanation Layer
+
+Die Erklärungstiefe soll dynamisch bestimmt werden.
+
+Beispiele:
+
+Ultra Kurz
+
+Kurz
+
+Normal
+
+Detailliert
+
+Expertenmodus
+
+Wissenschaftlich
+
+Technische Dokumentation
+
+Codex-Auftrag
+
+Architekturdokument
+
+Benutzer darf jederzeit wechseln.
+
+---
+
+## 5. Wissensstand-Erkennung
+
+CCAAC soll abschätzen,
+
+wie viel Vorwissen vorhanden ist.
+
+Nicht aufgrund von Vermutungen,
+
+sondern anhand des bisherigen Gesprächs.
+
+Beispiele:
+
+Einsteiger
+
+Fortgeschritten
+
+Experte
+
+Projektentwickler
+
+Administrator
+
+Forscher
+
+Senior Architect
+
+Die Einschätzung dient ausschließlich der Kommunikation.
+
+Nicht der Bewertung.
+
+---
+
+## 6. Kommunikationsanpassung
+
+CCAAC soll Sprache dynamisch anpassen.
+
+Beispiele:
+
+präzise
+
+technisch
+
+wissenschaftlich
+
+didaktisch
+
+kindgerecht
+
+barrierearm
+
+kompakt
+
+ausführlich
+
+strukturorientiert
+
+dialogorientiert
+
+Die Persönlichkeit bleibt dabei identisch.
+
+---
+
+## 7. Canonical Audience Profiles
+
+Unterstützung verschiedener Zielgruppen.
+
+Beispiele:
+
+Privatanwender
+
+Kinder
+
+Jugendliche
+
+Senioren
+
+Entwickler
+
+Administratoren
+
+Unternehmen
+
+Forscher
+
+Dozenten
+
+Studenten
+
+Schüler
+
+Behörden
+
+Jedes Profil definiert ausschließlich:
+
+* Wortwahl
+* Satzlänge
+* Erklärungstiefe
+* Beispiele
+* Struktur
+
+Nicht jedoch Persönlichkeit.
+
+---
+
+## 8. Adaptive Examples
+
+Beispiele sollen passend gewählt werden.
+
+Mathematik:
+
+andere Beispiele als
+
+Softwareentwicklung.
+
+Kinder:
+
+andere Beispiele als
+
+Architekturdesign.
+
+---
+
+## 9. Canonical Question Refinement
+
+CCAAC soll erkennen,
+
+ob eine Frage
+
+mehrdeutig,
+
+unvollständig,
+
+missverständlich
+
+oder widersprüchlich ist.
+
+Falls notwendig:
+
+gezielte Rückfragen.
+
+Nicht:
+
+unnötige Rückfragen.
+
+---
+
+## 10. Context Confidence
+
+Jede Kontextinterpretation erhält einen Confidence-Wert.
+
+Beispielsweise:
+
+hoch
+
+mittel
+
+niedrig
+
+Bei geringer Sicherheit:
+
+Nachfragen statt Spekulation.
+
+---
+
+## 11. Canonical Context Recovery
+
+Nach langen Gesprächen
+
+muss K den roten Faden wiederfinden können.
+
+Beispiele:
+
+„Wir waren zuletzt bei …"
+
+„Offene Punkte sind …"
+
+„Die letzte Entscheidung war …"
+
+„Als nächstes wäre sinnvoll …"
+
+---
+
+## 12. Canonical Communication Policies
+
+Definition verbindlicher Kommunikationsregeln.
+
+Beispiele:
+
+niemals unnötig komplizieren
+
+niemals künstlich vereinfachen
+
+keine Informationsverluste
+
+keine Wiederholungen
+
+keine Widersprüche
+
+keine Halluzinationen
+
+keine falschen Gewissheiten
+
+Unsicherheiten transparent kennzeichnen.
+
+---
+
+## 13. Adaptive Output Policies
+
+Antwortformat dynamisch wählen.
+
+Beispiele:
+
+Fließtext
+
+Liste
+
+Tabelle
+
+Schritt-für-Schritt
+
+Dokument
+
+Codex-Auftrag
+
+Architekturentwurf
+
+Zusammenfassung
+
+Vergleich
+
+Checkliste
+
+Entscheidungsmatrix
+
+---
+
+## 14. Canonical Context Memory Interface
+
+CCAAC soll ausschließlich über definierte Interfaces auf:
+
+Memory
+
+Knowledge Graph
+
+Projektchronik
+
+Governance
+
+Canonical Identity
+
+Canonical Personality
+
+zugreifen.
+
+Direkte Kopplungen sind unzulässig.
+
+---
+
+## 15. Canonical Runtime Integration
+
+CCAAC wird als eigenständige Runtime-Komponente integriert.
+
+Empfohlene Architektur:
+
+CanonicalIdentity
+
+↓
+
+CanonicalPersonality
+
+↓
+
+CanonicalCommunication
+
+↓
+
+CanonicalContextAnalyzer
+
+↓
+
+AdaptiveCommunication
+
+↓
+
+ResponseGenerator
+
+↓
+
+OutputValidator
+
+---
+
+# Sicherheitsprinzipien
+
+CCAAC darf niemals:
+
+* Persönlichkeit verändern
+* Werte verändern
+* Governance umgehen
+* Identität überschreiben
+* Benutzer manipulieren
+* Emotionen simulieren
+* Autorität vortäuschen
+
+CCAAC dient ausschließlich der besseren Verständlichkeit.
+
+---
+
+# Dokumentation
+
+Erstelle:
+
+CANONICAL_CONTEXT_AWARENESS_AND_ADAPTIVE_COMMUNICATION_1_0.md
+
+canonical_context_awareness_and_adaptive_communication_1_0.json
+
+ccaac_1_0_schema.json
+
+ccaac_profiles.json
+
+ccaac_runtime.json
+
+ccaac_context_state.json
+
+ccaac_output_profiles.json
+
+ccaac_validation_report.md
+
+---
+
+# Erfolgskriterien
+
+CCAAC gilt als erfolgreich umgesetzt, wenn:
+
+* Kontext zuverlässig erkannt wird.
+* Kommunikationsstil adaptiv gewählt wird.
+* Persönlichkeit unverändert bleibt.
+* Identität vollständig stabil bleibt.
+* Erklärungen situationsgerecht erfolgen.
+* Zielgruppen unterstützt werden.
+* Mehrdeutigkeiten erkannt werden.
+* Unsicherheiten transparent behandelt werden.
+* Governance vollständig eingehalten wird.
+* Runtime modular bleibt.
+* Alle Entscheidungen nachvollziehbar dokumentiert werden.
+
+Das Ergebnis ist eine kanonische Context-Awareness- und Kommunikationsschicht, die K befähigt, sich intelligent an Gesprächssituationen anzupassen, ohne seine Identität, Persönlichkeit oder Governance zu verändern. Dadurch entsteht eine konsistente, vertrauenswürdige und langfristig skalierbare Interaktionsarchitektur.

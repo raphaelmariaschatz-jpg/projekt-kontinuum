@@ -1,0 +1,31 @@
+{
+  "initialized": true,
+  "users": [
+    {
+      "name": "Raphael Schatz",
+      "role": "SuperAdmin",
+      "permissions": [
+        "ALL"
+      ],
+      "salt": "0384ee84b849c1ea43af9d6c5502257c",
+      "password_hash": "5ebb282ad6c2d4ddf7178ce872b93ba35b8d19de6d50ff8abf0248073ecbc6f6",
+      "created_at": "2026-06-06T12:23:54"
+    }
+  ],
+  "policy": {
+    "session_timeout_seconds": 1800,
+    "superadmin_fixed": "Raphael Schatz"
+  },
+  "trusted_devices": [
+    {
+      "id": "a3edb133469cb84ac33d4fee",
+      "name": "DESKTOP-A9ILBRK",
+      "trusted": true,
+      "created_at": "2026-06-06T12:23:54"
+    }
+  ],
+  "integrity": {
+    "baseline": {},
+    "last_check": null
+  }
+}

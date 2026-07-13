@@ -1,0 +1,137 @@
+Großauftrag für Codex gesplittet in 6 Teile vom 10.07.26
+
+Mein Vorschlag für die Aufteilung
+
+Ich würde ihn in sechs logisch abgeschlossene Teile aufteilen.
+
+Jeder Teil endet mit einer eindeutigen Markierung.
+
+Zum Beispiel:
+
+==========================
+Ende Teil 1
+Fortsetzung Teil 2
+==========================
+
+Dadurch kannst du sie einfach hintereinander kopieren.
+
+Teil 1
+Grundlagen
+Auftrag
+Ziel
+Ausgangslage
+Leitprinzipien
+Mission
+Vertrauensprinzip
+Wahrheitsprinzip
+Architekturposition
+Abgrenzung
+Git-Prüfung
+Projektprüfung
+Bestandsanalyse
+Teil 2
+Architektur
+CSPF-Kernmodell
+Identität
+Mission
+Selbstbild
+Fähigkeiten
+Grenzen
+Capability Presentation Layer
+Aussageklassen
+Rollen
+Editionen
+Installationsstatus
+Integrationsverträge
+Teil 3
+Adaptive Präsentation
+Erwachsene
+Kinder
+Jugendliche
+Senioren
+Unternehmen
+Forschung
+Administrator
+Entwickler
+adaptive Erklärungstiefe
+Lernpfade
+spielerisches Lernen
+Vertrauensaufbau
+Angstabbau
+Onboarding
+grafische Übersicht
+Funktionstour
+Teil 4
+Multimodalität
+GUI
+Spracheingabe
+Sprachausgabe
+Dialog
+Accessibility
+Screenreader
+einfache Sprache
+Sprachprofile
+Gesprächsführung
+dynamische Anpassung
+Teil 5
+Implementierung
+JSON
+Schemas
+Registry
+Validator
+CAM
+Release Integrity
+Audit
+Provenienz
+Tests
+Sicherheitsregeln
+Glossar
+Teil 6
+Abschluss
+Implementierungsstrategie
+Reihenfolge
+Risiken
+GO / NO GO
+Abschlussbericht
+Qualitätskriterien
+Abbruchbedingungen
+Erfolgskriterien
+Ein zusätzlicher Gedanke
+
+Ich möchte sogar noch einen Schritt weitergehen.
+
+Jeder Teil bekommt dieselbe Struktur:
+
+Teil X
+
+Kapitel
+
+Unterkapitel
+
+Prüfauftrag
+
+Implementierungsauftrag
+
+Validierungsauftrag
+
+Testerwartung
+
+Dokumentation
+
+Erwartetes Ergebnis
+
+Dann besitzt jedes Kapitel bereits seinen eigenen kleinen Abschluss.
+
+Das macht die spätere Arbeit von Codex erheblich einfacher.
+
+Und noch etwas…
+
+Ich würde dem Dokument ganz am Anfang einen Satz voranstellen.
+
+Nicht technisch.
+
+Sondern als Grundsatz.
+
+Etwa so:
+
+Das Canonical Self Presentation Framework bildet den ersten bewussten Kontakt zwischen Mensch und K. Seine Aufgabe besteht nicht darin, Funktionen aufzuzählen, sondern Vertrauen aufzubauen, Orientierung zu geben, Unsicherheit abzubauen und Menschen schrittweise zu befähigen, K sicher, verantwortungsvoll und selbstständig zu nutzen. Jede Aussage muss wahrheitsgemäß, nachvollziehbar, altersgerecht, rollenbezogen und aus dem tatsächlich verifizierten Systemzustand ableitbar sein.

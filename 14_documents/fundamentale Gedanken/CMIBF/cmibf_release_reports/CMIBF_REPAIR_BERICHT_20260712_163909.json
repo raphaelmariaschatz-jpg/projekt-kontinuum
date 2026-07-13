@@ -1,0 +1,158 @@
+{
+  "Timestamp": "2026-07-12T16:39:10.5130742+02:00",
+  "Tool": "CMIBF Release Repair Tool 1.0",
+  "InputPath": "C:\\Projekt Kontinuum\\14_documents\\fundamentale Gedanken\\CMIBF\\CANONICAL_MASTER_IMPLEMENTATION_BLUEPRINT_FRAMEWORK_1_0.md",
+  "OutputPath": "C:\\Projekt Kontinuum\\14_documents\\fundamentale Gedanken\\CMIBF\\CANONICAL_MASTER_IMPLEMENTATION_BLUEPRINT_FRAMEWORK_1_0_REPAIRED.md",
+  "LogicalLineCount": 10872,
+  "OutputLineEnding": "LF",
+  "ChangeCount": 20,
+  "H1SubsectionFixCount": 17,
+  "FilenameHeadingFixCount": 3,
+  "RemainingH1Subsections": 0,
+  "RemainingFilenameHeadings": 0,
+  "OriginalModified": false,
+  "InputSha256": "E4E0E0DE85B335D250BC6FDC45DAD8E4D019C4FA43DF3DF42F8C6388F8560F6B",
+  "OutputSha256": "359873A13D86015B70E13B7C4912101AE8DCEAE9C6D19695D2D6F0CF3A0DA5C5",
+  "Changes": [
+    {
+      "Line": 412,
+      "Code": "REPAIR-H1-SUBSECTION",
+      "Description": "Nummeriertes Unterkapitel von H1 auf H2 korrigiert.",
+      "Before": "# 2.2 Grundprinzip",
+      "After": "## 2.2 Grundprinzip"
+    },
+    {
+      "Line": 432,
+      "Code": "REPAIR-H1-SUBSECTION",
+      "Description": "Nummeriertes Unterkapitel von H1 auf H2 korrigiert.",
+      "Before": "# 2.3 Die kanonische Meta-Architektur",
+      "After": "## 2.3 Die kanonische Meta-Architektur"
+    },
+    {
+      "Line": 624,
+      "Code": "REPAIR-H1-SUBSECTION",
+      "Description": "Nummeriertes Unterkapitel von H1 auf H2 korrigiert.",
+      "Before": "# 2.4 Informationsfluss",
+      "After": "## 2.4 Informationsfluss"
+    },
+    {
+      "Line": 670,
+      "Code": "REPAIR-H1-SUBSECTION",
+      "Description": "Nummeriertes Unterkapitel von H1 auf H2 korrigiert.",
+      "Before": "# 2.5 Verantwortungsprinzip",
+      "After": "## 2.5 Verantwortungsprinzip"
+    },
+    {
+      "Line": 686,
+      "Code": "REPAIR-H1-SUBSECTION",
+      "Description": "Nummeriertes Unterkapitel von H1 auf H2 korrigiert.",
+      "Before": "# 2.6 Das Prinzip der architektonischen Ableitung",
+      "After": "## 2.6 Das Prinzip der architektonischen Ableitung"
+    },
+    {
+      "Line": 734,
+      "Code": "REPAIR-H1-SUBSECTION",
+      "Description": "Nummeriertes Unterkapitel von H1 auf H2 korrigiert.",
+      "Before": "# 2.7 Architekturkern (Architectural Core)",
+      "After": "## 2.7 Architekturkern (Architectural Core)"
+    },
+    {
+      "Line": 760,
+      "Code": "REPAIR-H1-SUBSECTION",
+      "Description": "Nummeriertes Unterkapitel von H1 auf H2 korrigiert.",
+      "Before": "# 2.8 Architektonische Invarianten",
+      "After": "## 2.8 Architektonische Invarianten"
+    },
+    {
+      "Line": 775,
+      "Code": "REPAIR-H1-SUBSECTION",
+      "Description": "Nummeriertes Unterkapitel von H1 auf H2 korrigiert.",
+      "Before": "# 2.9 Architektur als gerichteter Graph",
+      "After": "## 2.9 Architektur als gerichteter Graph"
+    },
+    {
+      "Line": 820,
+      "Code": "REPAIR-H1-SUBSECTION",
+      "Description": "Nummeriertes Unterkapitel von H1 auf H2 korrigiert.",
+      "Before": "# 2.10 Architekturgesetz des CMIBF",
+      "After": "## 2.10 Architekturgesetz des CMIBF"
+    },
+    {
+      "Line": 6927,
+      "Code": "REPAIR-H1-SUBSECTION",
+      "Description": "Nummeriertes Unterkapitel von H1 auf H2 korrigiert.",
+      "Before": "# 41.4 Kanonische Begriffe",
+      "After": "## 41.4 Kanonische Begriffe"
+    },
+    {
+      "Line": 8572,
+      "Code": "REPAIR-H1-SUBSECTION",
+      "Description": "Nummeriertes Unterkapitel von H1 auf H2 korrigiert.",
+      "Before": "# 41.5 Normative Schlüsselwörter",
+      "After": "## 41.5 Normative Schlüsselwörter"
+    },
+    {
+      "Line": 8606,
+      "Code": "REPAIR-H1-SUBSECTION",
+      "Description": "Nummeriertes Unterkapitel von H1 auf H2 korrigiert.",
+      "Before": "# 41.6 Kanonische Lifecycle-Statuswerte",
+      "After": "## 41.6 Kanonische Lifecycle-Statuswerte"
+    },
+    {
+      "Line": 8632,
+      "Code": "REPAIR-H1-SUBSECTION",
+      "Description": "Nummeriertes Unterkapitel von H1 auf H2 korrigiert.",
+      "Before": "# 41.7 Begriffsregeln",
+      "After": "## 41.7 Begriffsregeln"
+    },
+    {
+      "Line": 8647,
+      "Code": "REPAIR-H1-SUBSECTION",
+      "Description": "Nummeriertes Unterkapitel von H1 auf H2 korrigiert.",
+      "Before": "# 41.8 Compiler- und Registry-Integration",
+      "After": "## 41.8 Compiler- und Registry-Integration"
+    },
+    {
+      "Line": 8665,
+      "Code": "REPAIR-H1-SUBSECTION",
+      "Description": "Nummeriertes Unterkapitel von H1 auf H2 korrigiert.",
+      "Before": "# 41.9 Validierungskriterien",
+      "After": "## 41.9 Validierungskriterien"
+    },
+    {
+      "Line": 8682,
+      "Code": "REPAIR-H1-SUBSECTION",
+      "Description": "Nummeriertes Unterkapitel von H1 auf H2 korrigiert.",
+      "Before": "# 41.10 Pflege und Evolution",
+      "After": "## 41.10 Pflege und Evolution"
+    },
+    {
+      "Line": 8701,
+      "Code": "REPAIR-H1-SUBSECTION",
+      "Description": "Nummeriertes Unterkapitel von H1 auf H2 korrigiert.",
+      "Before": "# 41.11 Zusammenfassung",
+      "After": "## 41.11 Zusammenfassung"
+    },
+    {
+      "Line": 8722,
+      "Code": "REPAIR-FILENAME-HEADING",
+      "Description": "Quelldateiname in eine reguläre Kapitelüberschrift umgewandelt.",
+      "Before": "# 42_Abkuerzungsverzeichnis.md",
+      "After": "# 42 – Abkuerzungsverzeichnis"
+    },
+    {
+      "Line": 10279,
+      "Code": "REPAIR-FILENAME-HEADING",
+      "Description": "Quelldateiname in eine reguläre Kapitelüberschrift umgewandelt.",
+      "Before": "# 45_Implementierungs_Roadmap.md",
+      "After": "# 45 – Implementierungs Roadmap"
+    },
+    {
+      "Line": 10641,
+      "Code": "REPAIR-FILENAME-HEADING",
+      "Description": "Quelldateiname in eine reguläre Kapitelüberschrift umgewandelt.",
+      "Before": "# 46_Anhänge.md",
+      "After": "# 46 – Anhänge"
+    }
+  ]
+}

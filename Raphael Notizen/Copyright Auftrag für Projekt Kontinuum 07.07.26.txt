@@ -1,0 +1,76 @@
+Copyright Auftrag für Projekt Kontinuum 07.07.26
+
+Codex-Auftrag – Copyright- und Eigentumskennzeichnung für Projekt Kontinuum
+
+Ziel:
+Füge eine klare, einheitliche Copyright- und Eigentumskennzeichnung für Projekt Kontinuum ein, ohne Architektur, Logik, Datenflüsse oder bestehende Governance-Regeln zu verändern.
+
+Verbindliche Leitlinie:
+Dieser Auftrag ist ein reiner Kennzeichnungs- und Dokumentationsauftrag. Keine funktionalen Änderungen. Kein Refactoring. Keine Umbenennungen. Keine Verschiebungen.
+
+Aufgaben:
+
+1. Prüfe die zentralen Projektartefakte:
+
+* README-Dateien
+* zentrale Markdown-Dokumentationen
+* Architekturmodelle
+* Handbuchdateien
+* Projektchronik
+* zentrale Python-Module im aktiven Kern
+* Konfigurations- und Manifestdateien, sofern sinnvoll
+
+2. Ergänze dort, wo fachlich passend, folgenden Hinweis:
+
+© 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.
+
+3. Für Quellcodedateien verwende bevorzugt einen kurzen Header-Kommentar:
+
+# © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.
+
+4. Für Markdown-/Dokumentationsdateien verwende bevorzugt:
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.
+
+5. Erstelle zusätzlich eine neue Datei im Projektwurzelverzeichnis:
+
+COPYRIGHT.md
+
+Inhalt:
+
+# Copyright
+
+© 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.
+
+Projekt Kontinuum ist ein von Raphael Maria Schatz initiiertes und entwickeltes lokales KI-System.
+
+Die Architektur, Dokumentation, Konzepte, Quelltexte, Projektchroniken, Governance-Regeln und kanonischen Entwicklungsartefakte stehen, soweit nicht ausdrücklich anders gekennzeichnet, unter dem Urheberrechtsanspruch von Raphael Maria Schatz.
+
+Eine Nutzung, Weitergabe, Veröffentlichung, Veränderung oder kommerzielle Verwertung durch Dritte ist ohne ausdrückliche schriftliche Zustimmung nicht gestattet.
+
+Dieser Hinweis dient der eindeutigen Eigentums-, Urheber- und Herkunftskennzeichnung innerhalb des Projekts.
+
+6. Optional, falls noch nicht vorhanden:
+   Erstelle oder ergänze eine NOTICE.md mit kurzer Herkunftsnotiz:
+
+# Notice
+
+Projekt Kontinuum wurde von Raphael Maria Schatz konzipiert, initiiert und über eine fortlaufende kanonische Entwicklungsstruktur dokumentiert.
+
+Die Entstehung und Weiterentwicklung werden über Git-Historie, Projektchronik, Architekturartefakte und kanonische Governance-Dokumente nachvollziehbar gemacht.
+
+7. Abschlussprüfung:
+
+* git diff anzeigen
+* Liste aller geänderten Dateien ausgeben
+* bestätigen, dass keine funktionalen Änderungen vorgenommen wurden
+* bestätigen, dass keine Architekturdateien inhaltlich verändert wurden, außer durch Copyright-/Notice-Vermerke
+
+Nicht tun:
+
+* keine Lizenz wie MIT, Apache oder GPL hinzufügen
+* keine Open-Source-Freigabe formulieren
+* keine Rechte an Dritte einräumen
+* keine Architekturänderungen
+* keine Umstrukturierung
+* keine automatischen Massenänderungen ohne Diff-Kontrolle

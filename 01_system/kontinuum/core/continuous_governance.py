@@ -1,3 +1,5 @@
+# © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.
+
 from __future__ import annotations
 
 import json
@@ -649,5 +651,3 @@ class ContinuousGovernanceSystem:
             f"Log={status.get('governance_log', '')}.\n"
             "- Phase 3 klassifiziert kontinuierlich und protokolliert; keine automatische Loeschung oder Migration."
         )
-
-

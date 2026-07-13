@@ -1,0 +1,1174 @@
+Codex-Auftrag – Teil 15 gesamt (wird unterteilt in 3 Aufträge A, B und C)
+
+
+Canonical Self-Presentation API & Integration (CSPAI) 1.0
+Bestandteil des Canonical Self-Presentation Framework (CSPF) 1.0
+1. Auftragsbezeichnung
+
+Prüfung, Architekturdefinition und kontrollierte Implementierung von Teil 15 – Canonical Self-Presentation API & Integration (CSPAI) 1.0 innerhalb des Canonical Self-Presentation Framework (CSPF) 1.0
+
+2. Ausgangslage
+
+Das Canonical Self-Presentation Framework (CSPF) 1.0 definiert eine kanonische, kontextabhängige, konsistente, sichere, nachvollziehbare und entwicklungsfähige Selbstpräsentation des Systems.
+
+Die vorherigen CSPF-Bausteine regeln insbesondere:
+
+die grundlegende Identität und Selbstbeschreibung,
+kanonische Präsentationsprofile,
+rollen-, editions- und zielgruppenspezifische Darstellungen,
+dynamische Laufzeitpräsentation,
+Governance und Autorisierung,
+Kontextauflösung,
+Persönlichkeit und Kommunikationskonsistenz,
+adaptive Kommunikation,
+Lifecycle und Evolution,
+Validierung und Zertifizierung,
+Sicherheit und Vertrauenswürdigkeit,
+Prüfung, Implementierung und technische Absicherung der bisherigen CSPF-Komponenten.
+
+Mit Canonical Self-Presentation API & Integration (CSPAI) 1.0 muss nun eine verbindliche Integrationsschicht geschaffen werden, über die andere Komponenten, Agenten, Oberflächen, Anwendungen und kontrolliert freigegebene externe Systeme auf kanonische Selbstpräsentationen zugreifen können.
+
+CSPAI darf dabei keine zweite oder konkurrierende Quelle der Selbstpräsentation erzeugen.
+
+Die API muss ausschließlich auf bereits kanonisch festgelegte, validierte und freigegebene CSPF-Daten, Profile, Regeln und Laufzeitentscheidungen zugreifen.
+
+CSPAI ist daher keine neue Identitäts-, Persönlichkeits- oder Präsentationsinstanz, sondern eine streng kontrollierte Zugriffs-, Transformations- und Integrationsschicht.
+
+3. Zielsetzung
+
+Codex soll den vorhandenen Projektbestand vollständig prüfen und anschließend eine Architektur sowie – soweit nachweislich sicher möglich – eine kontrollierte Implementierung von CSPAI 1.0 erstellen.
+
+CSPAI 1.0 soll sicherstellen, dass kanonische Selbstpräsentationen:
+
+über eindeutig definierte Schnittstellen abrufbar sind,
+nicht außerhalb des CSPF erzeugt oder verändert werden,
+kontext-, rollen-, editions-, alters- und zielgruppengerecht ausgeliefert werden,
+nur nach erfolgreicher Autorisierung und Policy-Prüfung bereitgestellt werden,
+in unterschiedlichen Ausgabeformaten bereitgestellt werden können,
+versioniert und reproduzierbar bleiben,
+vollständig auditierbar sind,
+gegen Identitätsverfälschung, Profilmanipulation und unzulässige Datenfreigabe geschützt sind,
+intern und extern eindeutig zwischen kanonischer Quelle, Laufzeitdarstellung und Transportformat unterscheiden,
+zukünftige Integrationen ermöglichen, ohne die CSPF-Kernarchitektur aufzubrechen.
+4. Grundprinzip
+
+Für CSPAI 1.0 gilt verbindlich:
+
+Die API darf eine kanonische Selbstpräsentation transportieren, filtern, formatieren und kontrolliert bereitstellen, aber niemals eigenständig Identität, Persönlichkeit, Rolle, Vertrauensstatus oder kanonische Aussagen erzeugen.
+
+Jede ausgelieferte Selbstpräsentation muss auf eine nachweisbare kanonische Quelle zurückführbar sein.
+
+Die API darf keine stillschweigenden Ergänzungen, Improvisationen oder semantischen Umdeutungen vornehmen.
+
+5. Verbindliche Architekturposition
+
+CSPAI 1.0 ist als kontrollierte Integrationsschicht zwischen den CSPF-Kernkomponenten und den konsumierenden Systemen einzuordnen.
+
+Empfohlene logische Position:
+
+Canonical Identity / Self Model
+        ↓
+Canonical Self-Presentation Profiles
+        ↓
+Context Resolution / Governance / Trust / Validation
+        ↓
+Canonical Self-Presentation Runtime
+        ↓
+CSPAI 1.0 – API & Integration Layer
+        ↓
+Internal Consumers / User Interfaces / Voice Systems
+Agents / Applications / Approved External Integrations
+
+CSPAI darf keine vorgelagerten Prüfungen umgehen.
+
+Insbesondere darf kein API-Endpunkt direkt auf ungeprüfte Rohdaten, interne Identitätsfragmente oder nicht freigegebene Profilentwürfe zugreifen.
+
+6. Prüfauftrag an Codex
+
+Codex muss vor jeder Implementierung zunächst den vorhandenen Projektbestand untersuchen.
+
+Mindestens zu prüfen sind:
+
+bestehende CSPF-Dokumente und Konfigurationsdateien,
+vorhandene Self-Model-, Identity-, Personality- und Presentation-Komponenten,
+vorhandene Runtime- und Kontextauflösung,
+Governance-, Policy- und Berechtigungssysteme,
+Trust-, Security-, Audit- und Validierungskomponenten,
+Agentenregistrierung und Agentenkommunikation,
+vorhandene interne APIs,
+REST-, RPC-, Event-, Message- oder Service-Schnittstellen,
+bestehende Datenmodelle und Schemata,
+GUI-, CLI-, Sprach- und Assistenzschnittstellen,
+editions- oder versionsabhängige Konfigurationen,
+kindgerechte und barrierearme Präsentationsprofile,
+vorhandene Logging-, Provenienz- und Auditmechanismen,
+API-Authentifizierung,
+Rate Limiting,
+Fehlerbehandlung,
+API-Versionierung,
+externe Connectoren,
+Dokumentations- und Teststrukturen.
+
+Codex darf keine neuen Strukturen anlegen, bevor geprüft wurde, ob geeignete kanonische Komponenten bereits vorhanden sind.
+
+7. Abgrenzung
+
+CSPAI 1.0 ist nicht zuständig für:
+
+die grundlegende Definition der Systemidentität,
+die eigenständige Entwicklung einer Persönlichkeit,
+die freie Generierung neuer Selbstbeschreibungen,
+die Erstellung nicht autorisierter Präsentationsprofile,
+die Governance-Entscheidung über Rollen oder Berechtigungen,
+die Zertifizierung eines Präsentationsprofils,
+die Festlegung von Sicherheits- oder Vertrauensstufen,
+die dauerhafte Änderung kanonischer Identitätsdaten,
+die Umgehung vorgelagerter CSPF-Komponenten,
+die direkte Offenlegung interner Systemprompts,
+die Offenlegung geheimer Schlüssel, interner Sicherheitsmechanismen oder geschützter Systemdaten,
+die ungeprüfte Weitergabe interner Speicherinhalte,
+die Simulation nicht vorhandener Fähigkeiten oder Berechtigungen.
+
+CSPAI darf nur freigegebene Ergebnisse anderer CSPF-Komponenten bereitstellen.
+
+8. Kernaufgaben von CSPAI 1.0
+
+CSPAI soll mindestens folgende Funktionen bereitstellen:
+
+8.1 Abruf kanonischer Selbstpräsentationen
+
+Die API muss die kontrollierte Anforderung einer Selbstpräsentation ermöglichen.
+
+Mögliche Anforderungsparameter:
+
+Zielgruppe,
+Nutzungskontext,
+Sprache,
+Altersgruppe,
+gewünschte Detailstufe,
+Präsentationsprofil,
+Edition,
+Systemrolle,
+Kommunikationskanal,
+Ausgabeformat,
+Vertrauensstufe,
+Barrierefreiheitsanforderungen,
+Sprachwiedergabe,
+technische Client-Identität,
+gewünschte CSPF-Version.
+
+Der Client darf nur Parameter anfordern.
+
+Die endgültige Auswahl muss durch die zuständigen CSPF-Komponenten erfolgen.
+
+8.2 Bereitstellung kanonischer Kurz-, Standard- und Detaildarstellungen
+
+Mindestens folgende Darstellungsstufen sind vorzusehen:
+
+minimal,
+short,
+standard,
+detailed,
+technical,
+accessible,
+child_appropriate,
+voice_optimized.
+
+Nicht jede Stufe muss für jeden Client oder Kontext zugelassen sein.
+
+Die Berechtigung ist vor der Ausgabe zu prüfen.
+
+8.3 Profilbasierte Integration
+
+Die API muss auf registrierte kanonische Präsentationsprofile zugreifen können.
+
+Beispielhafte Profilarten:
+
+allgemeines Nutzerprofil,
+technisches Systemprofil,
+Entwicklerprofil,
+Administratorprofil,
+Seniorprofil,
+Forschungsprofil,
+Unternehmensprofil,
+Supportprofil,
+kindgerechtes Profil,
+barrierearmes Profil,
+Sprachdialogprofil,
+sicherheitsreduziertes öffentliches Profil.
+
+Profilnamen und Profil-IDs dürfen nicht frei durch Clients erfunden werden.
+
+Nur registrierte, aktive und freigegebene Profile dürfen verwendet werden.
+
+8.4 Ausgabeformate
+
+CSPAI soll – abhängig von Architektur und Bedarf – folgende Ausgabeformen unterstützen können:
+
+strukturierte interne Python- oder Objektmodelle,
+JSON,
+kanonisch validiertes JSON,
+menschenlesbarer Text,
+Markdown,
+HTML-fragmentierte Ausgabe,
+Sprachsynthese-optimierter Text,
+SSML, sofern technisch vorgesehen,
+maschinenlesbare Metadaten,
+Event- oder Message-Payloads.
+
+Jedes Ausgabeformat muss semantisch auf derselben kanonischen Präsentation beruhen.
+
+Eine Formattransformation darf die Bedeutung nicht verändern.
+
+8.5 Sprach- und Lokalisierungsunterstützung
+
+CSPAI muss die Integration mehrsprachiger Selbstpräsentationen vorbereiten.
+
+Dabei gelten folgende Anforderungen:
+
+Sprache und Locale sind getrennt zu behandeln,
+Übersetzungen müssen auf einer freigegebenen kanonischen Basisaussage beruhen,
+Übersetzungsabweichungen dürfen keine neue Identitätsaussage erzeugen,
+nicht verfügbare Sprachen müssen klar als nicht verfügbar gekennzeichnet werden,
+Fallbacks müssen dokumentiert und nachvollziehbar sein,
+sprachliche Anpassungen dürfen Sicherheits- und Vertrauenshinweise nicht entfernen,
+kindgerechte Formulierungen müssen altersgerecht und sicher bleiben,
+barrierearme Formulierungen müssen verständlich, eindeutig und nicht irreführend sein.
+9. Vorgeschlagenes API-Datenmodell
+
+Codex soll prüfen, ob ein kanonisches Request-/Response-Modell sinnvoll und mit der vorhandenen Architektur vereinbar ist.
+
+Beispiel:
+
+{
+  "request_id": "uuid",
+  "client_id": "registered-client-id",
+  "requested_profile": "public_standard",
+  "target_audience": "general_user",
+  "context": "interactive_dialogue",
+  "language": "de",
+  "locale": "de-DE",
+  "detail_level": "standard",
+  "output_format": "text",
+  "accessibility": {
+    "plain_language": false,
+    "voice_optimized": false,
+    "child_appropriate": false
+  },
+  "requested_cspf_version": "1.0"
+}
+
+Beispielhafte Response:
+
+{
+  "request_id": "uuid",
+  "presentation_id": "canonical-presentation-instance-id",
+  "profile_id": "public_standard",
+  "profile_version": "1.0.0",
+  "cspf_version": "1.0",
+  "language": "de",
+  "locale": "de-DE",
+  "detail_level": "standard",
+  "output_format": "text",
+  "content": "Freigegebene kanonische Selbstpräsentation",
+  "trust": {
+    "status": "validated",
+    "validation_reference": "validation-id",
+    "certification_status": "approved"
+  },
+  "provenance": {
+    "canonical_source_id": "source-id",
+    "runtime_resolution_id": "resolution-id",
+    "policy_decision_id": "policy-id"
+  },
+  "generated_at": "ISO-8601 timestamp",
+  "expires_at": null
+}
+
+Dieses Schema ist nur ein Architekturvorschlag.
+
+Codex muss es mit bestehenden Projektkonventionen abgleichen und darf keine parallelen Identifier-, Provenienz- oder Versionssysteme einführen.
+
+10. Verbindliche API-Endpunktklassen
+
+Codex soll prüfen, ob folgende logische Endpunktklassen umgesetzt werden sollten.
+
+10.1 Präsentationsauflösung
+POST /cspf/v1/presentations/resolve
+
+Zweck:
+
+Anforderung einer kontextabhängigen, autorisierten und validierten Selbstpräsentation.
+10.2 Profilabfrage
+GET /cspf/v1/profiles
+GET /cspf/v1/profiles/{profile_id}
+
+Zweck:
+
+Abruf freigegebener Profilmetadaten.
+
+Dabei dürfen keine internen, gesperrten oder nicht freigegebenen Profilbestandteile offengelegt werden.
+
+10.3 Fähigkeitsabfrage
+GET /cspf/v1/capabilities
+
+Zweck:
+
+Ermittlung unterstützter Sprachen,
+Ausgabeformate,
+Detailstufen,
+Profilklassen,
+Barrierefreiheitsoptionen,
+API-Versionen.
+
+Diese Abfrage darf keine internen Systemfähigkeiten offenlegen, die nicht für den jeweiligen Client freigegeben sind.
+
+10.4 Validierungsstatus
+GET /cspf/v1/presentations/{presentation_id}/validation
+
+Zweck:
+
+Abruf des Validierungs- und Vertrauensstatus einer bereitgestellten Präsentation.
+10.5 Gesundheits- und Statusprüfung
+GET /cspf/v1/health
+GET /cspf/v1/status
+
+Der öffentliche Health-Endpunkt muss minimale Informationen liefern.
+
+Detaillierte Statusinformationen dürfen nur autorisierten administrativen Clients zugänglich sein.
+
+10.6 Interne Integrationsschnittstelle
+
+Zusätzlich zu einer möglichen HTTP-API soll Codex eine interne Programmierschnittstelle prüfen.
+
+Beispiel:
+
+presentation = cspf_api.resolve_presentation(
+    client_context=context,
+    requested_profile="public_standard",
+    detail_level="standard",
+    language="de",
+    output_format="text",
+)
+
+Interne und externe Schnittstellen müssen dieselben kanonischen Regeln verwenden.
+
+Es darf keine vereinfachte interne Hintertür geben, die Governance- oder Sicherheitsprüfungen umgeht.
+
+11. Integration mit anderen CSPF-Komponenten
+
+CSPAI muss nachweislich mit den zuständigen CSPF-Komponenten zusammenarbeiten.
+
+Mindestens zu integrieren sind:
+
+11.1 Kanonische Identitätsquelle
+
+CSPAI darf Identitätsdaten nur aus der freigegebenen kanonischen Quelle beziehen.
+
+11.2 Präsentationsprofilverwaltung
+
+Profil-ID, Profilversion, Status und Freigabe müssen geprüft werden.
+
+11.3 Kontextauflösung
+
+Die Auswahl einer Präsentation muss den tatsächlichen Kontext berücksichtigen.
+
+Clientangaben dürfen als Eingabe dienen, aber nicht ungeprüft als Wahrheit übernommen werden.
+
+11.4 Governance und Policy Enforcement
+
+Jede Anfrage muss gegen Rollen-, Profil-, Datenfreigabe- und Sicherheitsrichtlinien geprüft werden.
+
+11.5 Security & Trust
+
+Vor jeder Ausgabe müssen mindestens geprüft werden:
+
+Clientvertrauen,
+Authentifizierung,
+Autorisierung,
+erlaubter Informationsumfang,
+Präsentationsvertrauensstatus,
+Integrität der kanonischen Quelle,
+Sperr- oder Widerrufsstatus.
+11.6 Validation & Certification
+
+Nur zulässige Präsentationen dürfen ausgeliefert werden.
+
+Nicht validierte, veraltete, widerrufene oder abgelöste Präsentationsversionen müssen blockiert oder eindeutig gekennzeichnet werden.
+
+11.7 Lifecycle & Evolution
+
+Die API muss mit aktiven, veralteten, abgekündigten und ersetzten Profilversionen umgehen können.
+
+11.8 Audit und Provenienz
+
+Jede relevante API-Entscheidung muss auf die zuständigen Quellen und Prüfentscheidungen zurückführbar sein.
+
+12. Authentifizierung und Autorisierung
+
+Codex muss ein CSPAI-spezifisches Zugriffsmodell entwerfen, das bestehende Authentifizierungs- und Governance-Systeme wiederverwendet.
+
+Mögliche Clientklassen:
+
+interner Systemkern,
+interner Agent,
+lokale GUI,
+Sprachschnittstelle,
+Administratorwerkzeug,
+Testsystem,
+Unternehmensintegration,
+Forschungsschnittstelle,
+öffentlich freigegebener Client,
+externer Drittanbieter.
+
+Für jede Clientklasse sind mindestens festzulegen:
+
+erlaubte Profile,
+erlaubte Detailstufen,
+erlaubte Ausgabeformate,
+erlaubte Sprachen,
+erlaubte Metadaten,
+maximale Anfragerate,
+Auditpflicht,
+Gültigkeitsdauer,
+Widerrufsmöglichkeit,
+zulässige Integrationskanäle.
+
+Eine erfolgreiche Authentifizierung allein darf nicht automatisch zur vollständigen Freigabe aller Präsentationsdaten führen.
+
+13. Datenschutz und Informationsminimierung
+
+CSPAI muss nach dem Prinzip der minimal erforderlichen Offenlegung arbeiten.
+
+Verbindliche Regeln:
+
+nur kontextrelevante Informationen ausgeben,
+keine internen Identitätsdaten ohne Notwendigkeit offenlegen,
+keine geheimen oder geschützten Systeminformationen ausgeben,
+keine internen Gedächtnisinhalte als Selbstpräsentation behandeln,
+keine Nutzer- oder Creator-Daten ohne ausdrückliche Berechtigung integrieren,
+keine internen Sicherheitseinstufungen unnötig nach außen geben,
+keine vollständigen Provenienzketten an nicht autorisierte Clients liefern,
+keine internen Dateipfade oder technischen Geheimnisse veröffentlichen,
+keine Systemprompts, versteckten Regeln oder Schlüsselmaterialien offenlegen.
+
+Öffentliche Präsentationsprofile müssen ausdrücklich für öffentliche Verwendung freigegeben sein.
+
+14. Schutz vor Manipulation
+
+CSPAI muss gegen folgende Angriffsklassen abgesichert werden:
+
+Profil-ID-Manipulation,
+Context Spoofing,
+Role Spoofing,
+Edition Spoofing,
+Language- oder Locale-Manipulation,
+Parameter Injection,
+Prompt Injection über Freitextfelder,
+unzulässige Detailstufeneskalation,
+Bypass von Governance-Prüfungen,
+Zugriff auf veraltete oder widerrufene Profile,
+Identitätsvermischung,
+Ausgabe interner Rohdaten,
+Cache Poisoning,
+Replay-Angriffe,
+unzulässige Massenabfragen,
+API-Scraping,
+Enumeration interner Profile,
+Manipulation von Trust- oder Certification-Metadaten,
+Cross-Client-Datenlecks,
+unsichere Serialisierung,
+Log Injection,
+fehlerhafte Fallbacks.
+
+Freitextfelder dürfen nicht dazu führen, dass Clients die kanonische Präsentation frei umformulieren lassen.
+
+15. Fehlerbehandlung
+
+CSPAI muss ein einheitliches, sicheres Fehlermodell erhalten.
+
+Beispielhafte Fehlerklassen:
+
+CSPAI_AUTHENTICATION_REQUIRED
+CSPAI_AUTHORIZATION_DENIED
+CSPAI_PROFILE_NOT_FOUND
+CSPAI_PROFILE_NOT_ACTIVE
+CSPAI_PROFILE_NOT_ALLOWED
+CSPAI_CONTEXT_INVALID
+CSPAI_FORMAT_NOT_SUPPORTED
+CSPAI_LANGUAGE_NOT_SUPPORTED
+CSPAI_DETAIL_LEVEL_NOT_ALLOWED
+CSPAI_VALIDATION_FAILED
+CSPAI_TRUST_REQUIREMENT_NOT_MET
+CSPAI_CANONICAL_SOURCE_UNAVAILABLE
+CSPAI_VERSION_NOT_SUPPORTED
+CSPAI_RATE_LIMIT_EXCEEDED
+CSPAI_INTERNAL_RESOLUTION_ERROR
+
+Fehlermeldungen müssen:
+
+eindeutig,
+maschinenlesbar,
+auditierbar,
+sicher,
+nicht irreführend,
+frei von internen Geheimnissen
+
+sein.
+
+Externen Clients dürfen keine Stack Traces, Dateipfade oder internen Architekturdetails angezeigt werden.
+
+16. Versionierung
+
+CSPAI muss unabhängig von einzelnen Präsentationsprofilversionen versioniert werden.
+
+Zu unterscheiden sind mindestens:
+
+CSPF-Version,
+CSPAI-Version,
+API-Version,
+Profilversion,
+Schema-Version,
+kanonische Quellversion,
+Validierungs- oder Zertifizierungsversion.
+
+Beispiel:
+
+CSPF: 1.0
+CSPAI: 1.0
+API: v1
+Profile: 1.2.0
+Schema: 1.0
+
+Die Versionsbeziehungen müssen eindeutig dokumentiert werden.
+
+Breaking Changes dürfen nicht stillschweigend eingeführt werden.
+
+17. Abwärtskompatibilität und Deprecation
+
+CSPAI muss mit dem Canonical Presentation Lifecycle & Evolution Framework zusammenarbeiten.
+
+Für veraltete API-Versionen oder Profile sind mindestens vorzusehen:
+
+active,
+deprecated,
+restricted,
+superseded,
+revoked,
+retired.
+
+Bei Deprecation müssen, soweit zulässig, folgende Angaben verfügbar sein:
+
+Grund,
+Zeitpunkt der Abkündigung,
+Ersatzversion,
+Übergangsfrist,
+Migrationshinweis.
+
+Widerrufene Präsentationen dürfen nicht weiter ausgeliefert werden, sofern keine ausdrücklich dokumentierte historische Prüfanforderung besteht.
+
+18. Caching
+
+Codex soll prüfen, ob und unter welchen Bedingungen Präsentationen zwischengespeichert werden dürfen.
+
+Caching ist nur zulässig, wenn mindestens folgende Faktoren berücksichtigt werden:
+
+Profilversion,
+CSPF-Version,
+Clientklasse,
+Berechtigungsstatus,
+Kontext,
+Sprache,
+Detailstufe,
+Trust-Status,
+Widerrufsstatus,
+Gültigkeitszeitraum,
+Sicherheitsklassifikation.
+
+Personalisierte oder besonders geschützte Präsentationen dürfen nicht in gemeinsam genutzten Caches landen.
+
+Ein Cache darf keinen widerrufenen oder ersetzten Status verdecken.
+
+19. Rate Limiting und Missbrauchsschutz
+
+Für externe und potenziell unsichere Clients sind mindestens vorzusehen:
+
+Anfrageratenbegrenzung,
+Burst-Begrenzung,
+clientbezogene Kontingente,
+Missbrauchserkennung,
+temporäre Sperren,
+Auditereignisse,
+sichere Fehlermeldungen,
+Schutz vor Enumeration,
+Schutz vor massenhaftem Profilabruf.
+
+Interne Clients dürfen nicht pauschal von allen Schutzmaßnahmen ausgenommen werden.
+
+20. Ereignis- und Agentenintegration
+
+Codex soll prüfen, ob neben synchronen API-Aufrufen auch ereignisbasierte Integrationen erforderlich sind.
+
+Mögliche Ereignisse:
+
+Profil aktiviert,
+Profil aktualisiert,
+Profil abgekündigt,
+Profil widerrufen,
+Validierung erfolgreich,
+Zertifizierung geändert,
+Trust-Status geändert,
+API-Version abgekündigt,
+kanonische Quelle aktualisiert,
+Cache invalidiert.
+
+Beispiel:
+
+{
+  "event_type": "cspf.profile.updated",
+  "profile_id": "public_standard",
+  "old_version": "1.0.0",
+  "new_version": "1.1.0",
+  "timestamp": "ISO-8601 timestamp",
+  "audit_reference": "audit-id"
+}
+
+Ereignisse dürfen keine geschützten Präsentationsinhalte enthalten, sofern dies nicht ausdrücklich erforderlich und autorisiert ist.
+
+21. GUI-Integration
+
+CSPAI soll die einheitliche Versorgung grafischer Oberflächen ermöglichen.
+
+Dabei muss sichergestellt werden:
+
+Die GUI erzeugt keine konkurrierende Selbstpräsentation.
+Text, Profilname, Status und Metadaten stammen aus CSPAI.
+Die GUI darf Inhalte nur darstellen, nicht semantisch verändern.
+Detailstufen müssen autorisiert sein.
+Sicherheits- und Vertrauenshinweise dürfen nicht entfernt werden.
+barrierearme Ansichten müssen unterstützt werden,
+Änderungen der Profilversion müssen erkennbar sein.
+22. Sprach- und Audiointegration
+
+CSPAI muss die vollständige sprachliche Ausgabe der Selbstpräsentation unterstützen oder vorbereiten.
+
+Dabei sind mindestens zu beachten:
+
+sprachoptimierte Satzstruktur,
+verständliche Aussprache,
+optionale SSML-Ausgabe,
+Vermeidung technisch schwer verständlicher Identifier in der Sprachausgabe,
+Pausen und Abschnittsstruktur,
+sichere Aussprache von Warn- und Vertrauenshinweisen,
+altersgerechte Formulierungen,
+angepasste Länge,
+barrierearme Bedienbarkeit,
+klare Kennzeichnung maschineller Sprachwiedergabe,
+keine Abweichung zwischen visueller und gesprochener Kernaussage.
+
+Die Sprachschnittstelle darf keine eigene alternative Identität formulieren.
+
+23. Kindgerechte Integration
+
+Kindgerechte Präsentationsprofile sind verbindlich zu berücksichtigen.
+
+CSPAI muss sicherstellen:
+
+Altersgruppe und Nutzungskontext werden geprüft.
+Nur freigegebene kindgerechte Profile werden verwendet.
+Unsichere oder unangemessene interne Details werden nicht ausgegeben.
+Formulierungen bleiben verständlich und ehrlich.
+Das System stellt sich nicht als Mensch dar.
+Fähigkeiten werden nicht übertrieben.
+Grenzen und Unsicherheiten werden altersgerecht erklärt.
+Sprachwiedergabe ist optional möglich.
+Länge und Komplexität werden angepasst.
+Sicherheitsinformationen dürfen nicht entfallen.
+
+Ein Client darf nicht allein durch Setzen von child_appropriate=true eine gültige Kindersicherheitsprüfung simulieren.
+
+24. Barrierefreiheit
+
+CSPAI muss barrierearme Integrationen unterstützen.
+
+Zu prüfen sind mindestens:
+
+einfache Sprache,
+kurze Sätze,
+klare Struktur,
+Screenreader-Kompatibilität,
+Sprachwiedergabe,
+alternative Textausgaben,
+Vermeidung rein visueller Bedeutungsmerkmale,
+verständliche Fehlermeldungen,
+konsistente Terminologie,
+optionale reduzierte Informationsdichte.
+
+Barrierefreiheit darf nicht mit semantischer Vereinfachung verwechselt werden, die wichtige Sicherheits- oder Vertrauensinformationen entfernt.
+
+25. Auditierung
+
+Jede relevante CSPAI-Anfrage soll mindestens folgende Auditinformationen erzeugen können:
+
+Request-ID,
+Zeitpunkt,
+Client-ID,
+Clientklasse,
+angefordertes Profil,
+tatsächlich verwendetes Profil,
+Kontext,
+Sprache,
+Detailstufe,
+Ausgabeformat,
+Governance-Entscheidung,
+Trust-Entscheidung,
+Validierungsreferenz,
+kanonische Quellreferenz,
+Ergebnisstatus,
+Fehlercode,
+verwendete CSPF-/CSPAI-/Profilversion,
+Cache-Nutzung,
+Laufzeitdauer.
+
+Auditprotokolle dürfen keine unnötigen vollständigen Präsentationstexte oder sensiblen Daten speichern.
+
+26. Observability
+
+CSPAI soll technisch beobachtbar sein, ohne sensible Inhalte offenzulegen.
+
+Mögliche Metriken:
+
+Anzahl erfolgreicher Anfragen,
+Anzahl abgelehnter Anfragen,
+Fehler nach Kategorie,
+durchschnittliche Auflösungsdauer,
+Profilnutzung,
+Sprachnutzung,
+Formatnutzung,
+Cache-Hit-Rate,
+Governance-Ablehnungen,
+Trust-Ablehnungen,
+Validierungsfehler,
+Nutzung veralteter API-Versionen.
+
+Metriken dürfen keine Nutzerprofile oder geheimen Inhalte offenlegen.
+
+27. Konfigurationsmodell
+
+Codex soll prüfen, ob eine kanonische CSPAI-Konfiguration erforderlich ist.
+
+Möglicher Pfad:
+
+24_config/canonical_self_presentation_api_1_0.json
+
+Mögliche Inhalte:
+
+{
+  "schema_version": "1.0",
+  "cspai_version": "1.0",
+  "api_versions": ["v1"],
+  "default_language": "de",
+  "supported_formats": [
+    "text",
+    "json",
+    "markdown",
+    "voice_text"
+  ],
+  "default_profile": "public_standard",
+  "require_authentication": true,
+  "require_policy_decision": true,
+  "require_validation": true,
+  "require_trust_check": true,
+  "audit_enabled": true,
+  "rate_limiting_enabled": true,
+  "public_profile_enumeration": false
+}
+
+Die tatsächliche Datei und ihr Speicherort müssen an die bestehende Projektstruktur angepasst werden.
+
+28. Vorgeschlagene Komponenten
+
+Codex soll prüfen, ob folgende Komponenten erforderlich sind:
+
+CanonicalSelfPresentationAPI
+PresentationRequestValidator
+PresentationAccessController
+PresentationResolutionAdapter
+PresentationFormatRenderer
+PresentationLocalizationAdapter
+PresentationVoiceAdapter
+PresentationResponseBuilder
+PresentationAPIAuditAdapter
+PresentationAPIRateLimiter
+PresentationAPICache
+PresentationIntegrationRegistry
+
+Die Komponenten dürfen nur angelegt werden, wenn keine geeigneten vorhandenen Module existieren.
+
+Überlappende Komponenten sind zu vermeiden.
+
+29. Integrationsregistry
+
+CSPAI soll eine kontrollierte Registrierung zulässiger Integrationen ermöglichen.
+
+Für jede Integration sollten mindestens erfasst werden:
+
+Integrations-ID,
+Name,
+Typ,
+verantwortliche Komponente,
+Clientklasse,
+Authentifizierungsverfahren,
+erlaubte Profile,
+erlaubte Detailstufen,
+erlaubte Formate,
+erlaubte Sprachen,
+Rate-Limit,
+Auditpflicht,
+Status,
+Version,
+Aktivierungsdatum,
+Ablaufdatum,
+Widerrufsstatus.
+
+Beispielhafte Integrationstypen:
+
+internal_service,
+internal_agent,
+desktop_gui,
+mobile_gui,
+voice_interface,
+enterprise_client,
+research_client,
+public_client,
+test_client.
+30. Verbotene Implementierungen
+
+Codex darf ausdrücklich nicht:
+
+eine zweite Selbstpräsentationsdatenbank anlegen,
+Präsentationstexte hart in API-Endpunkte codieren,
+Sicherheits- oder Governance-Prüfungen nur simulieren,
+Clientparameter ungeprüft übernehmen,
+öffentliche Vollzugriffe auf interne Profile ermöglichen,
+ungeprüfte Freitextanweisungen als Profildefinition verwenden,
+interne und externe API mit unterschiedlichen Wahrheitsquellen betreiben,
+Trust- oder Zertifizierungsstatus erfinden,
+Fallback-Texte als kanonisch markieren, wenn sie nicht validiert sind,
+Fehler durch erfundene Standardpräsentationen verdecken,
+widerrufene Profile aus einem Cache weiter ausliefern,
+Tests nur auf erfolgreiche Standardfälle beschränken,
+vollständige interne Identitätsinformationen protokollieren,
+bestehende Projektdateien unkontrolliert überschreiben,
+ungesicherte Beispielendpunkte produktiv aktivieren.
+31. Testanforderungen
+
+Codex muss eine umfassende Testsuite erstellen oder erweitern.
+
+31.1 Funktionstests
+
+Zu prüfen sind:
+
+gültige Standardanfrage,
+unterschiedliche Profile,
+unterschiedliche Detailstufen,
+Sprachwechsel,
+Ausgabeformatwechsel,
+interne und externe Clients,
+GUI-Integration,
+Sprachintegration,
+kindgerechte Ausgabe,
+barrierearme Ausgabe.
+31.2 Autorisierungstests
+
+Zu prüfen sind:
+
+nicht authentifizierter Zugriff,
+authentifizierter, aber nicht autorisierter Zugriff,
+Zugriff auf internes Profil,
+unzulässige Detailstufe,
+unzulässiges Format,
+unzulässige Sprache,
+gesperrter Client,
+widerrufene Integration.
+31.3 Sicherheitsprüfungen
+
+Mindestens zu testen:
+
+manipulierte Profil-ID,
+manipulierte Rollenangabe,
+Context Spoofing,
+Prompt Injection,
+Parameter Injection,
+Replay,
+Enumeration,
+Rate-Limit-Umgehung,
+Cache Poisoning,
+ungültige Signaturen oder Tokens,
+Cross-Client-Leck,
+Log Injection,
+Fehleroffenlegung.
+31.4 Lifecycle-Tests
+
+Zu prüfen sind:
+
+aktives Profil,
+abgekündigtes Profil,
+ersetztes Profil,
+widerrufenes Profil,
+nicht mehr unterstützte API-Version,
+Versionsmigration,
+Cache-Invalidierung nach Profiländerung.
+31.5 Integritätstests
+
+Zu prüfen sind:
+
+Antwort stimmt mit kanonischer Quelle überein,
+Formatierung verändert nicht die Bedeutung,
+Übersetzung verändert nicht die Identität,
+Sprachversion stimmt semantisch mit Textversion überein,
+Trust- und Validierungsmetadaten sind korrekt,
+Provenienzverweise sind auflösbar.
+31.6 Negativtests
+
+Das System muss sicher scheitern, wenn:
+
+keine kanonische Quelle verfügbar ist,
+die Governance-Entscheidung fehlt,
+die Validierung fehlschlägt,
+der Trust-Status nicht ausreicht,
+das Profil widerrufen ist,
+die API-Version nicht unterstützt wird,
+ein Ausgabeformat nicht verfügbar ist.
+
+Es darf in diesen Fällen keine erfundene oder unvalidierte Ersatzpräsentation ausgeliefert werden.
+
+32. Akzeptanzkriterien
+
+CSPAI 1.0 gilt nur dann als erfolgreich umgesetzt, wenn:
+
+eine eindeutige API- und Integrationsarchitektur dokumentiert ist,
+keine parallele Identitäts- oder Präsentationsquelle entstanden ist,
+alle Antworten auf kanonische CSPF-Quellen zurückführbar sind,
+Governance-, Trust-, Security- und Validierungsprüfungen nicht umgangen werden können,
+interne und externe Integrationen denselben Wahrheitskern verwenden,
+Profil-, API- und Schema-Versionen eindeutig getrennt sind,
+Rollen und Berechtigungen technisch erzwungen werden,
+Fehler sicher und maschinenlesbar behandelt werden,
+Audit und Provenienz funktionieren,
+widerrufene oder ungültige Profile blockiert werden,
+kindgerechte, barrierearme und sprachoptimierte Präsentationen unterstützt werden,
+Sprach- und Textausgabe semantisch konsistent bleiben,
+keine geheimen oder unnötigen internen Daten offengelegt werden,
+Test-, Sicherheits- und Negativfälle erfolgreich nachgewiesen sind,
+alle Änderungen in die bestehende kanonische Projektstruktur integriert wurden,
+keine unkontrollierten Duplikate oder konkurrierenden API-Komponenten entstanden sind.
+33. Erwartete Artefakte
+
+Codex soll – abhängig vom tatsächlichen Projektbestand – mindestens folgende Artefakte prüfen, erstellen oder aktualisieren:
+
+33.1 Architektur- und Spezifikationsdokument
+
+Vorgeschlagener Name:
+
+CANONICAL_SELF_PRESENTATION_API_INTEGRATION_1_0.md
+33.2 Kanonische Konfiguration
+
+Vorgeschlagener Name:
+
+canonical_self_presentation_api_1_0.json
+33.3 API-Schema
+
+Beispielsweise:
+
+canonical_self_presentation_api_schema_1_0.json
+
+oder eine bereits projektweit verwendete Schemaform.
+
+33.4 Implementierung
+
+Nur nach Bestandsprüfung, beispielsweise:
+
+canonical_self_presentation_api.py
+
+oder Integration in eine bereits bestehende kanonische API-Schicht.
+
+33.5 Integrationsregistry
+
+Beispielsweise:
+
+canonical_self_presentation_integrations_1_0.json
+33.6 Tests
+
+Beispielsweise:
+
+test_canonical_self_presentation_api_1_0.py
+33.7 Status- und Prüfbericht
+
+Beispielsweise:
+
+cspai_1_0_status_report.md
+34. Dokumentationsanforderungen
+
+Die Dokumentation muss mindestens enthalten:
+
+Zweck und Geltungsbereich,
+Architekturposition,
+Datenfluss,
+Request-/Response-Modell,
+Endpunktübersicht,
+interne Schnittstellen,
+Rollen- und Berechtigungsmodell,
+Integrationsregistry,
+Sicherheitsmodell,
+Trust- und Validierungsintegration,
+Datenschutz und Informationsminimierung,
+Versionierung,
+Deprecation,
+Fehlercodes,
+Auditmodell,
+Caching,
+Rate Limiting,
+GUI-Integration,
+Sprachintegration,
+kindgerechte Profile,
+Barrierefreiheit,
+Teststrategie,
+bekannte Grenzen,
+offene Risiken,
+Migrationshinweise.
+35. Statusbericht
+
+Codex muss nach Abschluss einen nachvollziehbaren Statusbericht erstellen.
+
+Der Bericht muss mindestens beantworten:
+
+Welche vorhandenen Komponenten wurden gefunden?
+Welche Komponenten konnten wiederverwendet werden?
+Welche Architektur wurde gewählt?
+Welche Dateien wurden erstellt?
+Welche Dateien wurden geändert?
+Welche API-Endpunkte oder internen Schnittstellen wurden umgesetzt?
+Welche Authentifizierungs- und Autorisierungsprüfungen greifen?
+Wie wird die kanonische Quelle ermittelt?
+Wie werden Validierung und Trust geprüft?
+Welche Integrationen wurden registriert?
+Welche Tests wurden ausgeführt?
+Welche Tests waren erfolgreich?
+Welche Tests sind fehlgeschlagen?
+Welche Sicherheitsrisiken bestehen noch?
+Welche Funktionen wurden bewusst nicht implementiert?
+Ist CSPAI 1.0 produktionsreif, eingeschränkt freigabefähig oder nur vorbereitet?
+Welche nächsten Schritte werden empfohlen?
+36. Arbeitsweise für Codex
+
+Codex muss nach folgendem Verfahren arbeiten:
+
+Phase 1 – Bestandsermittlung
+relevante Dateien suchen,
+bestehende API- und CSPF-Komponenten identifizieren,
+Abhängigkeiten dokumentieren,
+Duplikate und Überschneidungen erkennen.
+Phase 2 – Gap-Analyse
+Soll- und Ist-Zustand vergleichen,
+fehlende Integrationspunkte benennen,
+Sicherheits- und Governance-Lücken dokumentieren.
+Phase 3 – Architekturvorschlag
+Zielarchitektur formulieren,
+Datenfluss darstellen,
+Wiederverwendung bestehender Komponenten priorisieren,
+notwendige neue Artefakte begründen.
+Phase 4 – Kontrollierte Implementierung
+nur erforderliche Änderungen durchführen,
+bestehende Schnittstellen nicht unkontrolliert brechen,
+keine produktive externe Freigabe ohne ausreichende Absicherung aktivieren.
+Phase 5 – Tests
+Funktion,
+Integration,
+Sicherheit,
+Rollen,
+Lifecycle,
+Provenienz,
+Negativfälle
+
+vollständig prüfen.
+
+Phase 6 – Dokumentation und Statusbericht
+Änderungen vollständig dokumentieren,
+verbleibende Risiken offen benennen,
+keine unbewiesene Freigabe behaupten.
+37. Stop-Bedingungen
+
+Codex muss die Implementierung stoppen und zunächst berichten, wenn:
+
+keine eindeutige kanonische Identitätsquelle gefunden wird,
+mehrere konkurrierende Präsentationsquellen bestehen,
+Governance-Prüfungen technisch nicht verfügbar sind,
+Trust- oder Validierungsstatus nicht zuverlässig ermittelt werden können,
+bestehende APIs widersprüchliche Identitäten ausgeben,
+die Integration produktive Systeme gefährden könnte,
+eine sichere Authentifizierung nicht vorhanden ist,
+notwendige Änderungen die bestehende Kernarchitektur unkontrolliert brechen würden,
+relevante Dateien beschädigt, unvollständig oder widersprüchlich sind.
+
+In solchen Fällen darf Codex eine sichere Vorbereitung, Dokumentation, Schemaerstellung und Testplanung durchführen, aber keine scheinbar produktionsfähige Freigabe behaupten.
+
+38. Pflicht zur Ehrlichkeit
+
+Codex darf keine Funktionen, Tests, Validierungen, Integrationen oder Sicherheitsgarantien als umgesetzt darstellen, wenn diese nicht tatsächlich vorhanden und überprüft sind.
+
+Folgende Aussagen sind nur mit Nachweis zulässig:
+
+„vollständig integriert“,
+„produktionsreif“,
+„sicher“,
+„validiert“,
+„zertifiziert“,
+„abwärtskompatibel“,
+„alle Tests bestanden“,
+„keine Risiken vorhanden“.
+
+Unsicherheiten, Einschränkungen und fehlende Abhängigkeiten müssen ausdrücklich dokumentiert werden.
+
+39. Definition of Done
+
+Teil 15 – CSPAI 1.0 ist abgeschlossen, wenn:
+
+die API- und Integrationsschicht architektonisch definiert ist,
+CSPAI eindeutig in das CSPF eingeordnet wurde,
+kanonische Selbstpräsentationen kontrolliert abrufbar sind,
+keine konkurrierende Präsentationsquelle entstanden ist,
+Authentifizierung, Autorisierung, Governance und Trust greifen,
+Validierungs- und Lifecycle-Status berücksichtigt werden,
+interne und freigegebene externe Integrationen registrierbar sind,
+Ausgabeformate semantisch konsistent sind,
+kindgerechte, barrierearme und sprachoptimierte Ausgaben unterstützt werden,
+Audit und Provenienz nachweisbar funktionieren,
+Sicherheits- und Negativtests vorhanden sind,
+Konfiguration, Dokumentation und Statusbericht vollständig vorliegen,
+verbleibende Risiken transparent dokumentiert sind.
+40. Abschlussanweisung an Codex
+
+Führe zunächst eine vollständige Bestandsprüfung durch.
+
+Erstelle danach eine Gap-Analyse und einen konkreten Architekturvorschlag für Canonical Self-Presentation API & Integration (CSPAI) 1.0.
+
+Implementiere nur solche Komponenten, deren Integration in die bestehende kanonische Architektur eindeutig, sicher und nachvollziehbar möglich ist.
+
+Vermeide Parallelstrukturen, hart codierte Präsentationstexte, unkontrollierte API-Freigaben und jede Umgehung bestehender Governance-, Trust-, Security-, Validation- oder Lifecycle-Komponenten.
+
+Schließe den Auftrag mit folgenden Ergebnissen ab:
+
+Bestandsanalyse,
+Gap-Analyse,
+Architekturentscheidung,
+Liste aller erstellten und geänderten Dateien,
+Implementierungsübersicht,
+API- und Integrationsübersicht,
+Sicherheits- und Berechtigungsnachweis,
+Testergebnisse,
+bekannte Einschränkungen,
+Statusbewertung,
+Empfehlung für den nächsten CSPF-Teil.
+
+Keine unbelegte Erfolgsmeldung. Keine simulierte Implementierung. Keine zweite Wahrheitsquelle. Keine Freigabe ohne nachweisbare Prüfung.

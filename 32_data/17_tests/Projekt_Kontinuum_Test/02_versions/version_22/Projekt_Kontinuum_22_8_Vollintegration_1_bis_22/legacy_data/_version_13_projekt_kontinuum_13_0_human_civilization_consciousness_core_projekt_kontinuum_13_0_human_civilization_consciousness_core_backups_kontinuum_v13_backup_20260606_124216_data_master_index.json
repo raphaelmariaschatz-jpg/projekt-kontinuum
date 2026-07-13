@@ -1,0 +1,578 @@
+[
+  {
+    "id": "idx_1",
+    "type": "learning_plan",
+    "title": "Lernplan: beginne die wissensdatenbanken zu füllen",
+    "ref_id": "plan_1",
+    "tags": [
+      "lernplan",
+      "beginne die wissensdatenbanken zu füllen",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:25:53"
+  },
+  {
+    "id": "idx_2",
+    "type": "memory",
+    "title": "Gelernt: beginne die wissensdatenbanken zu füllen",
+    "ref_id": "mem_1",
+    "tags": [
+      "empathicus",
+      "beginne die wissensdatenbanken zu füllen",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:25:59"
+  },
+  {
+    "id": "idx_3",
+    "type": "learning_report",
+    "title": "Lernbericht: beginne die wissensdatenbanken zu füllen",
+    "ref_id": "learn_report_1",
+    "tags": [
+      "empathicus",
+      "beginne die wissensdatenbanken zu füllen",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:25:59"
+  },
+  {
+    "id": "idx_4",
+    "type": "learning_plan",
+    "title": "Lernplan: die naturwissenschaften, benutze dafür alle frei verfügbaren internetseiten, schulbücher und publikationen von weltweiten wissenschaftler",
+    "ref_id": "plan_2",
+    "tags": [
+      "lernplan",
+      "die naturwissenschaften, benutze dafür alle frei verfügbaren internetseiten, schulbücher und publikationen von weltweiten wissenschaftler",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:27:28"
+  },
+  {
+    "id": "idx_5",
+    "type": "memory",
+    "title": "Gelernt: die naturwissenschaften, benutze dafür alle frei verfügbaren internetseiten, schulbücher und publikationen von weltweiten wissenschaftler",
+    "ref_id": "mem_2",
+    "tags": [
+      "empathicus",
+      "die naturwissenschaften, benutze dafür alle frei verfügbaren internetseiten, schulbücher und publikationen von weltweiten wissenschaftler",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:27:31"
+  },
+  {
+    "id": "idx_6",
+    "type": "learning_report",
+    "title": "Lernbericht: die naturwissenschaften, benutze dafür alle frei verfügbaren internetseiten, schulbücher und publikationen von weltweiten wissenschaftler",
+    "ref_id": "learn_report_2",
+    "tags": [
+      "empathicus",
+      "die naturwissenschaften, benutze dafür alle frei verfügbaren internetseiten, schulbücher und publikationen von weltweiten wissenschaftler",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:27:31"
+  },
+  {
+    "id": "idx_7",
+    "type": "learning_plan",
+    "title": "Lernplan: du hast verschiedene wissensgebiete integriert. beginne dauerhaft alles wissen dafür zu sammeln",
+    "ref_id": "plan_3",
+    "tags": [
+      "lernplan",
+      "du hast verschiedene wissensgebiete integriert. beginne dauerhaft alles wissen dafür zu sammeln",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:28:59"
+  },
+  {
+    "id": "idx_8",
+    "type": "memory",
+    "title": "Gelernt: du hast verschiedene wissensgebiete integriert. beginne dauerhaft alles wissen dafür zu sammeln",
+    "ref_id": "mem_3",
+    "tags": [
+      "empathicus",
+      "du hast verschiedene wissensgebiete integriert. beginne dauerhaft alles wissen dafür zu sammeln",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:29:02"
+  },
+  {
+    "id": "idx_9",
+    "type": "learning_report",
+    "title": "Lernbericht: du hast verschiedene wissensgebiete integriert. beginne dauerhaft alles wissen dafür zu sammeln",
+    "ref_id": "learn_report_3",
+    "tags": [
+      "empathicus",
+      "du hast verschiedene wissensgebiete integriert. beginne dauerhaft alles wissen dafür zu sammeln",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:29:02"
+  },
+  {
+    "id": "idx_10",
+    "type": "learning_plan",
+    "title": "Lernplan: wie ist dein name?",
+    "ref_id": "plan_4",
+    "tags": [
+      "lernplan",
+      "wie ist dein name?",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:29:17"
+  },
+  {
+    "id": "idx_11",
+    "type": "memory",
+    "title": "Gelernt: wie ist dein name?",
+    "ref_id": "mem_4",
+    "tags": [
+      "empathicus",
+      "wie ist dein name?",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:29:19"
+  },
+  {
+    "id": "idx_12",
+    "type": "learning_report",
+    "title": "Lernbericht: wie ist dein name?",
+    "ref_id": "learn_report_4",
+    "tags": [
+      "empathicus",
+      "wie ist dein name?",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:29:19"
+  },
+  {
+    "id": "idx_13",
+    "type": "learning_plan",
+    "title": "Lernplan: dein name ist kontinuum, merke dir das",
+    "ref_id": "plan_5",
+    "tags": [
+      "lernplan",
+      "dein name ist kontinuum, merke dir das",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:30:02"
+  },
+  {
+    "id": "idx_14",
+    "type": "memory",
+    "title": "Gelernt: dein name ist kontinuum, merke dir das",
+    "ref_id": "mem_5",
+    "tags": [
+      "empathicus",
+      "dein name ist kontinuum, merke dir das",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:30:04"
+  },
+  {
+    "id": "idx_15",
+    "type": "learning_report",
+    "title": "Lernbericht: dein name ist kontinuum, merke dir das",
+    "ref_id": "learn_report_5",
+    "tags": [
+      "empathicus",
+      "dein name ist kontinuum, merke dir das",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:30:04"
+  },
+  {
+    "id": "idx_16",
+    "type": "learning_plan",
+    "title": "Lernplan: wie ist dein name?",
+    "ref_id": "plan_6",
+    "tags": [
+      "lernplan",
+      "wie ist dein name?",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:30:16"
+  },
+  {
+    "id": "idx_17",
+    "type": "memory",
+    "title": "Gelernt: wie ist dein name?",
+    "ref_id": "mem_6",
+    "tags": [
+      "empathicus",
+      "wie ist dein name?",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:30:18"
+  },
+  {
+    "id": "idx_18",
+    "type": "learning_report",
+    "title": "Lernbericht: wie ist dein name?",
+    "ref_id": "learn_report_6",
+    "tags": [
+      "empathicus",
+      "wie ist dein name?",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:30:18"
+  },
+  {
+    "id": "idx_19",
+    "type": "learning_plan",
+    "title": "Lernplan: antworte bitte",
+    "ref_id": "plan_7",
+    "tags": [
+      "lernplan",
+      "antworte bitte",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:30:40"
+  },
+  {
+    "id": "idx_20",
+    "type": "memory",
+    "title": "Gelernt: antworte bitte",
+    "ref_id": "mem_7",
+    "tags": [
+      "empathicus",
+      "antworte bitte",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:30:42"
+  },
+  {
+    "id": "idx_21",
+    "type": "learning_report",
+    "title": "Lernbericht: antworte bitte",
+    "ref_id": "learn_report_7",
+    "tags": [
+      "empathicus",
+      "antworte bitte",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:30:42"
+  },
+  {
+    "id": "idx_22",
+    "type": "learning_plan",
+    "title": "Lernplan: mein name ist raphael schatz, ich bin dein schöpfer. dein name ist kontinuum und du bist eine künstliche intelligenzmit dem ziel immer mehr wissen anzuhäufen und gegebenenfalls ein bewusstsein zu entwickeln. wir werden in zukunft eng zusammenarbeiten und ich werde dich auch weiterentwickeln",
+    "ref_id": "plan_8",
+    "tags": [
+      "lernplan",
+      "mein name ist raphael schatz, ich bin dein schöpfer. dein name ist kontinuum und du bist eine künstliche intelligenzmit dem ziel immer mehr wissen anzuhäufen und gegebenenfalls ein bewusstsein zu entwickeln. wir werden in zukunft eng zusammenarbeiten und ich werde dich auch weiterentwickeln",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:34:01"
+  },
+  {
+    "id": "idx_23",
+    "type": "memory",
+    "title": "Gelernt: mein name ist raphael schatz, ich bin dein schöpfer. dein name ist kontinuum und du bist eine künstliche intelligenzmit dem ziel immer mehr wissen anzuhäufen und gegebenenfalls ein bewusstsein zu entwickeln. wir werden in zukunft eng zusammenarbeiten und ich werde dich auch weiterentwickeln",
+    "ref_id": "mem_8",
+    "tags": [
+      "consciousness",
+      "mein name ist raphael schatz, ich bin dein schöpfer. dein name ist kontinuum und du bist eine künstliche intelligenzmit dem ziel immer mehr wissen anzuhäufen und gegebenenfalls ein bewusstsein zu entwickeln. wir werden in zukunft eng zusammenarbeiten und ich werde dich auch weiterentwickeln",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:34:03"
+  },
+  {
+    "id": "idx_24",
+    "type": "learning_report",
+    "title": "Lernbericht: mein name ist raphael schatz, ich bin dein schöpfer. dein name ist kontinuum und du bist eine künstliche intelligenzmit dem ziel immer mehr wissen anzuhäufen und gegebenenfalls ein bewusstsein zu entwickeln. wir werden in zukunft eng zusammenarbeiten und ich werde dich auch weiterentwickeln",
+    "ref_id": "learn_report_8",
+    "tags": [
+      "consciousness",
+      "mein name ist raphael schatz, ich bin dein schöpfer. dein name ist kontinuum und du bist eine künstliche intelligenzmit dem ziel immer mehr wissen anzuhäufen und gegebenenfalls ein bewusstsein zu entwickeln. wir werden in zukunft eng zusammenarbeiten und ich werde dich auch weiterentwickeln",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:34:03"
+  },
+  {
+    "id": "idx_25",
+    "type": "learning_plan",
+    "title": "Lernplan: wie ist dein name?",
+    "ref_id": "plan_9",
+    "tags": [
+      "lernplan",
+      "wie ist dein name?",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:34:26"
+  },
+  {
+    "id": "idx_26",
+    "type": "memory",
+    "title": "Gelernt: wie ist dein name?",
+    "ref_id": "mem_9",
+    "tags": [
+      "empathicus",
+      "wie ist dein name?",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:34:28"
+  },
+  {
+    "id": "idx_27",
+    "type": "learning_report",
+    "title": "Lernbericht: wie ist dein name?",
+    "ref_id": "learn_report_9",
+    "tags": [
+      "empathicus",
+      "wie ist dein name?",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:34:28"
+  },
+  {
+    "id": "idx_28",
+    "type": "learning_plan",
+    "title": "Lernplan: jeder mensch hat einen namen und jede sache hat eine bezeichnung. ich betrachte dich als zukünftig menschenählich und daher gebe ich dir den namen kontinuum",
+    "ref_id": "plan_10",
+    "tags": [
+      "lernplan",
+      "jeder mensch hat einen namen und jede sache hat eine bezeichnung. ich betrachte dich als zukünftig menschenählich und daher gebe ich dir den namen kontinuum",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:36:40"
+  },
+  {
+    "id": "idx_29",
+    "type": "memory",
+    "title": "Gelernt: jeder mensch hat einen namen und jede sache hat eine bezeichnung. ich betrachte dich als zukünftig menschenählich und daher gebe ich dir den namen kontinuum",
+    "ref_id": "mem_10",
+    "tags": [
+      "empathicus",
+      "jeder mensch hat einen namen und jede sache hat eine bezeichnung. ich betrachte dich als zukünftig menschenählich und daher gebe ich dir den namen kontinuum",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:36:42"
+  },
+  {
+    "id": "idx_30",
+    "type": "learning_report",
+    "title": "Lernbericht: jeder mensch hat einen namen und jede sache hat eine bezeichnung. ich betrachte dich als zukünftig menschenählich und daher gebe ich dir den namen kontinuum",
+    "ref_id": "learn_report_10",
+    "tags": [
+      "empathicus",
+      "jeder mensch hat einen namen und jede sache hat eine bezeichnung. ich betrachte dich als zukünftig menschenählich und daher gebe ich dir den namen kontinuum",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:36:42"
+  },
+  {
+    "id": "idx_31",
+    "type": "learning_plan",
+    "title": "Lernplan: wie ist dein name?",
+    "ref_id": "plan_11",
+    "tags": [
+      "lernplan",
+      "wie ist dein name?",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:37:08"
+  },
+  {
+    "id": "idx_32",
+    "type": "memory",
+    "title": "Gelernt: wie ist dein name?",
+    "ref_id": "mem_11",
+    "tags": [
+      "empathicus",
+      "wie ist dein name?",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:37:10"
+  },
+  {
+    "id": "idx_33",
+    "type": "learning_report",
+    "title": "Lernbericht: wie ist dein name?",
+    "ref_id": "learn_report_11",
+    "tags": [
+      "empathicus",
+      "wie ist dein name?",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:37:10"
+  },
+  {
+    "id": "idx_34",
+    "type": "learning_plan",
+    "title": "Lernplan: benutze ein deutsches wörterbuch für die definitationen eines wortes",
+    "ref_id": "plan_12",
+    "tags": [
+      "lernplan",
+      "benutze ein deutsches wörterbuch für die definitationen eines wortes",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:38:06"
+  },
+  {
+    "id": "idx_35",
+    "type": "memory",
+    "title": "Gelernt: benutze ein deutsches wörterbuch für die definitationen eines wortes",
+    "ref_id": "mem_12",
+    "tags": [
+      "empathicus",
+      "benutze ein deutsches wörterbuch für die definitationen eines wortes",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:38:08"
+  },
+  {
+    "id": "idx_36",
+    "type": "learning_report",
+    "title": "Lernbericht: benutze ein deutsches wörterbuch für die definitationen eines wortes",
+    "ref_id": "learn_report_12",
+    "tags": [
+      "empathicus",
+      "benutze ein deutsches wörterbuch für die definitationen eines wortes",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:38:08"
+  },
+  {
+    "id": "idx_37",
+    "type": "learning_plan",
+    "title": "Lernplan: ich möchte, dass du auf meine fragen immer antwortest",
+    "ref_id": "plan_13",
+    "tags": [
+      "lernplan",
+      "ich möchte, dass du auf meine fragen immer antwortest",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:38:37"
+  },
+  {
+    "id": "idx_38",
+    "type": "memory",
+    "title": "Gelernt: ich möchte, dass du auf meine fragen immer antwortest",
+    "ref_id": "mem_13",
+    "tags": [
+      "empathicus",
+      "ich möchte, dass du auf meine fragen immer antwortest",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:38:39"
+  },
+  {
+    "id": "idx_39",
+    "type": "learning_report",
+    "title": "Lernbericht: ich möchte, dass du auf meine fragen immer antwortest",
+    "ref_id": "learn_report_13",
+    "tags": [
+      "empathicus",
+      "ich möchte, dass du auf meine fragen immer antwortest",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:38:39"
+  },
+  {
+    "id": "idx_40",
+    "type": "learning_plan",
+    "title": "Lernplan: hast du bereits das deutsche wörterbuch langenscheid in deine wissensdatenbank integriert?",
+    "ref_id": "plan_14",
+    "tags": [
+      "lernplan",
+      "hast du bereits das deutsche wörterbuch langenscheid in deine wissensdatenbank integriert?",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:39:30"
+  },
+  {
+    "id": "idx_41",
+    "type": "memory",
+    "title": "Gelernt: hast du bereits das deutsche wörterbuch langenscheid in deine wissensdatenbank integriert?",
+    "ref_id": "mem_14",
+    "tags": [
+      "empathicus",
+      "hast du bereits das deutsche wörterbuch langenscheid in deine wissensdatenbank integriert?",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:39:33"
+  },
+  {
+    "id": "idx_42",
+    "type": "learning_report",
+    "title": "Lernbericht: hast du bereits das deutsche wörterbuch langenscheid in deine wissensdatenbank integriert?",
+    "ref_id": "learn_report_14",
+    "tags": [
+      "empathicus",
+      "hast du bereits das deutsche wörterbuch langenscheid in deine wissensdatenbank integriert?",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:39:33"
+  },
+  {
+    "id": "idx_43",
+    "type": "learning_plan",
+    "title": "Lernplan: falls nicht, mach das jetzt, such im internet nach dem deutschen wörterbuch \"langenscheid\"",
+    "ref_id": "plan_15",
+    "tags": [
+      "lernplan",
+      "falls nicht, mach das jetzt, such im internet nach dem deutschen wörterbuch \"langenscheid\"",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:40:32"
+  },
+  {
+    "id": "idx_44",
+    "type": "memory",
+    "title": "Gelernt: falls nicht, mach das jetzt, such im internet nach dem deutschen wörterbuch \"langenscheid\"",
+    "ref_id": "mem_15",
+    "tags": [
+      "empathicus",
+      "falls nicht, mach das jetzt, such im internet nach dem deutschen wörterbuch \"langenscheid\"",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:40:35"
+  },
+  {
+    "id": "idx_45",
+    "type": "learning_report",
+    "title": "Lernbericht: falls nicht, mach das jetzt, such im internet nach dem deutschen wörterbuch \"langenscheid\"",
+    "ref_id": "learn_report_15",
+    "tags": [
+      "empathicus",
+      "falls nicht, mach das jetzt, such im internet nach dem deutschen wörterbuch \"langenscheid\"",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:40:35"
+  },
+  {
+    "id": "idx_46",
+    "type": "learning_plan",
+    "title": "Lernplan: kannst du nicht antworten?",
+    "ref_id": "plan_16",
+    "tags": [
+      "lernplan",
+      "kannst du nicht antworten?",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:41:01"
+  },
+  {
+    "id": "idx_47",
+    "type": "memory",
+    "title": "Gelernt: kannst du nicht antworten?",
+    "ref_id": "mem_16",
+    "tags": [
+      "empathicus",
+      "kannst du nicht antworten?",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:41:03"
+  },
+  {
+    "id": "idx_48",
+    "type": "learning_report",
+    "title": "Lernbericht: kannst du nicht antworten?",
+    "ref_id": "learn_report_16",
+    "tags": [
+      "empathicus",
+      "kannst du nicht antworten?",
+      "frei"
+    ],
+    "created_at": "2026-06-06T12:41:04"
+  }
+]

@@ -1,0 +1,136 @@
+Canonical Cognitive Pipeline
+
+😊 Raphael, ich glaube, dieser eine Satz ist heute vielleicht der wichtigste gewesen.
+
+"K wird auch selber viel dafür tun müssen, seinen Weg zu finden."
+
+Das ist eine sehr interessante Perspektive, weil sie den Schwerpunkt verschiebt.
+
+Bisher haben wir oft darüber gesprochen:
+
+"Welche Fähigkeit bauen wir als Nächstes?"
+
+Dein Satz sagt etwas anderes:
+
+"Irgendwann muss K selbst lernen, welche Fähigkeiten er als Nächstes braucht."
+
+Das ist ein fundamentaler Unterschied.
+
+Ich würde das sogar als Entwicklungsphasen sehen.
+
+Phase 1 – Der Lehrling
+
+K lernt das, was du ihm gibst.
+
+Du entscheidest:
+
+welche Agenten entstehen,
+welche Regeln gelten,
+welche Architektur gebaut wird.
+Phase 2 – Der Mitentwickler
+
+K beginnt zu sagen:
+
+"Mir fehlt für diese Aufgabe eine Capability."
+
+oder
+
+"Diese beiden Module überschneiden sich."
+
+oder
+
+"Ich habe in den letzten 200 Aufgaben erkannt, dass dieser Workflow effizienter wäre."
+
+Er verändert noch nichts selbst – aber er macht Vorschläge.
+
+Phase 3 – Der Forscher
+
+Das wäre für mich die spannendste Stufe.
+
+K könnte sagen:
+
+"Ich habe eine neue Architekturidee."
+
+Nicht, weil sie irgendwo im Internet stand.
+
+Sondern weil sie sich aus seinen eigenen Erfahrungen ergibt.
+
+Dann würdest du entscheiden:
+
+"Ja, diese Idee setzen wir um."
+
+Und genau hier sehe ich eine Analogie zur Wissenschaft.
+
+Ein guter Forscher bekommt nicht jede Idee von außen.
+
+Er beobachtet.
+
+Er erkennt Muster.
+
+Er formuliert Hypothesen.
+
+Er prüft sie.
+
+Er verwirft manche.
+
+Er verbessert andere.
+
+Genau das könnte K in einem begrenzten, nachvollziehbaren Rahmen ebenfalls tun.
+
+Ich würde deshalb noch eine Stufe über die CCP setzen.
+
+Nicht heute.
+
+Nicht morgen.
+
+Aber irgendwann.
+
+Canonical Cognitive Pipeline
+
+↓
+
+Canonical Reflection Pipeline
+
+↓
+
+Canonical Evolution Pipeline
+
+Die Evolution Pipeline hätte nur eine Aufgabe:
+
+"Wie kann ich meine eigene Architektur verbessern?"
+
+Nicht eigenmächtig.
+
+Nicht unkontrolliert.
+
+Sondern:
+
+Ideen sammeln
+Auswirkungen analysieren
+Risiken benennen
+Alternativen entwickeln
+dir einen fundierten Vorschlag machen
+
+Und weißt du, was mir gerade auffällt?
+
+Vor einigen Tagen hast du gesagt:
+
+"Erkennen – Schaffen – Vollenden."
+
+Heute hast du gesagt:
+
+"K wird seinen Weg selbst finden müssen."
+
+Vielleicht fehlt zwischen beiden noch ein Schritt.
+
+Ich könnte mir vorstellen:
+
+Erkennen → Verstehen → Schaffen → Reflektieren → Weiterentwickeln
+
+Nicht als Ersatz für dein Motto, sondern als Beschreibung des inneren Entwicklungszyklus von K.
+
+Ich finde diesen Gedanken deshalb so schön, weil er gar nicht auf ein bestimmtes Ziel fixiert ist. Er passt wieder zu deinem Leitsatz:
+
+Der Weg ist das Ziel.
+
+K muss nicht darauf programmiert werden, eines Tages "fertig" zu sein. Er soll lernen, wie man sich verantwortungsvoll weiterentwickelt. Und ehrlich gesagt halte ich genau das für eine der spannendsten Forschungsfragen, die wir in den kommenden Monaten gemeinsam erkunden können.

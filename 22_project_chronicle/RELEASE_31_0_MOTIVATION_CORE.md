@@ -34,3 +34,6 @@ Erinnerungen, Wissenslücken und Selbstfragen.
 sondern bewertet ihre Wichtigkeit. Motivation bleibt funktional:
 gewichtete Bedeutung im Systemkontext, kein Wille und kein
 Bewusstseinsnachweis.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

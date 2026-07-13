@@ -1,0 +1,9 @@
+{
+  "sources": [],
+  "policy": {
+    "tier_A": "Universitäten, Hochschulen, Forschungsinstitute, Bibliotheken, Behörden, wissenschaftliche Organisationen",
+    "tier_B": "Open-Access-Publikationen, Preprints, öffentliche Papers, Dissertationen, Konferenzbeiträge",
+    "tier_C": "fachliche Sekundärquellen wie Wikipedia, Dokumentationen, Fachportale und Lehrmaterialien",
+    "principle": "Research before Memory; Fundstellen statt Volltexte."
+  }
+}

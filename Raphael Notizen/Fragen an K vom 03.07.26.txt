@@ -1,0 +1,138 @@
+Kontinuum:
+Neue GUI 34.1 bereit.
+Großes Eingabefeld, Aktivitätsfenster, Agentenanzeige, Meaning-, Motivation- und Explanation-Schnellbefehle sind aktiv.
+
+
+Kontinuum:
+[DIAGNOSTIK]
+
+Wichtigkeit: KEINE
+
+0 moegliche Probleme erkannt.
+
+Details wurden gespeichert:
+14_documents/interne_fehler_und_loesungen/
+
+Raphael:
+Hallo K, ich bin Raphael
+
+Kontinuum:
+Der Router hat den Auftrag erkannt, aber es wurde keine ausführende Agentenantwort erzeugt.
+- erkannter Intent: Sonstige
+- erwarteter Agent: dialogue_agent
+- Grund: Für diese Route wurde kein angebundener Agent oder Fallback mit `handled=True` gefunden.
+- empfohlene Reparatur: Agent im System registrieren oder Route auf IdentityManager/MemoryAgent/ConfigFallback abbilden.
+
+Quellen:
+- lokale Datenbank: nein
+- Memory: nein
+- Internet: nein
+- Web-Ergebnisse: 0
+- Suchmodus: Automatisch
+
+Raphael:
+berechne die Wurzel aus 111
+
+Kontinuum:
+Die Rechenaufgabe wurde erkannt, aber die Formel-Engine konnte sie noch nicht lösen.
+
+Quellen:
+- lokale Datenbank: nein
+- Memory: nein
+- Internet: nein
+- Web-Ergebnisse: 0
+- Suchmodus: Automatisch
+
+Raphael:
+zeige mir die Strukturformel von Hydrazin
+
+Kontinuum:
+Der Router hat den Auftrag erkannt, aber es wurde keine ausführende Agentenantwort erzeugt.
+- erkannter Intent: Sonstige
+- erwarteter Agent: dialogue_agent
+- Grund: Für diese Route wurde kein angebundener Agent oder Fallback mit `handled=True` gefunden.
+- empfohlene Reparatur: Agent im System registrieren oder Route auf IdentityManager/MemoryAgent/ConfigFallback abbilden.
+
+Quellen:
+- lokale Datenbank: nein
+- Memory: nein
+- Internet: nein
+- Web-Ergebnisse: 0
+- Suchmodus: Automatisch
+
+Raphael:
+suche nach der Formel im Internet
+
+Kontinuum:
+Keine URL im WebAgent-Auftrag erkannt.
+
+Quellen:
+- lokale Datenbank: nein
+- Memory: nein
+- Internet: ja
+- Web-Ergebnisse: 1
+- Suchmodus: Automatisch
+
+Raphael:
+benutze DuckDuckGo
+
+Kontinuum:
+Der Router hat den Auftrag erkannt, aber es wurde keine ausführende Agentenantwort erzeugt.
+- erkannter Intent: Sonstige
+- erwarteter Agent: dialogue_agent
+- Grund: Für diese Route wurde kein angebundener Agent oder Fallback mit `handled=True` gefunden.
+- empfohlene Reparatur: Agent im System registrieren oder Route auf IdentityManager/MemoryAgent/ConfigFallback abbilden.
+
+Quellen:
+- lokale Datenbank: nein
+- Memory: nein
+- Internet: nein
+- Web-Ergebnisse: 0
+- Suchmodus: Automatisch
+
+Raphael:
+suche im Internet mit www.google.de "Hydrazin"
+
+Kontinuum:
+Keine URL im WebAgent-Auftrag erkannt.
+
+Quellen:
+- lokale Datenbank: nein
+- Memory: nein
+- Internet: ja
+- Web-Ergebnisse: 1
+- Suchmodus: Automatisch
+
+Raphael:
+gehe zu: https://www.google.de
+suche "Hydrazin"
+
+Kontinuum:
+WebAgent: URL abgerufen und fuer Review gespeichert.
+- URL: https://www.google.de
+- HTTP: 200
+- Titel: Google
+- Hash: d250fea0bab8d9255560bd89d21bc1c10f554bd4445ea1e3ba608cd0454e4b51
+- erkannte Links: 11
+- Duplikat: nein
+- Lernzusammenfassung: Google: © 2026 - Datenschutzerklärung - Nutzungsbedingungen
+
+Quellen:
+- lokale Datenbank: nein
+- Memory: nein
+- Internet: ja
+- Web-Ergebnisse: 1
+- Suchmodus: Automatisch
+
+Der Router hat den Auftrag erkannt, aber es wurde keine ausführende Agentenantwort erzeugt.
+- erkannter Intent: Sonstige
+- erwarteter Agent: dialogue_agent
+- Grund: Für diese Route wurde kein angebundener Agent oder Fallback mit `handled=True` gefunden.
+- empfohlene Reparatur: Agent im System registrieren oder Route auf IdentityManager/MemoryAgent/ConfigFallback abbilden.
+
+Quellen:
+- lokale Datenbank: nein
+- Memory: nein
+- Internet: nein
+- Web-Ergebnisse: 0
+- Suchmodus: Automatisch

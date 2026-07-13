@@ -41,3 +41,6 @@ wurde kein neuer Funktionskern begonnen.
 
 32.4 verifiziert und dokumentiert bestehende Fähigkeiten. Es erweitert weder
 Autonomie noch Selbständerungs-, Sicherheits- oder Entwicklungsfunktionen.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

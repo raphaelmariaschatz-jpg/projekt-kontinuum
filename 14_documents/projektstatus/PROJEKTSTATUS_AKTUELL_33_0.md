@@ -46,3 +46,6 @@ die stabilen IDs `foundation.guiding.01` bis `foundation.guiding.12`, werden im
 Foundation Memory mit Herkunft, Policy-Status und Integritätshash geführt und
 vom Foundation Reasoning bei relevanten Entscheidungen verwendet. Eine spätere
 Ablösung erfolgt ausschließlich als neue append-only Foundation-Migration.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

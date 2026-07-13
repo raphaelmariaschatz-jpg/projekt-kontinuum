@@ -1065,3 +1065,6 @@ Suchtreffer
 ```
 
 Erst wenn diese Trennung stabil ist, kann K zuverlässig erklären, wer es ist, wer Raphael ist, warum bestimmte Erinnerungen wichtig sind und wie aus Chronik, Bedeutung und Relevanz später eine narrative Identität entstehen kann.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

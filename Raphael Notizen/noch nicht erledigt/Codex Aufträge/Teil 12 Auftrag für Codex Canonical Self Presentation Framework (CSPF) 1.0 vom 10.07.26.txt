@@ -1,0 +1,494 @@
+# Codex-Auftrag – Teil 12
+
+# Canonical Self-Presentation Validation & Certification (CSPVC) 1.0
+
+## Ziel
+
+Entwickle für das **Canonical Self-Presentation Framework (CSPF) 1.0** ein vollständiges Validierungs- und Zertifizierungssystem.
+
+Dieses Modul stellt sicher, dass jede vom System erzeugte Selbstpräsentation jederzeit vollständig mit der kanonischen Definition übereinstimmt.
+
+Das System darf niemals ausschließlich prüfen, ob Dateien vorhanden sind.
+
+Es muss überprüfen,
+
+* ob alle Regeln eingehalten werden,
+* ob alle Ebenen konsistent sind,
+* ob keine widersprüchlichen Aussagen entstehen,
+* ob die Präsentation vollständig reproduzierbar bleibt,
+* ob alle Ausgaben dem kanonischen Standard entsprechen.
+
+---
+
+# 1. Ziele des CSPVC
+
+Das Modul dient als Qualitäts- und Integritätsprüfung für sämtliche Bestandteile der Selbstpräsentation.
+
+Es stellt sicher,
+
+* Identitätskonsistenz
+* Persönlichkeitskonsistenz
+* Kommunikationskonsistenz
+* Rollenintegrität
+* Sprachkonsistenz
+* Governance-Konformität
+* Historienkonsistenz
+* Runtime-Konsistenz
+
+Kein Profil darf aktiviert werden, solange die Validierung fehlschlägt.
+
+---
+
+# 2. Validierungsebenen
+
+Die Prüfung erfolgt mehrstufig.
+
+## Ebene 1
+
+Dateien
+
+Prüfung:
+
+* vorhanden
+* vollständig
+* lesbar
+* Version gültig
+
+---
+
+## Ebene 2
+
+Schema
+
+Prüfung:
+
+* JSON-Strukturen
+* YAML-Strukturen
+* Pflichtfelder
+* Typdefinitionen
+
+---
+
+## Ebene 3
+
+Semantik
+
+Prüfung:
+
+Sind Aussagen logisch konsistent?
+
+Beispiele:
+
+Ein Profil darf nicht gleichzeitig
+
+freundlich
+
+und
+
+aggressiv
+
+definieren.
+
+Ein Profil darf nicht gleichzeitig
+
+kindgerecht
+
+und
+
+hochkomplex wissenschaftlich
+
+als Standardprofil verwenden.
+
+---
+
+## Ebene 4
+
+Hierarchie
+
+Prüfung:
+
+Alle Ebenen müssen korrekt vererben.
+
+Beispiel
+
+Core
+
+↓
+
+Professional
+
+↓
+
+Scientific
+
+↓
+
+Executive
+
+↓
+
+Custom
+
+Es dürfen keine Kreisreferenzen entstehen.
+
+---
+
+## Ebene 5
+
+Governance
+
+Prüfung
+
+Sind alle Governance-Regeln eingehalten?
+
+* erlaubte Rollen
+* erlaubte Freigaben
+* erlaubte Prioritäten
+* erlaubte Überschreibungen
+
+---
+
+## Ebene 6
+
+Runtime
+
+Prüfung
+
+Entspricht die aktuell erzeugte Selbstpräsentation exakt den definierten Profilen?
+
+Nicht die Definition wird geprüft.
+
+Die tatsächliche Ausgabe wird geprüft.
+
+---
+
+# 3. Profilvalidierung
+
+Jedes Profil erhält eine eigene Validierung.
+
+Geprüft werden unter anderem:
+
+Identität
+
+Persönlichkeit
+
+Tonfall
+
+Länge
+
+Zielgruppe
+
+Sprache
+
+Erklärungsniveau
+
+Fachlichkeit
+
+Emotionale Intensität
+
+Empathie
+
+Begrüßung
+
+Abschluss
+
+Kontextsensitivität
+
+Barrierefreiheit
+
+Kinderprofil
+
+Seniorenprofil
+
+Voice-Ausgabe
+
+---
+
+# 4. Konsistenzprüfung
+
+Das System erkennt automatisch:
+
+doppelte Regeln
+
+widersprüchliche Regeln
+
+nicht verwendete Regeln
+
+verwaiste Profile
+
+nicht referenzierte Ressourcen
+
+unvollständige Profile
+
+nicht erreichbare Profile
+
+ungültige Referenzen
+
+---
+
+# 5. Drift-Erkennung
+
+Das System erkennt Abweichungen zwischen
+
+Definition
+
+und
+
+tatsächlicher Laufzeitausgabe.
+
+Beispiele:
+
+Profil wurde verändert.
+
+Persönlichkeit verändert.
+
+Begrüßung verändert.
+
+Beschreibung verändert.
+
+Voice verändert.
+
+Kontext verändert.
+
+Prioritäten verändert.
+
+Alle Unterschiede müssen dokumentiert werden.
+
+---
+
+# 6. Regressionstests
+
+Nach jeder Änderung werden automatische Tests durchgeführt.
+
+Beispiele
+
+Vorher
+
+Nachher
+
+Vergleich
+
+Abweichung
+
+Bewertung
+
+Freigabe
+
+Nur vollständig bestandene Tests dürfen freigegeben werden.
+
+---
+
+# 7. Canonical Test Suite
+
+Entwickle eine vollständige Testsammlung.
+
+Mindestens:
+
+Identity Tests
+
+Role Tests
+
+Profile Tests
+
+Communication Tests
+
+Language Tests
+
+Accessibility Tests
+
+Child Profile Tests
+
+Senior Profile Tests
+
+Scientific Profile Tests
+
+Executive Profile Tests
+
+Runtime Tests
+
+Governance Tests
+
+Evolution Tests
+
+Deprecation Tests
+
+Migration Tests
+
+Voice Tests
+
+Consistency Tests
+
+Context Tests
+
+History Tests
+
+Audit Tests
+
+---
+
+# 8. Zertifizierung
+
+Nach erfolgreicher Validierung erhält jede CSPF-Version ein Zertifikat.
+
+Beispielsweise:
+
+Canonical Self-Presentation Certified
+
+Version
+
+Zeitpunkt
+
+Prüfstandard
+
+Prüfsumme
+
+Testergebnis
+
+Build-ID
+
+Commit-ID
+
+Regelversion
+
+Profilversion
+
+Governance-Version
+
+Runtime-Version
+
+---
+
+# 9. Zertifizierungsstufen
+
+Mindestens:
+
+Development
+
+Internal Verified
+
+Canonical Verified
+
+Production Ready
+
+Long Term Stable
+
+Certified Release
+
+Research Certified
+
+Enterprise Certified
+
+---
+
+# 10. Zertifizierungsbericht
+
+Automatisch erzeugen:
+
+CSPF Validation Report
+
+Inhalt:
+
+Executive Summary
+
+Prüfumfang
+
+Profilübersicht
+
+Regelprüfung
+
+Inkonsistenzen
+
+Warnungen
+
+Fehler
+
+Empfehlungen
+
+Driftanalyse
+
+Regressionsergebnis
+
+Zertifizierungsstatus
+
+---
+
+# 11. Audit-Trail
+
+Jede Prüfung wird vollständig protokolliert.
+
+Mindestens:
+
+Zeit
+
+Version
+
+Benutzer
+
+Profil
+
+Prüfung
+
+Ergebnis
+
+Änderungen
+
+Regeln
+
+Hashwerte
+
+Signaturen
+
+---
+
+# 12. Automatische Freigabeentscheidung
+
+Das Modul entscheidet anhand definierter Regeln automatisch:
+
+PASS
+
+PASS WITH WARNINGS
+
+REVIEW REQUIRED
+
+FAILED
+
+BLOCKED
+
+BLOCKED aufgrund Governance
+
+BLOCKED aufgrund Inkonsistenz
+
+BLOCKED aufgrund Sicherheitsverletzung
+
+---
+
+# 13. Erweiterbarkeit
+
+Das gesamte Validierungs- und Zertifizierungssystem muss vollständig modular aufgebaut werden.
+
+Neue Prüfungen dürfen ausschließlich über registrierte Validatoren ergänzt werden.
+
+Die Kernarchitektur darf dabei niemals geändert werden.
+
+---
+
+# 14. Architekturvorgaben
+
+Die Implementierung muss vollständig kompatibel sein mit:
+
+* Canonical Foundation
+* Canonical Development Framework (CDF)
+* Canonical Development Governance (CDG)
+* Canonical Authentication Framework (CAF)
+* Canonical License Management System Framework (CLMSF)
+* Canonical Context Awareness & Adaptive Communication (CCAAC)
+* Canonical Personality
+* Canonical Runtime
+* Canonical Governance
+* Canonical Presentation Lifecycle & Evolution (CPLE)
+
+---
+
+# Erwartetes Ergebnis
+
+Codex entwickelt ein vollständiges kanonisches Validierungs- und Zertifizierungssystem für das CSPF, das jede Selbstpräsentation automatisch auf strukturelle, semantische, hierarchische, kontextuelle, funktionale und Governance-Konformität prüft, Drift erkennt, Regressionen verhindert, reproduzierbare Zertifizierungen erstellt und nur vollständig validierte Präsentationsprofile für den produktiven Einsatz freigibt.

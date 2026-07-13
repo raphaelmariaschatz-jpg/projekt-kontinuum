@@ -26,3 +26,6 @@ Bedeutungsgraphen.
 - Chronik 41/41 signiert
 - 0 offene innere Konflikte
 - GUI-Manifest 30.0
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

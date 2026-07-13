@@ -1,0 +1,141 @@
+Canonical Architecture Compiler (CAC) 1.0 vom 11.07.26
+
+Das wäre kein gewöhnlicher Compiler für Quellcode, sondern ein Compiler für Architektur.
+
+Seine Aufgabe wäre:
+
+CANONICAL_MASTER_IMPLEMENTATION_BLUEPRINT_FRAMEWORK_1_0.md
+                │
+                ▼
+      Canonical Architecture Compiler
+                │
+ ┌──────────────┼─────────────────────┐
+ ▼              ▼                     ▼
+Registry      Dependency Graph      Ontologie
+ ▼              ▼                     ▼
+Status         Roadmap              Blueprint
+ ▼              ▼                     ▼
+Implementierungsregeln          Validierungsregeln
+
+Damit gäbe es nur eine Quelle, aber beliebig viele automatisch erzeugte Sichten.
+
+Was würde das bedeuten?
+Der Mensch arbeitet ausschließlich am CMIBF
+
+Du oder ich ändern niemals direkt:
+
+Registry-Dateien
+Dependency-Graphen
+JSON-Dateien
+Roadmaps
+Statusdateien
+
+Wir ändern ausschließlich das CMIBF.
+
+Danach läuft der Compiler
+
+Der CAC erzeugt automatisch:
+
+canonical_architecture_registry.json
+canonical_dependency_graph.json
+canonical_framework_registry.json
+canonical_ontology.json
+canonical_validation_rules.json
+canonical_implementation_rules.json
+canonical_blueprints.json
+weitere abgeleitete Artefakte
+Codex arbeitet anschließend nur noch damit
+
+Ein Prüfauftrag würde dann ungefähr so aussehen:
+
+CMIBF wurde geändert.
+CAC erzeugt alle abgeleiteten Artefakte neu.
+Codex liest die kompakten JSON-Dateien.
+Nur wenn etwas unklar ist, schlägt Codex gezielt im CMIBF nach.
+
+Dadurch muss Codex nicht jedes Mal hunderte Seiten interpretieren.
+
+Noch einen Schritt weiter
+
+Ich würde sogar eine verbindliche Projektregel definieren:
+
+Canonical Change Rule (CCR)
+
+Kein Artefakt darf direkt geändert werden.
+
+Jede Änderung beginnt immer im CMIBF.
+
+Also niemals:
+
+JSON ändern
+
+↓
+
+Markdown anpassen
+
+sondern ausschließlich:
+
+CMIBF ändern
+
+↓
+
+CAC erzeugt JSON
+
+↓
+
+Codex implementiert
+
+↓
+
+Verifikation
+
+↓
+
+Release
+
+Damit kann nie wieder eine Registry "heimlich" von der Dokumentation abweichen.
+
+Und schließlich die letzte Schutzschicht
+
+Ich würde später einen Canonical Integrity Checker (CIC) ergänzen.
+
+Vor jeder Implementierung würde er automatisch prüfen:
+
+Stimmen Registry und CMIBF überein?
+Stimmen Blueprints und CMIBF überein?
+Stimmen Dependency Graph und CMIBF überein?
+Stimmen Statusdateien mit dem CMIBF überein?
+Wurden Dateien manuell verändert?
+Gibt es Drift zwischen Architektur und Implementierung?
+
+Wenn auch nur eine Abweichung gefunden wird, wird der Auftrag gestoppt.
+
+Ich glaube, das ist der fehlende Baustein
+
+Während unseres Gesprächs ist mir klar geworden, dass das CMIBF eigentlich kein Dokument im klassischen Sinn ist. Es sollte die Rolle eines Quelltextes für die Architektur übernehmen.
+
+So wie heute C- oder Rust-Code der Quelltext für ein Programm ist, wäre das CMIBF der Quelltext der gesamten Architektur von Projekt Kontinuum.
+
+Dann ergibt sich eine klare Kette:
+
+CMIBF
+        │
+        ▼
+Canonical Architecture Compiler (CAC)
+        │
+        ▼
+Maschinenlesbare Architekturartefakte
+        │
+        ▼
+Codex
+        │
+        ▼
+Implementierung
+        │
+        ▼
+Canonical Integrity Checker (CIC)
+        │
+        ▼
+Release
+
+Aus meiner Sicht wäre das eine der wichtigsten Innovationen von Projekt Kontinuum. Es trennt erstmals konsequent zwischen Architektur als Quelle, automatisch abgeleiteten Arbeitsartefakten und Implementierung. Diese Trennung sorgt dafür, dass Architekturentscheidungen dauerhaft konsistent bleiben und nicht durch manuelle Änderungen in verschiedenen Dateien auseinanderlaufen. Ich würde diesen Gedanken daher nicht nur als Implementierungsdetail behandeln, sondern ihn später als eigenes Kapitel des CMIBF und als eigenständiges Framework Canonical Architecture Compiler (CAC) 1.0 verankern. Damit wäre dieses Prinzip selbst Teil der kanonischen Architektur und nicht nur eine Arbeitsweise.

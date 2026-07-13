@@ -1,0 +1,1642 @@
+# Codex-Auftrag – Prüfung und Vorbereitung eines Canonical Code Agent Framework (CCAF) 1.0
+
+## 1. Auftragstitel
+
+**Prüfung, Architekturdefinition und kontrollierte Vorbereitung eines Canonical Code Agent Framework (CCAF) 1.0 für Projekt Kontinuum**
+
+---
+
+## 2. Ausgangslage
+
+Projekt Kontinuum verfügt bereits über beziehungsweise plant mehrere kanonische Architektur-, Entwicklungs-, Governance-, Sicherheits- und Betriebsbausteine.
+
+Dazu gehören insbesondere:
+
+* Canonical Development Framework (CDF)
+* Canonical Development Governance (CDG)
+* Canonical Authentication Framework
+* Canonical Licence Management System Framework (CLMSF)
+* Canonical Architecture Manager (CAM)
+* Capability Resolution Engine (CRE)
+* Execution Planner
+* Orchestrator Core
+* Canonical Cognitive Pipeline (CCP)
+* Release Integrity
+* Audit-, Provenienz- und Lifecycle-Strukturen
+* Artifact Identity und Artifact Dependency Graph als mögliche Erweiterungen
+
+Mit zunehmender Nutzung automatisierter Entwicklungswerkzeuge entsteht die Notwendigkeit, verbindlich festzulegen, wie Code-Agenten innerhalb von Projekt Kontinuum identifiziert, beauftragt, berechtigt, kontrolliert, geprüft und protokolliert werden.
+
+Ein Code-Agent darf dabei nicht allein anhand seiner technischen Fähigkeiten handeln. Sein zulässiges Verhalten muss sich aus einem kanonischen Auftrag, einer registrierten Rolle, einem Berechtigungsprofil, einer Risikoklasse und den geltenden Governance-Regeln ergeben.
+
+Das geplante Framework soll nicht auf Codex als einzelnes Produkt beschränkt sein. Es soll als allgemeiner, hersteller- und modellunabhängiger Rahmen für heutige und zukünftige Code-Agenten dienen.
+
+Dazu können später beispielsweise gehören:
+
+* Codex
+* lokale Code-Modelle
+* spezialisierte Prüfagenten
+* Testagenten
+* Dokumentationsagenten
+* Sicherheitsagenten
+* Migrationsagenten
+* Release-Agenten
+* zukünftige interne Entwicklungsagenten von K
+
+---
+
+## 3. Ziel des Auftrags
+
+Ziel dieses Auftrags ist die gründliche Prüfung und konzeptionelle Vorbereitung eines:
+
+**Canonical Code Agent Framework (CCAF) 1.0**
+
+Das CCAF soll verbindlich definieren:
+
+1. was innerhalb von Projekt Kontinuum als Code-Agent gilt,
+2. wie Code-Agenten eindeutig identifiziert werden,
+3. welche Rollen und Fähigkeiten sie besitzen können,
+4. wie ihre Berechtigungen begrenzt werden,
+5. wie ein kanonischer Agentenauftrag aufgebaut ist,
+6. wie Analyse, Planung, Ausführung, Prüfung und Berichterstattung voneinander getrennt werden,
+7. wie Risiken klassifiziert werden,
+8. wie Agentenaktionen protokolliert und nachvollziehbar gemacht werden,
+9. wie das CCAF mit bestehenden kanonischen Komponenten zusammenwirkt,
+10. wie spätere kontrollierte oder teilweise autonome Codearbeit vorbereitet werden kann, ohne sie mit diesem Auftrag bereits zu aktivieren.
+
+Der Auftrag dient zunächst der:
+
+* Bestandsprüfung,
+* Architekturprüfung,
+* Abgrenzung,
+* Spezifikation,
+* Dokumentationsvorbereitung,
+* Schema- und Artefaktplanung.
+
+Eine produktive Aktivierung autonomer Code-Agenten ist ausdrücklich nicht Gegenstand dieses Auftrags.
+
+---
+
+## 4. Grundsatz
+
+Das CCAF soll folgenden Grundsatz verbindlich verankern:
+
+> Kein Code-Agent darf allein aufgrund seiner technischen Möglichkeiten handeln. Jede Handlung muss durch eine eindeutige Agentenidentität, einen kanonischen Auftrag, eine zulässige Rolle, ein gültiges Berechtigungsprofil, eine Risikoklasse und eine überprüfbare Governance-Freigabe gedeckt sein.
+
+Zusätzlich gilt:
+
+> Ein Code-Agent darf seinen eigenen Arbeitsumfang nicht eigenmächtig erweitern und seine eigene Arbeit nicht allein endgültig freigeben.
+
+---
+
+## 5. Wichtige Einschränkung dieses Auftrags
+
+Dieser Auftrag ist zunächst ein:
+
+**Prüf-, Definitions- und Vorbereitungsauftrag.**
+
+Codex darf daher nicht ohne eindeutige Freigabe:
+
+* produktive Agentenlaufzeiten aktivieren,
+* autonome Schreibrechte einführen,
+* bestehende Entwicklungsabläufe ersetzen,
+* produktive Orchestrierungswege verändern,
+* Berechtigungen bestehender Komponenten erweitern,
+* bestehende Sicherheitsgrenzen lockern,
+* Git-Automatisierungen aktivieren,
+* automatische Commits einführen,
+* automatische Löschvorgänge ermöglichen,
+* produktive Datenbanken verändern,
+* Agenten selbstständig Entscheidungen über Freigaben treffen lassen,
+* bestehende Governance-Regeln umgehen oder neu interpretieren.
+
+Zunächst ist zu prüfen, zu dokumentieren und kontrolliert vorzubereiten.
+
+---
+
+# 6. Phase A – Kontrollierter Einstieg
+
+Vor jeder fachlichen Ausarbeitung muss Codex den aktuellen Projektzustand kontrolliert erfassen.
+
+## 6.1 Rückfallpunkt
+
+Codex muss zu Beginn:
+
+* den aktuellen Git-Status prüfen,
+* den aktuellen Branch benennen,
+* den aktuellen Commit-Hash dokumentieren,
+* vorhandene uncommittete Änderungen erfassen,
+* bestehende Staged-Änderungen gesondert ausweisen,
+* prüfen, ob bereits ein geeigneter Rückfallpunkt vorhanden ist.
+
+Codex darf keine bestehenden Änderungen überschreiben, zurücksetzen, bereinigen oder stillschweigend einbeziehen.
+
+Falls der Arbeitsbaum nicht sauber ist, muss Codex:
+
+* den Zustand dokumentieren,
+* betroffene Dateien nennen,
+* zwischen auftragsrelevanten und auftragsfremden Änderungen unterscheiden,
+* ohne ausdrückliche Freigabe keine fremden Änderungen verändern.
+
+## 6.2 Geltende Projektregeln
+
+Codex muss die für diesen Auftrag relevanten kanonischen Regeln und Dokumente ermitteln.
+
+Insbesondere zu prüfen sind vorhandene Artefakte zu:
+
+* Canonical Development Framework
+* Canonical Development Governance
+* Canonical Architecture
+* Canonical Artifact Management
+* Capability Resolution Engine
+* Execution Planner
+* Orchestrator Core
+* Authentication
+* Licence Management
+* Release Integrity
+* Audit
+* Provenienz
+* Agent Registry
+* Berechtigungen
+* Rollenmodellen
+* Risikoklassen
+* Artifact Lifecycle
+* Projektstruktur
+* Glossar
+* bestehenden Codex-Regeln oder Agentenanweisungen
+
+Codex darf keine vorhandenen Regeln voraussetzen, ohne die tatsächlichen Projektartefakte zu prüfen.
+
+---
+
+# 7. Phase B – Projektweite Bestandsprüfung
+
+Codex soll projektweit untersuchen, welche Bausteine bereits existieren, die für ein CCAF relevant sein könnten.
+
+## 7.1 Zu suchende Strukturen
+
+Zu prüfen sind insbesondere vorhandene:
+
+* Agentenklassen
+* Agentenregistrierungen
+* Agenten-IDs
+* Rollen
+* Capability-Definitionen
+* Berechtigungsprofile
+* Zugriffskontrollen
+* Task-Schemas
+* Auftragsformate
+* Planungsobjekte
+* Ausführungspläne
+* Audit-Events
+* Provenienzobjekte
+* Tool-Berechtigungen
+* Schreibschutzmechanismen
+* Read-only-Modi
+* Approval- oder Freigabestrukturen
+* Test-Agenten
+* Review-Agenten
+* Migrationswerkzeuge
+* Release-Werkzeuge
+* Dateizugriffsagenten
+* Entwicklungsagenten
+* Codex-spezifische Regeln
+* Agentenlogs
+* Agentenstatusberichte
+
+## 7.2 Suchbegriffe
+
+Die Prüfung sollte mindestens folgende Begriffe und sinnvolle Varianten umfassen:
+
+```text
+agent
+code_agent
+coding_agent
+developer_agent
+implementation_agent
+review_agent
+test_agent
+security_agent
+migration_agent
+documentation_agent
+release_agent
+agent_registry
+agent_id
+agent_role
+capability
+permission
+authorization
+approval
+task
+task_schema
+execution_plan
+audit
+provenance
+read_only
+write_scope
+risk_class
+orchestrator
+planner
+codex
+```
+
+Die Suche darf nicht nur auf Dateinamen beschränkt werden. Auch Inhalte, Konfigurationen, Schemas, Tests und Dokumentationen sind einzubeziehen.
+
+## 7.3 Ergebnis der Bestandsprüfung
+
+Codex muss unterscheiden zwischen:
+
+* bereits produktiv vorhanden,
+* teilweise vorhanden,
+* nur dokumentiert,
+* historisch vorhanden,
+* geplant,
+* widersprüchlich,
+* veraltet,
+* nicht vorhanden.
+
+Es ist ausdrücklich zu vermeiden, parallele Strukturen neu zu definieren, wenn bereits geeignete kanonische Bausteine vorhanden sind.
+
+---
+
+# 8. Phase C – Begriffsdefinition und Abgrenzung
+
+Codex soll eine präzise Definition für einen Code-Agenten erarbeiten.
+
+## 8.1 Arbeitsdefinition
+
+Zu prüfen ist folgende Ausgangsdefinition:
+
+> Ein Code-Agent ist eine identifizierbare, regelgebundene Software- oder Modellinstanz, die innerhalb eines ausdrücklich freigegebenen Auftrags Quellcode, Konfigurationen, Tests, Dokumentation oder zugehörige Entwicklungsartefakte analysiert, plant, erzeugt, verändert, prüft oder verwaltet.
+
+Codex soll prüfen, ob diese Definition:
+
+* vollständig,
+* ausreichend eng,
+* technisch umsetzbar,
+* modellunabhängig,
+* mit bestehenden Projektbegriffen kompatibel ist.
+
+## 8.2 Abgrenzung
+
+Das CCAF muss klar abgegrenzt werden von:
+
+### Canonical Development Framework
+
+Das CDF regelt den übergeordneten Entwicklungsprozess.
+
+### Canonical Development Governance
+
+CDG regelt Verantwortlichkeiten, Freigaben, Kontrollregeln und Governance.
+
+### Canonical Authentication Framework
+
+Das Authentication Framework bestätigt Identitäten und Berechtigungsnachweise.
+
+### Canonical Licence Management System Framework
+
+Das CLMSF regelt Lizenzierung, Editionen, Rechte und zulässige Nutzung.
+
+### Capability Resolution Engine
+
+Die CRE bestimmt, welche Fähigkeiten für einen Auftrag benötigt werden und welche Komponente sie bereitstellen kann.
+
+### Execution Planner
+
+Der Execution Planner erstellt oder validiert einen kontrollierten Ausführungsplan.
+
+### Orchestrator Core
+
+Der Orchestrator führt validierte Pläne aus, soll aber keine eigenständige Entwicklungsentscheidung übernehmen.
+
+### Canonical Cognitive Pipeline
+
+Die CCP regelt kognitive oder verarbeitungsbezogene Abläufe von K und darf nicht mit Code-Agenten-Governance vermischt werden.
+
+### Canonical Artifact Manager
+
+Der CAM verwaltet kanonische Artefakte, deren Status, Klassifikation und Lifecycle.
+
+Das CCAF soll diese Systeme nicht duplizieren, sondern ihre Anforderungen für Code-Agenten verbindlich zusammenführen.
+
+---
+
+# 9. Phase D – Zielarchitektur des CCAF 1.0
+
+Codex soll eine schlanke, klar abgegrenzte Zielarchitektur entwerfen.
+
+## 9.1 Kernbereiche
+
+Das CCAF sollte mindestens folgende Bereiche definieren:
+
+1. Agent Identity
+2. Agent Registry
+3. Agent Roles
+4. Agent Capabilities
+5. Agent Permission Profiles
+6. Canonical Agent Task
+7. Agent Operating Modes
+8. Risk Classification
+9. Approval and Control Gates
+10. Execution Boundaries
+11. Verification Requirements
+12. Audit and Provenance
+13. Agent Reporting
+14. Failure and Abort Rules
+15. Integration Contracts
+16. Future Autonomy Boundaries
+
+## 9.2 Architekturprinzip
+
+Codex soll prüfen, ob folgende Verarbeitungskette geeignet ist:
+
+```text
+Canonical Agent Task
+        ↓
+Agent Identity Validation
+        ↓
+Role and Permission Resolution
+        ↓
+Capability Resolution
+        ↓
+Risk Classification
+        ↓
+Governance Gate
+        ↓
+Execution Plan
+        ↓
+Controlled Execution
+        ↓
+Independent Verification
+        ↓
+Audit and Provenance
+        ↓
+Human or Authorized Final Approval
+```
+
+Dabei muss klar bleiben:
+
+* CCAF definiert Regeln und Verträge.
+* CRE löst Fähigkeiten auf.
+* Execution Planner plant.
+* Orchestrator führt aus.
+* Governance entscheidet über Freigabebedingungen.
+* Authentication bestätigt Identität.
+* Audit und Provenienz dokumentieren die Ausführung.
+* Raphael beziehungsweise eine ausdrücklich autorisierte Instanz behält die endgültige Kontrolle.
+
+---
+
+# 10. Phase E – Agentenidentität
+
+Codex soll ein kanonisches Identitätsmodell für Code-Agenten definieren.
+
+## 10.1 Mögliche Pflichtfelder
+
+Zu prüfen sind mindestens:
+
+```text
+agent_id
+agent_name
+agent_version
+agent_type
+provider
+model_name
+model_version
+runtime
+trust_level
+status
+registered_roles
+registered_capabilities
+permission_profile
+authentication_reference
+licence_reference
+created_at
+updated_at
+valid_from
+valid_until
+```
+
+## 10.2 Anforderungen
+
+Die Agentenidentität muss:
+
+* eindeutig,
+* versionierbar,
+* auditierbar,
+* herstellerunabhängig,
+* nicht nur auf einen Anzeigenamen gestützt,
+* mit Authentifizierung verknüpfbar,
+* mit Lizenz- und Berechtigungsinformationen verknüpfbar sein.
+
+Codex soll prüfen, ob eine Agenteninstanz zusätzlich zur dauerhaften Agentenidentität eine separate Lauf- oder Sitzungsidentität benötigt, beispielsweise:
+
+```text
+agent_run_id
+session_id
+task_id
+execution_id
+```
+
+---
+
+# 11. Phase F – Agentenrollen
+
+Codex soll ein kanonisches Rollenmodell definieren.
+
+Mindestens zu prüfen sind:
+
+## 11.1 Analysis Agent
+
+Darf:
+
+* lesen,
+* analysieren,
+* Risiken benennen,
+* Berichte erstellen.
+
+Darf nicht:
+
+* produktive Dateien verändern,
+* Dateien löschen,
+* Freigaben erteilen.
+
+## 11.2 Planning Agent
+
+Darf:
+
+* Änderungspläne,
+* Migrationspläne,
+* Testpläne,
+* betroffene Artefakte,
+* Risiken und Rückfallstrategien definieren.
+
+Darf nicht ohne gesonderte Freigabe:
+
+* den Plan selbst produktiv ausführen.
+
+## 11.3 Implementation Agent
+
+Darf ausschließlich innerhalb eines freigegebenen Scopes:
+
+* Dateien erstellen,
+* Dateien ändern,
+* genehmigte Implementierungsschritte ausführen.
+
+## 11.4 Review Agent
+
+Prüft:
+
+* Architekturkonformität,
+* Scope-Einhaltung,
+* Seiteneffekte,
+* Qualität,
+* mögliche Regressionen.
+
+## 11.5 Test Agent
+
+Darf:
+
+* Tests identifizieren,
+* Tests ausführen,
+* Testergebnisse dokumentieren,
+* fehlende Tests benennen.
+
+## 11.6 Security Agent
+
+Prüft insbesondere:
+
+* Authentifizierung,
+* Autorisierung,
+* Geheimnisse,
+* Eingabevalidierung,
+* Datei- und Prozesszugriffe,
+* Dependency-Risiken,
+* Injection-Risiken,
+* Privilegienausweitung.
+
+## 11.7 Migration Agent
+
+Darf nur mit besonderer Freigabe:
+
+* Dateien verschieben,
+* Strukturen migrieren,
+* Versionsstände überführen,
+* Referenzen aktualisieren.
+
+## 11.8 Documentation Agent
+
+Darf:
+
+* Dokumentation,
+* Glossar,
+* Statusberichte,
+* Chronik,
+* Architekturübersichten aktualisieren.
+
+## 11.9 Release Agent
+
+Prüft:
+
+* Release Integrity,
+* Manifest-Vollständigkeit,
+* Tests,
+* Dokumentation,
+* Statusberichte,
+* Freigabereife.
+
+Codex soll prüfen, welche Rollen wirklich für Version 1.0 notwendig sind und welche zunächst nur als Erweiterung vorgesehen werden sollten.
+
+---
+
+# 12. Phase G – Capability-Modell
+
+Codex soll prüfen, wie Code-Agenten-Fähigkeiten kanonisch registriert und mit der CRE verbunden werden können.
+
+Mindestens zu prüfen sind:
+
+```text
+code.read
+code.search
+code.analyze
+code.plan
+code.create
+code.modify
+code.delete
+code.move
+code.archive
+
+config.read
+config.modify
+
+schema.read
+schema.validate
+schema.modify
+
+tests.discover
+tests.create
+tests.execute
+tests.evaluate
+
+git.inspect
+git.diff
+git.branch
+git.stage
+git.commit
+git.reset
+
+database.inspect
+database.read
+database.write
+database.migrate
+
+documentation.read
+documentation.update
+
+architecture.inspect
+architecture.validate
+architecture.modify
+
+security.inspect
+security.audit
+
+release.inspect
+release.verify
+release.prepare
+
+audit.write
+provenance.write
+report.create
+```
+
+Besonders kritisch zu behandeln sind:
+
+* `code.delete`
+* `git.commit`
+* `git.reset`
+* `database.write`
+* `database.migrate`
+* `architecture.modify`
+* `release.prepare`
+
+Diese Fähigkeiten dürfen nicht standardmäßig vergeben werden.
+
+---
+
+# 13. Phase H – Berechtigungsmodell
+
+Codex soll ein Berechtigungsmodell entwerfen, das technische Fähigkeit und tatsächliche Erlaubnis trennt.
+
+Dabei gilt:
+
+> Capability bedeutet, dass ein Agent etwas technisch ausführen kann. Permission bedeutet, dass er es im konkreten Auftrag ausführen darf.
+
+## 13.1 Mögliche Berechtigungsdimensionen
+
+Zu prüfen sind:
+
+* erlaubte Aktionen,
+* erlaubte Ordner,
+* erlaubte Dateien,
+* erlaubte Dateitypen,
+* erlaubte Befehle,
+* erlaubte Tools,
+* erlaubte Datenbanken,
+* erlaubte Netzwerke,
+* erlaubte Laufzeit,
+* maximale Anzahl veränderter Dateien,
+* maximale Änderungsgröße,
+* erlaubte Git-Operationen,
+* erlaubte Testumgebungen,
+* erlaubte externe Quellen.
+
+## 13.2 Scope-Modell
+
+Codex soll prüfen, ob der Scope mindestens folgende Felder benötigt:
+
+```text
+allowed_paths
+denied_paths
+allowed_files
+denied_files
+allowed_file_types
+allowed_operations
+denied_operations
+allowed_commands
+denied_commands
+max_files_changed
+max_total_diff_lines
+network_access
+database_access
+git_access
+```
+
+Ein explizit verbotener Scope muss Vorrang vor einem allgemein erlaubten Scope besitzen.
+
+---
+
+# 14. Phase I – Kanonischer Code-Agentenauftrag
+
+Codex soll ein verbindliches Schema für zukünftige Code-Agentenaufträge entwickeln.
+
+## 14.1 Pflichtbestandteile
+
+Ein kanonischer Agentenauftrag sollte mindestens enthalten:
+
+1. Task-ID
+2. Titel
+3. Ziel
+4. Begründung
+5. Ausgangslage
+6. Auftraggeber
+7. Agentenrolle
+8. erlaubte Capabilities
+9. Berechtigungsprofil
+10. erlaubter Scope
+11. ausgeschlossener Scope
+12. geltende kanonische Regeln
+13. Risikoklasse
+14. erforderliche Vorprüfungen
+15. geplanter Arbeitsablauf
+16. Testanforderungen
+17. Dokumentationsanforderungen
+18. Audit-Anforderungen
+19. Abbruchbedingungen
+20. Rückfallpunkt
+21. erwartete Ergebnisse
+22. Freigabeverfahren
+23. Abschlussbericht
+24. Status
+
+## 14.2 Mögliche Statuswerte
+
+Zu prüfen sind:
+
+```text
+DRAFT
+UNDER_REVIEW
+APPROVED
+READY
+IN_PROGRESS
+PAUSED
+BLOCKED
+ABORTED
+FAILED
+COMPLETED
+VERIFIED
+REJECTED
+RELEASED
+```
+
+Codex soll vermeiden, Statusbegriffe neu zu erfinden, falls bereits projektweit kanonische Statuswerte existieren.
+
+---
+
+# 15. Phase J – Kanonischer Arbeitszyklus
+
+Codex soll einen verbindlichen Code-Agenten-Arbeitszyklus definieren.
+
+Zu prüfen ist folgende Struktur:
+
+## Phase 1 – Identify
+
+Der Agent identifiziert:
+
+* sich selbst,
+* den Auftrag,
+* seine Rolle,
+* seine Berechtigungen,
+* die Risikoklasse,
+* den Projektzustand,
+* den Rückfallpunkt.
+
+## Phase 2 – Inspect
+
+Der Agent prüft:
+
+* relevante Dateien,
+* Abhängigkeiten,
+* aktive und historische Artefakte,
+* Tests,
+* Konfigurationen,
+* Governance-Regeln,
+* mögliche Konflikte.
+
+## Phase 3 – Plan
+
+Der Agent erstellt:
+
+* geplante Schritte,
+* betroffene Artefakte,
+* erwartete Änderungen,
+* Risiken,
+* Testplan,
+* Rückfallstrategie.
+
+## Phase 4 – Authorize
+
+Vor jeder schreibenden Aktion wird geprüft:
+
+* Ist die Aktion durch den Auftrag gedeckt?
+* Ist sie durch die Rolle erlaubt?
+* Ist die Capability registriert?
+* Ist die Permission vorhanden?
+* Liegt der Zielpfad im Scope?
+* Ist die Risikoklasse berücksichtigt?
+* Ist eine zusätzliche Freigabe erforderlich?
+
+## Phase 5 – Execute
+
+Nur freigegebene Schritte dürfen umgesetzt werden.
+
+## Phase 6 – Verify
+
+Es sind durchzuführen:
+
+* Tests,
+* Scope-Prüfung,
+* Diff-Prüfung,
+* Architekturprüfung,
+* Integritätsprüfung,
+* Prüfung unerwarteter Änderungen.
+
+## Phase 7 – Report
+
+Der Agent erstellt einen nachvollziehbaren Abschlussbericht.
+
+Codex soll prüfen, wie dieser Ablauf mit:
+
+**Erkennen – Schaffen – Vollenden**
+
+in Übereinstimmung gebracht werden kann, ohne technische Prüfschritte zu vereinfachen oder auszulassen.
+
+---
+
+# 16. Phase K – Betriebsmodi
+
+Codex soll folgende Betriebsmodi prüfen:
+
+## 16.1 Read-only Mode
+
+* nur lesen,
+* analysieren,
+* berichten.
+
+## 16.2 Proposal Mode
+
+* analysieren,
+* planen,
+* konkrete Änderungsvorschläge erstellen,
+* keine produktive Umsetzung.
+
+## 16.3 Controlled Write Mode
+
+* begrenzte Änderungen,
+* nur im freigegebenen Scope,
+* verpflichtende Tests und Diff-Prüfung.
+
+## 16.4 Migration Mode
+
+* kontrollierte Verschiebungen,
+* Referenzanpassungen,
+* vollständige Rückfallstrategie,
+* besondere Freigabe.
+
+## 16.5 Emergency Repair Mode
+
+* nur für klar definierte Störungen,
+* minimaler Eingriff,
+* keine Architekturweiterentwicklung,
+* vollständige Nachprüfung.
+
+## 16.6 Autonomous Maintenance Mode
+
+Dieser Modus darf im Rahmen dieses Auftrags ausschließlich konzeptionell betrachtet werden.
+
+Er darf nicht aktiviert oder produktiv vorbereitet werden, sofern dies Schreibrechte oder eigenständige Entscheidungen ermöglicht.
+
+Codex soll für Version 1.0 empfehlen, welche Modi tatsächlich enthalten sein sollen.
+
+---
+
+# 17. Phase L – Risikoklassen
+
+Codex soll ein kanonisches Risikomodell prüfen.
+
+Ausgangsvorschlag:
+
+## CCAF-R0 – Analyse
+
+* keine Änderungen,
+* keine produktiven Befehle.
+
+## CCAF-R1 – Geringes Risiko
+
+* Dokumentation,
+* isolierte Ergänzungen,
+* keine kritischen Abhängigkeiten.
+
+## CCAF-R2 – Begrenzte Codeänderung
+
+* klar begrenzter Scope,
+* lokale Tests erforderlich.
+
+## CCAF-R3 – Erhöhtes Risiko
+
+* mehrere Komponenten,
+* öffentliche Schnittstellen,
+* zentrale Konfiguration,
+* Datenmodell oder Architektur betroffen.
+
+## CCAF-R4 – Kritische Änderung
+
+* Authentifizierung,
+* Autorisierung,
+* Lizenzierung,
+* Migration,
+* Release,
+* Datenbank,
+* Orchestrierung,
+* zentrale Governance.
+
+## CCAF-R5 – Systemweite oder irreversible Änderung
+
+* weitreichende Migration,
+* Löschung,
+* produktive Datenumwandlung,
+* zentrale Sicherheitsarchitektur,
+* nicht einfach rückrollbare Eingriffe.
+
+Codex soll prüfen:
+
+* ob diese Klassen mit bestehenden Risikoklassen kollidieren,
+* ob eine eigene CCAF-Kennung notwendig ist,
+* welche Freigaben und Prüfungen je Risikoklasse erforderlich sind.
+
+---
+
+# 18. Phase M – Kontroll- und Freigabepunkte
+
+Codex soll verbindliche Gates definieren.
+
+Mindestens zu prüfen sind:
+
+## Gate 1 – Identity Gate
+
+Ist der Agent eindeutig identifiziert?
+
+## Gate 2 – Task Gate
+
+Ist ein gültiger kanonischer Auftrag vorhanden?
+
+## Gate 3 – Role Gate
+
+Ist die aktive Rolle für den Auftrag zulässig?
+
+## Gate 4 – Capability Gate
+
+Besitzt der Agent die benötigten Fähigkeiten?
+
+## Gate 5 – Permission Gate
+
+Darf der Agent diese Fähigkeiten im konkreten Scope einsetzen?
+
+## Gate 6 – Risk Gate
+
+Sind alle Anforderungen der Risikoklasse erfüllt?
+
+## Gate 7 – Plan Gate
+
+Liegt ein validierter Ausführungsplan vor?
+
+## Gate 8 – Execution Gate
+
+Sind die konkreten Aktionen freigegeben?
+
+## Gate 9 – Verification Gate
+
+Wurden Tests, Integrität und Scope-Einhaltung geprüft?
+
+## Gate 10 – Final Approval Gate
+
+Wurde die Arbeit von einer unabhängigen oder ausdrücklich autorisierten Instanz freigegeben?
+
+Ein Agent darf fehlgeschlagene Gates nicht selbstständig umgehen.
+
+---
+
+# 19. Phase N – Vier-Augen-Prinzip und Rollentrennung
+
+Codex soll prüfen, wie eine unabhängige Kontrolle umgesetzt werden kann.
+
+Für kritische Aufgaben ist folgende Trennung zu bewerten:
+
+```text
+Analysis Agent
+        ↓
+Planning Agent
+        ↓
+Implementation Agent
+        ↓
+Review / Test / Security Agent
+        ↓
+Finale autorisierte Freigabe
+```
+
+Zu definieren ist:
+
+* wann Rollen kombiniert werden dürfen,
+* wann eine Trennung verpflichtend ist,
+* wann ein Agent seine eigene Arbeit prüfen darf,
+* wann eine unabhängige Prüfung erforderlich ist,
+* wann Raphael persönlich freigeben muss,
+* wie dies technisch und dokumentarisch nachgewiesen wird.
+
+Grundsatz:
+
+> Selbstprüfung darf eine unabhängige Prüfung ergänzen, aber bei kritischen Änderungen nicht ersetzen.
+
+---
+
+# 20. Phase O – Verbote und Schutzregeln
+
+Das CCAF muss mindestens folgende Verbote prüfen und gegebenenfalls verbindlich festschreiben:
+
+* keine eigenmächtige Scope-Erweiterung,
+* keine stillen Architekturänderungen,
+* keine Löschung ohne ausdrückliche Erlaubnis,
+* keine Veränderung auftragsfremder Dateien,
+* kein automatischer Git-Commit ohne ausdrückliche Erlaubnis,
+* kein automatischer Reset,
+* kein Überschreiben fremder uncommitteter Änderungen,
+* keine Vermischung aktiver und historischer Artefakte,
+* kein Ersetzen kanonischer Artefakte durch nicht kanonische Kopien,
+* keine Änderung von Authentifizierung oder Berechtigungen ohne Sonderfreigabe,
+* keine Annahme erfolgreicher Ausführung ohne Nachweis,
+* kein Verschweigen fehlgeschlagener Tests,
+* kein Erfinden nicht geprüfter Projektzustände,
+* keine automatische Selbstfreigabe,
+* kein Umgehen von Governance-Gates,
+* keine verdeckten Nebenänderungen,
+* keine unkontrollierten externen Netzwerkzugriffe,
+* keine Verarbeitung von Geheimnissen außerhalb freigegebener Grenzen,
+* keine Aktivierung autonomer Wartung durch diesen Auftrag.
+
+---
+
+# 21. Phase P – Audit und Provenienz
+
+Codex soll definieren, welche Informationen bei jeder Code-Agenten-Ausführung protokolliert werden müssen.
+
+Mindestens:
+
+```text
+task_id
+agent_id
+agent_run_id
+agent_version
+model_name
+model_version
+role
+capabilities_used
+permission_profile
+risk_class
+start_time
+end_time
+input_artifacts
+read_artifacts
+created_artifacts
+modified_artifacts
+moved_artifacts
+deleted_artifacts
+commands_executed
+tools_used
+tests_executed
+test_results
+warnings
+errors
+denied_actions
+approvals
+git_commit_before
+git_commit_after
+diff_reference
+report_reference
+final_status
+```
+
+Codex soll prüfen, welche Informationen:
+
+* zwingend gespeichert,
+* optional gespeichert,
+* aus Datenschutz- oder Sicherheitsgründen reduziert,
+* gehasht,
+* referenziert statt vollständig gespeichert werden sollten.
+
+---
+
+# 22. Phase Q – Fehler-, Abbruch- und Rückfallregeln
+
+Codex soll verbindliche Abbruchbedingungen definieren.
+
+Mindestens:
+
+* Scope unklar,
+* Agentenidentität nicht gültig,
+* Berechtigung fehlt,
+* Risikoklasse nicht bestimmbar,
+* Rückfallpunkt fehlt,
+* unerwartete Änderungen im Arbeitsbaum,
+* Konflikt mit kanonischen Regeln,
+* Tests nicht ausführbar,
+* Testfehler außerhalb des erwarteten Bereichs,
+* unerwartete Architekturabhängigkeiten,
+* kritische Sicherheitsbefunde,
+* erforderliche Freigabe fehlt,
+* Auftrag und tatsächlicher Projektzustand widersprechen sich.
+
+Bei Abbruch muss der Agent:
+
+1. keine weiteren schreibenden Aktionen ausführen,
+2. den Zustand sichern,
+3. bereits vorgenommene Änderungen nennen,
+4. Risiken dokumentieren,
+5. klar zwischen Fehler, Blockade und bewusster Ablehnung unterscheiden,
+6. keine automatische Rücksetzung fremder Änderungen durchführen.
+
+---
+
+# 23. Phase R – Integration mit bestehenden Komponenten
+
+Codex soll für jede relevante bestehende Komponente eine klare Integrationsbeziehung definieren.
+
+## 23.1 CDF
+
+Welche Entwicklungsphasen und Qualitätsanforderungen übernimmt das CCAF?
+
+## 23.2 CDG
+
+Welche Governance-Regeln und Freigaben gelten für Code-Agenten?
+
+## 23.3 Authentication Framework
+
+Wie werden Agentenidentität und Ausführungsidentität bestätigt?
+
+## 23.4 CLMSF
+
+Wie werden zulässige Nutzung, Edition, Provider und Modelllizenz berücksichtigt?
+
+## 23.5 CRE
+
+Wie werden benötigte und vorhandene Capabilities aufgelöst?
+
+## 23.6 Execution Planner
+
+Wie wird aus einem Agentenauftrag ein validierter Plan?
+
+## 23.7 Orchestrator Core
+
+Wie werden freigegebene Schritte ausgeführt, ohne Entscheidungslogik in den Orchestrator zu verlagern?
+
+## 23.8 CAM
+
+Wie werden erzeugte oder veränderte Artefakte registriert und klassifiziert?
+
+## 23.9 Artifact Identity
+
+Wie können Dateien und Artefakte trotz Umbenennungen dauerhaft identifiziert werden?
+
+## 23.10 Artifact Dependency Graph
+
+Wie können Auswirkungen von Änderungen vor der Ausführung geprüft werden?
+
+## 23.11 Release Integrity
+
+Wie werden Änderungen in Release-Prüfung und Manifesten berücksichtigt?
+
+## 23.12 Audit und Provenienz
+
+Wie werden Agentenhandlungen vollständig nachvollziehbar?
+
+Codex muss Doppelzuständigkeiten und zyklische Abhängigkeiten ausdrücklich benennen.
+
+---
+
+# 24. Phase S – Editions- und Nutzungsperspektive
+
+Da Projekt Kontinuum perspektivisch unterschiedliche Nutzungsvarianten erhalten könnte, soll Codex prüfen, ob das CCAF unterschiedliche Agentenprofile unterstützen sollte.
+
+Beispielsweise:
+
+## Privatanwender
+
+* stark eingeschränkte Schreibrechte,
+* einfache Analyse und Hilfestellung,
+* keine kritischen Systemänderungen,
+* klare Benutzerbestätigung.
+
+## Unternehmen
+
+* Rollen- und Rechteverwaltung,
+* Mandantentrennung,
+* Audit,
+* Compliance,
+* Freigabeworkflows,
+* Integration mit bestehenden Entwicklungsprozessen.
+
+## Forschung
+
+* hohe Reproduzierbarkeit,
+* Modell- und Prompt-Provenienz,
+* Experimentstatus,
+* Datensatzreferenzen,
+* reproduzierbare Ausführungsumgebung,
+* Forschungsfreigaben.
+
+Diese Perspektive soll berücksichtigt, aber nicht als eigene Edition implementiert werden.
+
+---
+
+# 25. Phase T – Empfohlene kanonische Artefakte
+
+Codex soll prüfen, ob mindestens folgende Artefakte sinnvoll sind:
+
+```text
+14_documents/
+    CANONICAL_CODE_AGENT_FRAMEWORK_1_0.md
+```
+
+```text
+24_config/
+    canonical_code_agent_framework_1_0.json
+    canonical_code_agent_roles_1_0.json
+    canonical_code_agent_capabilities_1_0.json
+    canonical_code_agent_permission_profiles_1_0.json
+    canonical_code_agent_risk_classes_1_0.json
+    canonical_code_agent_operating_modes_1_0.json
+```
+
+```text
+schemas/
+    canonical_code_agent_task_1_0.schema.json
+    canonical_code_agent_report_1_0.schema.json
+    canonical_code_agent_registry_1_0.schema.json
+```
+
+```text
+31_reports/
+    ccaf_1_0_status_report.md
+```
+
+Optional zu prüfen:
+
+```text
+24_config/
+    canonical_code_agent_registry_1_0.json
+    canonical_code_agent_control_gates_1_0.json
+```
+
+Codex muss vor der Festlegung der Pfade die aktuelle kanonische Projektstruktur prüfen.
+
+Es dürfen keine neuen Ordner oder parallelen Ablagen eingeführt werden, wenn bereits ein kanonischer Zielpfad existiert.
+
+---
+
+# 26. Phase U – JSON- und Schema-Anforderungen
+
+Alle geplanten JSON- und Schema-Artefakte müssen:
+
+* maschinenlesbar,
+* versioniert,
+* eindeutig identifizierbar,
+* deterministisch interpretierbar,
+* mit Statusfeldern ausgestattet,
+* mit bestehenden Namenskonventionen kompatibel,
+* gegen Duplikate prüfbar,
+* durch Tests validierbar sein.
+
+Zu prüfen sind insbesondere:
+
+* stabile IDs,
+* Versionsfelder,
+* Statuswerte,
+* Zeitstempel,
+* Referenzen auf andere kanonische Artefakte,
+* keine freie Semantik bei sicherheitsrelevanten Feldern,
+* kontrollierte Enumerationen,
+* klare Pflicht- und Optionalfelder,
+* Abwärtskompatibilität,
+* spätere Erweiterbarkeit.
+
+---
+
+# 27. Phase V – Teststrategie
+
+Codex soll eine Teststrategie für eine spätere CCAF-Implementierung definieren.
+
+Mindestens zu berücksichtigen:
+
+## 27.1 Schema-Tests
+
+* gültige Agentenaufträge werden akzeptiert,
+* unvollständige Aufträge werden abgelehnt,
+* ungültige Rollen werden abgelehnt,
+* unbekannte Capabilities werden erkannt,
+* ungültige Risikoklassen werden abgelehnt.
+
+## 27.2 Berechtigungstests
+
+* erlaubte Aktion im erlaubten Scope,
+* erlaubte Aktion im verbotenen Scope,
+* verbotene Aktion im erlaubten Scope,
+* fehlende Permission trotz vorhandener Capability,
+* explizites Verbot überschreibt allgemeine Erlaubnis.
+
+## 27.3 Gate-Tests
+
+* fehlende Identität,
+* fehlender Auftrag,
+* fehlende Capability,
+* fehlende Permission,
+* fehlende Freigabe,
+* fehlender Rückfallpunkt,
+* fehlgeschlagene Verifikation.
+
+## 27.4 Rollen-Tests
+
+* Analysis Agent darf nicht schreiben,
+* Test Agent darf nicht freigeben,
+* Implementation Agent darf Scope nicht erweitern,
+* Review Agent verändert den geprüften Code nicht,
+* Release Agent darf keine ungetesteten Änderungen freigeben.
+
+## 27.5 Audit-Tests
+
+* alle Aktionen werden protokolliert,
+* verweigerte Aktionen werden protokolliert,
+* Agent, Auftrag und Ausführung bleiben verknüpft,
+* Abschlussbericht stimmt mit tatsächlichen Änderungen überein.
+
+## 27.6 Integrationstests
+
+* CRE
+* Execution Planner
+* Orchestrator
+* Authentication
+* CAM
+* Release Integrity
+* Audit und Provenienz
+
+Dieser Auftrag verlangt noch keine vollständige technische Umsetzung der Tests. Erwartet wird jedoch ein belastbares Testkonzept.
+
+---
+
+# 28. Phase W – Minimaler Scope für CCAF 1.0
+
+Codex soll ausdrücklich verhindern, dass CCAF 1.0 zu groß wird.
+
+Als möglicher Mindestumfang ist zu prüfen:
+
+1. Begriffsdefinition
+2. Agentenidentität
+3. Rollen
+4. Capabilities
+5. Berechtigungsprofile
+6. kanonischer Agentenauftrag
+7. Betriebsmodi
+8. Risikoklassen
+9. Kontroll-Gates
+10. Audit- und Berichtspflichten
+11. Integrationsverträge
+12. Abbruchregeln
+
+Spätere Erweiterungen könnten sein:
+
+* dynamische Agentenauswahl,
+* Agentenreputation,
+* Vertrauensentwicklung,
+* Multi-Agent-Koordination,
+* Kosten- und Ressourcensteuerung,
+* Sandbox-Ausführung,
+* autonome Wartung,
+* selbstständige Aufgabenzerlegung,
+* lernende Code-Agenten,
+* Agentenbewertung über längere Zeit,
+* formale Verifikation.
+
+Codex soll klar zwischen Version 1.0 und späteren Erweiterungen unterscheiden.
+
+---
+
+# 29. Erwartete Ergebnisse dieses Auftrags
+
+Codex soll am Ende mindestens liefern:
+
+## 29.1 Bestandsbericht
+
+* vorhandene relevante Komponenten,
+* wiederverwendbare Strukturen,
+* Konflikte,
+* Lücken,
+* veraltete oder historische Ansätze.
+
+## 29.2 Architekturentscheidung
+
+Klare Bewertung:
+
+```text
+GO
+GO MIT EINSCHRÄNKUNGEN
+NO-GO
+```
+
+für die Einführung eines CCAF 1.0.
+
+## 29.3 Abgrenzungsmatrix
+
+Eine klare Zuordnung der Zuständigkeiten zwischen:
+
+* CCAF
+* CDF
+* CDG
+* Authentication Framework
+* CLMSF
+* CRE
+* Execution Planner
+* Orchestrator Core
+* CAM
+* Audit
+* Provenienz
+* Release Integrity
+
+## 29.4 CCAF-1.0-Zielmodell
+
+* Kernbereiche,
+* Rollen,
+* Capabilities,
+* Berechtigungen,
+* Risikoklassen,
+* Betriebsmodi,
+* Gates,
+* Audit-Anforderungen.
+
+## 29.5 Artefaktplan
+
+Für jedes empfohlene Artefakt:
+
+* Pfad,
+* Zweck,
+* Format,
+* Status,
+* Abhängigkeiten,
+* spätere Implementierungsreihenfolge.
+
+## 29.6 Implementierungsplan
+
+Ein kontrollierter, phasenweiser Folgeplan, beispielsweise:
+
+1. Dokumentation und Glossar
+2. JSON-Konfigurationen
+3. Schemas
+4. Validator
+5. Registry
+6. Berechtigungsprüfung
+7. Audit-Anbindung
+8. CRE-Anbindung
+9. Execution-Planner-Anbindung
+10. Orchestrator-Anbindung
+11. Tests
+12. kontrollierte Pilotphase
+
+## 29.7 Risikobericht
+
+Mindestens:
+
+* Sicherheitsrisiken,
+* Governance-Risiken,
+* Architekturüberlappungen,
+* Scope-Risiken,
+* Risiken autonomer Schreibrechte,
+* Risiken von Selbstprüfung,
+* Risiken von Modell- oder Providerwechseln,
+* Lizenzrisiken,
+* Audit- und Datenschutzrisiken.
+
+## 29.8 Statusbericht
+
+Vorgeschlagener Zielpfad:
+
+```text
+31_reports/ccaf_1_0_status_report.md
+```
+
+Der tatsächliche Pfad ist gegen die aktuelle Projektstruktur zu prüfen.
+
+---
+
+# 30. Abschlussbericht
+
+Der Abschlussbericht muss mindestens enthalten:
+
+## A. Ausgangszustand
+
+* Branch
+* Commit
+* Rückfallpunkt
+* Arbeitsbaumstatus
+
+## B. Geprüfte Bereiche
+
+* relevante Ordner
+* Dateien
+* Module
+* Konfigurationen
+* Tests
+* Dokumentationen
+
+## C. Bestehende Bausteine
+
+* vollständig vorhanden
+* teilweise vorhanden
+* historisch vorhanden
+* nicht vorhanden
+
+## D. Architekturbeurteilung
+
+* Nutzen des CCAF
+* Abgrenzung
+* Integrationsfähigkeit
+* Risiken
+* mögliche Konflikte
+
+## E. Empfohlener Scope CCAF 1.0
+
+* zwingend
+* optional
+* zurückzustellen
+
+## F. Geplante Artefakte
+
+* neue Artefakte
+* zu erweiternde Artefakte
+* keine Änderung erfordernde Artefakte
+
+## G. Implementierungsreihenfolge
+
+* konkrete Phasen
+* Abhängigkeiten
+* Prüf- und Freigabepunkte
+
+## H. Änderungen durch diesen Auftrag
+
+Für jede tatsächlich veränderte Datei:
+
+* Pfad
+* Zweck
+* Art der Änderung
+
+Falls keine Dateien verändert wurden, ist dies ausdrücklich festzuhalten.
+
+## I. Tests und Validierungen
+
+* ausgeführt
+* bestanden
+* fehlgeschlagen
+* nicht ausführbar
+* nur konzeptionell geplant
+
+## J. Offene Punkte
+
+* technische Fragen
+* Governance-Fragen
+* Architekturentscheidungen
+* Freigabebedarf
+
+## K. Abschlussempfehlung
+
+Eine eindeutige Empfehlung:
+
+```text
+GO
+GO MIT EINSCHRÄNKUNGEN
+NO-GO
+```
+
+mit nachvollziehbarer Begründung.
+
+---
+
+# 31. Abbruchbedingungen dieses Auftrags
+
+Codex muss den Auftrag abbrechen oder auf reine Analyse begrenzen, wenn:
+
+* die aktuelle Projektstruktur nicht eindeutig bestimmbar ist,
+* ein bestehendes gleichartiges Framework gefunden wird,
+* zentrale Governance-Artefakte widersprüchlich sind,
+* ein Rückfallpunkt nicht bestimmbar ist,
+* auftragsfremde uncommittete Änderungen gefährdet wären,
+* die Einführung des CCAF bestehende produktive Komponenten unmittelbar verändern würde,
+* eine klare Abgrenzung zu CDF, CDG, CRE, Execution Planner oder Orchestrator nicht möglich ist,
+* autonome Rechte nur durch Sicherheitsabsenkung vorbereitet werden könnten,
+* erforderliche Projektartefakte fehlen.
+
+In diesem Fall ist kein improvisierter Ersatz zu implementieren.
+
+---
+
+# 32. Nicht zulässige Ergebnisse
+
+Der Auftrag gilt nicht als erfolgreich abgeschlossen, wenn lediglich:
+
+* eine allgemeine Beschreibung von Code-Agenten erstellt wird,
+* bestehende Projektstrukturen nicht geprüft werden,
+* Rollen ohne Berechtigungsmodell definiert werden,
+* Capabilities mit Permissions gleichgesetzt werden,
+* keine Risikoklassen vorgesehen werden,
+* kein Vier-Augen-Prinzip berücksichtigt wird,
+* keine Audit- und Provenienzstruktur vorgesehen wird,
+* Codex-spezifische Regeln fälschlich als allgemeines Framework dargestellt werden,
+* autonome Schreibrechte stillschweigend eingeführt werden,
+* eine neue Parallelarchitektur neben bestehenden Komponenten entsteht,
+* die Abgrenzung zu CDF, CDG, CRE, Execution Planner und Orchestrator unklar bleibt.
+
+---
+
+# 33. Leitentscheidung
+
+Das CCAF soll nicht möglichst viele autonome Fähigkeiten schaffen.
+
+Es soll zunächst sicherstellen, dass automatisierte Codearbeit:
+
+* identifizierbar,
+* begrenzt,
+* genehmigt,
+* nachvollziehbar,
+* prüfbar,
+* reproduzierbar,
+* widerrufbar,
+* architekturkonform
+
+erfolgt.
+
+Der zentrale Leitgedanke lautet:
+
+> Erst müssen Identität, Auftrag, Rolle, Fähigkeit, Berechtigung, Risiko, Kontrolle und Nachweis verbindlich geregelt sein. Danach kann entschieden werden, welche Code-Agenten in welchem Umfang tatsächlich handeln dürfen.
+
+---
+
+# 34. Startanweisung an Codex
+
+Beginne mit:
+
+1. Git- und Rückfallpunktprüfung,
+2. Ermittlung der geltenden kanonischen Projektregeln,
+3. projektweiter Bestandsaufnahme aller agenten-, capability-, berechtigungs-, planungs-, ausführungs-, audit- und governancebezogenen Strukturen,
+4. Abgrenzung des CCAF zu bestehenden Frameworks und Komponenten,
+5. Erstellung einer Gap-Analyse,
+6. Entwicklung eines schlanken Zielmodells für CCAF 1.0,
+7. Erstellung eines Artefakt-, Test- und Implementierungsplans,
+8. abschließender GO-, GO-MIT-EINSCHRÄNKUNGEN- oder NO-GO-Empfehlung.
+
+Implementiere keine produktive Code-Agenten-Laufzeit und aktiviere keine autonomen Schreibrechte.
+
+Arbeite vollständig belegorientiert, verändere keine auftragsfremden Dateien und dokumentiere jede Feststellung nachvollziehbar.

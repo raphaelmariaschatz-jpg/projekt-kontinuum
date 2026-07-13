@@ -1,0 +1,11 @@
+{
+  "schema": "kontinuum.security.policy.v22_8",
+  "version": "22.8",
+  "superadmin": "Raphael Schatz",
+  "superadmin_username": "Raphael",
+  "legacy_login_sources": ["version_6_3", "version_9", "version_22"],
+  "password_rule": "No cleartext password. Use salted SHA256 hash.",
+  "dangerous_commands": "require_confirmation",
+  "audit_logging": true,
+  "never_delete_legacy_without_backup": true
+}

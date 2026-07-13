@@ -1,0 +1,29 @@
+{
+  "version": "10.0 Science & Civilization Core",
+  "platform_mode": "cross_platform",
+  "android_supported": true,
+  "windows_supported": true,
+  "security_required": true,
+  "superadmin": "Raphael Schatz",
+  "science_core_enabled": true,
+  "civilization_core_enabled": true,
+  "ollama_model": "llama3.2",
+  "max_learn_text_chars": 6000,
+  "allowed_domains": [
+    "arxiv.org",
+    "pubmed.ncbi.nlm.nih.gov",
+    "ncbi.nlm.nih.gov",
+    "nih.gov",
+    "edu",
+    "ac.uk",
+    "ethz.ch",
+    "mpg.de",
+    "dnb.de",
+    "loc.gov",
+    "europeana.eu",
+    "gutenberg.org",
+    "archive.org",
+    "semanticscholar.org",
+    "crossref.org"
+  ]
+}

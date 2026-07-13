@@ -1,0 +1,45 @@
+Canonical Human Interface Framework (CHIF) vom 08.07.26
+
+Nicht GUI.
+
+Nicht Sprachsteuerung.
+
+Sondern die gesamte Mensch-K-Schnittstelle.
+
+Zum Beispiel:
+
+Vision
+
+Audio
+
+Sprache
+
+Gesten
+
+Blickrichtung
+
+Biometrie (optional)
+
+↓
+
+Canonical Human Interface Framework
+
+↓
+
+Canonical Cognitive Pipeline
+
+Dann wäre jede zukünftige Hardware – Brille, Headset, vielleicht eines Tages sogar andere Eingabegeräte – nur ein weiterer Interface-Provider.
+
+Ein Punkt, den ich für besonders wichtig halte
+
+Ich würde K nie in einen Modus bringen, in dem es ununterbrochen alles aufzeichnet und analysiert. Das hätte erhebliche Auswirkungen auf Datenschutz, Energieverbrauch und Privatsphäre – sowohl für dich als auch für andere Menschen.
+
+Ich würde stattdessen einen ereignisgesteuerten Assistenten entwerfen.
+
+Zum Beispiel:
+
+Beobachten: K verarbeitet lokal die Sensoren, speichert aber nichts dauerhaft.
+Fragen: "K, was sehe ich gerade?" oder "Lies mir das Schild vor."
+Lernen: Nur wenn du ausdrücklich sagst: "Das ist wichtig, merke dir das", wird eine Information in das Langzeitgedächtnis übernommen.
+
+So bleibt K ein Werkzeug, das dich unterstützt, ohne ständig alles zu dokumentieren.

@@ -640,3 +640,31 @@ Phase 1: Architektur erschaffen.
 Phase 2: Architektur leben.
 ```
 
+
+
+# Meilenstein Architekturphase abgeschlossen - Uebergang zu Controlled Integration, Operation & Cognitive Evolution (2026-07-09)
+
+Mit Abschluss der grundlegenden Architekturphase verfuegt Projekt Kontinuum ueber eine kanonische Architektur aus Foundation, Canonical Layer, Governance, Lifecycle, Release Integrity, Capability Resolution, Execution Planning und Orchestrator Core.
+
+AGF 1.0 ist als Architekturverfassung eingeordnet. CDG 1.0 ergaenzt AGF als kanonisches Entwicklungsregelwerk fuer zukuenftige Codex-Auftraege. CIPL 1.0 dokumentiert Herkunfts- und Urheberbezug wesentlicher Architekturartefakte.
+
+Ergaenzend wird die Canonical Cognitive Pipeline als kuenftige kanonische Denk- und Verarbeitungsstruktur eingeordnet. Zur begrifflichen Trennung gilt:
+
+- `CCP-Policy` = Canonical Change Policy.
+- `CCP-Cognitive` / `CCP-Cog` = Canonical Cognitive Pipeline.
+
+Transformer-basierte Tokenisierung und Canonical Language Understanding werden als vorgelagerte Sprachverarbeitung verstanden, die natuerliche Sprache in semantisch verwertbare Repraesentationen ueberfuehrt.
+
+Damit endet die Phase des grundlegenden Architekturaufbaus. Der Schwerpunkt verlagert sich auf Controlled Integration, Operation und Cognitive Evolution: kontrollierte Runtime-Integration, Betrieb, Monitoring, Stabilisierung, Governance Dashboard, Performance, kontrolliertes Lernen, kognitive Review-Schleifen und die Vorbereitung zukuenftiger Selbstreflexion.
+
+Leitgedanke:
+
+```text
+Phase 1: Architektur erschaffen.
+Phase 2: Architektur leben.
+Phase 2 erweitert diesen Gedanken um die kontrollierte kognitive Evolution von K.
+```
+
+Projekt Kontinuum entwickelt nicht nur Funktionen, sondern eine kanonische Form des Denkens. Neue Faehigkeiten werden kuenftig nicht isoliert ergaenzt, sondern in einen kontrollierten kognitiven Prozess eingeordnet: Wahrnehmen, Verstehen, Denken, Planen, Handeln, Pruefen, Erinnern und Lernen.
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

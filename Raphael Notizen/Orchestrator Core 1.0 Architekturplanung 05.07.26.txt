@@ -1,0 +1,194 @@
+Orchestrator Core 1.0 Architekturplanung 05.07.26
+
+Orchestrator Core 1.0 – Architekturplanung
+
+Ziel:
+Der Orchestrator Core 1.0 ist die zentrale Execution Runtime von Projekt Kontinuum.
+
+Er entscheidet nicht, welche Capability benötigt wird.
+Er plant nicht selbst.
+Er führt keine freie Agentensuche durch.
+
+Er übernimmt ausschließlich einen validierten ExecutionPlan vom Execution Planner und verwaltet dessen Ausführung.
+
+Kanonische Rolle:
+
+CRE
+→ erkennt Capabilities, Prioritäten, Governance-Hinweise
+
+Execution Planner
+→ erzeugt deterministischen ExecutionPlan
+
+Orchestrator Core
+→ führt validierte ExecutionPlans kontrolliert aus
+
+Governance
+→ erlaubt, blockiert oder eskaliert Ausführung
+
+Agent
+→ erledigt fachliche Aufgabe
+
+Review
+→ prüft Ergebnis
+
+CMM
+→ speichert kanonisch
+
+Aufgaben des Orchestrator Core 1.0:
+
+1. ExecutionPlan übernehmen
+
+* Plan empfangen
+* Planstruktur prüfen
+* Status prüfen
+* Governance-Level prüfen
+* leere, blockierte oder ungültige Pläne ablehnen
+
+2. Agent Lifecycle verwalten
+
+* passenden Agenten aus dem Plan lesen
+* Agentenverfügbarkeit prüfen
+* Agent starten
+* Ergebnis entgegennehmen
+* handled=True / handled=False auswerten
+* Laufstatus dokumentieren
+
+3. Fehlerbehandlung
+
+* fehlender Agent
+* Agent antwortet nicht
+* Agent gibt Fehler zurück
+* ungültiges Ergebnis
+* Timeout
+* blockierte Governance
+* unvollständiger Plan
+
+4. Fallback-Steuerung
+
+* geeigneten Fallback-Agenten suchen
+* Fallback nur nach Governance-Regeln erlauben
+* Fallback dokumentieren
+* keine unkontrollierte freie Agentenwahl
+
+5. Parallelisierung vorbereiten
+
+* Parallelgruppen aus ExecutionPlan lesen
+* Gruppen nacheinander ausführen
+* Schritte innerhalb einer Gruppe später parallelisierbar machen
+* In Version 1.0 darf die Ausführung noch sequentiell simuliert werden, aber die Struktur muss parallelisierbar sein
+
+6. Runtime-Status erzeugen
+   Jede Ausführung erzeugt einen ExecutionRun mit:
+
+* run_id
+* plan_id
+* request_id
+* gestartete Schritte
+* Agentenstatus
+* Ergebnisse
+* Fehler
+* Fallbacks
+* Governance-Entscheidungen
+* Gesamtstatus
+
+7. Review-Handoff vorbereiten
+
+* Nach erfolgreicher Ausführung Ergebnis an Review-Schicht übergeben
+* Noch keine Review-Logik selbst implementieren
+
+8. CMM-Handoff vorbereiten
+
+* Nur geprüfte Ergebnisse dürfen später kanonisch gespeichert werden
+* Orchestrator speichert nicht selbst dauerhaft im CMM
+* Er erzeugt nur den Übergabestatus
+
+Nicht-Aufgaben:
+
+* keine Capability-Erkennung
+* keine Planung
+* keine CRE-Logik
+* keine direkte Wissensantwort
+* keine freie Agentenentscheidung
+* keine Memory-Speicherung
+* keine Review-Bewertung
+* keine Geschäftslogik
+
+Kernartefakte:
+
+* 01_system/kontinuum/core/orchestrator_core.py
+* 24_config/orchestrator_runtime_schema_34_1.json
+* 17_tests/test_orchestrator_core_1_0.py
+
+Tests:
+
+* gültiger ExecutionPlan wird angenommen
+* blockierter Plan wird abgelehnt
+* fehlender Agent wird erkannt
+* Agent wird gestartet
+* Ergebnis wird empfangen
+* handled=True wird korrekt gesetzt
+* handled=False löst Fallback aus
+* Fallback wird dokumentiert
+* Timeout wird behandelt
+* Governance-Blockierung verhindert Ausführung
+* Parallelgruppen werden korrekt gelesen
+* Orchestrator erzeugt ExecutionRun
+* Orchestrator plant nicht selbst
+* Orchestrator ruft CRE nicht direkt auf
+* Orchestrator führt keine ungeplanten Agenten aus
+
+Zielzustand:
+Der Orchestrator Core 1.0 ersetzt den alten direkten Runtime-Pfad durch eine kontrollierte Ausführungslogik auf Basis validierter ExecutionPlans.
+
+Umsetzung:
+
+Verstanden. Das ist jetzt nicht mehr nur Prüfung, sondern der Architekturauftrag für Orchestrator Core 1.0 als reine Execution Runtime. Ich lese zuerst den aktuellen Planner-, Agent- und Runtime-Stand, damit der neue Core sauber an ExecutionPlan anschließt und den alten Direktpfad nicht blind kopiert.
+
+Ich sehe: Es gibt noch keinen Orchestrator-Core-Artefaktstand. Ich werde ihn deshalb als neue, schmale Runtime-Komponente anlegen: sie nimmt nur fertige Pläne, liest erwartete Agenten aus den Steps, erzeugt ExecutionRun, dokumentiert Fallbacks und ruft weder CRE noch Planner auf.
+
+Ich habe die Agent-Schnittstelle gefunden: Agenten liefern AgentResult(agent, handled, answer). Der Orchestrator-Core kann also minimal und sauber ohne Kenntnis einzelner Fachagenten arbeiten: Registry der vorhandenen Agentobjekte, Step-Payload rein, Ergebnis/Fehler/Fallback raus.
+
+Ich setze jetzt die drei Kernartefakte auf. Dazu nehme ich bewusst keine CRE-/Planner-Abhängigkeit in den Orchestrator auf, sondern nur ExecutionPlan als Dict und eine Agent-Registry; die Tests werden genau diese Grenze absichern.
+
+Die Artefakte sind als Skript vorbereitet; jetzt schreibe ich sie mit Projektzugriff nach C:\Projekt Kontinuum und führe danach direkt Syntax- und Orchestrator-Tests aus.
+
+Die Kernartefakte sind angelegt. Ich starte jetzt die erste Verifikation; falls ein Test die neue Schnittstelle schärft, passe ich nur den Orchestrator-Core an, nicht CRE oder Planner.
+
+Der neue Core und seine Tests sind grün. Als nächstes mache ich ihn noch kanonisch sichtbar: System-Anbindung/Status, CAM und Release Integrity. Den alten Direktpfad schalte ich dabei nicht hart um, solange die bestehende Runtime noch als Übergangspfad gebraucht wird.
+
+Ich nehme jetzt die kanonische Einbindung vor: Statusbefehl, Systemstatus, CAM-/Release-Pfade und kurze Doku-Verankerung. Der Core bleibt trotzdem strikt „Plan rein, Run raus“; kein automatischer Wechsel des gesamten Dialogpfads in diesem Schritt.
+
+Die Integrationsänderungen sind vorbereitet und eng begrenzt: Systemstatus, Statusbefehl, Manifeste, CAM-Test und kurze kanonische Dokumentation. Ich schreibe sie jetzt ins Projekt.
+
+Die Integration ist geschrieben. Ich prüfe jetzt Syntax, JSON, Orchestrator-Test, CAM-Test und einen Statusbefehl, damit wir wissen, ob die neue Runtime systemweit sichtbar ist.
+
+Die Kern- und CAM-Tests sind grün; nur python -m json.tool stolpert über einen BOM in einem JSON-Manifest, entstanden durch PowerShell-Serialisierung. Ich entferne den BOM jetzt gezielt aus den neuen/berührten JSON-Dateien und wiederhole die JSON-Prüfung.
+
+Ich bereinige jetzt nur die JSON-Kodierung, keine inhaltlichen Änderungen.
+
+JSON-Kodierung ist bereinigt. Ich wiederhole jetzt JSON-Prüfung und mache zusätzlich einen kleinen Systemstatus-Check für orchestratorstatus.
+
+Die Verifikation sieht gut aus; diff --check meldet nur die bekannte CRLF/LF-Warnung, keine Whitespace-Fehler. Ich lasse noch CAM nach der JSON-Bereinigung und eine kompakte Syntaxprüfung laufen, dann fasse ich sauber zusammen.
+
+CAM ist nach der Integration grün. py_compile ist nicht an Syntax gescheitert, sondern am Schreiben in __pycache__; ich wiederhole die Syntaxprüfung mit den nötigen Schreibrechten, damit der Abschluss nicht an einem Sandbox-Artefakt hängt.
+
+Syntaxprüfung ist jetzt sauber. Weil Release Integrity ebenfalls ergänzt wurde, lasse ich noch den Release-Integrity-Test laufen; danach ist der Orchestrator-Core-Stand rund verifiziert.
+
+Orchestrator Core 1.0 ist angelegt und kanonisch eingebunden.
+Neu erstellt:
+[orchestrator_core.py](C:/Projekt Kontinuum/01_system/kontinuum/core/orchestrator_core.py)
+[orchestrator_runtime_schema_34_1.json](C:/Projekt Kontinuum/24_config/orchestrator_runtime_schema_34_1.json)
+[test_orchestrator_core_1_0.py](C:/Projekt Kontinuum/17_tests/test_orchestrator_core_1_0.py)
+Zusätzlich eingebunden in:
+[system.py](C:/Projekt Kontinuum/01_system/kontinuum/core/system.py)
+[application_services.py](C:/Projekt Kontinuum/01_system/kontinuum/core/application_services.py)
+[request_router.py](C:/Projekt Kontinuum/01_system/kontinuum/core/request_router.py)
+CAM, Release Integrity, Architekturmodell, Handbuch, Projektstruktur, Chronik
+Der Core macht jetzt genau die Runtime-Arbeit: validierten ExecutionPlan annehmen, ungültige/blockierte Pläne ablehnen, Agenten aus Plan-Steps starten, handled=True/False auswerten, Fallbacks nur aus konfigurierten Regeln nutzen, Timeouts/Governance-Blockaden dokumentieren, Parallelgruppen lesen und einen ExecutionRun erzeugen.
+Bestanden:
+JSON-Validierung
+Python-Syntaxprüfung
+test_orchestrator_core_1_0.py
+CAM-Test
+Release-Integrity-Test
+Wichtig: Der Core ist systemweit sichtbar über orchestratorstatus. Den alten direkten Dialog-Runtime-Pfad habe ich noch nicht hart ersetzt; der neue Core ist sauber vorbereitet und kanonisch eingebunden, aber die vollständige Umschaltung des produktiven PromptOrchestrator-Pfads sollte als eigener, kontrollierter Migrationsschritt erfolgen. Kein Commit durchgeführt.

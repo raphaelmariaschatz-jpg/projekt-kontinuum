@@ -1,0 +1,107 @@
+Fortsetzungsauftrag für Codex um 19:00 Uhr am 04.07.26
+
+Bitte CCP 1.0 fortsetzen und zuerst den beschädigten Zwischenzustand bereinigen.
+
+Ausgangslage:
+`24_config/release_integrity_34_1.json` war durch einen abgebrochenen Patch leer geworden und wurde inzwischen mit folgendem Befehl aus dem Git-Index wiederhergestellt:
+
+`git show :24_config/release_integrity_34_1.json > 24_config/release_integrity_34_1.json`
+
+Die Datei ist wieder vorhanden und ca. 8 KB groß.
+
+Bitte jetzt:
+
+1. `24_config/release_integrity_34_1.json` prüfen und sicherstellen, dass sie gültiges JSON enthält.
+2. `required_foundation_rules` kontrolliert um `FND-ID-050` ergänzen.
+3. Keine anderen bestehenden Release-Integrity-Inhalte löschen oder überschreiben.
+4. CCP 1.0 vollständig abschließen:
+
+   * FND-ID-050 prüfen
+   * CAM-Check prüfen
+   * Release-Integrity-Anbindung prüfen
+   * Dokumentation prüfen
+   * Tests prüfen
+5. Den vorhandenen gemischten Git-Status berücksichtigen:
+
+   * bereits gestagte Änderungen nicht versehentlich zurückdrehen
+   * unstaged Änderungen nicht pauschal überschreiben
+   * nur CCP-bezogene Dateien gezielt finalisieren und stage-fähig machen
+6. Danach bitte gezielte Verifikation ausführen:
+
+   * JSON-Validierung
+   * Python-Syntaxprüfung
+   * CAM-Test
+   * Release-Integrity-Test
+   * Foundation-Regelcheck für FND-ID-050
+7. Am Ende klar berichten:
+
+   * welche Dateien final geändert wurden
+   * ob `release_integrity_34_1.json` wieder korrekt ist
+   * ob FND-ID-050 vollständig verankert ist
+   * welche Tests bestanden haben
+   * welche offenen Probleme unabhängig von CCP bestehen
+
+Wichtig:
+Bitte keinen Commit ausführen.
+Keine Massendateioperationen.
+Keine Archivierungsaktion starten.
+Zuerst ausschließlich CCP 1.0 sauber abschließen.
+
+Danke, ich steige jetzt wieder ein. Zuerst lese ich die drei Übergabedateien, damit ich nicht aus dem Gedächtnis improvisiere, sondern den Fortsetzungsauftrag sauber an der aktuellen Lage ausrichte.
+
+Die Übergabe ist eindeutig: zuerst den wiederhergestellten Release-Integrity-Zustand prüfen, dann nur CCP-bezogen finalisieren. Ich schaue mir jetzt Git-Status, die JSON-Datei und die CCP-Anker an, bevor ich irgendetwas schreibe.
+
+Der Status ist gemischt wie angekündigt, und release_integrity_34_1.json ist wieder mit Inhalt da; sichtbar fehlt dort noch FND-ID-050 in required_foundation_rules. Die erste Suche ist nur am Leerzeichen im Pfad gescheitert, ich wiederhole sie sauber mit gequotetem Pfad und prüfe parallel die relevanten Stellen.
+
+Gut, danke. Ich behandle den Zugriff trotzdem vorsichtig: keine breiten Operationen, sondern gezielte Reads/Edits an den CCP-Dateien; als erstes repariere ich jetzt die eine offene Release-Integrity-Lücke (FND-ID-050) und prüfe dann Code, Manifest, Doku und Tests zusammen.
+
+Die CCP-Anker sind breit vorhanden: Foundation, CAM, Tests, Doku und canonical_architecture_34_1.json. Jetzt mache ich den einzigen klaren fehlenden Patch in release_integrity_34_1.json: FND-ID-050 wird in required_foundation_rules ergänzt, ohne den bestehenden CADP-Eintrag anzutasten.
+
+Der Patch ist gesetzt; ich prüfe direkt die Datei, weil PowerShell-Escapes bei JSON nicht der Ort für Hoffnung sind. Danach entscheide ich, ob noch eine kleine Korrektur nötig ist.
+
+Da war genau der Escape-Fall: die Zeichenfolge wurde wörtlich als `r`n in JSON geschrieben. Ich korrigiere das sofort auf echte Zeilenumbrüche und validiere dann erneut.
+
+release_integrity_34_1.json ist wieder gültiges JSON und der Diff enthält nur die zusätzliche Regel-ID. Beim Blick in release_integrity.py sehe ich aber: ccp_rule wird schon geladen, jedoch noch nicht explizit in den Checks ausgewertet. Ich ziehe das jetzt nach, damit die Release-Integrity-Anbindung wirklich hart prüft statt nur indirekt über die Liste.
+
+Die Tests sind schon auf FND-ID-050 vorbereitet, aber der Release-Report gibt bisher nur cadp_rule_id zurück. Ich ergänze jetzt den symmetrischen ccp_rule_id plus Klassen-/Schutzchecks; außerdem glätte ich zwei kleine Formatierungsartefakte, die bei den vorherigen Patches entstanden sind.
+
+Die Tests sind schon auf FND-ID-050 vorbereitet, aber der Release-Report gibt bisher nur cadp_rule_id zurück. Ich ergänze jetzt den symmetrischen ccp_rule_id plus Klassen-/Schutzchecks; außerdem glätte ich zwei kleine Formatierungsartefakte, die bei den vorherigen Patches entstanden sind.
+
+Der erste Textpatch hat wegen Zeilenenden nicht gegriffen. Ich setze die Ergänzung jetzt über stabile Einzelanker, danach prüfe ich die Funktion nochmal.
+
+Ich korrigiere außerdem die zwei lesbaren Formatierungsstellen: Foundation-Regel 049/050 bekommt eine saubere Trennung, und im CAM-Manifest kommt vor apis wieder ein normaler Zeilenumbruch. Das ist funktional klein, aber macht spätere Reviews deutlich weniger mühsam.
+
+Jetzt ergänze ich noch die Testassertion für den neuen Release-Report-Anker, damit FND-ID-050 nicht nur konfiguriert, sondern im Test sichtbar nachgewiesen wird.
+
+Die gezielten Ergänzungen sind drin. Ich prüfe jetzt Diffs und Syntax/JSON, bevor ich die eigentlichen Regressionen laufen lasse.
+
+Die Validierung ist grün, aber im Testfixture-Diff ist noch ein Formatierungsartefakt (},        "change_policies"). Das ist zwar Python-gültig, aber ich räume es jetzt auf, damit die Fixture sauber lesbar bleibt.
+
+Jetzt kommt die harte Verifikation: CAM-Test, Release-Integrity-Test und Foundation-Check für FND-ID-050. Ich setze PYTHONDONTWRITEBYTECODE=1, damit die Tests keine unnötigen Cache-Spuren erzeugen.
+
+CAM und Release Integrity sind grün. Der vollständige Foundation-Test fällt an der bereits in der Übergabe genannten Stelle system.ask("foundationstatus"); ich prüfe jetzt den direkten FND-ID-050-Pfad separat, damit CCP selbst klar von diesem Router-/StatusAgent-Thema getrennt ist.
+
+Der direkte Check ist nur an Windows-Quoting für JSON-Strings gescheitert, nicht am Code. Ich wiederhole ihn einfacher direkt gegen FOUNDATION_2_2_RULES, ohne temporäre Systeminitialisierung.
+
+Der direkte Foundation-Anker ist sauber: 50 Regeln, FND-ID-050, Klasse und Schutzlevel stimmen. Ich wiederhole jetzt noch den Release-Integrity-Test nach der kleinen Fixture-Formatkorrektur, dann ziehe ich den Abschlussstatus zusammen.
+
+Die technische Verifikation ist abgeschlossen. Ich hole noch einmal den finalen Git-Status und einen gezielten CCP-Ankerscan, damit der Abschlussbericht nicht aus Bauchgefühl, sondern aus dem aktuellen Arbeitsbaum kommt.
+
+CCP 1.0 ist sauber fortgesetzt und abgeschlossen. Kein Commit, keine Archivierung, keine Massendateioperationen.
+Geändert/finalisiert wurden CCP-bezogen:
+[foundation_2_2.py](C:/Projekt Kontinuum/01_system/kontinuum/core/foundation_2_2.py): FND-ID-050 als Foundation-Regel.
+[canonical_architecture.py](C:/Projekt Kontinuum/01_system/kontinuum/core/canonical_architecture.py): canonical_change_policy_check() im CAM-Status verdrahtet.
+[release_integrity.py](C:/Projekt Kontinuum/01_system/kontinuum/core/release_integrity.py): explizite CCP-Foundation-Checks plus ccp_rule_id.
+[canonical_architecture_34_1.json](C:/Projekt Kontinuum/24_config/canonical_architecture_34_1.json): CCP-Policyblock.
+[release_integrity_34_1.json](C:/Projekt Kontinuum/24_config/release_integrity_34_1.json): required_foundation_rules enthält jetzt FND-ID-048, FND-ID-049, FND-ID-050.
+Tests/Doku: CAM-Test, Release-Integrity-Test, Foundation-Testassertions und die CCP-Doku-Anker in Lifecycle-Regel, Architekturmodell, Projektstruktur und Projektstatus.
+24_config/release_integrity_34_1.json ist wieder korrekt: JSON-Validierung bestanden, und der Diff ist nur die kontrollierte Ergänzung von FND-ID-050.
+Verifikation:
+JSON release_integrity_34_1.json: bestanden
+JSON canonical_architecture_34_1.json: bestanden
+Python-Syntax für geänderte Core-Dateien: bestanden
+CAM-Test test_canonical_architecture_manager.py: bestanden
+Release-Integrity-Test test_release_integrity_framework_34_1.py: bestanden
+Direkter Foundation-Regelcheck FND-ID-050: bestanden
+git diff --check: keine Whitespace-/Patchfehler
+Offen, unabhängig von CCP: Der vollständige test_foundation_2_2_active.py fällt weiterhin bei system.ask("foundationstatus"); das entspricht dem schon dokumentierten Router-/StatusAgent-Thema. Die Foundation-Regel selbst ist direkt korrekt vorhanden und prüfbar. Der Git-Status bleibt insgesamt gemischt, mit vielen bereits vorhandenen nicht-CCP-bezogenen Änderungen; ich habe daran nichts pauschal verändert.

@@ -1,0 +1,328 @@
+kanonisches Entwicklungsregelwerk für Codex vom 07.07.26
+
+auszuführen als erster nächster Schritt
+
+
+# Codex-Auftrag – Canonical Development Governance (CDG) 1.0
+
+## Ziel
+
+Projekt Kontinuum besitzt inzwischen eine weitgehend abgeschlossene kanonische Softwarearchitektur.
+
+Vor Beginn der nächsten Entwicklungsphase soll nun das **kanonische Entwicklungsregelwerk** erstellt werden.
+
+Dieses Regelwerk dient künftig als verbindliche Grundlage für alle Codex-Aufträge.
+
+Es beschreibt **nicht die Softwarearchitektur**, sondern die Regeln, nach denen Projekt Kontinuum weiterentwickelt wird.
+
+Es handelt sich um eine Governance-Ebene oberhalb der Implementierung.
+
+---
+
+# Ausgangslage
+
+Während der bisherigen Architekturentwicklung wurden zahlreiche dauerhafte Arbeitsregeln eingeführt.
+
+Diese Regeln sind derzeit auf verschiedene Codex-Aufträge verteilt.
+
+Ziel dieses Auftrags ist es,
+
+* sämtliche dauerhaft gültigen Entwicklungsregeln zusammenzuführen,
+* Redundanzen zu vermeiden,
+* Regeln eindeutig zu klassifizieren,
+* eine kanonische Entwicklungsverfassung zu erstellen.
+
+---
+
+# Zielartefakte
+
+Erstelle:
+
+```
+14_documents/
+
+CANONICAL_DEVELOPMENT_GOVERNANCE_34_1.md
+```
+
+Erstelle zusätzlich:
+
+```
+24_config/
+
+canonical_development_governance_34_1.json
+```
+
+Die Markdown-Datei dient als menschenlesbare Dokumentation.
+
+Die JSON-Datei dient als kanonische maschinenlesbare Grundlage zukünftiger Automatisierungen.
+
+---
+
+# Wichtiger Grundsatz
+
+Dieses Regelwerk beschreibt ausschließlich die Entwicklung von Projekt Kontinuum.
+
+Es verändert keinerlei Runtime.
+
+Es verändert keine Architektur.
+
+Es verändert keine Datenbanken.
+
+Es verändert keine APIs.
+
+Es dokumentiert ausschließlich verbindliche Entwicklungsprinzipien.
+
+---
+
+# PHASE 1
+
+Sammlung bestehender Regeln
+
+Suche projektweit nach dauerhaft gültigen Arbeitsregeln.
+
+Berücksichtige insbesondere:
+
+* bisherige Codex-Aufträge
+* AGF
+* CAM
+* ALP
+* CADP
+* Release Integrity
+* Projektchronik
+* Handbuch
+* kanonische Dokumente
+
+Identifiziere ausschließlich Regeln, die langfristig gelten sollen.
+
+Keine einmaligen Projektanweisungen übernehmen.
+
+---
+
+# PHASE 2
+
+Regelklassifikation
+
+Ordne sämtliche Regeln in folgende Kategorien ein:
+
+## A
+
+Grundprinzipien
+
+Beispiele:
+
+* Kanonizität vor Geschwindigkeit
+* Konsistenz vor Funktionsumfang
+* Evolution statt Revolution
+* Dokumentation ist Teil der Architektur
+
+---
+
+## B
+
+Entwicklungsregeln
+
+Beispiele:
+
+* jede Phase beginnt mit einer Konsistenzprüfung
+* keine parallelen Wahrheiten
+* historische Nachvollziehbarkeit
+* keine verdeckten Architekturänderungen
+
+---
+
+## C
+
+Governance-Regeln
+
+Beispiele:
+
+* Release Integrity
+* CAM
+* ALP
+* AGF
+* Canonical Change Policy
+
+---
+
+## D
+
+Dokumentationsregeln
+
+Beispiele:
+
+* aktuelle Roadmap
+* aktuelle Projektchronik
+* Architekturmodell
+* Abschlussberichte
+* kanonische Dokumentation
+
+---
+
+## E
+
+Qualitätsregeln
+
+Beispiele:
+
+* Architekturprüfung
+* Regression
+* Konsistenzprüfung
+* Dokumentationsprüfung
+* Governanceprüfung
+
+---
+
+## F
+
+Großaufträge
+
+Regeln für umfangreiche Codex-Aufträge.
+
+Mindestens aufnehmen:
+
+* phasenweise arbeiten
+* jede Phase vollständig abschließen
+* Konsistenzprüfung
+* kein Stückwerk
+* kanonischer Wiedereinstiegspunkt
+* offene Arbeiten dokumentieren
+* keine neue Phase beginnen, wenn die aktuelle nicht vollständig abgeschlossen werden kann
+
+---
+
+# PHASE 3
+
+Regel-IDs vergeben
+
+Jede Regel erhält eine dauerhafte Kennung.
+
+Beispiel:
+
+CDG-001
+
+Kanonizität vor Geschwindigkeit
+
+CDG-002
+
+Dokumentation ist Teil der Architektur
+
+CDG-003
+
+Keine parallelen Wahrheiten
+
+...
+
+Die Nummerierung muss dauerhaft erweiterbar sein.
+
+---
+
+# PHASE 4
+
+Maschinenlesbare JSON
+
+Erstelle eine strukturierte JSON-Version.
+
+Beispielsweise:
+
+```
+{
+  "rule_id": "CDG-001",
+  "title": "...",
+  "category": "...",
+  "description": "...",
+  "mandatory": true,
+  "status": "active"
+}
+```
+
+Die Struktur soll später automatisiert ausgewertet werden können.
+
+---
+
+# PHASE 5
+
+Verknüpfung mit AGF
+
+Dokumentiere ausdrücklich:
+
+Das Canonical Development Governance (CDG) ergänzt das bestehende Architecture Governance Framework (AGF).
+
+AGF definiert die Regeln der Architektur.
+
+CDG definiert die Regeln ihrer Weiterentwicklung.
+
+Beide Systeme ergänzen sich.
+
+---
+
+# PHASE 6
+
+Fortschreibungsregeln
+
+Dokumentiere:
+
+Neue dauerhafte Regeln dürfen künftig ausschließlich durch definierte Governance-Prozesse ergänzt oder geändert werden.
+
+Jede neue Regel erhält:
+
+* neue Regel-ID
+* Begründung
+* Projektchronik-Eintrag
+* Versionshistorie
+
+Regeln dürfen niemals stillschweigend geändert werden.
+
+---
+
+# PHASE 7
+
+Abschlussprüfung
+
+Prüfen:
+
+* wurden ausschließlich Dokumente erstellt?
+* wurden keine Runtime-Dateien verändert?
+* wurden keine Datenbanken geändert?
+* wurden keine Importe geändert?
+* wurden keine Commits erstellt?
+
+---
+
+# Wichtige Verbote
+
+Nicht erlaubt:
+
+* Runtime ändern
+* Architektur ändern
+* Dateien verschieben
+* Dateien löschen
+* APIs ändern
+* Datenbanken ändern
+* Imports ändern
+* Tests ändern
+* Agenten ändern
+* Migration durchführen
+
+---
+
+# Ziel
+
+Projekt Kontinuum erhält erstmals eine kanonische Entwicklungsverfassung.
+
+Diese wird künftig zur verbindlichen Grundlage sämtlicher Codex-Aufträge und sorgt dafür, dass Entwicklungsprinzipien nicht mehr in jedem Auftrag erneut beschrieben werden müssen.
+
+Sie schafft Nachvollziehbarkeit, Konsistenz und langfristige Wartbarkeit des gesamten Projekts.
+
+---
+
+## Abschließende Bemerkung
+
+Dieses Dokument besitzt strategische Bedeutung.
+
+Es beschreibt nicht, **wie K funktioniert**, sondern **wie K künftig verantwortungsvoll weiterentwickelt wird**.
+
+Damit wird die Entwicklung selbst zu einem kanonischen Bestandteil der Gesamtarchitektur von Projekt Kontinuum.
+
+Vor der Umsetzung ist zu prüfen, ob bereits bestehende Regeln integriert oder referenziert werden können, anstatt sie doppelt zu dokumentieren. Ziel ist ein einheitliches, widerspruchsfreies und langfristig erweiterbares Regelwerk.
+
+

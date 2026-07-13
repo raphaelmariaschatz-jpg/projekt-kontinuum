@@ -1,0 +1,1796 @@
+# Codex-Auftrag – Implementierungs- und Prüfauftrag für ein Canonical Workflow Framework (CWF) 1.0
+
+## 1. Auftragstitel
+
+**Projektweite Prüfung, kontrollierte Implementierung und Verifikation eines Canonical Workflow Framework (CWF) 1.0 für Projekt Kontinuum**
+
+---
+
+## 2. Ausgangslage
+
+Projekt Kontinuum verfügt bereits über beziehungsweise plant mehrere kanonische Architektur-, Entwicklungs-, Governance-, Sicherheits- und Ausführungskomponenten.
+
+Dazu gehören insbesondere:
+
+* Canonical Development Framework (CDF)
+* Canonical Development Governance (CDG)
+* Canonical Architecture Manager (CAM)
+* Canonical Authentication Framework
+* Canonical Licence Management System Framework (CLMSF)
+* Canonical Code Agent Framework (CCAF)
+* Capability Resolution Engine (CRE)
+* Execution Planner
+* Orchestrator Core
+* Canonical Cognitive Pipeline (CCP)
+* Release Integrity
+* Audit- und Provenienzstrukturen
+* Artifact Lifecycle Policy
+* Artifact Identity als mögliche Erweiterung
+* Artifact Dependency Graph als mögliche Erweiterung
+
+Diese Komponenten regeln unterschiedliche Aspekte von Entwicklung, Berechtigung, Planung, Ausführung, Kontrolle und Nachvollziehbarkeit.
+
+Es fehlt jedoch bislang ein ausdrücklich definierter und technisch prüfbarer kanonischer Rahmen dafür, wie mehrstufige Arbeitsabläufe innerhalb von Projekt Kontinuum:
+
+* beschrieben,
+* versioniert,
+* validiert,
+* gestartet,
+* ausgeführt,
+* pausiert,
+* fortgesetzt,
+* überwacht,
+* geprüft,
+* abgebrochen,
+* wiederholt,
+* zurückgerollt,
+* kompensiert,
+* abgeschlossen,
+* archiviert
+
+werden.
+
+Das geplante Canonical Workflow Framework soll diese Lücke schließen.
+
+---
+
+# 3. Ziel des Auftrags
+
+Ziel dieses Auftrags ist die projektweite Prüfung, kontrollierte Implementierung und vollständige Verifikation eines:
+
+# Canonical Workflow Framework (CWF) 1.0
+
+Das CWF soll verbindlich definieren:
+
+1. was innerhalb von Projekt Kontinuum als Workflow gilt,
+2. wie Workflow-Definitionen eindeutig identifiziert und versioniert werden,
+3. wie konkrete Workflow-Ausführungen von ihren Definitionen getrennt werden,
+4. wie Schritte, Zustände und Übergänge beschrieben werden,
+5. wie Rollen, Capabilities und Berechtigungen eingebunden werden,
+6. wie Vorbedingungen und Nachbedingungen geprüft werden,
+7. wie Freigabepunkte behandelt werden,
+8. wie Fehler, Wiederholungen, Fallbacks, Rollbacks und Kompensationen geregelt werden,
+9. wie Workflows pausiert und kontrolliert fortgesetzt werden,
+10. wie Workflow-Ausführungen auditiert und reproduzierbar dokumentiert werden,
+11. wie das CWF mit CRE, Execution Planner, Orchestrator Core, Governance, Authentication, CAM, Audit und Provenienz zusammenarbeitet,
+12. wie verhindert wird, dass eine parallele Ausführungs- oder Orchestrierungsarchitektur entsteht.
+
+Der Auftrag umfasst ausdrücklich:
+
+* Bestandsprüfung,
+* Architekturprüfung,
+* Gap-Analyse,
+* Definition des minimalen CWF-1.0-Scopes,
+* Implementierung der kanonischen Dokumentation,
+* Implementierung der Konfigurationen,
+* Implementierung der JSON-Schemas,
+* Implementierung eines schlanken Validators beziehungsweise einer vorhandenen Architektur entsprechenden Validierungsschicht,
+* Integration in bestehende kanonische Prüfpfade, soweit dies ohne Architekturbruch möglich ist,
+* Tests,
+* Statusbericht,
+* Abschlussbewertung.
+
+---
+
+# 4. Leitgrundsatz
+
+Das CWF soll folgenden Grundsatz verbindlich verankern:
+
+> Ein Workflow ist kein loses Skript und keine bloße Reihenfolge von Befehlen. Ein kanonischer Workflow ist ein versionierter, validierter, zustandsgebundener und nachvollziehbarer Ablauf aus eindeutig definierten Schritten, Übergängen, Bedingungen, Rollen, Capabilities, Freigaben, Eingaben, Ausgaben und Fehlerbehandlungen.
+
+Zusätzlich gilt:
+
+> Das CWF definiert die zulässige Struktur und das Verhalten eines Workflows. Es ersetzt weder fachliche Planung noch Capability-Auflösung noch kontrollierte Ausführung.
+
+---
+
+# 5. Zentrale Abgrenzung
+
+Codex muss vor der Implementierung die Zuständigkeiten eindeutig abgrenzen.
+
+## 5.1 Canonical Workflow Framework
+
+Das CWF definiert:
+
+* Workflow-Struktur,
+* Workflow-Definitionen,
+* Workflow-Ausführungen,
+* Schritte,
+* Zustände,
+* Übergänge,
+* Bedingungen,
+* Freigaben,
+* Fehlerregeln,
+* Retry-Regeln,
+* Pause und Fortsetzung,
+* Rollback und Kompensation,
+* Validierung,
+* Audit-Anforderungen.
+
+## 5.2 Capability Resolution Engine
+
+Die CRE bestimmt:
+
+* welche Fähigkeiten ein Workflow oder Schritt benötigt,
+* welche Komponenten oder Agenten diese Fähigkeiten bereitstellen können.
+
+Das CWF darf keine zweite Capability Resolution Engine implementieren.
+
+## 5.3 Execution Planner
+
+Der Execution Planner erstellt oder validiert einen konkreten Ausführungsplan.
+
+Das CWF darf keine konkurrierende Planungsengine erzeugen.
+
+## 5.4 Orchestrator Core
+
+Der Orchestrator Core führt einen validierten Plan aus.
+
+Das CWF darf keine zweite produktive Orchestrierungsengine implementieren.
+
+## 5.5 Canonical Development Governance
+
+CDG regelt:
+
+* Freigabeverantwortung,
+* Kontrollpflichten,
+* Governance-Gates,
+* Eskalation,
+* unabhängige Prüfung.
+
+Das CWF verwendet diese Regeln, ersetzt sie aber nicht.
+
+## 5.6 Canonical Code Agent Framework
+
+Das CCAF regelt:
+
+* Identität,
+* Rollen,
+* Capabilities,
+* Berechtigungen,
+* Risikoklassen,
+* Arbeitsgrenzen von Code-Agenten.
+
+Das CWF beschreibt Abläufe, nicht die gesamte Governance von Code-Agenten.
+
+## 5.7 Authentication Framework
+
+Das Authentication Framework bestätigt:
+
+* Akteure,
+* Agenten,
+* Rollen,
+* Freigabeidentitäten,
+* Berechtigungsnachweise.
+
+Das CWF darf keine eigene Authentifizierungsarchitektur schaffen.
+
+## 5.8 Canonical Artifact Manager
+
+Der CAM verwaltet:
+
+* kanonische Artefakte,
+* Status,
+* Klassifikation,
+* Lifecycle,
+* historische Einordnung.
+
+Das CWF referenziert Artefakte und Ergebnisse, verwaltet sie aber nicht parallel.
+
+## 5.9 Audit und Provenienz
+
+Audit und Provenienz dokumentieren:
+
+* tatsächliche Ausführungen,
+* Zustandsänderungen,
+* Akteure,
+* Artefakte,
+* Entscheidungen,
+* Ergebnisse.
+
+Das CWF definiert die benötigten Audit-Ereignisse, ersetzt bestehende Audit-Systeme jedoch nicht.
+
+---
+
+# 6. Verbindliche Einschränkungen
+
+Codex darf im Rahmen dieses Auftrags nicht:
+
+* eine zweite Orchestrierungsengine implementieren,
+* den bestehenden Orchestrator Core ersetzen,
+* Planungslogik aus dem Execution Planner in das CWF verschieben,
+* Capability-Auflösung aus der CRE duplizieren,
+* bestehende Governance umgehen,
+* automatische Freigaben kritischer Workflows einführen,
+* autonome Workflow-Erzeugung aktivieren,
+* unbekannte Schritte dynamisch ausführen,
+* nicht deklarierte Befehle starten,
+* bestehende Authentifizierungs- oder Berechtigungsgrenzen lockern,
+* automatische Git-Commits einführen,
+* produktive Datenmigrationen durchführen,
+* produktive Datenbanken unkontrolliert verändern,
+* historische Workflow-Artefakte als aktive Definitionen behandeln,
+* neue Top-Level-Ordner anlegen, wenn ein kanonischer Zielpfad existiert,
+* eine Parallelarchitektur zu bestehenden Status-, Audit-, Planungs- oder Ausführungsstrukturen schaffen.
+
+---
+
+# 7. Phase A – Kontrollierter Einstieg
+
+## 7.1 Git- und Rückfallpunktprüfung
+
+Codex muss zu Beginn:
+
+* aktuellen Branch ermitteln,
+* aktuellen Commit-Hash dokumentieren,
+* Git-Status prüfen,
+* uncommittete Änderungen auflisten,
+* staged und unstaged Änderungen unterscheiden,
+* untracked Dateien erfassen,
+* vorhandenen Rückfallpunkt benennen,
+* prüfen, ob der Arbeitsbaum für diesen Auftrag sicher bearbeitet werden kann.
+
+Bestehende fremde Änderungen dürfen nicht:
+
+* überschrieben,
+* zurückgesetzt,
+* bereinigt,
+* stillschweigend in den Auftrag einbezogen
+
+werden.
+
+## 7.2 Projektregeln
+
+Vor jeder Implementierung sind mindestens zu prüfen:
+
+* kanonische Projektstruktur,
+* Canonical Development Framework,
+* Canonical Development Governance,
+* Canonical Architecture,
+* CAM,
+* CRE,
+* Execution Planner,
+* Orchestrator Core,
+* CCAF,
+* Authentication,
+* CLMSF,
+* Audit,
+* Provenienz,
+* Release Integrity,
+* Artifact Lifecycle,
+* Glossar,
+* Status- und Risikoklassen,
+* bestehende Schema- und Konfigurationskonventionen.
+
+Codex darf keine Pfade, Namenskonventionen oder Statuswerte allein aus diesem Auftrag übernehmen, wenn im Projekt bereits verbindliche Regeln existieren.
+
+---
+
+# 8. Phase B – Projektweite Bestandsprüfung
+
+Codex soll projektweit untersuchen, welche Workflow- oder workflowähnlichen Strukturen bereits existieren.
+
+## 8.1 Zu prüfende Begriffe
+
+Mindestens:
+
+```text
+workflow
+workflow_definition
+workflow_run
+workflow_step
+workflow_state
+workflow_status
+transition
+state_machine
+pipeline
+process
+execution_plan
+execution_step
+task_graph
+dependency_graph
+approval_gate
+review_gate
+retry
+rollback
+compensation
+pause
+resume
+checkpoint
+orchestrator
+planner
+capability
+precondition
+postcondition
+trigger
+audit_event
+```
+
+## 8.2 Zu prüfende Artefakte
+
+* Python-Module
+* JSON-Konfigurationen
+* JSON-Schemas
+* Datenbanktabellen
+* Agentendefinitionen
+* Statusobjekte
+* Execution Plans
+* Planner-Ausgaben
+* Orchestrator-Modelle
+* Tests
+* Dokumentation
+* Reports
+* historische Versionen
+* Runtime-Objekte
+* Audit-Events
+* Release- und Integritätsartefakte
+
+## 8.3 Klassifikation der Funde
+
+Jeder Fund ist einzuordnen als:
+
+* aktiv und produktiv,
+* aktiv, aber unvollständig,
+* nur dokumentiert,
+* nur konzeptionell,
+* historisch,
+* veraltet,
+* widersprüchlich,
+* redundant,
+* wiederverwendbar,
+* nicht geeignet.
+
+## 8.4 Pflichtentscheidung
+
+Vor der Implementierung muss Codex beantworten:
+
+1. Existiert bereits ein Workflow-Modell?
+2. Existiert bereits eine State Machine?
+3. Enthält der Execution Planner workflowähnliche Datenstrukturen?
+4. Enthält der Orchestrator bereits Workflow-Status?
+5. Gibt es bereits kanonische Statuswerte?
+6. Gibt es vorhandene Retry-, Rollback- oder Approval-Regeln?
+7. Können vorhandene Strukturen erweitert werden?
+8. Würde eine neue Implementierung Doppelzuständigkeiten erzeugen?
+
+---
+
+# 9. Phase C – Gap-Analyse
+
+Codex soll eine Gap-Analyse erstellen.
+
+Mindestens zu prüfen sind:
+
+* fehlende Workflow-Identität,
+* fehlende Workflow-Versionierung,
+* fehlende Trennung von Definition und Ausführung,
+* fehlende Schrittidentität,
+* fehlende Zustandsmaschine,
+* fehlende Übergangsregeln,
+* fehlende Preconditions,
+* fehlende Postconditions,
+* fehlende Triggerdefinition,
+* fehlende Freigabeschritte,
+* fehlende Retry-Policy,
+* fehlende Timeout-Regel,
+* fehlender Rollback,
+* fehlende Kompensation,
+* fehlende Pause-und-Fortsetzung-Regeln,
+* fehlende Idempotenzkennzeichnung,
+* fehlende Audit-Ereignisse,
+* fehlende Schema-Validierung,
+* fehlende Integrationsverträge,
+* fehlende Tests.
+
+Die Gap-Analyse muss zwischen:
+
+* zwingend für CWF 1.0,
+* sinnvoll, aber optional,
+* spätere Erweiterung,
+* außerhalb des CWF
+
+unterscheiden.
+
+---
+
+# 10. Minimaler Scope von CWF 1.0
+
+CWF 1.0 soll bewusst schlank bleiben.
+
+Der verbindlich zu prüfende und möglichst zu implementierende Mindestumfang lautet:
+
+1. Workflow-Identität
+2. Workflow-Versionierung
+3. Trennung von Workflow-Definition und Workflow-Ausführung
+4. Workflow-Schritte
+5. Workflow-Zustände
+6. zulässige Zustandsübergänge
+7. Eingaben und Ausgaben
+8. Preconditions und Postconditions
+9. Rollenreferenzen
+10. Capability-Referenzen
+11. Freigabeschritte
+12. Fehlerklassen
+13. Retry-Regeln
+14. Timeout-Regeln
+15. Rollback- und Kompensationsreferenzen
+16. Pause und Fortsetzung
+17. Idempotenz
+18. Audit- und Provenienzanforderungen
+19. Validierung
+20. Integrationsverträge zu CRE, Execution Planner und Orchestrator
+
+Nicht Teil von CWF 1.0 sind:
+
+* grafischer Workflow-Designer,
+* freie visuelle Workflow-Modellierung,
+* verteilte Workflow-Engine,
+* autonome Workflow-Erzeugung,
+* lernende Workflow-Optimierung,
+* dynamische Multi-Agent-Verhandlung,
+* selbstständige Prozessneugestaltung,
+* Event-Streaming-Plattform,
+* produktive Scheduling-Engine,
+* vollständige BPMN-Implementierung.
+
+---
+
+# 11. Phase D – Begriffsdefinition
+
+Codex soll folgende Arbeitsdefinition prüfen und kanonisch präzisieren:
+
+> Ein kanonischer Workflow ist eine versionierte und validierbare Definition eines mehrstufigen Ablaufs aus eindeutig identifizierten Schritten, Zuständen, Übergängen, Rollen, Capability-Anforderungen, Bedingungen, Eingaben, Ausgaben, Freigaben und Fehlerregeln.
+
+Zusätzlich ist eine Workflow-Ausführung zu definieren:
+
+> Eine Workflow-Ausführung ist eine konkrete, eindeutig identifizierbare Instanz einer bestimmten Workflow-Definition und Workflow-Version, einschließlich ihres aktuellen Zustands, ihrer Schrittergebnisse, Freigaben, Fehler, Wiederholungen und Audit-Ereignisse.
+
+---
+
+# 12. Phase E – Workflow-Identität
+
+Codex soll ein kanonisches Modell für Workflow-Definitionen implementieren beziehungsweise spezifizieren.
+
+Mindestens zu prüfen sind:
+
+```text
+workflow_id
+workflow_name
+workflow_version
+workflow_type
+description
+status
+owner
+risk_class
+definition_hash
+created_at
+updated_at
+valid_from
+valid_until
+```
+
+Für konkrete Ausführungen mindestens:
+
+```text
+workflow_run_id
+workflow_id
+workflow_version
+execution_plan_id
+trigger_type
+trigger_reference
+initiated_by
+current_state
+current_step_id
+started_at
+paused_at
+resumed_at
+completed_at
+final_status
+```
+
+## 12.1 Anforderungen
+
+* `workflow_id` muss dauerhaft stabil sein.
+* `workflow_version` muss eindeutig sein.
+* Eine Workflow-Ausführung muss an eine konkrete Definition und Version gebunden bleiben.
+* Änderungen an einer Workflow-Definition dürfen laufende Ausführungen nicht stillschweigend verändern.
+* Der Hash der verwendeten Definition soll prüfbar sein.
+* Historische Workflow-Versionen dürfen nicht automatisch aktiv werden.
+
+---
+
+# 13. Phase F – Workflow-Typen
+
+CWF 1.0 soll mindestens folgende Typen prüfen und gegebenenfalls unterstützen:
+
+## 13.1 Sequential Workflow
+
+```text
+A → B → C
+```
+
+## 13.2 Conditional Workflow
+
+```text
+A → Bedingung
+     ├─ erfüllt → B
+     └─ nicht erfüllt → C
+```
+
+## 13.3 Approval Workflow
+
+```text
+Analyse → Planung → Freigabe → Ausführung
+```
+
+## 13.4 Review Workflow
+
+```text
+Ergebnis → unabhängige Prüfung → Annahme oder Rückgabe
+```
+
+## 13.5 Recovery Workflow
+
+```text
+Fehler → Diagnose → Rollback oder Kompensation → Abschluss
+```
+
+## 13.6 Parallel Workflow
+
+Nur dann in CWF 1.0 implementieren, wenn:
+
+* bestehende Architektur dies bereits unterstützt,
+* Synchronisationsbedingungen eindeutig modellierbar sind,
+* keine neue konkurrierende Runtime erforderlich ist.
+
+Andernfalls ist Parallelität nur als spätere Erweiterung zu dokumentieren.
+
+---
+
+# 14. Phase G – Workflow-Schritte
+
+Jeder Workflow-Schritt muss eindeutig identifizierbar und validierbar sein.
+
+Mindestens zu prüfen sind:
+
+```text
+step_id
+step_name
+step_type
+description
+sequence
+required_inputs
+produced_outputs
+required_capabilities
+assigned_role
+preconditions
+postconditions
+success_conditions
+failure_conditions
+timeout_policy
+retry_policy
+rollback_reference
+compensation_reference
+idempotent
+next_steps
+audit_required
+```
+
+## 14.1 Schrittarten
+
+Mindestens zu prüfen:
+
+```text
+ACTION
+VALIDATION
+DECISION
+APPROVAL
+REVIEW
+WAIT
+NOTIFICATION
+CHECKPOINT
+RECOVERY
+FINALIZATION
+```
+
+Keine neuen Schrittarten dürfen frei zur Laufzeit erfunden werden.
+
+---
+
+# 15. Phase H – Workflow-Zustände
+
+Codex soll die vorhandenen projektweiten Statuswerte prüfen.
+
+Nur wenn keine geeigneten kanonischen Zustände bestehen, ist ein schlanker CWF-Statussatz einzuführen.
+
+Ausgangsvorschlag:
+
+```text
+DRAFT
+VALIDATING
+READY
+WAITING
+RUNNING
+PAUSED
+BLOCKED
+RETRYING
+ROLLING_BACK
+FAILED
+ABORTED
+COMPLETED
+VERIFIED
+REJECTED
+ARCHIVED
+```
+
+## 15.1 Anforderungen
+
+* Zustände müssen kontrollierte Enumerationen sein.
+* Statusübergänge müssen validierbar sein.
+* `VERIFIED` darf nicht ohne vorherigen Abschluss erreicht werden.
+* `ARCHIVED` darf keine aktive Ausführung darstellen.
+* `FAILED`, `ABORTED` und `REJECTED` müssen unterscheidbar sein.
+* `PAUSED` muss fortsetzbar oder kontrolliert abbrechbar sein.
+* `BLOCKED` muss eine Blockadeursache besitzen.
+
+---
+
+# 16. Phase I – Übergangsmodell
+
+Jeder Übergang muss mindestens beschreiben:
+
+```text
+transition_id
+from_state
+to_state
+condition
+authorized_roles
+required_approvals
+required_capabilities
+audit_event
+```
+
+## 16.1 Beispiel
+
+```text
+from_state: READY
+to_state: RUNNING
+condition: execution_plan_validated == true
+authorized_roles:
+  - orchestrator
+required_approvals:
+  - governance_gate
+```
+
+## 16.2 Verbote
+
+Nicht zulässig sind:
+
+* freie Statusänderungen,
+* Übergänge ohne Ausgangszustand,
+* Übergänge ohne Zielzustand,
+* Umgehung von Freigaben,
+* Übergang zu `VERIFIED` ohne Prüfnachweis,
+* Übergang aus `ARCHIVED` in einen aktiven Zustand ohne neue Instanz,
+* stiller Wechsel der Workflow-Version während einer Ausführung.
+
+---
+
+# 17. Phase J – Trigger
+
+Codex soll ein minimales Trigger-Modell definieren.
+
+Zu prüfen sind:
+
+```text
+MANUAL
+EVENT
+SCHEDULED
+API
+STATUS_CHANGE
+RECOVERY
+```
+
+Für jeden Trigger sind mindestens zu definieren:
+
+```text
+trigger_type
+trigger_reference
+authorized_actor
+required_authentication
+input_contract
+idempotency_key
+```
+
+Eine produktive Scheduling-Engine ist nicht Gegenstand dieses Auftrags.
+
+---
+
+# 18. Phase K – Eingaben und Ausgaben
+
+Jeder Workflow und jeder Schritt muss deklarierte Ein- und Ausgaben besitzen.
+
+Mindestens:
+
+```text
+input_id
+input_type
+schema_reference
+required
+source
+```
+
+```text
+output_id
+output_type
+schema_reference
+artifact_reference
+required
+```
+
+## 18.1 Schutzregel
+
+Ein Workflow darf keine nicht deklarierten produktiven Seiteneffekte erzeugen.
+
+Seiteneffekte müssen:
+
+* als Ergebnis,
+* als Artefakt,
+* als Statusänderung,
+* als Audit-Ereignis,
+* als Folgeauftrag
+
+erkennbar sein.
+
+---
+
+# 19. Phase L – Preconditions und Postconditions
+
+Codex soll ein deterministisches Modell für Vor- und Nachbedingungen definieren.
+
+## 19.1 Mögliche Preconditions
+
+* gültiger Auftrag vorhanden,
+* Workflow-Definition gültig,
+* Workflow-Version aktiv,
+* Akteur authentifiziert,
+* erforderliche Capabilities auflösbar,
+* erforderliche Artefakte vorhanden,
+* Rückfallpunkt vorhanden,
+* benötigte Freigaben vorhanden.
+
+## 19.2 Mögliche Postconditions
+
+* erwartete Ergebnisse vorhanden,
+* Artefakte registriert,
+* Tests ausgeführt,
+* Status korrekt,
+* Audit vollständig,
+* Abschlussbericht erzeugt.
+
+## 19.3 Einschränkung
+
+Bedingungen dürfen nicht als unkontrollierter frei ausführbarer Code gespeichert werden.
+
+Zu bevorzugen sind:
+
+* kontrollierte Enumerationen,
+* Referenzen,
+* bekannte Validatoren,
+* deklarative Ausdrücke mit klar begrenzter Semantik.
+
+---
+
+# 20. Phase M – Rollen und Capabilities
+
+Das CWF darf Rollen und Capabilities nur referenzieren.
+
+Zu prüfen sind mindestens:
+
+```text
+workflow_owner
+planner
+executor
+reviewer
+approver
+auditor
+recovery_owner
+```
+
+Capability-Beispiele:
+
+```text
+workflow.validate
+workflow.start
+workflow.pause
+workflow.resume
+workflow.abort
+workflow.retry
+workflow.rollback
+workflow.verify
+workflow.archive
+```
+
+Diese Capabilities müssen mit bestehenden CRE- oder CCAF-Strukturen abgeglichen werden.
+
+Es darf keine parallele Capability-Registry angelegt werden, wenn eine geeignete kanonische Registry existiert.
+
+---
+
+# 21. Phase N – Freigabepunkte
+
+CWF 1.0 soll kontrollierte Gates unterstützen.
+
+Mindestens zu prüfen:
+
+```text
+APPROVAL_GATE
+REVIEW_GATE
+SECURITY_GATE
+RELEASE_GATE
+HUMAN_CONFIRMATION_GATE
+```
+
+Jeder Freigabepunkt muss enthalten:
+
+```text
+gate_id
+gate_type
+required_role
+required_actor_count
+approval_status
+approved_by
+approved_at
+rejection_reason
+```
+
+## 21.1 Grundsatz
+
+Ein Freigabepunkt darf:
+
+* nicht automatisch übersprungen,
+* nicht durch den ausführenden Schritt selbst stillschweigend erfüllt,
+* nicht nachträglich fingiert
+
+werden.
+
+---
+
+# 22. Phase O – Fehlerbehandlung
+
+Codex soll ein kanonisches Fehlerbehandlungsmodell definieren.
+
+Mindestens:
+
+```text
+STOP
+RETRY
+SKIP
+FALLBACK
+ROLLBACK
+COMPENSATE
+ESCALATE
+ABORT
+```
+
+## 22.1 Anforderungen
+
+Jeder kritische Schritt muss angeben:
+
+* welche Fehler erwartet werden,
+* welche Fehler retryfähig sind,
+* welche Fehler nicht retryfähig sind,
+* wann abgebrochen wird,
+* ob Rollback möglich ist,
+* ob Kompensation erforderlich ist,
+* wer eskaliert wird.
+
+## 22.2 Schutzregel
+
+Ohne definierte Fehlerstrategie muss ein kritischer Fehler den Workflow anhalten.
+
+---
+
+# 23. Phase P – Retry-Regeln
+
+Wiederholungen müssen begrenzt und auditierbar sein.
+
+Mindestens:
+
+```text
+max_attempts
+delay_seconds
+backoff_strategy
+retryable_errors
+non_retryable_errors
+reset_timeout_on_retry
+```
+
+## 23.1 Verbote
+
+* keine unbegrenzten Wiederholungen,
+* keine Wiederholung irreversibler Schritte ohne Idempotenz- oder Kompensationsregel,
+* keine automatische Wiederholung nach Authentifizierungs- oder Berechtigungsfehlern,
+* keine Wiederholung bei strukturell ungültigem Workflow.
+
+---
+
+# 24. Phase Q – Timeout-Regeln
+
+Für lang laufende oder blockierbare Schritte sind Timeout-Regeln vorzusehen.
+
+Mindestens:
+
+```text
+timeout_seconds
+on_timeout
+timeout_error_code
+escalation_required
+```
+
+Mögliche Reaktionen:
+
+```text
+FAIL
+PAUSE
+RETRY
+ESCALATE
+ABORT
+```
+
+---
+
+# 25. Phase R – Rollback und Kompensation
+
+Codex soll klar zwischen Rollback und Kompensation unterscheiden.
+
+## 25.1 Rollback
+
+Rollback stellt einen früheren technischen Zustand wieder her.
+
+Beispiele:
+
+* Dateiänderung zurücksetzen,
+* Konfiguration wiederherstellen,
+* Datenbanktransaktion rückgängig machen.
+
+## 25.2 Kompensation
+
+Kompensation führt eine ausgleichende Aktion aus, wenn ein echter Rollback nicht möglich ist.
+
+Beispiele:
+
+* Korrekturmeldung,
+* Gegenbuchung,
+* neues Ersatzartefakt,
+* Deaktivierung eines bereits veröffentlichten Ergebnisses.
+
+## 25.3 Anforderungen
+
+Ein Schritt soll angeben:
+
+```text
+rollback_supported
+rollback_reference
+compensation_supported
+compensation_reference
+irreversible
+```
+
+Irreversible Schritte müssen besonders gekennzeichnet und freigegeben werden.
+
+---
+
+# 26. Phase S – Idempotenz
+
+Jeder Schritt soll angeben, ob er gefahrlos mehrfach ausgeführt werden kann.
+
+```text
+idempotent: true | false
+```
+
+Für nicht idempotente Schritte ist zu prüfen:
+
+* dedizierter Idempotency Key,
+* Wiederholungsverbot,
+* Kompensationsregel,
+* besondere Freigabe.
+
+---
+
+# 27. Phase T – Pause und Fortsetzung
+
+CWF 1.0 soll eine kontrollierte Pause und Fortsetzung unterstützen.
+
+Bei einer Pause müssen mindestens gespeichert werden:
+
+```text
+workflow_run_id
+current_state
+last_completed_step
+current_step
+pending_steps
+inputs
+outputs
+approvals
+definition_hash
+paused_at
+pause_reason
+```
+
+Vor Fortsetzung muss erneut geprüft werden:
+
+* Workflow-Version unverändert,
+* Definition-Hash gültig,
+* Projektzustand kompatibel,
+* erforderliche Artefakte vorhanden,
+* Berechtigungen weiterhin gültig,
+* Freigaben nicht abgelaufen,
+* Rückfallpunkt weiterhin nutzbar,
+* keine auftragsfremden Konflikte entstanden.
+
+Eine Fortsetzung darf nicht blind am letzten Befehl ansetzen.
+
+---
+
+# 28. Phase U – Workflow-Validierung
+
+Codex soll eine schlanke Validierungsschicht implementieren oder eine bestehende geeignete Validierung erweitern.
+
+Mindestens zu prüfen:
+
+* eindeutige Workflow-ID,
+* gültige Version,
+* eindeutige Schritt-IDs,
+* genau ein definierter Startpunkt,
+* mindestens ein Endzustand,
+* keine ungültigen Zustände,
+* keine ungültigen Übergänge,
+* keine unerreichbaren Pflichtschritte,
+* keine unkontrollierten Zyklen,
+* bekannte Schrittarten,
+* bekannte Capability-Referenzen,
+* gültige Rollenreferenzen,
+* definierte Fehlerwege,
+* definierte Freigabepunkte,
+* gültige Retry-Grenzen,
+* gültige Timeout-Werte,
+* gültige Rollback- oder Kompensationsreferenzen,
+* keine Änderung einer laufenden Definition.
+
+## 28.1 Validierungsresultat
+
+Ein Validierungsresultat sollte mindestens enthalten:
+
+```text
+valid
+workflow_id
+workflow_version
+errors
+warnings
+checked_rules
+definition_hash
+validated_at
+```
+
+---
+
+# 29. Phase V – Audit und Provenienz
+
+Jede Workflow-Ausführung muss mindestens folgende Ereignisse nachvollziehbar machen:
+
+```text
+workflow_created
+workflow_validated
+workflow_started
+step_started
+step_completed
+step_failed
+approval_requested
+approval_granted
+approval_rejected
+workflow_paused
+workflow_resumed
+retry_started
+rollback_started
+rollback_completed
+compensation_started
+compensation_completed
+workflow_aborted
+workflow_completed
+workflow_verified
+workflow_archived
+```
+
+Audit-Daten sollen mindestens enthalten:
+
+```text
+workflow_id
+workflow_version
+workflow_run_id
+event_id
+event_type
+step_id
+actor
+actor_role
+timestamp
+previous_state
+new_state
+inputs_reference
+outputs_reference
+artifact_references
+error_reference
+approval_reference
+execution_plan_reference
+```
+
+Bestehende Audit- und Provenienzstrukturen sind zu verwenden oder kontrolliert zu erweitern.
+
+---
+
+# 30. Phase W – Integrationsverträge
+
+Codex soll dokumentierte Integrationsverträge erstellen.
+
+## 30.1 CRE
+
+Das CWF liefert:
+
+* benötigte Capabilities pro Workflow und Schritt.
+
+Die CRE liefert:
+
+* Auflösungsresultat,
+* verfügbare Provider,
+* erfüllte oder fehlende Capabilities.
+
+## 30.2 Execution Planner
+
+Das CWF liefert:
+
+* gültige Workflow-Struktur,
+* Schrittbeziehungen,
+* Bedingungen,
+* Constraints,
+* Freigabepunkte.
+
+Der Execution Planner liefert:
+
+* konkreten validierten Ausführungsplan.
+
+## 30.3 Orchestrator Core
+
+Der Orchestrator erhält:
+
+* validierten Plan,
+* zulässige Schritte,
+* Statusregeln,
+* Freigaben,
+* Ausführungsgrenzen.
+
+Der Orchestrator darf:
+
+* validierte Schritte ausführen,
+* Zustände melden,
+* Fehler melden.
+
+Der Orchestrator darf nicht:
+
+* Workflow-Regeln eigenmächtig ändern,
+* Freigaben erzeugen,
+* neue Schritte erfinden,
+* Planungsentscheidungen übernehmen.
+
+## 30.4 CDG
+
+CDG bestimmt:
+
+* notwendige Prüfungen,
+* Freigabestufen,
+* Rollentrennung,
+* Eskalationsregeln.
+
+## 30.5 CCAF
+
+CCAF bestimmt:
+
+* welche Agentenrollen Schritte übernehmen dürfen,
+* welche Permissions gelten,
+* welche Risikoklassen besondere Prüfungen erfordern.
+
+## 30.6 Authentication
+
+Authentication bestätigt:
+
+* Identität des Auslösers,
+* Identität des Ausführenden,
+* Identität des Freigebenden.
+
+## 30.7 CAM
+
+Der CAM registriert:
+
+* Workflow-Definitionen,
+* Workflow-Konfigurationen,
+* erzeugte Berichte,
+* Ergebnisartefakte.
+
+## 30.8 Audit und Provenienz
+
+Audit und Provenienz speichern:
+
+* Zustandswechsel,
+* Ausführungsschritte,
+* Ergebnisse,
+* Entscheidungen,
+* Fehler,
+* Freigaben.
+
+---
+
+# 31. Phase X – Kanonische Artefakte
+
+Codex soll vorab die tatsächliche Projektstruktur prüfen.
+
+Sofern die Pfade kanonisch zulässig sind, sollen mindestens folgende Artefakte implementiert werden:
+
+```text
+14_documents/
+    CANONICAL_WORKFLOW_FRAMEWORK_1_0.md
+```
+
+```text
+24_config/
+    canonical_workflow_framework_1_0.json
+    canonical_workflow_states_1_0.json
+    canonical_workflow_step_types_1_0.json
+    canonical_workflow_transition_rules_1_0.json
+    canonical_workflow_error_policies_1_0.json
+```
+
+```text
+schemas/
+    canonical_workflow_definition_1_0.schema.json
+    canonical_workflow_run_1_0.schema.json
+    canonical_workflow_step_1_0.schema.json
+```
+
+```text
+31_reports/
+    cwf_1_0_status_report.md
+```
+
+Optional, nur wenn architektonisch erforderlich:
+
+```text
+24_config/
+    canonical_workflow_capability_requirements_1_0.json
+    canonical_workflow_control_gates_1_0.json
+    canonical_workflow_retry_policies_1_0.json
+```
+
+## 31.1 Verbot paralleler Artefakte
+
+Vor Erstellung neuer Dateien muss Codex prüfen, ob bereits:
+
+* gleichartige Konfigurationen,
+* zentrale Statusdefinitionen,
+* zentrale Capability-Registries,
+* zentrale Risikoklassen,
+* zentrale Audit-Schemas
+
+existieren.
+
+In diesem Fall ist eine kontrollierte Referenz oder Erweiterung einer Duplizierung vorzuziehen.
+
+---
+
+# 32. Phase Y – Technische Implementierung
+
+Codex soll die technische Implementierung so klein wie möglich halten.
+
+## 32.1 Erwartete technische Kernfunktion
+
+Mindestens eine vorhandene oder neue, architekturkonforme Validierungskomponente soll prüfen können:
+
+* Workflow-Definition laden,
+* Schema validieren,
+* IDs prüfen,
+* Zustände prüfen,
+* Übergänge prüfen,
+* Start- und Endpunkte prüfen,
+* Schrittbeziehungen prüfen,
+* unbekannte Capabilities erkennen,
+* Retry- und Timeout-Regeln prüfen,
+* Freigabepunkte prüfen,
+* Definition-Hash erzeugen,
+* strukturiertes Validierungsresultat zurückgeben.
+
+## 32.2 Keine Runtime-Engine
+
+Die Implementierung darf keine neue vollständige Workflow-Runtime oder Orchestrierungsengine schaffen.
+
+Eine Runtime-Integration darf nur erfolgen, wenn:
+
+* der bestehende Orchestrator einen klaren Erweiterungspunkt besitzt,
+* keine Entscheidungslogik verschoben wird,
+* keine produktive Ausführung ungeprüfter Workflows möglich wird,
+* alle Tests vorhanden sind.
+
+Andernfalls ist die Runtime-Integration als Folgeauftrag zu dokumentieren.
+
+---
+
+# 33. Phase Z – Teststrategie
+
+Codex muss automatisierte Tests implementieren.
+
+## 33.1 Schema-Tests
+
+* gültige Workflow-Definition wird akzeptiert,
+* fehlende Workflow-ID wird abgelehnt,
+* ungültige Version wird abgelehnt,
+* doppelte Schritt-ID wird abgelehnt,
+* unbekannter Zustand wird abgelehnt,
+* unbekannte Schrittart wird abgelehnt.
+
+## 33.2 Zustands- und Übergangstests
+
+* gültiger Übergang wird akzeptiert,
+* ungültiger Übergang wird abgelehnt,
+* `DRAFT → VERIFIED` wird abgelehnt,
+* `READY → RUNNING` ohne Planfreigabe wird abgelehnt,
+* archivierte Ausführung kann nicht direkt fortgesetzt werden.
+
+## 33.3 Strukturtests
+
+* fehlender Startpunkt wird erkannt,
+* mehrere unzulässige Startpunkte werden erkannt,
+* fehlender Endpunkt wird erkannt,
+* unerreichbarer Pflichtschritt wird erkannt,
+* unkontrollierte Schleife wird erkannt.
+
+## 33.4 Capability-Tests
+
+* bekannte Capability wird akzeptiert,
+* unbekannte Capability wird erkannt,
+* fehlende Capability wird im Validierungsresultat ausgewiesen,
+* keine parallele Capability-Registry wird erzeugt.
+
+## 33.5 Approval-Tests
+
+* notwendiges Gate vorhanden,
+* fehlendes Gate wird erkannt,
+* Selbstfreigabe bei kritischem Schritt wird abgelehnt,
+* abgelehnte Freigabe stoppt Übergang.
+
+## 33.6 Retry-Tests
+
+* gültige begrenzte Retry-Policy,
+* negative Versuchszahl wird abgelehnt,
+* unbegrenzte Wiederholung wird abgelehnt,
+* nicht idempotenter Schritt ohne Schutz wird beanstandet.
+
+## 33.7 Rollback- und Kompensationstests
+
+* gültige Rollback-Referenz,
+* fehlende Referenz bei kritischem reversiblem Schritt,
+* irreversibler Schritt ohne besondere Kennzeichnung,
+* Kompensationsreferenz bei nicht rückrollbarem Schritt.
+
+## 33.8 Pause-und-Fortsetzung-Tests
+
+* Pause speichert Zustand,
+* Fortsetzung mit unverändertem Hash möglich,
+* Fortsetzung mit geänderter Definition wird abgelehnt,
+* abgelaufene Freigabe blockiert Fortsetzung.
+
+## 33.9 Audit-Tests
+
+* Zustandswechsel erzeugt Audit-Ereignis,
+* Fehler erzeugt Audit-Ereignis,
+* Retry erzeugt Audit-Ereignis,
+* Freigabe erzeugt Audit-Ereignis,
+* Abschluss ist mit Workflow-Run verknüpft.
+
+## 33.10 Integrationstests
+
+Soweit vorhandene Architektur dies ermöglicht:
+
+* CRE
+* Execution Planner
+* Orchestrator Core
+* CAM
+* Audit
+* Provenienz
+* Release Integrity
+
+---
+
+# 34. Dokumentation
+
+Die Hauptdokumentation muss mindestens enthalten:
+
+1. Zweck
+2. Geltungsbereich
+3. Begriffsdefinitionen
+4. Architekturposition
+5. Abgrenzung
+6. Workflow-Definition
+7. Workflow-Ausführung
+8. Schritte
+9. Zustände
+10. Übergänge
+11. Trigger
+12. Rollen
+13. Capabilities
+14. Eingaben und Ausgaben
+15. Preconditions und Postconditions
+16. Freigaben
+17. Fehlerbehandlung
+18. Retry
+19. Timeout
+20. Rollback
+21. Kompensation
+22. Idempotenz
+23. Pause und Fortsetzung
+24. Audit und Provenienz
+25. Integration
+26. Sicherheitsregeln
+27. Minimaler Scope
+28. Erweiterungsperspektive
+29. Beispiele
+30. bekannte Grenzen
+
+---
+
+# 35. Glossar und Registry
+
+Codex soll prüfen, ob folgende Begriffe im kanonischen Glossar ergänzt werden müssen:
+
+```text
+Canonical Workflow Framework
+Workflow Definition
+Workflow Run
+Workflow Step
+Workflow State
+Workflow Transition
+Precondition
+Postcondition
+Approval Gate
+Retry Policy
+Rollback
+Compensation
+Idempotency
+Checkpoint
+Workflow Validation
+```
+
+Eine Ergänzung darf nur erfolgen, wenn:
+
+* das Glossar kanonisch zuständig ist,
+* keine widersprüchliche Definition besteht,
+* die Änderung mit vorhandenen Regeln kompatibel ist.
+
+---
+
+# 36. Release Integrity und CAM
+
+Codex soll prüfen, ob neue CWF-Artefakte:
+
+* im Canonical Artifact Manager registriert,
+* in Release Integrity aufgenommen,
+* in relevanten Manifesten ergänzt,
+* mit Hashes versehen,
+* als aktiv oder vorbereitend klassifiziert
+
+werden müssen.
+
+Keine Release- oder CAM-Anpassung darf blind erfolgen.
+
+Die tatsächliche kanonische Zuständigkeit ist zuerst zu prüfen.
+
+---
+
+# 37. Sicherheitsregeln
+
+CWF 1.0 muss mindestens folgende Regeln verbindlich dokumentieren und soweit möglich validieren:
+
+* keine unbekannten Schrittarten,
+* keine nicht deklarierten produktiven Seiteneffekte,
+* keine unkontrollierten Schleifen,
+* keine unbegrenzten Retries,
+* keine Umgehung von Freigabepunkten,
+* keine eigenmächtige Scope-Erweiterung,
+* keine Änderung laufender Workflow-Definitionen,
+* keine unbekannten Capabilities,
+* keine automatische Selbstfreigabe kritischer Abläufe,
+* keine Fortsetzung nach kritischem Fehler ohne definierte Regel,
+* keine Ausführung ohne gültige Definition,
+* keine Ausführung ohne gültige Version,
+* keine Ausführung ohne notwendige Identität und Berechtigung,
+* keine stillen Statusänderungen,
+* keine unprotokollierten Rollbacks,
+* keine unprotokollierten Kompensationen.
+
+---
+
+# 38. Abbruchbedingungen
+
+Codex muss die Implementierung abbrechen oder auf Dokumentation und Prüfbericht begrenzen, wenn:
+
+* bereits ein gleichwertiges aktives Workflow Framework existiert,
+* CWF und Execution Planner nicht sauber trennbar sind,
+* CWF und Orchestrator nicht sauber trennbar sind,
+* ein Rückfallpunkt nicht bestimmbar ist,
+* fremde uncommittete Änderungen gefährdet wären,
+* zentrale Statusdefinitionen widersprüchlich sind,
+* Capability-Registries mehrfach und widersprüchlich existieren,
+* kanonische Zielpfade nicht bestimmbar sind,
+* eine Implementierung nur durch Änderung produktiver Runtime-Kernpfade möglich wäre,
+* bestehende Tests bereits vor dem Auftrag fehlschlagen und keine klare Abgrenzung möglich ist,
+* die Implementierung eine neue unkontrollierte Workflow-Engine erzeugen würde.
+
+In diesem Fall ist kein improvisierter Ersatz zu implementieren.
+
+---
+
+# 39. Erwarteter Abschlussbericht
+
+Der Abschlussbericht muss mindestens enthalten:
+
+## A. Git- und Rückfallpunkt
+
+* Branch
+* Commit
+* Arbeitsbaumstatus
+* Rückfallpunkt
+
+## B. Bestandsprüfung
+
+* geprüfte Bereiche
+* gefundene Workflow-Strukturen
+* gefundene Statusmodelle
+* gefundene Übergangsmodelle
+* vorhandene Retry-, Rollback- und Approval-Strukturen
+
+## C. Gap-Analyse
+
+* vorhandene Bausteine
+* fehlende Bausteine
+* wiederverwendete Strukturen
+* bewusst nicht implementierte Erweiterungen
+
+## D. Architekturentscheidung
+
+Klare Bewertung:
+
+```text
+GO
+GO MIT EINSCHRÄNKUNGEN
+NO-GO
+```
+
+## E. Implementierte Artefakte
+
+Für jede Datei:
+
+* Pfad
+* Zweck
+* Status
+* Abhängigkeiten
+
+## F. Geänderte bestehende Artefakte
+
+Für jede Datei:
+
+* Pfad
+* Grund der Änderung
+* Art der Änderung
+* Risiko
+
+## G. Technische Implementierung
+
+* Validator
+* Modelle
+* Registrierungen
+* Integrationspunkte
+* bewusst nicht implementierte Runtime-Funktionen
+
+## H. Tests
+
+* ausgeführte Tests
+* bestandene Tests
+* fehlgeschlagene Tests
+* nicht ausführbare Tests
+* bekannte Grenzen
+
+## I. Architekturabgrenzung
+
+* CWF
+* CRE
+* Execution Planner
+* Orchestrator
+* CDG
+* CCAF
+* Authentication
+* CAM
+* Audit
+* Provenienz
+
+## J. Sicherheitsbewertung
+
+* Schleifenrisiken
+* Retry-Risiken
+* Freigaberisiken
+* Rollback-Risiken
+* Seiteneffekte
+* Versionsrisiken
+* Risiken bei Pause und Fortsetzung
+
+## K. Release- und CAM-Status
+
+* registriert
+* nicht registriert
+* begründet zurückgestellt
+
+## L. Offene Punkte
+
+* technische Restpunkte
+* Governance-Entscheidungen
+* Folgeaufträge
+* spätere Erweiterungen
+
+## M. Abschlussstatus
+
+Einer der Werte:
+
+```text
+IMPLEMENTIERT UND VERIFIZIERT
+IMPLEMENTIERT MIT EINSCHRÄNKUNGEN
+NUR KONZEPTIONELL VORBEREITET
+BLOCKIERT
+ABGEBROCHEN
+```
+
+---
+
+# 40. Erfolgskriterien
+
+Der Auftrag gilt nur dann als erfolgreich abgeschlossen, wenn:
+
+* die vorhandene Architektur zuerst geprüft wurde,
+* CWF klar von Planner und Orchestrator abgegrenzt ist,
+* keine Parallelarchitektur entstanden ist,
+* Workflow-Definition und Workflow-Ausführung getrennt sind,
+* Zustände und Übergänge maschinenlesbar definiert sind,
+* Schritte validierbar sind,
+* Fehler-, Retry-, Timeout-, Rollback- und Kompensationsregeln definiert sind,
+* Freigabepunkte nicht umgangen werden können,
+* Pause und Fortsetzung kontrolliert modelliert sind,
+* Audit- und Provenienzanforderungen enthalten sind,
+* Schemas vorhanden und getestet sind,
+* ein Validator oder eine gleichwertige bestehende Prüfschicht vorhanden ist,
+* Tests erfolgreich ausgeführt wurden,
+* Dokumentation, Konfigurationen und Statusbericht konsistent sind,
+* der Abschlussbericht alle tatsächlichen Änderungen offenlegt.
+
+---
+
+# 41. Nicht zulässige Ergebnisse
+
+Der Auftrag ist nicht erfüllt, wenn:
+
+* lediglich ein allgemeines Workflow-Dokument erstellt wird,
+* nur JSON-Dateien ohne Validator entstehen,
+* ein Validator ohne Tests entsteht,
+* eine zweite Orchestrierungsengine implementiert wird,
+* Workflow-Zustände frei geändert werden können,
+* Definition und Ausführung vermischt werden,
+* Retry ohne Begrenzung möglich ist,
+* Rollback und Kompensation nicht unterschieden werden,
+* laufende Workflows unkontrolliert auf neue Versionen wechseln,
+* Freigaben nur als unverbindlicher Text behandelt werden,
+* Audit-Ereignisse fehlen,
+* bestehende kanonische Registries dupliziert werden,
+* unbekannte Capabilities erlaubt werden,
+* Parallelität eingeführt wird, ohne Synchronisation und Fehlerbehandlung zu definieren.
+
+---
+
+# 42. Empfohlene Implementierungsreihenfolge
+
+Codex soll grundsätzlich in folgender Reihenfolge arbeiten:
+
+1. Git- und Rückfallpunktprüfung
+2. kanonische Projektregeln ermitteln
+3. projektweite Workflow-Bestandsprüfung
+4. Abgrenzung zu CRE, Execution Planner und Orchestrator
+5. Gap-Analyse
+6. minimalen CWF-1.0-Scope festlegen
+7. Hauptdokumentation erstellen
+8. Zustände und Schrittarten definieren
+9. Übergangs- und Fehlerregeln definieren
+10. JSON-Konfigurationen erstellen
+11. JSON-Schemas erstellen
+12. Validator implementieren oder bestehende Validierung erweitern
+13. Tests implementieren
+14. Integrationspunkte prüfen
+15. Glossar prüfen
+16. CAM und Release Integrity prüfen
+17. vollständige Tests ausführen
+18. Statusbericht erstellen
+19. Git-Diff und Scope prüfen
+20. Abschlussbericht mit GO-, GO-MIT-EINSCHRÄNKUNGEN- oder NO-GO-Empfehlung erstellen
+
+---
+
+# 43. Startanweisung an Codex
+
+Beginne mit einer kontrollierten Git- und Bestandsprüfung.
+
+Prüfe anschließend projektweit, ob bereits Workflow-, Pipeline-, State-Machine-, Execution-Plan-, Retry-, Rollback-, Approval- oder Pause-und-Fortsetzung-Strukturen vorhanden sind.
+
+Definiere das CWF nicht isoliert neu, sondern integriere es so schlank wie möglich in die bestehende kanonische Architektur.
+
+Implementiere CWF 1.0 nur innerhalb des klar abgegrenzten Scopes:
+
+* Definition,
+* Versionierung,
+* Schritte,
+* Zustände,
+* Übergänge,
+* Bedingungen,
+* Freigaben,
+* Fehlerregeln,
+* Retry,
+* Timeout,
+* Rollback,
+* Kompensation,
+* Pause und Fortsetzung,
+* Audit,
+* Schemas,
+* Validator,
+* Tests.
+
+Erzeuge keine neue Workflow-Runtime und keine zweite Orchestrierungsengine.
+
+Dokumentiere jede geänderte Datei, jeden Test, jede Einschränkung und jede zurückgestellte Integration vollständig.
+
+Beende den Auftrag mit einer eindeutigen Bewertung:
+
+```text
+GO
+GO MIT EINSCHRÄNKUNGEN
+NO-GO
+```
+
+und einem der technischen Abschlussstatuswerte:
+
+```text
+IMPLEMENTIERT UND VERIFIZIERT
+IMPLEMENTIERT MIT EINSCHRÄNKUNGEN
+NUR KONZEPTIONELL VORBEREITET
+BLOCKIERT
+ABGEBROCHEN
+```

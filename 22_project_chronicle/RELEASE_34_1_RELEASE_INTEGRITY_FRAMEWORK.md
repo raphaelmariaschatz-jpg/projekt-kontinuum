@@ -37,3 +37,6 @@ BLOCKING_DRIFT.
 
 Die Engine bleibt diagnostisch/read-only: keine automatische Loeschung, keine
 automatische Archivierung und keine automatische Wissensuebernahme.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

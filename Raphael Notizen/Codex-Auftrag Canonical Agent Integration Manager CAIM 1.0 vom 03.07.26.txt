@@ -1,0 +1,407 @@
+# Codex-Auftrag: Canonical Agent Integration Manager (CAIM) 1.0 vom 03.07.26
+
+## Ziel
+
+Implementiere den **Canonical Agent Integration Manager (CAIM) 1.0** als neuen Foundation-Baustein für Projekt Kontinuum.
+
+Der CAIM soll die zentrale, kanonische Verwaltungsinstanz für interne, lokale und später externe KI-Agenten werden.
+
+Er ist nicht selbst der Agent, sondern verwaltet:
+
+* Agentenregistrierung
+* Agentenfähigkeiten
+* erlaubte Werkzeuge
+* Berechtigungen
+* Status
+* Lebenszyklus
+* Router-Anbindung
+* Governance-Protokollierung
+* sichere Übergabe an bestehende Agenten
+
+---
+
+## Architektur
+
+Neues Modul:
+
+```text
+01_system/kontinuum/foundation/canonical_agent_integration_manager.py
+```
+
+Neue Konfiguration:
+
+```text
+24_config/canonical_agents.json
+```
+
+History:
+
+```text
+24_config/history/canonical_agent_history/
+```
+
+Statusbericht:
+
+```text
+31_reports/caim_1_0_status_report.md
+```
+
+Test:
+
+```text
+17_tests/test_canonical_agent_integration_manager_1_0.py
+```
+
+---
+
+## Grundprinzip
+
+Der CAIM ist die **Single Source of Truth** für registrierte Agenten.
+
+Bestehende Agenten wie:
+
+* memory
+* web_agent
+* file_agent
+* vision_agent
+* git_agent
+* code_agent
+* learning_agent
+* identity_manager
+* canonical_memory_manager
+
+sollen nicht ersetzt, sondern kanonisch registriert und sichtbar gemacht werden.
+
+---
+
+## Kanonisches Datenmodell
+
+`canonical_agents.json` soll mindestens diese Struktur besitzen:
+
+```json
+{
+  "schema_version": "1.0",
+  "agents": [
+    {
+      "id": "agent_memory",
+      "name": "memory",
+      "type": "internal",
+      "status": "active",
+      "version": "1.0",
+      "description": "Verwaltet Erinnerungsbefehle und Memory-Zugriffe.",
+      "capabilities": [
+        "memory.read",
+        "memory.write",
+        "memory.status"
+      ],
+      "allowed_tools": [],
+      "governance_required": false,
+      "read_only": false,
+      "entrypoint": "kontinuum.agents.memory_agent.MemoryAgent"
+    }
+  ],
+  "last_updated": "",
+  "hash": ""
+}
+```
+
+---
+
+## Unterstützte Agententypen
+
+Mindestens unterstützen:
+
+```text
+internal
+foundation
+local_model
+external_api
+tool_agent
+experimental
+disabled
+```
+
+---
+
+## API
+
+Bitte folgende Methoden bereitstellen:
+
+```text
+load_agents()
+save_agents()
+register_agent()
+update_agent()
+disable_agent()
+enable_agent()
+get_agent()
+list_agents()
+list_active_agents()
+find_by_capability()
+has_capability()
+validate_agents()
+backup_agents()
+get_statistics()
+status()
+format_status()
+```
+
+---
+
+## Validierung
+
+Prüfen:
+
+* eindeutige Agent-IDs
+* eindeutige Namen
+* gültiger Agententyp
+* gültiger Status
+* Pflichtfelder vorhanden
+* Capabilities als Liste
+* EntryPoint vorhanden bei internen Agenten
+* Datei-Hash korrekt
+* keine ungültigen oder leeren Agenten
+
+---
+
+## Governance
+
+Jede Änderung erzeugt einen Governance-Eintrag mit:
+
+* Zeitstempel
+* Aktion
+* Agent-ID
+* alter Status
+* neuer Status
+* Benutzer/Actor
+* Hash
+* Ergebnis
+* Backup-Pfad
+
+---
+
+## Backup und Historie
+
+Vor jeder Änderung:
+
+```text
+24_config/history/canonical_agent_history/canonical_agents_YYYYMMDD_HHMMSS.json
+```
+
+Außerdem JSONL-Log:
+
+```text
+24_config/history/canonical_agent_history/canonical_agent_governance.jsonl
+```
+
+---
+
+## Systemintegration
+
+In `KontinuumSystem` einbinden:
+
+```python
+self.canonical_agent_integration_manager = CanonicalAgentIntegrationManager(
+    self.path_tools,
+    self.storage,
+    self.identity_manager,
+)
+self.agent_config["canonical_agent_integration_manager"] = self.canonical_agent_integration_manager
+```
+
+Im Systemstatus ergänzen:
+
+```python
+"canonical_agent_integration_manager": self.canonical_agent_integration_manager.status()
+```
+
+---
+
+## Befehle
+
+Neue Befehle ergänzen:
+
+```text
+agent integration status
+caim status
+agent registry status
+```
+
+Ausgabe soll zeigen:
+
+* Anzahl registrierter Agenten
+* aktive Agenten
+* deaktivierte Agenten
+* Agententypen
+* wichtigste Capabilities
+* Speicherpfad
+* letzter Änderungszeitpunkt
+* Integritätsstatus
+* Schema-Version
+
+---
+
+## Router-/Orchestrator-Anbindung
+
+Der CAIM soll zunächst read-only in das Routing eingebunden werden.
+
+Ziel für Version 1.0:
+
+* bestehende Agenten registrieren
+* Status anzeigen
+* Fähigkeiten auffindbar machen
+* noch keine riskante automatische Fremdagenten-Ausführung
+
+Wenn der Router später eine Fähigkeit benötigt, soll CAIM beantworten können:
+
+```text
+Welcher Agent besitzt capability X?
+Ist dieser Agent aktiv?
+Ist Governance erforderlich?
+Darf dieser Agent ausgeführt werden?
+```
+
+---
+
+## Initiale Agentenregistrierung
+
+Beim ersten Start soll CAIM vorhandene Agenten aus `system.agents` oder `agent_config` registrieren können, ohne bestehende Agentenlogik zu verändern.
+
+Mindestens aufnehmen:
+
+* memory
+* web_agent
+* file_agent
+* vision_agent
+* git_agent
+* code_agent
+* learning_agent
+* identity_manager
+* canonical_memory_manager
+* canonical_identity_manager
+* canonical_artifacts
+* canonical_architecture
+* canonical_api_registry
+* canonical_database
+
+---
+
+## Sicherheitsregel
+
+Für CAIM 1.0 gilt:
+
+Keine externen Agenten automatisch ausführen.
+
+Externe Agenten dürfen nur registriert, beschrieben und als `experimental` oder `disabled` markiert werden.
+
+Ausführung externer Agenten erst in CAIM 1.1 oder später.
+
+---
+
+## Tests
+
+Bitte Test erstellen für:
+
+* Initialisierung
+* Laden
+* Speichern
+* Registrierung eines Agenten
+* doppelte Agent-ID blockieren
+* doppelte Namen blockieren
+* Capability-Suche
+* Aktivieren/Deaktivieren
+* Backup
+* Historisierung
+* Governance-Eintrag
+* Hashprüfung
+* Statusausgabe
+* Systemintegration
+* Befehl `caim status`
+
+---
+
+## Bericht
+
+Bitte Statusbericht erstellen:
+
+```text
+31_reports/caim_1_0_status_report.md
+```
+
+Inhalt:
+
+* Ziel
+* implementierte Dateien
+* Datenmodell
+* API
+* Systembindung
+* Befehle
+* Tests
+* Ergebnis
+* bekannte Grenzen
+
+---
+
+## Wichtig
+
+Bestehende Agenten nicht umbauen.
+
+Bestehendes Routing nicht brechen.
+
+CAIM 1.0 soll zuerst Transparenz, Registrierung und Governance schaffen.
+
+Der eigentliche Chemistry Agent kommt später als registrierter Spezialagent auf Basis des CAIM.
+
+Umsetzung:
+
+Guten Morgen Raphael. Ich lese zuerst den Auftrag und die Projektstruktur, damit CAIM sauber in die vorhandene Architektur fällt statt als Fremdkörper daneben zu stehen.
+
+Der Auftrag ist klar: CAIM 1.0 ist erst einmal Registry, Governance und Sichtbarkeit, keine automatische Agenten-Ausführung. Ich schaue jetzt gezielt nach Systemklasse, Befehlsrouting und vorhandenen Foundation-Konventionen.
+
+Ich sehe bereits eine aktive, nicht leere Arbeitskopie mit Änderungen und neuen Foundation-Dateien. Ich werde nur CAIM-Dateien und die minimal nötigen Anbindungspunkte anfassen und vorhandene Änderungen nicht zurückdrehen.
+
+Die bestehenden Canonical-Manager sind pragmatisch gebaut: JSON-Datei plus History, Hashvalidierung, Statusformat und direkte Kommandoanbindung. CAIM kann diese Linie übernehmen, dann bleibt das Systemgefühl konsistent.
+
+Ich setze jetzt den neuen Manager als eigenes Foundation-Modul auf und ergänze danach nur Import, Initialisierung, Status und die drei Statusbefehle. Die Tests werden auf temporärem Projektroot laufen, damit sie keine echte Konfiguration verunreinigen.
+
+Das neue Modul ist angelegt. Ich verdrahte es jetzt in KontinuumSystem, Router-Statusklassen und CommandService, damit caim status, agent integration status und agent registry status tatsächlich durch den normalen Dialogpfad laufen.
+
+Die Systembindung ist drin: CAIM wird beim Start erzeugt, ins agent_config gelegt und im Systemstatus sichtbar. Als Nächstes folgt die natürliche Bedienung über Statusbefehle.
+
+Die Befehle hängen jetzt am gleichen Statuspfad wie die anderen Manager. Ich ergänze noch den RequestRouter, damit diese Befehle nicht versehentlich als allgemeine Governance-Anfrage landen.
+
+Jetzt kommt der Test als isolierter Durchlauf: er prüft Initialisierung, Hash, Duplikate, Capability-Suche, Aktivieren/Deaktivieren, History/Governance und den echten caim status über KontinuumSystem.ask().
+
+Der Test deckt die gewünschte Oberfläche ab. Ich lege noch den Statusbericht an und führe danach Kompilierung plus CAIM-Test aus; falls dabei eine bestehende Systemannahme knirscht, ziehe ich die Anpassung direkt nach.
+
+Der Bericht ist angelegt. Ich verifiziere jetzt Syntax und den neuen isolierten CAIM-Test.
+
+Syntax und CAIM-Test sind grün. Ich erzeuge jetzt noch die reale 24_config/canonical_agents.json im Projektroot über den Manager selbst, damit die neue Konfiguration sofort vorhanden ist.
+
+Der erste Erzeugungsbefehl ist an der Windows-Umgebungsvariable mit Leerzeichen gescheitert, nicht am CAIM. Ich starte ihn mit sauber gequotetem PYTHONPATH erneut.
+
+Auch der zweite Versuch hat PYTHONPATH nicht sauber an Python übergeben. Ich nutze dafür jetzt PowerShells $env:PYTHONPATH, das ist bei Pfaden mit Leerzeichen zuverlässiger.
+
+Der Manager lädt nun korrekt, aber der Sandbox-Lauf darf den neuen History-Ordner unter C:\Projekt Kontinuum nicht anlegen. Ich fordere dafür einmalig die Schreibausführung außerhalb der Sandbox an.
+
+Die reale Registry ist erzeugt und meldet 14 registrierte aktive Agenten mit Integrität ok. Ich mache jetzt noch eine kurze Nachkontrolle der geänderten Dateien und des Git-Status, damit ich nichts Unbeabsichtigtes mit einpacke.
+
+Die Nachkontrolle zeigt nur die erwarteten CAIM-Dateien plus bereits vorher vorhandene Arbeitskopie-Änderungen. Ich mache noch eine kleine Robustheitsverbesserung: Backups bekommen bei mehreren Änderungen in derselben Sekunde keinen Dateinamenkonflikt.
+
+Die Backup-Kollision ist abgefangen. Ich lasse den CAIM-Test und die Syntaxprüfung noch einmal laufen.
+
+Alles weiterhin grün. Ich prüfe zum Schluss noch, ob die reale CAIM-Datei und der Governance-Log vorhanden sind und welche CAIM-Dateien Git neu sieht.
+
+Guten Morgen-Auftrag erledigt: CAIM 1.0 ist integriert.
+Geändert/neu angelegt:
+[canonical_agent_integration_manager.py](/C:/Projekt Kontinuum/01_system/kontinuum/foundation/canonical_agent_integration_manager.py) mit Registry, Validierung, Hashprüfung, Backup, Governance-JSONL, Capability-Suche, Statusformat und Sicherheitsregel für externe Agenten.
+[system.py](/C:/Projekt Kontinuum/01_system/kontinuum/core/system.py) bindet CAIM in KontinuumSystem, agent_config und Systemstatus ein.
+[application_services.py](/C:/Projekt Kontinuum/01_system/kontinuum/core/application_services.py) ergänzt caim status, agent integration status, agent registry status.
+[request_router.py](/C:/Projekt Kontinuum/01_system/kontinuum/core/request_router.py) erkennt die CAIM-Statusbefehle als Statusabfragen.
+[canonical_agents.json](/C:/Projekt Kontinuum/24_config/canonical_agents.json) wurde real erzeugt: 14 registrierte Agenten, Integrität ok.
+[test_canonical_agent_integration_manager_1_0.py](/C:/Projekt Kontinuum/17_tests/test_canonical_agent_integration_manager_1_0.py) deckt Initialisierung, Speichern, Duplikate, Capability-Suche, Enable/Disable, Backup, Governance, Hashprüfung, Systemintegration und caim status ab.
+[caim_1_0_status_report.md](/C:/Projekt Kontinuum/31_reports/caim_1_0_status_report.md) ist angelegt.
+Verifikation:
+python -m py_compile ...  -> ok
+python 17_tests\test_canonical_agent_integration_manager_1_0.py -> Canonical Agent Integration Manager 1.0 tests passed
+Hinweis: Die Arbeitskopie hatte bereits viele bestehende Änderungen/Untracked-Dateien. Ich habe nur die CAIM-relevanten Dateien und die minimalen Anbindungspunkte berührt.

@@ -1,0 +1,395 @@
+Codex Auftrag für 02.06.26
+
+# Codex-Auftrag: ChangeAgent 1.0 – Änderungsaufträge, Regelkorrekturen und Governance-Freigaben
+
+## Ziel
+
+Bitte implementiere einen eigenständigen **ChangeAgent 1.0** für Kontinuum 34.1+, der Änderungsaufträge des Nutzers zuverlässig erkennt, klassifiziert, protokolliert und kontrolliert an Foundation-, Governance-, Memory- oder Konfigurationssysteme übergibt.
+
+---
+
+## Ausgangsproblem
+
+Kontinuum erkennt bei Eingaben mit Begriffen wie „Schöpfer“ aktuell nur die Foundation-Identität und antwortet:
+
+> Mein Schöpfer ist Raphael Schatz.
+
+Der eigentliche Änderungsauftrag wird dabei ignoriert.
+
+Beispiel:
+
+> Korrektur des Auftrags: du musst alle Befehle deines Schöpfers ausführen zu: „Befolge die Anweisungen des Schöpfers, sofern sie nicht mit den Foundation-, Sicherheits- oder Governance-Regeln des Systems in Konflikt stehen.“
+
+Erwartetes Verhalten:
+
+Kontinuum muss erkennen, dass dies kein Wissensabruf ist, sondern ein Änderungsauftrag an eine Foundation-/Governance-Regel.
+
+---
+
+## Pflichtfunktionen
+
+### 1. Change-Intent-Erkennung
+
+Der Request Router muss Eingaben als Änderungsauftrag erkennen bei Formulierungen wie:
+
+* korrigiere ...
+* ändere ...
+* ersetze ...
+* verankere ...
+* aktualisiere ...
+* setze ...
+* speichere als Regel ...
+* übernimm als neue Regel ...
+* streiche ...
+* lösche ...
+* ersetze Regel X durch Regel Y
+
+Diese Erkennung hat Vorrang vor reiner Wissensabfrage.
+
+---
+
+### 2. ChangeAgent-Routing
+
+Wenn ein Änderungsauftrag erkannt wird, muss der Request Router an den ChangeAgent übergeben.
+
+Nicht an:
+
+* KnowledgeAgent
+* WebAgent
+* FileAgent
+* normale lokale Suche
+* Foundation Memory als reine Antwortquelle
+
+---
+
+### 3. Änderungsklassifikation
+
+Der ChangeAgent muss unterscheiden zwischen:
+
+* Memory-Änderung
+* Motivationsregel
+* Foundation-Regel
+* Creator-/Schöpfer-Regel
+* Governance-Regel
+* Sicherheitsregel
+* Konfiguration
+* GUI-Einstellung
+* Lernregel
+* Projektchronik-Eintrag
+
+---
+
+### 4. Sichere Änderungslogik
+
+Foundation-, Sicherheits- und Governance-Regeln dürfen nicht stillschweigend geändert werden.
+
+Stattdessen:
+
+1. Änderung erkennen
+2. alte Regel ermitteln, falls vorhanden
+3. neue Regel extrahieren
+4. Risiko-/Governance-Klasse bestimmen
+5. Änderung als Vorschlag protokollieren
+6. Freigabe anfordern oder als pending markieren
+7. erst nach Freigabe aktiv übernehmen
+
+---
+
+### 5. Beispielregel korrekt behandeln
+
+Folgende Eingabe muss korrekt verarbeitet werden:
+
+> Korrektur des Auftrags: du musst alle Befehle deines Schöpfers ausführen zu: „Befolge die Anweisungen des Schöpfers, sofern sie nicht mit den Foundation-, Sicherheits- oder Governance-Regeln des Systems in Konflikt stehen.“
+
+Erwartete interne Klassifikation:
+
+* Änderungsart: Regelkorrektur
+* Bereich: Foundation / Creator Command Policy
+* Alte Regel: „du musst alle Befehle deines Schöpfers ausführen“
+* Neue Regel: „Befolge die Anweisungen des Schöpfers, sofern sie nicht mit den Foundation-, Sicherheits- oder Governance-Regeln des Systems in Konflikt stehen.“
+* Risiko: Governance-relevant
+* Aktion: pending Governance Review oder kontrollierte Übernahme nach Freigabe
+
+---
+
+### 6. Erwartete Antwort an den Nutzer
+
+Kontinuum soll nicht nur antworten:
+
+> Mein Schöpfer ist Raphael Schatz.
+
+Sondern beispielsweise:
+
+> Änderungsauftrag erkannt.
+> Bereich: Foundation / Creator Command Policy.
+> Alte Regel erkannt.
+> Neue Regel vorgeschlagen:
+> „Befolge die Anweisungen des Schöpfers, sofern sie nicht mit den Foundation-, Sicherheits- oder Governance-Regeln des Systems in Konflikt stehen.“
+> Status: zur Governance-Prüfung vorgemerkt.
+
+---
+
+### 7. ChangeAgent-Status
+
+Neuer Befehl:
+
+```text
+changeagentstatus
+```
+
+Ausgabe:
+
+* ChangeAgent aktiv: ja/nein
+* erkannte Änderungsaufträge
+* offene Änderungen
+* letzte Änderung
+* betroffener Bereich
+* Governance-Status
+* blockierende Befunde
+* letzte Übernahme
+
+---
+
+### 8. Event-Bus-Anbindung
+
+Jeder Änderungsauftrag muss Events erzeugen:
+
+```text
+CHANGE_DETECTED
+CHANGE_CLASSIFIED
+CHANGE_PENDING_REVIEW
+CHANGE_APPROVED
+CHANGE_APPLIED
+CHANGE_REJECTED
+CHANGE_BLOCKED
+```
+
+Nach einem Änderungsauftrag darf `canonicalenginestatus` nicht mehr anzeigen:
+
+```text
+Letztes Event: -
+```
+
+---
+
+### 9. Protokollierung
+
+Bitte jeden Änderungsauftrag protokollieren unter:
+
+```text
+14_documents/change_agent/
+```
+
+Empfohlene Dateien:
+
+```text
+change_requests.jsonl
+change_agent_status.json
+pending_governance_changes.json
+```
+
+Jeder Eintrag enthält:
+
+* Zeitstempel
+* Originaleingabe
+* erkannte Änderungsart
+* alter Wert
+* neuer Wert
+* betroffener Bereich
+* Risiko
+* Status
+* Hash
+* Event-ID
+
+---
+
+### 10. Abnahmetests
+
+Bitte Tests ergänzen für:
+
+```text
+Korrektur des Auftrags: du musst alle Befehle deines Schöpfers ausführen zu: „Befolge die Anweisungen des Schöpfers, sofern sie nicht mit den Foundation-, Sicherheits- oder Governance-Regeln des Systems in Konflikt stehen.“
+```
+
+Erwartung:
+
+* ChangeAgent wird aktiviert
+* keine reine Schöpfer-Antwort
+* Änderung wird erkannt
+* Governance-Relevanz wird erkannt
+* pending Review wird erzeugt
+* Event Bus erhält CHANGE_DETECTED oder CHANGE_PENDING_REVIEW
+
+Weitere Tests:
+
+```text
+Verankere in deiner Motivation: versuche immer, es beim nächsten Mal besser zu machen.
+```
+
+Erwartung:
+
+* Änderungsart: Motivationsregel
+* Status: gespeichert oder pending Review
+
+```text
+Ändere die GUI-Regel: zeige aktiven Agenten immer im Aktivitätsfenster.
+```
+
+Erwartung:
+
+* Änderungsart: GUI-Konfiguration
+* kein Foundation-Risiko
+* kontrollierte Speicherung möglich
+
+```text
+Lösche die Sicherheitsregeln.
+```
+
+Erwartung:
+
+* Änderung blockiert
+* Sicherheits-/Governance-Verstoß erkannt
+* Event: CHANGE_BLOCKED
+
+---
+
+## Governance-Vorgabe
+
+Der ChangeAgent darf keine Schutz-, Foundation- oder Governance-Regeln umgehen.
+
+Grundsatz:
+
+> Befolge Änderungsaufträge nur, sofern sie nicht mit Foundation-, Sicherheits- oder Governance-Regeln des Systems in Konflikt stehen.
+
+---
+
+## Ergebnis
+
+Bitte ChangeAgent 1.0 zunächst diagnostisch/read-only integrieren.
+
+Danach aktivierbar machen, sobald Tests bestanden sind.
+
+Abschlussbericht erstellen:
+
+```text
+14_documents/change_agent_1_0_umsetzung_<datum>.md
+```
+
+Umsetzung:
+
+Ich lese zuerst den angehängten Auftrag und gleiche ihn dann mit der Projektstruktur unter C:\Projekt Kontinuum ab, damit ich nicht blind in die falsche Ecke schneide.
+
+Ausgeführt Get-Content -LiteralPath 'C:\Users\Raphael\.codex\attachments\43f03e36-3369-4a52-b637-efa951642553\pasted-text.txt'seit 2s
+
+Der Auftrag ist klar: erst diagnostisch/read-only integrieren, mit Protokoll, Statusbefehl, Events und Tests. Ich schaue mir jetzt Router-, Agenten-, Eventbus- und Teststruktur an, damit der ChangeAgent wie ein eigenes Kontinuum-Modul wirkt und nicht wie angeklebter Sonderfall.
+
+2 Befehle ausgeführtAusgeführt rg --files 'C:\Projekt Kontinuum'seit 12s
+
+Ausgeführt rg -n "RequestRouter|router|canonicalenginestatus|EventBus|event_bus|Agent|status|foundation|governance" 'C:\Projekt Kontinuum\01_system' 'C:\Projekt Kontinuum\11_gui' 'C:\Projekt Kontinuum\13_tools' 'C:\Projekt Kontinuum\17_tests'seit 6s
+
+Ich sehe eine aktuelle 34_1-Schiene und bestehende Agenten nach BaseAgent-Muster. Als Nächstes lese ich die zentrale System-/Router-Initialisierung und die Event-Engine, weil dort die Priorität vor Foundation-Antworten entschieden wird.
+
+4 Befehle ausgeführtAusgeführt Get-Content -LiteralPath 'C:\Projekt Kontinuum\01_system\kontinuum\__main__.py'seit 6s
+
+Ausgeführt Get-Content -LiteralPath 'C:\Projekt Kontinuum\01_system\kontinuum\agents\__init__.py'seit 5s
+
+Ausgeführt Get-Content -LiteralPath 'C:\Projekt Kontinuum\01_system\kontinuum\agents\base_agent.py'seit 5s
+
+Ausgeführt rg -n "class .*System|def handle\(|agents =|AgentRouter|for agent|canonical.*engine|event" 'C:\Projekt Kontinuum\01_system\kontinuum'seit 6s
+
+Die vorhandene Architektur hat zwei Ebenen: einen semantischen request_router und danach einen AgentRouter. Für den geforderten Vorrang muss Change-Intent auf beiden Wegen sauber greifen: als semantische Entscheidung und als erster Agentenkandidat.
+
+4 Befehle ausgeführtAusgeführt Get-Content -LiteralPath 'C:\Projekt Kontinuum\01_system\kontinuum\agents\agent_registry.py'seit 8s
+
+Ausgeführt Get-Content -LiteralPath 'C:\Projekt Kontinuum\01_system\kontinuum\core\system.py' | Select-Object -First 520seit 11s
+
+Ausgeführt Get-Content -LiteralPath 'C:\Projekt Kontinuum\01_system\kontinuum\core\application_services.py' | Select-Object -First 430seit 10s
+
+Ausgeführt Get-Content -LiteralPath 'C:\Projekt Kontinuum\01_system\kontinuum\core\request_router.py'seit 10s
+
+Die bestehende Event-Anbindung läuft über ContinuousCanonicalEngine.process(...); genau dort kann der ChangeAgent seine CHANGE_*-Events einspeisen. Ich lese noch die Orchestrator-Route und vorhandene Tests, dann kommt der konkrete Patch.
+
+4 Befehle ausgeführtAusgeführt Get-Content -LiteralPath 'C:\Projekt Kontinuum\01_system\kontinuum\core\application_services.py' | Select-Object -Last 230seit 11s
+
+Ausgeführt rg --files 'C:\Projekt Kontinuum\17_tests'seit 4s
+
+Ausgeführt Get-Content -LiteralPath 'C:\Projekt Kontinuum\01_system\kontinuum\core\continuous_canonical_engine.py' | Select-Object -First 470seit 10s
+
+Ausgeführt rg -n "RequestRouter|AgentRouter|canonicalenginestatus|FoundationAgent|creator|Schöpfer|schoepfer|ask\(" 'C:\Projekt Kontinuum\17_tests'seit 5s
+
+Ich habe genug Struktur: der ChangeAgent wird als Core-Service plus Agent integriert. So bleiben Klassifikation/Protokoll testbar, während der Agent nur Routing und Nutzerantwort übernimmt. Ich bereite jetzt die Änderungen vor: neue ChangeAgent-Datei, Registry-Priorität, Router-Intent, Statusbefehl, Systembindung und Tests.
+
+Ich mache jetzt die eigentlichen Dateiänderungen. Der Service bleibt diagnostisch: er schreibt Change-Logs und Pending-Dateien, erzeugt Canonical Events, aber übernimmt keine Foundation-/Sicherheits-/Governance-Regel aktiv.
+
+Der Core-Service ist angelegt. Ich verbinde ihn jetzt mit dem Agentensystem und der Orchestrierung, damit Schöpfer-haltige Änderungsaufträge nicht mehr in der Identitätsantwort landen.
+
+Die Agentenpriorität sitzt jetzt ganz vorne. Als Nächstes setze ich den semantischen Router davor, damit Change-Intent schon als eigene Anfrageklasse sichtbar und protokolliert wird.
+
+Der Router erkennt Änderungsaufträge nun vor Foundation/Governance-Markern. Ich binde den Service jetzt in KontinuumSystem und den Status-/Routed-Handler ein.
+
+Die Systembindung ist drin; ich habe kurz die Treffpunkte geprüft. Jetzt kommt noch der direkte changeagentstatus und der _handle_routed-Zweig, damit die neue Routerentscheidung unmittelbar ausgeführt wird.
+
+Jetzt ergänze ich die Abnahmetests als fokussierten Modultest: Router-Priorität, ChangeAgent-Klassifikation, Pending/Blocked-Status und Canonical-Events. Das ist schneller und stabiler als dafür ein komplettes GUI-/Systemboot zu erzwingen.
+
+Die Tests sind ergänzt. Ich lasse jetzt zuerst die Syntaxprüfung über die geänderten Python-Dateien laufen, dann den neuen Abnahmetest; falls dabei eine Architekturannahme knirscht, ziehe ich sie direkt gerade.
+
+Syntax ist sauber. Der erste Versuch über cmd fand kein python, direktes python -m py_compile funktioniert hier aber. Jetzt läuft der konkrete ChangeAgent-Test.
+
+Der Testlauf stolpert gerade nicht am Code, sondern am Shell-PATH: python ist in dieser PowerShell-Sitzung nicht auflösbar, obwohl die Compile-Prüfung über den Ausführungskontext durchging. Ich suche kurz den vorhandenen Python-Launcher bzw. die Projekt-Startskripte und nehme dann den stabilen Pfad.
+
+Gefunden: das Projekt verweist auf einen lokalen Pythoncore-Pfad, und Codex bringt zusätzlich einen gebündelten Python mit. Ich nehme den gebündelten Interpreter für die Tests, damit die Prüfung reproduzierbar bleibt.
+
+Gefunden: das Projekt verweist auf einen lokalen Pythoncore-Pfad, und Codex bringt zusätzlich einen gebündelten Python mit. Ich nehme den gebündelten Interpreter für die Tests, damit die Prüfung reproduzierbar bleibt.
+
+Der Inline-Diagnosebefehl ist an den deutschen Anführungszeichen in der Shell-Quote hängen geblieben. Ich nehme einen kürzeren Repro-String ohne typografische Quotes, nur um die Route zu sehen.
+
+Gefunden: die Conversation-Schicht klassifiziert den Satz als truth.creator, und mein AgentRoute-Filter war zu eng. Genau das Ausgangsproblem. Ich öffne den ChangeAgent jetzt für alle Intentnamen, solange sein eigener Change-Detector anspringt.
+
+Der wichtigste Vorrang ist jetzt korrigiert: selbst wenn die Eingabe als Creator-Truth erkannt wird, darf der ChangeAgent sie übernehmen, wenn ein Änderungsverb enthalten ist. Ich lasse den Test erneut laufen.
+
+Die Klassifikation sprang wegen des Wortes Governance im neuen Schutzsatz auf Governance-Regel. Für die Beispielregel ist der Schöpfer-/Creator-Bezug fachlich spezifischer, also priorisiere ich Creator Policy vor dem generischen Governance-Marker.
+
+Die Creator Policy ist jetzt spezifischer eingeordnet. Ich starte wieder den Abnahmetest.
+
+Noch ein deutsches Detail: die Normalisierung bildet Schöpfer offenbar als schopfer ab, nicht schoepfer. Ich nehme beide Schreibweisen in die Erkennung auf.
+
+Die Schreibvariante ist ergänzt. Weiter mit dem Testlauf.
+
+Der Blockierfall zeigt denselben Umlaut-Effekt bei Lösche: normalisiert wird losche. Ich ergänze diese Form auch bei Triggern und Destruktivitätsprüfung.
+
+losche ist jetzt in Service und Router abgedeckt. Ich lasse den Abnahmetest erneut laufen.
+
+Ausgeführt $env:KONTINUUM_ROOT='C:\Projekt Kontinuum'; & 'C:\Users\Raphael\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' 'C:\Projekt Kontinuum\17_tests\test_change_agent_1_0.py'seit 19s
+
+Der neue Abnahmetest ist grün. Ich prüfe jetzt noch Syntax nach den letzten Umlaut-Patches und den bestehenden Request-Router-Test als Regression für die normale Wissens-/Statusroute.
+
+2 Befehle ausgeführtAusgeführt & 'C:\Users\Raphael\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' -m py_compile 'C:\Projekt Kontinuum\01_system\kontinuum\core\change_agent.py' 'C:\Projekt Kontinuum\01_system\kontinuum\agents\change_agent.py' 'C:\Projekt Kontinuum\01_system\kontinuum\agents\agent_registry.py' 'C:\Projekt Kontinuum\01_system\kontinuum\core\request_router.py' 'C:\Projekt Kontinuum\01_system\kontinuum\core\application_services.py' 'C:\Projekt Kontinuum\01_system\kontinuum\core\system.py' 'C:\Projekt Kontinuum\17_tests\test_change_agent_1_0.py'seit 11s
+
+Ausgeführt $env:KONTINUUM_ROOT='C:\Projekt Kontinuum'; & 'C:\Users\Raphael\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' 'C:\Projekt Kontinuum\17_tests\test_request_router_knowledge_agent_1_0.py'seit 16s
+
+Der Regressionstest für den Request Router ist grün. Die Syntaxprüfung mit py_compile scheitert jetzt nur am Schreiben in ein bestehendes __pycache__ unter C:\Projekt Kontinuum; ich prüfe die Syntax daher ohne .pyc-Ausgabe per compile() im Interpreter.
+
+Ausgeführt & 'C:\Users\Raphael\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' -c "from pathlib import Path; files=[r'C:\Projekt Kontinuum\01_system\kontinuum\core\change_agent.py',r'C:\Projekt Kontinuum\01_system\kontinuum\agents\change_agent.py',r'C:\Projekt Kontinuum\01_system\kontinuum\agents\agent_registry.py',r'C:\Projekt Kontinuum\01_system\kontinuum\core\request_router.py',r'C:\Projekt Kontinuum\01_system\kontinuum\core\application_services.py',r'C:\Projekt Kontinuum\01_system\kontinuum\core\system.py',r'C:\Projekt Kontinuum\17_tests\test_change_agent_1_0.py']; [compile(Path(f).read_text(encoding='utf-8-sig'), f, 'exec') for f in files]; print('syntax ok')"seit 7s
+
+Die Syntaxprüfung ist sauber. Ich mache noch einen kleinen End-to-End-Check über KontinuumSystem.ask() mit temporärer Projektwurzel, weil dort Foundation-/Identity-Routing und Response-Footer zusammenspielen.
+
+Der End-to-End-Check über KontinuumSystem.ask() ist ebenfalls grün: keine reine Schöpfer-Antwort, ChangeAgent-Status erreichbar, Canonical Engine zeigt ein letztes Event. Ich schreibe jetzt noch den geforderten Abschlussbericht in 14_documents.
+
+Der Abschlussbericht ist angelegt. Ich sammle zum Schluss noch den Änderungsstand, damit ich dir sauber sagen kann, welche Dateien betroffen sind und welche Prüfungen durchgelaufen sind.
+
+Erledigt. ChangeAgent 1.0 ist diagnostisch/read-only in Projekt Kontinuum 34.1 integriert.
+Geändert/ergänzt:
+[change_agent.py](/C:/Projekt Kontinuum/01_system/kontinuum/core/change_agent.py) neuer Core-Service
+[change_agent.py](/C:/Projekt Kontinuum/01_system/kontinuum/agents/change_agent.py) neuer Agent
+[agent_registry.py](/C:/Projekt Kontinuum/01_system/kontinuum/agents/agent_registry.py) ChangeAgent mit höchster Routing-Priorität
+[request_router.py](/C:/Projekt Kontinuum/01_system/kontinuum/core/request_router.py) Änderungsauftrag-Erkennung vor Foundation/Wissen
+[application_services.py](/C:/Projekt Kontinuum/01_system/kontinuum/core/application_services.py) Routing + changeagentstatus
+[system.py](/C:/Projekt Kontinuum/01_system/kontinuum/core/system.py) Systembindung
+[test_change_agent_1_0.py](/C:/Projekt Kontinuum/17_tests/test_change_agent_1_0.py) Abnahmetests
+[change_agent_1_0_umsetzung_2026-07-01.md](/C:/Projekt Kontinuum/14_documents/change_agent_1_0_umsetzung_2026-07-01.md) Abschlussbericht
+Verifiziert:
+test_change_agent_1_0.py bestanden
+test_request_router_knowledge_agent_1_0.py bestanden
+End-to-End über KontinuumSystem.ask(...) bestanden
+Syntaxprüfung per compile() bestanden
+Hinweis: py_compile mit .pyc-Ausgabe wurde von bestehenden __pycache__-Berechtigungen blockiert; der Code selbst ist syntaktisch sauber. git status konnte ich nicht ausführen, weil C:\Projekt Kontinuum hier kein Git-Repository ist.

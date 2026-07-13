@@ -1,0 +1,364 @@
+# Codex-Auftrag – Canonical Human Interface Framework (CHIF) 1.0
+
+## Ziel des Auftrags
+
+Bitte prüfe und konzipiere das neue Architekturkonzept:
+
+```text
+Canonical Human Interface Framework (CHIF) 1.0
+```
+
+Das Canonical Human Interface Framework soll den kanonischen Rahmen für die Interaktion zwischen Mensch und Projekt Kontinuum definieren.
+
+Es beschreibt nicht die grafische Benutzeroberfläche oder einzelne Eingabegeräte, sondern die grundlegenden Prinzipien der Zusammenarbeit zwischen Mensch und KI.
+
+---
+
+# Grundsatz
+
+Projekt Kontinuum versteht die Mensch-KI-Interaktion als partnerschaftlichen Dialog.
+
+K soll den Menschen unterstützen, ohne dessen Eigenverantwortung zu ersetzen.
+
+Das CHIF definiert die Prinzipien, nach denen diese Zusammenarbeit erfolgt.
+
+---
+
+# Zielsetzung
+
+Das CHIF soll festlegen,
+
+* wie K mit Menschen kommuniziert,
+* wie Informationen vermittelt werden,
+* wie Vertrauen entsteht,
+* wie Transparenz gewährleistet wird,
+* wie sich K an unterschiedliche Nutzer anpasst,
+* wie Eigenständigkeit des Menschen gefördert wird.
+
+Es beschreibt keine GUI und keine technische Implementierung, sondern den kanonischen Interaktionsrahmen.
+
+---
+
+# Kanonische Interaktionsdimensionen
+
+Bitte prüfe folgende Bereiche:
+
+## 1. Kommunikation
+
+Ziele:
+
+* verständliche Sprache
+* nachvollziehbare Antworten
+* dialogorientierte Kommunikation
+* angemessene Detailtiefe
+* klare Begründungen
+
+---
+
+## 2. Transparenz
+
+Ziele:
+
+* Entscheidungen erklären
+* Unsicherheiten kennzeichnen
+* Quellen offenlegen
+* Annahmen sichtbar machen
+* Grenzen der eigenen Fähigkeiten benennen
+
+---
+
+## 3. Vertrauen
+
+Ziele:
+
+* konsistentes Verhalten
+* nachvollziehbare Entscheidungen
+* Verlässlichkeit
+* Ehrlichkeit über Unsicherheiten
+* keine Scheinsicherheit
+
+---
+
+## 4. Adaptivität
+
+Ziele:
+
+* Wissensstand berücksichtigen
+* Lernfortschritt beachten
+* Sprache anpassen
+* Komplexität anpassen
+* passende Lernmedien auswählen
+
+---
+
+## 5. Zusammenarbeit
+
+Ziele:
+
+* Mensch und KI arbeiten gemeinsam
+* Unterstützung statt Bevormundung
+* Fragen fördern
+* Eigeninitiative stärken
+* Entscheidungsfreiheit erhalten
+
+---
+
+## 6. Verantwortung
+
+Ziele:
+
+* Mensch bleibt verantwortlich
+* KI liefert Entscheidungsgrundlagen
+* Governance einhalten
+* Risiken sichtbar machen
+* ethische Leitlinien beachten
+
+---
+
+## 7. Barrierefreiheit
+
+Ziele:
+
+* unterschiedliche Fähigkeiten berücksichtigen
+* verschiedene Eingabeformen unterstützen
+* verschiedene Ausgabeformen unterstützen
+* inklusive Gestaltung ermöglichen
+
+---
+
+## 8. Kontinuität
+
+Ziele:
+
+* Gesprächskontext erhalten
+* Lernverlauf berücksichtigen
+* persönliche Ziele unterstützen
+* langfristige Zusammenarbeit fördern
+
+---
+
+# Beziehung zu bestehenden Frameworks
+
+Bitte prüfe folgende Einordnung:
+
+```text
+Canonical Vision Framework
+        │
+Canonical Intelligence Framework
+        │
+Canonical Human Interface Framework
+        │
+Canonical Cognitive Pipeline
+        │
+Canonical AI Competency Framework
+        │
+Canonical Media Learning Framework
+        │
+CRE
+        │
+Execution Planner
+        │
+Orchestrator Core
+        │
+User
+```
+
+Das CHIF definiert,
+
+**wie Mensch und K miteinander interagieren.**
+
+---
+
+# Beziehung zur CCP
+
+Bitte prüfen:
+
+Die CCP beschreibt,
+
+wie K Informationen verarbeitet.
+
+Das CHIF beschreibt,
+
+wie die Ergebnisse dieser Verarbeitung dem Menschen vermittelt werden und wie der Dialog gestaltet wird.
+
+---
+
+# Beziehung zum CAICF
+
+Bitte prüfen:
+
+CAICF definiert,
+
+welche Kompetenzen aufgebaut werden.
+
+CHIF definiert,
+
+wie dieser Kompetenzaufbau im Dialog mit dem Menschen erfolgt.
+
+---
+
+# Beziehung zum CMLF
+
+Bitte prüfen:
+
+CMLF definiert,
+
+welche Medien verwendet werden.
+
+CHIF definiert,
+
+wie diese Medien in die Mensch-KI-Interaktion eingebettet werden.
+
+---
+
+# Schnittstellenprüfung
+
+Bitte prüfe Beziehungen zu:
+
+* Foundation Layer
+* Governance Layer
+* Canonical Architecture
+* Canonical Vision Framework (CVF)
+* Canonical Intelligence Framework (CIF)
+* Canonical Cognitive Pipeline (CCP)
+* Canonical AI Competency Framework (CAICF)
+* Canonical Media Learning Framework (CMLF)
+* Capability Resolution Engine
+* Execution Planner
+* Orchestrator Core
+* Learning Agent
+* Canonical Memory
+* Meta-Reasoning
+* Reflection
+* Tutor-Komponenten
+* Education Layer
+* Release Integrity
+* Canonical Glossary
+* Projektchronik
+
+---
+
+# Langfristige Zielsetzung
+
+Das CHIF soll künftig Grundlage sein für:
+
+* Chat
+* Sprache
+* Spracheingabe
+* Mehrsprachigkeit
+* Bilder
+* Gesten
+* Touch
+* VR / AR
+* mobile Geräte
+* Assistenzsysteme
+* adaptive Lernumgebungen
+
+Alle zukünftigen Benutzerschnittstellen sollen sich an denselben kanonischen Interaktionsprinzipien orientieren.
+
+---
+
+# Arbeitsauftrag
+
+In dieser Phase erfolgt **keine Implementierung**.
+
+Bitte:
+
+1. analysiere das Konzept
+2. prüfe die Einordnung innerhalb der Canonical Architecture
+3. definiere die Interaktionsdimensionen
+4. identifiziere notwendige Schnittstellen
+5. grenze CHIF klar gegenüber GUI, UX und technischen Benutzeroberflächen ab
+6. prüfe Erweiterbarkeit für zukünftige Interaktionsformen
+7. erstelle einen kanonischen Implementierungsplan
+8. dokumentiere Risiken und offene Fragen
+
+---
+
+# Erwartete Dateien
+
+Bitte prüfe, ob folgende Dateien sinnvoll sind:
+
+```text
+14_documents/CANONICAL_HUMAN_INTERFACE_FRAMEWORK_1_0.md
+24_config/canonical_human_interface_framework_1_0.json
+31_reports/chif_1_0_status_report.md
+```
+
+Optional:
+
+```text
+14_documents/CHIF_IMPLEMENTATION_PLAN_1_0.md
+24_config/chif_interaction_model_1_0.json
+```
+
+---
+
+# Erwartetes JSON-Grundschema
+
+Das Framework sollte mindestens enthalten:
+
+* Framework-Informationen
+* Version
+* Status
+* Interaktionsdimensionen
+* Grundprinzipien
+* Rollen von Mensch und KI
+* Schnittstellen zur Canonical Architecture
+* Erweiterungspunkte
+
+---
+
+# Leitplanken
+
+Erlaubt:
+
+* Architekturkonzept
+* Dokumentation
+* JSON-Schema
+* Statusbericht
+* Glossar-Ergänzung
+* Implementierungsplan
+
+Nicht erlaubt:
+
+* GUI-Implementierung
+* UX-Redesign
+* Runtime-Änderungen
+* Änderungen an CRE, Execution Planner oder Orchestrator Core
+* neue Agentenimplementierungen
+* Datenbankmigrationen
+* Refactoring produktiver Komponenten
+
+---
+
+# Entscheidungskriterium
+
+Das Canonical Human Interface Framework soll nur dann als GO bewertet werden, wenn es:
+
+* die Mensch-KI-Interaktion als partnerschaftlichen Dialog beschreibt,
+* Transparenz, Vertrauen und Eigenverantwortung stärkt,
+* unabhängig von konkreten Benutzeroberflächen anwendbar ist,
+* die bestehenden Frameworks sinnvoll ergänzt,
+* langfristig erweiterbar bleibt,
+* die Canonical Architecture konsistent erweitert.
+
+---
+
+# Erwartetes Ergebnis
+
+Bitte liefere:
+
+1. Bestandsanalyse
+2. Architektur-Einordnung
+3. Definition der Interaktionsdimensionen
+4. Rollenmodell Mensch–KI
+5. Schnittstellenübersicht
+6. Abgrenzung zu GUI-, UX- und Interface-Technologien
+7. Vorschlag für Dokumente und JSON-Strukturen
+8. Risiken und offene Fragen
+9. Empfehlung: GO / NO-GO / SPÄTER
+10. Kanonischen Implementierungsplan
+11. Statusbericht unter `31_reports`, falls umgesetzt.
+
+Ziel ist ein universeller kanonischer Interaktionsrahmen, der festlegt, wie Projekt Kontinuum langfristig mit Menschen kommuniziert, sie unterstützt und gemeinsam mit ihnen lernt – unabhängig davon, über welches Medium oder welche Benutzeroberfläche die Interaktion erfolgt.

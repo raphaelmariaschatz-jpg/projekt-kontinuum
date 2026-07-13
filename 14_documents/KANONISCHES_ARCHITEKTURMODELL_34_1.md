@@ -3,6 +3,27 @@
 Kontinuum wird kanonisch aufgebaut, ohne alle Systembereiche gleich starr zu
 behandeln. Die Verbindlichkeit richtet sich nach vier Ebenen.
 
+## 0. Normative Architekturverfassung
+
+Das Canonical Master Implementation Blueprint Framework (CMIBF) 1.0 ist die einzige normative Architekturquelle und Architekturverfassung von Projekt Kontinuum. Dieses Architekturmodell 34.1 ist eine dokumentarische Architekturuebersicht und besitzt keine eigenstaendige normative Architekturautoritaet.
+
+Das Canonical Architecture First Principle (AFP) gilt fuer alle zukuenftigen Arbeiten:
+
+```text
+Idee -> Architekturanalyse -> CMIBF-Definition oder CMIBF-Erweiterung
+-> Architekturpruefung -> Freigabe -> CAC -> kanonische Artefakte
+-> Implementierung -> Validierung und Tests -> Release -> Betrieb
+-> Monitoring -> kontrollierte Evolution
+```
+
+Code, Tests, Konfigurationen, Registries, Dependency Graphs, Ontologien, Reports und Runtime-Zustaende duerfen keine Architektur definieren oder ersetzen. Implementierungen muessen auf eine freigegebene CMIBF-Grundlage zurueckfuehrbar sein.
+
+Das Canonical AI Working Protocol (CAWP) 1.0 steht in der Governance-Hierarchie direkt unter dem AFP und vor der technischen Ableitung durch den CAC. CAWP definiert das verbindliche Arbeitsverhalten aller KI-Systeme, ohne eigene Architekturautoritaet zu besitzen:
+
+```text
+CMIBF -> AFP -> CAWP -> CAC
+```
+
 ## 1. Foundation Layer
 
 Unveränderliche beziehungsweise nur durch geschützte Migration änderbare
@@ -15,8 +36,9 @@ Grundlagen:
   Projektordner
 - FND-ID-050 / CCP 1.0 als Foundation-Regel fuer kontrollierte kanonische
   Aenderungen
-- Architecture Governance Framework 1.0 als Architekturverfassung fuer
-  nachvollziehbare, pruefbare und Foundation-kompatible Architekturentscheidungen
+- Architecture Governance Framework 1.0 als Governance-Richtlinie unterhalb des
+  CMIBF fuer nachvollziehbare, pruefbare und Foundation-kompatible
+  Architekturentscheidungen
 - Foundation-2.1-Kompatibilitätspfad für bestehende Importe
 - Moral Core
 - Foundation Memory
@@ -493,3 +515,19 @@ CRE bleibt fuer Capabilities, Prioritaeten und Governance-Hinweise verantwortlic
 
 
 
+
+
+## Canonical Intellectual Property Ledger (CIPL) 1.0
+
+CIPL 1.0 ist eine kanonische Governance-Komponente fuer Herkunfts- und Urheberdokumentation. Der Baustein dokumentiert Ursprung, Urheber, Zeitpunkt, Begruendung, Version, Zusammenhang, optionale Git-Referenz und historische Entwicklung wesentlicher Architekturartefakte.
+
+Kanonische Dateien:
+
+- `24_config/canonical_ip_ledger_1_0.json`
+- `14_documents/CANONICAL_IP_LEDGER_1_0.md`
+
+CIPL definiert die interne Creator Identity `RMS-0001` fuer Raphael Maria Schatz. Diese ID dient ausschliesslich der internen kanonischen Referenzierung und ersetzt keine juristischen Identitaetsnachweise.
+
+CIPL ist kein Lizenzsystem, kein DRM, keine Rechteverwaltung und kein Sicherheitssystem. Es gibt keine Runtime-Anpassung, keine automatische Git-Auswertung, keine Migration bestehender Historien und keine Aenderung an CAM, CRE, Foundation oder Orchestrator.
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

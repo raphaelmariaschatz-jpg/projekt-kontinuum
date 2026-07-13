@@ -1,0 +1,18 @@
+CANONICAL_DEVELOPMENT_FRAMEWORK_1_0 09.07.26
+
+CDF 1.0 ist als eigener kanonischer Entwicklungsrahmen angelegt:
+[CANONICAL_DEVELOPMENT_FRAMEWORK_1_0.md](C:/Projekt Kontinuum/14_documents/CANONICAL_DEVELOPMENT_FRAMEWORK_1_0.md)
+[canonical_development_framework_1_0.json](C:/Projekt Kontinuum/24_config/canonical_development_framework_1_0.json)
+[cdf_1_0_status_report.md](C:/Projekt Kontinuum/31_reports/cdf_1_0_status_report.md)
+Zusätzlich wurde CDF sauber im Glossar ergänzt:
+[CANONICAL_GLOSSARY_1_0.md](C:/Projekt Kontinuum/14_documents/CANONICAL_GLOSSARY_1_0.md)
+[canonical_glossary_1_0.json](C:/Projekt Kontinuum/24_config/canonical_glossary_1_0.json)
+Wichtige Einordnung: CDF ersetzt CDG nicht. CDG bleibt die Entwicklungsverfassung mit Regel-IDs; CDF beschreibt den praktischen Arbeitsrahmen, also Orientierung, Konsistenzprüfung, kanonische Einordnung, Umsetzung und Abschlussprüfung.
+Geprüft:
+CDF-JSON gültig.
+Glossar-JSON gültig.
+Markdown stichprobenartig geprüft.
+git diff --check: sauber.
+Whitespace-/Tab-Prüfung: keine Treffer.
+Keine Runtime, Foundation, Agenten, APIs, Datenbanken, Imports, Tests, Migrationen oder Dateiverschiebungen geändert.
+Keine Commits erstellt.

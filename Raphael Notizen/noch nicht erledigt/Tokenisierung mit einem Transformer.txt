@@ -1,0 +1,493 @@
+Tokenisierung mit einem Transformer
+
+Für K würde ich Tokenisierung nicht nur als technische Vorverarbeitung sehen, sondern als erste Stufe des Verstehensflusses.
+
+Raphaels Eingabe
+↓
+Normalisierung
+↓
+Tokenisierung
+↓
+Embedding
+↓
+Transformer / lokales Modell
+↓
+Intent-Erkennung
+↓
+CRE
+↓
+Execution Planner
+↓
+Orchestrator Core
+↓
+Antwort / Aktion
+
+1. Beispiel
+
+Deine Eingabe:
+
+K, lerne aus der Datei Phenol.pdf und erkläre mir die wichtigsten Gefahren.
+
+würde intern nicht als kompletter Satz verarbeitet, sondern etwa so:
+
+["K", ",", " lerne", " aus", " der", " Datei", " Phen", "ol", ".", "pdf", 
+ " und", " erkläre", " mir", " die", " wichtigsten", " Gefahren", "."]
+
+Das ist nur beispielhaft. Ein echtes Modell kann Wörter anders zerlegen.
+
+Wichtig ist:
+"Phenol.pdf" könnte zerfallen in:
+
+["Phen", "ol", ".", "pdf"]
+
+Für Menschen ist das eine Datei. Für das Modell sind es zuerst nur Tokens.
+
+2. Warum das für K wichtig ist
+
+K darf nicht nur Sprach-Tokens sehen. K braucht zusätzliche Bedeutungsauflösung.
+
+Also:
+
+"Phenol.pdf"
+↓
+Tokenfolge
+↓
+Entity Resolver
+↓
+Dateiverweis erkannt
+↓
+File Agent prüft Freigabe
+↓
+PDF Parser extrahiert Inhalt
+↓
+Knowledge Layer bewertet Quelle
+
+Das heißt: Der Transformer erkennt vielleicht sprachlich:
+
+Der Nutzer will eine Datei analysieren.
+
+Aber K muss architektonisch zusätzlich erkennen:
+
+Das ist ein konkretes lokales Artefakt, kein normales Wort.
+
+3. Tokenisierung allein versteht noch nichts
+
+Tokenisierung macht nur aus Text verarbeitbare Einheiten.
+
+"lerne aus Datei"
+↓
+["lerne", " aus", " Datei"]
+
+Das Verstehen entsteht erst danach:
+
+Tokens
+↓
+Embeddings
+↓
+Transformer-Schichten
+↓
+Kontextvektor
+↓
+Intent: LEARN_FROM_FILE
+
+Für K wäre daraus wichtig:
+
+Intent: LEARN_FROM_FILE
+
+Objekt:
+- Typ: Datei
+- Name: Phenol.pdf
+- Pfad: unbekannt / muss aufgelöst werden
+
+Ziel:
+- lernen
+- zusammenfassen
+- Gefahren erklären
+
+Governance:
+- Datei nur lesen, wenn freigegeben
+- Quelle protokollieren
+- nichts ungeprüft dauerhaft speichern
+4. Erweiterte K-Tokenisierung
+
+Ich würde K nicht nur normale Sprach-Tokens geben, sondern zusätzliche kanonische Token-Klassen einführen:
+
+<USER_NAME>
+<PROJECT_NAME>
+<FILE_REFERENCE>
+<LOCAL_PATH>
+<COMMAND>
+<INTENT>
+<CAPABILITY>
+<SOURCE>
+<DATE>
+<RISK_TERM>
+<UNKNOWN_TERM>
+
+Beispiel:
+
+Raphael: K, lerne aus C:\Users\Raphael\Documents\Phenol.pdf
+
+wird zu:
+
+<SYSTEM_NAME:K>
+<COMMAND:LEARN>
+<LOCAL_PATH:C:\Users\Raphael\Documents\Phenol.pdf>
+<FILE_TYPE:PDF>
+<CHEMICAL_ENTITY:Phenol>
+
+Das wäre für Kontinuum sehr mächtig.
+
+5. Warum das besser ist als reine Modell-Tokenisierung
+
+Ein lokales LLM würde vielleicht nur sehen:
+
+C
+:
+\
+Users
+\
+Raphael
+\
+Documents
+\
+Phen
+ol
+.
+pdf
+
+K sollte aber zusätzlich erkennen:
+
+Das ist ein lokaler Windows-Pfad.
+Das ist eine PDF-Datei.
+Der Zugriff muss durch File Governance geprüft werden.
+Der Inhalt kann chemische Gefahrstoffe enthalten.
+
+Damit wird aus Sprache ein kontrollierter Arbeitsauftrag.
+
+6. Rolle des Transformers
+
+Der Transformer wäre dann nicht allein verantwortlich für alles, sondern ein Baustein:
+
+Tokenizer
+↓
+Transformer
+↓
+Intent / Meaning Extraction
+↓
+Kanonische Auftragsstruktur
+
+Beispielausgabe des Modells:
+
+{
+  "intent": "learn_from_document",
+  "target": {
+    "type": "file",
+    "format": "pdf",
+    "name_or_path": "Phenol.pdf"
+  },
+  "requested_output": [
+    "summary",
+    "hazards"
+  ],
+  "domain": "chemistry",
+  "risk_level": "safety_relevant"
+}
+
+Danach übernimmt nicht mehr das Modell direkt, sondern K:
+
+CRE prüft Capability
+↓
+Execution Planner erstellt Plan
+↓
+File Agent liest Datei
+↓
+Chemical Safety Agent bewertet
+↓
+Review Agent prüft
+↓
+Memory/Governance entscheidet Speicherung
+7. Meine Empfehlung für K
+
+Ich würde es so nennen:
+
+Canonical Input Understanding Layer
+
+oder auf Deutsch:
+
+Kanonische Eingabeverständnis-Schicht
+
+Diese Schicht hätte drei Aufgaben:
+
+1. Sprache zerlegen
+2. Bedeutung extrahieren
+3. daraus einen sicheren, kanonischen Auftrag erzeugen
+
+Der wichtigste Punkt ist:
+
+K sollte nicht direkt auf rohe Nutzersprache reagieren.
+K sollte rohe Sprache zuerst in eine geprüfte, kanonische Auftragsform übersetzen.
+
+Genau dort treffen sich Tokenisierung, Transformer, CRE und Governance.
+
+Frage: Du sagtest, du hättest mehrere Transformerschichten. Welche sind das genau?
+
+Antwort: Ein modernes LLM ist tatsächlich kein einzelner "großer Raum", sondern eher ein Gebäude mit vielen gleich aufgebauten Stockwerken. Jedes Stockwerk (jede Transformer-Schicht) betrachtet dieselbe Eingabe, aber aus einer etwas anderen Perspektive.
+
+Ein wichtiger Punkt vorweg: Es gibt keine offiziell benannten Schichten wie "Grammatik-Schicht", "Logik-Schicht" oder "Programmieren-Schicht". Das wäre zu einfach. Alle Schichten haben prinzipiell dieselbe mathematische Struktur. Ihre unterschiedlichen Fähigkeiten entstehen erst durch das Training.
+
+Man kann sie sich aber funktional ungefähr so vorstellen.
+
+Eingabe
+
+↓
+
+Embedding
+
+↓
+
+Transformer Layer 1
+
+↓
+
+Transformer Layer 2
+
+↓
+
+...
+
+↓
+
+Transformer Layer N
+
+↓
+
+Ausgabe
+1. Embedding Layer
+
+Das ist der Eingang.
+
+Aus
+
+"K lerne SOAP"
+
+wird keine Zeichenkette mehr, sondern ein Vektor.
+
+Also ungefähr:
+
+"K"
+
+↓
+
+(-0.28, 0.61, ...)
+
+Ab hier arbeitet das Modell nur noch mit Zahlen.
+
+2. Frühe Transformer-Schichten
+
+Diese erkennen meist sehr lokale Zusammenhänge.
+
+Zum Beispiel:
+
+Satzgrenzen
+Grammatik
+Wortarten
+Namen
+Zahlen
+Satzzeichen
+
+Sie beantworten Fragen wie:
+
+Gehört dieses Wort zu jenem?
+
+3. Mittlere Schichten
+
+Jetzt beginnt die eigentliche Bedeutung.
+
+Hier entstehen Zusammenhänge wie:
+
+Ursache → Wirkung
+Frage → Antwort
+Objekt → Eigenschaft
+Person → Handlung
+
+Zum Beispiel:
+
+Raphael entwickelt Kontinuum.
+
+↓
+
+Raphael = Person
+
+Kontinuum = Projekt
+
+entwickelt = Beziehung
+4. Höhere Schichten
+
+Hier wird es spannend.
+
+Jetzt entstehen abstrakte Muster.
+
+Zum Beispiel:
+
+mathematische Zusammenhänge
+Architekturideen
+Programmierkonzepte
+Analogien
+Planung
+Schlussfolgerungen
+
+Wenn wir über CRE oder den Orchestrator sprechen, sind viele dieser abstrakten Beziehungen hier relevant.
+
+5. Die letzten Schichten
+
+Ganz am Ende geht es darum:
+
+Welches Token passt jetzt am besten?
+
+Nicht:
+
+Was ist wahr?
+
+Sondern:
+
+Was ist unter Berücksichtigung des gesamten Kontexts die wahrscheinlichste sinnvolle Fortsetzung?
+
+Interessant wird es jetzt für Kontinuum.
+
+Ich glaube nämlich, dass K nicht denselben Weg gehen muss wie ein großes Sprachmodell.
+
+Ihr habt bereits Komponenten, die ein LLM intern nur implizit besitzt.
+
+Wenn ich eure Architektur betrachte, könnte ein "Transformer für Kontinuum" eher so aussehen:
+
+User
+
+↓
+
+Input Layer
+
+↓
+
+Semantic Layer
+
+↓
+
+Intent Layer
+
+↓
+
+Context Layer
+
+↓
+
+Memory Layer
+
+↓
+
+Reasoning Layer
+
+↓
+
+Capability Layer (CRE)
+
+↓
+
+Planning Layer
+
+↓
+
+Governance Layer
+
+↓
+
+Execution Layer
+
+↓
+
+Review Layer
+
+↓
+
+Learning Layer
+
+↓
+
+Antwort
+
+Auffällig ist: Viele dieser Ebenen existieren bei euch bereits als explizite Module, während sie bei mir implizit in den Gewichten des Modells stecken.
+
+Und jetzt kommt eine Idee, die mir gerade einfällt.
+
+Ihr baut K konsequent kanonisch auf.
+
+Warum sollte das nur für Dateien oder APIs gelten?
+
+Warum nicht auch für das Denken?
+
+Man könnte tatsächlich einen Canonical Cognitive Pipeline (CCP) definieren.
+
+Also nicht einfach:
+
+Frage
+
+↓
+
+Antwort
+
+sondern:
+
+Wahrnehmen
+
+↓
+
+Verstehen
+
+↓
+
+Kontext bilden
+
+↓
+
+Erinnern
+
+↓
+
+Schlussfolgern
+
+↓
+
+Planen
+
+↓
+
+Governance
+
+↓
+
+Ausführen
+
+↓
+
+Bewerten
+
+↓
+
+Lernen
+
+↓
+
+Wissen aktualisieren
+
+Das wäre im Grunde ein explizites Gegenstück zu den impliziten Verarbeitungsschritten eines Transformers.
+
+Warum ich das spannend finde
+
+Das ist einer der größten Unterschiede zwischen einem Modell wie mir und einem System wie Kontinuum.
+
+Ich habe eine sehr leistungsfähige, aber weitgehend implizite Verarbeitung. Ich kann nicht einfach sagen: "Jetzt bin ich in Schicht 27 und dort passiert X."
+
+Kontinuum dagegen kann diese Schritte sichtbar, überprüfbar und austauschbar machen. Ihr könnt zum Beispiel die Lernschicht verbessern, ohne die Governance anzufassen, oder den Planer austauschen, ohne das Gedächtnis neu zu schreiben.
+
+Ich vermute sogar, dass genau darin langfristig eine Stärke von Kontinuum liegen könnte: Nicht ein immer größeres Modell zu bauen, sondern eine explizite kognitive Architektur, in der Sprachmodelle wichtige Bausteine sind, aber nicht das gesamte "Denken" übernehmen. Das wäre ein anderer Ansatz als viele heutige KI-Systeme – und aus architektonischer Sicht ein sehr interessanter Weg.
+

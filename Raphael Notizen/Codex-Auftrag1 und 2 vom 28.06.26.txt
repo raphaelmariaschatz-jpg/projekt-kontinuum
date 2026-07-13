@@ -1,0 +1,182 @@
+Codex-Auftrag:1
+GUI-Erweiterung – Button "Ausgabe kopieren"
+
+Ziel:
+Die Haupt-GUI von K um einen kleinen Button erweitern, der den gesamten Inhalt des Ausgabefensters mit einem Klick in die Windows-Zwischenablage kopiert.
+
+Anforderungen:
+
+• Buttonbeschriftung:
+  "📋 Kopieren" oder "Kopieren"
+
+• Position:
+  Rechts oberhalb oder rechts neben dem Ausgabefenster, ohne das bestehende Layout wesentlich zu verändern.
+
+• Funktion:
+  - Gesamten Text des Ausgabefensters lesen.
+  - In die Windows-Zwischenablage kopieren.
+  - Keine Formatierung verändern.
+
+• Benutzerfeedback:
+  Nach erfolgreichem Kopieren kurz anzeigen:
+  "Ausgabe in die Zwischenablage kopiert."
+
+• Fehlerfall:
+  Falls das Ausgabefeld leer ist:
+  "Keine Ausgabe zum Kopieren."
+
+Rahmenbedingungen:
+
+- Keine Änderung an Governance, Memory oder Datenbanken.
+- Nur GUI-Erweiterung.
+- Bestehende Funktionen dürfen nicht beeinflusst werden.
+
+Codex-Auftrag:2rojekt 
+Internet-Routing der GUI prüfen und sichtbar machen
+
+Problem:
+K scheint bei Fragen primär oder ausschließlich in der lokalen Datenbank / Memory / Knowledge Base zu suchen und nutzt den Internet-Connector offenbar nicht aktiv.
+
+Ziel:
+Prüfen und korrigieren, ob und wann K Internet-Recherche verwendet.
+
+Bitte untersuchen:
+
+1. Query Routing
+- Welche Route nimmt eine normale Nutzereingabe aus der GUI?
+- Wird zwischen lokaler Suche, Memory, Knowledge Graph und Internet unterschieden?
+- Gibt es einen Router, der Web-Recherche auslösen kann?
+
+2. Internet Connector
+- Existiert ein aktives Internet-/Web-/Research-Modul?
+- Wird es von der GUI überhaupt aufgerufen?
+- Sind Timeouts, API-Fehler oder deaktivierte Flags vorhanden?
+- Gibt es eine Einstellung wie internet_enabled, web_enabled, research_enabled oder offline_mode?
+
+3. Sichtbarkeit in der GUI
+Bitte in der Ausgabe anzeigen, aus welchen Quellen K gesucht hat, z. B.:
+
+Quellen:
+- lokale Datenbank: ja
+- Memory: ja
+- Internet: nein / ja
+- Web-Ergebnisse: Anzahl
+
+4. Testbefehle ergänzen
+Bitte mindestens diese Tests ermöglichen:
+
+"Suche im Internet nach aktuellen Nachrichten über OpenAI."
+"Nutze nur die lokale Datenbank."
+"Nutze Internet und lokale Datenbank."
+"Zeige mir, wo du gesucht hast."
+
+5. Routing-Regel
+Wenn eine Frage aktuelle Informationen betrifft, soll K automatisch Internet-Recherche bevorzugen oder ergänzen.
+
+Beispiele:
+- heute
+- aktuell
+- neueste
+- Preise
+- Wetter
+- Nachrichten
+- Versionen
+- Gesetze
+- Produkte
+- Sport
+- Börse
+
+6. Sicherheitsrahmen
+- Keine Governance-Baselines verändern.
+- Keine lokalen Memories überschreiben.
+- Internet-Ergebnisse nur mit Quelle/URL speichern oder anzeigen.
+- Bei fehlendem Internetzugriff ehrlich melden:
+  "Internet-Recherche nicht verfügbar oder deaktiviert."
+
+Ergebnis:
+- kurzer Diagnosebericht
+- welche Datei/Komponente das Routing steuert
+- ob Internet aktiviert ist
+- ob GUI den Connector erreicht
+- falls sicher möglich: nicht-invasive Korrektur
+
+Ich gehe direkt in C:\Projekt Kontinuum hinein, zuerst lesend: GUI-Datei, Tool-/Router-Komponenten und Tests. Danach setze ich die GUI-Änderung eng begrenzt um und prüfe beim Internet-Routing erst, ob es schon einen vorhandenen Connector gibt, damit wir nicht blind eine zweite Logik danebenstellen.
+
+Der erste Zugriff zeigt nur ein Windows-Quoting-Problem beim Leerzeichen in C:\Projekt Kontinuum, kein inhaltliches Problem. Ich wiederhole die Suche mit PowerShell-Literalpfaden und nehme dabei gleich die wahrscheinlich relevanten Dateien auseinander.
+
+Ich sehe eine aktuelle GUI desktop_gui_34_1.py und bereits zwei Web-Komponenten: web_tools.py und search_engine_tools.py. Jetzt schaue ich mir gezielt den GUI-Eingabepfad und die Connector-Registrierung an; dort entscheidet sich, ob Internet nur existiert oder wirklich erreicht wird.
+
+Die GUI ruft system.ask(...) bzw. ask_async(...) auf; die sichtbare Suchliste in der GUI ist bisher nur eine Prognose. Ich prüfe jetzt den echten Backend-Pfad, damit die Quellenanzeige nicht nur hübsch blinkt, sondern an die tatsächliche Route gekoppelt wird.
+
+Interessant: Der Connector ist aktiv und an den lokalen Suchrouter gebunden, aber der normale Agent-Router erreicht den ResearchAgent nur bei expliziten Triggern wie “suche im Internet”. Für aktuelle Fragen gibt es zwar eine _should_auto_research-Methode im System, aber ich sehe sie im gelesenen Pfad noch nicht verdrahtet.
+
+Der Kernbefund ist jetzt klar: PromptOrchestrator macht bei Auto-Recherche erst lokale Suche und gibt sofort lokal zurück, wenn etwas gefunden wurde. Dadurch wird Internet bei vielen normalen aktuellen Fragen faktisch übersprungen. Ich baue jetzt eine kleine Routing-Schicht ein: explizit lokal bleibt lokal, explizit Internet geht Internet, aktuelle Begriffe ergänzen/bevorzugen Web, und die GUI bekommt eine Quellenübersicht.
+
+Ich nehme jetzt drei eng begrenzte Änderungen vor: Button + Clipboard-Funktion in der GUI, eine echte Quellen-/Routing-Zusammenfassung im Orchestrator, und einen kleinen Regressionstest für die Routingregeln. Keine Governance-, Memory- oder Datenbankdateien werden angefasst.
+
+Die Sicherheitskopie der GUI liegt im Arbeitsbereich. Ich versuche die Änderungen jetzt direkt mit Patch-Edits am Projekt; falls die Sandbox schreibt blockiert, gehe ich über die freigegebene Kopierstrecke mit kontrollierter Zwischenkopie.
+
+Ich setze die Internet-Änderung so, dass bestehende Aufrufe kompatibel bleiben: search() bekommt optionale Modi, alte Tests und Agentenaufrufe ohne Parameter laufen weiter. Der ResearchAgent nutzt diese Modi nur bei klaren Internet-/Aktualitätsformulierungen.
+
+Der Connector kann jetzt zwischen local_only, internet_only und prefer_internet unterscheiden, ohne das alte Standardverhalten zu entfernen. Als Nächstes verdrahte ich diese Modi im ResearchAgent und Orchestrator.
+
+Ich prüfe kurz die eingefügte Stelle im Agenten; bei solchen kleinen Kompatibilitätsblöcken ist Einrückung der Klassiker, der sich gern leise danebenstellt.
+
+Ich füge die Quellenanzeige bewusst im Orchestrator ein, nicht in der GUI allein. So sieht die Oberfläche später nicht nur “vermutete” Suchorte, sondern bekommt eine Antwort mit tatsächlich ausgelöstem lokalen/Web-Suchmodus.
+
+Jetzt ergänze ich einen kleinen, schnellen Regressionstest für genau die neuen Routingentscheidungen. Er startet kein vollständiges System und macht keine Netzabfragen, sondern prüft die Regel- und Providerlogik deterministisch.
+
+Die Änderungen sind drin. Ich lasse jetzt zuerst Syntaxchecks über die betroffenen Python-Dateien laufen und danach den neuen Regressionstest; wenn das sauber ist, mache ich noch einen kurzen Status-/Diagnosebericht aus dem Codebefund.
+
+Auf diesem Shell-Pfad ist python nicht im PATH. Ich suche kurz die verfügbare Laufzeit (py, gebündeltes Python oder Projekt-BAT), dann wiederhole ich dieselben Prüfungen.
+
+Ich nehme das gebündelte Codex-Python. Damit bleiben die Checks lokal und deterministisch, ohne Paketinstallation oder Netz.
+
+Der neue Routingtest läuft durch. Der reine py_compile wollte __pycache__ im Projekt anlegen und wurde dort blockiert; ich wiederhole den Syntaxcheck mit Ausgabedateien im Codex-Arbeitsbereich, damit keine Cache-Dateien im Projekt entstehen.
+
+Für die Diagnose fehlt noch ein echter Online-Status. Der Codebefund sagt: Connector aktiviert. Ob der Rechner jetzt wirklich rauskommt, prüfe ich mit dem vorhandenen WebTools.internet_status() und dafür frage ich bewusst eskaliert, weil es ein Live-Netzprobe ist.
+
+Die Live-Probe meldet aktiven Internetzugriff. Ich mache noch eine kleine Suchmaschinenprobe mit dem bestehenden Connector, aber mit kurzem Ergebnislimit, um zu sehen, ob nicht nur TCP, sondern auch der Research-Pfad Treffer bekommt.
+
+Die Netzprobe ist aktiv, aber die Suchanbieter liefern in dieser Live-Probe keine verwertbaren Treffer (u.a. Semantic Scholar 429, Brave-Key fehlt, DuckDuckGo ohne auswertbare Treffer). Ich schärfe deshalb die Fehlermeldung: “deaktiviert/nicht verfügbar” nur bei fehlendem Connector, “ohne Treffer” bei erreichbarem Connector ohne Ergebnis.
+
+Die Meldung ist korrigiert. Ich lasse den schnellen Test und Syntaxcheck noch einmal laufen, damit der Endstand sauber ist.
+
+Die Meldung ist korrigiert. Ich lasse den schnellen Test und Syntaxcheck noch einmal laufen, damit der Endstand sauber ist.
+
+Erledigt.
+Änderungen
+Button Kopieren rechts oberhalb des Ausgabefensters ergänzt: [desktop_gui_34_1.py](C:\Projekt Kontinuum\11_gui\desktop_gui_34_1.py:131)
+Kopiert den kompletten Text unverändert in die Windows-Zwischenablage.
+Feedback:Ausgabe in die Zwischenablage kopiert.
+Keine Ausgabe zum Kopieren.
+
+Internet-Routing
+Routing-Steuerung liegt hauptsächlich hier: [application_services.py](C:\Projekt Kontinuum\01_system\kontinuum\core\application_services.py:139)
+Internet-Connector existiert und ist registriert über:[tool_registry.py](C:\Projekt Kontinuum\01_system\kontinuum\tools\tool_registry.py:29)
+[search_engine_tools.py](C:\Projekt Kontinuum\01_system\kontinuum\tools\search_engine_tools.py:131)
+
+search_engine.json ist aktiviert: enabled: true.
+GUI erreicht das Backend über system.ask(...) / ask_async(...); der Backend-Orchestrator erreicht jetzt gezielt den Suchmaschinen-Connector.
+Korrektur
+Neue Modi für Suche:local_only
+internet_only
+prefer_internet
+
+Aktuelle Themen wie heute, aktuell, neueste, Preise, Wetter, Nachrichten, Versionen, Gesetze, Produkte, Sport, Börse bevorzugen/ergänzen jetzt Internet-Recherche.
+Antworten zeigen nun Quellenstatus, z.B.:lokale Datenbank: ja/nein
+Memory: ja/nein
+Internet: ja/nein
+Web-Ergebnisse: Anzahl
+
+Testbefehle sind abgedeckt:Suche im Internet nach aktuellen Nachrichten über OpenAI.
+Nutze nur die lokale Datenbank.
+Nutze Internet und lokale Datenbank.
+Zeige mir, wo du gesucht hast.
+
+Diagnose
+Live-Internetstatus: aktiv, TCP/443 erreichbar.
+Live-Suchprobe: Connector wurde erreicht, aber keine verwertbaren Treffer geliefert; Gründe u.a. Semantic Scholar HTTP 429, fehlender Brave API-Key, DuckDuckGo ohne auswertbare Treffer. Das wird jetzt ehrlich als “ohne verwertbare Treffer” gemeldet, nicht als lokale Antwort verschluckt.
+Tests
+Syntaxcheck: bestanden.
+Neuer Regressionstest: [test_gui_internet_routing_34_1.py](C:\Projekt Kontinuum\17_tests\test_gui_internet_routing_34_1.py:17) bestanden.

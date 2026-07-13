@@ -1,0 +1,398 @@
+# Codex-Auftrag – Canonical Enterprise Framework (CEF) 1.0
+
+## Ziel des Auftrags
+
+Bitte prüfe und konzipiere das neue Architekturkonzept:
+
+```text
+Canonical Enterprise Framework (CEF) 1.0
+```
+
+Das Canonical Enterprise Framework soll kein ERP-System, kein CRM-System und keine klassische Unternehmenssoftware beschreiben.
+
+Es soll vielmehr den **kanonischen Aufbau eines Unternehmens** definieren.
+
+Das Framework beschreibt die grundlegenden Funktionen, Strukturen, Prozesse und Beziehungen, die jedes Unternehmen – unabhängig von Branche, Größe oder Rechtsform – besitzt.
+
+---
+
+# Grundsatz
+
+Projekt Kontinuum soll Unternehmen nicht als Sammlung einzelner Softwaremodule verstehen.
+
+Ein Unternehmen ist ein dynamisches System aus Menschen, Ressourcen, Wissen, Prozessen, Entscheidungen und Zielen.
+
+Das CEF bildet hierfür den kanonischen Bezugsrahmen.
+
+---
+
+# Zielsetzung
+
+Das CEF definiert die grundlegenden Unternehmensdimensionen.
+
+Es beschreibt nicht:
+
+* konkrete Software,
+* Datenbanken,
+* ERP-Systeme,
+* Buchhaltungsprogramme,
+* organisatorische Besonderheiten einzelner Firmen.
+
+Es beschreibt ausschließlich die universellen Bestandteile eines Unternehmens.
+
+---
+
+# Kanonische Unternehmensdimensionen
+
+Bitte prüfe folgende Bereiche:
+
+## 1. Vision & Strategie
+
+Ziele
+
+Mission
+
+Leitprinzipien
+
+Unternehmensentwicklung
+
+langfristige Planung
+
+---
+
+## 2. Governance
+
+Richtlinien
+
+Verantwortlichkeiten
+
+Compliance
+
+Risikomanagement
+
+Qualität
+
+Entscheidungsstrukturen
+
+---
+
+## 3. Organisation
+
+Unternehmensstruktur
+
+Rollen
+
+Teams
+
+Verantwortungsbereiche
+
+Kommunikation
+
+---
+
+## 4. Prozesse
+
+Geschäftsprozesse
+
+Workflows
+
+Standardprozesse
+
+Optimierung
+
+Automatisierung
+
+---
+
+## 5. Ressourcen
+
+Personal
+
+Finanzen
+
+Infrastruktur
+
+IT
+
+Maschinen
+
+Material
+
+Zeit
+
+---
+
+## 6. Wissen
+
+Dokumentation
+
+Know-how
+
+Lernen
+
+Innovation
+
+Wissensmanagement
+
+Erfahrungen
+
+---
+
+## 7. Kunden & Partner
+
+Kunden
+
+Lieferanten
+
+Partner
+
+Behörden
+
+Netzwerke
+
+Kommunikation
+
+---
+
+## 8. Produkte & Dienstleistungen
+
+Ideen
+
+Entwicklung
+
+Produktion
+
+Qualität
+
+Bereitstellung
+
+Lebenszyklus
+
+---
+
+## 9. Steuerung & Kennzahlen
+
+Ziele
+
+KPIs
+
+Monitoring
+
+Audits
+
+Bewertungen
+
+Verbesserungen
+
+---
+
+## 10. Nachhaltige Weiterentwicklung
+
+Innovation
+
+Reflexion
+
+Lessons Learned
+
+Anpassungen
+
+Architekturentwicklung
+
+Unternehmensentwicklung
+
+---
+
+# Architekturgedanke
+
+Das CEF beschreibt das Unternehmen als zusammenhängendes System.
+
+Nicht:
+
+```text
+Abteilungen
+```
+
+sondern:
+
+```text
+Funktionen
+↓
+
+Beziehungen
+↓
+
+Informationsflüsse
+↓
+
+Entscheidungen
+↓
+
+Wertschöpfung
+```
+
+---
+
+# Beziehung zu Projekt Kontinuum
+
+Bitte prüfen, wie das CEF künftig genutzt werden könnte:
+
+* Unternehmensmodellierung
+* Organisationsanalyse
+* Wissensmanagement
+* Entscheidungsunterstützung
+* Unternehmensentwicklung
+* Prozessoptimierung
+* Schulung
+* Beratung
+* Simulation
+* digitale Zwillinge von Unternehmen
+
+---
+
+# Beziehung zur Canonical Architecture
+
+Bitte prüfen die Beziehungen zu:
+
+* Foundation Layer
+* Governance Layer
+* Canonical Architecture
+* Canonical Vision Framework (CVF)
+* Canonical Intelligence Framework (CIF)
+* Canonical Cognitive Pipeline (CCP)
+* Canonical AI Competency Framework (CAICF)
+* Canonical Media Learning Framework (CMLF)
+* Learning Layer
+* CRE
+* Execution Planner
+* Orchestrator Core
+* Canonical Memory
+* CAM
+* ALP
+* CDF
+* CDG
+* Release Integrity
+* Canonical Glossary
+* Projektchronik
+
+---
+
+# Langfristige Zielsetzung
+
+Das CEF soll künftig die Grundlage bilden für:
+
+* Unternehmenssimulation
+* adaptive Organisationsberatung
+* intelligente Unternehmensanalyse
+* Wissenslandkarten
+* Prozesslandkarten
+* Organisationsentwicklung
+* Entscheidungsunterstützung
+* digitale Unternehmensmodelle
+
+Nicht als ERP-System, sondern als kanonisches Unternehmensmodell.
+
+---
+
+# Arbeitsauftrag
+
+In dieser Phase erfolgt **keine Implementierung**.
+
+Bitte:
+
+1. analysiere das Konzept
+2. prüfe die Einordnung innerhalb der Canonical Architecture
+3. definiere die kanonischen Unternehmensdimensionen
+4. identifiziere Beziehungen zwischen den Dimensionen
+5. prüfe Schnittstellen zu bestehenden Frameworks
+6. grenze CEF klar gegenüber ERP-, CRM-, BPM- und DMS-Systemen ab
+7. prüfe Erweiterbarkeit für unterschiedliche Unternehmensgrößen und Branchen
+8. erstelle einen kanonischen Implementierungsplan
+9. dokumentiere Risiken und offene Fragen
+
+---
+
+# Erwartete Dateien
+
+Bitte prüfe, ob folgende Dateien sinnvoll sind:
+
+```text
+14_documents/CANONICAL_ENTERPRISE_FRAMEWORK_1_0.md
+24_config/canonical_enterprise_framework_1_0.json
+31_reports/cef_1_0_status_report.md
+```
+
+Optional:
+
+```text
+14_documents/CEF_IMPLEMENTATION_PLAN_1_0.md
+24_config/cef_enterprise_model_1_0.json
+```
+
+---
+
+# Erwartetes JSON-Grundschema
+
+Das Framework sollte mindestens enthalten:
+
+* Framework-Informationen
+* Version
+* Status
+* Unternehmensdimensionen
+* Beziehungen
+* Informationsflüsse
+* Governance-Bezug
+* Erweiterungspunkte
+
+---
+
+# Leitplanken
+
+Erlaubt:
+
+* Architekturkonzept
+* Dokumentation
+* JSON-Schema
+* Statusbericht
+* Glossar-Ergänzung
+* Implementierungsplan
+
+Nicht erlaubt:
+
+* ERP-Implementierung
+* CRM-Implementierung
+* Finanz- oder Buchhaltungsfunktionen
+* Runtime-Änderungen
+* Datenbankmigrationen
+* Refactoring bestehender Komponenten
+
+---
+
+# Entscheidungskriterium
+
+Das Canonical Enterprise Framework soll nur dann als GO bewertet werden, wenn es:
+
+* Unternehmen als universelles System beschreibt,
+* unabhängig von Branche und Unternehmensgröße anwendbar ist,
+* bestehende Unternehmenssoftware nicht ersetzt, sondern konzeptionell ergänzt,
+* mit der Canonical Architecture vereinbar ist,
+* langfristig erweiterbar bleibt,
+* als Grundlage für spätere Analyse-, Beratungs- und Simulationsfunktionen dienen kann.
+
+---
+
+# Erwartetes Ergebnis
+
+Bitte liefere:
+
+1. Bestandsanalyse
+2. Architektur-Einordnung
+3. Definition der kanonischen Unternehmensdimensionen
+4. Beziehungen und Informationsflüsse
+5. Abgrenzung zu ERP-, CRM-, BPM- und DMS-Systemen
+6. Vorschlag für Dokumente und JSON-Strukturen
+7. Risiken und offene Fragen
+8. Empfehlung: GO / NO-GO / SPÄTER
+9. Kanonischen Implementierungsplan
+10. Statusbericht unter `31_reports`, falls umgesetzt.
+
+Ziel ist ein universeller kanonischer Bezugsrahmen für Unternehmen, der Projekt Kontinuum künftig ermöglicht, Organisationen strukturiert zu verstehen, zu analysieren, zu begleiten und weiterzuentwickeln, ohne auf eine bestimmte Branche oder Softwarelösung beschränkt zu sein.

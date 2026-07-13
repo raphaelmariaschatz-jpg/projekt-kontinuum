@@ -1,0 +1,14 @@
+{
+  "name": "Projekt Kontinuum",
+  "version": "19.3",
+  "type": "FULL_STANDALONE",
+  "created": "2026-06-06T16:42:40",
+  "contains": [
+    "GUI fix with background thread",
+    "PDF, Word, Excel, PowerPoint readers",
+    "CSV, JSON, XML, HTML, Markdown, TXT readers",
+    "SQLite database reader",
+    "Windows BAT files",
+    "README, requirements, chronology"
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "validator": "CMIBF Release Validator 1.0",
+  "timestamp": "2026-07-12T16:41:12.0987592+02:00",
+  "mode": "Audit",
+  "input": "C:\\Projekt Kontinuum\\14_documents\\fundamentale Gedanken\\CMIBF\\CANONICAL_MASTER_IMPLEMENTATION_BLUEPRINT_FRAMEWORK_1_0_REPAIRED.md",
+  "output": null,
+  "backup": null,
+  "character_count": 269713,
+  "line_count": 10872,
+  "line_endings": {
+    "lf": 10872,
+    "crlf": 0,
+    "cr": 0
+  },
+  "heading_count": 386,
+  "error_count": 0,
+  "warning_count": 3,
+  "info_count": 5,
+  "fixed_count": 0,
+  "findings": [
+    {
+      "Severity": "INFO",
+      "Code": "MERGE-PACKAGE-METADATA",
+      "Line": 25,
+      "Description": "Paketbezogene Metadaten aus einer Quelldatei sind im Gesamtwerk enthalten.",
+      "Excerpt": "**Paket:**"
+    },
+    {
+      "Severity": "INFO",
+      "Code": "MERGE-PACKAGE-METADATA",
+      "Line": 28,
+      "Description": "Paketbezogene Metadaten aus einer Quelldatei sind im Gesamtwerk enthalten.",
+      "Excerpt": "**Enthaltene Bestandteile:**"
+    },
+    {
+      "Severity": "INFO",
+      "Code": "MERGE-PACKAGE-METADATA",
+      "Line": 32,
+      "Description": "Paketbezogene Metadaten aus einer Quelldatei sind im Gesamtwerk enthalten.",
+      "Excerpt": "Kanonischer Konsolidierungsbaustein – zur unveränderten Zusammenführung in das vollständige CMIBF 1.0"
+    },
+    {
+      "Severity": "INFO",
+      "Code": "MERGE-PACKAGE-METADATA",
+      "Line": 157,
+      "Description": "Paketbezogene Metadaten aus einer Quelldatei sind im Gesamtwerk enthalten.",
+      "Excerpt": "Bis dahin sind die einzelnen ZIP-Pakete kanonische Konsolidierungsbausteine, jedoch noch nicht das alleinstehende Gesamtwerk."
+    },
+    {
+      "Severity": "INFO",
+      "Code": "MERGE-PACKAGE-METADATA",
+      "Line": 206,
+      "Description": "Paketbezogene Metadaten aus einer Quelldatei sind im Gesamtwerk enthalten.",
+      "Excerpt": "| Konsolidierungsbaustein | Inhalt ist für die Zusammenführung vorgesehen, aber noch nicht als Gesamtwerk freigegeben. |"
+    },
+    {
+      "Severity": "WARNING",
+      "Code": "MD-DUPLICATE-HEADING",
+      "Line": 8734,
+      "Description": "Die H1-Überschrift kommt mehrfach vor. Zeilen: 8734, 10291.",
+      "Excerpt": "zweck"
+    },
+    {
+      "Severity": "WARNING",
+      "Code": "MD-DUPLICATE-HEADING",
+      "Line": 1,
+      "Description": "Die H1-Überschrift kommt mehrfach vor. Zeilen: 1, 386, 6865, 8724, 10281.",
+      "Excerpt": "canonical master implementation blueprint framework (cmibf) 1.0"
+    },
+    {
+      "Severity": "WARNING",
+      "Code": "MD-DUPLICATE-HEADING",
+      "Line": 8917,
+      "Description": "Die H2-Überschrift kommt mehrfach vor. Zeilen: 8917, 10642.",
+      "Excerpt": "canonical master implementation blueprint framework (cmibf) 1.0"
+    }
+  ]
+}

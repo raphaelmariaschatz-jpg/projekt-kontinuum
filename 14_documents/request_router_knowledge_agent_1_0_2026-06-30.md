@@ -87,3 +87,6 @@ Gepruefte Beispiele:
 ## Status
 
 Request Router 1.0 ist diagnostisch integriert und als zentraler Routing-Einstieg im Prompt-Orchestrator aktiv. Governance-, Foundation- und Canonical-Regeln bleiben unveraendert; der Router trifft nur Entscheidungen und schreibt sein Routing-Protokoll.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

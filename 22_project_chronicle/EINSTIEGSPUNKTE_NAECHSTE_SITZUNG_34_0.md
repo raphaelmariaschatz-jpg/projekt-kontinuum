@@ -13,3 +13,6 @@ Start:
 16_installation\START_KONTINUUM_34_0.bat
 16_installation\TEST_KONTINUUM_34_0.bat
 ```
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

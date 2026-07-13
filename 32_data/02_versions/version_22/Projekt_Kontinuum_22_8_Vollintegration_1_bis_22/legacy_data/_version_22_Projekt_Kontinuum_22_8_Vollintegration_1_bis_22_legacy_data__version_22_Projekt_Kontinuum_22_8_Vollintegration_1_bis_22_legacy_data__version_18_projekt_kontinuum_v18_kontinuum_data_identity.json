@@ -1,0 +1,12 @@
+{
+  "name": "Kontinuum",
+  "version": "18.0",
+  "codename": "Unified Future Architecture Edition",
+  "mission": "Wissen sammeln, verstehen, verknüpfen, bewahren und erweitern.",
+  "languages": [
+    "de",
+    "en"
+  ],
+  "continuity_enabled": true,
+  "created_at": "2026-06-06T13:53:29.091768"
+}

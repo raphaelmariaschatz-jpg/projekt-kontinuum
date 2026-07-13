@@ -29,3 +29,6 @@ Am 15. Juni 2026 wurde der vorhandene Datenbestand kontrolliert verknüpft:
 - Releasebericht als erster realer vollständiger Notebook-Wissensweg importiert
 - unmittelbar aufeinanderfolgender Migrationslauf mit `0` neuen Graphknoten
   bestätigt die Idempotenz
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

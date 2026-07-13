@@ -19,3 +19,6 @@ drei Bereiche gemeinsam.
 - Wissens- und Memory-Auskünfte gegen selbstreferenzielle Reintegration geschützt
 - abschließender Kontrolllauf bestätigte unveränderte Wissensmenge vor und nach
   reinen Status- und Selbstmodellabfragen
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

@@ -49,3 +49,6 @@ python 17_tests\test_runtime_agents_tools_23.py
 ## Wichtig für Vollversion 23.0
 
 Dieses Paket ist ein Grundkern. Beim finalen Build wird es mit `storage.py`, `system.py`, `search_router.py`, `auth_master_23.py` und der neuen GUI verbunden.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

@@ -1,0 +1,12 @@
+{
+  "project": "Projekt Kontinuum",
+  "current_version": "22.6",
+  "entries": [
+    {
+      "date": "2026-06-07",
+      "version": "22.6",
+      "title": "Offizielle Vollversion 22.6",
+      "summary": "Zusammenführung der 22.6-Anforderungen in eine vollständige Version: Login, Cognitive Core, natürliche Fragen, Pfadschutz, Search Monitor, Memory, Research, Learning und Identitätskern."
+    }
+  ]
+}

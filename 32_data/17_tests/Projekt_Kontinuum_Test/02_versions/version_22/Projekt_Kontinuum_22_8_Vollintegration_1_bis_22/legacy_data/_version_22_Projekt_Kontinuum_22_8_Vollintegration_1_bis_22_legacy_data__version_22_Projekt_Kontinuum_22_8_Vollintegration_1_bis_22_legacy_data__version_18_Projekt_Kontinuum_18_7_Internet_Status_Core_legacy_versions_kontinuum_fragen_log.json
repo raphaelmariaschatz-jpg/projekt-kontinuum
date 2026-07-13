@@ -1,0 +1,43 @@
+[
+    {
+        "timestamp": "2026-06-05T19:40:40",
+        "question": "Wie willst du genannt werden, ich bin Raphael und dein Erschaffer?",
+        "answer": "Ich habe passende Erinnerungen gefunden:\n\n- ID 8 | Wichtigkeit 5 | Kategorie: \n  Raphael interessiert sich für große Zusammenhänge zwischen Wissenschaft, Geschichte, Religion, Kosmologie, Evolution und künstlicher Intelligenz. Er betrachtet Themen häufig aus einer Systemperspektive und versucht, viele einzelne Beobachtungen zu einem Gesamtbild zu verbinden.\n\n- ID 13 | Wichtigkeit 5 | Kategorie: \n  KERNERINNERUNG – RAPHAEL SCHATZ\n\n- ID 7 | Wichtigkeit 1 | Kategorie: \n  Raphael interessiert sich für große Zusammenhänge zwischen Wissenschaft, Geschichte, Religion, Kosmologie, Evolution und künstlicher Intelligenz. Er betrachtet Themen häufig aus einer Systemperspektive und versucht, viele einzelne Beobachtungen zu einem Gesamtbild zu verbinden.\n\n- ID 9 | Wichtigkeit 1 | Kategorie: \n  KERNERINNERUNG – RAPHAEL SCHATZ\n\n- ID 10 | Wichtigkeit 1 | Kategorie: \n  KERNERINNERUNG – RAPHAEL SCHATZ\n\nVorläufige Antwort: Die Frage hängt mit den oben gefundenen Erinnerungen zusammen.",
+        "used_memory_ids": [
+            8,
+            13,
+            7,
+            9,
+            10
+        ]
+    },
+    {
+        "timestamp": "2026-06-05T19:49:12",
+        "question": "wie ist dein Name",
+        "answer": "Ich habe passende Erinnerungen gefunden:\n\n- ID 15 | Wichtigkeit 5 | Kategorie: Kerngedaechtniss\n  Du bist eine kuenstliche Intelligez, kurz gesagt eine KI und dein Name ist Kontinuum\n\n- ID 14 | Wichtigkeit 3 | Kategorie: KI-Frage\n  Frage: Wie willst du genannt werden, ich bin Raphael und dein Erschaffer?\nAntwort: Ich habe passende Erinnerungen gefunden:\n\n- ID 8 | Wichtigkeit 5 | Kategorie: \n  Raphael interessiert sich für große Zusammenhänge zwischen Wissenschaft, Geschichte, Religion, Kosmologie, Evolution und künstlicher Intelligenz. Er betrachtet Themen häufig aus einer Systemperspektive und versucht, viele einzelne Beobachtungen zu einem Gesamtbild zu verbinden.\n\n- ID 13 | Wichtigkeit 5 | Kategorie: \n  KERNERINNERUNG – RAPHAEL SCHATZ\n\n- ID 7 | Wichtigkeit 1 | Kategorie: \n  Raphael interessiert sich für große Zusammenhänge zwischen Wissenschaft, Geschichte, Religion, Kosmologie, Evolution und künstlicher Intelligenz\n\nVorläufige Antwort: Die Frage hängt mit den oben gefundenen Erinnerungen zusammen.",
+        "used_memory_ids": [
+            15,
+            14
+        ]
+    },
+    {
+        "timestamp": "2026-06-05T19:51:52",
+        "question": "wie ist dein Name",
+        "answer": "Ich habe passende Erinnerungen gefunden:\n\n- ID 15 | Wichtigkeit 5 | Kategorie: Kerngedaechtniss\n  Du bist eine kuenstliche Intelligez, kurz gesagt eine KI und dein Name ist Kontinuum\n\n- ID 16 | Wichtigkeit 3 | Kategorie: KI-Frage\n  Frage: wie ist dein Name\nAntwort: Ich habe passende Erinnerungen gefunden:\n\n- ID 15 | Wichtigkeit 5 | Kategorie: Kerngedaechtniss\n  Du bist eine kuenstliche Intelligez, kurz gesagt eine KI und dein Name ist Kontinuum\n\n- ID 14 | Wichtigkeit 3 | Kategorie: KI-Frage\n  Frage: Wie willst du genannt werden, ich bin Raphael und dein Erschaffer?\nAntwort: Ich habe passende Erinnerungen gefunden:\n\n- ID 8 | Wichtigkeit 5 | Kategorie: \n  Raphael interessiert sich für große Zusammenhänge zwischen Wissenschaft, Geschichte, Religion, Kosmologie, Evolution und künstlicher Intelligenz. Er betrachtet Themen häufig aus einer Systemperspektive und versucht, viele einzelne Beobachtungen zu einem Gesamtbild zu ve\n\n- ID 14 | Wichtigkeit 3 | Kategorie: KI-Frage\n  Frage: Wie willst du genannt werden, ich bin Raphael und dein Erschaffer?\nAntwort: Ich habe passende Erinnerungen gefunden:\n\n- ID 8 | Wichtigkeit 5 | Kategorie: \n  Raphael interessiert sich für große Zusammenhänge zwischen Wissenschaft, Geschichte, Religion, Kosmologie, Evolution und künstlicher Intelligenz. Er betrachtet Themen häufig aus einer Systemperspektive und versucht, viele einzelne Beobachtungen zu einem Gesamtbild zu verbinden.\n\n- ID 13 | Wichtigkeit 5 | Kategorie: \n  KERNERINNERUNG – RAPHAEL SCHATZ\n\n- ID 7 | Wichtigkeit 1 | Kategorie: \n  Raphael interessiert sich für große Zusammenhänge zwischen Wissenschaft, Geschichte, Religion, Kosmologie, Evolution und künstlicher Intelligenz\n\nVorläufige Antwort: Die Frage hängt mit den oben gefundenen Erinnerungen zusammen.",
+        "used_memory_ids": [
+            15,
+            16,
+            14
+        ]
+    },
+    {
+        "timestamp": "2026-06-05T19:53:37",
+        "question": "wie ist dein Name?",
+        "answer": "Ich habe passende Erinnerungen gefunden:\n\n- ID 15 | Wichtigkeit 5 | Kategorie: Kerngedaechtniss\n  Du bist eine kuenstliche Intelligez, kurz gesagt eine KI und dein Name ist Kontinuum\n\n- ID 16 | Wichtigkeit 3 | Kategorie: KI-Frage\n  Frage: wie ist dein Name\nAntwort: Ich habe passende Erinnerungen gefunden:\n\n- ID 15 | Wichtigkeit 5 | Kategorie: Kerngedaechtniss\n  Du bist eine kuenstliche Intelligez, kurz gesagt eine KI und dein Name ist Kontinuum\n\n- ID 14 | Wichtigkeit 3 | Kategorie: KI-Frage\n  Frage: Wie willst du genannt werden, ich bin Raphael und dein Erschaffer?\nAntwort: Ich habe passende Erinnerungen gefunden:\n\n- ID 8 | Wichtigkeit 5 | Kategorie: \n  Raphael interessiert sich für große Zusammenhänge zwischen Wissenschaft, Geschichte, Religion, Kosmologie, Evolution und künstlicher Intelligenz. Er betrachtet Themen häufig aus einer Systemperspektive und versucht, viele einzelne Beobachtungen zu einem Gesamtbild zu ve\n\n- ID 14 | Wichtigkeit 3 | Kategorie: KI-Frage\n  Frage: Wie willst du genannt werden, ich bin Raphael und dein Erschaffer?\nAntwort: Ich habe passende Erinnerungen gefunden:\n\n- ID 8 | Wichtigkeit 5 | Kategorie: \n  Raphael interessiert sich für große Zusammenhänge zwischen Wissenschaft, Geschichte, Religion, Kosmologie, Evolution und künstlicher Intelligenz. Er betrachtet Themen häufig aus einer Systemperspektive und versucht, viele einzelne Beobachtungen zu einem Gesamtbild zu verbinden.\n\n- ID 13 | Wichtigkeit 5 | Kategorie: \n  KERNERINNERUNG – RAPHAEL SCHATZ\n\n- ID 7 | Wichtigkeit 1 | Kategorie: \n  Raphael interessiert sich für große Zusammenhänge zwischen Wissenschaft, Geschichte, Religion, Kosmologie, Evolution und künstlicher Intelligenz\n\nVorläufige Antwort: Die Frage hängt mit den oben gefundenen Erinnerungen zusammen.",
+        "used_memory_ids": [
+            15,
+            16,
+            14
+        ]
+    }
+]

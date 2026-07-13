@@ -1,0 +1,26 @@
+{
+  "connectors_enabled": true,
+  "active_connectors": [
+    "local_workspace",
+    "local_internet",
+    "web_page",
+    "university_domains",
+    "public_library_domains"
+  ],
+  "internet": {
+    "enabled": true,
+    "timeout_seconds": 12,
+    "max_bytes": 1500000,
+    "block_private_networks": true,
+    "allowed_schemes": ["http", "https"],
+    "allowlist_domains": [],
+    "university_domain_suffixes": [".edu", ".ac.uk", ".edu.au", ".uni-", ".university", ".de"],
+    "public_library_domains": ["archive.org", "gutenberg.org", "europeana.eu", "dnb.de", "loc.gov"]
+  },
+  "local_workspace": {
+    "enabled": true,
+    "workspace_root": "data/workspace",
+    "max_files": 250,
+    "allowed_extensions": [".txt", ".md", ".json", ".csv", ".py", ".html", ".htm"]
+  }
+}

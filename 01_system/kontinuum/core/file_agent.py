@@ -1,3 +1,5 @@
+# © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.
+
 from __future__ import annotations
 
 import csv
@@ -59,7 +61,8 @@ class FileAgentService:
         ".xlsx", ".py", ".js", ".css", ".log", ".epub", ".azw", ".azw3", ".kfx",
     }
     CODE_SUFFIXES = {".py", ".js", ".css", ".html", ".htm"}
-    WINDOWS_PATH_PATTERN = re.compile(r"(?i)\b[a-z]:[\\/][^\s\"']+")
+    PATH_SPACE_HINT = "Der Pfad enthält Leerzeichen. Bitte Pfad in Anführungszeichen setzen oder Freigabeparser prüfen."
+    WINDOWS_PATH_PATTERN = re.compile(r"(?i)\b[a-z]:[\\/][^\r\n\"']+")
     FILE_SUFFIX_PATTERN = re.compile(r"(?i)([^\s\"']+\.(?:txt|md|json|csv|html|htm|pdf|docx|xlsx|py|js|css|log|epub|azw|azw3|kfx))")
     DEFAULT_CONFIG = {
         "enabled": True,
@@ -163,6 +166,14 @@ class FileAgentService:
         lower = (text or "").casefold().strip()
         if lower == "fileagentstatus":
             return {"ok": True, "message": self.format_status()}
+        if self._looks_like_project_folder_access(text):
+            target = self._extract_path(text, folder=True)
+            self._register_allowed_root(target)
+            return {
+                "ok": True,
+                "path": str(self._resolve_path(target)),
+                "message": f"FileAgent: Projektordner freigegeben: {self._resolve_path(target)}",
+            }
         if "lerne aus ordner" in lower:
             target = self._extract_path(text, folder=True)
             return self.import_folder(target, recursive="rekursiv" in lower)
@@ -454,6 +465,8 @@ class FileAgentService:
         raw = str(value or "").strip().strip('"')
         if not raw:
             raise ValueError("Kein Dateipfad angegeben.")
+        if self._path_looks_truncated(raw):
+            raise ValueError(self.PATH_SPACE_HINT)
         path = Path(raw)
         if not path.is_absolute():
             path = self.root / path
@@ -504,25 +517,96 @@ class FileAgentService:
         self._emit_event("FILE_READ_FAILED", path, {"error": error}, severity="medium")
         return {"ok": False, "path": path, "error": error, "message": f"Datei konnte nicht gelesen werden: {error}"}
 
-    @staticmethod
-    def _extract_path(text: str, folder: bool = False) -> str:
+    @classmethod
+    def _extract_path(cls, text: str, folder: bool = False) -> str:
         quoted = re.search(r'"([^"]+)"|\'([^\']+)\'', text or "")
         if quoted:
-            return quoted.group(1) or quoted.group(2)
-        windows_path = FileAgentService.WINDOWS_PATH_PATTERN.search(text or "")
+            return cls._clean_extracted_path(quoted.group(1) or quoted.group(2), folder=folder)
+        windows_path = cls.WINDOWS_PATH_PATTERN.search(text or "")
         if windows_path:
-            return windows_path.group(0).rstrip(".,;:!?)]}")
-        suffix_path = FileAgentService.FILE_SUFFIX_PATTERN.search(text or "")
+            return cls._clean_extracted_path(windows_path.group(0), folder=folder)
+        suffix_path = cls.FILE_SUFFIX_PATTERN.search(text or "")
         if suffix_path:
-            return suffix_path.group(1).rstrip(".,;:!?)]}")
+            return cls._clean_extracted_path(suffix_path.group(1), folder=folder)
         keyword = "ordner" if folder else "datei"
         match = re.search(rf"{keyword}\s+(.+)$", text or "", flags=re.I)
         if match:
-            return match.group(1).strip()
+            return cls._clean_extracted_path(match.group(1), folder=folder)
         match = re.search(r"lernquelle\s+(.+)$", text or "", flags=re.I)
         if match:
-            return match.group(1).strip()
+            return cls._clean_extracted_path(match.group(1), folder=folder)
         return (text or "").split()[-1] if (text or "").split() else ""
+
+    @classmethod
+    def _clean_extracted_path(cls, value: str, folder: bool = False) -> str:
+        raw = (value or "").strip().strip('"').strip("'").strip()
+        raw = raw.rstrip(".,;:!?)]}")
+        suffixes = "|".join(re.escape(suffix.lstrip(".")) for suffix in sorted(cls.SUPPORTED_SUFFIXES, key=len, reverse=True))
+        file_match = re.search(rf"(?i)^(.+?\.({suffixes}))(?=$|\s)", raw)
+        if file_match:
+            return file_match.group(1).rstrip(".,;:!?)]}")
+        stop_words = [
+            " ist ",
+            " ist hiermit ",
+            " ist für ",
+            " ist fuer ",
+            " wird ",
+            " wurde ",
+            " als ",
+            " mit ",
+            " freigegeben",
+            " hast ",
+            " habe ",
+            " bitte ",
+            " und ",
+        ]
+        lowered = raw.casefold()
+        cut = len(raw)
+        for marker in stop_words:
+            index = lowered.find(marker)
+            if index > 0:
+                cut = min(cut, index)
+        cleaned = raw[:cut].strip().rstrip(".,;:!?)]}")
+        cleaned = cls._normalize_drive_letter(cleaned)
+        if folder:
+            return cleaned
+        return cleaned or cls._normalize_drive_letter(raw)
+
+    @staticmethod
+    def _normalize_drive_letter(value: str) -> str:
+        if re.match(r"(?i)^[a-z]:[\\/]", value or ""):
+            return value[0].upper() + value[1:]
+        return value
+
+    @staticmethod
+    def _path_looks_truncated(raw: str) -> bool:
+        value = (raw or "").strip().strip('"').strip("'")
+        return bool(re.fullmatch(r"(?i)[a-z]:[\\/][^\\/]+", value) and " " not in value)
+
+    def _looks_like_project_folder_access(self, text: str) -> bool:
+        lower = (text or "").casefold()
+        if "projekt" not in lower:
+            return False
+        if not self.WINDOWS_PATH_PATTERN.search(text or ""):
+            return False
+        markers = (
+            "vollzugriff",
+            "lese-vollzugriff",
+            "lesezugriff",
+            "schreibzugriff",
+            "freigegeben",
+            "zugriff auf",
+        )
+        return any(marker in lower for marker in markers)
+
+    def _register_allowed_root(self, value: str | Path) -> None:
+        resolved = self._resolve_path(value)
+        current = [str(item) for item in self.config.get("allowed_roots", [])]
+        root_text = str(resolved)
+        if root_text not in current:
+            current.append(root_text)
+            self.config["allowed_roots"] = current
+            self.config_path.write_text(json.dumps(self.config, ensure_ascii=False, indent=2), encoding="utf-8")
 
     @staticmethod
     def _topic(text: str) -> str:

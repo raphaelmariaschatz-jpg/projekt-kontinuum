@@ -1,0 +1,8 @@
+{
+  "version": "12.0 Universal Civilization Core",
+  "windows_supported": true,
+  "android_supported": true,
+  "civilization_core": true,
+  "superadmin": "Raphael Schatz",
+  "ollama_model": "llama3.2"
+}

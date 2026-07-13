@@ -1,0 +1,10 @@
+[
+  {
+    "timestamp": "2026-06-07T14:59:12",
+    "text": "Welche Version bist du?",
+    "response": "Ich bin Kontinuum Version 22.2 (Windows Vollversion, Build 2026-06-07).",
+    "source": "dialogue",
+    "category": "project_memory",
+    "importance": 4
+  }
+]

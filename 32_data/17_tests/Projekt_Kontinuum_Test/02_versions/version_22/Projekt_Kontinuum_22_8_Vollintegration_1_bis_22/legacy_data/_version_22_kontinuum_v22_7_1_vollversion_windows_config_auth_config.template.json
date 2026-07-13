@@ -1,0 +1,7 @@
+{
+  "username": "Raphael",
+  "full_name": "Raphael Schatz",
+  "role": "SUPERADMIN",
+  "is_superadmin": true,
+  "note": "Beim ersten Start wird config/auth_config.json mit gehashtem Passwort und Wiederherstellungsschlüssel erzeugt."
+}

@@ -1,0 +1,434 @@
+{
+  "integrated_archives": [
+    {
+      "archive": "source_archives/projekt_kontinuum_10_0_science_civilization_core.zip",
+      "extracted_to": "legacy_versions/projekt_kontinuum_10_0_science_civilization_core",
+      "version_detected": "10.0",
+      "python_files": [
+        "legacy_versions/projekt_kontinuum_10_0_science_civilization_core/projekt_kontinuum_10_0_science_civilization_core/continuum_v10.py"
+      ],
+      "readme_files": [
+        "legacy_versions/projekt_kontinuum_10_0_science_civilization_core/projekt_kontinuum_10_0_science_civilization_core/README.md",
+        "legacy_versions/projekt_kontinuum_10_0_science_civilization_core/projekt_kontinuum_10_0_science_civilization_core/ARCHITEKTUR_VERSION_10.md",
+        "legacy_versions/projekt_kontinuum_10_0_science_civilization_core/projekt_kontinuum_10_0_science_civilization_core/documents/README_DOKUMENTE.txt",
+        "legacy_versions/projekt_kontinuum_10_0_science_civilization_core/projekt_kontinuum_10_0_science_civilization_core/secure_data/README_SECURE_DATA.txt",
+        "legacy_versions/projekt_kontinuum_10_0_science_civilization_core/projekt_kontinuum_10_0_science_civilization_core/vectors/README_VECTORS.txt",
+        "legacy_versions/projekt_kontinuum_10_0_science_civilization_core/projekt_kontinuum_10_0_science_civilization_core/models/README_VOSK_MODELL.txt"
+      ],
+      "architecture_docs": [
+        "legacy_versions/projekt_kontinuum_10_0_science_civilization_core/projekt_kontinuum_10_0_science_civilization_core/ARCHITEKTUR_VERSION_10.md"
+      ],
+      "file_count": 22
+    },
+    {
+      "archive": "source_archives/projekt_kontinuum_12_0_universal_civilization_core.zip",
+      "extracted_to": "legacy_versions/projekt_kontinuum_12_0_universal_civilization_core",
+      "version_detected": "12.0",
+      "python_files": [
+        "legacy_versions/projekt_kontinuum_12_0_universal_civilization_core/projekt_kontinuum_12_0_universal_civilization_core/continuum_v12.py"
+      ],
+      "readme_files": [
+        "legacy_versions/projekt_kontinuum_12_0_universal_civilization_core/projekt_kontinuum_12_0_universal_civilization_core/README.md",
+        "legacy_versions/projekt_kontinuum_12_0_universal_civilization_core/projekt_kontinuum_12_0_universal_civilization_core/ARCHITEKTUR_VERSION_12.md",
+        "legacy_versions/projekt_kontinuum_12_0_universal_civilization_core/projekt_kontinuum_12_0_universal_civilization_core/world_library/README_WELTBIBLIOTHEK.txt",
+        "legacy_versions/projekt_kontinuum_12_0_universal_civilization_core/projekt_kontinuum_12_0_universal_civilization_core/documents/README_DOKUMENTE.txt",
+        "legacy_versions/projekt_kontinuum_12_0_universal_civilization_core/projekt_kontinuum_12_0_universal_civilization_core/secure_data/README_SECURE_DATA.txt",
+        "legacy_versions/projekt_kontinuum_12_0_universal_civilization_core/projekt_kontinuum_12_0_universal_civilization_core/vectors/README_VECTORS.txt"
+      ],
+      "architecture_docs": [
+        "legacy_versions/projekt_kontinuum_12_0_universal_civilization_core/projekt_kontinuum_12_0_universal_civilization_core/ARCHITEKTUR_VERSION_12.md"
+      ],
+      "file_count": 21
+    },
+    {
+      "archive": "source_archives/projekt_kontinuum_13_0_human_civilization_consciousness_core.zip",
+      "extracted_to": "legacy_versions/projekt_kontinuum_13_0_human_civilization_consciousness_core",
+      "version_detected": "13.0",
+      "python_files": [
+        "legacy_versions/projekt_kontinuum_13_0_human_civilization_consciousness_core/projekt_kontinuum_13_0_human_civilization_consciousness_core/continuum_v13.py"
+      ],
+      "readme_files": [
+        "legacy_versions/projekt_kontinuum_13_0_human_civilization_consciousness_core/projekt_kontinuum_13_0_human_civilization_consciousness_core/README.md",
+        "legacy_versions/projekt_kontinuum_13_0_human_civilization_consciousness_core/projekt_kontinuum_13_0_human_civilization_consciousness_core/ARCHITEKTUR_VERSION_13.md",
+        "legacy_versions/projekt_kontinuum_13_0_human_civilization_consciousness_core/projekt_kontinuum_13_0_human_civilization_consciousness_core/world_library/README_WELTBIBLIOTHEK.txt",
+        "legacy_versions/projekt_kontinuum_13_0_human_civilization_consciousness_core/projekt_kontinuum_13_0_human_civilization_consciousness_core/documents/README_DOKUMENTE.txt",
+        "legacy_versions/projekt_kontinuum_13_0_human_civilization_consciousness_core/projekt_kontinuum_13_0_human_civilization_consciousness_core/secure_data/README_SECURE_DATA.txt",
+        "legacy_versions/projekt_kontinuum_13_0_human_civilization_consciousness_core/projekt_kontinuum_13_0_human_civilization_consciousness_core/vectors/README_VECTORS.txt"
+      ],
+      "architecture_docs": [
+        "legacy_versions/projekt_kontinuum_13_0_human_civilization_consciousness_core/projekt_kontinuum_13_0_human_civilization_consciousness_core/ARCHITEKTUR_VERSION_13.md"
+      ],
+      "file_count": 22
+    },
+    {
+      "archive": "source_archives/projekt_kontinuum_3_0.zip",
+      "extracted_to": "legacy_versions/projekt_kontinuum_3_0",
+      "version_detected": "3.0",
+      "python_files": [
+        "legacy_versions/projekt_kontinuum_3_0/projekt_kontinuum_3_0/continuum.py"
+      ],
+      "readme_files": [
+        "legacy_versions/projekt_kontinuum_3_0/projekt_kontinuum_3_0/README.md"
+      ],
+      "architecture_docs": [],
+      "file_count": 10
+    },
+    {
+      "archive": "source_archives/projekt_kontinuum_4_0.zip",
+      "extracted_to": "legacy_versions/projekt_kontinuum_4_0",
+      "version_detected": "4.0",
+      "python_files": [
+        "legacy_versions/projekt_kontinuum_4_0/projekt_kontinuum_4_0/continuum_v4.py"
+      ],
+      "readme_files": [
+        "legacy_versions/projekt_kontinuum_4_0/projekt_kontinuum_4_0/README.md",
+        "legacy_versions/projekt_kontinuum_4_0/projekt_kontinuum_4_0/VERSION_4_MODULES.md"
+      ],
+      "architecture_docs": [],
+      "file_count": 15
+    },
+    {
+      "archive": "source_archives/projekt_kontinuum_5_0.zip",
+      "extracted_to": "legacy_versions/projekt_kontinuum_5_0",
+      "version_detected": "5.0",
+      "python_files": [
+        "legacy_versions/projekt_kontinuum_5_0/projekt_kontinuum_5_0/continuum_v5.py"
+      ],
+      "readme_files": [
+        "legacy_versions/projekt_kontinuum_5_0/projekt_kontinuum_5_0/README.md",
+        "legacy_versions/projekt_kontinuum_5_0/projekt_kontinuum_5_0/VERSION_5_MODULES.md"
+      ],
+      "architecture_docs": [],
+      "file_count": 19
+    },
+    {
+      "archive": "source_archives/projekt_kontinuum_6_0.zip",
+      "extracted_to": "legacy_versions/projekt_kontinuum_6_0",
+      "version_detected": "6.0",
+      "python_files": [
+        "legacy_versions/projekt_kontinuum_6_0/projekt_kontinuum_6_0/continuum_v6.py"
+      ],
+      "readme_files": [
+        "legacy_versions/projekt_kontinuum_6_0/projekt_kontinuum_6_0/README.md",
+        "legacy_versions/projekt_kontinuum_6_0/projekt_kontinuum_6_0/VERSION_6_MODULES.md"
+      ],
+      "architecture_docs": [],
+      "file_count": 23
+    },
+    {
+      "archive": "source_archives/projekt_kontinuum_6_1_deutsch_pro.zip",
+      "extracted_to": "legacy_versions/projekt_kontinuum_6_1_deutsch_pro",
+      "version_detected": "6.1",
+      "python_files": [
+        "legacy_versions/projekt_kontinuum_6_1_deutsch_pro/projekt_kontinuum_6_1_deutsch_pro/continuum_v6_1.py"
+      ],
+      "readme_files": [
+        "legacy_versions/projekt_kontinuum_6_1_deutsch_pro/projekt_kontinuum_6_1_deutsch_pro/README.md",
+        "legacy_versions/projekt_kontinuum_6_1_deutsch_pro/projekt_kontinuum_6_1_deutsch_pro/VERSION_6_1_DEUTSCH_PRO.md",
+        "legacy_versions/projekt_kontinuum_6_1_deutsch_pro/projekt_kontinuum_6_1_deutsch_pro/models/README_MODEL_HIER_EINFUEGEN.txt"
+      ],
+      "architecture_docs": [],
+      "file_count": 21
+    },
+    {
+      "archive": "source_archives/projekt_kontinuum_6_2_wissensautonomie.zip",
+      "extracted_to": "legacy_versions/projekt_kontinuum_6_2_wissensautonomie",
+      "version_detected": "6.2",
+      "python_files": [
+        "legacy_versions/projekt_kontinuum_6_2_wissensautonomie/projekt_kontinuum_6_2_wissensautonomie/continuum_v6_2.py"
+      ],
+      "readme_files": [
+        "legacy_versions/projekt_kontinuum_6_2_wissensautonomie/projekt_kontinuum_6_2_wissensautonomie/README.md",
+        "legacy_versions/projekt_kontinuum_6_2_wissensautonomie/projekt_kontinuum_6_2_wissensautonomie/VERSION_6_2_WISSENSAUTONOMIE.md",
+        "legacy_versions/projekt_kontinuum_6_2_wissensautonomie/projekt_kontinuum_6_2_wissensautonomie/models/README_MODEL_HIER_EINFUEGEN.txt"
+      ],
+      "architecture_docs": [],
+      "file_count": 21
+    },
+    {
+      "archive": "source_archives/projekt_kontinuum_6_3_sicherheitsedition.zip",
+      "extracted_to": "legacy_versions/projekt_kontinuum_6_3_sicherheitsedition",
+      "version_detected": "6.3",
+      "python_files": [
+        "legacy_versions/projekt_kontinuum_6_3_sicherheitsedition/projekt_kontinuum_6_3_sicherheitsedition/continuum_v6_3.py"
+      ],
+      "readme_files": [
+        "legacy_versions/projekt_kontinuum_6_3_sicherheitsedition/projekt_kontinuum_6_3_sicherheitsedition/README.md",
+        "legacy_versions/projekt_kontinuum_6_3_sicherheitsedition/projekt_kontinuum_6_3_sicherheitsedition/VERSION_6_3_SICHERHEITSEDITION.md",
+        "legacy_versions/projekt_kontinuum_6_3_sicherheitsedition/projekt_kontinuum_6_3_sicherheitsedition/SECURITY_STANDARD_FUER_FOLGEVERSIONEN.md",
+        "legacy_versions/projekt_kontinuum_6_3_sicherheitsedition/projekt_kontinuum_6_3_sicherheitsedition/models/README_MODEL_HIER_EINFUEGEN.txt"
+      ],
+      "architecture_docs": [],
+      "file_count": 24
+    },
+    {
+      "archive": "source_archives/projekt_kontinuum_7_0_guardian.zip",
+      "extracted_to": "legacy_versions/projekt_kontinuum_7_0_guardian",
+      "version_detected": "7.0",
+      "python_files": [
+        "legacy_versions/projekt_kontinuum_7_0_guardian/projekt_kontinuum_7_0_guardian/continuum_v7.py"
+      ],
+      "readme_files": [
+        "legacy_versions/projekt_kontinuum_7_0_guardian/projekt_kontinuum_7_0_guardian/README.md",
+        "legacy_versions/projekt_kontinuum_7_0_guardian/projekt_kontinuum_7_0_guardian/SECURITY_STANDARD_AB_VERSION_7.md",
+        "legacy_versions/projekt_kontinuum_7_0_guardian/projekt_kontinuum_7_0_guardian/models/README_MODEL_HIER_EINFUEGEN.txt",
+        "legacy_versions/projekt_kontinuum_7_0_guardian/projekt_kontinuum_7_0_guardian/secure_data/README_SECURE_DATA.txt"
+      ],
+      "architecture_docs": [],
+      "file_count": 18
+    },
+    {
+      "archive": "source_archives/projekt_kontinuum_8_0_windows_desktop_vosk.zip",
+      "extracted_to": "legacy_versions/projekt_kontinuum_8_0_windows_desktop_vosk",
+      "version_detected": "8.0",
+      "python_files": [
+        "legacy_versions/projekt_kontinuum_8_0_windows_desktop_vosk/projekt_kontinuum_8_0_windows_desktop_vosk/continuum_v8_desktop.py"
+      ],
+      "readme_files": [
+        "legacy_versions/projekt_kontinuum_8_0_windows_desktop_vosk/projekt_kontinuum_8_0_windows_desktop_vosk/README.md",
+        "legacy_versions/projekt_kontinuum_8_0_windows_desktop_vosk/projekt_kontinuum_8_0_windows_desktop_vosk/models/README_VOSK_MODELL.txt",
+        "legacy_versions/projekt_kontinuum_8_0_windows_desktop_vosk/projekt_kontinuum_8_0_windows_desktop_vosk/secure_data/README_SECURE_DATA.txt"
+      ],
+      "architecture_docs": [],
+      "file_count": 16
+    },
+    {
+      "archive": "source_archives/projekt_kontinuum_9_0_cross_platform.zip",
+      "extracted_to": "legacy_versions/projekt_kontinuum_9_0_cross_platform",
+      "version_detected": "9.0",
+      "python_files": [
+        "legacy_versions/projekt_kontinuum_9_0_cross_platform/projekt_kontinuum_9_0_cross_platform/continuum_v9.py"
+      ],
+      "readme_files": [
+        "legacy_versions/projekt_kontinuum_9_0_cross_platform/projekt_kontinuum_9_0_cross_platform/README.md",
+        "legacy_versions/projekt_kontinuum_9_0_cross_platform/projekt_kontinuum_9_0_cross_platform/ARCHITEKTUR_VERSION_9.md",
+        "legacy_versions/projekt_kontinuum_9_0_cross_platform/projekt_kontinuum_9_0_cross_platform/models/README_VOSK_MODELL.txt",
+        "legacy_versions/projekt_kontinuum_9_0_cross_platform/projekt_kontinuum_9_0_cross_platform/documents/README_DOKUMENTE.txt",
+        "legacy_versions/projekt_kontinuum_9_0_cross_platform/projekt_kontinuum_9_0_cross_platform/secure_data/README_SECURE_DATA.txt",
+        "legacy_versions/projekt_kontinuum_9_0_cross_platform/projekt_kontinuum_9_0_cross_platform/vectors/README_VECTORS.txt"
+      ],
+      "architecture_docs": [
+        "legacy_versions/projekt_kontinuum_9_0_cross_platform/projekt_kontinuum_9_0_cross_platform/ARCHITEKTUR_VERSION_9.md"
+      ],
+      "file_count": 22
+    },
+    {
+      "archive": "source_archives/projekt_kontinuum_v14.zip",
+      "extracted_to": "legacy_versions/projekt_kontinuum_v14",
+      "version_detected": "14",
+      "python_files": [
+        "legacy_versions/projekt_kontinuum_v14/kontinuum_v14/kontinuum_v14.py",
+        "legacy_versions/projekt_kontinuum_v14/kontinuum_v14/demo.py"
+      ],
+      "readme_files": [
+        "legacy_versions/projekt_kontinuum_v14/kontinuum_v14/README.md"
+      ],
+      "architecture_docs": [],
+      "file_count": 3
+    },
+    {
+      "archive": "source_archives/projekt_kontinuum_v14_1.zip",
+      "extracted_to": "legacy_versions/projekt_kontinuum_v14_1",
+      "version_detected": "14.1",
+      "python_files": [
+        "legacy_versions/projekt_kontinuum_v14_1/kontinuum_v14_1/kontinuum_v14.py",
+        "legacy_versions/projekt_kontinuum_v14_1/kontinuum_v14_1/demo.py"
+      ],
+      "readme_files": [
+        "legacy_versions/projekt_kontinuum_v14_1/kontinuum_v14_1/README.md"
+      ],
+      "architecture_docs": [],
+      "file_count": 3
+    },
+    {
+      "archive": "source_archives/projekt_kontinuum_v15.zip",
+      "extracted_to": "legacy_versions/projekt_kontinuum_v15",
+      "version_detected": "15",
+      "python_files": [
+        "legacy_versions/projekt_kontinuum_v15/kontinuum_v15/kontinuum_v15.py",
+        "legacy_versions/projekt_kontinuum_v15/kontinuum_v15/demo.py"
+      ],
+      "readme_files": [
+        "legacy_versions/projekt_kontinuum_v15/kontinuum_v15/README.md"
+      ],
+      "architecture_docs": [],
+      "file_count": 3
+    },
+    {
+      "archive": "source_archives/projekt_kontinuum_v15_1.zip",
+      "extracted_to": "legacy_versions/projekt_kontinuum_v15_1",
+      "version_detected": "15.1",
+      "python_files": [
+        "legacy_versions/projekt_kontinuum_v15_1/kontinuum_v15_1/kontinuum_v15_1.py",
+        "legacy_versions/projekt_kontinuum_v15_1/kontinuum_v15_1/demo.py"
+      ],
+      "readme_files": [
+        "legacy_versions/projekt_kontinuum_v15_1/kontinuum_v15_1/README.md"
+      ],
+      "architecture_docs": [],
+      "file_count": 3
+    },
+    {
+      "archive": "source_archives/projekt_kontinuum_v16.zip",
+      "extracted_to": "legacy_versions/projekt_kontinuum_v16",
+      "version_detected": "16",
+      "python_files": [
+        "legacy_versions/projekt_kontinuum_v16/kontinuum_v16/kontinuum_v16.py",
+        "legacy_versions/projekt_kontinuum_v16/kontinuum_v16/demo.py"
+      ],
+      "readme_files": [
+        "legacy_versions/projekt_kontinuum_v16/kontinuum_v16/README.md"
+      ],
+      "architecture_docs": [],
+      "file_count": 4
+    },
+    {
+      "archive": "source_archives/projekt_kontinuum_v17.zip",
+      "extracted_to": "legacy_versions/projekt_kontinuum_v17",
+      "version_detected": "17",
+      "python_files": [
+        "legacy_versions/projekt_kontinuum_v17/kontinuum_v17/kontinuum_v17.py"
+      ],
+      "readme_files": [
+        "legacy_versions/projekt_kontinuum_v17/kontinuum_v17/README.md",
+        "legacy_versions/projekt_kontinuum_v17/kontinuum_v17/ARCHITECTURE.md"
+      ],
+      "architecture_docs": [
+        "legacy_versions/projekt_kontinuum_v17/kontinuum_v17/ARCHITECTURE.md"
+      ],
+      "file_count": 3
+    },
+    {
+      "archive": "source_archives/projekt_kontinuum_v18.zip",
+      "extracted_to": "legacy_versions/projekt_kontinuum_v18",
+      "version_detected": "18",
+      "python_files": [
+        "legacy_versions/projekt_kontinuum_v18/projekt_kontinuum_v18/kontinuum_v18.py",
+        "legacy_versions/projekt_kontinuum_v18/projekt_kontinuum_v18/demo_v18.py"
+      ],
+      "readme_files": [
+        "legacy_versions/projekt_kontinuum_v18/projekt_kontinuum_v18/README.md",
+        "legacy_versions/projekt_kontinuum_v18/projekt_kontinuum_v18/HANDBUCH_KURZ.md"
+      ],
+      "architecture_docs": [],
+      "file_count": 4
+    }
+  ],
+  "rar_entries_not_directly_extracted": [
+    {
+      "name": "Projekt_Kontinuum_Chronik_Aktualisiert_2026-06-06.pdf",
+      "size": 4313,
+      "note": "Im RAR vorhanden; konnte ohne externes RAR-Backend nicht direkt extrahiert werden. Originalarchiv liegt bei."
+    },
+    {
+      "name": "Projekt_Kontinuum_Chatverlauf_2026-06-06.pdf",
+      "size": 4376,
+      "note": "Im RAR vorhanden; konnte ohne externes RAR-Backend nicht direkt extrahiert werden. Originalarchiv liegt bei."
+    },
+    {
+      "name": "Projekt_Kontinuum_17_Entwicklerhandbuch_Kompakt.pdf",
+      "size": 4777,
+      "note": "Im RAR vorhanden; konnte ohne externes RAR-Backend nicht direkt extrahiert werden. Originalarchiv liegt bei."
+    },
+    {
+      "name": "Projekt_Kontinuum_17_Handbuch_Kompakt.pdf",
+      "size": 3346,
+      "note": "Im RAR vorhanden; konnte ohne externes RAR-Backend nicht direkt extrahiert werden. Originalarchiv liegt bei."
+    },
+    {
+      "name": "Projekt_Kontinuum_Handbuch_V1_bis_V13.pdf",
+      "size": 4792,
+      "note": "Im RAR vorhanden; konnte ohne externes RAR-Backend nicht direkt extrahiert werden. Originalarchiv liegt bei."
+    },
+    {
+      "name": "Projekt_Kontinuum_Handbuch_V1_bis_V8.pdf",
+      "size": 5217,
+      "note": "Im RAR vorhanden; konnte ohne externes RAR-Backend nicht direkt extrahiert werden. Originalarchiv liegt bei."
+    },
+    {
+      "name": "README_Projekt_Kontinuum_3_0_erweitert.md",
+      "size": 7296,
+      "note": "Im RAR vorhanden; konnte ohne externes RAR-Backend nicht direkt extrahiert werden. Originalarchiv liegt bei."
+    },
+    {
+      "name": "continuum.py",
+      "size": 11927,
+      "note": "Im RAR vorhanden; konnte ohne externes RAR-Backend nicht direkt extrahiert werden. Originalarchiv liegt bei."
+    },
+    {
+      "name": "README.md",
+      "size": 955,
+      "note": "Im RAR vorhanden; konnte ohne externes RAR-Backend nicht direkt extrahiert werden. Originalarchiv liegt bei."
+    },
+    {
+      "name": "kontinuum_memory.json",
+      "size": 6675,
+      "note": "Im RAR vorhanden; konnte ohne externes RAR-Backend nicht direkt extrahiert werden. Originalarchiv liegt bei."
+    },
+    {
+      "name": "kontinuum_fragen_log.json",
+      "size": 6583,
+      "note": "Im RAR vorhanden; konnte ohne externes RAR-Backend nicht direkt extrahiert werden. Originalarchiv liegt bei."
+    },
+    {
+      "name": "kontinuum_zugaenge.json",
+      "size": 2129,
+      "note": "Im RAR vorhanden; konnte ohne externes RAR-Backend nicht direkt extrahiert werden. Originalarchiv liegt bei."
+    },
+    {
+      "name": "projekt_kontinuum_2_3_roadmap.py",
+      "size": 37588,
+      "note": "Im RAR vorhanden; konnte ohne externes RAR-Backend nicht direkt extrahiert werden. Originalarchiv liegt bei."
+    },
+    {
+      "name": "projekt_kontinuum_2_2_auto_verknuepfung.py",
+      "size": 34352,
+      "note": "Im RAR vorhanden; konnte ohne externes RAR-Backend nicht direkt extrahiert werden. Originalarchiv liegt bei."
+    },
+    {
+      "name": "projekt_kontinuum_2_1_zugaenge.py",
+      "size": 32168,
+      "note": "Im RAR vorhanden; konnte ohne externes RAR-Backend nicht direkt extrahiert werden. Originalarchiv liegt bei."
+    },
+    {
+      "name": "projekt_kontinuum_2_0_gesamt.py",
+      "size": 24742,
+      "note": "Im RAR vorhanden; konnte ohne externes RAR-Backend nicht direkt extrahiert werden. Originalarchiv liegt bei."
+    },
+    {
+      "name": "projekt_kontinuum_1_5_fragen_an_die_ki.py",
+      "size": 6112,
+      "note": "Im RAR vorhanden; konnte ohne externes RAR-Backend nicht direkt extrahiert werden. Originalarchiv liegt bei."
+    },
+    {
+      "name": "projekt_kontinuum_1_6_bibliotheken.py",
+      "size": 7423,
+      "note": "Im RAR vorhanden; konnte ohne externes RAR-Backend nicht direkt extrahiert werden. Originalarchiv liegt bei."
+    },
+    {
+      "name": "projekt_kontinuum_1_4_universitaets_internet.py",
+      "size": 8022,
+      "note": "Im RAR vorhanden; konnte ohne externes RAR-Backend nicht direkt extrahiert werden. Originalarchiv liegt bei."
+    },
+    {
+      "name": "projekt_kontinuum_1_3.py",
+      "size": 12270,
+      "note": "Im RAR vorhanden; konnte ohne externes RAR-Backend nicht direkt extrahiert werden. Originalarchiv liegt bei."
+    },
+    {
+      "name": "projekt_kontinuum_1_2.py",
+      "size": 8839,
+      "note": "Im RAR vorhanden; konnte ohne externes RAR-Backend nicht direkt extrahiert werden. Originalarchiv liegt bei."
+    },
+    {
+      "name": "projekt_kontinuum_1_1.py",
+      "size": 5756,
+      "note": "Im RAR vorhanden; konnte ohne externes RAR-Backend nicht direkt extrahiert werden. Originalarchiv liegt bei."
+    },
+    {
+      "name": "projekt_kontinuum_1_1-1.py",
+      "size": 5756,
+      "note": "Im RAR vorhanden; konnte ohne externes RAR-Backend nicht direkt extrahiert werden. Originalarchiv liegt bei."
+    }
+  ]
+}

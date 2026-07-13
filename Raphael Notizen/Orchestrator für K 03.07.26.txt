@@ -1,0 +1,95 @@
+Orchestrator für K 03.07.26
+
+Ja, daran erinnere ich mich aus dem sichtbaren Verlauf. Wir waren an dem Punkt, an dem sich die Architektur von vielen einzelnen Agenten hin zu einer zentralen Capability Resolution Engine entwickelt.
+
+Ich denke ebenfalls, dass der Orchestrator der kritischste Baustein für die Zukunft von Kontinuum ist. Nicht, weil er selbst "intelligent" sein muss, sondern weil er entscheidet, welche Intelligenz wann und unter welchen Regeln eingesetzt wird.
+
+Ich würde ihn deshalb nicht als einfachen Router betrachten, sondern als das eigentliche Betriebssystem von Kontinuum.
+
+Die Architektur könnte langfristig so aussehen:
+
+                    USER
+                      │
+                      ▼
+            Intent Interpretation
+                      │
+                      ▼
+        Capability Resolution Engine
+                      │
+      ┌───────────────┼────────────────┐
+      │               │                │
+Priorisierung   Ressourcenprüfung   Policy Engine
+      │               │                │
+      └───────────────┼────────────────┘
+                      ▼
+              Orchestrator Core
+                      │
+        ┌─────────────┼──────────────┐
+        │             │              │
+   Agent Planner  Parallelizer   Dependency Manager
+        │             │              │
+        └─────────────┼──────────────┘
+                      ▼
+                 Agent Pool
+        (Web, File, Memory, Vision,
+         Reasoning, Learning, ...)
+                      │
+                      ▼
+                 Review Engine
+                      │
+                      ▼
+             Compliance & Governance
+                      │
+                      ▼
+                     CMM
+                      │
+                      ▼
+              Response Generator
+
+Aus meiner Sicht sollte der Orchestrator später mindestens zehn Kernaufgaben übernehmen:
+
+Intent Resolution – Was möchte der Nutzer wirklich?
+Capability Matching – Welche Fähigkeiten werden benötigt?
+Agent Selection – Welche Agenten können diese Fähigkeiten erfüllen?
+Execution Planning – Reihenfolge oder Parallelisierung festlegen.
+Dependency Resolution – Ergebnisse anderer Agenten berücksichtigen.
+Conflict Resolution – Widersprüchliche Ergebnisse erkennen.
+Governance Control – Regeln und Berechtigungen prüfen.
+Resource Management – CPU, RAM, GPU, Netzwerk und Zeitbudget steuern.
+Review & Confidence – Qualität der Antworten bewerten.
+Learning Feedback – Erfolgreiche Abläufe für zukünftige Anfragen speichern.
+Der eigentliche Entwicklungssprung
+
+Ich glaube, dass der größte Schritt nicht darin besteht, immer mehr Agenten zu bauen.
+
+Der größte Schritt ist, dass der Orchestrator selbst über Fähigkeiten statt über Agentennamen denkt.
+
+Also nicht:
+
+→ Starte WebAgent.
+
+sondern:
+
+Ich benötige:
+
+• Internetrecherche
+• Lokales Wissen
+• Bildanalyse
+• mathematische Auswertung
+• Zusammenfassung
+
+Welche Komponenten können diese Fähigkeiten bereitstellen?
+
+Dadurch wird Kontinuum modular und austauschbar. Ein Agent kann ersetzt oder verbessert werden, ohne dass der Orchestrator umgeschrieben werden muss.
+
+Was ich als nächsten großen Meilenstein sehe
+
+Wenn ich die bisherige Entwicklung von Kontinuum betrachte – Foundation, CAM, Governance, Learning Agent, Continuous Learning Governance und jetzt die Capability Resolution Engine – dann würde ich den nächsten Architekturbaustein offiziell als
+
+Orchestrator Core 1.0
+
+definieren.
+
+Das wäre aus meiner Sicht nicht einfach ein weiteres Modul, sondern der Beginn des eigentlichen "Gehirns" von Kontinuum. Alle späteren Agenten, Modelle und Fähigkeiten würden sich an dieser zentralen Instanz ausrichten.
+
+Ich halte diesen Schritt sogar für wichtiger als zehn neue Agenten, weil ein gut konzipierter Orchestrator auch mit zukünftigen Komponenten arbeiten kann, die heute noch gar nicht existieren. Damit wird Kontinuum nicht nur leistungsfähiger, sondern vor allem langfristig erweiterbar und architektonisch stabil.

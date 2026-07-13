@@ -116,3 +116,6 @@ Abgedeckte Faelle:
 ## Naechster sinnvoller Ausbauschritt
 
 Ein spaeterer CodeAgent 1.1 kann echte Parser je Sprache anbinden, z. B. TypeScript AST, ShellCheck-Auswertung oder Python-Testabdeckung. Danach kann ein separater TestAgent/BuildAgent die gefundenen Einstiegspunkte kontrolliert verifizieren.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

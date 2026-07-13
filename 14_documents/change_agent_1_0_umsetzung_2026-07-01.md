@@ -68,3 +68,6 @@ KontinuumSystem.ask(...) End-to-End-Check
 Ergebnis: bestanden.
 
 Hinweis: `py_compile` mit `.pyc`-Ausgabe wurde durch bestehende `__pycache__`-Berechtigungen blockiert. Die Syntax wurde stattdessen ohne `.pyc`-Ausgabe per `compile()` geprueft und bestanden.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

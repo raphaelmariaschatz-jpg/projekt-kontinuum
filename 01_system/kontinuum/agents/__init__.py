@@ -1,3 +1,5 @@
+# © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.
+
 from .base_agent import BaseAgent, AgentResult
 from .internal_diagnostic_agent import InternalDiagnosticAgent
 from .change_agent import ChangeAgent

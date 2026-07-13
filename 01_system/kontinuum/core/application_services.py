@@ -1,3 +1,5 @@
+# © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.
+
 from __future__ import annotations
 
 import re
@@ -349,6 +351,7 @@ class PromptOrchestrator:
     def handle(self, text: str) -> str:
         intent = self.system.conversation.classify(text)
         decision = self.request_router.decide(text, intent)
+        plan = None
         capability_engine = getattr(self.system, "capability_resolution_engine", None)
         if capability_engine:
             resolution = capability_engine.resolve(text, intent, decision)
@@ -367,6 +370,11 @@ class PromptOrchestrator:
             user = self.system.conversation.user
             owner = user.get("full_name") or user.get("username") or "Raphael"
             self.system.memory_core.observe(text, owner=owner)
+        runtime_result = self._handle_orchestrator_runtime(text, intent, decision, plan)
+        if runtime_result:
+            answer, agent = runtime_result
+            self.request_router.record(text, decision, answer, agent)
+            return self.recorder.finish(answer, agent, intent)
         routed = self._handle_routed(text, intent, decision)
         if routed:
             answer, agent = routed
@@ -456,6 +464,74 @@ class PromptOrchestrator:
         agent = result.agent if result else "system"
         self.request_router.record(text, decision, answer, agent)
         return self.recorder.finish(answer, agent, intent)
+
+    def _orchestrator_runtime_enabled(self) -> bool:
+        config = getattr(self.system, "agent_config", {}) or {}
+        return bool(getattr(self.system, "orchestrator_runtime_enabled", False) or config.get("orchestrator_runtime_enabled", False))
+
+    def _handle_orchestrator_runtime(self, text: str, intent: Intent, decision, plan) -> tuple[str, str] | None:
+        if not self._orchestrator_runtime_enabled():
+            return None
+        if not plan:
+            self._record_orchestrator_runtime_fallback(decision, "plan_missing")
+            return None
+        if plan.get("status") != "ready":
+            self._record_orchestrator_runtime_fallback(decision, "plan_not_ready", run={"plan_status": plan.get("status", "")})
+            return None
+        orchestrator = getattr(self.system, "orchestrator_core", None)
+        if not orchestrator:
+            self._record_orchestrator_runtime_fallback(decision, "orchestrator_missing")
+            return None
+        try:
+            run = orchestrator.run(
+                plan,
+                payload={
+                    "text": text,
+                    "intent": getattr(intent, "name", ""),
+                    "request_class": getattr(decision, "request_class", ""),
+                    "selected_agent": getattr(decision, "selected_agent", ""),
+                },
+            )
+        except Exception as exc:
+            self._record_orchestrator_runtime_fallback(decision, "runtime_error", error=exc)
+            return None
+        self.system.last_orchestrator_run = run
+        if run.get("status") != "completed":
+            self._record_orchestrator_runtime_fallback(decision, "run_not_completed", run=run)
+            return None
+        answer, agent = self._orchestrator_answer(run)
+        if not answer:
+            self._record_orchestrator_runtime_fallback(decision, "empty_runtime_answer", run=run)
+            return None
+        decision.sources.append(f"OrchestratorCore:{run.get('status', '')}")
+        return answer, agent or "orchestrator_core"
+
+    def _orchestrator_answer(self, run: dict) -> tuple[str, str]:
+        results = run.get("results", []) if isinstance(run, dict) else []
+        for result in results:
+            if result.get("handled") and result.get("answer"):
+                return str(result.get("answer", "")), str(result.get("actual_agent") or result.get("expected_agent") or "orchestrator_core")
+        for result in results:
+            if result.get("answer"):
+                return str(result.get("answer", "")), str(result.get("actual_agent") or result.get("expected_agent") or "orchestrator_core")
+        return "", "orchestrator_core"
+
+    def _record_orchestrator_runtime_fallback(self, decision, reason: str, error: Exception | str | None = None, run: dict | None = None) -> None:
+        event = {"reason": reason}
+        if error:
+            event["error"] = str(error)
+        if run:
+            event["run_status"] = str(run.get("status") or run.get("plan_status") or "")
+            if run.get("errors"):
+                event["errors"] = run.get("errors")
+        self.system.last_orchestrator_runtime_fallback = event
+        history = getattr(self.system, "orchestrator_runtime_fallbacks", [])
+        if not isinstance(history, list):
+            history = []
+        history.append(event)
+        self.system.orchestrator_runtime_fallbacks = history[-20:]
+        if hasattr(decision, "sources"):
+            decision.sources.append(f"OrchestratorCore:fallback:{reason}")
 
     def _handle_routed(self, text: str, intent: Intent, decision) -> tuple[str, str] | None:
         selected = decision.selected_agent

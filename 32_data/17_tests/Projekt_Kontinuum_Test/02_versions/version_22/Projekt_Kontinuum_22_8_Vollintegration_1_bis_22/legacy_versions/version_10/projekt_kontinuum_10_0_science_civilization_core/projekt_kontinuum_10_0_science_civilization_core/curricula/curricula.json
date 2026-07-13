@@ -1,0 +1,44 @@
+{
+  "science": {
+    "mathematik": [
+      "Arithmetik",
+      "Algebra",
+      "Geometrie",
+      "Analysis"
+    ],
+    "physik": [
+      "Mechanik",
+      "Thermodynamik",
+      "Elektromagnetismus",
+      "Optik"
+    ],
+    "chemie": [
+      "Atombau",
+      "Bindungen",
+      "Reaktionen",
+      "Organische Chemie"
+    ]
+  },
+  "civilization": {
+    "baukunst": [
+      "Baumaterialien",
+      "Tragwerke",
+      "Fundamente"
+    ],
+    "architektur": [
+      "Grundriss",
+      "Statik",
+      "Stadtplanung"
+    ],
+    "ackerbau": [
+      "Bodenkunde",
+      "Saatgut",
+      "Bewässerung"
+    ],
+    "viehzucht": [
+      "Tierarten",
+      "Fütterung",
+      "Zuchtwahl"
+    ]
+  }
+}

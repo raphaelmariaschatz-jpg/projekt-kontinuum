@@ -75,3 +75,6 @@ Ergaenzte Tests pruefen:
 
 Der Test nutzt kontrollierte HTML-Fixtures statt Live-Netzwerkzugriff, damit
 Release-Tests reproduzierbar bleiben.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

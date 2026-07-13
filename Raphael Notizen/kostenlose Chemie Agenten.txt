@@ -1,0 +1,162 @@
+kostenlose Chemie Agenten
+
+Guten Morgen, Raphael! Ja, es gibt einige sehr gute kostenlose oder weitgehend kostenlose KI-Agenten und Plattformen, die sich speziell für Chemie oder naturwissenschaftliche Forschung eignen. Je nachdem, was du mit Kontinuum vorhast, würde ich sie unterschiedlich bewerten.
+
+1. DeepChem ⭐⭐⭐⭐⭐ (meine erste Empfehlung)
+Open Source
+Speziell für Chemie, Biologie und Materialwissenschaften
+Molekülanalyse
+QSAR-Modelle
+Reaktionsvorhersagen
+Molekülrepräsentationen
+Python-basiert
+
+Ideal für Kontinuum, wenn K später chemische Modelle selbst ausführen soll.
+
+2. PubChem + PUG REST API ⭐⭐⭐⭐⭐
+
+Keine KI im eigentlichen Sinne, aber eine riesige chemische Wissensquelle.
+
+Enthält Millionen von:
+
+Molekülen
+CAS-Nummern
+Summenformeln
+Eigenschaften
+Sicherheitsdaten
+Literaturverweisen
+
+Perfekt für einen Chemie-Agenten, der Fakten recherchiert.
+
+3. ChEBI (Chemical Entities of Biological Interest)
+
+Open Source
+
+Enthält:
+
+Stoffklassen
+biologische Beziehungen
+Synonyme
+Ontologien
+
+Sehr gut für Wissensgraphen.
+
+4. OPSIN
+
+Open Source
+
+Kann chemische Namen automatisch in Strukturinformationen umwandeln.
+
+Beispiel:
+
+"2-Methylpropan-1-ol"
+
+↓
+
+SMILES
+
+↓
+
+Molekülstruktur
+
+Für Kontinuum wäre das eine schöne Fähigkeit.
+
+5. RDKit ⭐⭐⭐⭐⭐
+
+Der Klassiker.
+
+Open Source
+
+Kann:
+
+Moleküle zeichnen
+Strukturen vergleichen
+Fingerprints berechnen
+Reaktionen analysieren
+Eigenschaften bestimmen
+
+Fast jede moderne Chemie-KI verwendet RDKit.
+
+6. Chemistry LibreTexts
+
+Kostenloses Expertenwissen.
+
+Nicht als KI, aber hervorragend zum Lernen:
+
+Organische Chemie
+Anorganik
+Physikalische Chemie
+Analytik
+7. Open Reaction Database (ORD)
+
+Kostenlose Datenbank realer chemischer Reaktionen.
+
+Sehr interessant für einen späteren Lernagenten.
+
+8. IBM RXN for Chemistry ⭐⭐⭐⭐
+
+Teilweise kostenlos.
+
+KI für:
+
+Reaktionsplanung
+Synthesevorschläge
+Moleküldesign
+
+Sehr leistungsfähig.
+
+9. ChemCrow ⭐⭐⭐⭐⭐
+
+Das finde ich besonders spannend.
+
+ChemCrow ist ein LLM-basierter Chemie-Agent, der verschiedene Werkzeuge kombiniert:
+
+RDKit
+PubChem
+Suchdienste
+Literatur
+Berechnungen
+
+Er wurde entwickelt, um wie ein chemischer Forschungsassistent zu arbeiten.
+
+Für Projekt Kontinuum könnte er ein Vorbild sein.
+
+Meine Empfehlung für Projekt Kontinuum
+
+Da ihr bereits CAM, CIM und CMM aufgebaut habt, würde ich keinen fremden Agenten direkt integrieren. Stattdessen würde ich einen eigenen Chemistry Agent entwickeln, der auf bewährten Open-Source-Bausteinen aufsetzt.
+
+Ich würde ihn ungefähr so aufbauen:
+
+Chemistry Agent
+
+│
+├── PubChem Connector
+├── RDKit
+├── OPSIN
+├── DeepChem
+├── ChEBI
+├── Reaction Database
+├── Safety Database
+└── Literature Search
+
+Dann könnte K beispielsweise:
+
+Stoffe identifizieren
+Molekülstrukturen erzeugen
+Reaktionen erklären
+Gefahrstoffe bewerten
+Literatur recherchieren
+Moleküle vergleichen
+Eigenschaften berechnen
+Chemiewissen dauerhaft im CMM speichern
+Für dich als Chemietechniker
+
+Da du sowohl Chemielaborant/CTA/Chemietechniker als auch IT-Architekt bist, sehe ich hier einen echten Vorteil. Kontinuum könnte sich von einer allgemeinen KI zu einer wissenschaftlichen Forschungsplattform entwickeln.
+
+Ich würde dabei mit drei Komponenten beginnen:
+
+RDKit – für chemische Berechnungen und Strukturen.
+PubChem – als primäre Wissens- und Stoffdatenbank.
+DeepChem – für KI-gestützte Modelle und Analysen.
+
+Diese drei Bausteine sind kostenlos, in der Forschung etabliert und würden eine sehr starke Grundlage für einen zukünftigen Chemie-Agenten in Kontinuum bilden.

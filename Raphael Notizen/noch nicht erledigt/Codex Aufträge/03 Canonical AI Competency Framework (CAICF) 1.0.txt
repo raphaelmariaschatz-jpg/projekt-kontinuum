@@ -1,0 +1,553 @@
+Engage with AI (KI im Alltag erkennen, bewerten und kritisch hinterfragen), Create with AI (KI kreativ und verantwortungsvoll nutzen), Manage AI (entscheiden, wann KI sinnvoll eingesetzt wird) und Design AI (Grundprinzipien von KI-Systemen verstehen, KI-Systeme gestalten und weiterentwickeln). Es verbindet die Dimensionen: Wissen, Fähigkeiten und Haltungen
+
+Vorschlag für Codex:
+
+Projekt Kontinuum
+
+Neues ArchitekturKonzept:
+Canonical AI Competency Framework (CAICF) 1.0
+
+Projekt Kontinuum soll Wissen nicht nur vermitteln, sondern Menschen schrittweise zu einem kompetenten, verantwortungsvollen und kreativen Umgang mit Künstlicher Intelligenz befähigen.
+
+Das Canonical AI Competency Framework (CAICF) definiert hierfür einen kanonischen Kompetenzrahmen, der unabhängig von Alter, Schulform oder Vorwissen eingesetzt werden kann. Jeder Nutzer soll entsprechend seines individuellen Kompetenzstands begleitet werden.
+
+Kanonische Kompetenzbereiche
+1. Engage with AI
+
+KI erkennen, verstehen und kritisch hinterfragen
+
+Ziele:
+
+KI im Alltag erkennen.
+KI-Ergebnisse kritisch bewerten.
+Quellen einschätzen.
+Halluzinationen erkennen.
+Chancen und Risiken verstehen.
+Ein gesundes Vertrauen in KI entwickeln.
+2. Create with AI
+
+KI kreativ und verantwortungsvoll einsetzen
+
+Ziele:
+
+Texte entwickeln.
+Bilder erzeugen.
+Programme erstellen.
+Ideen und Lösungen gemeinsam mit KI entwickeln.
+KI als kreatives Werkzeug sinnvoll nutzen.
+3. Manage AI
+
+KI verantwortungsvoll steuern
+
+Ziele:
+
+Entscheiden, wann KI sinnvoll eingesetzt wird.
+Ergebnisse validieren.
+Datenschutz und Informationssicherheit berücksichtigen.
+Ethische Fragestellungen verstehen.
+Verantwortung für den KI-Einsatz übernehmen.
+4. Design AI
+
+KI-Systeme verstehen und weiterentwickeln
+
+Ziele:
+
+Grundprinzipien moderner KI-Systeme verstehen.
+Agenten entwickeln.
+Workflows entwerfen.
+Architekturen erweitern.
+Eigene KI-Systeme planen und verbessern.
+Übergreifende Kompetenzdimensionen
+
+Alle vier Bereiche fördern gleichermaßen:
+
+Knowledge (Wissen)
+Skills (Fähigkeiten)
+Attitudes (Haltungen und Verantwortungsbewusstsein)
+
+Diese drei Dimensionen bilden den kanonischen Bewertungsrahmen sämtlicher Lernaktivitäten.
+
+Architekturziel
+
+Das CAICF wird als kanonischer Bestandteil der Lernarchitektur von Projekt Kontinuum entwickelt.
+
+Es ist kein separates Modul, sondern ein übergeordnetes Architekturprinzip für:
+
+Lernpfade
+Kompetenzentwicklung
+adaptive Lernempfehlungen
+Aufgabenplanung
+Kompetenzbewertung
+Tutor- und Education-Funktionen
+
+Der Kompetenzaufbau orientiert sich ausschließlich am individuellen Wissensstand des Nutzers und nicht an Alter, Klassenstufe oder formalen Bildungsabschlüssen.
+
+Einordnung in die Canonical Architecture
+
+Das CAICF soll als Bestandteil des Canonical Learning Layer in die bestehende Architektur integriert werden.
+
+Foundation Layer
+        │
+Governance Layer
+        │
+Canonical Layer
+        │
+Capability Resolution Engine (CRE)
+        │
+Execution Planner
+        │
+Orchestrator Core
+        │
+Canonical Learning Layer
+        │
+┌─────────────────────────────────────────┐
+│ Canonical AI Competency Framework       │
+│                                         │
+│ • Engage with AI                        │
+│ • Create with AI                        │
+│ • Manage AI                             │
+│ • Design AI                             │
+└─────────────────────────────────────────┘
+        │
+Adaptive Tutor
+        │
+User
+
+Das Framework dient als pädagogische Orientierung innerhalb der technischen Architektur. Es definiert, welche Kompetenzen aufgebaut werden sollen, während die bestehenden Kernkomponenten entscheiden, wie dieser Kompetenzaufbau erfolgt.
+
+Schnittstellen
+
+Im Rahmen der Architekturplanung sollen die Schnittstellen zu folgenden Komponenten geprüft und definiert werden:
+
+Foundation Layer
+Governance Layer
+Canonical Architecture
+Capability Resolution Engine (CRE)
+Execution Planner
+Orchestrator Core
+Learning Agent
+Canonical Memory
+Tutor- und Education-Komponenten
+Grundsatz
+
+Projekt Kontinuum soll Menschen nicht nur Antworten liefern, sondern sie dazu befähigen, KI bewusst, kritisch, kreativ und verantwortungsvoll einzusetzen.
+
+Das Canonical AI Competency Framework bildet hierfür den kanonischen Kompetenzrahmen der Lernarchitektur.
+
+Arbeitsauftrag
+
+In dieser Phase erfolgt keine Implementierung.
+
+Zunächst sollen:
+
+das Architekturkonzept analysiert,
+die Einordnung in die bestehende Canonical Architecture geprüft,
+die notwendigen Architekturkomponenten identifiziert,
+die Schnittstellen definiert und
+ein kanonischer Implementierungsplan für eine spätere Entwicklungsphase erstellt werden.
+
+Dabei sind die bestehenden Architekturprinzipien von Projekt Kontinuum konsequent einzuhalten.
+
+Ergänzung: Canonical Cognitive Pipeline (CCP)
+
+Die CCP ist als übergeordnete kanonische Verarbeitungslogik einzuordnen.
+
+Sie beschreibt nicht primär Lerninhalte, sondern den kognitiven Ablauf von K bei jeder Nutzereingabe:
+
+1. Input erfassen
+2. Bedeutung analysieren
+3. Kontext, Nutzerstand und Risiko bewerten
+4. Ziel und Lernabsicht ableiten
+5. passende Capability bestimmen
+6. Ausführungsplan erstellen
+7. Antwort, Aufgabe oder Lernimpuls erzeugen
+8. Ergebnis prüfen
+9. Erkenntnis, Verlauf und Kompetenzentwicklung reflektieren
+
+Beziehung zum CAICF:
+Das CAICF definiert, welche KI-Kompetenzen beim Nutzer aufgebaut werden sollen.
+Die CCP definiert, wie K Eingaben verarbeitet, um diese Kompetenzentwicklung sinnvoll zu unterstützen.
+
+Damit liegt die CCP oberhalb bzw. quer zum Canonical Learning Layer und verbindet:
+- User Input
+- Foundation
+- Governance
+- CRE
+- Execution Planner
+- Orchestrator Core
+- Learning Layer
+- CAICF
+- Memory
+- Reflexion
+
+Kurz gesagt:
+
+CCP = K denkt kanonisch.
+CAICF = K lehrt KI-Kompetenz kanonisch.
+
+
+direkter Codex Auftrag:
+
+
+# Codex-Auftrag – Canonical AI Competency Framework (CAICF) 1.0
+
+## Ziel des Auftrags
+
+Bitte prüfe und konzipiere das neue Architekturkonzept:
+
+```text
+Canonical AI Competency Framework (CAICF) 1.0
+```
+
+Projekt Kontinuum soll Wissen nicht nur vermitteln, sondern Menschen schrittweise zu einem kompetenten, verantwortungsvollen und kreativen Umgang mit Künstlicher Intelligenz befähigen.
+
+Das CAICF definiert hierfür einen kanonischen Kompetenzrahmen innerhalb der Lernarchitektur von Projekt Kontinuum.
+
+---
+
+## Grundsatz
+
+Projekt Kontinuum soll Menschen nicht nur Antworten liefern, sondern sie dazu befähigen, KI bewusst, kritisch, kreativ und verantwortungsvoll einzusetzen.
+
+```text
+CCP = K denkt kanonisch.
+CAICF = K lehrt KI-Kompetenz kanonisch.
+```
+
+---
+
+## Kanonische Kompetenzbereiche
+
+Bitte konzipiere das CAICF mit vier Kompetenzbereichen:
+
+### 1. Engage with AI
+
+KI erkennen, verstehen und kritisch hinterfragen.
+
+Ziele:
+
+* KI im Alltag erkennen
+* KI-Ergebnisse kritisch bewerten
+* Quellen einschätzen
+* Halluzinationen erkennen
+* Chancen und Risiken verstehen
+* gesundes Vertrauen in KI entwickeln
+
+### 2. Create with AI
+
+KI kreativ und verantwortungsvoll einsetzen.
+
+Ziele:
+
+* Texte entwickeln
+* Bilder erzeugen
+* Programme erstellen
+* Ideen und Lösungen gemeinsam mit KI entwickeln
+* KI als kreatives Werkzeug sinnvoll nutzen
+
+### 3. Manage AI
+
+KI verantwortungsvoll steuern.
+
+Ziele:
+
+* entscheiden, wann KI sinnvoll eingesetzt wird
+* Ergebnisse validieren
+* Datenschutz und Informationssicherheit berücksichtigen
+* ethische Fragestellungen verstehen
+* Verantwortung für den KI-Einsatz übernehmen
+
+### 4. Design AI
+
+KI-Systeme verstehen und weiterentwickeln.
+
+Ziele:
+
+* Grundprinzipien moderner KI-Systeme verstehen
+* Agenten entwickeln
+* Workflows entwerfen
+* Architekturen erweitern
+* eigene KI-Systeme planen und verbessern
+
+---
+
+## Übergreifende Kompetenzdimensionen
+
+Alle vier Bereiche sollen über drei Dimensionen bewertet werden:
+
+```text
+Knowledge  = Wissen
+Skills     = Fähigkeiten
+Attitudes  = Haltungen und Verantwortungsbewusstsein
+```
+
+Diese drei Dimensionen bilden den kanonischen Bewertungsrahmen sämtlicher Lernaktivitäten.
+
+---
+
+## Architekturziel
+
+Das CAICF ist kein isoliertes Modul, sondern ein übergeordnetes Architekturprinzip für:
+
+* Lernpfade
+* Kompetenzentwicklung
+* adaptive Lernempfehlungen
+* Aufgabenplanung
+* Kompetenzbewertung
+* Tutor- und Education-Funktionen
+
+Der Kompetenzaufbau orientiert sich ausschließlich am individuellen Wissensstand des Nutzers und nicht an Alter, Klassenstufe oder formalen Bildungsabschlüssen.
+
+---
+
+## Einordnung in die Canonical Architecture
+
+Bitte prüfe die Einordnung als Bestandteil des **Canonical Learning Layer**:
+
+```text
+Foundation Layer
+        │
+Governance Layer
+        │
+Canonical Layer
+        │
+Capability Resolution Engine (CRE)
+        │
+Execution Planner
+        │
+Orchestrator Core
+        │
+Canonical Learning Layer
+        │
+┌─────────────────────────────────────────┐
+│ Canonical AI Competency Framework       │
+│                                         │
+│ • Engage with AI                        │
+│ • Create with AI                        │
+│ • Manage AI                             │
+│ • Design AI                             │
+└─────────────────────────────────────────┘
+        │
+Adaptive Tutor
+        │
+User
+```
+
+Das Framework dient als pädagogische Orientierung innerhalb der technischen Architektur. Es definiert, welche Kompetenzen aufgebaut werden sollen, während die bestehenden Kernkomponenten entscheiden, wie dieser Kompetenzaufbau erfolgt.
+
+---
+
+## Ergänzung: Canonical Cognitive Pipeline (CCP)
+
+Die CCP ist als übergeordnete kanonische Verarbeitungslogik einzuordnen.
+
+Sie beschreibt nicht primär Lerninhalte, sondern den kognitiven Ablauf von K bei jeder Nutzereingabe:
+
+1. Input erfassen
+2. Bedeutung analysieren
+3. Kontext, Nutzerstand und Risiko bewerten
+4. Ziel und Lernabsicht ableiten
+5. passende Capability bestimmen
+6. Ausführungsplan erstellen
+7. Antwort, Aufgabe oder Lernimpuls erzeugen
+8. Ergebnis prüfen
+9. Erkenntnis, Verlauf und Kompetenzentwicklung reflektieren
+
+Beziehung zum CAICF:
+
+```text
+CAICF definiert, welche KI-Kompetenzen beim Nutzer aufgebaut werden sollen.
+CCP definiert, wie K Eingaben verarbeitet, um diese Kompetenzentwicklung sinnvoll zu unterstützen.
+```
+
+Damit liegt die CCP oberhalb bzw. quer zum Canonical Learning Layer und verbindet:
+
+* User Input
+* Foundation
+* Governance
+* CRE
+* Execution Planner
+* Orchestrator Core
+* Learning Layer
+* CAICF
+* Memory
+* Reflexion
+
+---
+
+## Schnittstellenprüfung
+
+Bitte prüfe und definiere die Schnittstellen zu folgenden Komponenten:
+
+* Foundation Layer
+* Governance Layer
+* Canonical Architecture
+* Canonical Cognitive Pipeline (CCP)
+* Capability Resolution Engine (CRE)
+* Execution Planner
+* Orchestrator Core
+* Learning Agent
+* Canonical Memory
+* Tutor- und Education-Komponenten
+* Audit / Review
+* Release Integrity
+* Canonical Glossary
+* Projektchronik
+
+---
+
+## Arbeitsauftrag
+
+In dieser Phase erfolgt **keine Implementierung**.
+
+Zunächst sollen:
+
+1. das Architekturkonzept analysiert werden
+2. die Einordnung in die bestehende Canonical Architecture geprüft werden
+3. notwendige Architekturkomponenten identifiziert werden
+4. Schnittstellen definiert werden
+5. ein kanonischer Implementierungsplan für eine spätere Entwicklungsphase erstellt werden
+6. Risiken und offene Fragen dokumentiert werden
+7. ein Statusbericht erstellt werden
+
+---
+
+## Erwartete Dateien
+
+Bitte prüfe, ob folgende Dateien sinnvoll sind:
+
+```text
+14_documents/CANONICAL_AI_COMPETENCY_FRAMEWORK_1_0.md
+24_config/canonical_ai_competency_framework_1_0.json
+31_reports/caicf_1_0_status_report.md
+```
+
+Optional, nur falls sinnvoll:
+
+```text
+14_documents/CAICF_IMPLEMENTATION_PLAN_1_0.md
+24_config/caicf_competency_matrix_1_0.json
+```
+
+---
+
+## Erwartetes JSON-Grundschema
+
+Bitte entwirf ein schlankes JSON-Schema mit ungefähr folgender Struktur:
+
+```json
+{
+  "framework": "Canonical AI Competency Framework",
+  "version": "1.0",
+  "status": "conceptual",
+  "layer": "Canonical Learning Layer",
+  "competency_areas": [
+    {
+      "id": "CAICF-ENGAGE",
+      "name": "Engage with AI",
+      "description": "KI erkennen, verstehen und kritisch hinterfragen",
+      "dimensions": {
+        "knowledge": [],
+        "skills": [],
+        "attitudes": []
+      }
+    },
+    {
+      "id": "CAICF-CREATE",
+      "name": "Create with AI",
+      "description": "KI kreativ und verantwortungsvoll einsetzen",
+      "dimensions": {
+        "knowledge": [],
+        "skills": [],
+        "attitudes": []
+      }
+    },
+    {
+      "id": "CAICF-MANAGE",
+      "name": "Manage AI",
+      "description": "KI verantwortungsvoll steuern",
+      "dimensions": {
+        "knowledge": [],
+        "skills": [],
+        "attitudes": []
+      }
+    },
+    {
+      "id": "CAICF-DESIGN",
+      "name": "Design AI",
+      "description": "KI-Systeme verstehen und weiterentwickeln",
+      "dimensions": {
+        "knowledge": [],
+        "skills": [],
+        "attitudes": []
+      }
+    }
+  ],
+  "interfaces": {
+    "ccp": true,
+    "cre": true,
+    "execution_planner": true,
+    "orchestrator_core": true,
+    "learning_agent": true,
+    "canonical_memory": true,
+    "governance": true
+  }
+}
+```
+
+---
+
+## Leitplanken
+
+Erlaubt:
+
+* Konzeptdokumentation
+* JSON-Konzeptschema
+* Statusbericht
+* Glossar-Ergänzung
+* Architekturverweise
+* Implementierungsplan für spätere Phase
+
+Nicht erlaubt ohne gesonderte Freigabe:
+
+* produktive Runtime-Integration
+* Änderungen an CRE, Planner oder Orchestrator
+* automatische Kompetenzbewertung im Livebetrieb
+* neue Agentenimplementierung
+* Datenbankmigration
+* Datei-Löschungen oder Verschiebungen
+* Änderung bestehender Lernlogik
+
+---
+
+## Entscheidungskriterium
+
+CAICF 1.0 ist nur dann als GO zu bewerten, wenn es:
+
+* die Lernarchitektur von Projekt Kontinuum sinnvoll stärkt
+* die CCP ergänzt, aber nicht ersetzt
+* Menschen beim kompetenten KI-Umgang unterstützt
+* alters- und schulformunabhängig einsetzbar bleibt
+* mit Governance und Foundation vereinbar ist
+* keine unnötige Komplexität erzeugt
+* später adaptiv erweiterbar ist
+
+---
+
+## Erwartetes Ergebnis
+
+Bitte liefere am Ende:
+
+1. Bestandsanalyse
+2. Architektur-Einordnung
+3. Schnittstellenübersicht
+4. Vorschlag für CAICF-Dateien
+5. Vorschlag für JSON-Struktur
+6. Risiken und offene Fragen
+7. Empfehlung: GO / NO-GO / SPÄTER
+8. kanonischen Implementierungsplan für eine spätere Phase
+9. Statusbericht unter `31_reports`, falls umgesetzt
+
+Ziel ist ein sauber vorbereiteter kanonischer Kompetenzrahmen, mit dem K künftig nicht nur Wissen liefert, sondern KI-Kompetenz beim Nutzer gezielt aufbauen kann.
+
+

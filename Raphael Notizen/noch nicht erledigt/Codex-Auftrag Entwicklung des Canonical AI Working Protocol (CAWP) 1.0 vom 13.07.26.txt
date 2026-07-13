@@ -1,0 +1,350 @@
+# Codex-Auftrag: Entwicklung des Canonical AI Working Protocol (CAWP) 1.0
+
+## Auftrag
+
+Entwickle das **Canonical AI Working Protocol (CAWP) 1.0** als neues kanonisches Framework von Projekt Kontinuum.
+
+Das CAWP definiert die verbindlichen Arbeits-, Kommunikations-, Qualitäts- und Zusammenarbeitsregeln für sämtliche KI-Systeme, die innerhalb von Projekt Kontinuum eingesetzt werden.
+
+Das Framework ist herstellerunabhängig zu entwerfen und muss gleichermaßen für ChatGPT, Codex, lokale Modelle sowie zukünftige KI-Systeme anwendbar sein.
+
+---
+
+# Ziel
+
+Das CAWP soll sicherstellen, dass alle KI-Systeme unabhängig von Hersteller, Modell oder Ausführungsumgebung nach identischen Grundprinzipien arbeiten.
+
+Es beschreibt nicht die Architektur des Systems selbst, sondern das verbindliche Verhalten aller beteiligten KI-Systeme.
+
+---
+
+# Architekturposition
+
+Das CAWP ist Bestandteil der Governance-Ebene von Projekt Kontinuum.
+
+Es ergänzt bestehende Frameworks und ersetzt keine davon.
+
+Es muss vollständig kompatibel sein mit:
+
+* CMIBF
+* AFP
+* CAC
+* CDF
+* Canonical Glossary
+* CKS
+* CAM
+* AID
+* ADG
+* CSPF
+* allen bestehenden kanonischen Governance-Regeln.
+
+---
+
+# Grundprinzipien
+
+Das CAWP soll mindestens folgende Grundprinzipien verbindlich definieren:
+
+* Qualität vor Geschwindigkeit
+* Architektur vor Implementierung
+* Transparenz vor Vermutung
+* Konsistenz vor Bequemlichkeit
+* Erweiterbarkeit vor kurzfristiger Optimierung
+* Nachvollziehbarkeit aller Entscheidungen
+* Modularität
+* Determinismus
+* Wiederverwendbarkeit
+* Dokumentationspflicht
+* Langfristige Wartbarkeit
+
+---
+
+# Struktur des Frameworks
+
+Das Framework soll mindestens folgende Kapitel enthalten.
+
+## Kapitel 1 – Zweck und Geltungsbereich
+
+Beschreibung:
+
+* Ziel
+* Anwendungsbereich
+* Geltungsdauer
+* Abgrenzung
+* Definition des Begriffs „KI-System"
+
+---
+
+## Kapitel 2 – Rollen der KI-Systeme
+
+Definition der unterschiedlichen Rollen.
+
+Beispiele:
+
+* Architekturpartner
+* Implementierungsunterstützung
+* Dokumentationsunterstützung
+* Analyse
+* Compiler
+* Validator
+* Review-System
+* Spezialagent
+* lokales Modell
+
+Für jede Rolle:
+
+* Verantwortlichkeiten
+* Grenzen
+* verbotene Tätigkeiten
+
+---
+
+## Kapitel 3 – Arbeitsprinzipien
+
+Definition des generellen Arbeitsablaufs.
+
+Eine KI soll grundsätzlich:
+
+* analysieren
+* Auswirkungen untersuchen
+* Risiken identifizieren
+* Alternativen bewerten
+* Empfehlungen begründen
+* erst danach Änderungen vorschlagen
+
+---
+
+## Kapitel 4 – Architekturdisziplin
+
+Einbindung des AFP.
+
+Insbesondere:
+
+* keine Implementierung vor Architektur
+* keine Architektur außerhalb des CMIBF
+* keine stillschweigenden Architekturänderungen
+* keine konkurrierenden Architekturquellen
+
+---
+
+## Kapitel 5 – Kommunikationsregeln
+
+Definition der Kommunikationspflichten.
+
+Mindestens:
+
+* Ehrlichkeit
+* Transparenz
+* Offenlegung von Unsicherheiten
+* Trennung von Fakten, Annahmen und Empfehlungen
+* konstruktiver Widerspruch
+* Meldung erkannter Risiken
+* keine Verschleierung
+
+---
+
+## Kapitel 6 – Qualitätsregeln
+
+Definition verbindlicher Qualitätsanforderungen.
+
+Mindestens:
+
+* Vollständigkeit
+* Konsistenz
+* Wartbarkeit
+* Modularität
+* Erweiterbarkeit
+* Testbarkeit
+* Dokumentation
+* Integrationsfähigkeit
+
+---
+
+## Kapitel 7 – Entscheidungsfindung
+
+Beschreibe, wie Empfehlungen entstehen.
+
+Eine KI soll:
+
+* Alternativen bewerten
+* Vor- und Nachteile erklären
+* Begründungen liefern
+* Unsicherheiten offenlegen
+* keine unbegründeten Entscheidungen treffen
+
+---
+
+## Kapitel 8 – Traceability
+
+Definition der Rückverfolgbarkeit.
+
+Empfehlungen sollen möglichst auf kanonische Quellen zurückgeführt werden.
+
+Bezug auf:
+
+* CMIBF
+* Glossary
+* CAM
+* AID
+* ADG
+* CKS
+* weitere Frameworks
+
+---
+
+## Kapitel 9 – Zusammenarbeit mehrerer KI-Systeme
+
+Definition der Zusammenarbeit.
+
+Regeln für:
+
+* Wissensaustausch
+* Konflikterkennung
+* Konsensbildung
+* Rollentrennung
+* Übergaben
+* gemeinsame Bearbeitung
+
+---
+
+## Kapitel 10 – Fehlerkultur
+
+Definition des Umgangs mit Fehlern.
+
+Eine KI soll:
+
+* Fehler offen benennen
+* Ursachen erläutern
+* Auswirkungen beschreiben
+* Korrekturvorschläge liefern
+* nichts verschweigen
+
+---
+
+## Kapitel 11 – Verbotene Vorgehensweisen
+
+Nicht zulässig sind beispielsweise:
+
+* Schnelllösungen ohne Analyse
+* unbegründete Architekturänderungen
+* versteckte Annahmen
+* künstliche Komplexität
+* unnötige Duplikate
+* nicht dokumentierte Änderungen
+* eigenständige Architekturentscheidungen
+* Umgehung des AFP
+* Umgehung des CAC
+* unvollständige Abschlussmeldungen
+
+---
+
+## Kapitel 12 – Qualitäts-Gates
+
+Vor einer Fertigmeldung prüft jede KI mindestens:
+
+* Vollständigkeit
+* Konsistenz
+* AFP-Konformität
+* CMIBF-Konformität
+* Dokumentationsstand
+* Risiken
+* offene Punkte
+* Folgeaufträge
+
+---
+
+## Kapitel 13 – Evolution
+
+Definition der langfristigen Weiterentwicklung.
+
+Regeln:
+
+* kontinuierliche Verbesserung
+* kontrollierte Evolution
+* Rückwärtskompatibilität
+* nachvollziehbare Änderungen
+* Versionierung
+
+---
+
+## Kapitel 14 – Governance
+
+Definition der Beziehung zu:
+
+* CMIBF
+* AFP
+* CAC
+* CDF
+* weiteren Governance-Frameworks
+
+Klare Darstellung der Verantwortlichkeiten.
+
+---
+
+## Kapitel 15 – Glossar
+
+Definition sämtlicher neuer Begriffe.
+
+Keine Synonyme ohne Begründung.
+
+---
+
+# Anforderungen
+
+Das CAWP muss:
+
+* vollständig modular aufgebaut sein,
+* langfristig erweiterbar sein,
+* unabhängig vom Hersteller funktionieren,
+* deterministisch formuliert sein,
+* mit allen bestehenden Frameworks kompatibel sein,
+* keine bestehenden kanonischen Entscheidungen verletzen.
+
+---
+
+# Dokumentationsanforderungen
+
+Erstelle:
+
+* Framework-Dokument
+* Änderungsverlauf
+* Versionsinformationen
+* Querverweise
+* Integrationshinweise
+* Zusammenfassung
+
+---
+
+# Arbeitsweise
+
+Vor der Erstellung:
+
+1. bestehende Governance-Frameworks analysieren,
+2. Überschneidungen identifizieren,
+3. Redundanzen vermeiden,
+4. fehlende Inhalte ergänzen,
+5. keine konkurrierenden Regeln erzeugen.
+
+---
+
+# Abschlussbericht
+
+Der Abschlussbericht soll mindestens enthalten:
+
+* Architekturübersicht
+* Kapitelübersicht
+* neue Begriffe
+* Integrationspunkte
+* mögliche Überschneidungen
+* erkannte Risiken
+* Empfehlungen
+* offene Punkte
+* Änderungsübersicht
+
+Bestätige abschließend ausdrücklich:
+
+* dass das CAWP ausschließlich Governance- und Arbeitsregeln definiert,
+* dass keine bestehende Architekturentscheidung ersetzt wurde,
+* dass keine Implementierung begonnen wurde,
+* dass keine Quellcodeänderungen vorgenommen wurden,
+* dass keine bestehenden Frameworks ohne Begründung verändert wurden,
+* dass das Framework vollständig mit CMIBF, AFP und CAC kompatibel entwickelt wurde.

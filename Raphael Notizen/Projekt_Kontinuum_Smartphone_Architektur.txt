@@ -1,0 +1,84 @@
+Projekt Kontinuum – Smartphone-Nutzung
+
+Ja – grundsätzlich kann Projekt Kontinuum später auch auf einem Smartphone laufen, aber es hängt davon ab, welche Architektur langfristig angestrebt wird.
+
+Variante 1: Kontinuum direkt auf dem Smartphone
+
+Vorteile:
+- Immer dabei
+- Offline nutzbar
+- Keine Serverkosten
+- Volle Datenkontrolle
+
+Nachteile:
+- Begrenzter Arbeitsspeicher
+- Begrenzte Rechenleistung
+- Große Wissensdatenbanken werden langsam
+- Lokale KI-Modelle stoßen irgendwann an Grenzen
+
+Variante 2: Smartphone als Benutzeroberfläche
+
+Empfohlene Lösung für Projekt Kontinuum.
+
+Die eigentliche KI läuft auf:
+- PC
+- Mini-Server
+- NAS
+- Heimserver
+- Später eigener Kontinuum-Server
+
+Das Smartphone dient als:
+- Chatfenster
+- Sprachsteuerung
+- Dashboard
+- Benachrichtigungszentrale
+
+Variante 3: Hybrides System
+
+Smartphone:
+- Spracheingabe
+- GUI
+- Notizen
+- Erinnerungen
+- Kleiner lokaler Wissensspeicher
+
+Heim-PC/Server:
+- Wissensgraph
+- Langzeitgedächtnis
+- Lernsystem
+- Forschungsmodul
+- Dokumentenanalyse
+- Datenbanken
+
+Cloud:
+- Universitätsquellen
+- Bibliotheken
+- Webrecherche
+- Backup
+
+Vergleich:
+Heimserver = Langzeitgedächtnis und Denken
+Smartphone = Augen, Ohren und Mund
+Cloud = Bibliothek
+
+Empfohlene Zukunftsarchitektur:
+
+Kontinuum Core:
+- Windows-PC oder Linux-Server
+
+Kontinuum Mobile:
+- Android-App
+- Sprachsteuerung
+- Chat
+- Statusanzeigen
+- Zugriff auf Chronik
+- Fernsteuerung aller Agenten
+
+Kontinuum Cloud Connector:
+- Universitäten
+- Bibliotheken
+- Internetquellen
+- Backup
+
+Je größer Kontinuum wird, desto sinnvoller wird die Verteilung auf mehrere Geräte.
+Der Weg ist das Ziel.

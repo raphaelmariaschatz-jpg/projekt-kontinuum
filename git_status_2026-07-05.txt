@@ -1,0 +1,107 @@
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   01_system/kontinuum/core/canonical_architecture.py
+	modified:   01_system/kontinuum/core/foundation_2_2.py
+	modified:   01_system/kontinuum/core/release_integrity.py
+	modified:   14_documents/ARBEITSREGEL_ARTEFAKT_LIFECYCLE_34_1.md
+	new file:   14_documents/CAPABILITY_RESOLUTION_ENGINE_1_0.md
+	modified:   14_documents/HANDBUCH_23.md
+	modified:   14_documents/KANONISCHES_ARCHITEKTURMODELL_34_1.md
+	new file:   14_documents/PHASE_5_CANONICAL_AGENT_ECOSYSTEM.md
+	modified:   14_documents/PROJEKTSTRUKTUR_34_1.md
+	modified:   14_documents/fundamentale Gedanken/Roadmap.md
+	modified:   14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_34_1.md
+	modified:   17_tests/test_canonical_architecture_manager.py
+	modified:   17_tests/test_foundation_2_2_active.py
+	modified:   17_tests/test_release_integrity_framework_34_1.py
+	modified:   22_project_chronicle/PROJEKTCHRONIK_23.md
+	modified:   24_config/canonical_architecture_34_1.json
+	modified:   24_config/release_integrity_34_1.json
+	new file:   31_reports/CANONICAL_DOCUMENTATION_AUDIT_2026_07_04.md
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   01_system/kontinuum/agents/agent_registry.py
+	modified:   01_system/kontinuum/agents/memory_agent.py
+	modified:   01_system/kontinuum/core/application_services.py
+	modified:   01_system/kontinuum/core/canonical_architecture.py
+	modified:   01_system/kontinuum/core/file_agent.py
+	modified:   01_system/kontinuum/core/foundation_2_2.py
+	modified:   01_system/kontinuum/core/release_integrity.py
+	modified:   01_system/kontinuum/core/request_router.py
+	modified:   01_system/kontinuum/core/system.py
+	modified:   01_system/kontinuum/tools/formula_engine.py
+	modified:   14_documents/ARBEITSREGEL_ARTEFAKT_LIFECYCLE_34_1.md
+	modified:   14_documents/CAPABILITY_RESOLUTION_ENGINE_1_0.md
+	modified:   14_documents/HANDBUCH_23.md
+	modified:   14_documents/KANONISCHES_ARCHITEKTURMODELL_34_1.md
+	modified:   14_documents/ORDNERSTRUKTUR_23.md
+	modified:   14_documents/PROJEKTSTRUKTUR_34_1.md
+	modified:   14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_34_1.md
+	modified:   17_tests/test_canonical_architecture_manager.py
+	modified:   17_tests/test_file_agent_1_0.py
+	modified:   17_tests/test_foundation_2_2_active.py
+	modified:   17_tests/test_release_integrity_framework_34_1.py
+	modified:   17_tests/test_request_router_knowledge_agent_1_0.py
+	modified:   22_project_chronicle/PROJEKTCHRONIK_23.md
+	modified:   24_config/canonical_architecture_34_1.json
+	modified:   24_config/file_agent_1_0.json
+	modified:   24_config/release_integrity_34_1.json
+	modified:   31_reports/governance/phase3/baseline_compliance_score.json
+	modified:   31_reports/governance/phase3/drift_report.json
+	modified:   31_reports/governance/phase3/governance_status_report.json
+	modified:   31_reports/governance/phase3_continuous_governance_log.jsonl
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	01_system/kontinuum/agents/chemistry_agent.py
+	01_system/kontinuum/core/capability_resolution_engine.py
+	01_system/kontinuum/core/execution_planner.py
+	01_system/kontinuum/core/identity_manager.py
+	01_system/kontinuum/core/orchestrator_core.py
+	01_system/kontinuum/foundation/
+	02_versions/
+	12_agents/continuous_learning_governance_1_0.py
+	12_agents/continuous_learning_governance_1_1.py
+	12_agents/learning_agent_1_0.py
+	12_agents/learning_agent_1_1.py
+	12_agents/learning_agent_1_2.py
+	14_documents/CHEMISTRY_AGENT_1_0_REFERENCE_INTEGRATION.md
+	14_documents/change_agent/
+	14_documents/interne_fehler_und_loesungen/2026_07_02_error_report.md
+	14_documents/interne_fehler_und_loesungen/2026_07_03_error_report.md
+	17_tests/test_canonical_agent_integration_manager_1_0.py
+	17_tests/test_canonical_identity_manager_1_0.py
+	17_tests/test_canonical_memory_manager_1_0.py
+	17_tests/test_capability_resolution_engine_1_0.py
+	17_tests/test_chemistry_agent_1_0_reference_integration.py
+	17_tests/test_continuous_learning_governance_1_0.py
+	17_tests/test_continuous_learning_governance_1_1.py
+	17_tests/test_execution_planner_1_0.py
+	17_tests/test_identity_config_routing_34_1.py
+	17_tests/test_learning_agent_1_0.py
+	17_tests/test_learning_agent_1_1.py
+	17_tests/test_learning_agent_1_2.py
+	17_tests/test_multi_intent_file_diagnostics_34_1.py
+	17_tests/test_orchestrator_core_1_0.py
+	24_config/canonical_agents.json
+	24_config/canonical_identity.json
+	24_config/canonical_identity_34_1.json
+	24_config/canonical_memory_config.json
+	24_config/capability_registry_34_1.json
+	24_config/execution_plan_schema_34_1.json
+	24_config/history/
+	24_config/orchestrator_runtime_schema_34_1.json
+	31_reports/caim_1_0_status_report.md
+	31_reports/cim_1_0_status_report.md
+	31_reports/clg_1_0_status_report.md
+	31_reports/clg_1_1_status_report.md
+	31_reports/cmm_1_0_status_report.md
+	31_reports/identity_manager_34_1_stabilisierung.md
+	31_reports/learning_agent/
+	32_data/
+	33_learning/
+	git_status_2026-07-05.txt
+

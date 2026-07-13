@@ -1,0 +1,25 @@
+am 21.06. zuerst fragen ob das so umgesetzt wurde:
+
+ChatGPTS Antwort auf Foundation Reasoning Layer 4.0
+
+Foundation Reasoning Layer 4.0
+
+Ziel:
+Alle identitäts-, moral-, sicherheits- und zielrelevanten Entscheidungen müssen auf konkrete Foundation-Regeln zurückführbar sein.
+
+Kernfunktionen:
+- stabile Regel-IDs
+- Entscheidungsnachweis pro relevanter Antwort
+- Einflussbewertung: ausschlaggebend, unterstützend, konfliktbehaftet
+- sichtbarer Foundation-Pfad
+- nachträgliche Erklärung nur aus gespeicherten Entscheidungsdaten
+- Konflikte zwischen Fundamentregeln bleiben sichtbar
+
+Beispiel:
+Entscheidung: block
+Begründung: Handlung gefährdet geschützte Daten.
+Verwendete Regel: foundation.moral.03
+Einfluss: ausschlaggebend
+Alternative: sichere Zusammenfassung statt Löschung
+Unsicherheit: niedrig
+Pfad: Regel → Moralbewertung → Entscheidung → Antwort

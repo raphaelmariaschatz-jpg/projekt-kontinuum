@@ -1,0 +1,469 @@
+{
+  "glossary_id": "CG-1.0",
+  "title": "Canonical Glossary",
+  "project": "Projekt Kontinuum",
+  "version": "1.0",
+  "canonical_since": "2026-07-09",
+  "status": "active",
+  "scope": "architecture_terms_and_abbreviations",
+  "runtime_effect": "none",
+  "api_effect": "none",
+  "import_effect": "none",
+  "database_effect": "none",
+  "migration_effect": "none",
+  "human_readable_documentation": "14_documents/CANONICAL_GLOSSARY_1_0.md",
+  "machine_readable_manifest": "24_config/canonical_glossary_1_0.json",
+  "status_report": "31_reports/cg_1_0_status_report.md",
+  "term_policy": {
+    "abbreviations_must_be_unambiguous": true,
+    "ccp_policy": "Canonical Change Policy",
+    "ccp_cognitive": "Canonical Cognitive Pipeline",
+    "cadp_current_canonical_meaning": "Canonical Active Directory Policy",
+    "inconsistencies_are_reported_not_auto_changed": true
+  },
+  "terms": [
+    {
+      "name": "Foundation",
+      "abbreviation": "Foundation",
+      "canonical_name": "Foundation",
+      "purpose": "Hoeschste Schutz- und Prinzipienschicht fuer Identitaet, Leitprinzipien, geschuetzte Regeln und grundlegende Entscheidungsgrenzen.",
+      "responsibilities": [
+        "Foundation-Regeln schuetzen",
+        "Identitaet und Leitprinzipien begrenzen",
+        "Kompatibilitaet fuer Architekturentscheidungen pruefen"
+      ],
+      "architecture_phase": "Phase 1 - Architekturentwicklung; dauerhaft gueltig in Phase 2",
+      "status": "Canonical",
+      "related": [
+        "Canonical Layer",
+        "AGF",
+        "CDG",
+        "Governance",
+        "Canonical Memory"
+      ]
+    },
+    {
+      "name": "Canonical Layer",
+      "abbreviation": "Canonical Layer",
+      "canonical_name": "Canonical Layer",
+      "purpose": "Systemweit verbindliche Struktur-, Vertrags-, Registry- und Policy-Schicht.",
+      "responsibilities": [
+        "Projektstruktur definieren",
+        "Architekturmodell und Manifeste fuehren",
+        "API-/Daten-/Artefaktvertraege stabilisieren"
+      ],
+      "architecture_phase": "Phase 1; Grundlage fuer Phase 2",
+      "status": "Canonical",
+      "related": [
+        "Foundation",
+        "Operational Layer",
+        "Learning Layer",
+        "CAM",
+        "Release Integrity"
+      ]
+    },
+    {
+      "name": "Operational Layer",
+      "abbreviation": "Operational Layer",
+      "canonical_name": "Operational Layer",
+      "purpose": "Austauschbare Implementierungen unter stabilen kanonischen Vertraegen.",
+      "responsibilities": [
+        "Agenten, Tools, GUI und Connectoren betreiben",
+        "Vertraege einhalten",
+        "Runtime-Faehigkeiten bereitstellen"
+      ],
+      "architecture_phase": "Phase 1 definiert; Phase 2 kontrolliert integriert",
+      "status": "Canonical",
+      "related": [
+        "Canonical Layer",
+        "Orchestrator Core",
+        "Runtime Schema",
+        "Governance"
+      ]
+    },
+    {
+      "name": "Learning Layer",
+      "abbreviation": "Learning Layer",
+      "canonical_name": "Learning Layer",
+      "purpose": "Dynamische, provenienz- und auditpflichtige Wissens-, Chronik-, Lern- und Review-Bereiche.",
+      "responsibilities": [
+        "Lern- und Review-Daten fuehren",
+        "Provenienz und Auditierbarkeit sichern",
+        "Keine automatische Kanon-Uebernahme ohne Review"
+      ],
+      "architecture_phase": "Phase 1 definiert; Phase 2 erweitert kontrolliert",
+      "status": "Canonical",
+      "related": [
+        "Canonical Memory",
+        "Learning / Reflection",
+        "Governance",
+        "Release Integrity"
+      ]
+    },
+    {
+      "name": "Architecture Governance Framework",
+      "abbreviation": "AGF",
+      "canonical_name": "Architecture Governance Framework 1.0",
+      "purpose": "Architekturverfassung von Projekt Kontinuum.",
+      "responsibilities": [
+        "Architekturrollen definieren",
+        "Aenderungsregeln festlegen",
+        "Governance- und Release-Grenzen beschreiben"
+      ],
+      "architecture_phase": "Phase 1 Abschluss",
+      "status": "Canonical",
+      "related": [
+        "CDG",
+        "Foundation",
+        "CAM",
+        "Release Integrity"
+      ]
+    },
+    {
+      "name": "Canonical Development Governance",
+      "abbreviation": "CDG",
+      "canonical_name": "Canonical Development Governance 1.0",
+      "purpose": "Kanonisches Entwicklungsregelwerk fuer zukuenftige Codex-Auftraege.",
+      "responsibilities": [
+        "Entwicklungsregeln klassifizieren",
+        "Regel-IDs fuehren",
+        "Fortschreibungsregeln definieren"
+      ],
+      "architecture_phase": "Phase 1 Abschluss / Phase 2 Vorbereitung",
+      "status": "Canonical",
+      "related": [
+        "AGF",
+        "CIPL",
+        "Governance",
+        "Release Integrity"
+      ]
+    },
+    {
+      "name": "Canonical Artifact Manager",
+      "abbreviation": "CAM",
+      "canonical_name": "Canonical Artifact Manager",
+      "purpose": "Kanonische Verwaltung von Artefakten, Speicherorten, Lifecycle und Konflikten.",
+      "responsibilities": [
+        "Artefakte klassifizieren",
+        "Kanonischen Zweck und Speicherort pruefen",
+        "Archivierungs- und Referenzpruefungen vorbereiten"
+      ],
+      "architecture_phase": "Phase 1",
+      "status": "Canonical, teilweise operationalisiert",
+      "related": [
+        "ALP",
+        "CADP",
+        "Release Integrity",
+        "Canonical Layer"
+      ]
+    },
+    {
+      "name": "Canonical Active Directory Policy",
+      "abbreviation": "CADP",
+      "canonical_name": "Canonical Active Directory Policy 1.0",
+      "purpose": "Policy fuer kanonisch reine aktive Projektordner.",
+      "responsibilities": [
+        "Aktive Ordner von historischen Parallelstaenden freihalten",
+        "Archivpflicht fuer ersetzte Artefakte definieren",
+        "Referenzpruefung nach Verschiebungen fordern"
+      ],
+      "architecture_phase": "Phase 1",
+      "status": "Canonical",
+      "related": [
+        "CAM",
+        "ALP",
+        "CCP-Policy",
+        "Release Integrity"
+      ]
+    },
+    {
+      "name": "Artifact Lifecycle Policy",
+      "abbreviation": "ALP",
+      "canonical_name": "Artifact Lifecycle Policy 2.0",
+      "purpose": "Verbindlicher Lebenszyklus fuer Projektartefakte.",
+      "responsibilities": [
+        "Artefaktklassen definieren",
+        "Archivierung statt Loeschung festlegen",
+        "Release- und Evidence-Regeln unterstuetzen"
+      ],
+      "architecture_phase": "Phase 1",
+      "status": "Canonical",
+      "related": [
+        "CAM",
+        "CADP",
+        "Release Integrity",
+        "Artifact Lifecycle Migration Plan"
+      ]
+    },
+    {
+      "name": "Canonical Intellectual Property Ledger",
+      "abbreviation": "CIPL",
+      "canonical_name": "Canonical Intellectual Property Ledger 1.0",
+      "purpose": "Kanonisches Herkunfts- und Urheberregister fuer Architekturentscheidungen, Konzepte und Kernartefakte.",
+      "responsibilities": [
+        "Creator Identity referenzieren",
+        "Herkunftsdaten vorbereiten",
+        "Git- und Chronikreferenzen dokumentarisch ermoeglichen"
+      ],
+      "architecture_phase": "Phase 1 Abschluss",
+      "status": "Canonical",
+      "related": [
+        "CDG",
+        "CG",
+        "Project Chronicle",
+        "Governance"
+      ]
+    },
+    {
+      "name": "Canonical Change Policy",
+      "abbreviation": "CCP-Policy",
+      "canonical_name": "Canonical Change Policy 1.0",
+      "purpose": "Policy fuer kontrollierte kanonische Aenderungen.",
+      "responsibilities": [
+        "Change Proposal verlangen",
+        "Pre-Audit und Governance Review fordern",
+        "Documentation Sync und Release Gate in Aenderungen einbinden"
+      ],
+      "architecture_phase": "Phase 1",
+      "status": "Canonical",
+      "related": [
+        "CADP",
+        "AGF",
+        "CDG",
+        "Release Integrity"
+      ]
+    },
+    {
+      "name": "Canonical Cognitive Pipeline",
+      "abbreviation": "CCP-Cognitive / CCP-Cog",
+      "canonical_name": "Canonical Cognitive Pipeline",
+      "purpose": "Kuenftige kanonische Denk- und Verarbeitungsstruktur von K.",
+      "responsibilities": [
+        "Wahrnehmen, Verstehen, Denken, Planen, Handeln, Pruefen, Erinnern und Lernen einordnen",
+        "CRE, Planner, Governance, Orchestrator, Review und Memory in einen kognitiven Ablauf integrieren",
+        "Neue Faehigkeiten kognitiv einordnen"
+      ],
+      "architecture_phase": "Phase 2 - Controlled Integration, Operation & Cognitive Evolution",
+      "status": "Canonical concept, implementation open",
+      "related": [
+        "CLU",
+        "CRE",
+        "Execution Planner",
+        "Orchestrator Core",
+        "Canonical Memory",
+        "Learning / Reflection"
+      ]
+    },
+    {
+      "name": "Canonical Language Understanding",
+      "abbreviation": "CLU",
+      "canonical_name": "Canonical Language Understanding",
+      "purpose": "Vorgelagerte Sprach- und Bedeutungsverarbeitung.",
+      "responsibilities": [
+        "Natuerliche Sprache normalisieren",
+        "Tokenisierung und Transformer-Repraesentation vorbereiten",
+        "Intent- und Kontextklassifikation fuer CCP-Cognitive und CRE vorbereiten"
+      ],
+      "architecture_phase": "Phase 2 Zielbild",
+      "status": "Canonical concept, implementation open",
+      "related": [
+        "Transformer / Tokenisierung",
+        "CCP-Cognitive",
+        "CRE"
+      ]
+    },
+    {
+      "name": "Capability Resolution Engine",
+      "abbreviation": "CRE",
+      "canonical_name": "Capability Resolution Engine",
+      "purpose": "Read-only Capability Resolution.",
+      "responsibilities": [
+        "Capability Discovery",
+        "Priorisierung",
+        "Candidate Selection",
+        "Governance-/Review-/CMM-Vorbereitung"
+      ],
+      "architecture_phase": "Phase 1",
+      "status": "Canonical",
+      "related": [
+        "Execution Planner",
+        "Governance",
+        "CCP-Cognitive",
+        "CLU"
+      ]
+    },
+    {
+      "name": "Execution Planner",
+      "abbreviation": "Execution Planner",
+      "canonical_name": "Execution Planner 1.0",
+      "purpose": "Deterministische Planungsschicht zwischen CRE und Orchestrator Core.",
+      "responsibilities": [
+        "ExecutionPlans erzeugen",
+        "Reihenfolge und Abhaengigkeiten bestimmen",
+        "Governance-Level und erwartete Agenten ausweisen"
+      ],
+      "architecture_phase": "Phase 1",
+      "status": "Canonical",
+      "related": [
+        "CRE",
+        "Orchestrator Core",
+        "Runtime Schema",
+        "Governance"
+      ]
+    },
+    {
+      "name": "Orchestrator Core",
+      "abbreviation": "Orchestrator Core",
+      "canonical_name": "Orchestrator Core 1.0",
+      "purpose": "Execution Runtime fuer validierte ExecutionPlans.",
+      "responsibilities": [
+        "Freigegebene Plaene ausfuehren",
+        "Agentenlauf koordinieren",
+        "Ergebnisse, Fallbacks und Status strukturiert fuehren"
+      ],
+      "architecture_phase": "Phase 1 bereit; Phase 2 Runtime-Integration offen",
+      "status": "Canonical component, production integration partial",
+      "related": [
+        "Execution Planner",
+        "Runtime Schema",
+        "Governance",
+        "Operational Layer"
+      ]
+    },
+    {
+      "name": "Runtime Schema",
+      "abbreviation": "Runtime Schema",
+      "canonical_name": "Orchestrator Runtime Schema 34.1",
+      "purpose": "Vertrag fuer Execution Runtime und ExecutionRun-Strukturen.",
+      "responsibilities": [
+        "Runtime-Statusfelder definieren",
+        "ExecutionStepRun und Ergebnisse strukturieren",
+        "Fehler- und Resultatvertraege festlegen"
+      ],
+      "architecture_phase": "Phase 1",
+      "status": "Canonical",
+      "related": [
+        "Orchestrator Core",
+        "Execution Planner",
+        "Release Integrity"
+      ]
+    },
+    {
+      "name": "Canonical Memory",
+      "abbreviation": "CMM / Canonical Memory",
+      "canonical_name": "Canonical Memory",
+      "purpose": "Kanonische Speicherung freigegebener Identitaets-, Wissens-, Entscheidungs- und Verlaufskontexte.",
+      "responsibilities": [
+        "Reviewpflichtige Uebernahmen speichern",
+        "Provenienz bewahren",
+        "Kontinuitaet und Identitaetskonsistenz stuetzen"
+      ],
+      "architecture_phase": "Phase 1; Phase 2 kognitive Integration",
+      "status": "Canonical",
+      "related": [
+        "Foundation",
+        "CCP-Cognitive",
+        "Review",
+        "Learning Layer"
+      ]
+    },
+    {
+      "name": "Governance",
+      "abbreviation": "Governance",
+      "canonical_name": "Canonical Governance",
+      "purpose": "Regelkonformitaet, Drift-Erkennung und Konflikteskalation.",
+      "responsibilities": [
+        "Policy-Konformitaet pruefen",
+        "Freigabeanforderungen erkennen",
+        "Drift und Review-Bedarf sichtbar machen"
+      ],
+      "architecture_phase": "Phase 1; Phase 2 Operation",
+      "status": "Canonical",
+      "related": [
+        "AGF",
+        "CDG",
+        "CAM",
+        "Release Integrity",
+        "Orchestrator Core"
+      ]
+    },
+    {
+      "name": "Release Integrity",
+      "abbreviation": "Release Integrity",
+      "canonical_name": "Release Integrity Framework",
+      "purpose": "Pruefung der Freigabefaehigkeit von Versionen, Pfaden, Pflichtdateien, Tests, Dokumentation und Evidence.",
+      "responsibilities": [
+        "Release-Gates pruefen",
+        "Required Paths und Legacy-Ausnahmen bewerten",
+        "Freigabeberichte erzeugen"
+      ],
+      "architecture_phase": "Phase 1; Phase 2 Operationalisierung",
+      "status": "Canonical",
+      "related": [
+        "CAM",
+        "ALP",
+        "AGF",
+        "CDG",
+        "Runtime Schema"
+      ]
+    },
+    {
+      "name": "Transformer-basierte Tokenisierung",
+      "abbreviation": "Transformer / Tokenisierung",
+      "canonical_name": "Transformer-basierte Tokenisierung und semantische Repraesentation",
+      "purpose": "Architektonisch eingeordnete Sprachvorverarbeitung fuer natuerliche Eingaben.",
+      "responsibilities": [
+        "Eingaben tokenisieren",
+        "Kontextuelle Repraesentationen erzeugen",
+        "Semantische Grundlage fuer CLU, Intent-Erkennung und CCP-Cognitive bereitstellen"
+      ],
+      "architecture_phase": "Phase 2 Zielbild",
+      "status": "Canonical concept, technical integration open",
+      "related": [
+        "CLU",
+        "CCP-Cognitive",
+        "CRE"
+      ]
+    },
+    {
+      "name": "Canonical Glossary",
+      "abbreviation": "CG",
+      "canonical_name": "Canonical Glossary 1.0",
+      "purpose": "Kanonisches Architektur-Glossar fuer eindeutige Begriffsnutzung.",
+      "responsibilities": [
+        "Begriffe definieren",
+        "Abkuerzungen stabilisieren",
+        "Inkonsistenzen dokumentieren ohne sie automatisch zu aendern"
+      ],
+      "architecture_phase": "Phase 2 Vorbereitung",
+      "status": "Canonical",
+      "related": [
+        "AGF",
+        "CDG",
+        "CIPL",
+        "Governance"
+      ]
+    },
+    {
+      "name": "Canonical Development Framework",
+      "abbreviation": "CDF",
+      "canonical_name": "Canonical Development Framework 1.0",
+      "definition": "Kanonischer Entwicklungsrahmen fuer die praktische Anwendung von Entwicklungs-, Architektur- und Wissensgovernance.",
+      "purpose": "Beschreibt, wie Entwicklungsarbeit in Orientierung, Konsistenzpruefung, Einordnung, Umsetzung und Abschlusspruefung ablaeuft.",
+      "responsibilities": [
+        "CDG-Regeln in Arbeitsphasen uebersetzen",
+        "Entwicklungsauftraege methodisch strukturieren",
+        "Abschlusspruefungen und Wiedereinstiegspunkte absichern"
+      ],
+      "architecture_phase": "Phase 2 Vorbereitung",
+      "status": "Canonical",
+      "related": [
+        "CDG",
+        "AGF",
+        "CKS",
+        "Release Integrity",
+        "CAM"
+      ]
+    }
+  ]
+}

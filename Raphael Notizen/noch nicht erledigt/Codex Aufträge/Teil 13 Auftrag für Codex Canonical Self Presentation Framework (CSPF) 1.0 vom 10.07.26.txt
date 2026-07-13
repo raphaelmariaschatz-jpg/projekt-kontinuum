@@ -1,0 +1,448 @@
+# Codex-Auftrag – Teil 13
+
+# Canonical Self-Presentation Security & Trust (CSPST) 1.0
+
+**Teil des Canonical Self-Presentation Framework (CSPF) 1.0**
+
+---
+
+# Zielsetzung
+
+Entwickle eine vollständige, normative Spezifikation des **Canonical Self-Presentation Security & Trust (CSPST) 1.0** als Sicherheits- und Vertrauensschicht des Canonical Self-Presentation Framework (CSPF) 1.0.
+
+CSPST definiert sämtliche Anforderungen an Authentizität, Integrität, Vertrauenswürdigkeit, Datenschutz, Nachvollziehbarkeit und Manipulationsschutz kanonischer Selbstpräsentationen.
+
+Das Ergebnis muss unmittelbar als Referenzarchitektur für die Implementierung dienen.
+
+---
+
+# Grundprinzip
+
+Eine kanonische Selbstpräsentation besitzt ausschließlich dann Gültigkeit, wenn ihre Identität, Integrität, Herkunft und Vertrauenswürdigkeit jederzeit objektiv überprüfbar sind.
+
+Vertrauen basiert nicht auf Behauptungen.
+
+Vertrauen basiert auf nachweisbarer Verifikation.
+
+---
+
+# Normative Anforderungen
+
+Die Spezifikation verwendet folgende verbindliche Begriffe:
+
+* **MUST** – zwingend erforderlich
+* **MUST NOT** – zwingend verboten
+* **SHALL** – verbindliche Architekturvorgabe
+* **SHOULD** – empfohlene Umsetzung
+* **MAY** – optionale Erweiterung
+
+Alle Anforderungen sind entsprechend zu formulieren.
+
+---
+
+# 1. Sicherheitsarchitektur
+
+Codex SHALL eine mehrschichtige Sicherheitsarchitektur spezifizieren.
+
+Mindestens:
+
+* Identity Security
+* Presentation Security
+* Runtime Security
+* Communication Security
+* Storage Security
+* Governance Security
+* Trust Verification
+
+Für jede Ebene sind mindestens zu definieren:
+
+* Aufgaben
+* Verantwortlichkeiten
+* Schutzumfang
+* Bedrohungsmodell
+* Schnittstellen
+* Ein- und Ausgaben
+* Validierungsmechanismen
+* Fehlerfälle
+* Erweiterbarkeit
+
+---
+
+# 2. Authentizität
+
+Jede kanonische Selbstpräsentation MUST eindeutig identifizierbar sein.
+
+Mindestens:
+
+* Canonical Presentation ID
+* Canonical Identity ID
+* Owner
+* Creator
+* Herausgeber
+* Version
+* Erstellungszeitpunkt
+* Änderungszeitpunkt
+* Zertifizierungsstatus
+* Signaturstatus
+* Provenance-ID
+* Governance-Status
+
+Das Framework MUST jederzeit eindeutig beantworten können:
+
+> Wer hat diese Präsentation erstellt?
+
+---
+
+# 3. Integrität
+
+Das Framework MUST jede unautorisierte Veränderung erkennen.
+
+Mindestens:
+
+* Canonical Hash
+* Digitale Prüfsummen
+* Delta Detection
+* Version Comparison
+* Tamper Detection
+* Integrity Verification
+* Integrity Reports
+
+Eine unbemerkte Manipulation MUST NOT möglich sein.
+
+---
+
+# 4. Digitale Signaturen
+
+Das Framework SHALL Mehrfachsignaturen unterstützen.
+
+Mindestens:
+
+* Author Signature
+* Organization Signature
+* Developer Signature
+* Research Signature
+* Institution Signature
+* Certification Signature
+
+Die Architektur MUST kryptographisch agil sein und den zukünftigen Austausch kryptographischer Verfahren (einschließlich Post-Quantum-Kryptographie) unterstützen, ohne bestehende Vertrauensketten zu beschädigen.
+
+---
+
+# 5. Trust Levels
+
+Codex SHALL ein normiertes Vertrauensmodell entwickeln.
+
+Mindestens:
+
+* Unknown
+* Self Declared
+* Verified
+* Certified
+* Organization Approved
+* Government Verified
+* Scientific Verified
+* Canonical Trusted
+
+Für jede Stufe sind verbindlich zu definieren:
+
+* Voraussetzungen
+* Vergaberegeln
+* Entzugskriterien
+* Auditregeln
+* Sichtbarkeit
+* Auswirkungen auf das Verhalten des Systems
+
+---
+
+# 6. Provenance
+
+Jede Information MUST ihre vollständige Herkunft besitzen.
+
+Mindestens:
+
+* Quelle
+* Autor
+* Erzeugungssystem
+* Version
+* Zeitstempel
+* Kontext
+* Validierungsstatus
+* Vertrauensstatus
+
+Provenance MUST während des gesamten Lebenszyklus erhalten bleiben.
+
+---
+
+# 7. Manipulationsschutz
+
+Codex SHALL Schutzmechanismen gegen mindestens folgende Angriffe spezifizieren:
+
+* Identity Theft
+* Profile Forgery
+* Signature Forgery
+* Replay Attack
+* Profile Injection
+* Unauthorized Replacement
+* Canonical Drift
+* Version Manipulation
+* Spoofing
+* Trust Manipulation
+
+Für jede Angriffsklasse sind zu definieren:
+
+* Bedrohungsbeschreibung
+* Risikoanalyse
+* Erkennung
+* Prävention
+* Recovery
+* Audit
+* Monitoring
+
+---
+
+# 8. Zugriffsschutz
+
+Das Framework MUST ein rollenbasiertes Berechtigungsmodell unterstützen.
+
+Mindestens:
+
+* Read
+* Export
+* Modify
+* Approve
+* Certify
+* Sign
+* Archive
+* Deprecate
+* Delete
+* Govern
+
+Alle Berechtigungen MUST vollständig auditierbar sein.
+
+---
+
+# 9. Datenschutz
+
+Das Framework SHALL Privacy by Design unterstützen.
+
+Mindestens:
+
+* Privacy by Default
+* Data Minimization
+* Purpose Limitation
+* Consent Management
+* Retention Policies
+* Deletion Policies
+* Pseudonymisierung
+* Anonymisierung
+* Kinderschutz
+* Schutz sensibler personenbezogener Daten
+
+Personenbezogene Daten dürfen ausschließlich verarbeitet werden, wenn dies durch die jeweilige Präsentationsklasse zulässig ist.
+
+---
+
+# 10. Vertrauensindikatoren
+
+Das Framework SHALL standardisierte Vertrauensindikatoren definieren.
+
+Beispiele:
+
+* Verified
+* Certified
+* Official
+* Research
+* Experimental
+* Signed
+* Immutable
+* Protected
+* Trusted
+* Canonical
+* Archived
+* Deprecated
+* Unverified
+
+Darstellung und Bedeutung MUST kanonisch festgelegt werden.
+
+---
+
+# 11. Sicherheitsrichtlinien
+
+Codex SHALL ein vollständiges Policy-Modell spezifizieren.
+
+Mindestens:
+
+* Authentication Policy
+* Signature Policy
+* Approval Policy
+* Modification Policy
+* Verification Policy
+* Audit Policy
+* Compliance Policy
+* Archival Policy
+* Trust Policy
+
+---
+
+# 12. Audit Trail
+
+Jede sicherheitsrelevante Aktion MUST unveränderbar protokolliert werden.
+
+Mindestens:
+
+* Zeitstempel
+* Benutzer
+* Rolle
+* Aktion
+* Vorheriger Zustand
+* Neuer Zustand
+* Version
+* Hash
+* Signaturstatus
+* Grund
+* Referenzierte Artefakte
+
+Audit Trails MUST manipulationssicher sein.
+
+---
+
+# 13. Canonical Trust Score
+
+Codex SHALL einen transparenten Trust Score spezifizieren.
+
+Mögliche Einflussgrößen:
+
+* Integrität
+* Validierungsstatus
+* Zertifizierungsstatus
+* Signaturstatus
+* Provenance
+* Governance
+* Compliance
+* Historie
+* Aktualität
+* Review Status
+
+Der Trust Score SHALL ausschließlich der Transparenz dienen und MUST menschliche Entscheidungen nicht ersetzen.
+
+---
+
+# 14. Angriffssimulation
+
+Das Framework SHALL automatisierte Sicherheitstests definieren.
+
+Mindestens:
+
+* Hash Manipulation
+* Replay Attack
+* Signature Loss
+* Identity Spoofing
+* Injection
+* Privilege Escalation
+* Fake Certification
+* Unauthorized Editing
+* Trust Corruption
+* Canonical Drift
+
+Alle Tests MUST reproduzierbar sein.
+
+---
+
+# 15. Compliance
+
+Die Architektur SHALL internationale Standards berücksichtigen.
+
+Mindestens:
+
+* ISO 27001
+* NIST Cybersecurity Framework
+* DSGVO / GDPR
+* Privacy by Design
+* Verifiable Credentials
+* OpenID-basierte Identitätssysteme
+* Digitale Signaturstandards
+
+Die Architektur MUST langfristig erweiterbar bleiben.
+
+---
+
+# 16. Referenzartefakte
+
+Codex SHALL mindestens folgende Referenzartefakte spezifizieren:
+
+* Canonical Trust Object
+* Trust Certificate
+* Security Manifest
+* Integrity Manifest
+* Verification Report
+* Audit Manifest
+* Trust Report
+* Security Policy
+* JSON-Schemata
+* Markdown-Spezifikationen
+* Python-Datenmodelle
+* Registry-Einträge
+* Validierungsregeln
+* Beispielinstanzen
+* Referenz-Testfälle
+
+---
+
+# 17. Framework-Integration
+
+CSPST MUST sämtliche Schnittstellen zu folgenden Frameworks beschreiben:
+
+* CSPF Core
+* CSPVC
+* CPLE
+* CCG
+* CCAAC
+* CAF
+* CLMSF
+* CAM
+* CDF
+
+Für jede Integration sind Verantwortlichkeiten, Datenflüsse und Validierungsregeln eindeutig festzulegen.
+
+---
+
+# 18. Qualitätsanforderungen
+
+Die Spezifikation MUST:
+
+* modular aufgebaut sein,
+* deterministisch arbeiten,
+* vollständig versionierbar sein,
+* auditierbar sein,
+* international einsetzbar sein,
+* maschinenlesbar sein,
+* menschenverständlich dokumentiert sein,
+* kryptographisch agil sein,
+* langfristig wartbar und erweiterbar bleiben.
+
+---
+
+# 19. Abnahmekriterien
+
+Die Implementierung gilt ausschließlich dann als abgeschlossen, wenn nachgewiesen wurde, dass:
+
+* jede kanonische Selbstpräsentation eindeutig authentifizierbar ist,
+* Manipulationen zuverlässig erkannt werden,
+* Provenance vollständig erhalten bleibt,
+* Trust Levels reproduzierbar funktionieren,
+* digitale Signaturen unterstützt werden,
+* Mehrfachsignaturen korrekt verarbeitet werden,
+* Audit Trails unveränderbar sind,
+* Datenschutzanforderungen erfüllt werden,
+* sämtliche Sicherheitsprüfungen erfolgreich bestanden werden,
+* alle Referenzartefakte vollständig vorliegen,
+* alle Schnittstellen zu den übrigen Canonical Frameworks dokumentiert und validiert sind,
+* sämtliche Anforderungen dieser Spezifikation erfüllt wurden.
+
+---
+
+# Erwartetes Ergebnis
+
+Codex SHALL eine vollständige, implementierungsreife Referenzspezifikation von **Canonical Self-Presentation Security & Trust (CSPST) 1.0** erstellen.
+
+Das Ergebnis muss unmittelbar als Grundlage für Implementierung, Validierung, Auditierung, Zertifizierung und langfristige Weiterentwicklung innerhalb des Canonical Self-Presentation Framework (CSPF) 1.0 dienen.

@@ -1,0 +1,116 @@
+Problem:
+FileAgent erkennt Pfad/Freigabe korrekt.
+Danach gibt PromptOrchestrator sofort zurück.
+Restauftrag wird nicht mehr verarbeitet.
+
+Codex-Fortsetzungsauftrag: Multi-Intent nach FileAgent-Freigabe
+
+Bitte den begonnenen Fix fortsetzen.
+
+Problem:
+Bei Prompts mit Projektordnerfreigabe plus Funktionstestauftrag führt K nur die FileAgent-Freigabe aus und verschluckt den restlichen Auftrag.
+
+Beispiel:
+"Du hast Vollzugriff auf deinen Projektordner C:\Projekt Kontinuum.
+Bitte mache einen vollständigen Funktionstest und schreibe einen Bericht über Fehler, Schwachstellen und gewünschte Erweiterungen."
+
+Aktuelle Ausgabe:
+"FileAgent: Projektordner freigegeben: C:\Projekt Kontinuum"
+
+Ziel:
+Nach erfolgreicher FileAgent-Freigabe soll bei gleichzeitigem Test-/Diagnostikwunsch zusätzlich ein Diagnostikbericht erzeugt werden.
+
+Umsetzung:
+1. In PromptOrchestrator.handle(...):
+   Nach file_agent.handle_command(text) prüfen, ob der Prompt zusätzlich einen Funktionstest-/Diagnostik-/Berichtswunsch enthält.
+
+2. In _handle_routed(... selected == "file_agent"):
+   gleiche Kombinationslogik ergänzen.
+
+3. Neue Helfer im PromptOrchestrator:
+   - _wants_function_test_report(text)
+   - _build_function_test_report()
+   - _combine_file_and_diagnostic(file_answer, diagnostic_report)
+
+4. Trigger:
+   - vollständiger Funktionstest
+   - Funktionen prüfen
+   - Selftest
+   - Diagnostikbericht
+   - gefundene Fehler
+   - Schwachstellen
+   - gewünschte Erweiterungen
+
+5. Bericht transparent formulieren:
+   Falls kein vollständiger TestAgent existiert:
+   "Ein vollständiger automatischer Funktionstest ist noch nicht vollständig angebunden. Ausgeführt wurden verfügbare interne Checks."
+
+6. Verfügbare Checks einbeziehen:
+   - autonomous_diagnostics
+   - Systemstatus
+   - CAIM-Status
+   - CMM/memory status
+   - CIM/identity status
+   - routingstatus
+   - optional code_agent status
+
+7. Ausgabeformat:
+   FileAgent: Projektordner freigegeben: C:\Projekt Kontinuum
+
+   [DIAGNOSTIKBERICHT]
+   1. Gefundene Fehler:
+   ...
+   2. Gefundene Schwachstellen:
+   ...
+   3. Gewünschte Erweiterungen:
+   ...
+
+8. Regressionstest:
+   Prompt mit Pfadfreigabe + vollständigem Funktionstest.
+   Erwartung:
+   - Pfad wird freigegeben
+   - Bericht wird erzeugt
+   - Ausgabe enthält [DIAGNOSTIKBERICHT]
+   - Ausgabe ist nicht nur FileAgent-Antwort
+
+Wichtig:
+Keine Freigabeprüfung entfernen.
+Keinen vollständigen Testlauf vortäuschen.
+Bestehendes FileAgent-Verhalten für reine Datei-/Pfadbefehle nicht brechen.
+
+Perfekt, damit ist der Zielpunkt wieder scharf. Ich setze genau dort an: FileAgent bleibt erste Freigabeinstanz, aber bei kombinierten Freigabe+Diagnostik-Prompts wird danach ein transparenter Diagnosebericht angehängt.
+
+Ich habe die Stelle gefunden: Es gibt zwei frühe Rückgaben für file_agent – einmal direkt nach _handle_routed, einmal im späteren Fallback file_agent.looks_like_file_command. Ich füge die Kombination so ein, dass reine Pfad-/Dateibefehle unverändert bleiben und nur die genannten Diagnose-Trigger den zweiten Teil aktivieren.
+
+Ich nehme die Berichtserzeugung bewusst als „verfügbare interne Checks“ auf, nicht als echten vollständigen Testlauf. Dadurch erfüllt K den Auftrag, ohne etwas vorzutäuschen: Diagnose wird ausgeführt/Status abgefragt, und fehlende TestAgent-Anbindung wird als Erweiterung ausgewiesen.
+
+Ich ergänze jetzt noch einen fokussierten Regressionstest mit einem kleinen Fake-System: echter FileAgentService, echter PromptOrchestrator, aber die übrigen Statusquellen werden kontrolliert simuliert. So testen wir genau den verschluckten Restauftrag, ohne einen schweren Vollstart als Testvoraussetzung zu machen.
+
+Der Patch ist drin und der Regressionstest deckt beide Seiten ab: kombinierter Prompt bekommt Bericht, reine Freigabe bekommt keinen Bericht. Ich lasse jetzt die neue Regression plus die bestehenden Router/FileAgent-Tests laufen.
+
+Bestehende Router- und FileAgent-Tests sind grün. Der neue Test ist nur an der Fake-Identity hängen geblieben, weil ConversationManager.context_for_agents() die kanonischen Identitätsfelder erwartet; ich ergänze die Test-Dummy-Daten sauber.
+
+Der Test-Dummy passt jetzt zur echten Conversation-Struktur. Ich lasse die Regression noch einmal laufen; danach prüfe ich kurz den Diff, damit nichts Unbeabsichtigtes mitgekommen ist.
+
+Neue Regression ist grün. Ich mache noch eine kleine Robustheitskorrektur: Die Trigger sollen nicht davon abhängen, ob normalize() Umlaute exakt transliteriert; außerdem sollte ein Manager ohne format_status, aber mit status, in den Bericht einfließen können.
+
+normalize() nimmt Umlaute tatsächlich sauber auseinander; die Trigger sind damit in Ordnung. Ich erweitere nur noch den Statusabruf so, dass status() als Fallback genutzt wird, wenn ein Dienst kein format_status() anbietet.
+
+Die Fallback-Statuslogik ist jetzt robuster. Ich starte die drei relevanten Tests noch einmal gemeinsam, damit wir den finalen Stand sauber haben.
+
+Alle drei Tests sind grün. Ich schaue abschließend noch kurz auf den Arbeitsbaum, damit ich dir exakt sagen kann, welche Dateien ich für diesen Fix berührt habe und welche vorher schon offen waren.
+
+Ja, wir waren beim Multi-Intent-Fix, und der ist jetzt fortgesetzt.
+Geändert in [application_services.py](C:/Projekt Kontinuum/01_system/kontinuum/core/application_services.py):
+FileAgent-Freigabe bleibt unverändert die erste Prüfung.
+Wenn derselbe Prompt zusätzlich Funktionstest-/Diagnostik-/Berichtstrigger enthält, wird danach ein [DIAGNOSTIKBERICHT] angehängt.
+Bericht sagt ausdrücklich, dass kein vollständiger TestAgent angebunden ist und nur verfügbare interne Checks ausgeführt wurden.
+Eingebunden: autonomous_diagnostics, Systemstatus, CAIM, CMM, CIM, Routingstatus und optional CodeAgent-Status.
+Reine Datei-/Pfadfreigaben bleiben ohne Diagnostikbericht.
+Neuer Regressionstest:
+[test_multi_intent_file_diagnostics_34_1.py](C:/Projekt Kontinuum/17_tests/test_multi_intent_file_diagnostics_34_1.py)
+Verifiziert:
+test_multi_intent_file_diagnostics_34_1.py grün
+test_request_router_knowledge_agent_1_0.py grün
+test_file_agent_1_0.py grün
+Hinweis: Ein früher py_compile-Versuch ist an einer __pycache__-Permission gescheitert, aber die relevanten Tests liefen mit PYTHONDONTWRITEBYTECODE=1 erfolgreich durch.

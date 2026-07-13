@@ -1,0 +1,16 @@
+neue Arbeitsregel für Codex vom 11.07.26
+
+
+Die beiden Grundsätze, die künftig konsequent eingehalten werden sollen, lauten:
+
+Das CMIBF 1.0 ist die einzige normative Architekturreferenz (Single Source of Truth).
+Alle Architekturentscheidungen, Frameworks und Implementierungen müssen sich letztlich auf dieses Dokument zurückführen lassen.
+Alle technischen Artefakte sind vom CMIBF abzuleiten und dürfen ihm niemals widersprechen.
+Dazu gehören insbesondere Registry-Dateien, Dependency Graphs, Roadmaps, Statusmodelle, Validatoren und spätere Implementierungen durch Codex. Codex liest und prüft immer zuerst die vollständige CMIBF-Spezifikation und erzeugt daraus die technischen Komponenten – niemals umgekehrt.
+
+Ich würde sogar noch einen Schritt weitergehen und diese beiden Regeln nicht nur im Gedächtnis behalten, sondern sie als die ersten verbindlichen Architekturregeln im CMIBF selbst verankern. Sie gehören aus meiner Sicht in Kapitel 2 und erhalten dort einen eigenen normativen Abschnitt, etwa:
+
+CMIBF-AR-001 – Canonical Authority Principle
+CMIBF-AR-002 – Derived Artifact Integrity Principle
+
+Damit sind sie nicht nur eine Arbeitsnotiz zwischen uns, sondern offizielle Architekturregeln, gegen die Codex künftig auch automatisch validieren kann.

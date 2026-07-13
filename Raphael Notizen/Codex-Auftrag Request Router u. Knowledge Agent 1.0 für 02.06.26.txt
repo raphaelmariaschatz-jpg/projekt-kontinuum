@@ -1,0 +1,469 @@
+# Codex-Auftrag: Request Router & Knowledge Agent 1.0 für 02.06.26
+
+## Ziel
+
+Bitte implementiere einen zentralen **Request Router** mit integriertem **KnowledgeAgent**, der jede Benutzereingabe zunächst analysiert und anschließend automatisch den passenden Agenten auswählt.
+
+Der Router wird damit zum zentralen Einstiegspunkt aller Benutzeranfragen.
+
+---
+
+# Ausgangsproblem
+
+Aktuell werden viele Anfragen unnötig über lokale Suche oder Internet verarbeitet.
+
+Beispielsweise:
+
+**Benutzer**
+
+> Was ist Quantendynamik?
+
+Aktuelles Verhalten:
+
+* lokale Suche
+* Memory
+* Internet
+* keine sinnvolle Antwort
+
+Gewünschtes Verhalten:
+
+* Frage als Wissensfrage erkennen
+* KnowledgeAgent auswählen
+* Antwort aus vorhandenem Wissen erzeugen
+* Internet nur ergänzend nutzen, wenn erforderlich
+
+---
+
+# Neue Architektur
+
+```
+Benutzereingabe
+        │
+        ▼
+Request Router
+        │
+        ├── KnowledgeAgent
+        ├── LearningAgent
+        ├── WebAgent
+        ├── FileAgent
+        ├── MemoryAgent
+        ├── StatusAgent
+        ├── CanonicalEngine
+        └── weitere Agenten
+```
+
+Der Router entscheidet ausschließlich anhand der Benutzerintention.
+
+---
+
+# Pflichtfunktionen
+
+## 1. Intent Recognition
+
+Vor jeder Verarbeitung muss die Eingabe klassifiziert werden.
+
+Mindestens folgende Klassen:
+
+* Wissensfrage
+* Lernauftrag
+* Webauftrag
+* Dateioperation
+* Statusabfrage
+* Governance
+* Diagnose
+* Memory
+* Administration
+* Programmierung
+* Sonstige
+
+Jede Anfrage erhält genau eine Primärklasse.
+
+---
+
+## 2. KnowledgeAgent
+
+Der KnowledgeAgent beantwortet allgemeine Wissensfragen.
+
+Beispiele:
+
+* Was ist Quantenmechanik?
+* Erkläre DNA.
+* Was sind binomische Formeln?
+* Wie funktioniert Python?
+
+Antwortreihenfolge:
+
+1. vorhandenes Kernwissen
+2. gelernte Inhalte
+3. Memory
+4. lokale Wissensdatenbank
+5. Internet (nur falls notwendig)
+
+Nicht jede Wissensfrage darf automatisch eine Internetsuche auslösen.
+
+---
+
+## 3. LearningAgent
+
+Wird aktiviert bei Befehlen wie:
+
+* lerne ...
+* studiere ...
+* analysiere ...
+* merke dir ...
+* erweitere dein Wissen ...
+
+Er übergibt Web- oder Dateiquellen an die Lernpipeline.
+
+---
+
+## 4. WebAgent
+
+Nur zuständig für:
+
+* URLs
+* Webseiten
+* Internetrecherche
+* Crawling
+* Online-Dokumentationen
+* aktuelle Informationen
+
+---
+
+## 5. FileAgent
+
+Nur zuständig für:
+
+* Dateien
+* PDFs
+* DOCX
+* TXT
+* Quellcode
+* Projektordner
+* lokale Dokumente
+
+---
+
+## 6. StatusAgent
+
+Verarbeitet ausschließlich Statusbefehle wie:
+
+* lernstatus
+* internetstatus
+* webagentstatus
+* fileagentstatus
+* canonicalenginestatus
+* fundamentzyklenstatus
+
+Keine Wissensantworten.
+
+---
+
+## 7. Router-Protokoll
+
+Jede Anfrage wird protokolliert.
+
+Mindestens:
+
+* Zeit
+* erkannte Intention
+* ausgewählter Agent
+* alternative Agenten
+* Antwortdauer
+* Ergebnis
+
+---
+
+## 8. Explain-Modus
+
+Neuer Befehl:
+
+```
+routingstatus
+```
+
+Ausgabe:
+
+* erkannte Anfrageklasse
+* ausgewählter Agent
+* Begründung
+* verwendete Quellen
+* Fallback-Agenten
+
+---
+
+## 9. Prioritätsregeln
+
+Grundsätzlich gilt:
+
+StatusAgent
+→ höchste Priorität
+
+Dateibefehle
+→ FileAgent
+
+URLs
+→ WebAgent
+
+Lernbefehle
+→ LearningAgent
+
+Wissensfragen
+→ KnowledgeAgent
+
+Governance
+→ CanonicalEngine
+
+Internet nur verwenden,
+
+* wenn aktuelle Informationen erforderlich sind,
+* der Benutzer ausdrücklich danach fragt,
+* oder das lokale Wissen nicht ausreicht.
+
+---
+
+## 10. Fallback
+
+Kann ein Agent die Anfrage nicht beantworten,
+
+übergibt er kontrolliert an den nächsten geeigneten Agenten.
+
+Keine Endlosschleifen.
+
+Maximal drei Übergaben.
+
+---
+
+## 11. GUI
+
+Optional anzeigen:
+
+Aktiver Agent:
+
+KnowledgeAgent
+
+LearningAgent
+
+WebAgent
+
+FileAgent
+
+StatusAgent
+
+CanonicalEngine
+
+Router
+
+---
+
+## 12. Abnahmetests
+
+Bitte folgende Beispiele erfolgreich testen:
+
+> Was ist Quantendynamik?
+
+→ KnowledgeAgent
+
+---
+
+> Lerne Python.
+
+→ LearningAgent
+
+---
+
+> Öffne https://docs.python.org/3/
+
+→ WebAgent
+
+---
+
+> Lies Datei handbuch.pdf.
+
+→ FileAgent
+
+---
+
+> Lernstatus.
+
+→ StatusAgent
+
+---
+
+> CanonicalEngineStatus.
+
+→ CanonicalEngine
+
+---
+
+## 13. Governance
+
+Der Router verändert keine Daten.
+
+Er trifft ausschließlich Routing-Entscheidungen.
+
+Alle Entscheidungen werden protokolliert.
+
+Governance-, Foundation- und Canonical-Regeln bleiben unverändert.
+
+---
+
+## Ergebnis
+
+Bitte den Request Router 1.0 zunächst diagnostisch integrieren.
+
+Nach erfolgreicher Validierung als zentralen Einstiegspunkt aller Benutzeranfragen aktivieren.
+
+Abschlussbericht erstellen:
+
+```
+14_documents/request_router_knowledge_agent_1_0_<datum>.md
+```
+Codex-Nachbesserung: FileAgent-Pfadfreigabe, Dokumentnutzung und Request-Routing reparieren
+
+Problem:
+Kontinuum erkennt Datei-Befehle noch nicht zuverlässig. Bei:
+"benutze für den Bericht über Phenol c:\Users\Raphael\Dokuments\Phenol.pdf"
+wird die Datei nicht gelesen, sondern nur eine alte Kurzantwort zu Phenol ausgegeben.
+
+Bitte prüfen und korrigieren:
+
+1. FileAgent muss bei Datei-/Pfadbefehlen zwingend Vorrang erhalten.
+2. Pfadfreigaben müssen korrekt verarbeitet und gespeichert werden.
+3. Tippfehler oder nicht existente Pfade müssen klar gemeldet werden.
+4. Windows-Pfade mit Documents/Dokumente müssen sauber erkannt werden.
+5. Wenn der Nutzer eine Datei für einen Bericht nennt, muss diese Datei tatsächlich geöffnet, gelesen und als Quelle verwendet werden.
+6. Falls Pfad nicht freigegeben oder nicht vorhanden ist, keine Ersatzantwort aus altem Wissen ausgeben, sondern klar melden:
+   "Datei konnte nicht gelesen werden: Grund ..."
+7. Nach erfolgreichem Dateiimport muss ein Event an die Canonical Engine gesendet werden:
+   FILE_READ_STARTED
+   FILE_READ_COMPLETED
+   FILE_LEARNED
+   FILE_READ_FAILED
+8. Ergebnisbericht muss verwendete Quellen anzeigen:
+   - Dateiname
+   - Pfad
+   - Hash
+   - gelesene Seiten/Abschnitte
+   - Lernstatus
+
+Abnahmetest:
+- lerne aus Datei "C:\Users\Raphael\Documents\Phenol.pdf"
+- benutze für den Bericht über Phenol "C:\Users\Raphael\Documents\Phenol.pdf"
+- fileagentstatus
+- canonicalenginestatus
+
+Erwartung:
+Die Datei wird gelesen, Phenol wird ausführlich aus dem PDF erklärt, und die Canonical Engine zeigt ein letztes FileAgent-Event.
+
+eine weitere Schwachstelle in der Anfragenverarbeitung:
+
+Mathematische Ausdrücke werden nicht zuverlässig erkannt.
+Dezimalzahlen im deutschen Format (Komma als Dezimaltrennzeichen) werden nicht korrekt geparst.
+
+Ich würde dafür einen weiteren Codex-Auftrag ergänzen:
+
+MathAgent 1.0 oder zumindest einen Mathematik-Parser im Request Router.
+
+Der Router sollte Anfragen wie diese sofort als Rechenaufgabe erkennen und an einen mathematischen Auswerter übergeben – ohne lokale Suche, Memory oder Internet.
+
+Dabei sollte er mindestens unterstützen:
+
+Deutsche (254,87) und internationale (254.87) Dezimalschreibweise
+Grundrechenarten
+Klammern
+Potenzen und Wurzeln
+Prozentrechnung
+Einfache Formeln und Einheiten
+
+Dann würde aus deiner Anfrage direkt und korrekt werden:
+
+126 × 254,87 = 32 113,62
+
+Bearbeitung:
+
+Ich nehme das als größeren Nachbesserungsblock: Router als zentraler Einstieg, KnowledgeAgent-Priorität, FileAgent-Pfadfälle samt Canonical-Events und ein Math-Routing für Rechenanfragen. Ich lese jetzt die bestehenden Routing-, File-, Knowledge- und Formel-Komponenten, damit die Integration nicht quer zur Architektur läuft.
+
+Die aktuelle Orchestrierung ist noch eine Kette von Spezialfällen; genau dort setzen wir sauber an. Ich prüfe nun, welche Agenten bereits gebaut werden und wie FileAgent Pfade extrahiert/freigibt, dann füge ich Router und Tests hinzu statt alles umzubauen.
+
+Ich werde den Router als eigene Core-Komponente einziehen und im PromptOrchestrator zuerst diagnostisch entscheiden lassen, dann aber direkt aktiv danach ausführen. Das hält die Governance-Anforderung ein: Der Router selbst schreibt nur sein Protokoll, die eigentliche Arbeit bleibt bei den Agenten.
+
+Ich baue jetzt drei Dinge zusammen: request_router.py als Entscheidungszentrum, bessere Knowledge-/Math-Erkennung in bestehenden Komponenten und FileAgent-Härtung für Windows-Pfade plus File-Events. Danach kommen gezielte Tests für die sechs Router-Abnahmen und die FileAgent/Math-Nachbesserungen.
+
+Der Router ist angelegt und protokolliert Entscheidungen bereits append-only als JSONL. Jetzt verbinde ich ihn mit dem Orchestrator und ergänze einen Knowledge-Pfad, der Wissensfragen lokal beantwortet, bevor irgendeine Suche oder Internetroute überhaupt in Betracht kommt.
+
+Die zentrale Ausführung läuft nun über die Router-Entscheidung, mit KnowledgeAgent vor lokaler Suche/Internet. Als Nächstes härte ich den FileAgent: Pfaderkennung unabhängig von Wort „Datei“, externe Documents-Freigabe, klare Fehlermeldungen und Canonical-Events.
+
+FileAgent sendet jetzt File-Events und erkennt Pfade robuster. Ich repariere als Nächstes den Mathematikparser: direkte Rechenausdrücke ohne Schlüsselwort, deutsche Kommas, Potenzen/Wurzeln/Prozent und hübsche deutsche Ausgabe.
+
+Math-Ausdrücke werden nun vor Suche/Memory erkannt. Ich mache noch zwei kleine Korrekturen am Router: Statusbefehle mit Punkt werden normalisiert, und danach ergänze ich die Tests und den Abschlussbericht.
+
+Ich erstelle jetzt einen gezielten Router-Test und erweitere den FileAgent-Test um Canonical-Events, Windows-Documents-Pfad und klare Fehlerfälle. Außerdem wird der Mathefall 126 × 254,87 geprüft.
+
+Der Router-Abnahmetest ist als eigenständiger Test drin. Ich ergänze jetzt beim FileAgent-Test noch Event-Bus-Assertions und den Documents\Phenol.pdf-Fall, damit der kritische Pfad nicht nur theoretisch repariert ist.
+
+Die Tests decken jetzt Router, Math und FileAgent-Events ab. Ich schreibe noch den geforderten Abschlussbericht nach 14_documents und lasse danach Syntax plus gezielte Tests laufen.
+
+Der Bericht liegt an der geforderten Stelle. Jetzt kommt die Verifikation: Kompilieren der geänderten Module und gezielte Tests für Router, FileAgent, WebAgent-Regression und Formel-Engine.
+
+Syntax und FileAgent-Test sind grün. Der Router-Test scheitert nur an der exakten Math-Ausgabe; ich schaue mir kurz die tatsächliche Formatierung an und gleiche Parser oder Test so ab, dass das gewünschte Format 32 113,62 entsteht.
+
+Der Rechner liefert korrekt, aber mit Float-Artefakt 32 113,619999999999. Ich runde die Ausgabe stabil auf sinnvolle Dezimalstellen, ohne die interne sichere AST-Auswertung umzubauen.
+
+Die Ausgabe ist stabilisiert. Ich wiederhole Router-Test und lasse zusätzlich den bestehenden WebAgent-Test kurz mitlaufen, weil der Orchestrator nun anders priorisiert.
+
+Router-, FileAgent- und WebAgent-Tests sind grün. Ich prüfe noch die Conversation-System-Regression, weil der Request Router jetzt im zentralen Orchestrator hängt und dort alte Erwartungen gern empfindlich sind.
+
+Die Conversation-Regression zeigt den erwarteten Altfall: unbekannte Wissensfragen sollen weiterhin über das lokale Sprachmodell beantwortbar sein. Ich ergänze KnowledgeAgent-Fallback auf das angebundene Modell, aber weiterhin ohne automatische Internetsuche.
+
+bitte mit automatischer Internetsuche
+
+Verstanden: Ich ändere den KnowledgeAgent-Fallback so, dass nach Kernwissen/lokalen Quellen automatisch Internetrecherche versucht wird, wenn der Suchconnector aktiv ist. Wenn Internet nicht verfügbar ist, fällt er weiterhin sauber auf das lokale Modell zurück, damit bestehende Offline-Tests nicht brechen.
+
+Der Knowledge-Fallback nutzt jetzt automatisch Internet, sofern der Search-Connector aktiv ist. Ich aktualisiere noch den Berichtssatz, damit Dokumentation und Verhalten zusammenpassen, und lasse danach die gezielten Tests erneut laufen.
+
+Dokumentation ist angepasst. Ich teste jetzt die zentral betroffenen Stellen noch einmal: Router, Conversation-Fallback, FileAgent und WebAgent.
+
+Drei von vier Prüfungen sind grün; der Conversation-Test hängt noch am Eulersche-Identität-Fallback. Ich hole mir jetzt die tatsächliche Antwort, dann sehe ich, welcher lokale Pfad dem Modell noch zuvorkommt.
+
+Die lokale Suche findet die gerade eben protokollierte Nutzerfrage als Memory-Treffer und hält das fälschlich für Wissen. Ich filtere solche Selbsttreffer heraus, damit echte Wissensquellen Vorrang haben, aber bloße Echo-Treffer den Modell-/Internet-Fallback nicht blockieren.
+
+Der Selbsttrefferfilter ist drin. Ich wiederhole den Conversation-Test und WebAgent-Test; wenn die alte Erwartung jetzt wieder erfüllt ist, ist der automatische Internetpfad trotzdem aktiv, sobald der Search-Connector eingeschaltet ist.
+
+Der Echo-Treffer sitzt offenbar nicht im Feld content, sondern in einem anderen Trefferfeld. Ich lese die SearchRouter-Ausgabeform direkt aus einem Mini-Lauf und filtere dann gezielt alle Treffer, deren angezeigter Text nur die aktuelle Frage ist.
+
+Gefunden: Wie lautet ... war im neuen Router noch nicht als Wissensfrage-Starter hinterlegt und fiel deshalb in den alten Dialogpfad zurück. Ich ergänze diese Frageform in der Intent-Erkennung des Routers.
+
+Damit läuft Wie lautet ... wieder über KnowledgeAgent und dessen Fallback-Kette. Ich wiederhole die betroffenen Tests.
+
+Router-Test ist grün; der alte Conversation-Test wird weiterhin von einem anderen lokalen Treffer überholt. Ich schaue mir die aktuelle Antwort noch einmal an, diesmal nach der Router-Korrektur.
+
+Der Treffer wird als 32_data/memories formatiert, aber nicht im content-Feld geliefert. Ich prüfe die Hit-Struktur nach einem echten memory_core.observe, dann filtere ich die richtigen Felder.
+
+Der reduzierte Lauf ohne Benutzerkontext erzeugt keinen Hit; der echte Test mit Benutzerkontext schon. Ich repliziere genau diesen Pfad und lasse die Hit-Felder ausgeben.
+
+Ich sehe den Hit nur im echten Orchestratorpfad, nicht beim isolierten SearchRouter-Aufruf. Ich instrumentiere im Mini-Lauf per Wrapper die Rückgabe von search_router.search, ohne Code dauerhaft zu ändern.
+
+Statt noch länger dem Wrapper hinterherzulaufen, mache ich den Filter robuster: Ein lokaler Treffer wird als Echo verworfen, wenn irgendein Textfeld des Hit-Objekts exakt der aktuellen Anfrage entspricht. Das ist enger als “ähnlich”, aber fängt diesen Selbsttreffer zuverlässig ab.
+
+Der Echo-Filter prüft jetzt rekursiv alle Trefferfelder. Ich lasse den Conversation-Test erneut laufen.
+
+Der eigentliche Modellfallback ist jetzt wieder ok; der alte Test erwartet am Ende noch dialogue, während die neue Architektur Wissensfragen korrekt als knowledge_agent protokolliert. Ich aktualisiere diese Regression auf das neue Sollverhalten.
+
+Die Regression ist auf den neuen zentralen KnowledgeAgent-Pfad angepasst. Ich lasse jetzt die ganze betroffene Testgruppe final noch einmal laufen.
+
+Alle zentral betroffenen Tests sind grün. Ich mache noch einen kleinen direkten Formel-Smoke-Test für den Dezimalfall, dann schließe ich sauber ab.
+
+Erledigt. Ich habe den Knowledge-Fallback auf automatische Internetrecherche umgestellt: Kernwissen/lokale Quellen zuerst, danach automatisch Internet, wenn der Search-Connector aktiv ist; falls nicht, fällt Kontinuum weiter sauber auf das lokale Modell zurück.
+Umgesetzt in:
+[application_services.py](/C:/Projekt Kontinuum/01_system/kontinuum/core/application_services.py)
+[request_router.py](/C:/Projekt Kontinuum/01_system/kontinuum/core/request_router.py)
+[file_agent.py](/C:/Projekt Kontinuum/01_system/kontinuum/core/file_agent.py)
+[formula_engine.py](/C:/Projekt Kontinuum/01_system/kontinuum/tools/formula_engine.py)
+Bericht: [request_router_knowledge_agent_1_0_2026-06-30.md](/C:/Projekt Kontinuum/14_documents/request_router_knowledge_agent_1_0_2026-06-30.md)
+Verifiziert:
+test_conversation_system_23.py passed
+test_request_router_knowledge_agent_1_0.py passed
+test_file_agent_1_0.py passed
+test_web_agent_1_0.py passed
+Formel-Smoke-Test: 126 × 254,87 = 32 113,62

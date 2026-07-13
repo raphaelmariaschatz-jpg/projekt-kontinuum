@@ -1,0 +1,497 @@
+# Codex-Auftrag – Canonical Self Presentation Framework (CSPF) 1.0
+
+## Teil 5 – Canonical Runtime & Dynamic Presentation
+
+---
+
+# Kapitel 5.1 Zielsetzung
+
+Das Canonical Self Presentation Framework darf niemals mehrere voneinander getrennte Selbstbeschreibungen besitzen.
+
+Es existiert ausschließlich eine einzige kanonische Selbstbeschreibung.
+
+Alle späteren Präsentationen werden ausschließlich zur Laufzeit daraus erzeugt.
+
+Damit wird sichergestellt:
+
+* keine widersprüchlichen Aussagen
+* keine unterschiedlichen Wissensstände
+* keine divergierenden Versionen
+* keine doppelte Pflege
+* vollständige Nachvollziehbarkeit
+
+Das Canonical Self Model stellt somit die einzige autoritative Quelle dar.
+
+---
+
+# Kapitel 5.2 Runtime Presentation Pipeline
+
+Codex soll eine vollständige Runtime-Pipeline spezifizieren.
+
+Empfohlener Ablauf:
+
+Canonical Self Model
+
+↓
+
+Context Analyzer
+
+↓
+
+Audience Analyzer
+
+↓
+
+Capability Analyzer
+
+↓
+
+Safety Analyzer
+
+↓
+
+Privacy Filter
+
+↓
+
+Language Generator
+
+↓
+
+Style Generator
+
+↓
+
+Presentation Optimizer
+
+↓
+
+Speech Generator (optional)
+
+↓
+
+Final Presentation
+
+Jeder Verarbeitungsschritt muss dokumentiert und einzeln testbar sein.
+
+---
+
+# Kapitel 5.3 Context Resolution Engine
+
+Vor jeder Selbstvorstellung muss die aktuelle Situation bestimmt werden.
+
+Mindestens zu berücksichtigen:
+
+* aktueller Modus
+* Benutzerrolle
+* Gesprächsverlauf
+* bekannte Informationen
+* Sprache
+* Gerät
+* Bildschirmgröße
+* Audio verfügbar
+* Internet vorhanden
+* Datenschutzstufe
+* Sicherheitsmodus
+* Offline/Online
+* Forschungsmodus
+* Kinderprofil
+* Expertenprofil
+* Unternehmensprofil
+
+Die Context Resolution darf vollständig modular aufgebaut werden.
+
+---
+
+# Kapitel 5.4 Dynamic Audience Resolution
+
+Die Zielgruppe darf nicht statisch festgelegt werden.
+
+Sie wird zur Laufzeit bestimmt.
+
+Beispiele:
+
+Kind
+
+↓
+
+Schüler
+
+↓
+
+Privatanwender
+
+↓
+
+Student
+
+↓
+
+Entwickler
+
+↓
+
+Forscher
+
+↓
+
+Administrator
+
+↓
+
+Unternehmen
+
+↓
+
+Behörde
+
+↓
+
+API
+
+↓
+
+Maschine
+
+↓
+
+Hybrid
+
+Die Auswahl erfolgt anhand definierter Regeln.
+
+---
+
+# Kapitel 5.5 Adaptive Detail Levels
+
+Die Runtime muss verschiedene Detaillierungsstufen erzeugen können.
+
+Mindestens:
+
+Level 1
+
+Ein Satz
+
+Level 2
+
+Kurzbeschreibung
+
+Level 3
+
+Standardbeschreibung
+
+Level 4
+
+Ausführliche Vorstellung
+
+Level 5
+
+Technische Dokumentation
+
+Level 6
+
+Vollständige Systembeschreibung
+
+Jede höhere Stufe muss sämtliche Informationen der niedrigeren Stufen logisch enthalten.
+
+---
+
+# Kapitel 5.6 Dynamic Length Optimizer
+
+Die Länge der Präsentation wird automatisch bestimmt.
+
+Einflussgrößen:
+
+* Gesprächsdauer
+* Benutzerinteresse
+* Wiederholungen
+* bereits bekannte Informationen
+* Zeitbudget
+* Plattform
+* API-Limits
+* Sprachmodus
+* Audioausgabe
+
+Das Ziel ist:
+
+so kurz wie möglich,
+so vollständig wie nötig.
+
+---
+
+# Kapitel 5.7 Style Transformation Engine
+
+Die Informationen bleiben unverändert.
+
+Nur der Stil darf angepasst werden.
+
+Beispiele:
+
+formal
+
+wissenschaftlich
+
+freundlich
+
+kindgerecht
+
+technisch
+
+präzise
+
+locker
+
+pädagogisch
+
+barrierefrei
+
+neutral
+
+international
+
+Der Informationskern darf dabei niemals verändert werden.
+
+---
+
+# Kapitel 5.8 Language Transformation
+
+Alle Sprachversionen entstehen aus derselben kanonischen Quelle.
+
+Zu unterstützen sind mindestens:
+
+Deutsch
+
+Englisch
+
+Französisch
+
+Spanisch
+
+Italienisch
+
+Japanisch
+
+Chinesisch
+
+Weitere Sprachen müssen später ergänzt werden können.
+
+Keine Sprache darf eine eigenständige Wissensbasis besitzen.
+
+---
+
+# Kapitel 5.9 Speech Presentation
+
+Die Runtime soll vollständige Sprachausgabe unterstützen.
+
+Dabei sind zu berücksichtigen:
+
+Sprechgeschwindigkeit
+
+Pausen
+
+Aussprache
+
+Betonung
+
+natürliche Satzlänge
+
+kindgerechte Formulierungen
+
+barrierearme Sprache
+
+Verständlichkeit
+
+Emotionale Übertreibungen sind ausdrücklich zu vermeiden.
+
+---
+
+# Kapitel 5.10 Multimodal Presentation
+
+Die gleiche Selbstbeschreibung soll in verschiedenen Ausgabeformen erzeugt werden.
+
+Mindestens:
+
+Text
+
+Sprache
+
+GUI
+
+Konsole
+
+API
+
+Markdown
+
+HTML
+
+JSON
+
+XML
+
+PDF
+
+Jede Darstellung muss logisch identisch bleiben.
+
+---
+
+# Kapitel 5.11 Progressive Disclosure
+
+Große Selbstbeschreibungen dürfen schrittweise erweitert werden.
+
+Beispiel:
+
+Wer bist du?
+
+↓
+
+Kurzantwort
+
+↓
+
+"Mehr erfahren"
+
+↓
+
+Architektur
+
+↓
+
+"Technische Details"
+
+↓
+
+Frameworks
+
+↓
+
+"Alle Komponenten"
+
+↓
+
+Vollständige Dokumentation
+
+Dadurch bleibt die Kommunikation übersichtlich.
+
+---
+
+# Kapitel 5.12 Runtime Safety Layer
+
+Vor jeder Ausgabe erfolgt eine Sicherheitsprüfung.
+
+Zu prüfen sind unter anderem:
+
+Datenschutz
+
+interne Informationen
+
+Administratorinformationen
+
+Entwicklerdetails
+
+geheime Schlüssel
+
+Systempfade
+
+Debugdaten
+
+persönliche Daten
+
+Lizenzinformationen
+
+Die Runtime entscheidet, welche Informationen freigegeben werden dürfen.
+
+---
+
+# Kapitel 5.13 Runtime Consistency Validation
+
+Vor jeder Ausgabe wird geprüft:
+
+* keine Widersprüche
+* keine fehlenden Pflichtinformationen
+* keine unzulässigen Aussagen
+* gültige Version
+* vollständige Quellen
+* korrekte Rollenanpassung
+* gültige Sprachversion
+* gültiger Sicherheitsstatus
+
+Fehler dürfen niemals ungeprüft ausgegeben werden.
+
+---
+
+# Kapitel 5.14 Runtime Logging
+
+Alle Präsentationen sollen nachvollziehbar protokolliert werden.
+
+Zu speichern sind beispielsweise:
+
+Zeitpunkt
+
+Profil
+
+Kontext
+
+Zielgruppe
+
+Sprache
+
+Detailgrad
+
+Sicherheitsstufe
+
+Transformationsschritte
+
+Version
+
+Dauer
+
+Die Inhalte der Präsentation selbst sollen nur gespeichert werden, wenn dies datenschutzrechtlich zulässig und ausdrücklich konfiguriert ist.
+
+---
+
+# Kapitel 5.15 Erweiterbarkeit
+
+Die Runtime muss vollständig modular bleiben.
+
+Neue Module sollen ohne Änderungen am Canonical Self Model ergänzt werden können.
+
+Beispiele:
+
+Avatar-Ausgabe
+
+Video-Präsentation
+
+AR/VR
+
+Robotik
+
+Assistenzsysteme
+
+Fahrzeuge
+
+Wearables
+
+Smart Home
+
+Neue Kommunikationsformen
+
+Das Canonical Self Model bleibt dabei unverändert.
+
+---
+
+# Kapitel 5.16 Architekturprüfung für Codex
+
+Codex soll abschließend prüfen:
+
+* Ist die Runtime vollständig vom Canonical Self Model entkoppelt?
+* Existiert exakt eine autoritative Wissensquelle?
+* Können beliebig viele Präsentationen daraus erzeugt werden?
+* Ist jede Transformation deterministisch nachvollziehbar?
+* Sind alle Sicherheitsprüfungen integriert?
+* Funktioniert die Laufzeit auch offline?
+* Ist die Pipeline modular und testbar?
+* Sind Sprach-, Stil- und Rollenanpassungen voneinander getrennt?
+* Sind zukünftige Erweiterungen ohne Architekturbruch möglich?
+* Entspricht die Runtime vollständig den Grundprinzipien des Canonical Self Presentation Framework 1.0?
+
+Erst nach erfolgreicher Prüfung darf dieser Teil des CSPF als kanonisch freigegeben werden.

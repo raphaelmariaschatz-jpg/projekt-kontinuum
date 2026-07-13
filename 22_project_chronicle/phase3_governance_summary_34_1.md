@@ -60,3 +60,6 @@ Phase 3 gilt als:
 
 Dieser Report dient ausschliesslich der menschlichen Dokumentation und
 veraendert keine Governance-Daten.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

@@ -48,3 +48,6 @@ motivationserklärungsstatus
 motivationserklärung identität
 wichtige einflüsse identität
 ```
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

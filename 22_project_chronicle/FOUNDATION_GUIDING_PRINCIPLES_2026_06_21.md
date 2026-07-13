@@ -23,3 +23,6 @@ Verifikation nach Migration:
 
 Kanonische Quelle: `14_documents/LEITPRINZIPIEN_2026_06_21.md`.
 Regression: `17_tests/test_guiding_principles_12.py`.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

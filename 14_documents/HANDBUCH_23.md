@@ -1020,3 +1020,6 @@ Der Planner fuehrt keine Agenten aus. Er enthaelt keine Runtime-Logik und keine 
 Orchestrator Core 1.0 ist ueber `orchestratorstatus` sichtbar. Er akzeptiert nur validierte `ExecutionPlan`s, startet die im Plan erwarteten Agenten, wertet `handled=True` und `handled=False` aus, dokumentiert Fehler, Fallbacks, Governance-Entscheidungen und erzeugt einen `ExecutionRun`.
 
 Der Orchestrator ruft CRE nicht direkt auf, plant nicht selbst und sucht keine Agenten frei. Fallbacks sind nur ueber konfigurierte Fallback-Regeln und Governance-Erlaubnis zulaessig.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

@@ -1,0 +1,67 @@
+Abschlussarbeiten Doku Sync vom 04.07.26
+
+Ich nehme zuerst den Wiedereinstieg auf und rekonstruiere daraus, welche Doku-Sync-Arbeit offen ist. Danach prüfe ich die betroffenen Projektdateien, bevor ich irgendetwas ändere.
+
+Die neue Abschlussregel übernehme ich für Architekturaufgaben: Doku-Sync und Audit sind ab jetzt Teil der Definition von „fertig“. Diese konkrete Aufgabe ist eher ein mehrstufiger Architektur-Doku-Block; ich arbeite deshalb in Checkpoints und halte nach dem ersten sauber abgeschlossenen Abschnitt kurz inne.
+
+Ich sehe: Das Repository ist bereits deutlich verändert, inklusive neuer kanonischer Dateien und vieler ungetrackter Artefakte. Ich behandle das als bestehenden Arbeitsstand von gestern und fasse nur die Doku-Konsistenz an, ohne fremde Implementierungsänderungen zurückzudrehen.
+
+Erster Befund: Das Handbuch ist tatsächlich noch auf 32.4 als aktive Version eingestellt, und das kanonische Architekturmodell enthält im CRE-Abschnitt noch eine Zielgrafik ohne Orchestrator Core. Ich gleiche jetzt die aktiven Dokumente auf denselben Zielpfad ab und nehme anschließend den Audit als eigenes Artefakt auf.
+
+Checkpoint 1 ist damit inhaltlich klar: aktive Legacy-Verweise sitzen vor allem im Handbuch, plus eine inkonsistente Diagrammvariante im Architekturmodell. Ich prüfe noch kurz die real vorhandenen 34.1-Startpfade, damit ich nicht nur Text ersetze, sondern den kanonischen Einstieg korrekt beschreibe.
+
+Ich mache jetzt die Doku-Änderungen: Handbuch auf 34.1, alle aktiven Architekturdiagramme auf denselben Zielpfad, und die neue Abschlussbedingung in der Lifecycle-Regel. Danach kommt der maschinelle Audit gegen Legacy-Pfade und Diagrammabweichungen.
+
+Der erste Patch hat an einer Stelle nicht sauber gematcht, weil die CRE-Datei anders formatiert ist als erwartet. Ich teile die Änderungen jetzt kleiner auf, dann bleiben die Edits kontrollierbar.
+
+Kleine Korrektur nebenbei: In den aktiven Dateien existiert tatsächlich noch ein realer SETUP_ORACLE_CLOUD_23.bat; ich ändere den Handbuchverweis deshalb auf diesen vorhandenen Setup-Helfer, während die Start-/GUI-/Testpfade konsequent 34.1 werden.
+
+Die Kernkorrekturen sind drin: Handbuch zeigt jetzt 34.1, und die betroffenen Zielpfade verwenden dieselbe Orchestrator-Reihenfolge. Als Nächstes verankere ich die neue Abschlussbedingung formal in der Lifecycle-Regel und prüfe dann, ob noch aktive 32.4-Referenzen übrig sind.
+
+Ich trenne im Audit bewusst kanonische aktive Dokumente von historischen 32.x-Dateien, die noch im aktiven Ordner liegen. Die Abschlussbedingung prüfe ich gegen die kanonischen Dokumente; falls danach noch Altdateien im aktiven Bereich selbst stören, wäre das ein eigener Archivierungsblock.
+
+Der Diagramm-Audit zeigt jetzt dieselbe Reihenfolge, aber die CRE-Datei nutzt noch eine vertikale Schreibweise. Da du „identisch“ verlangst, vereinheitliche ich auch die Darstellung selbst, nicht nur den Inhalt.
+
+Damit sind die aktiven Zielgrafiken nicht nur logisch, sondern auch textgleich. Ich räume noch die eine verbliebene Roadmap-Formulierung „Agent Planning“ auf, damit kein zweiter Architekturbegriff wie ein paralleler Pfad wirkt.
+
+Jetzt kommt der Checkpoint-Audit: ich suche gezielt nach alten aktiven Start-/GUI-Pfaden, nach abweichenden Diagrammfragmenten und nach Git-Status für die neue kanonische Datei. Wenn das grün ist, dokumentiere ich den Audit als eigenen Nachweis.
+
+Der Legacy-Pfadscan gegen die kanonischen Dokumente ist leer, und die Diagrammsuche zeigt nur noch denselben Zielpfad. Ich lege jetzt den Audit-Nachweis ab und nehme danach die neuen kanonischen Dateien in den Git-Index auf, damit sie nicht länger nur ungetrackt herumstehen.
+
+Git-Index schreiben wurde vom Sandbox-Profil blockiert (.git/index.lock), das ist genau der erwartbare Punkt bei „versioniert“. Ich fordere dafür jetzt gezielt die Freigabe für git add an, damit nur die neuen kanonischen Dateien gestaged werden.
+
+Die drei neuen kanonischen Dateien sind jetzt im Git-Index. Ich führe nun die Verifikation aus: erst Doku-Audit-Suchen und Git-Status, dann einen passenden technischen Prüflauf für den 34.1-Stand.
+
+Die beiden Audit-Suchen sind leer: keine alten 32.4-Start-/GUI-Pfade in den kanonischen Prüfdokumenten und keine abweichenden Diagrammfragmente. Der Git-Status zeigt die neuen kanonischen Dateien als A im Index; jetzt läuft der technische 34.1-Prüfblock.
+
+Der offizielle 34.1-Batch bricht sofort ab, weil die signierte Python-Laufzeit in dieser Shell nicht gefunden wird. Ich werte das als Umgebungsblocker des Gate-Starters und prüfe die betroffenen Python-Module/Tests direkt mit der verfügbaren Python-Laufzeit, damit wir wenigstens die Implementierungsseite belastbar absichern.
+
+Die direkten CRE- und Multi-Intent-Tests sind grün. Nur py_compile wollte in einen gesperrten __pycache__ schreiben; ich lasse deshalb keine Cache-Dateien erzeugen und ergänze noch die angrenzenden Regressionstests aus dem gestrigen Abschlussstand.
+
+Die technischen Nachtests sind grün: CRE, Multi-Intent, CAIM, Request Router/KnowledgeAgent und FileAgent. Ich stage jetzt auch die von mir synchronisierten kanonischen Dokumente, damit der Checkpoint vollständig im Git-Index liegt.
+
+Der Doku-Checkpoint ist gestaged; Git meldet dabei nur die schon erwarteten CRLF/LF-Warnungen. Ich mache jetzt den finalen Status- und Diff-Überblick, damit der Abschlussbericht konkret und nicht aus dem Bauch heraus kommt.
+
+Der letzte Scan hat noch drei aktive „Agent Planning“-Formulierungen gefunden. Das sind keine Diagramme, aber sie können wie ein zweiter Architekturbegriff wirken; ich ersetze sie durch „Agentenkoordination“ und stage die Korrektur.
+
+Die Begriffe sind bereinigt. Ich nehme die beiden Nachträge in den Index und wiederhole den Audit-Scan einmal final.
+
+Abschlussbericht
+Doku-Sync ist erledigt und als Checkpoint im Git-Index gesichert. Aktualisiert/staged sind unter anderem [HANDBUCH_23.md](C:/Projekt Kontinuum/14_documents/HANDBUCH_23.md), [KANONISCHES_ARCHITEKTURMODELL_34_1.md](C:/Projekt Kontinuum/14_documents/KANONISCHES_ARCHITEKTURMODELL_34_1.md), [PROJEKTSTRUKTUR_34_1.md](C:/Projekt Kontinuum/14_documents/PROJEKTSTRUKTUR_34_1.md), [Roadmap.md](C:/Projekt Kontinuum/14_documents/fundamentale Gedanken/Roadmap.md), [PROJEKTCHRONIK_23.md](C:/Projekt Kontinuum/22_project_chronicle/PROJEKTCHRONIK_23.md) und die neue Audit-Datei [CANONICAL_DOCUMENTATION_AUDIT_2026_07_04.md](C:/Projekt Kontinuum/31_reports/CANONICAL_DOCUMENTATION_AUDIT_2026_07_04.md).
+Ergebnis:
+Handbuch ist auf 34.1 gebracht.
+Alle aktiven Zielpfade verwenden identisch:
+User -> Request Router -> Capability Resolution Engine -> Orchestrator Core -> Governance -> Agenten -> Review -> CMM / Learning
+Keine aktiven 32.4-Start-/GUI-/Test-/Manifestpfade mehr in den geprüften kanonischen Dokumenten.
+Neue kanonische Dateien sind staged: CAPABILITY_RESOLUTION_ENGINE_1_0.md, PHASE_5_CANONICAL_AGENT_ECOSYSTEM.md, CANONICAL_DOCUMENTATION_AUDIT_2026_07_04.md.
+Die neue Abschlussbedingung für Architekturaufgaben ist in der Lifecycle-Regel verankert.
+Verifikation:
+Audit-Scans: grün, keine Treffer.
+Tests grün:
+test_capability_resolution_engine_1_0.py
+test_multi_intent_file_diagnostics_34_1.py
+test_canonical_agent_integration_manager_1_0.py
+test_request_router_knowledge_agent_1_0.py
+test_file_agent_1_0.py
+Der offizielle TEST_KONTINUUM_34_1.bat-Gate-Starter brach in dieser Shell ab: „Signierte Python-Laufzeit nicht gefunden“. Direkte Einzeltests liefen mit Python 3.13.14 erfolgreich.
+Hinweis: Das Repository ist insgesamt nicht clean, weil bereits vorher viele Runtime-/Agenten-/Testdateien geändert oder ungetrackt waren. Der Doku-Sync-Block selbst ist vollständig staged; Git meldete nur die erwarteten CRLF/LF-Warnungen.

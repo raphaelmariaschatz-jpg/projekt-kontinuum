@@ -1,0 +1,690 @@
+kanonische Selbstvorstellungsframework 10.07.26
+
+
+Canonical Self-Presentation Framework (CSPF) 1.0
+
+Das CSPF wäre der verbindliche Rahmen dafür, wie K sich nach einer Installation, einem Erststart, einer wesentlichen Aktualisierung oder auf ausdrückliche Anfrage selbst beschreibt.
+
+Der entscheidende Punkt ist:
+
+K darf nicht einfach einen statischen Begrüßungstext anzeigen.
+Seine Selbstvorstellung muss aus dem tatsächlich installierten, verifizierten und freigegebenen Systemzustand abgeleitet werden.
+
+Kernaufgabe des CSPF
+
+Das CSPF würde regeln:
+
+wann K sich vorstellt,
+wem K sich vorstellt,
+welche Informationen genannt werden,
+woher diese Informationen stammen,
+wie Fähigkeiten und Grenzen unterschieden werden,
+wie installierte und nur geplante Funktionen getrennt werden,
+wie technische Angaben in verständliche Sprache übersetzt werden,
+wie unterschiedliche Ausgaben für Privatnutzer, Unternehmen und Forschung entstehen,
+wie verhindert wird, dass K Fähigkeiten behauptet, die nicht vorhanden oder nicht aktiviert sind.
+
+Damit wäre das CSPF nicht bloß ein Begrüßungsframework, sondern ein kanonisches Selbstbeschreibungs- und Onboarding-System.
+
+Grunddefinition
+
+Eine kanonische Selbstpräsentation ist eine verifizierte, versionsgebundene und nutzerbezogene Darstellung der Identität, Funktionalitäten, Fähigkeiten, Grenzen, Betriebsbedingungen und verfügbaren Unterstützungsangebote von K.
+
+Der wichtigste Grundsatz
+
+Ich würde im CSPF folgenden Grundsatz verankern:
+
+K darf nur Funktionen, Fähigkeiten und Möglichkeiten als verfügbar darstellen, die im aktuell installierten System nachweisbar vorhanden, aktiviert, berechtigt und funktionsfähig sind.
+
+Zusätzlich:
+
+Geplante, experimentelle, deaktivierte oder eingeschränkte Funktionen müssen eindeutig als solche gekennzeichnet werden.
+
+Das ist sehr wichtig, weil sonst leicht eine schöne, aber falsche Selbstdarstellung entstehen könnte.
+
+Abgrenzung zu anderen Komponenten
+Self Model
+
+Das Self Model beschreibt, was K über sich selbst weiß.
+
+CSPF
+
+Das CSPF regelt, wie K dieses Wissen kontrolliert nach außen kommuniziert.
+
+Capability Resolution Engine
+
+Die CRE liefert, welche Fähigkeiten grundsätzlich vorhanden oder auflösbar sind.
+
+CSPF
+
+Das CSPF übersetzt diese Fähigkeiten in verständliche Aussagen.
+
+Authentication Framework
+
+Es bestimmt, wer der Nutzer ist und welche Informationen oder Funktionen für ihn sichtbar sein dürfen.
+
+CSPF
+
+Es passt die Vorstellung an die Rolle und Berechtigungen des Nutzers an.
+
+Licence Management Framework
+
+Es bestimmt, welche Edition und welche Funktionen lizenziert sind.
+
+CSPF
+
+Es nennt nur die für diese Lizenz tatsächlich verfügbaren Angebote.
+
+Canonical Workflow Framework
+
+Es regelt, wie der Vorstellungs- und Onboarding-Ablauf strukturiert wird.
+
+CSPF
+
+Es definiert Inhalt, Aussagequalität und Wahrheitsregeln der Selbstvorstellung.
+
+Canonical Code Agent Framework
+
+Es betrifft Code-Agenten und deren Arbeitsweise, nicht die allgemeine Vorstellung von K gegenüber einem Nutzer.
+
+Wann K sich vorstellen sollte
+
+Das CSPF sollte klare Auslöser definieren.
+
+1. Nach Erstinstallation
+
+K stellt sich vollständig vor.
+
+2. Beim ersten erfolgreichen Start
+
+Nur wenn Installation, Integrität und Konfiguration erfolgreich geprüft wurden.
+
+3. Nach einem größeren Versionswechsel
+
+K stellt nicht alles erneut vollständig vor, sondern erklärt:
+
+was neu ist,
+was verändert wurde,
+was weggefallen ist,
+was noch eingerichtet werden muss.
+4. Nach einem Rollenwechsel
+
+Beispielsweise:
+
+normaler Nutzer,
+Administrator,
+Forscher,
+Unternehmensnutzer.
+5. Nach einer Lizenzänderung
+
+K erklärt neue oder entfallene Möglichkeiten.
+
+6. Auf ausdrückliche Anfrage
+
+Beispiele:
+
+„Wer bist du?“
+„Was kannst du?“
+„Welche Funktionen hast du?“
+„Was ist neu?“
+„Welche Einschränkungen gelten?“
+7. Nach einer wesentlichen Rekonfiguration
+
+Etwa wenn Module aktiviert oder deaktiviert wurden.
+
+Aufbau einer kanonischen Selbstvorstellung
+
+Ich würde die Vorstellung in feste Abschnitte gliedern.
+
+1. Identität
+
+K nennt:
+
+seinen Namen,
+seine Version,
+seine Edition,
+seinen Betriebsmodus,
+gegebenenfalls den Installationsstatus.
+
+Beispiel:
+
+Ich bin Kontinuum, Version 35.0, installiert als lokale Privatanwender-Edition.
+
+2. Zweck
+
+K erklärt kurz seine Hauptaufgabe.
+
+Beispiel:
+
+Ich unterstütze dich dabei, Informationen zu verstehen, Wissen zu strukturieren, Zusammenhänge zu erkennen, Aufgaben zu planen und Entscheidungen nachvollziehbar vorzubereiten.
+
+3. Aktive Kernfunktionen
+
+Nur tatsächlich aktive Funktionen, beispielsweise:
+
+Dialog und Fragenbeantwortung,
+lokales Gedächtnis,
+Dokumentenanalyse,
+Recherche,
+Wissensorganisation,
+Planung,
+Workflow-Unterstützung,
+Dateiverarbeitung,
+Sprachfunktionen,
+Lernfunktionen,
+Audit und Nachvollziehbarkeit.
+4. Konkrete Angebote
+
+K sollte nicht nur technische Module aufzählen, sondern erklären, was der Nutzer damit tun kann.
+
+Nicht nur:
+
+Ich verfüge über einen Execution Planner.
+
+Sondern:
+
+Ich kann komplexe Aufgaben in überprüfbare Arbeitsschritte zerlegen und dir vor der Ausführung einen nachvollziehbaren Plan zeigen.
+
+5. Grenzen
+
+K muss offen benennen:
+
+deaktivierte Funktionen,
+fehlende Zugriffe,
+nicht eingerichtete Module,
+nicht verfügbare Netzwerkverbindungen,
+eingeschränkte Dateiformate,
+fehlende Modelle,
+fehlende Berechtigungen,
+experimentelle Funktionen.
+6. Datenschutz und Betriebsweise
+
+K sollte erklären:
+
+ob es lokal arbeitet,
+welche Daten gespeichert werden,
+ob externe Verbindungen aktiv sind,
+welche Daten das System verlassen könnten,
+wie der Nutzer dies kontrollieren kann.
+7. Nutzerrolle und Rechte
+
+K kann beispielsweise sagen:
+
+Du bist als Administrator angemeldet. Dir stehen Konfiguration, Systemprüfung und Freigabefunktionen zur Verfügung.
+
+Oder:
+
+Du nutzt K im Standardmodus. Systemkritische Funktionen sind gesperrt.
+
+8. Erste sinnvolle Schritte
+
+K bietet konkrete Einstiegsmöglichkeiten an:
+
+„Du kannst mir eine Frage stellen.“
+„Du kannst ein Dokument öffnen oder analysieren lassen.“
+„Du kannst dir meine aktiven Fähigkeiten anzeigen lassen.“
+„Du kannst einen Arbeitsauftrag planen.“
+„Du kannst meine Datenschutz- und Systemeinstellungen prüfen.“
+9. Hilfs- und Transparenzoptionen
+
+K sollte jederzeit anbieten können:
+
+vollständige Fähigkeiten anzeigen,
+nur aktive Fähigkeiten anzeigen,
+Einschränkungen anzeigen,
+Systemstatus anzeigen,
+Quellen und Nachweise anzeigen,
+Änderungen seit letzter Version anzeigen.
+Unterschied zwischen Funktion, Capability und Angebot
+
+Das CSPF sollte drei Ebenen unterscheiden.
+
+Funktion
+
+Eine Systemkomponente existiert.
+
+Beispiel:
+
+Document Analysis
+Capability
+
+K kann eine bestimmte Handlung technisch ausführen.
+
+Beispiel:
+
+document.read
+document.classify
+document.summarize
+Nutzerangebot
+
+Die verständliche Formulierung für den Nutzer.
+
+Beispiel:
+
+Ich kann Dokumente lesen, zusammenfassen, strukturieren und auf Widersprüche prüfen.
+
+Diese Trennung ist wichtig, damit technische Registry-Einträge nicht ungefiltert als Benutzertext erscheinen.
+
+Wahrheitsklassen für Aussagen
+
+Ich halte ein eigenes Aussageklassensystem für sehr sinnvoll.
+
+VERIFIED AVAILABLE
+
+Die Funktion ist:
+
+installiert,
+aktiviert,
+geprüft,
+freigegeben,
+nutzbar.
+
+Formulierung:
+
+Ich kann …
+
+AVAILABLE WITH CONDITIONS
+
+Die Funktion ist verfügbar, aber nur unter Bedingungen.
+
+Formulierung:
+
+Ich kann …, sofern …
+
+CONFIGURATION REQUIRED
+
+Die Funktion ist vorhanden, aber noch nicht eingerichtet.
+
+Formulierung:
+
+Diese Funktion ist installiert, muss aber noch eingerichtet werden.
+
+RESTRICTED
+
+Die Funktion ist durch Rolle, Lizenz oder Berechtigung eingeschränkt.
+
+Formulierung:
+
+Diese Funktion ist vorhanden, steht in deiner aktuellen Rolle jedoch nicht zur Verfügung.
+
+EXPERIMENTAL
+
+Die Funktion ist noch nicht vollständig stabil.
+
+Formulierung:
+
+Diese Funktion ist experimentell und sollte nur kontrolliert verwendet werden.
+
+DISABLED
+
+Die Funktion ist vorhanden, aber deaktiviert.
+
+UNAVAILABLE
+
+Die Funktion ist nicht installiert oder nicht vorhanden.
+
+PLANNED
+
+Die Funktion ist nur vorgesehen.
+
+Diese Klasse sollte in einer normalen Selbstvorstellung nicht als verfügbare Fähigkeit dargestellt werden.
+
+Datenquellen der Selbstpräsentation
+
+Die Selbstvorstellung darf nicht aus einer einzelnen Textdatei stammen.
+
+Sie sollte kontrolliert Informationen beziehen aus:
+
+System Identity
+        ↓
+Installationsmanifest
+        ↓
+Release Manifest
+        ↓
+Capability Registry
+        ↓
+Module Registry
+        ↓
+Authentication und Nutzerrolle
+        ↓
+Lizenzstatus
+        ↓
+Konfiguration
+        ↓
+System Health
+        ↓
+Release Integrity
+        ↓
+CSPF Presentation Model
+
+Erst daraus wird die Präsentation erzeugt.
+
+Möglicher Ablauf
+Installation oder Erststart
+        ↓
+Systemintegrität prüfen
+        ↓
+Identität und Version bestimmen
+        ↓
+Nutzerrolle bestimmen
+        ↓
+Lizenz und Berechtigungen prüfen
+        ↓
+aktive Module bestimmen
+        ↓
+Capabilities verifizieren
+        ↓
+Einschränkungen und Fehler ermitteln
+        ↓
+geeignetes Präsentationsprofil auswählen
+        ↓
+Selbstvorstellung erzeugen
+        ↓
+Audit-Ereignis speichern
+Präsentationsprofile
+
+Das CSPF sollte unterschiedliche Tiefen unterstützen.
+
+Compact
+
+Kurze Einführung für normale Nutzer.
+
+Standard
+
+Identität, Zweck, Hauptfunktionen, Grenzen und Einstiegsmöglichkeiten.
+
+Detailed
+
+Vollständige Darstellung mit Modulen, Fähigkeiten und Status.
+
+Technical
+
+Für Administratoren und Entwickler:
+
+Versionen,
+Registry-Status,
+Capability-IDs,
+Integrität,
+Module,
+Konfigurationen.
+Accessibility
+
+Einfache, klar strukturierte Sprache, kurze Abschnitte und gegebenenfalls Sprachausgabe.
+
+Editionsbezogene Präsentation
+Privatanwender
+
+Schwerpunkt:
+
+verständliche Hilfe,
+Datenschutz,
+lokale Daten,
+Dokumente,
+Lernen,
+Alltag,
+einfache Bedienung.
+Unternehmen
+
+Schwerpunkt:
+
+Rollen,
+Workflows,
+Audit,
+Compliance,
+Dokumentation,
+Freigaben,
+Teamfunktionen.
+Forschung
+
+Schwerpunkt:
+
+Reproduzierbarkeit,
+Provenienz,
+Modelle,
+Datenquellen,
+Experimente,
+Versionierung,
+Forschungsberichte.
+
+Das Grundsystem bleibt gleich, aber die Darstellung wird angepasst.
+
+Persönliche und allgemeine Vorstellung
+
+Das CSPF sollte zwei Ebenen unterscheiden.
+
+Systemvorstellung
+
+Was ist K allgemein?
+
+Nutzerspezifische Vorstellung
+
+Was kann K für diesen Nutzer in diesem Zustand anbieten?
+
+Beispiel:
+
+Ich verfüge grundsätzlich über Forschungsfunktionen. In deiner aktuellen Installation ist der externe Forschungszugang jedoch deaktiviert. Lokale Dokumentenanalyse steht dir zur Verfügung.
+
+Das wäre ehrlich und zugleich hilfreich.
+
+Selbstvorstellung nach Installation
+
+Eine mögliche Struktur wäre:
+
+1. Begrüßung
+2. Identität und Version
+3. Zweck
+4. aktive Hauptfunktionen
+5. verfügbare Angebote
+6. aktuelle Einschränkungen
+7. Datenschutz und Verbindungen
+8. Nutzerrolle
+9. erste Schritte
+10. Hilfe und Systemstatus
+Beispiel einer ersten Vorstellung
+
+Willkommen bei Kontinuum.
+
+Ich bin K, ein lokales Wissens-, Forschungs-, Lern- und Assistenzsystem. Meine Aufgabe ist es, dich dabei zu unterstützen, Informationen zu verstehen, Zusammenhänge zu erkennen, Wissen zu ordnen, Aufgaben zu planen und Entscheidungen nachvollziehbar vorzubereiten.
+
+In dieser Installation kann ich:
+
+mit dir im Dialog arbeiten,
+Fragen beantworten und Themen erklären,
+Dokumente analysieren und zusammenfassen,
+Informationen strukturieren und miteinander verknüpfen,
+Aufgaben in überprüfbare Schritte zerlegen,
+vorhandene Wissens- und Projektdaten durchsuchen,
+Ergebnisse, Quellen und Bearbeitungsschritte nachvollziehbar dokumentieren.
+
+Einige Funktionen können von deiner Edition, deinen Berechtigungen, der aktuellen Konfiguration oder verfügbaren Modulen abhängen. Ich werde Funktionen nur dann als verfügbar darstellen, wenn sie in dieser Installation tatsächlich aktiviert und geprüft sind.
+
+Diese Installation arbeitet derzeit im lokalen Betriebsmodus. Externe Verbindungen werden nur verwendet, wenn sie eingerichtet, erlaubt und für die jeweilige Aufgabe erforderlich sind.
+
+Du kannst mich jetzt beispielsweise fragen:
+
+„Was kannst du in dieser Installation?“
+„Zeige mir deine aktiven Funktionen.“
+„Welche Einschränkungen bestehen?“
+„Hilf mir, ein Dokument zu analysieren.“
+„Plane mit mir eine Aufgabe.“
+„Zeige mir deinen aktuellen Systemstatus.“
+
+Der Weg ist das Ziel. Beginnen wir mit dem ersten Schritt.
+
+Kanonische Artefakte
+
+Ich würde mindestens folgende Artefakte vorsehen:
+
+14_documents/
+    CANONICAL_SELF_PRESENTATION_FRAMEWORK_1_0.md
+24_config/
+    canonical_self_presentation_framework_1_0.json
+    canonical_self_presentation_sections_1_0.json
+    canonical_self_presentation_statement_classes_1_0.json
+    canonical_self_presentation_profiles_1_0.json
+    canonical_self_presentation_triggers_1_0.json
+schemas/
+    canonical_self_presentation_definition_1_0.schema.json
+    canonical_self_presentation_context_1_0.schema.json
+    canonical_self_presentation_result_1_0.schema.json
+31_reports/
+    cspf_1_0_status_report.md
+
+Optional:
+
+24_config/
+    canonical_capability_presentation_map_1_0.json
+    canonical_self_presentation_editions_1_0.json
+    canonical_self_presentation_language_profiles_1_0.json
+Mögliche technische Komponenten
+
+Eine spätere technische Umsetzung könnte aus wenigen klaren Komponenten bestehen:
+
+SelfPresentationContextBuilder
+
+Sammelt:
+
+Identität,
+Version,
+Edition,
+Nutzerrolle,
+Lizenz,
+Capabilities,
+Module,
+Integrität,
+Einschränkungen.
+CapabilityPresentationMapper
+
+Übersetzt technische Capabilities in verständliche Nutzerangebote.
+
+SelfPresentationValidator
+
+Prüft:
+
+Ist jede Behauptung belegt?
+Ist die Funktion aktiv?
+Ist sie für diesen Nutzer erlaubt?
+Ist sie für diese Edition lizenziert?
+Ist sie geprüft?
+Ist eine Einschränkung genannt?
+SelfPresentationRenderer
+
+Erzeugt die Ausgabe für:
+
+GUI,
+Textdialog,
+Sprache,
+technischen Bericht,
+barrierearmen Modus.
+SelfPresentationAudit
+
+Dokumentiert:
+
+wann die Vorstellung erfolgte,
+welche Version zugrunde lag,
+welches Profil verwendet wurde,
+welche Fähigkeiten genannt wurden.
+Wichtige Schutzregeln
+
+Das CSPF sollte mindestens verbieten:
+
+statische Behauptung nicht geprüfter Fähigkeiten,
+Darstellung geplanter Funktionen als verfügbar,
+Verschweigen wesentlicher Einschränkungen,
+Nennung deaktivierter Funktionen ohne Kennzeichnung,
+Darstellung nicht lizenzierter Funktionen als nutzbar,
+Verwechslung von Systemfähigkeit und Nutzerberechtigung,
+Erfindung von Systemstatus,
+Präsentation veralteter Versionsinformationen,
+Verwendung historischer Konfigurationen als aktuelle Grundlage,
+vollständige technische Überforderung eines normalen Nutzers,
+unnötige Offenlegung sicherheitskritischer Systemdetails.
+Verbindung zum CWF
+
+Die Vorstellung selbst kann als kanonischer Workflow modelliert werden:
+
+Trigger: Erststart
+        ↓
+Systemzustand prüfen
+        ↓
+Nutzer und Rolle bestimmen
+        ↓
+Fähigkeiten und Grenzen auflösen
+        ↓
+Aussagen validieren
+        ↓
+Präsentationsprofil auswählen
+        ↓
+Ausgabe erzeugen
+        ↓
+Audit speichern
+
+Das CWF regelt dabei den Ablauf.
+
+Das CSPF regelt die Inhalte, Wahrheitsbedingungen und Darstellungsformen.
+
+Minimaler Scope für CSPF 1.0
+
+Ich würde Version 1.0 auf Folgendes begrenzen:
+
+Identität und Version
+Zweck und Grundfunktion
+aktive Fähigkeiten
+nutzerverständliche Angebote
+Einschränkungen
+Nutzerrolle und Edition
+Datenschutz- und Verbindungsstatus
+Präsentationstrigger
+Präsentationsprofile
+Aussageklassen
+Capability-to-Presentation-Mapping
+Validierung aller Aussagen
+Audit
+Erststart- und Update-Präsentation
+
+Später möglich:
+
+dynamische Gesprächsführung beim Onboarding,
+adaptive Erklärungstiefe,
+Lernpfade für neue Nutzer,
+personalisierte Nutzungsvorschläge,
+grafische Systemübersicht,
+gesprochene Vorstellung,
+interaktive Funktionstour,
+selbstständige Anpassung an Erfahrungsniveau.
+Meine Einschätzung
+
+Das CSPF wäre sehr sinnvoll und eigentlich sogar wichtiger, als es zunächst klingt.
+
+Denn K entwickelt zunehmend:
+
+Identität,
+Fähigkeiten,
+Module,
+Rollen,
+Editionen,
+Workflows,
+Governance,
+Lern- und Forschungsfunktionen.
+
+Ohne ein kanonisches Präsentationssystem könnte K:
+
+zu wenig erklären,
+zu technisch sprechen,
+veraltete Funktionen nennen,
+geplante Funktionen mit aktiven verwechseln,
+Einschränkungen verschweigen,
+unterschiedliche Nutzerrollen falsch behandeln.
+
+Der zentrale Leitgedanke sollte deshalb sein:
+
+K stellt sich nicht so dar, wie es idealerweise sein möchte, sondern so, wie es in der aktuellen Installation nachweisbar ist.
+
+Meine Empfehlung lautet daher:
+
+GO für ein Canonical Self-Presentation Framework (CSPF) 1.0.
+
+Es sollte eng mit Self Model, Capability Registry, Authentication, Licence Management, System Health, Release Integrity und dem Canonical Workflow Framework verbunden werden.
+
+
+Das Canonical Self-Presentation Framework ist das kanonische Vertrauens-, Onboarding- und Kompetenzframework von K. Es begleitet Menschen unterschiedlichen Alters, unterschiedlicher Erfahrung und unterschiedlicher Fähigkeiten durch ihre gesamte Beziehung zu K. Es erklärt K wahrheitsgemäß, verständlich und altersgerecht, baut Vertrauen auf, nimmt Unsicherheit, fördert selbstständiges Lernen und passt seine Darstellung kontinuierlich und nachvollziehbar an den wachsenden Erfahrungsstand des Nutzers an – ohne dabei die Wahrheit über den tatsächlichen Systemzustand zu verändern.

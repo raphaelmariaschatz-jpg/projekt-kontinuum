@@ -1,0 +1,251 @@
+Codewx Auftrag 5 vom 28.06.26
+
+Codex-Auftrag:
+K – Kontinuierliches Internet-Lernen mit Bandbreitenlimit
+
+Ziel:
+K soll, sobald es aktiv ist, kontrolliert aus dem Internet lernen können, dabei aber maximal ca. 10 % der verfügbaren Internet-Bandbreite verwenden.
+
+Wichtig:
+Diese Funktion darf das System nicht blockieren, keine Governance-Dateien verändern und keine lokalen Daten unkontrolliert überschreiben.
+
+Anforderungen:
+
+1. Continuous Learning Mode
+
+Bitte einen optionalen Modus einführen:
+
+continuous_internet_learning_enabled = true/false
+
+Standard:
+false
+
+Wenn aktiviert:
+- K darf im Hintergrund regelmäßig Internetquellen abrufen.
+- Die GUI bleibt jederzeit bedienbar.
+- Lernprozesse laufen asynchron / im Hintergrund.
+- Bei Programmende wird der Lernprozess sauber gestoppt.
+
+2. Bandbreitenbegrenzung
+
+Ziel:
+Maximal ca. 10 % der verfügbaren Bandbreite nutzen.
+
+Umsetzung:
+- keine parallelen aggressiven Downloads
+- kleine Request-Batches
+- feste Pausen zwischen Requests
+- Timeout pro Anfrage
+- maximale Datenmenge pro Minute definieren
+- optional adaptive Drosselung
+
+Falls die echte Bandbreite nicht zuverlässig messbar ist:
+- konservativen Default verwenden, z. B.:
+  max_download_mb_per_hour
+  max_requests_per_minute
+  min_delay_between_requests_seconds
+
+Wichtig:
+Keine Speedtests beim Start durchführen, außer ausdrücklich aktiviert.
+
+3. Lernquellen
+
+Nur erlaubte, seriöse und öffentlich zugängliche Quellen verwenden.
+
+Quellenklassen:
+- wissenschaftliche Veröffentlichungen
+- Universitäten
+- öffentliche Dokumentationen
+- Behörden / offizielle Quellen
+- technische Dokumentationen
+- frei zugängliche Enzyklopädien
+
+Nicht verwenden:
+- Paywall-Umgehung
+- illegale Quellen
+- Login-geschützte Inhalte ohne Freigabe
+- private Daten
+- Massenscraping
+- aggressive Crawler
+
+4. Lernspeicherung
+
+Internet-Inhalte dürfen nicht ungeprüft direkt in den Kernspeicher geschrieben werden.
+
+Stattdessen:
+
+- neue Funde zuerst in eine Quarantäne-/Review-Zone legen
+- Quelle, URL, Abrufzeit, Hash und Kurzsummary speichern
+- Dubletten erkennen
+- erst nach Freigabe oder Regelprüfung in Memory/Knowledge übernehmen
+
+Beispielpfad:
+
+32_data/internet_learning_queue/
+32_data/internet_learning_review/
+
+5. GUI-Anzeige
+
+In der GUI sichtbar machen:
+
+Internet-Lernen:
+- aus / aktiv / pausiert
+- genutzter Modus
+- letzte Quelle
+- letzte Lernzeit
+- Anzahl neuer Funde
+- Bandbreitenlimit aktiv: ja
+- aktuelles Limit: 10 %
+
+Optional:
+Button:
+"Internet-Lernen pausieren"
+"Internet-Lernen fortsetzen"
+
+6. Sicherheits- und Governance-Rahmen
+
+- Keine Änderung an canonical_governance_baseline_34_1.json
+- Keine Änderung an phase3_stabilization_policy_34_1.json
+- Keine automatische Veränderung von Canonical-Artefakten
+- Keine stillen Memory-Änderungen ohne Provenienz
+- Jede gelernte Information braucht Quelle/URL/Timestamp/Hash
+- Fehler und blockierte Quellen protokollieren
+- Bei fehlendem Internet ehrlich melden:
+  "Internet-Lernen pausiert: Internet nicht verfügbar oder keine verwertbaren Quellen."
+
+7. Konfiguration
+
+Bitte eine eigene Konfigurationsdatei prüfen oder ergänzen:
+
+24_config/internet_learning_policy_34_1.json
+
+Inhalt:
+- enabled
+- bandwidth_limit_percent = 10
+- max_requests_per_minute
+- min_delay_between_requests_seconds
+- max_download_mb_per_hour
+- allowed_source_classes
+- blocked_source_classes
+- review_required = true
+- write_to_memory_directly = false
+
+8. Tests
+
+Bitte Tests ergänzen für:
+
+- Continuous Learning standardmäßig deaktiviert
+- Aktivierung startet Hintergrundprozess
+- Deaktivierung stoppt Hintergrundprozess
+- Bandbreitenlimit wird respektiert
+- keine direkten Memory-Schreibungen
+- gelernte Inhalte landen zuerst in Review/Queue
+- Quellenmetadaten werden gespeichert
+- GUI bleibt bedienbar
+- fehlendes Internet wird sauber gemeldet
+
+9. Ergebnisbericht
+
+Bitte am Ende berichten:
+
+- welche Dateien geändert oder neu erstellt wurden
+- ob echtes Bandbreitenmessen möglich ist
+- welches konservative Limit verwendet wird
+- ob Internet-Lernen aktivierbar ist
+- wo neue Funde gespeichert werden
+- welche Tests bestanden wurden
+
+Rahmen:
+Nicht-invasive Umsetzung.
+Keine Governance-Baselines verändern.
+Keine automatische Massendatenaufnahme.
+Kein aggressives Crawling.
+
+Alles klar, das ist ein anderer Auftrag als das Dropdown. Ich behandle ihn als nicht-invasive Hintergrundfunktion: erst vorhandene Learning-/Config-Strukturen lesen, dann eine eigene Internet-Learning-Komponente mit konservativer Drosselung und Quarantäneablage ergänzen, ohne Governance, Memory oder DB-Migration anzufassen.
+
+Ich sehe: bestehendes ContinuousLearningService arbeitet lokal/metabezogen; Internet-Lernen gibt es noch nicht als eigene, gedrosselte Quarantäne-Schicht. Ich ergänze daher eine separate InternetLearningService, hänge sie im Systemstatus und GUI-Status an und lasse sie standardmäßig aus.
+
+Die vorhandenen Tests bestätigen das Muster: Lernen speichert bisher nur Referenzen, nicht Volltexte. Ich bleibe dabei und baue Internet-Lernen als eigene Queue-Dateiablage unter 32_data, mit Hash/URL/Zeit/Summary und ohne Memory-Schreibzugriff.
+
+Ich baue die neue Komponente jetzt getrennt: internet_learning.py mit konservativer Rate-Limit-Logik, Queue-/Review-Dateien und Fehlerlog. Danach hänge ich sie in KontinuumSystem und die GUI-Statusanzeige ein.
+
+Die Service-Datei ist angelegt. Ich ergänze jetzt die Policy-Konfiguration mit enabled: false und konservativen Defaults; sie enthält keine Start-Speedtests und keine aggressiven Seed-Quellen. Als Nächstes wird die Komponente im Systemlebenszyklus registriert: beim Start nur starten, wenn die Policy aktiviert ist; beim Schließen sauber stoppen; im Status sichtbar.
+
+Ich ergänze noch eine kleine Kompatibilität: Die Policy kennt sowohl enabled als auch den expliziten Namen continuous_internet_learning_enabled; beide werden synchron interpretiert, Standard bleibt aus.
+
+Jetzt kommt die GUI-Anzeige: Statusblock mit Zustand, letzter Quelle/Zeit, neuen Funden, Limit und ein Pausieren/Fortsetzen-Button. Das bleibt rechts in der Seitenleiste und blockiert die Eingabe nicht.
+
+Die Anzeige ist eingebaut. Ich ergänze jetzt einen eigenen Regressionstest für die neue Internet-Learning-Schicht: deaktivierter Default, Start/Stop, Drosselung, Queue/Review-Metadaten, keine Memory-Schreibung und die ehrliche Pausenmeldung.
+
+Ich sehe einen zu engen Test-String für die GUI, den passe ich direkt an. Danach laufen Syntaxcheck und die neuen Tests.
+
+Jetzt prüfe ich die betroffenen Dateien: Syntaxcheck ohne Projekt-__pycache__, dann den neuen Internet-Learning-Test und den vorhandenen GUI-Routing-Test als Regression.
+
+Die schnellen Tests sind grün. Ich mache noch eine kleine Sichtprüfung der Verdrahtung und sammle die Zeilen für den Ergebnisbericht, inklusive Queue-/Review-Pfade und konservativem Limit.
+
+Beim Abgleich mit deiner Formulierung fällt mir ein kleiner Textunterschied auf: intern stand einmal verfuegbar. Ich stelle die Meldung auf die exakt gewünschte Form mit verfügbar, damit GUI und Tests denselben Wortlaut haben.
+
+Ich aktualisiere den Test auf denselben exakten Wortlaut und lasse dann final nochmal laufen.
+
+Erledigt. Das kontinuierliche Internet-Lernen ist jetzt als eigener, optionaler und standardmäßig deaktivierter Hintergrunddienst eingebaut.
+Geänderte/neue Dateien:
+[internet_learning.py](C:\Projekt Kontinuum\01_system\kontinuum\core\internet_learning.py:16)
+[internet_learning_policy_34_1.json](C:\Projekt Kontinuum\24_config\internet_learning_policy_34_1.json:2)
+[system.py](C:\Projekt Kontinuum\01_system\kontinuum\core\system.py:119)
+[desktop_gui_34_1.py](C:\Projekt Kontinuum\11_gui\desktop_gui_34_1.py:187)
+[test_internet_learning_34_1.py](C:\Projekt Kontinuum\17_tests\test_internet_learning_34_1.py:41)
+Kurzdiagnose:
+Aktivierbar über 24_config/internet_learning_policy_34_1.json.
+Default ist enabled: false / continuous_internet_learning_enabled: false.
+Kein Speedtest beim Start.
+Echtes Bandbreitenmessen ist nicht zuverlässig eingebaut; stattdessen konservative Limits:bandwidth_limit_percent: 10
+max_requests_per_minute: 2
+min_delay_between_requests_seconds: 10
+max_download_mb_per_hour: 5
+
+Neue Funde landen zuerst hier:32_data/internet_learning_queue/
+32_data/internet_learning_review/
+
+Gespeichert werden URL, Zeitstempel, SHA-256, Kurzsummary, Bytes, Quellenklasse und Review-Status.
+Keine direkten Memory-/Knowledge-Schreibungen.
+GUI:
+Statusblock Internet-Lernen zeigt aus/aktiv/pausiert, letzte Quelle, letzte Lernzeit, neue Funde und Bandbreitenlimit.
+Pausieren/Fortsetzen-Button ist vorhanden.
+Beim Schließen wird der Dienst sauber gestoppt.
+Tests:
+Syntaxcheck: bestanden.
+test_internet_learning_34_1.py: bestanden.
+test_gui_internet_routing_34_1.py: bestanden.
+Keine Governance-Baselines, Policy-Artefakte, Memory-Datenbanken oder Canonical-Artefakte verändert.
+
+eine Frage noch, sind alle Dokumentationen kanonisch auf dem neuesten Stand?
+
+Ich prüfe das kurz sauber gegen die vorhandenen Canonical-/Release-Statuskomponenten, statt aus dem Bauch heraus “ja” zu sagen. Gerade nach den heutigen Codeänderungen ist die spannende Frage, ob die Dokumentation die neuen GUI- und Internet-Learning-Funktionen schon kanonisch abbildet.
+
+Der erste Befund: Die kanonischen 34.1-Dokumente existieren und das alte Release-Gate sagt grün, aber es ist von vor den heutigen Erweiterungen. Ich prüfe noch die read-only Canonical-Manager, dann kann ich dir klar sagen: formal kanonisch intakt versus inhaltlich mit den heutigen Änderungen aktualisiert.
+
+Die gelesenen aktiven Dokumente bestätigen: sie sind noch auf den 34.1-Release-Integrity-Stand vom 21./22.06 fokussiert und erwähnen die heutigen GUI-/Internet-Lernen-Erweiterungen nicht. Ich ziehe noch den formalen Manager-Status nach, damit die Antwort nicht nur textuell, sondern auch gegen die Prüfkomponenten eingeordnet ist.
+
+Kurz: formal ja, inhaltlich nach den heutigen Änderungen nein.
+Die Canonical-Manager melden aktuell grün:
+canonical_architecture: ok=True
+canonical_artifacts: ok=True
+canonical_database: ok=True
+canonical_api_registry: ok=True
+Aber die aktiven Dokus sind noch auf den 34.1-Release-Integrity-Stand vor den heutigen Erweiterungen ausgerichtet. Besonders diese fehlen noch in der kanonischen Dokumentation:
+Button Kopieren
+Suchmodus-Dropdown
+Quellen-/Routinganzeige
+InternetLearningService
+24_config/internet_learning_policy_34_1.json
+Queue/Review-Pfade 32_data/internet_learning_queue/ und 32_data/internet_learning_review/
+Betroffene aktive Dokus:
+14_documents/README_GUI_34_1.md
+14_documents/PROJEKTSTRUKTUR_34_1.md
+14_documents/KANONISCHES_ARCHITEKTURMODELL_34_1.md
+vermutlich auch README.md
+Also: Die kanonische Struktur ist intakt, aber die Dokumentation ist nicht vollständig auf dem heutigen Funktionsstand. Der nächste saubere Schritt wäre eine kleine Dokumentationsnachführung plus erneuter Nachweis/Gate-Lauf.
+
+13:50
+Du hast das Limit an Codex-Nachrichten erreicht
+

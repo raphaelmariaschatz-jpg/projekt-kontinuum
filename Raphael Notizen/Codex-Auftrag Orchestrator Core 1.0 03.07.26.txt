@@ -1,0 +1,247 @@
+Codex-Auftrag: Orchestrator Core 1.0 03.07.26
+
+# Codex-Auftrag: Orchestrator Core 1.0
+
+## Ziel
+
+Implementiere den **Orchestrator Core 1.0** als neue kanonische Kernkomponente von Projekt Kontinuum.
+
+Der Orchestrator ist die zentrale Steuerungsinstanz des Systems. Er trifft keine fachlichen Entscheidungen selbst, sondern koordiniert den gesamten Ausführungsablauf einer Benutzeranfrage anhand definierter Regeln.
+
+Der Orchestrator ersetzt keine bestehenden Agenten. Er steuert sie.
+
+---
+
+# Grundprinzip
+
+Der Orchestrator arbeitet ausschließlich regelbasiert.
+
+Er
+
+* interpretiert keine Fakten,
+* erzeugt keine Inhalte,
+* lernt nicht eigenständig,
+* verändert keine Datenbanken,
+* umgeht keine Governance-Regeln.
+
+Seine Aufgabe besteht ausschließlich darin, den richtigen Ausführungsplan für eine Anfrage zu erzeugen.
+
+---
+
+# Architekturposition
+
+Der Orchestrator wird als kanonische Steuerungsschicht zwischen Capability Resolution Engine und Agentenebene eingeführt.
+
+Zielarchitektur:
+
+User
+
+↓
+
+Router
+
+↓
+
+Capability Resolution Engine
+
+↓
+
+Orchestrator Core
+
+↓
+
+Governance
+
+↓
+
+Agent Planner
+
+↓
+
+Agenten
+
+↓
+
+Review
+
+↓
+
+CMM
+
+↓
+
+Antwort
+
+---
+
+# Kernaufgaben
+
+Der Orchestrator Core 1.0 übernimmt ausschließlich folgende Aufgaben:
+
+## 1. Request übernehmen
+
+Übernahme einer vollständig aufgelösten Benutzeranfrage.
+
+Eingaben:
+
+* Intent
+* benötigte Capabilities
+* Kontext
+* Priorität
+
+---
+
+## 2. Ausführungsplan erzeugen
+
+Erzeuge einen Execution Plan.
+
+Der Plan beschreibt:
+
+* benötigte Agenten
+* Reihenfolge
+* Parallelisierung
+* Abhängigkeiten
+
+Es werden keine Agenten gestartet.
+
+---
+
+## 3. Governance vorbereiten
+
+Der Execution Plan wird an die Governance-Schicht übergeben.
+
+Governance entscheidet:
+
+* erlaubt
+* blockiert
+* Freigabe erforderlich
+
+Der Orchestrator überschreibt Governance niemals.
+
+---
+
+## 4. Agent Planner ansteuern
+
+Nach erfolgreicher Governance-Freigabe wird der Agent Planner aufgerufen.
+
+Der Orchestrator startet Agenten niemals direkt.
+
+---
+
+## 5. Status überwachen
+
+Während der Ausführung sammelt der Orchestrator:
+
+* Status
+* Fortschritt
+* Fehler
+* Zeitüberschreitungen
+
+Keine fachliche Bewertung.
+
+---
+
+## 6. Ergebnisse an Review übergeben
+
+Nach Abschluss werden sämtliche Resultate gesammelt und unverändert an die Review Engine weitergegeben.
+
+Der Orchestrator bewertet keine Inhalte.
+
+---
+
+# Nicht Bestandteil von Version 1.0
+
+Folgende Funktionen werden ausdrücklich noch nicht implementiert:
+
+* eigenes Lernen
+* automatische Optimierung
+* Selbstorganisation
+* Ressourcenoptimierung
+* Scheduling
+* CPU-/GPU-Steuerung
+* Agentenbewertung
+* Qualitätsbewertung
+* Konfliktauflösung
+* autonome Entscheidungen
+
+Diese Funktionen bleiben zukünftigen Versionen vorbehalten.
+
+---
+
+# Schnittstellen
+
+Der Orchestrator besitzt ausschließlich definierte Ein- und Ausgänge.
+
+Eingänge:
+
+* Router
+* Capability Resolution Engine
+
+Ausgänge:
+
+* Governance
+* Agent Planner
+* Review Engine
+
+Direkte Kommunikation mit einzelnen Agenten ist zu vermeiden.
+
+---
+
+# Kanonische Eigenschaften
+
+Der Orchestrator muss:
+
+* deterministisch arbeiten
+* reproduzierbare Entscheidungen erzeugen
+* vollständig protokollierbar sein
+* Governance respektieren
+* modular erweiterbar sein
+* unabhängig von konkreten Agenten bleiben
+
+---
+
+# Logging
+
+Jeder Ausführungsplan wird protokolliert.
+
+Mindestens:
+
+* Request-ID
+* Zeitpunkt
+* erkannte Capabilities
+* erzeugter Execution Plan
+* Governance-Ergebnis
+* gestartete Agenten
+* Status
+* Abschlussstatus
+
+---
+
+# Dokumentation
+
+Bitte aktualisiere alle kanonischen Dokumentationen.
+
+Mindestens:
+
+* Kanonisches Architekturmodell
+* Handbuch
+* Projektchronik
+* Roadmap
+* Governance-Dokumentation
+* Agenten-/Capability-Dokumentation
+
+Der Orchestrator ist dort als neue kanonische Kernkomponente aufzunehmen.
+
+---
+
+# Abschlussbericht
+
+Erstelle einen Abschlussbericht mit:
+
+* implementierten Modulen
+* Architekturübersicht
+* aktualisierten Dokumentationen
+* neuen Schnittstellen
+* offenen Erweiterungsmöglichkeiten für Orchestrator Core 2.0
+
+Der Bericht soll außerdem bestätigen, dass bestehende Komponenten kompatibel geblieben sind und keine kanonischen Architekturregeln verletzt wurden.

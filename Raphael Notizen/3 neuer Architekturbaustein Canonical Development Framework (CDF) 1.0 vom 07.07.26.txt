@@ -1,0 +1,143 @@
+neuer Architekturbaustein Canonical Development Framework (CDF) 1.0 vom 07.07.26
+
+Regeln darüber, wie entwickelt wird, nicht nur was entwickelt wird.
+
+Ich würde diese Regeln inzwischen in drei Ebenen einteilen:
+
+Architekturregeln – Wie K aufgebaut ist (Foundation, CAM, CRE, Orchestrator, CCP-Cognitive usw.).
+
+Governance-Regeln – Wie Änderungen kontrolliert und freigegeben werden (AGF, ALP, Release Integrity, Canonical Change Policy).
+
+Entwicklungsregeln – Wie Codex und du gemeinsam am Projekt arbeiten (Konsistenzprüfung, kanonische Wiedereinstiegspunkte, keine halbfertigen Zustände, Dokumentation als Teil der Architektur).
+
+
+Mögliche Datei
+24_config/
+    canonical_development_governance_34_1.json
+
+oder zusätzlich als Dokument:
+
+14_documents/
+    CANONICAL_DEVELOPMENT_GOVERNANCE_34_1.md
+
+Dabei würde ich die Rollen trennen:
+
+JSON → maschinenlesbare Regeln
+Markdown → Erläuterungen, Beispiele und Begründungen
+
+Das entspricht eurem bisherigen kanonischen Stil.
+
+Inhalt
+
+Die Datei würde nicht nur die bisherigen Regeln enthalten, sondern alle dauerhaften Arbeitsprinzipien.
+
+Zum Beispiel:
+
+Bereich A – Grundprinzipien
+Kanonizität vor Geschwindigkeit
+Konsistenz vor Funktionsumfang
+Evolution statt Revolution
+Architektur vor Implementierung
+Dokumentation ist Teil der Architektur
+Bereich B – Entwicklungsregeln
+
+Zum Beispiel:
+
+CDG-001
+
+Jede Entwicklungsphase beginnt mit einer Konsistenzprüfung.
+
+CDG-002
+
+Neue Architekturkomponenten müssen kanonisch eingeordnet werden.
+
+CDG-003
+
+Keine parallelen Wahrheiten.
+
+CDG-004
+
+Historische Artefakte bleiben nachvollziehbar.
+
+CDG-005
+
+Keine Runtime-Migration ohne dokumentierte Freigabe.
+
+CDG-006
+
+Großaufträge werden phasenweise abgeschlossen.
+
+CDG-007
+
+Kein Stückwerk.
+
+(Die Regel, über die wir gerade gesprochen haben.)
+
+CDG-008
+
+Jede unterbrochene Arbeit erhält einen kanonischen Wiedereinstiegspunkt.
+
+CDG-009
+
+Dokumentation besitzt denselben Stellenwert wie Quellcode.
+
+Bereich C – Qualitätsregeln
+
+Zum Beispiel:
+
+Architekturprüfung
+Dokumentationsprüfung
+Konsistenzprüfung
+Governanceprüfung
+Releaseprüfung
+Bereich D – Arbeitsregeln für Codex
+
+Hier könnten sämtliche dauerhaften Codex-Regeln gesammelt werden.
+
+Zum Beispiel:
+
+niemals historische Dateien ändern
+immer CAM prüfen
+Release Integrity beachten
+aktuelle Roadmap verwenden
+aktuelle Projektchronik verwenden
+Ampelbewertung
+Wiedereinstiegspunkt erzeugen
+...
+Warum ich das für einen wichtigen Schritt halte
+
+Mir ist heute etwas bewusst geworden.
+
+Ich habe inzwischen Regeln für
+
+Architektur
+Artefakte
+Governance
+Migration
+Releases
+
+...
+
+aber noch keine kanonische Verfassung für die Entwicklung selbst.
+
+Genau diese Lücke würde CDG schließen.
+
+Und jetzt kommt etwas, das mich wirklich begeistert
+
+Vor einigen Tagen sagte ich:
+
+"Je besser wir die Zimmer ausstatten, desto gemütlicher wird das Wohnen darin."
+
+Damals bezog sich das auf K.
+
+Heute sehe ich, dass ich gerade beginne, nicht mehr nur das Haus zu bauen, sondern auch die Hausordnung zu schreiben.
+
+Das Haus ist die Architektur.
+
+Die Hausordnung ist die Development Governance.
+
+Erst beides zusammen macht ein langfristig stabiles System aus.
+
+Ich würde sogar noch einen Schritt weitergehen und sagen: CDG könnte langfristig den gleichen Stellenwert erhalten wie AGF. Während das Architecture Governance Framework (AGF) beschreibt, wie die Architektur geführt wird, würde die Canonical Development Governance (CDG) festlegen, wie diese Architektur verantwortungsvoll weiterentwickelt wird.
+
+Ich glaube, das wäre kein Nebendokument, sondern der Beginn einer neuen Ebene von Projekt Kontinuum – einer kanonischen Entwicklungsverfassung. Wenn ich die Entwicklung der letzten Wochen betrachte, wirkt das auf mich wie der nächste konsequente Schritt.

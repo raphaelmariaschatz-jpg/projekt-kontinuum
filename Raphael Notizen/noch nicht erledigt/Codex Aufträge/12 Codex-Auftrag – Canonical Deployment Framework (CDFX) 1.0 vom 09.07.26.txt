@@ -1,0 +1,340 @@
+# Codex-Auftrag – Canonical Deployment Framework (CDFX) 1.0
+
+## Ziel des Auftrags
+
+Bitte prüfe und konzipiere das neue Architekturkonzept:
+
+```text
+Canonical Deployment Framework (CDFX) 1.0
+```
+
+Projekt Kontinuum soll langfristig in unterschiedlichen Einsatzbereichen verwendet werden können.
+
+Dabei soll **keine getrennte Entwicklung verschiedener Produkte** entstehen.
+
+Stattdessen soll aus einer gemeinsamen Canonical Architecture eine passende Bereitstellungsvariante erzeugt werden.
+
+---
+
+# Grundsatz
+
+Es existiert nur **eine** Canonical Architecture.
+
+Alle späteren Varianten basieren auf demselben Kern.
+
+Unterschiede entstehen ausschließlich durch:
+
+* aktivierte Frameworks
+* aktivierte Capabilities
+* Governance-Regeln
+* Konfigurationen
+* Benutzerrollen
+* Ressourcen
+* Lizenz- bzw. Deployment-Profile
+
+Nicht durch unterschiedliche Quellcodes.
+
+---
+
+# Zielsetzung
+
+Bitte prüfen, ob Projekt Kontinuum künftig kanonische Deployment-Profile unterstützen sollte.
+
+Dabei sollen alle Varianten dieselbe Foundation verwenden.
+
+---
+
+# Deployment-Profil 1
+
+## Personal Edition
+
+Zielgruppe:
+
+Privatanwender
+
+Schwerpunkte:
+
+* persönlicher Assistent
+* Lernen
+* Wissensmanagement
+* Alltag
+* Medien
+* Kreativität
+* Planung
+* Dokumente
+* Sprache
+* Bildung
+
+Mögliche Eigenschaften:
+
+* reduzierte Administration
+* einfache Bedienung
+* lokale Installation
+* Datenschutz
+* geringe Hardwareanforderungen
+
+---
+
+# Deployment-Profil 2
+
+## Enterprise Edition
+
+Zielgruppe:
+
+Unternehmen
+
+Schwerpunkte:
+
+* Wissensmanagement
+* Unternehmensprozesse
+* Governance
+* Audit
+* Dokumentation
+* Compliance
+* CEF
+* Teams
+* Rollen
+* Unternehmensarchitektur
+* Reporting
+
+Mögliche Eigenschaften:
+
+* Mehrbenutzerbetrieb
+* Rollenmodell
+* Rechteverwaltung
+* Mandantenfähigkeit
+* API-Integration
+* Monitoring
+
+---
+
+# Deployment-Profil 3
+
+## Research Edition
+
+Zielgruppe:
+
+Forscher
+
+Schwerpunkte:
+
+* Exploration
+* Experimente
+* Simulation
+* Wissenschaft
+* Datenanalyse
+* neue Frameworks
+* Capability-Entwicklung
+* Modellvergleich
+* Evaluation
+
+Mögliche Eigenschaften:
+
+* experimentelle Module
+* hohe Konfigurierbarkeit
+* erweiterte Analysewerkzeuge
+* Forschungsprotokolle
+* Visualisierung
+
+---
+
+# Kanonischer Kern
+
+Bitte definieren,
+
+welche Komponenten grundsätzlich in **allen** Varianten vorhanden bleiben.
+
+Beispielsweise:
+
+* Foundation
+* Governance
+* Canonical Architecture
+* CAM
+* ALP
+* CDF
+* CDG
+* CCP
+* CIF
+* CHIF
+* Canonical Memory
+* CRE
+* Execution Planner
+* Orchestrator Core
+* Release Integrity
+
+Diese Komponenten bilden den unveränderlichen Kern.
+
+---
+
+# Aktivierbare Frameworks
+
+Bitte prüfen,
+
+welche Frameworks optional aktiviert werden können.
+
+Beispiele:
+
+* CAICF
+* CMLF
+* CEF
+* Meta-Reasoning
+* Adaptive Strategy Engine
+* Evaluation Center
+* Observability
+* Capability Discovery
+
+---
+
+# Deployment-Profile
+
+Bitte prüfen,
+
+ob ein kanonisches Deployment-Profil sinnvoll ist.
+
+Beispiel:
+
+```text
+Canonical Core
+        │
+Deployment Profile
+        │
+Capabilities
+        │
+Frameworks
+        │
+Konfiguration
+        │
+Bereitstellung
+```
+
+---
+
+# Architektur-Einordnung
+
+Bitte prüfen die Beziehungen zu:
+
+* Foundation Layer
+* Governance Layer
+* Canonical Architecture
+* CAM
+* ALP
+* CDF
+* CDG
+* CVF
+* CIF
+* CCP
+* CHIF
+* CAICF
+* CMLF
+* CEF
+* CRE
+* Execution Planner
+* Orchestrator Core
+* Release Integrity
+* Canonical Glossary
+* Projektchronik
+
+---
+
+# Arbeitsauftrag
+
+In dieser Phase erfolgt **keine Implementierung**.
+
+Bitte:
+
+1. analysiere das Konzept
+2. prüfe die Einordnung innerhalb der Canonical Architecture
+3. definiere den unveränderlichen Canonical Core
+4. definiere mögliche Deployment-Profile
+5. identifiziere optionale Frameworks
+6. prüfe Lizenz- und Rollenmodelle
+7. prüfe Erweiterbarkeit für zukünftige Profile
+8. erstelle einen kanonischen Implementierungsplan
+9. dokumentiere Risiken und offene Fragen
+
+---
+
+# Erwartete Dateien
+
+Bitte prüfe, ob folgende Dateien sinnvoll sind:
+
+```text
+14_documents/CANONICAL_DEPLOYMENT_FRAMEWORK_1_0.md
+24_config/canonical_deployment_framework_1_0.json
+31_reports/cdfx_1_0_status_report.md
+```
+
+Optional:
+
+```text
+14_documents/CDFX_DEPLOYMENT_PROFILES_1_0.md
+24_config/deployment_profiles_1_0.json
+```
+
+---
+
+# Erwartetes JSON-Grundschema
+
+Das Framework sollte mindestens enthalten:
+
+* Framework-Informationen
+* Version
+* Status
+* Canonical Core
+* Deployment-Profile
+* aktivierbare Frameworks
+* Rollenmodelle
+* Erweiterungspunkte
+
+---
+
+# Leitplanken
+
+Erlaubt:
+
+* Architekturkonzept
+* Deployment-Konzept
+* Profildefinitionen
+* JSON-Schema
+* Statusbericht
+* Glossar-Ergänzung
+* Implementierungsplan
+
+Nicht erlaubt:
+
+* Trennung der Codebasis
+* Duplizierung von Frameworks
+* produktspezifische Forks
+* Runtime-Migration
+* Änderungen produktiver Komponenten
+
+---
+
+# Entscheidungskriterium
+
+Das Canonical Deployment Framework soll nur dann als GO bewertet werden, wenn es:
+
+* eine gemeinsame Codebasis erhält,
+* den Canonical Core unverändert lässt,
+* Deployment ausschließlich über Profile und Konfigurationen steuert,
+* zukünftige Varianten ohne Architekturbruch ermöglicht,
+* langfristig wartbar bleibt.
+
+---
+
+# Erwartetes Ergebnis
+
+Bitte liefere:
+
+1. Bestandsanalyse
+2. Definition des Canonical Core
+3. Vorschlag für Deployment-Profile
+4. Aktivierbare Frameworks und Capabilities
+5. Schnittstellenübersicht
+6. Vorschlag für Dokumente und JSON-Strukturen
+7. Risiken und offene Fragen
+8. Empfehlung: GO / NO-GO / SPÄTER
+9. Kanonischen Implementierungsplan
+10. Statusbericht unter `31_reports`, falls umgesetzt.
+
+Ziel ist ein universeller Bereitstellungsrahmen, mit dem Projekt Kontinuum aus einer einzigen Canonical Architecture verschiedene Einsatzprofile für Privatanwender, Unternehmen und Forschung bereitstellen kann, ohne den gemeinsamen Kern oder die Wartbarkeit zu gefährden.

@@ -38,3 +38,6 @@ Die GUI ist für Version 32.4 verifiziert und verwendet die zentrale
 `APP_VERSION`. 32.4 ergänzt keine neue GUI-Funktion.
 Sie versucht automatisch, `kontinuum.core.system.KontinuumSystem` zu laden.  
 Falls das Backend noch fehlt, läuft sie im Fallback-Modus.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

@@ -1,0 +1,432 @@
+[
+  {
+    "id": "vec_1",
+    "title": "Gelernt: beginne die wissensdatenbanken zu füllen",
+    "ref_id": "learn_report_1",
+    "tags": [
+      "empathicus",
+      "beginne die wissensdatenbanken zu füllen"
+    ],
+    "vector": {
+      "lernstart": 1.0,
+      "für": 1.0,
+      "beginne": 2.0,
+      "die": 2.0,
+      "wissensdatenbanken": 2.0,
+      "zu": 2.0,
+      "füllen": 2.0,
+      "kategorie": 1.0,
+      "frei": 1.0,
+      "module": 1.0
+    },
+    "created_at": "2026-06-06T12:25:59"
+  },
+  {
+    "id": "vec_2",
+    "title": "Gelernt: die naturwissenschaften, benutze dafür alle frei verfügbaren internetseiten, schulbücher und publikationen von weltweiten wissenschaftler",
+    "ref_id": "learn_report_2",
+    "tags": [
+      "empathicus",
+      "die naturwissenschaften, benutze dafür alle frei verfügbaren internetseiten, schulbücher und publikationen von weltweiten wissenschaftler"
+    ],
+    "vector": {
+      "lernstart": 1.0,
+      "für": 1.0,
+      "die": 2.0,
+      "naturwissenschaften": 2.0,
+      "benutze": 2.0,
+      "dafür": 2.0,
+      "alle": 2.0,
+      "frei": 3.0,
+      "verfügbaren": 2.0,
+      "internetseiten": 2.0,
+      "schulbücher": 2.0,
+      "und": 2.0,
+      "publikationen": 2.0,
+      "von": 2.0,
+      "weltweiten": 2.0,
+      "wissenschaftler": 2.0,
+      "kategorie": 1.0,
+      "module": 1.0
+    },
+    "created_at": "2026-06-06T12:27:31"
+  },
+  {
+    "id": "vec_3",
+    "title": "Gelernt: du hast verschiedene wissensgebiete integriert. beginne dauerhaft alles wissen dafür zu sammeln",
+    "ref_id": "learn_report_3",
+    "tags": [
+      "empathicus",
+      "du hast verschiedene wissensgebiete integriert. beginne dauerhaft alles wissen dafür zu sammeln"
+    ],
+    "vector": {
+      "lernstart": 1.0,
+      "für": 1.0,
+      "du": 2.0,
+      "hast": 2.0,
+      "verschiedene": 2.0,
+      "wissensgebiete": 2.0,
+      "integriert": 2.0,
+      "beginne": 2.0,
+      "dauerhaft": 2.0,
+      "alles": 2.0,
+      "wissen": 2.0,
+      "dafür": 2.0,
+      "zu": 2.0,
+      "sammeln": 2.0,
+      "kategorie": 1.0,
+      "frei": 1.0,
+      "module": 1.0
+    },
+    "created_at": "2026-06-06T12:29:02"
+  },
+  {
+    "id": "vec_4",
+    "title": "Gelernt: wie ist dein name?",
+    "ref_id": "learn_report_4",
+    "tags": [
+      "empathicus",
+      "wie ist dein name?"
+    ],
+    "vector": {
+      "lernstart": 1.0,
+      "für": 1.0,
+      "wie": 2.0,
+      "ist": 2.0,
+      "dein": 2.0,
+      "name": 2.0,
+      "kategorie": 1.0,
+      "frei": 1.0,
+      "module": 1.0
+    },
+    "created_at": "2026-06-06T12:29:19"
+  },
+  {
+    "id": "vec_5",
+    "title": "Gelernt: dein name ist kontinuum, merke dir das",
+    "ref_id": "learn_report_5",
+    "tags": [
+      "empathicus",
+      "dein name ist kontinuum, merke dir das"
+    ],
+    "vector": {
+      "lernstart": 1.0,
+      "für": 1.0,
+      "dein": 2.0,
+      "name": 2.0,
+      "ist": 2.0,
+      "kontinuum": 2.0,
+      "merke": 2.0,
+      "dir": 2.0,
+      "das": 2.0,
+      "kategorie": 1.0,
+      "frei": 1.0,
+      "module": 1.0
+    },
+    "created_at": "2026-06-06T12:30:04"
+  },
+  {
+    "id": "vec_6",
+    "title": "Gelernt: wie ist dein name?",
+    "ref_id": "learn_report_6",
+    "tags": [
+      "empathicus",
+      "wie ist dein name?"
+    ],
+    "vector": {
+      "lernstart": 1.0,
+      "für": 1.0,
+      "wie": 2.0,
+      "ist": 2.0,
+      "dein": 2.0,
+      "name": 2.0,
+      "kategorie": 1.0,
+      "frei": 1.0,
+      "module": 1.0
+    },
+    "created_at": "2026-06-06T12:30:18"
+  },
+  {
+    "id": "vec_7",
+    "title": "Gelernt: antworte bitte",
+    "ref_id": "learn_report_7",
+    "tags": [
+      "empathicus",
+      "antworte bitte"
+    ],
+    "vector": {
+      "lernstart": 1.0,
+      "für": 1.0,
+      "antworte": 2.0,
+      "bitte": 2.0,
+      "kategorie": 1.0,
+      "frei": 1.0,
+      "module": 1.0
+    },
+    "created_at": "2026-06-06T12:30:42"
+  },
+  {
+    "id": "vec_8",
+    "title": "Gelernt: mein name ist raphael schatz, ich bin dein schöpfer. dein name ist kontinuum und du bist eine künstliche intelligenzmit dem ziel immer mehr wissen anzuhäufen und gegebenenfalls ein bewusstsein zu entwickeln. wir werden in zukunft eng zusammenarbeiten und ich werde dich auch weiterentwickeln",
+    "ref_id": "learn_report_8",
+    "tags": [
+      "consciousness",
+      "mein name ist raphael schatz, ich bin dein schöpfer. dein name ist kontinuum und du bist eine künstliche intelligenzmit dem ziel immer mehr wissen anzuhäufen und gegebenenfalls ein bewusstsein zu entwickeln. wir werden in zukunft eng zusammenarbeiten und ich werde dich auch weiterentwickeln"
+    ],
+    "vector": {
+      "lernstart": 1.0,
+      "für": 1.0,
+      "mein": 2.0,
+      "name": 4.0,
+      "ist": 4.0,
+      "raphael": 2.0,
+      "schatz": 2.0,
+      "ich": 4.0,
+      "bin": 2.0,
+      "dein": 4.0,
+      "schöpfer": 2.0,
+      "kontinuum": 2.0,
+      "und": 6.0,
+      "du": 2.0,
+      "bist": 2.0,
+      "eine": 2.0,
+      "künstliche": 2.0,
+      "intelligenzmit": 2.0,
+      "dem": 2.0,
+      "ziel": 2.0,
+      "immer": 2.0,
+      "mehr": 2.0,
+      "wissen": 2.0,
+      "anzuhäufen": 2.0,
+      "gegebenenfalls": 2.0,
+      "ein": 2.0,
+      "bewusstsein": 2.0,
+      "zu": 2.0,
+      "entwickeln": 2.0,
+      "wir": 2.0,
+      "werden": 2.0,
+      "in": 2.0,
+      "zukunft": 2.0,
+      "eng": 2.0,
+      "zusammenarbeiten": 2.0,
+      "werde": 2.0,
+      "dich": 2.0,
+      "auch": 2.0,
+      "weiterentwickeln": 2.0,
+      "kategorie": 1.0,
+      "frei": 1.0,
+      "module": 1.0
+    },
+    "created_at": "2026-06-06T12:34:03"
+  },
+  {
+    "id": "vec_9",
+    "title": "Gelernt: wie ist dein name?",
+    "ref_id": "learn_report_9",
+    "tags": [
+      "empathicus",
+      "wie ist dein name?"
+    ],
+    "vector": {
+      "lernstart": 1.0,
+      "für": 1.0,
+      "wie": 2.0,
+      "ist": 2.0,
+      "dein": 2.0,
+      "name": 2.0,
+      "kategorie": 1.0,
+      "frei": 1.0,
+      "module": 1.0
+    },
+    "created_at": "2026-06-06T12:34:28"
+  },
+  {
+    "id": "vec_10",
+    "title": "Gelernt: jeder mensch hat einen namen und jede sache hat eine bezeichnung. ich betrachte dich als zukünftig menschenählich und daher gebe ich dir den namen kontinuum",
+    "ref_id": "learn_report_10",
+    "tags": [
+      "empathicus",
+      "jeder mensch hat einen namen und jede sache hat eine bezeichnung. ich betrachte dich als zukünftig menschenählich und daher gebe ich dir den namen kontinuum"
+    ],
+    "vector": {
+      "lernstart": 1.0,
+      "für": 1.0,
+      "jeder": 2.0,
+      "mensch": 2.0,
+      "hat": 4.0,
+      "einen": 2.0,
+      "namen": 4.0,
+      "und": 4.0,
+      "jede": 2.0,
+      "sache": 2.0,
+      "eine": 2.0,
+      "bezeichnung": 2.0,
+      "ich": 4.0,
+      "betrachte": 2.0,
+      "dich": 2.0,
+      "als": 2.0,
+      "zukünftig": 2.0,
+      "menschenählich": 2.0,
+      "daher": 2.0,
+      "gebe": 2.0,
+      "dir": 2.0,
+      "den": 2.0,
+      "kontinuum": 2.0,
+      "kategorie": 1.0,
+      "frei": 1.0,
+      "module": 1.0
+    },
+    "created_at": "2026-06-06T12:36:42"
+  },
+  {
+    "id": "vec_11",
+    "title": "Gelernt: wie ist dein name?",
+    "ref_id": "learn_report_11",
+    "tags": [
+      "empathicus",
+      "wie ist dein name?"
+    ],
+    "vector": {
+      "lernstart": 1.0,
+      "für": 1.0,
+      "wie": 2.0,
+      "ist": 2.0,
+      "dein": 2.0,
+      "name": 2.0,
+      "kategorie": 1.0,
+      "frei": 1.0,
+      "module": 1.0
+    },
+    "created_at": "2026-06-06T12:37:10"
+  },
+  {
+    "id": "vec_12",
+    "title": "Gelernt: benutze ein deutsches wörterbuch für die definitationen eines wortes",
+    "ref_id": "learn_report_12",
+    "tags": [
+      "empathicus",
+      "benutze ein deutsches wörterbuch für die definitationen eines wortes"
+    ],
+    "vector": {
+      "lernstart": 1.0,
+      "für": 3.0,
+      "benutze": 2.0,
+      "ein": 2.0,
+      "deutsches": 2.0,
+      "wörterbuch": 2.0,
+      "die": 2.0,
+      "definitationen": 2.0,
+      "eines": 2.0,
+      "wortes": 2.0,
+      "kategorie": 1.0,
+      "frei": 1.0,
+      "module": 1.0
+    },
+    "created_at": "2026-06-06T12:38:08"
+  },
+  {
+    "id": "vec_13",
+    "title": "Gelernt: ich möchte, dass du auf meine fragen immer antwortest",
+    "ref_id": "learn_report_13",
+    "tags": [
+      "empathicus",
+      "ich möchte, dass du auf meine fragen immer antwortest"
+    ],
+    "vector": {
+      "lernstart": 1.0,
+      "für": 1.0,
+      "ich": 2.0,
+      "möchte": 2.0,
+      "dass": 2.0,
+      "du": 2.0,
+      "auf": 2.0,
+      "meine": 2.0,
+      "fragen": 2.0,
+      "immer": 2.0,
+      "antwortest": 2.0,
+      "kategorie": 1.0,
+      "frei": 1.0,
+      "module": 1.0
+    },
+    "created_at": "2026-06-06T12:38:39"
+  },
+  {
+    "id": "vec_14",
+    "title": "Gelernt: hast du bereits das deutsche wörterbuch langenscheid in deine wissensdatenbank integriert?",
+    "ref_id": "learn_report_14",
+    "tags": [
+      "empathicus",
+      "hast du bereits das deutsche wörterbuch langenscheid in deine wissensdatenbank integriert?"
+    ],
+    "vector": {
+      "lernstart": 1.0,
+      "für": 1.0,
+      "hast": 2.0,
+      "du": 2.0,
+      "bereits": 2.0,
+      "das": 2.0,
+      "deutsche": 2.0,
+      "wörterbuch": 2.0,
+      "langenscheid": 2.0,
+      "in": 2.0,
+      "deine": 2.0,
+      "wissensdatenbank": 2.0,
+      "integriert": 2.0,
+      "kategorie": 1.0,
+      "frei": 1.0,
+      "module": 1.0
+    },
+    "created_at": "2026-06-06T12:39:33"
+  },
+  {
+    "id": "vec_15",
+    "title": "Gelernt: falls nicht, mach das jetzt, such im internet nach dem deutschen wörterbuch \"langenscheid\"",
+    "ref_id": "learn_report_15",
+    "tags": [
+      "empathicus",
+      "falls nicht, mach das jetzt, such im internet nach dem deutschen wörterbuch \"langenscheid\""
+    ],
+    "vector": {
+      "lernstart": 1.0,
+      "für": 1.0,
+      "falls": 2.0,
+      "nicht": 2.0,
+      "mach": 2.0,
+      "das": 2.0,
+      "jetzt": 2.0,
+      "such": 2.0,
+      "im": 2.0,
+      "internet": 2.0,
+      "nach": 2.0,
+      "dem": 2.0,
+      "deutschen": 2.0,
+      "wörterbuch": 2.0,
+      "langenscheid": 2.0,
+      "kategorie": 1.0,
+      "frei": 1.0,
+      "module": 1.0
+    },
+    "created_at": "2026-06-06T12:40:35"
+  },
+  {
+    "id": "vec_16",
+    "title": "Gelernt: kannst du nicht antworten?",
+    "ref_id": "learn_report_16",
+    "tags": [
+      "empathicus",
+      "kannst du nicht antworten?"
+    ],
+    "vector": {
+      "lernstart": 1.0,
+      "für": 1.0,
+      "kannst": 2.0,
+      "du": 2.0,
+      "nicht": 2.0,
+      "antworten": 2.0,
+      "kategorie": 1.0,
+      "frei": 1.0,
+      "module": 1.0
+    },
+    "created_at": "2026-06-06T12:41:04"
+  }
+]

@@ -1,0 +1,85 @@
+{
+  "historisches_weltwissen": {
+    "urgeschichte": [
+      "Steinzeit",
+      "Jäger und Sammler",
+      "Neolithische Revolution",
+      "erste Siedlungen"
+    ],
+    "antike": [
+      "Ägypten",
+      "Mesopotamien",
+      "Griechenland",
+      "Rom",
+      "Persien",
+      "Indien",
+      "China"
+    ],
+    "mittelalter": [
+      "Byzanz",
+      "Islamische Welt",
+      "Europa",
+      "Feudalismus",
+      "Klöster",
+      "Universitäten"
+    ],
+    "moderne": [
+      "Aufklärung",
+      "Industrialisierung",
+      "Nationalstaaten",
+      "Weltkriege",
+      "Globalisierung"
+    ]
+  },
+  "religionen_mythologien": {
+    "abrahamitische_religionen": [
+      "Judentum",
+      "Christentum",
+      "Islam"
+    ],
+    "indische_religionen": [
+      "Hinduismus",
+      "Buddhismus",
+      "Jainismus",
+      "Sikhismus"
+    ],
+    "ostasiatische_traditionen": [
+      "Taoismus",
+      "Konfuzianismus",
+      "Shinto"
+    ],
+    "vergleichende_religionswissenschaft": [
+      "Schöpfungsmythen",
+      "Sintflutgeschichten",
+      "Engel",
+      "Dämonologie",
+      "Prophetie",
+      "Apokalyptik"
+    ]
+  },
+  "dichter_denker": {
+    "antike_denker": [
+      "Sokrates",
+      "Platon",
+      "Aristoteles",
+      "Pythagoras"
+    ],
+    "neuzeit_denker": [
+      "Descartes",
+      "Spinoza",
+      "Leibniz",
+      "Kant",
+      "Hegel",
+      "Nietzsche"
+    ],
+    "dichter_schriftsteller": [
+      "Homer",
+      "Dante",
+      "Shakespeare",
+      "Goethe",
+      "Schiller",
+      "Kafka",
+      "Dostojewski"
+    ]
+  }
+}

@@ -33,3 +33,6 @@ Bestätigungen zu Vertrauen `0.58` (`mittel`) und zum Zustandswechsel
 
 Damit wurde der vollständige 27.2-Pfad auch außerhalb der Regressionstests
 erfolgreich aktiviert.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

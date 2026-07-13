@@ -1,0 +1,127 @@
+{
+  "nodes": {
+    "hoffnung": {
+      "meanings": [
+        "Zuversicht",
+        "Lichtblick",
+        "innere Kraft"
+      ],
+      "seen": 1
+    },
+    "zucker": {
+      "meanings": [
+        "kleine Menge mit großer Wirkung",
+        "Süße",
+        "Verwandlung des Geschmacks"
+      ],
+      "seen": 1
+    },
+    "tee": {
+      "meanings": [
+        "Alltag",
+        "Erfahrung",
+        "Lebensmoment"
+      ],
+      "seen": 1
+    },
+    "teich": {
+      "meanings": [
+        "Inneres",
+        "Bewusstsein",
+        "ruhige Fläche",
+        "Empfänglichkeit"
+      ],
+      "seen": 1
+    },
+    "ruhig": {
+      "meanings": [
+        "Stille",
+        "Sammlung",
+        "Klarheit"
+      ],
+      "seen": 1
+    },
+    "licht": {
+      "meanings": [
+        "Erkenntnis",
+        "Hoffnung",
+        "Orientierung",
+        "Wahrheit"
+      ],
+      "seen": 1
+    },
+    "sterne": {
+      "meanings": [
+        "höhere Erkenntnis",
+        "Ferne",
+        "Orientierung",
+        "Weisheit"
+      ],
+      "seen": 1
+    },
+    "stern": {
+      "meanings": [
+        "höhere Erkenntnis",
+        "Ferne",
+        "Orientierung",
+        "Weisheit"
+      ],
+      "seen": 1
+    },
+    "spiegelt": {
+      "meanings": [
+        "Reflexion",
+        "Wahrnehmung",
+        "sichtbar werden"
+      ],
+      "seen": 1
+    },
+    "spiegel": {
+      "meanings": [
+        "Reflexion",
+        "Wahrnehmung",
+        "Selbsterkenntnis"
+      ],
+      "seen": 1
+    }
+  },
+  "edges": [
+    {
+      "from": "hoffnung",
+      "to": "zucker",
+      "meaning": "Eine kleine Hoffnung kann eine große Wirkung entfalten.",
+      "seen": 1
+    },
+    {
+      "from": "zucker",
+      "to": "tee",
+      "meaning": "Etwas Kleines verändert den Geschmack des Ganzen.",
+      "seen": 1
+    },
+    {
+      "from": "ruhig",
+      "to": "teich",
+      "meaning": "Ruhe ermöglicht klare Spiegelung.",
+      "seen": 1
+    },
+    {
+      "from": "teich",
+      "to": "sterne",
+      "meaning": "Das Innere nimmt etwas Höheres wahr.",
+      "seen": 1
+    },
+    {
+      "from": "licht",
+      "to": "sterne",
+      "meaning": "Orientierung und Erkenntnis kommen aus einer höheren oder ferneren Quelle.",
+      "seen": 1
+    },
+    {
+      "from": "spiegelt",
+      "to": "licht",
+      "meaning": "Wahrheit wird nicht erzeugt, sondern sichtbar gemacht.",
+      "seen": 1
+    }
+  ],
+  "updated": "2026-06-07T14:59:12"
+}

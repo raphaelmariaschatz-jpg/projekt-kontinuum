@@ -1,0 +1,16 @@
+{
+  "schema": "kontinuum.auth.users.v22_8",
+  "users": [
+    {
+      "id": "user_superadmin_raphael_schatz",
+      "username": "Raphael",
+      "aliases": ["Raphael Schatz", "raphael", "raphael_schatz"],
+      "full_name": "Raphael Schatz",
+      "role": "SUPERADMIN",
+      "is_superadmin": true,
+      "creator": true,
+      "principles": ["Erkennen - Schaffen - Vollenden", "Der Weg ist das Ziel"],
+      "password_source": "set_with_PASSWORT_SETZEN_22_8"
+    }
+  ]
+}

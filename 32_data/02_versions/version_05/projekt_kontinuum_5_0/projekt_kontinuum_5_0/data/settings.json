@@ -1,0 +1,23 @@
+{
+  "version": "5.0",
+  "internet_mode": "restricted",
+  "auto_link": true,
+  "backup_enabled": true,
+  "agents_enabled": true,
+  "knowledge_care_enabled": true,
+  "allowed_domains": [
+    "edu",
+    "ac.uk",
+    "ethz.ch",
+    "mpg.de",
+    "arxiv.org",
+    "pubmed.ncbi.nlm.nih.gov",
+    "crossref.org",
+    "semanticscholar.org",
+    "dnb.de",
+    "loc.gov",
+    "europeana.eu",
+    "gutenberg.org",
+    "archive.org"
+  ]
+}

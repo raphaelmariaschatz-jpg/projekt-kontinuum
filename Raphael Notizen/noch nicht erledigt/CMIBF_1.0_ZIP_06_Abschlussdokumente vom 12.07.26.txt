@@ -1,0 +1,8 @@
+CMIBF_1.0_ZIP_06_Abschlussdokumente.zip
+│
+├── 41_Glossar.md
+├── 42_Abkuerzungsverzeichnis.md
+├── 43_Framework_Registry.md
+├── 44_Canonical_Dependency_Graph.md
+├── 45_Implementierungs_Roadmap.md
+└── 46_Anhaenge.md

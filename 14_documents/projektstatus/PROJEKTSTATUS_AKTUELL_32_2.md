@@ -37,3 +37,6 @@ motivationserklärung identität
 - `14_documents\PROJEKTSTRUKTUR_32_2.md`
 - `22_project_chronicle\EINSTIEGSPUNKTE_NAECHSTE_SITZUNG.md`
 - `22_project_chronicle\RELEASE_32_2_TEMPORAL_RELEVANCE.md`
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

@@ -1,0 +1,1231 @@
+{
+    "system_id":  "CKS-1.0",
+    "title":  "Canonical Knowledge System",
+    "project":  "Projekt Kontinuum",
+    "version":  "1.0",
+    "canonical_since":  "2026-07-09",
+    "status":  "active",
+    "component_type":  "knowledge_governance_layer",
+    "runtime_effect":  "none",
+    "foundation_effect":  "none",
+    "agent_effect":  "none",
+    "api_effect":  "none",
+    "database_effect":  "none",
+    "import_effect":  "none",
+    "test_effect":  "none",
+    "migration_effect":  "none",
+    "commit_effect":  "none",
+    "artifacts":  {
+                      "cks":  "14_documents/CANONICAL_KNOWLEDGE_SYSTEM_1_0.md",
+                      "cg":  "14_documents/CANONICAL_GLOSSARY_1_0.md",
+                      "camap":  "14_documents/CANONICAL_ARCHITECTURE_MAP_1_0.md",
+                      "cdi":  "14_documents/CANONICAL_DECISION_INDEX_1_0.md",
+                      "chi":  "14_documents/CANONICAL_HISTORY_INDEX_1_0.md",
+                      "status_report":  "31_reports/cks_1_0_status_report.md"
+                  },
+    "components":  {
+                       "cg":  "Canonical Glossary - terminology",
+                       "camap":  "Canonical Architecture Map - component relationships",
+                       "cdi":  "Canonical Decision Index - documented existing decisions",
+                       "chi":  "Canonical History Index - documented history"
+                   },
+    "governance_layers":  {
+                              "agf":  "Architecture Governance - regelt Architektur",
+                              "cdg":  "Development Governance - regelt Entwicklung",
+                              "cks":  "Knowledge Governance - regelt Architekturwissen"
+                          },
+    "consistency_policy":  {
+                               "duplicate_terms":  "document_only",
+                               "contradictory_definitions":  "document_only",
+                               "divergent_abbreviations":  "document_only",
+                               "same_component_different_names":  "document_only",
+                               "contradictory_architecture_labels":  "document_only",
+                               "automatic_corrections_allowed":  false
+                           },
+    "terms":  [
+                  {
+                      "name":  "Foundation",
+                      "abbreviation":  "Foundation",
+                      "canonical_name":  "Foundation",
+                      "definition":  "Hoeschste Schutz- und Prinzipienschicht fuer Identitaet, Leitprinzipien, geschuetzte Regeln und grundlegende Entscheidungsgrenzen.",
+                      "purpose":  "Schuetzt den Kern der Architektur und begrenzt zulaessige Entscheidungen.",
+                      "responsibilities":  [
+                                               "Foundation-Regeln schuetzen",
+                                               "Identitaet und Leitprinzipien begrenzen",
+                                               "Kompatibilitaet fuer Architekturentscheidungen pruefen"
+                                           ],
+                      "architecture_phase":  "Phase 1 - Architekturentwicklung; dauerhaft gueltig in Phase 2",
+                      "status":  "Canonical",
+                      "related":  [
+                                      "Canonical Layer",
+                                      "AGF",
+                                      "CDG",
+                                      "Governance",
+                                      "Canonical Memory"
+                                  ]
+                  },
+                  {
+                      "name":  "Canonical Layer",
+                      "abbreviation":  "Canonical Layer",
+                      "canonical_name":  "Canonical Layer",
+                      "definition":  "Systemweit verbindliche Struktur-, Vertrags-, Registry- und Policy-Schicht.",
+                      "purpose":  "Stellt stabile kanonische Ordnungs- und Vertragsgrundlagen bereit.",
+                      "responsibilities":  [
+                                               "Projektstruktur definieren",
+                                               "Architekturmodell und Manifeste fuehren",
+                                               "API-/Daten-/Artefaktvertraege stabilisieren"
+                                           ],
+                      "architecture_phase":  "Phase 1; Grundlage fuer Phase 2",
+                      "status":  "Canonical",
+                      "related":  [
+                                      "Foundation",
+                                      "Operational Layer",
+                                      "Learning Layer",
+                                      "CAM",
+                                      "Release Integrity"
+                                  ]
+                  },
+                  {
+                      "name":  "Operational Layer",
+                      "abbreviation":  "Operational Layer",
+                      "canonical_name":  "Operational Layer",
+                      "definition":  "Austauschbare Implementierungsschicht unter stabilen kanonischen Vertraegen.",
+                      "purpose":  "Betreibt konkrete Agenten, Tools, GUI- und Connector-Funktionen.",
+                      "responsibilities":  [
+                                               "Agenten, Tools, GUI und Connectoren betreiben",
+                                               "Vertraege einhalten",
+                                               "Runtime-Faehigkeiten bereitstellen"
+                                           ],
+                      "architecture_phase":  "Phase 1 definiert; Phase 2 kontrolliert integriert",
+                      "status":  "Canonical",
+                      "related":  [
+                                      "Canonical Layer",
+                                      "Orchestrator Core",
+                                      "Runtime Schema",
+                                      "Governance"
+                                  ]
+                  },
+                  {
+                      "name":  "Learning Layer",
+                      "abbreviation":  "Learning Layer",
+                      "canonical_name":  "Learning Layer",
+                      "definition":  "Dynamische, provenienz- und auditpflichtige Wissens-, Chronik-, Lern- und Review-Bereiche.",
+                      "purpose":  "Fuehrt lern- und erfahrungsbezogene Informationen ohne automatische Kanon-Uebernahme.",
+                      "responsibilities":  [
+                                               "Lern- und Review-Daten fuehren",
+                                               "Provenienz und Auditierbarkeit sichern",
+                                               "Keine automatische Kanon-Uebernahme ohne Review"
+                                           ],
+                      "architecture_phase":  "Phase 1 definiert; Phase 2 erweitert kontrolliert",
+                      "status":  "Canonical",
+                      "related":  [
+                                      "Canonical Memory",
+                                      "Learning / Reflection",
+                                      "Governance",
+                                      "Release Integrity"
+                                  ]
+                  },
+                  {
+                      "name":  "Architecture Governance Framework",
+                      "abbreviation":  "AGF",
+                      "canonical_name":  "Architecture Governance Framework 1.0",
+                      "definition":  "Architekturverfassung von Projekt Kontinuum.",
+                      "purpose":  "Definiert Governance-Rollen, Aenderungsgrenzen und Architekturverbindlichkeit.",
+                      "responsibilities":  [
+                                               "Architekturrollen definieren",
+                                               "Aenderungsregeln festlegen",
+                                               "Governance- und Release-Grenzen beschreiben"
+                                           ],
+                      "architecture_phase":  "Phase 1 Abschluss",
+                      "status":  "Canonical",
+                      "related":  [
+                                      "CDG",
+                                      "Foundation",
+                                      "CAM",
+                                      "Release Integrity"
+                                  ]
+                  },
+                  {
+                      "name":  "Canonical Development Governance",
+                      "abbreviation":  "CDG",
+                      "canonical_name":  "Canonical Development Governance 1.0",
+                      "definition":  "Kanonisches Entwicklungsregelwerk fuer zukuenftige Codex-Auftraege.",
+                      "purpose":  "Macht Entwicklungsauftraege regelgebunden, nachvollziehbar und pruefbar.",
+                      "responsibilities":  [
+                                               "Entwicklungsregeln klassifizieren",
+                                               "Regel-IDs fuehren",
+                                               "Fortschreibungsregeln definieren"
+                                           ],
+                      "architecture_phase":  "Phase 1 Abschluss / Phase 2 Vorbereitung",
+                      "status":  "Canonical",
+                      "related":  [
+                                      "AGF",
+                                      "CIPL",
+                                      "Governance",
+                                      "Release Integrity"
+                                  ]
+                  },
+                  {
+                      "name":  "Canonical Artifact Manager",
+                      "abbreviation":  "CAM",
+                      "canonical_name":  "Canonical Artifact Manager",
+                      "definition":  "Kanonische Verwaltung von Artefakten, Speicherorten, Lifecycle und Konflikten.",
+                      "purpose":  "Ordnet Dokumente, Konfigurationen und Nachweise innerhalb der Projektstruktur.",
+                      "responsibilities":  [
+                                               "Artefakte klassifizieren",
+                                               "Kanonischen Zweck und Speicherort pruefen",
+                                               "Archivierungs- und Referenzpruefungen vorbereiten"
+                                           ],
+                      "architecture_phase":  "Phase 1",
+                      "status":  "Canonical, teilweise operationalisiert",
+                      "related":  [
+                                      "ALP",
+                                      "CADP",
+                                      "Release Integrity",
+                                      "Canonical Layer"
+                                  ]
+                  },
+                  {
+                      "name":  "Canonical Active Directory Policy",
+                      "abbreviation":  "CADP",
+                      "canonical_name":  "Canonical Active Directory Policy 1.0",
+                      "definition":  "Policy fuer kanonisch reine aktive Projektordner.",
+                      "purpose":  "Verhindert historische Parallelstaende in aktiven Arbeitsordnern.",
+                      "responsibilities":  [
+                                               "Aktive Ordner von historischen Parallelstaenden freihalten",
+                                               "Archivpflicht fuer ersetzte Artefakte definieren",
+                                               "Referenzpruefung nach Verschiebungen fordern"
+                                           ],
+                      "architecture_phase":  "Phase 1",
+                      "status":  "Canonical",
+                      "related":  [
+                                      "CAM",
+                                      "ALP",
+                                      "CCP-Policy",
+                                      "Release Integrity"
+                                  ]
+                  },
+                  {
+                      "name":  "Artifact Lifecycle Policy",
+                      "abbreviation":  "ALP",
+                      "canonical_name":  "Artifact Lifecycle Policy 2.0",
+                      "definition":  "Verbindlicher Lebenszyklus fuer Projektartefakte.",
+                      "purpose":  "Regelt Erstellung, Ablage, Archivierung und Freigabe von Artefakten.",
+                      "responsibilities":  [
+                                               "Artefaktklassen definieren",
+                                               "Archivierung statt Loeschung festlegen",
+                                               "Release- und Evidence-Regeln unterstuetzen"
+                                           ],
+                      "architecture_phase":  "Phase 1",
+                      "status":  "Canonical",
+                      "related":  [
+                                      "CAM",
+                                      "CADP",
+                                      "Release Integrity",
+                                      "Artifact Lifecycle Migration Plan"
+                                  ]
+                  },
+                  {
+                      "name":  "Canonical Intellectual Property Ledger",
+                      "abbreviation":  "CIPL",
+                      "canonical_name":  "Canonical Intellectual Property Ledger 1.0",
+                      "definition":  "Kanonisches Herkunfts- und Urheberregister fuer Architekturentscheidungen, Konzepte und Kernartefakte.",
+                      "purpose":  "Dokumentiert Herkunft, Schoepferbezug und IP-Grenzen zentraler Architekturartefakte.",
+                      "responsibilities":  [
+                                               "Creator Identity referenzieren",
+                                               "Herkunftsdaten vorbereiten",
+                                               "Git- und Chronikreferenzen dokumentarisch ermoeglichen"
+                                           ],
+                      "architecture_phase":  "Phase 1 Abschluss",
+                      "status":  "Canonical",
+                      "related":  [
+                                      "CDG",
+                                      "CG",
+                                      "Project Chronicle",
+                                      "Governance"
+                                  ]
+                  },
+                  {
+                      "name":  "Canonical Change Policy",
+                      "abbreviation":  "CCP-Policy",
+                      "canonical_name":  "Canonical Change Policy 1.0",
+                      "definition":  "Policy fuer kontrollierte kanonische Aenderungen.",
+                      "purpose":  "Sichert, dass Kanon-Aenderungen review-, dokumentations- und releasepflichtig bleiben.",
+                      "responsibilities":  [
+                                               "Change Proposal verlangen",
+                                               "Pre-Audit und Governance Review fordern",
+                                               "Documentation Sync und Release Gate in Aenderungen einbinden"
+                                           ],
+                      "architecture_phase":  "Phase 1",
+                      "status":  "Canonical",
+                      "related":  [
+                                      "CADP",
+                                      "AGF",
+                                      "CDG",
+                                      "Release Integrity"
+                                  ]
+                  },
+                  {
+                      "name":  "Canonical Cognitive Pipeline",
+                      "abbreviation":  "CCP-Cognitive / CCP-Cog",
+                      "canonical_name":  "Canonical Cognitive Pipeline",
+                      "definition":  "Kuenftige kanonische Denk- und Verarbeitungsstruktur von K.",
+                      "purpose":  "Ordnet kognitive Verarbeitung von Wahrnehmung bis Lernen fuer Phase 2.",
+                      "responsibilities":  [
+                                               "Wahrnehmen, Verstehen, Denken, Planen, Handeln, Pruefen, Erinnern und Lernen einordnen",
+                                               "CRE, Planner, Governance, Orchestrator, Review und Memory in einen kognitiven Ablauf integrieren",
+                                               "Neue Faehigkeiten kognitiv einordnen"
+                                           ],
+                      "architecture_phase":  "Phase 2 - Controlled Integration, Operation \u0026 Cognitive Evolution",
+                      "status":  "Canonical concept, implementation open",
+                      "related":  [
+                                      "CLU",
+                                      "CRE",
+                                      "Execution Planner",
+                                      "Orchestrator Core",
+                                      "Canonical Memory",
+                                      "Learning / Reflection"
+                                  ]
+                  },
+                  {
+                      "name":  "Canonical Language Understanding",
+                      "abbreviation":  "CLU",
+                      "canonical_name":  "Canonical Language Understanding",
+                      "definition":  "Kanonische Sprachverstehensschicht fuer semantische und intentionale Einordnung.",
+                      "purpose":  "Bereitet natuerliche Sprache fuer kontrollierte Planung und Ausfuehrung auf.",
+                      "responsibilities":  [
+                                               "Intentionen und Bedeutungen erfassen",
+                                               "Sprachverstehen in CCP-Cognitive einordnen",
+                                               "Keine eigenstaendige Ausfuehrung ohne Governance ableiten"
+                                           ],
+                      "architecture_phase":  "Phase 2",
+                      "status":  "Canonical concept, implementation open",
+                      "related":  [
+                                      "CCP-Cognitive",
+                                      "CRE",
+                                      "Execution Planner",
+                                      "Transformer-basierte Tokenisierung"
+                                  ]
+                  },
+                  {
+                      "name":  "Capability Resolution Engine",
+                      "abbreviation":  "CRE",
+                      "canonical_name":  "Capability Resolution Engine",
+                      "definition":  "Read-only Capability Resolution fuer Faehigkeitsfindung und Kandidatenauswahl.",
+                      "purpose":  "Findet passende Faehigkeiten, ohne selbst auszufuehren.",
+                      "responsibilities":  [
+                                               "Capability Discovery",
+                                               "Priorisierung",
+                                               "Candidate Selection"
+                                           ],
+                      "architecture_phase":  "Phase 2 vorbereitet / Runtime-Migration dokumentiert",
+                      "status":  "Canonical, implemented",
+                      "related":  [
+                                      "Execution Planner",
+                                      "Governance",
+                                      "CCP-Cognitive",
+                                      "CLU"
+                                  ]
+                  },
+                  {
+                      "name":  "Execution Planner",
+                      "abbreviation":  "Execution Planner",
+                      "canonical_name":  "Execution Planner 1.0",
+                      "definition":  "Planungsschicht fuer ausfuehrbare Schritte aus validierten Faehigkeiten.",
+                      "purpose":  "Erstellt kontrollierte Ausfuehrungsplaene unter bestehenden Architekturgrenzen.",
+                      "responsibilities":  [
+                                               "Faehigkeitskandidaten in Schritte uebersetzen",
+                                               "Planstatus vergeben",
+                                               "Orchestrator-faehige Plaene bereitstellen"
+                                           ],
+                      "architecture_phase":  "Phase 2 vorbereitet / Runtime-Migration dokumentiert",
+                      "status":  "Canonical, implemented",
+                      "related":  [
+                                      "CRE",
+                                      "Orchestrator Core",
+                                      "Runtime Schema",
+                                      "CCP-Cognitive"
+                                  ]
+                  },
+                  {
+                      "name":  "Orchestrator Core",
+                      "abbreviation":  "Orchestrator Core",
+                      "canonical_name":  "Orchestrator Core 1.0",
+                      "definition":  "Kontrollierte Ausfuehrungsschicht fuer validierte Plaene.",
+                      "purpose":  "Fuehrt nur gepruefte Plaene aus und plant nicht eigenstaendig.",
+                      "responsibilities":  [
+                                               "Validierte Plaene ausfuehren",
+                                               "Fallbacks einhalten",
+                                               "Keine CRE- oder Planner-Rolle uebernehmen"
+                                           ],
+                      "architecture_phase":  "Phase 2 vorbereitet / Runtime-Migration dokumentiert",
+                      "status":  "Canonical, implemented behind feature flag",
+                      "related":  [
+                                      "Execution Planner",
+                                      "Runtime Schema",
+                                      "Operational Layer",
+                                      "Release Integrity"
+                                  ]
+                  },
+                  {
+                      "name":  "Runtime Schema",
+                      "abbreviation":  "Runtime Schema",
+                      "canonical_name":  "Orchestrator Runtime Schema 34.1",
+                      "definition":  "Schema- und Vertragsgrundlage fuer Orchestrator-Laufzeitplaene.",
+                      "purpose":  "Definiert pruefbare Struktur fuer Plan- und Ausfuehrungsdaten.",
+                      "responsibilities":  [
+                                               "Planstruktur festlegen",
+                                               "Validierung ermoeglichen",
+                                               "Orchestrator-Vertraege stabilisieren"
+                                           ],
+                      "architecture_phase":  "Phase 2 vorbereitet / Runtime-Migration dokumentiert",
+                      "status":  "Canonical, implemented",
+                      "related":  [
+                                      "Execution Planner",
+                                      "Orchestrator Core",
+                                      "Operational Layer"
+                                  ]
+                  },
+                  {
+                      "name":  "Canonical Memory",
+                      "abbreviation":  "CMM",
+                      "canonical_name":  "Canonical Memory",
+                      "definition":  "Kanonisch geschuetzter Erinnerungs- und Nachweisbereich.",
+                      "purpose":  "Bewahrt stabile, pruefbare Erinnerungs- und Kontinuitaetsinformationen.",
+                      "responsibilities":  [
+                                               "Memory-Regeln einhalten",
+                                               "Nachvollziehbarkeit sichern",
+                                               "Learning Layer begrenzen"
+                                           ],
+                      "architecture_phase":  "Phase 1 / Phase 2",
+                      "status":  "Canonical",
+                      "related":  [
+                                      "Foundation",
+                                      "Learning Layer",
+                                      "CCP-Cognitive",
+                                      "Project Chronicle"
+                                  ]
+                  },
+                  {
+                      "name":  "Governance",
+                      "abbreviation":  "Governance",
+                      "canonical_name":  "Canonical Governance",
+                      "definition":  "Gesamtheit der Regeln, Reviews, Gates und Verbindlichkeitsmechanismen.",
+                      "purpose":  "Haelt Architektur, Dokumentation und Entwicklung kontrolliert zusammen.",
+                      "responsibilities":  [
+                                               "Regelkonformitaet pruefen",
+                                               "Aenderungs- und Release-Gates fuehren",
+                                               "Inkonsistenzen dokumentieren"
+                                           ],
+                      "architecture_phase":  "Phase 1 Abschluss; Phase 2 dauerhaft",
+                      "status":  "Canonical",
+                      "related":  [
+                                      "AGF",
+                                      "CDG",
+                                      "CCP-Policy",
+                                      "Release Integrity",
+                                      "CKS"
+                                  ]
+                  },
+                  {
+                      "name":  "Release Integrity",
+                      "abbreviation":  "Release Integrity",
+                      "canonical_name":  "Release Integrity Framework",
+                      "definition":  "Releasebezogene Integritaets- und Evidenzpruefung.",
+                      "purpose":  "Sichert, dass Releases nur mit pruefbaren Nachweisen freigegeben werden.",
+                      "responsibilities":  [
+                                               "Release-Gates pruefen",
+                                               "Evidence dokumentieren",
+                                               "Regressionen und Risiken sichtbar machen"
+                                           ],
+                      "architecture_phase":  "Phase 1 / Release 34.1",
+                      "status":  "Canonical, implemented",
+                      "related":  [
+                                      "AGF",
+                                      "CAM",
+                                      "ALP",
+                                      "Governance"
+                                  ]
+                  },
+                  {
+                      "name":  "Transformer-basierte Tokenisierung",
+                      "abbreviation":  "Transformer / Tokenisierung",
+                      "canonical_name":  "Transformer-basierte Tokenisierung",
+                      "definition":  "Konzeptioneller Mechanismus fuer kuenftige semantische Sprachvorverarbeitung.",
+                      "purpose":  "Ermoeglicht spaetere CLU- und CCP-Cognitive-Anbindung ohne aktuelle Implementierung.",
+                      "responsibilities":  [
+                                               "Sprachsegmente strukturieren",
+                                               "Semantische Vorverarbeitung konzeptionell einordnen",
+                                               "Keine Runtime-Aenderung in CKS 1.0 ableiten"
+                                           ],
+                      "architecture_phase":  "Phase 2 Konzept",
+                      "status":  "Canonical concept, implementation open",
+                      "related":  [
+                                      "CLU",
+                                      "CCP-Cognitive",
+                                      "Execution Planner"
+                                  ]
+                  },
+                  {
+                      "name":  "Canonical Glossary",
+                      "abbreviation":  "CG",
+                      "canonical_name":  "Canonical Glossary 1.0",
+                      "definition":  "Kanonisches Architektur-Glossar fuer Begriffe und Abkuerzungen.",
+                      "purpose":  "Stellt einheitliche Sprache fuer Architekturwissen bereit.",
+                      "responsibilities":  [
+                                               "Begriffe definieren",
+                                               "Abkuerzungen disambiguieren",
+                                               "verwandte Komponenten dokumentieren"
+                                           ],
+                      "architecture_phase":  "Phase 2 Vorbereitung",
+                      "status":  "Canonical",
+                      "related":  [
+                                      "CKS",
+                                      "CAMap",
+                                      "CDI",
+                                      "CHI",
+                                      "CIPL"
+                                  ]
+                  },
+                  {
+                      "name":  "Canonical Knowledge System",
+                      "abbreviation":  "CKS",
+                      "canonical_name":  "Canonical Knowledge System 1.0",
+                      "definition":  "Knowledge Governance Layer fuer Wissen ueber die Architektur.",
+                      "purpose":  "Regelt Architekturwissen ueber Glossar, Architekturkarte, Entscheidungsindex und Historienindex.",
+                      "responsibilities":  [
+                                               "Architekturwissen strukturieren",
+                                               "Wissensartefakte verbinden",
+                                               "Inkonsistenzen nur dokumentieren",
+                                               "Knowledge Governance von Architektur- und Entwicklungsgovernance abgrenzen"
+                                           ],
+                      "architecture_phase":  "Phase 2 Vorbereitung",
+                      "status":  "Canonical",
+                      "related":  [
+                                      "CG",
+                                      "CAMap",
+                                      "CDI",
+                                      "CHI",
+                                      "Governance",
+                                      "AGF",
+                                      "CDG"
+                                  ]
+                  }
+              ],
+    "architecture_components":  [
+                                    {
+                                        "component":  "Foundation",
+                                        "depends_on":  [
+                                                           "Creator Identity",
+                                                           "Foundation Rules"
+                                                       ],
+                                        "provides":  [
+                                                         "Principles",
+                                                         "Compatibility boundaries"
+                                                     ],
+                                        "used_by":  [
+                                                        "AGF",
+                                                        "CDG",
+                                                        "Governance",
+                                                        "Canonical Memory"
+                                                    ],
+                                        "governed_by":  [
+                                                            "Foundation"
+                                                        ],
+                                        "layer":  "Foundation",
+                                        "status":  "Canonical"
+                                    },
+                                    {
+                                        "component":  "Canonical Layer",
+                                        "depends_on":  [
+                                                           "Foundation"
+                                                       ],
+                                        "provides":  [
+                                                         "Canonical contracts",
+                                                         "Registries",
+                                                         "Policies"
+                                                     ],
+                                        "used_by":  [
+                                                        "Operational Layer",
+                                                        "Learning Layer",
+                                                        "CAM",
+                                                        "Release Integrity"
+                                                    ],
+                                        "governed_by":  [
+                                                            "AGF",
+                                                            "CDG"
+                                                        ],
+                                        "layer":  "Canonical",
+                                        "status":  "Canonical"
+                                    },
+                                    {
+                                        "component":  "Operational Layer",
+                                        "depends_on":  [
+                                                           "Canonical Layer",
+                                                           "Runtime Schema"
+                                                       ],
+                                        "provides":  [
+                                                         "Agents",
+                                                         "Tools",
+                                                         "GUI",
+                                                         "Connectors"
+                                                     ],
+                                        "used_by":  [
+                                                        "Orchestrator Core",
+                                                        "Runtime"
+                                                    ],
+                                        "governed_by":  [
+                                                            "Governance",
+                                                            "Release Integrity"
+                                                        ],
+                                        "layer":  "Operational",
+                                        "status":  "Canonical"
+                                    },
+                                    {
+                                        "component":  "Learning Layer",
+                                        "depends_on":  [
+                                                           "Canonical Layer",
+                                                           "Canonical Memory"
+                                                       ],
+                                        "provides":  [
+                                                         "Learning evidence",
+                                                         "Reflection data",
+                                                         "Chronicle references"
+                                                     ],
+                                        "used_by":  [
+                                                        "CCP-Cognitive",
+                                                        "Governance"
+                                                    ],
+                                        "governed_by":  [
+                                                            "Governance",
+                                                            "Foundation"
+                                                        ],
+                                        "layer":  "Learning",
+                                        "status":  "Canonical"
+                                    },
+                                    {
+                                        "component":  "AGF",
+                                        "depends_on":  [
+                                                           "Foundation"
+                                                       ],
+                                        "provides":  [
+                                                         "Architecture governance constitution"
+                                                     ],
+                                        "used_by":  [
+                                                        "CDG",
+                                                        "CCP-Policy",
+                                                        "Release Integrity"
+                                                    ],
+                                        "governed_by":  [
+                                                            "Foundation"
+                                                        ],
+                                        "layer":  "Governance",
+                                        "status":  "Canonical"
+                                    },
+                                    {
+                                        "component":  "CDG",
+                                        "depends_on":  [
+                                                           "AGF",
+                                                           "CIPL"
+                                                       ],
+                                        "provides":  [
+                                                         "Development rules"
+                                                     ],
+                                        "used_by":  [
+                                                        "Future Codex orders",
+                                                        "Governance"
+                                                    ],
+                                        "governed_by":  [
+                                                            "AGF"
+                                                        ],
+                                        "layer":  "Governance",
+                                        "status":  "Canonical"
+                                    },
+                                    {
+                                        "component":  "CAM",
+                                        "depends_on":  [
+                                                           "ALP",
+                                                           "CADP"
+                                                       ],
+                                        "provides":  [
+                                                         "Artifact classification",
+                                                         "Storage governance"
+                                                     ],
+                                        "used_by":  [
+                                                        "Release Integrity",
+                                                        "Governance",
+                                                        "CIPL"
+                                                    ],
+                                        "governed_by":  [
+                                                            "AGF",
+                                                            "CDG"
+                                                        ],
+                                        "layer":  "Canonical",
+                                        "status":  "Canonical, partially operationalized"
+                                    },
+                                    {
+                                        "component":  "CADP",
+                                        "depends_on":  [
+                                                           "CAM",
+                                                           "ALP"
+                                                       ],
+                                        "provides":  [
+                                                         "Active directory purity rules"
+                                                     ],
+                                        "used_by":  [
+                                                        "CAM",
+                                                        "Release Integrity"
+                                                    ],
+                                        "governed_by":  [
+                                                            "CCP-Policy",
+                                                            "AGF"
+                                                        ],
+                                        "layer":  "Governance",
+                                        "status":  "Canonical"
+                                    },
+                                    {
+                                        "component":  "ALP",
+                                        "depends_on":  [
+                                                           "CAM"
+                                                       ],
+                                        "provides":  [
+                                                         "Artifact lifecycle rules"
+                                                     ],
+                                        "used_by":  [
+                                                        "CADP",
+                                                        "Release Integrity",
+                                                        "CIPL"
+                                                    ],
+                                        "governed_by":  [
+                                                            "AGF"
+                                                        ],
+                                        "layer":  "Governance",
+                                        "status":  "Canonical"
+                                    },
+                                    {
+                                        "component":  "CIPL",
+                                        "depends_on":  [
+                                                           "CDG",
+                                                           "Creator Identity"
+                                                       ],
+                                        "provides":  [
+                                                         "IP and origin ledger"
+                                                     ],
+                                        "used_by":  [
+                                                        "CG",
+                                                        "CKS",
+                                                        "Governance"
+                                                    ],
+                                        "governed_by":  [
+                                                            "AGF",
+                                                            "CDG"
+                                                        ],
+                                        "layer":  "Governance",
+                                        "status":  "Canonical"
+                                    },
+                                    {
+                                        "component":  "CCP-Policy",
+                                        "depends_on":  [
+                                                           "AGF",
+                                                           "CDG"
+                                                       ],
+                                        "provides":  [
+                                                         "Controlled change policy"
+                                                     ],
+                                        "used_by":  [
+                                                        "CADP",
+                                                        "Governance",
+                                                        "Release Integrity"
+                                                    ],
+                                        "governed_by":  [
+                                                            "AGF"
+                                                        ],
+                                        "layer":  "Governance",
+                                        "status":  "Canonical"
+                                    },
+                                    {
+                                        "component":  "CCP-Cognitive",
+                                        "depends_on":  [
+                                                           "CLU",
+                                                           "CRE",
+                                                           "Execution Planner",
+                                                           "Canonical Memory"
+                                                       ],
+                                        "provides":  [
+                                                         "Cognitive processing model"
+                                                     ],
+                                        "used_by":  [
+                                                        "Phase 2 planning"
+                                                    ],
+                                        "governed_by":  [
+                                                            "Governance",
+                                                            "Foundation"
+                                                        ],
+                                        "layer":  "Cognitive / Learning",
+                                        "status":  "Canonical concept"
+                                    },
+                                    {
+                                        "component":  "CLU",
+                                        "depends_on":  [
+                                                           "Transformer-basierte Tokenisierung",
+                                                           "CG"
+                                                       ],
+                                        "provides":  [
+                                                         "Language understanding concept"
+                                                     ],
+                                        "used_by":  [
+                                                        "CCP-Cognitive",
+                                                        "Execution Planner"
+                                                    ],
+                                        "governed_by":  [
+                                                            "Governance"
+                                                        ],
+                                        "layer":  "Cognitive",
+                                        "status":  "Canonical concept"
+                                    },
+                                    {
+                                        "component":  "CRE",
+                                        "depends_on":  [
+                                                           "Capability Registry",
+                                                           "Governance"
+                                                       ],
+                                        "provides":  [
+                                                         "Capability candidate resolution"
+                                                     ],
+                                        "used_by":  [
+                                                        "Execution Planner",
+                                                        "CCP-Cognitive"
+                                                    ],
+                                        "governed_by":  [
+                                                            "Governance",
+                                                            "Runtime Schema"
+                                                        ],
+                                        "layer":  "Operational / Cognitive",
+                                        "status":  "Canonical, implemented"
+                                    },
+                                    {
+                                        "component":  "Execution Planner",
+                                        "depends_on":  [
+                                                           "CRE",
+                                                           "Runtime Schema"
+                                                       ],
+                                        "provides":  [
+                                                         "Validated execution plans"
+                                                     ],
+                                        "used_by":  [
+                                                        "Orchestrator Core",
+                                                        "CCP-Cognitive"
+                                                    ],
+                                        "governed_by":  [
+                                                            "Governance",
+                                                            "Release Integrity"
+                                                        ],
+                                        "layer":  "Operational",
+                                        "status":  "Canonical, implemented"
+                                    },
+                                    {
+                                        "component":  "Orchestrator Core",
+                                        "depends_on":  [
+                                                           "Execution Planner",
+                                                           "Runtime Schema"
+                                                       ],
+                                        "provides":  [
+                                                         "Controlled execution"
+                                                     ],
+                                        "used_by":  [
+                                                        "Operational runtime"
+                                                    ],
+                                        "governed_by":  [
+                                                            "Release Integrity",
+                                                            "Governance"
+                                                        ],
+                                        "layer":  "Operational",
+                                        "status":  "Canonical, implemented behind feature flag"
+                                    },
+                                    {
+                                        "component":  "Runtime Schema",
+                                        "depends_on":  [
+                                                           "Canonical Layer"
+                                                       ],
+                                        "provides":  [
+                                                         "Runtime contracts"
+                                                     ],
+                                        "used_by":  [
+                                                        "Execution Planner",
+                                                        "Orchestrator Core"
+                                                    ],
+                                        "governed_by":  [
+                                                            "Release Integrity"
+                                                        ],
+                                        "layer":  "Canonical / Operational",
+                                        "status":  "Canonical, implemented"
+                                    },
+                                    {
+                                        "component":  "Canonical Memory",
+                                        "depends_on":  [
+                                                           "Foundation",
+                                                           "Learning Layer"
+                                                       ],
+                                        "provides":  [
+                                                         "Continuity and memory evidence"
+                                                     ],
+                                        "used_by":  [
+                                                        "CCP-Cognitive",
+                                                        "Governance",
+                                                        "CHI"
+                                                    ],
+                                        "governed_by":  [
+                                                            "Foundation",
+                                                            "Governance"
+                                                        ],
+                                        "layer":  "Learning",
+                                        "status":  "Canonical"
+                                    },
+                                    {
+                                        "component":  "Release Integrity",
+                                        "depends_on":  [
+                                                           "AGF",
+                                                           "CAM",
+                                                           "ALP",
+                                                           "Runtime Schema"
+                                                       ],
+                                        "provides":  [
+                                                         "Release gates",
+                                                         "Evidence checks"
+                                                     ],
+                                        "used_by":  [
+                                                        "Governance",
+                                                        "Phase transitions"
+                                                    ],
+                                        "governed_by":  [
+                                                            "AGF"
+                                                        ],
+                                        "layer":  "Governance",
+                                        "status":  "Canonical, implemented"
+                                    },
+                                    {
+                                        "component":  "CKS",
+                                        "depends_on":  [
+                                                           "CG",
+                                                           "CAMap",
+                                                           "CDI",
+                                                           "CHI"
+                                                       ],
+                                        "provides":  [
+                                                         "Knowledge Governance Layer",
+                                                         "Canonical architecture knowledge structure"
+                                                     ],
+                                        "used_by":  [
+                                                        "Governance",
+                                                        "Phase 2 onboarding"
+                                                    ],
+                                        "governed_by":  [
+                                                            "CDG",
+                                                            "AGF"
+                                                        ],
+                                        "layer":  "Knowledge Governance",
+                                        "status":  "Canonical"
+                                    }
+                                ],
+    "decisions":  [
+                      {
+                          "id":  "CDI-001",
+                          "title":  "Foundation is the highest protection layer",
+                          "background":  "Foundation-Regeln und Identitaetsgrenzen wurden als dauerhaft verbindlicher Kern etabliert.",
+                          "problem":  "Ohne oberste Schutzschicht koennten Architekturentscheidungen Kernprinzipien verletzen.",
+                          "decision":  "Foundation bleibt oberste Schutz- und Prinzipienschicht.",
+                          "rationale":  "Alle weiteren Governance-Mechanismen benoetigen eine nicht beliebig verschiebbare Grenze.",
+                          "benefits":  [
+                                           "Stabiler Identitaetskern",
+                                           "Klare Kompatibilitaetspruefung",
+                                           "Reduzierte Architekturdrift"
+                                       ],
+                          "drawbacks":  [
+                                            "Hoehere Pruefpflicht bei Aenderungen"
+                                        ],
+                          "affected":  [
+                                           "Foundation",
+                                           "AGF",
+                                           "Governance",
+                                           "Canonical Memory"
+                                       ],
+                          "status":  "Documented existing decision"
+                      },
+                      {
+                          "id":  "CDI-002",
+                          "title":  "Architecture knowledge is separated from runtime",
+                          "background":  "CG und CKS wurden als Dokumentations- und Governance-Komponenten beauftragt.",
+                          "problem":  "Wissensstrukturierung duerfte sonst versehentlich Runtime-Verhalten veraendern.",
+                          "decision":  "CKS, CG, CAMap, CDI und CHI bleiben reine Dokumentation und Governance.",
+                          "rationale":  "Architekturwissen soll stabilisieren, nicht unkontrolliert implementieren.",
+                          "benefits":  [
+                                           "Keine Runtime-Risiken",
+                                           "Klarer Audit-Pfad",
+                                           "Saubere Phase-2-Vorbereitung"
+                                       ],
+                          "drawbacks":  [
+                                            "Keine automatische Durchsetzung in Runtime"
+                                        ],
+                          "affected":  [
+                                           "CKS",
+                                           "CG",
+                                           "CAMap",
+                                           "CDI",
+                                           "CHI"
+                                       ],
+                          "status":  "Documented existing decision"
+                      },
+                      {
+                          "id":  "CDI-003",
+                          "title":  "CCP is split into policy and cognitive meanings",
+                          "background":  "Aeltere Dokumente verwenden CCP unspezifisch; Phase 2 unterscheidet CCP-Policy und CCP-Cognitive.",
+                          "problem":  "Eine gleiche Abkuerzung kann Policy- und Kognitionskonzepte vermischen.",
+                          "decision":  "CG fuehrt CCP-Policy und CCP-Cognitive / CCP-Cog getrennt.",
+                          "rationale":  "Disambiguierung verhindert falsche Governance- und Architekturreferenzen.",
+                          "benefits":  [
+                                           "Eindeutige Sprache",
+                                           "Bessere Phase-2-Konsistenz"
+                                       ],
+                          "drawbacks":  [
+                                            "Aeltere Dokumente muessen spaeter redaktionell bereinigt werden"
+                                        ],
+                          "affected":  [
+                                           "CG",
+                                           "CCP-Policy",
+                                           "CCP-Cognitive",
+                                           "CKS"
+                                       ],
+                          "status":  "Documented existing decision"
+                      },
+                      {
+                          "id":  "CDI-004",
+                          "title":  "CRE resolves capabilities read-only",
+                          "background":  "CRE wurde als Capability Resolution Engine eingefuehrt.",
+                          "problem":  "Capability-Auswahl und Ausfuehrung duerfen nicht vermischt werden.",
+                          "decision":  "CRE findet und priorisiert Kandidaten, fuehrt aber nicht aus.",
+                          "rationale":  "Trennung von Discovery, Planung und Ausfuehrung stabilisiert Governance.",
+                          "benefits":  [
+                                           "Klare Rollen",
+                                           "Geringeres Ausfuehrungsrisiko",
+                                           "Bessere Testbarkeit"
+                                       ],
+                          "drawbacks":  [
+                                            "Mehr Komponentenabstimmung noetig"
+                                        ],
+                          "affected":  [
+                                           "CRE",
+                                           "Execution Planner",
+                                           "Orchestrator Core",
+                                           "Governance"
+                                       ],
+                          "status":  "Documented existing decision"
+                      },
+                      {
+                          "id":  "CDI-005",
+                          "title":  "Execution Planner plans, Orchestrator executes",
+                          "background":  "Runtime-Migration dokumentiert Planner- und Orchestrator-Rollen.",
+                          "problem":  "Unklare Zustandsverantwortung koennte zu Planungs- oder Ausfuehrungsdrift fuehren.",
+                          "decision":  "Execution Planner erzeugt Plaene; Orchestrator Core fuehrt nur validierte Plaene aus.",
+                          "rationale":  "Eine harte Rollentrennung verhindert selbsttaetige Orchestrator-Planung.",
+                          "benefits":  [
+                                           "Kontrollierte Integration",
+                                           "Einfachere Fallbacks",
+                                           "Pruefbare Runtime-Vertraege"
+                                       ],
+                          "drawbacks":  [
+                                            "Feature-Flag- und Schemaabhaengigkeit"
+                                        ],
+                          "affected":  [
+                                           "Execution Planner",
+                                           "Orchestrator Core",
+                                           "Runtime Schema",
+                                           "Release Integrity"
+                                       ],
+                          "status":  "Documented existing decision"
+                      },
+                      {
+                          "id":  "CDI-006",
+                          "title":  "Active project folders must remain canonical",
+                          "background":  "CADP und ALP regeln aktive Ordner, Archivierung und Referenzpruefung.",
+                          "problem":  "Historische Parallelstaende in aktiven Ordnern erschweren Release- und Governance-Pruefung.",
+                          "decision":  "Ersetzte oder historische Artefakte gehoeren in Archiv-/History-Bereiche, nicht in aktive Kanonordner.",
+                          "rationale":  "Aktive Projektbereiche muessen eindeutige Gegenwartsreferenzen enthalten.",
+                          "benefits":  [
+                                           "Saubere Projektstruktur",
+                                           "Weniger Konflikte",
+                                           "Bessere Release Integrity"
+                                       ],
+                          "drawbacks":  [
+                                            "Redaktionelle Pflege bleibt notwendig"
+                                        ],
+                          "affected":  [
+                                           "CADP",
+                                           "ALP",
+                                           "CAM",
+                                           "Release Integrity"
+                                       ],
+                          "status":  "Documented existing decision"
+                      },
+                      {
+                          "id":  "CDI-007",
+                          "title":  "Origin and copyright are governance knowledge",
+                          "background":  "CIPL wurde als Herkunfts- und Urheberregister angelegt.",
+                          "problem":  "Architekturkonzepte brauchen nachvollziehbare Herkunft und Schoepferbezug.",
+                          "decision":  "CIPL fuehrt IP- und Herkunftswissen als kanonische Governance-Information.",
+                          "rationale":  "Langfristige Governance braucht Nachweise ueber Entstehung und Besitz.",
+                          "benefits":  [
+                                           "Herkunftstransparenz",
+                                           "IP-Schutz",
+                                           "Bessere Chronikreferenzen"
+                                       ],
+                          "drawbacks":  [
+                                            "Ledger muss redaktionell fortgeschrieben werden"
+                                        ],
+                          "affected":  [
+                                           "CIPL",
+                                           "CG",
+                                           "CKS",
+                                           "Governance"
+                                       ],
+                          "status":  "Documented existing decision"
+                      }
+                  ],
+    "history":  [
+                    {
+                        "component":  "Foundation",
+                        "first_mention":  "Vor Phase 34.1 in Foundation-Releases und Chronik",
+                        "first_documentation":  "Foundation- und Release-Dokumentation",
+                        "first_implementation":  "Foundation-Agent/Core vorhanden",
+                        "governance_classification":  "Oberste Schutzschicht",
+                        "current_status":  "Canonical"
+                    },
+                    {
+                        "component":  "AGF",
+                        "first_mention":  "Governance-Phase 34.1",
+                        "first_documentation":  "ARCHITECTURE_GOVERNANCE_FRAMEWORK_1_0.md",
+                        "first_implementation":  "Dokumentations-/Governance-Komponente",
+                        "governance_classification":  "Architekturverfassung",
+                        "current_status":  "Canonical"
+                    },
+                    {
+                        "component":  "CDG",
+                        "first_mention":  "Entwicklungsregelwerk vom 07.07.2026",
+                        "first_documentation":  "CANONICAL_DEVELOPMENT_GOVERNANCE_34_1.md",
+                        "first_implementation":  "Dokumentations-/Governance-Komponente",
+                        "governance_classification":  "Entwicklungsregeln",
+                        "current_status":  "Canonical"
+                    },
+                    {
+                        "component":  "CAM",
+                        "first_mention":  "CAM-Meilensteine in Projektchronik",
+                        "first_documentation":  "CAM-/ALP-/Governance-Dokumentation",
+                        "first_implementation":  "Teilweise operationalisiert",
+                        "governance_classification":  "Artefakt-Governance",
+                        "current_status":  "Canonical"
+                    },
+                    {
+                        "component":  "CADP",
+                        "first_mention":  "Architektur- und Arbeitsregel-Dokumentation",
+                        "first_documentation":  "ARBEITSREGEL_ARTEFAKT_LIFECYCLE_34_1.md",
+                        "first_implementation":  "Policy-Dokumentation",
+                        "governance_classification":  "Aktive-Ordner-Policy",
+                        "current_status":  "Canonical"
+                    },
+                    {
+                        "component":  "ALP",
+                        "first_mention":  "CAM 1.1 / Artifact Lifecycle Policy",
+                        "first_documentation":  "ARBEITSREGEL_ARTEFAKT_LIFECYCLE_34_1.md",
+                        "first_implementation":  "Policy-Dokumentation",
+                        "governance_classification":  "Artefakt-Lifecycle",
+                        "current_status":  "Canonical"
+                    },
+                    {
+                        "component":  "CIPL",
+                        "first_mention":  "Copyright-/IP-Auftrag 07.07.2026",
+                        "first_documentation":  "CANONICAL_IP_LEDGER_1_0.md",
+                        "first_implementation":  "Dokumentations-/Governance-Komponente",
+                        "governance_classification":  "IP- und Herkunftsregister",
+                        "current_status":  "Canonical"
+                    },
+                    {
+                        "component":  "CG",
+                        "first_mention":  "Canonical Glossary Auftrag",
+                        "first_documentation":  "CANONICAL_GLOSSARY_1_0.md",
+                        "first_implementation":  "Dokumentations-/Governance-Komponente",
+                        "governance_classification":  "Begriffskanon",
+                        "current_status":  "Canonical"
+                    },
+                    {
+                        "component":  "CKS",
+                        "first_mention":  "Canonical Knowledge System Auftrag",
+                        "first_documentation":  "CANONICAL_KNOWLEDGE_SYSTEM_1_0.md",
+                        "first_implementation":  "Dokumentations-/Governance-Komponente",
+                        "governance_classification":  "Architekturwissenssystem",
+                        "current_status":  "Canonical"
+                    },
+                    {
+                        "component":  "CRE",
+                        "first_mention":  "Capability Resolution / Runtime-Migration",
+                        "first_documentation":  "CAPABILITY_RESOLUTION_ENGINE_1_0.md und Runtime-Berichte",
+                        "first_implementation":  "Vorhanden laut Runtime-Migration und Tests",
+                        "governance_classification":  "Read-only Faehigkeitsauflosung",
+                        "current_status":  "Canonical, implemented"
+                    },
+                    {
+                        "component":  "Execution Planner",
+                        "first_mention":  "Runtime-Migration / Phase-2-Vorbereitung",
+                        "first_documentation":  "Runtime-Migration-Berichte",
+                        "first_implementation":  "Vorhanden laut Runtime-Migration und Tests",
+                        "governance_classification":  "Planungsschicht",
+                        "current_status":  "Canonical, implemented"
+                    },
+                    {
+                        "component":  "Orchestrator Core",
+                        "first_mention":  "Runtime-Migration / Phase-2-Vorbereitung",
+                        "first_documentation":  "Runtime-Migration-Berichte",
+                        "first_implementation":  "Feature-Flag-gebunden vorhanden",
+                        "governance_classification":  "Kontrollierte Ausfuehrung",
+                        "current_status":  "Canonical, implemented behind feature flag"
+                    },
+                    {
+                        "component":  "Runtime Schema",
+                        "first_mention":  "Runtime-Migration 34.1",
+                        "first_documentation":  "Runtime-Migration-Berichte",
+                        "first_implementation":  "Vorhanden laut Runtime-Migration und Tests",
+                        "governance_classification":  "Runtime-Vertrag",
+                        "current_status":  "Canonical, implemented"
+                    },
+                    {
+                        "component":  "CCP-Policy",
+                        "first_mention":  "Canonical Change Policy / Governance-Dokumentation",
+                        "first_documentation":  "AGF, Architekturmodell, CG",
+                        "first_implementation":  "Policy-Dokumentation",
+                        "governance_classification":  "Change Governance",
+                        "current_status":  "Canonical"
+                    },
+                    {
+                        "component":  "CCP-Cognitive",
+                        "first_mention":  "Phase-2-Uebergang Controlled Integration \u0026 Operation",
+                        "first_documentation":  "ARCHITECTURE_PHASE_COMPLETION_REPORT_34_1.md und CG",
+                        "first_implementation":  "Keine Implementierung in CKS 1.0",
+                        "governance_classification":  "Kognitives Konzept",
+                        "current_status":  "Canonical concept"
+                    },
+                    {
+                        "component":  "CLU",
+                        "first_mention":  "Phase-2-Uebergang Controlled Integration \u0026 Operation",
+                        "first_documentation":  "ARCHITECTURE_PHASE_COMPLETION_REPORT_34_1.md und CG",
+                        "first_implementation":  "Keine Implementierung in CKS 1.0",
+                        "governance_classification":  "Sprachverstehenskonzept",
+                        "current_status":  "Canonical concept"
+                    },
+                    {
+                        "component":  "Release Integrity",
+                        "first_mention":  "Release 34.1",
+                        "first_documentation":  "RELEASE_34_1_RELEASE_INTEGRITY_FRAMEWORK.md und Statusberichte",
+                        "first_implementation":  "Vorhanden laut Release- und Testnachweisen",
+                        "governance_classification":  "Release-Governance",
+                        "current_status":  "Canonical, implemented"
+                    }
+                ]
+}

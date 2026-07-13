@@ -1,0 +1,385 @@
+Canonical Code Agent Framework (CCAF) 1.0 10.07.26
+
+definieren.
+
+Der wichtige Punkt ist: Es sollte nicht Codex selbst beschreiben, sondern allgemein festlegen, wie jeder Code-Agent in Projekt Kontinuum arbeiten darf — egal ob später Codex, ein lokaler Agent, ein spezialisiertes Prüfmodell oder K selbst Codeaufgaben übernimmt.
+
+Abgrenzung zu euren vorhandenen Bausteinen
+
+Das CCAF würde eine andere Aufgabe erfüllen als die bereits geplanten Frameworks:
+
+CDF – Canonical Development Framework
+regelt den gesamten Entwicklungsprozess.
+CDG – Canonical Development Governance
+regelt Kontrolle, Freigaben, Verantwortlichkeiten und Entwicklungsregeln.
+Canonical Authentication Framework
+regelt Identität, Anmeldung und Berechtigungen.
+CLMSF – Canonical Licence Management System Framework
+regelt Lizenzen, Nutzungsrechte und Editionen.
+CCAF – Canonical Code Agent Framework
+regelt das konkrete Verhalten automatisierter Agenten bei Analyse, Änderung, Prüfung und Erzeugung von Code.
+
+Damit wäre das CCAF die operative Brücke zwischen Governance und tatsächlicher Codearbeit.
+
+Was das Framework festlegen sollte
+1. Agentenidentität
+
+Jeder Code-Agent benötigt eine eindeutige Identität, beispielsweise:
+
+Agent-ID
+Agentenname
+Agentenversion
+Agententyp
+Hersteller oder Herkunft
+erlaubte Aufgaben
+Vertrauensstufe
+Berechtigungsprofil
+verwendetes Modell
+Kontext- und Werkzeugzugriffe
+
+Ein Auftrag müsste dadurch später nachvollziehbar beantworten können:
+
+Welcher Agent hat wann mit welchem Modell welche Datei unter welchen Regeln verändert?
+
+2. Agentenrollen
+
+Das Framework sollte unterschiedliche Rollen definieren:
+
+Analysis Agent
+analysiert ausschließlich und verändert nichts.
+Planning Agent
+erstellt Änderungs- oder Migrationspläne.
+Implementation Agent
+darf genehmigte Änderungen umsetzen.
+Review Agent
+prüft Änderungen unabhängig.
+Test Agent
+führt Tests aus und bewertet Ergebnisse.
+Security Agent
+prüft Sicherheitsrisiken.
+Migration Agent
+führt kontrollierte Struktur- oder Versionsmigrationen durch.
+Documentation Agent
+aktualisiert Dokumentation und Statusberichte.
+Release Agent
+prüft Release-Vollständigkeit und Integrität.
+
+Ein Agent könnte mehrere Fähigkeiten besitzen, aber pro Auftrag sollte seine aktive Rolle eindeutig sein.
+
+3. Berechtigungsmodell
+
+Das CCAF sollte präzise festlegen, was ein Agent darf:
+
+nur lesen
+Dateien erstellen
+vorhandene Dateien verändern
+Dateien verschieben
+Dateien archivieren
+Dateien löschen
+Tests ausführen
+Git-Befehle ausführen
+externe Quellen verwenden
+Konfigurationen verändern
+Datenbanken lesen oder schreiben
+Releases vorbereiten
+
+Besonders wichtig:
+
+Kein Agent erhält automatisch Vollzugriff, nur weil er technisch dazu in der Lage wäre.
+
+Die Berechtigung muss sich aus Auftrag, Rolle und Governance ergeben.
+
+4. Kanonischer Agentenauftrag
+
+Jeder Code-Agentenauftrag sollte eine feste Struktur besitzen:
+
+Auftragstitel
+Ziel
+Ausgangslage
+erlaubter Scope
+ausgeschlossener Scope
+zulässige Dateien und Ordner
+verbotene Änderungen
+geltende kanonische Regeln
+erforderliche Vorprüfungen
+erwartete Arbeitsschritte
+Testanforderungen
+Dokumentationsanforderungen
+Abbruchbedingungen
+Rückfallpunkt
+Abschlussbericht
+Freigabestatus
+
+Dadurch würden eure bisherigen Codex-Aufträge selbst zu CCAF-konformen Agentenaufträgen.
+
+5. Verpflichtender Arbeitszyklus
+
+Ich würde einen kanonischen Code-Agenten-Zyklus definieren:
+
+Phase A – Identify
+
+Der Agent identifiziert:
+
+Auftrag
+Rolle
+Berechtigungen
+Projektzustand
+relevante Artefakte
+aktuelle kanonische Versionen
+Rückfallpunkt
+Phase B – Inspect
+
+Der Agent prüft:
+
+bestehende Architektur
+Abhängigkeiten
+aktive und historische Dateien
+Tests
+Konfigurationen
+Governance-Regeln
+mögliche Konflikte
+Phase C – Plan
+
+Der Agent erstellt einen konkreten Plan:
+
+geplante Änderungen
+betroffene Artefakte
+Risiken
+Prüfungen
+Rückfallstrategie
+Phase D – Authorize
+
+Vor schreibenden Änderungen wird geprüft:
+
+Ist die Änderung durch den Auftrag gedeckt?
+Ist der Agent dafür berechtigt?
+Ist der Scope eindeutig?
+Sind Rückfallpunkt und Sicherheitsbedingungen vorhanden?
+Phase E – Execute
+
+Nur freigegebene Änderungen werden umgesetzt.
+
+Phase F – Verify
+
+Anschließend erfolgen:
+
+Tests
+Integritätsprüfung
+Architekturprüfung
+Schema- und Konfigurationsprüfung
+Prüfung unerwarteter Änderungen
+Phase G – Report
+
+Der Agent erstellt einen nachvollziehbaren Abschlussbericht.
+
+Das passt sehr gut zu eurem Grundprinzip:
+
+Erkennen – Schaffen – Vollenden
+
+6. Schutz vor unkontrollierter Agententätigkeit
+
+Das CCAF sollte klare Verbote enthalten:
+
+keine eigenmächtige Scope-Erweiterung
+keine stillen Architekturänderungen
+keine Löschung ohne ausdrückliche Freigabe
+keine Vermischung aktiver und historischer Artefakte
+keine Änderung kanonischer Dateien ohne Prüfung
+kein Umgehen von Tests
+kein Erfinden nicht vorhandener Projektzustände
+keine Annahme erfolgreicher Ausführung ohne Nachweis
+keine versteckten Nebenänderungen
+keine automatische Freigabe der eigenen Arbeit
+
+Ein Implementierungsagent sollte seine eigene Arbeit also nicht endgültig freigeben dürfen.
+
+7. Agententrennung und Vier-Augen-Prinzip
+
+Für kritische Änderungen wäre folgende Trennung sinnvoll:
+
+Agent A analysiert.
+Agent B implementiert.
+Agent C prüft.
+Raphael erteilt die endgültige Freigabe.
+
+Bei kleineren Aufgaben könnten Rollen kombiniert werden, aber das müsste im Auftrag ausdrücklich erlaubt sein.
+
+Damit würdet ihr ein technisches Vier-Augen- oder Mehr-Augen-Prinzip schaffen.
+
+8. Agentenfähigkeiten als registrierte Capabilities
+
+Das CCAF sollte eine Capability Registry vorsehen, beispielsweise:
+
+code.read
+code.analyze
+code.modify
+code.create
+code.delete
+tests.execute
+git.inspect
+git.commit
+database.read
+database.write
+architecture.validate
+documentation.update
+release.verify
+security.audit
+
+Das ließe sich später sehr gut mit der Capability Resolution Engine verbinden.
+
+Die CRE könnte vor Ausführung feststellen:
+
+Der Auftrag benötigt code.modify, tests.execute und documentation.update.
+Besitzt der ausgewählte Agent diese Fähigkeiten und darf er sie in diesem Projektbereich einsetzen?
+
+9. Verbindung mit Authentication und Governance
+
+Das CCAF sollte nicht selbst Authentifizierung und Governance neu erfinden, sondern vorhandene Frameworks verwenden:
+
+Canonical Authentication Framework
+                ↓
+       Agent wird identifiziert
+
+Canonical Development Governance
+                ↓
+       Regeln und Freigaben
+
+Canonical Code Agent Framework
+                ↓
+ Rollen, Fähigkeiten und Arbeitsablauf
+
+Capability Resolution Engine
+                ↓
+ Prüfung der benötigten Fähigkeiten
+
+Execution Planner
+                ↓
+ Erstellung eines validierten Ausführungsplans
+
+Orchestrator Core
+                ↓
+ Kontrollierte Ausführung
+
+Das ergibt eine sehr saubere Architektur.
+
+10. Agentenprotokoll und Provenienz
+
+Jede Agentenaktion sollte protokolliert werden:
+
+Auftrag-ID
+Agent-ID
+Zeitstempel
+verwendetes Modell
+aktive Rolle
+gelesene Dateien
+geänderte Dateien
+ausgeführte Befehle
+Tests
+Testergebnisse
+Fehler
+Warnungen
+abgelehnte Aktionen
+erzeugte Artefakte
+Git-Diff oder Hash
+Freigabestatus
+
+Das wäre später eine wesentliche Grundlage für:
+
+Audit
+Fehleranalyse
+Haftungsabgrenzung
+Reproduzierbarkeit
+Sicherheitsprüfung
+Lizenznachweise
+Forschungseditionen
+11. Unterschiedliche Betriebsmodi
+
+Das Framework könnte feste Modi definieren:
+
+Read-only Mode
+
+Nur Analyse und Bericht.
+
+Proposal Mode
+
+Analyse und Änderungsvorschlag, aber keine Umsetzung.
+
+Controlled Write Mode
+
+Änderungen nur innerhalb eines freigegebenen Scopes.
+
+Migration Mode
+
+Struktur- und Versionsänderungen mit besonderem Rückfallschutz.
+
+Emergency Repair Mode
+
+Nur für klar definierte Fehlerbehebung mit enger Begrenzung.
+
+Autonomous Maintenance Mode
+
+Später denkbar, aber nur für vorab freigegebene, risikoarme Aufgaben.
+
+Gerade der letzte Modus sollte zunächst nur vorbereitet, nicht aktiviert werden.
+
+12. Risikoklassen
+
+Code-Agentenaufträge könnten nach Risiko klassifiziert werden:
+
+CA-R0 – Analyse ohne Änderungen
+CA-R1 – Dokumentation oder isolierte Ergänzung
+CA-R2 – begrenzte Codeänderung
+CA-R3 – Architektur- oder Datenmodelländerung
+CA-R4 – Migration, Security, Authentifizierung oder Release
+CA-R5 – systemweite oder irreversible Änderung
+
+Je höher das Risiko, desto mehr Prüfungen und unabhängige Freigaben wären notwendig.
+
+13. Mögliche kanonische Artefakte
+
+Ich würde mindestens folgende Artefakte vorbereiten:
+
+14_documents/
+    CANONICAL_CODE_AGENT_FRAMEWORK_1_0.md
+
+24_config/
+    canonical_code_agent_framework_1_0.json
+    canonical_code_agent_roles_1_0.json
+    canonical_code_agent_capabilities_1_0.json
+    canonical_code_agent_risk_classes_1_0.json
+
+31_reports/
+    ccaf_1_0_status_report.md
+
+Später könnten hinzukommen:
+
+24_config/
+    code_agent_registry_1_0.json
+    code_agent_permission_profiles_1_0.json
+    code_agent_task_schema_1_0.json
+
+schemas/
+    canonical_code_agent_task_1_0.schema.json
+    canonical_code_agent_report_1_0.schema.json
+Meine Einschätzung
+
+Das CCAF wäre kein unnötiger zusätzlicher Rahmen, sondern ein fehlendes Bindeglied.
+
+Ihr habt bereits oder plant:
+
+Entwicklungsregeln,
+Governance,
+Capabilities,
+Planung,
+Orchestrierung,
+Authentifizierung,
+Lizenzverwaltung.
+
+Was noch fehlt, ist eine kanonische Definition dafür, wie ein automatisierter Code-Agent innerhalb dieses Systems auftreten, entscheiden, handeln und Rechenschaft ablegen muss.
+
+Gerade weil K später möglicherweise selbst Code analysiert, erzeugt oder verbessert, sollte dieses Framework geschaffen werden, bevor autonome Code-Agenten tief in das Projekt eingreifen dürfen.
+
+Meine Empfehlung lautet deshalb:
+
+GO für die konzeptionelle Vorbereitung eines Canonical Code Agent Framework (CCAF) 1.0.
+Zunächst nur als Prüf- und Architekturauftrag, ohne Implementierung und ohne Aktivierung autonomer Schreibrechte.

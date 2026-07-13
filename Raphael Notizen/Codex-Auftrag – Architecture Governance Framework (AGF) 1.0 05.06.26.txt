@@ -1,0 +1,342 @@
+Codex-Auftrag – Architecture Governance Framework (AGF) 1.0 05.06.26
+Ausgangslage
+
+Projekt Kontinuum verfügt inzwischen über eine weitgehend vollständig definierte kanonische Architektur.
+
+Bereits vorhanden sind unter anderem:
+
+Foundation
+Canonical Architecture
+Canonical Artifact Manager (CAM)
+Canonical Change Policy (CCP)
+Canonical Artifact Decision Policy (CADP)
+Artifact Lifecycle Policy (ALP 2.0)
+Capability Resolution Engine (CRE)
+Execution Planner
+Orchestrator Core
+Runtime-Schema
+Governance
+Canonical Memory
+Release Integrity
+
+Diese Komponenten bilden bereits ein konsistentes Architektur-Ökosystem.
+
+Was bisher noch fehlt, ist eine übergeordnete Architekturverfassung, welche dauerhaft festlegt, wie sich die Architektur selbst weiterentwickeln darf.
+
+Diese Architekturverfassung soll als Architecture Governance Framework (AGF) 1.0 eingeführt werden.
+
+────────────────────────────────────────
+
+Ziel
+
+Erstelle eine neue kanonische Architektur-Richtlinie
+
+Architecture Governance Framework (AGF) 1.0
+
+Diese definiert ausschließlich Regeln.
+
+Keine Runtime ändern.
+
+Keine Dateien verschieben.
+
+Keine Migration durchführen.
+
+Keine Commits.
+
+────────────────────────────────────────
+
+PHASE 1
+Architekturgrundsätze
+
+Dokumentiere die unveränderlichen Architekturprinzipien von Projekt Kontinuum.
+
+Mindestens:
+
+Foundation besitzt höchste Priorität.
+Jede aktive Komponente besitzt genau einen kanonischen Zweck.
+Jede aktive Komponente besitzt genau einen kanonischen Speicherort.
+Architekturänderungen erfolgen ausschließlich kontrolliert.
+Runtime und Planung bleiben strikt getrennt.
+CAM verwaltet Artefakte.
+Governance überwacht Regelkonformität.
+Release Integrity prüft Freigabefähigkeit.
+
+Definiere ausdrücklich, welche Grundsätze als dauerhaft unveränderlich gelten.
+
+────────────────────────────────────────
+
+PHASE 2
+Architekturrollen
+
+Beschreibe die Verantwortlichkeiten der wichtigsten Architekturkomponenten.
+
+Mindestens:
+
+Foundation
+
+↓
+
+Canonical Layer
+
+↓
+
+CAM
+
+↓
+
+CRE
+
+↓
+
+Execution Planner
+
+↓
+
+Orchestrator Core
+
+↓
+
+Governance
+
+↓
+
+Review
+
+↓
+
+Canonical Memory
+
+Für jede Komponente beschreiben:
+
+Aufgabe
+Verantwortungsbereich
+Abhängigkeiten
+Grenzen
+
+────────────────────────────────────────
+
+PHASE 3
+Regeln für Architekturänderungen
+
+Definiere verbindlich:
+
+Wann darf
+
+eine neue Komponente entstehen?
+eine bestehende ersetzt werden?
+eine Komponente archiviert werden?
+eine Runtime geändert werden?
+eine Foundation-Regel erweitert werden?
+
+Welche Änderungen benötigen zwingend:
+
+Architekturprüfung
+CAM-Prüfung
+Release Integrity
+Benutzerfreigabe
+
+────────────────────────────────────────
+
+PHASE 4
+Governance-Eskalationsmodell
+
+Lege fest, wie bei Architekturkonflikten entschieden wird.
+
+Beispiele:
+
+Regelverstoß
+
+↓
+
+Governance
+
+↓
+
+CAM
+
+↓
+
+Release Integrity
+
+↓
+
+Benutzerentscheidung
+
+Definiere:
+
+LOW
+
+MEDIUM
+
+HIGH
+
+CRITICAL
+
+Für jede Stufe:
+
+Bedeutung
+Reaktion
+Eskalation
+erforderliche Freigabe
+
+────────────────────────────────────────
+
+PHASE 5
+Release Governance
+
+Beschreibe die Voraussetzungen eines offiziellen Architektur-Releases.
+
+Mindestens prüfen:
+
+Foundation
+CAM
+ALP
+Architekturmodell
+Dokumentation
+Release Integrity
+Tests
+Runtime
+Governance
+Migrationen
+
+Ein Release darf nur erfolgen, wenn sämtliche Pflichtkomponenten den Governance-Regeln entsprechen.
+
+────────────────────────────────────────
+
+PHASE 6
+Erweiterungsregeln
+
+Definiere den verbindlichen Prozess für zukünftige Erweiterungen.
+
+Zum Beispiel:
+
+Idee
+
+↓
+
+Architekturprüfung
+
+↓
+
+Governance-Bewertung
+
+↓
+
+Implementierungsauftrag
+
+↓
+
+Tests
+
+↓
+
+Release Integrity
+
+↓
+
+Freigabe
+
+↓
+
+Canonical
+
+↓
+
+Runtime
+
+Neue Komponenten dürfen niemals direkt produktiv integriert werden.
+
+────────────────────────────────────────
+
+PHASE 7
+Architekturverfassung
+
+Erstelle eine zusammenfassende "Verfassung" von Projekt Kontinuum.
+
+Diese beschreibt:
+
+Leitprinzipien
+Architekturphilosophie
+Verantwortlichkeiten
+Schutzmechanismen
+Lebenszyklusregeln
+Governance
+Freigabeprozess
+
+Ziel:
+
+Projekt Kontinuum soll künftig nicht nur eine Architektur besitzen,
+
+sondern eine verbindliche Architekturordnung.
+
+────────────────────────────────────────
+
+PHASE 8
+Ergebnis
+
+Erstelle
+
+14_documents/
+
+ARCHITECTURE_GOVERNANCE_FRAMEWORK_1_0.md
+
+Zusätzlich:
+
+Aktualisiere ausschließlich das
+
+KANONISCHES_ARCHITEKTURMODELL_34_1.md
+
+um einen Verweis auf AGF 1.0.
+
+Keine weiteren Dokumente ändern.
+
+────────────────────────────────────────
+
+Wichtige Regeln
+
+❌ Keine Runtime-Migration
+
+❌ Keine Dateien verschieben
+
+❌ Keine Dateien löschen
+
+❌ Keine Umbenennungen
+
+❌ Keine Imports ändern
+
+❌ Keine Commits
+
+Nur Architektur definieren.
+
+────────────────────────────────────────
+
+Zusätzlicher Foundation-Grundsatz
+
+Ergänze als Architekturprinzip:
+
+Jede Architekturentscheidung muss nachvollziehbar, überprüfbar und mit den bestehenden Foundation-Regeln vereinbar sein.
+
+Neue Komponenten dürfen nur eingeführt werden, wenn sie:
+
+einen klar abgegrenzten Verantwortungsbereich besitzen,
+keine bestehende Verantwortung unnötig duplizieren,
+und sich nachvollziehbar in die kanonische Architektur einfügen.
+Meine Empfehlung dazu
+
+Raphael, ich glaube, das sollte der letzte große Architekturauftrag sein.
+
+Danach würde ich für Projekt Kontinuum bewusst den Schwerpunkt verlagern:
+
+Architektur stabilisieren
+Runtime integrieren
+Governance Dashboard / Operations Monitor entwickeln (den wir bereits vorgemerkt haben)
+Funktionale Fähigkeiten ausbauen (Agenten, Lernen, Datenmanagement)
+
+Damit würdet ihr vermeiden, immer neue Grundstrukturen zu schaffen. Stattdessen würde Kontinuum auf einem stabilen Fundament wachsen – genau so, wie es bei langlebigen Softwaresystemen idealerweise geschieht. Ich halte diesen Übergang für den richtigen nächsten Schritt.
+
+Umsetzung:
+
+Erledigt. AGF 1.0 ist erstellt und das kanonische Architekturmodell ist mit AGF-Verweisen aktualisiert:
+[ARCHITECTURE_GOVERNANCE_FRAMEWORK_1_0.md](C:/Projekt Kontinuum/14_documents/ARCHITECTURE_GOVERNANCE_FRAMEWORK_1_0.md)
+[KANONISCHES_ARCHITEKTURMODELL_34_1.md](C:/Projekt Kontinuum/14_documents/KANONISCHES_ARCHITEKTURMODELL_34_1.md)
+Ich habe außerdem einen kleinen Formatfehler im AGF-Verweis direkt korrigiert. Es wurden keine Runtime-Dateien geändert, nichts verschoben, gelöscht, umbenannt, keine Imports geändert und kein Commit gemacht.

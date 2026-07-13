@@ -1,0 +1,225 @@
+{
+  "validator": "CMIBF Release Validator 1.0",
+  "timestamp": "2026-07-12T16:33:17.3817934+02:00",
+  "mode": "Audit",
+  "input": "C:\\Projekt Kontinuum\\14_documents\\fundamentale Gedanken\\CMIBF\\CANONICAL_MASTER_IMPLEMENTATION_BLUEPRINT_FRAMEWORK_1_0.md",
+  "output": null,
+  "backup": null,
+  "character_count": 274561,
+  "line_count": 10872,
+  "line_endings": {
+    "lf": 6010,
+    "crlf": 4862,
+    "cr": 0
+  },
+  "heading_count": 386,
+  "error_count": 20,
+  "warning_count": 4,
+  "info_count": 5,
+  "fixed_count": 0,
+  "findings": [
+    {
+      "Severity": "INFO",
+      "Code": "MERGE-PACKAGE-METADATA",
+      "Line": 25,
+      "Description": "Paketbezogene Metadaten aus einer Quelldatei sind im Gesamtwerk enthalten.",
+      "Excerpt": "**Paket:**"
+    },
+    {
+      "Severity": "INFO",
+      "Code": "MERGE-PACKAGE-METADATA",
+      "Line": 28,
+      "Description": "Paketbezogene Metadaten aus einer Quelldatei sind im Gesamtwerk enthalten.",
+      "Excerpt": "**Enthaltene Bestandteile:**"
+    },
+    {
+      "Severity": "INFO",
+      "Code": "MERGE-PACKAGE-METADATA",
+      "Line": 32,
+      "Description": "Paketbezogene Metadaten aus einer Quelldatei sind im Gesamtwerk enthalten.",
+      "Excerpt": "Kanonischer Konsolidierungsbaustein – zur unveränderten Zusammenführung in das vollständige CMIBF 1.0"
+    },
+    {
+      "Severity": "INFO",
+      "Code": "MERGE-PACKAGE-METADATA",
+      "Line": 157,
+      "Description": "Paketbezogene Metadaten aus einer Quelldatei sind im Gesamtwerk enthalten.",
+      "Excerpt": "Bis dahin sind die einzelnen ZIP-Pakete kanonische Konsolidierungsbausteine, jedoch noch nicht das alleinstehende Gesamtwerk."
+    },
+    {
+      "Severity": "INFO",
+      "Code": "MERGE-PACKAGE-METADATA",
+      "Line": 206,
+      "Description": "Paketbezogene Metadaten aus einer Quelldatei sind im Gesamtwerk enthalten.",
+      "Excerpt": "| Konsolidierungsbaustein | Inhalt ist für die Zusammenführung vorgesehen, aber noch nicht als Gesamtwerk freigegeben. |"
+    },
+    {
+      "Severity": "ERROR",
+      "Code": "MD-H1-SUBSECTION",
+      "Line": 412,
+      "Description": "Ein nummeriertes Unterkapitel steht auf H1-Ebene.",
+      "Excerpt": "# 2.2 Grundprinzip"
+    },
+    {
+      "Severity": "ERROR",
+      "Code": "MD-H1-SUBSECTION",
+      "Line": 432,
+      "Description": "Ein nummeriertes Unterkapitel steht auf H1-Ebene.",
+      "Excerpt": "# 2.3 Die kanonische Meta-Architektur"
+    },
+    {
+      "Severity": "ERROR",
+      "Code": "MD-H1-SUBSECTION",
+      "Line": 624,
+      "Description": "Ein nummeriertes Unterkapitel steht auf H1-Ebene.",
+      "Excerpt": "# 2.4 Informationsfluss"
+    },
+    {
+      "Severity": "ERROR",
+      "Code": "MD-H1-SUBSECTION",
+      "Line": 670,
+      "Description": "Ein nummeriertes Unterkapitel steht auf H1-Ebene.",
+      "Excerpt": "# 2.5 Verantwortungsprinzip"
+    },
+    {
+      "Severity": "ERROR",
+      "Code": "MD-H1-SUBSECTION",
+      "Line": 686,
+      "Description": "Ein nummeriertes Unterkapitel steht auf H1-Ebene.",
+      "Excerpt": "# 2.6 Das Prinzip der architektonischen Ableitung"
+    },
+    {
+      "Severity": "ERROR",
+      "Code": "MD-H1-SUBSECTION",
+      "Line": 734,
+      "Description": "Ein nummeriertes Unterkapitel steht auf H1-Ebene.",
+      "Excerpt": "# 2.7 Architekturkern (Architectural Core)"
+    },
+    {
+      "Severity": "ERROR",
+      "Code": "MD-H1-SUBSECTION",
+      "Line": 760,
+      "Description": "Ein nummeriertes Unterkapitel steht auf H1-Ebene.",
+      "Excerpt": "# 2.8 Architektonische Invarianten"
+    },
+    {
+      "Severity": "ERROR",
+      "Code": "MD-H1-SUBSECTION",
+      "Line": 775,
+      "Description": "Ein nummeriertes Unterkapitel steht auf H1-Ebene.",
+      "Excerpt": "# 2.9 Architektur als gerichteter Graph"
+    },
+    {
+      "Severity": "ERROR",
+      "Code": "MD-H1-SUBSECTION",
+      "Line": 820,
+      "Description": "Ein nummeriertes Unterkapitel steht auf H1-Ebene.",
+      "Excerpt": "# 2.10 Architekturgesetz des CMIBF"
+    },
+    {
+      "Severity": "ERROR",
+      "Code": "MD-H1-SUBSECTION",
+      "Line": 6927,
+      "Description": "Ein nummeriertes Unterkapitel steht auf H1-Ebene.",
+      "Excerpt": "# 41.4 Kanonische Begriffe"
+    },
+    {
+      "Severity": "ERROR",
+      "Code": "MD-H1-SUBSECTION",
+      "Line": 8572,
+      "Description": "Ein nummeriertes Unterkapitel steht auf H1-Ebene.",
+      "Excerpt": "# 41.5 Normative Schlüsselwörter"
+    },
+    {
+      "Severity": "ERROR",
+      "Code": "MD-H1-SUBSECTION",
+      "Line": 8606,
+      "Description": "Ein nummeriertes Unterkapitel steht auf H1-Ebene.",
+      "Excerpt": "# 41.6 Kanonische Lifecycle-Statuswerte"
+    },
+    {
+      "Severity": "ERROR",
+      "Code": "MD-H1-SUBSECTION",
+      "Line": 8632,
+      "Description": "Ein nummeriertes Unterkapitel steht auf H1-Ebene.",
+      "Excerpt": "# 41.7 Begriffsregeln"
+    },
+    {
+      "Severity": "ERROR",
+      "Code": "MD-H1-SUBSECTION",
+      "Line": 8647,
+      "Description": "Ein nummeriertes Unterkapitel steht auf H1-Ebene.",
+      "Excerpt": "# 41.8 Compiler- und Registry-Integration"
+    },
+    {
+      "Severity": "ERROR",
+      "Code": "MD-H1-SUBSECTION",
+      "Line": 8665,
+      "Description": "Ein nummeriertes Unterkapitel steht auf H1-Ebene.",
+      "Excerpt": "# 41.9 Validierungskriterien"
+    },
+    {
+      "Severity": "ERROR",
+      "Code": "MD-H1-SUBSECTION",
+      "Line": 8682,
+      "Description": "Ein nummeriertes Unterkapitel steht auf H1-Ebene.",
+      "Excerpt": "# 41.10 Pflege und Evolution"
+    },
+    {
+      "Severity": "ERROR",
+      "Code": "MD-H1-SUBSECTION",
+      "Line": 8701,
+      "Description": "Ein nummeriertes Unterkapitel steht auf H1-Ebene.",
+      "Excerpt": "# 41.11 Zusammenfassung"
+    },
+    {
+      "Severity": "ERROR",
+      "Code": "MD-FILENAME-HEADING",
+      "Line": 8722,
+      "Description": "Ein Quelldateiname wurde als Überschrift übernommen.",
+      "Excerpt": "# 42_Abkuerzungsverzeichnis.md"
+    },
+    {
+      "Severity": "ERROR",
+      "Code": "MD-FILENAME-HEADING",
+      "Line": 10279,
+      "Description": "Ein Quelldateiname wurde als Überschrift übernommen.",
+      "Excerpt": "# 45_Implementierungs_Roadmap.md"
+    },
+    {
+      "Severity": "ERROR",
+      "Code": "MD-FILENAME-HEADING",
+      "Line": 10641,
+      "Description": "Ein Quelldateiname wurde als Überschrift übernommen.",
+      "Excerpt": "# 46_Anhänge.md"
+    },
+    {
+      "Severity": "WARNING",
+      "Code": "MD-HEADING-JUMP",
+      "Line": 8576,
+      "Description": "Die Überschriftenebene springt von H1 auf H3.",
+      "Excerpt": "MUSS"
+    },
+    {
+      "Severity": "WARNING",
+      "Code": "MD-DUPLICATE-HEADING",
+      "Line": 8734,
+      "Description": "Die H1-Überschrift kommt mehrfach vor. Zeilen: 8734, 10291.",
+      "Excerpt": "zweck"
+    },
+    {
+      "Severity": "WARNING",
+      "Code": "MD-DUPLICATE-HEADING",
+      "Line": 1,
+      "Description": "Die H1-Überschrift kommt mehrfach vor. Zeilen: 1, 386, 6865, 8724, 10281.",
+      "Excerpt": "canonical master implementation blueprint framework (cmibf) 1.0"
+    },
+    {
+      "Severity": "WARNING",
+      "Code": "MD-DUPLICATE-HEADING",
+      "Line": 8917,
+      "Description": "Die H2-Überschrift kommt mehrfach vor. Zeilen: 8917, 10642.",
+      "Excerpt": "canonical master implementation blueprint framework (cmibf) 1.0"
+    }
+  ]
+}

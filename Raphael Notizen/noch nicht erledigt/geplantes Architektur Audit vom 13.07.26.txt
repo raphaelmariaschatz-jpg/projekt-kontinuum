@@ -1,0 +1,7 @@
+Ich würde die Prüfphase eher wie ein Architektur-Audit organisieren:
+
+Stufe 1 – Einzelprüfung: Jedes Framework für sich (Vollständigkeit, Konsistenz, Erweiterbarkeit).
+Stufe 2 – Schnittstellenprüfung: Wie greifen die Frameworks ineinander? Gibt es Überschneidungen oder Lücken?
+Stufe 3 – Governance-Prüfung: Stimmen Rollen, Verantwortlichkeiten und Abhängigkeiten?
+Stufe 4 – Implementierungsfähigkeit: Lässt sich jede Regel technisch durch den CAC und die übrigen Komponenten umsetzen?
+Stufe 5 – Gesamtvalidierung: Funktioniert das gesamte Governance-System als geschlossene Architektur?

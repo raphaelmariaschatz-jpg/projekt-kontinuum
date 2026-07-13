@@ -15,6 +15,17 @@ Loesungsvorschlaege und informiert den Benutzer. Der aktive Kern ist ein modular
 Python-Monolith mit explizitem Agentenrouting, lokaler SQLite-Persistenz,
 Tkinter-GUI, kontrollierten Werkzeugen und lokaler Wissenspriorität.
 
+## Kanonische Architekturautoritaet
+
+Fuer Projekt Kontinuum gilt ab CMIBF 1.0:
+
+- Das Canonical Master Implementation Blueprint Framework (CMIBF) ist die einzige normative Architekturquelle und Architekturverfassung.
+- Das Canonical Architecture First Principle (AFP) legt die verbindliche Reihenfolge von Idee, Architekturanalyse, CMIBF-Definition, Freigabe, CAC, Artefakten, Implementierung, Validierung, Release, Betrieb, Monitoring und kontrollierter Evolution fest.
+- Das Canonical AI Working Protocol (CAWP) legt das verbindliche Arbeitsverhalten aller KI-Systeme unterhalb des AFP fest.
+- Der Canonical Architecture Compiler (CAC) ist ein pruefender Compiler fuer das CMIBF-Quellmodell, kein eigenstaendiger Architekt und kein freier Artefaktgenerator.
+- Code, Tests, Konfigurationen, Registries, Reports, Ontologien und Dependency Graphs besitzen keine normative Architekturautoritaet.
+- Jede Implementierung muss auf eine definierte, gepruefte und freigegebene CMIBF-Grundlage zurueckfuehrbar sein.
+
 Zentrale Funktionen:
 
 - Knowledge Platform mit durchgängigem Wissensweg von Quelle über Notebook,
@@ -242,3 +253,6 @@ oder durch Setzen von `enabled=false` in der Konfiguration deaktivieren.
 - Memory-Core-Erinnerungen bleiben prüfbar, historisiert und vergessbar.
 - Winget- und Cloud-Systemänderungen benötigen bewusste Freigaben.
 - Passwörter, Recovery-Keys und private Schlüssel werden niemals dokumentiert.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

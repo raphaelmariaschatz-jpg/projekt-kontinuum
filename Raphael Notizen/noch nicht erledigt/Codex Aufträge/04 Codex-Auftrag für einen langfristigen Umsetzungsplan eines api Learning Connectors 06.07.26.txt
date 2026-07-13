@@ -1,0 +1,53 @@
+Codex Auftrag für einen langfristigen Umsetzungsplan eines api Learning Connectors 06.07.26
+
+Codex-Auftrag: API Learning Connector – Langfristige Architekturvariante für Projekt Kontinuum
+
+Ausgangslage:
+Projekt Kontinuum verfügt bereits über zentrale Architekturbausteine wie CRE, Execution Planner, Orchestrator Core, Governance, CAM und kanonische Artefaktverwaltung.
+
+Ziel:
+Entwirf eine langfristige Architektur für einen API Learning Connector, der öffentliche API-Quellen strukturiert analysieren kann, ohne ungeprüfte Inhalte direkt in die Wissensbasis zu übernehmen.
+
+Wichtige Quellenarten:
+- Postman Collections
+- Swagger / OpenAPI
+- WSDL / SOAP
+- GitHub-Beispiele
+- Herstellerdokumentationen
+- RFCs
+- technische Lernquellen wie MDN, IBM Developer, Microsoft Learn
+
+Aufgaben:
+1. Analysiere, wo ein API Learning Connector in die bestehende Kontinuum-Architektur passen würde.
+2. Definiere seine Kernaufgaben.
+3. Beschreibe den Datenfluss von externer Quelle bis zur kanonischen Wissensübernahme.
+4. Trenne strikt zwischen:
+   - Rohdaten
+   - analysierten API-Strukturen
+   - validiertem Wissen
+   - ausführbaren Capabilities
+5. Berücksichtige CRE, Execution Planner, Orchestrator Core, Governance, Audit und CAM.
+6. Definiere Sicherheitsregeln:
+   - keine ungeprüfte Ausführung fremder Requests
+   - keine automatische Speicherung sensibler Daten
+   - keine Übernahme von Tokens, Cookies oder Zugangsdaten
+   - nur öffentliche, erlaubte Quellen
+   - Quarantäne für Rohdaten
+7. Entwickle ein mögliches Modulkonzept mit:
+   - Source Fetcher
+   - Format Detector
+   - Schema Parser
+   - Capability Extractor
+   - Governance Validator
+   - Canonical Knowledge Writer
+   - Audit Reporter
+8. Beschreibe mögliche Datenmodelle, aber implementiere noch keinen Code.
+9. Nenne Risiken, offene Fragen und notwendige Vorbedingungen.
+10. Erstelle am Ende eine klare Empfehlung, ob und wann diese Architektur umgesetzt werden sollte.
+
+Wichtig:
+- Keine produktiven Dateien verändern.
+- Kein Code schreiben.
+- Keine Architektur stillschweigend umbauen.
+- Nur Analyse, Konzept und Umsetzungsempfehlung.
+- Ergebnis als sauber strukturierter Architekturbericht.

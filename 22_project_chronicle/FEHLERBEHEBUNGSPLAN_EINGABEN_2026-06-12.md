@@ -252,3 +252,6 @@ Zuerst P0 vollständig umsetzen und testen. Danach P1-Dialogqualität und
 kontrollierte Datenbereinigung durchführen. P2-Normalisierung folgt zuletzt,
 weil unscharfe Dublettenerkennung ohne Rückfrage bestehende Lernziele falsch
 zusammenführen könnte.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

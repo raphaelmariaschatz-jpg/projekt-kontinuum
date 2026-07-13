@@ -1,0 +1,940 @@
+# Codex-Auftrag – Prüfung und Konzeption eines Canonical Authentication Framework (CAF) 1.0
+
+## 1. Auftragstitel
+
+**Projekt Kontinuum – Canonical Authentication Framework (CAF) 1.0**
+
+## 2. Ausgangslage
+
+Projekt Kontinuum verfügt bereits über unterschiedliche Komponenten, Regeln und historische Implementierungen im Bereich:
+
+* Benutzeranmeldung,
+* Passwortprüfung,
+* Superadministrator- und Creator-Zugriff,
+* Rollen und Berechtigungen,
+* Sitzungsverwaltung,
+* lokale Systemzugriffe,
+* Agenten- und Dienstidentitäten,
+* Auditierung,
+* Governance,
+* Release Integrity,
+* kanonische Architektur- und Artefaktverwaltung.
+
+Diese Bestandteile dürfen nicht ungeprüft durch ein neues Authentisierungssystem ersetzt oder parallel dupliziert werden.
+
+Ziel dieses Auftrags ist daher zunächst die vollständige Bestandsaufnahme, Prüfung und kanonische Einordnung aller authentisierungsbezogenen Strukturen.
+
+Anschließend soll ein **Canonical Authentication Framework 1.0** als verbindlicher Entwicklungs- und Governance-Rahmen konzipiert werden.
+
+Das Framework soll festlegen:
+
+* welche Identitäten K kennt,
+* wie Identitäten eindeutig bestimmt werden,
+* wie Authentisierung durchgeführt wird,
+* wie Vertrauensstufen vergeben werden,
+* wie Sitzungen entstehen und enden,
+* wie Authentisierungsergebnisse nachgewiesen werden,
+* wie privilegierte Zugriffe geschützt werden,
+* wie Agenten, Dienste und interne Komponenten authentisiert werden,
+* wie Authentisierung von Autorisierung getrennt bleibt,
+* wie historische Authentisierungskomponenten behandelt werden,
+* wie zukünftige Authentisierungsverfahren integriert werden dürfen.
+
+## 3. Zentrale Vorgabe
+
+**Keine produktive Authentisierungslogik darf in diesem Auftrag ungeprüft ersetzt, abgeschaltet oder grundlegend umgebaut werden.**
+
+Der Auftrag ist in erster Linie:
+
+1. Bestandsaufnahme,
+2. Architekturprüfung,
+3. Risikoanalyse,
+4. kanonische Definition,
+5. Integrationsplanung,
+6. Vorbereitung einer späteren kontrollierten Umsetzung.
+
+Eine technische Implementierung ist nur zulässig, wenn sie ausdrücklich als risikoarme, additive und rückwärtskompatible Grundstruktur erforderlich ist.
+
+## 4. Ziel des Canonical Authentication Framework
+
+Das CAF 1.0 soll der verbindliche kanonische Rahmen für alle Authentisierungsvorgänge in Projekt Kontinuum werden.
+
+Es soll keine einzelne Login-Methode darstellen, sondern eine übergeordnete Architektur- und Governance-Schicht.
+
+Das CAF muss insbesondere folgende Grundfragen beantworten:
+
+1. **Wer oder was fordert Zugriff an?**
+2. **Welche dauerhafte Identität besitzt diese Entität?**
+3. **Mit welchem Verfahren wird die Identität nachgewiesen?**
+4. **Wie zuverlässig ist dieser Nachweis?**
+5. **In welchem Sicherheitskontext erfolgt der Zugriff?**
+6. **Wie lange gilt die Authentisierung?**
+7. **Welche Nachweise werden protokolliert?**
+8. **Wann muss eine erneute Authentisierung erfolgen?**
+9. **Wie werden kompromittierte oder veraltete Nachweise gesperrt?**
+10. **Welche Komponenten dürfen Authentisierungsergebnisse ausstellen oder akzeptieren?**
+
+## 5. Verbindliche Architekturtrennung
+
+Das CAF muss folgende Bereiche strikt voneinander trennen:
+
+### 5.1 Identität
+
+Beschreibt, **wer oder was eine Entität ist**.
+
+Beispiele:
+
+* Creator,
+* Superadministrator,
+* lokaler Benutzer,
+* zukünftiger Unternehmensbenutzer,
+* Forscher,
+* Agent,
+* Systemdienst,
+* Connector,
+* externe Anwendung,
+* Gerät,
+* automatisierter Prozess.
+
+### 5.2 Authentisierung
+
+Beschreibt, **wie eine behauptete Identität nachgewiesen wird**.
+
+Beispiele:
+
+* Passwort,
+* lokale Gerätebindung,
+* Wiederherstellungsschlüssel,
+* Zertifikat,
+* kryptografischer Schlüssel,
+* Token,
+* biometrisches Verfahren,
+* Mehrfaktorverfahren,
+* vertrauenswürdiger lokaler Systemkontext.
+
+### 5.3 Autorisierung
+
+Beschreibt, **was eine authentisierte Identität tun darf**.
+
+Das CAF darf Autorisierung nicht selbst vollständig übernehmen.
+
+Es muss jedoch ein klar definiertes, prüfbares Authentisierungsergebnis an die zuständige Autorisierungs-, Policy- oder Governance-Schicht übergeben.
+
+### 5.4 Sitzung
+
+Beschreibt den zeitlich begrenzten Sicherheitskontext nach erfolgreicher Authentisierung.
+
+### 5.5 Audit und Nachweis
+
+Beschreibt, wie Authentisierungsvorgänge nachvollziehbar, manipulationsgeschützt und datensparsam dokumentiert werden.
+
+## 6. Prüfauftrag – Bestandsaufnahme
+
+Untersuche das gesamte Projekt auf bestehende oder historische Komponenten mit Bezug zu:
+
+* Authentisierung,
+* Login,
+* Passwort,
+* Benutzerverwaltung,
+* Administratorzugriff,
+* Superadministratorzugriff,
+* Creator-Identität,
+* Rollen,
+* Berechtigungen,
+* Access Control,
+* Session Management,
+* Tokens,
+* API Keys,
+* Secrets,
+* Recovery Keys,
+* Passwort-Reset,
+* Gerätebindung,
+* Identitätsprüfung,
+* Agentenidentitäten,
+* Dienstkonten,
+* Connector-Zugriffe,
+* Datenbankfelder für Benutzer oder Sitzungen,
+* GUI-Anmeldefunktionen,
+* Startskripte mit Zugangsdaten,
+* Konfigurationsdateien,
+* Umgebungsvariablen,
+* Protokolle mit sensiblen Daten,
+* Audit-Ereignisse,
+* Tests,
+* Dokumentation,
+* historische Authentisierungsversionen.
+
+Berücksichtige insbesondere folgende Bereiche, sofern vorhanden:
+
+* `01_system/`
+* `03_memory/`
+* `05_connectors/`
+* `12_agents/`
+* `13_tools/`
+* `14_documents/`
+* `16_installation/`
+* `17_tests/`
+* `24_config/`
+* `31_reports/`
+* `32_data/`
+* `33_learning/`
+* `02_versions/`
+* `09_backups/`
+
+## 7. Zu prüfende Risiken
+
+Prüfe mindestens auf folgende Risiken:
+
+### 7.1 Parallele Authentisierungssysteme
+
+* mehrere Login-Pfade,
+* unterschiedliche Passwortprüfungen,
+* alte und neue Authentisierung parallel,
+* widersprüchliche Benutzerquellen,
+* mehrere Session-Systeme,
+* unterschiedliche Fehlerbehandlung.
+
+### 7.2 Unsichere Speicherung
+
+* Klartextpasswörter,
+* reversible Passwortspeicherung,
+* unsichere Hashverfahren,
+* hart codierte Zugangsdaten,
+* Secrets in Quellcode oder Konfigurationsdateien,
+* sensible Daten in Logs,
+* Recovery Keys ohne ausreichenden Schutz,
+* unverschlüsselte Token oder Sitzungsdaten.
+
+### 7.3 Fehlende Trennung
+
+* Vermischung von Authentisierung und Autorisierung,
+* Rollenprüfung direkt in Passwortfunktionen,
+* Creator-Identität als bloßer Stringvergleich,
+* privilegierte Rechte ohne erneute Authentisierung,
+* Agentenrechte ohne eindeutige Agentenidentität.
+
+### 7.4 Sitzungsrisiken
+
+* unbegrenzte Sitzungen,
+* fehlende Ablaufzeiten,
+* wiederverwendbare Sitzungskennungen,
+* fehlende Abmeldung,
+* fehlende Session-Invalidierung,
+* unklare parallele Sitzungen,
+* fehlende Bindung an Sicherheitskontext oder Gerät.
+
+### 7.5 Audit- und Datenschutzrisiken
+
+* fehlende Authentisierungsnachweise,
+* zu detaillierte Speicherung sensibler Daten,
+* Passwörter oder Tokens in Logs,
+* fehlende Manipulationserkennung,
+* unklare Aufbewahrungsfristen,
+* fehlende Trennung zwischen Sicherheitsprotokoll und Nutzungsprotokoll.
+
+### 7.6 Wiederherstellungsrisiken
+
+* Recovery-Verfahren mit zu hohen Rechten,
+* Rücksetzung ohne Identitätsprüfung,
+* dauerhaft gültige Wiederherstellungsschlüssel,
+* fehlende Sperrung kompromittierter Schlüssel,
+* Umgehung des regulären Authentisierungspfads.
+
+### 7.7 Interne Identitätsrisiken
+
+* Agenten ohne dauerhafte Identität,
+* Dienste mit gemeinsam genutzten Zugangsdaten,
+* Connectoren ohne Herkunftsnachweis,
+* interne Komponenten, die sich gegenseitig ungeprüft vertrauen,
+* fehlende Unterscheidung zwischen Mensch, Agent, Dienst und Gerät.
+
+## 8. Zu entwerfendes kanonisches Identitätsmodell
+
+Entwirf ein schlankes, erweiterbares Identitätsmodell.
+
+Jede authentisierbare Entität soll mindestens besitzen können:
+
+* `identity_id`
+* `identity_type`
+* `canonical_name`
+* `display_name`
+* `status`
+* `trust_domain`
+* `created_at`
+* `updated_at`
+* `valid_from`
+* `valid_until`
+* `authentication_methods`
+* `credential_references`
+* `security_state`
+* `revocation_state`
+* `metadata`
+* `provenance`
+* `schema_version`
+
+Mögliche Identitätstypen:
+
+* `CREATOR`
+* `SUPERADMIN`
+* `HUMAN_USER`
+* `ENTERPRISE_USER`
+* `RESEARCH_USER`
+* `AGENT`
+* `SYSTEM_SERVICE`
+* `CONNECTOR`
+* `DEVICE`
+* `EXTERNAL_APPLICATION`
+
+Prüfe, ob Creator und Superadministrator:
+
+* dieselbe Identität mit unterschiedlichen Rollen,
+* getrennte Identitäten,
+* oder eine Identität mit besonders geschütztem Vertrauensanker
+
+sein sollten.
+
+Gib hierzu eine klare Architekturentscheidung mit Begründung ab.
+
+## 9. Authentisierungsverfahren
+
+Das CAF soll verschiedene Authentisierungsverfahren unterstützen können, ohne sie fest in den Kern einzubauen.
+
+Definiere daher eine kanonische Schnittstelle für Authentisierungsverfahren.
+
+Mögliche Verfahren:
+
+* Passwort,
+* Passphrase,
+* lokaler Recovery Key,
+* kryptografischer Schlüssel,
+* Zertifikat,
+* zeitlich begrenztes Token,
+* Gerätebindung,
+* Mehrfaktorverfahren,
+* Betriebssystemkonto,
+* externe Identitätsquelle,
+* zukünftige biometrische Verfahren.
+
+Jedes Verfahren soll mindestens beschreiben:
+
+* Methoden-ID,
+* Methodenklasse,
+* unterstützte Identitätstypen,
+* Vertrauensniveau,
+* erforderliche Eingaben,
+* erlaubte Einsatzbereiche,
+* Gültigkeitsdauer,
+* Sperrstatus,
+* Erneuerungsregeln,
+* Widerrufsregeln,
+* Audit-Anforderungen,
+* Fallback-Regeln,
+* Fehlerverhalten.
+
+## 10. Authentication Assurance Levels
+
+Prüfe die Einführung kanonischer Authentisierungs- oder Vertrauensstufen.
+
+Beispiel:
+
+* `AAL-0` – nicht authentisiert
+* `AAL-1` – einfacher Identitätsnachweis
+* `AAL-2` – verstärkter Identitätsnachweis
+* `AAL-3` – hoch vertrauenswürdige Authentisierung
+* `AAL-4` – besonders geschützter Creator-/Systemkern-Zugriff
+
+Die konkrete Zahl und Benennung darf angepasst werden.
+
+Wichtig ist:
+
+* Die Vertrauensstufe muss aus dem tatsächlich verwendeten Verfahren entstehen.
+* Sie darf nicht einfach durch eine Rolle behauptet werden.
+* Bestimmte kritische Aktionen müssen eine Mindeststufe verlangen können.
+* Eine Sitzung kann bei Zeitablauf oder Kontextänderung heruntergestuft werden.
+* Für besonders kritische Operationen muss eine erneute Authentisierung möglich sein.
+
+## 11. Kanonisches Authentisierungsergebnis
+
+Definiere ein standardisiertes, unveränderliches Authentisierungsergebnis.
+
+Es soll mindestens enthalten:
+
+* `authentication_event_id`
+* `identity_id`
+* `identity_type`
+* `authentication_method_id`
+* `assurance_level`
+* `authenticated_at`
+* `valid_until`
+* `session_id`
+* `security_context`
+* `device_context`
+* `origin`
+* `result`
+* `failure_reason_code`
+* `policy_version`
+* `framework_version`
+* `audit_reference`
+
+Das Authentisierungsergebnis darf keine Passwörter, Recovery Keys, geheimen Tokens oder sonstigen Geheimnisse enthalten.
+
+## 12. Session Framework
+
+Entwirf ein kanonisches Sitzungsmodell.
+
+Eine Sitzung soll mindestens besitzen:
+
+* eindeutige Session-ID,
+* zugeordnete Identity-ID,
+* Authentisierungsstufe,
+* Erstellungszeitpunkt,
+* Ablaufzeitpunkt,
+* maximale Lebensdauer,
+* Inaktivitätsgrenze,
+* Status,
+* Sicherheitskontext,
+* Geräte- oder Prozesskontext,
+* Authentisierungsverfahren,
+* letzte sicherheitsrelevante Aktivität,
+* Grund der Beendigung,
+* Widerrufsstatus.
+
+Zu definieren sind mindestens:
+
+* Session-Erstellung,
+* Session-Verlängerung,
+* Session-Ablauf,
+* explizite Abmeldung,
+* administrative Sperrung,
+* globale Invalidierung,
+* Re-Authentisierung,
+* Privilegienanhebung,
+* Privilegienrücknahme,
+* parallele Sitzungen,
+* Verhalten bei Systemneustart.
+
+## 13. Privilegierte Authentisierung
+
+Definiere besondere Regeln für:
+
+* Creator-Zugriff,
+* Superadministrator-Zugriff,
+* Änderungen an Foundation- oder Canonical-Komponenten,
+* Änderung von Sicherheitsrichtlinien,
+* Änderung von Authentisierungsverfahren,
+* Zugriff auf Secrets,
+* Wiederherstellung,
+* Release-Freigaben,
+* Löschung oder Manipulation von Auditdaten,
+* Aktivierung externer Connectoren,
+* Änderung von Agentenrechten.
+
+Für kritische Operationen ist zu prüfen:
+
+* Step-up Authentication,
+* erneute Passwort- oder Schlüsselauthentisierung,
+* Mehrfaktoranforderung,
+* zeitlich begrenzte Privilegien,
+* Vier-Augen-Prinzip für Unternehmensvarianten,
+* gesonderte Auditierung,
+* technische Unveränderbarkeit bestimmter Nachweise.
+
+## 14. Agenten-, Dienst- und Connector-Authentisierung
+
+Das CAF darf sich nicht nur auf menschliche Benutzer beschränken.
+
+Definiere daher ein Modell für interne technische Identitäten.
+
+Jeder Agent, Dienst oder Connector soll:
+
+* eine eindeutige Identität besitzen,
+* seinen Typ nachweisen können,
+* einen festgelegten Vertrauensbereich haben,
+* nur zugelassene Authentisierungsverfahren verwenden,
+* keine menschlichen Zugangsdaten wiederverwenden,
+* widerrufbar sein,
+* einer Version oder Instanz zugeordnet werden können,
+* auditierbare Authentisierungsereignisse erzeugen.
+
+Prüfe die spätere Verbindung mit:
+
+* Agent Registry,
+* Canonical API Registry,
+* Artifact Identity,
+* Artifact Dependency Graph,
+* Capability Resolution Engine,
+* Execution Planner,
+* Orchestrator Core,
+* Connector Governance,
+* Audit Framework,
+* Policy Engine.
+
+## 15. Verbindung mit Artifact Identity und kanonischer Identität
+
+Prüfe ausdrücklich, wie das CAF mit einer zukünftigen oder bereits geplanten **Artifact Identity** zusammenwirken soll.
+
+Identitäten und Artefakte dürfen nicht vermischt werden.
+
+Es muss unterschieden werden zwischen:
+
+* der Identität eines Benutzers,
+* der Identität eines Agenten,
+* der Identität eines Dienstes,
+* der Identität eines Gerätes,
+* der Identität eines Authentisierungsnachweises,
+* der Identität eines Artefakts,
+* der Identität einer Sitzung,
+* der Identität eines Authentisierungsereignisses.
+
+Definiere klare Referenzen zwischen diesen Identitätstypen.
+
+## 16. Recovery und Notfallzugriff
+
+Entwirf ein kontrolliertes Recovery-Modell.
+
+Zu prüfen sind:
+
+* Wiederherstellung eines Benutzerzugangs,
+* Wiederherstellung des Creator-Zugangs,
+* Verlust eines Gerätes,
+* Verlust eines Schlüssels,
+* kompromittiertes Passwort,
+* beschädigte Authentisierungsdatenbank,
+* Systemwiederherstellung aus Backup,
+* Notfallzugriff bei Governance- oder Runtime-Ausfall.
+
+Grundsätze:
+
+* Recovery darf normale Sicherheitsregeln nicht dauerhaft umgehen.
+* Recovery-Vorgänge müssen besonders stark auditierbar sein.
+* Wiederherstellungsnachweise müssen widerrufbar sein.
+* Recovery darf keine ungeschützte Hintertür erzeugen.
+* Ein Notfallzugriff muss zeitlich und funktional begrenzt sein.
+* Nach einem Recovery-Vorgang müssen alte Sitzungen und gefährdete Nachweise ungültig werden können.
+
+## 17. Fehlermodell
+
+Definiere kanonische Fehlercodes und Fehlerklassen.
+
+Beispiele:
+
+* unbekannte Identität,
+* gesperrte Identität,
+* ungültiger Nachweis,
+* abgelaufener Nachweis,
+* widerrufener Nachweis,
+* unzulässige Authentisierungsmethode,
+* unzureichende Vertrauensstufe,
+* abgelaufene Sitzung,
+* gesperrte Sitzung,
+* erneute Authentisierung erforderlich,
+* Rate Limit erreicht,
+* verdächtiger Authentisierungsversuch,
+* beschädigte Authentisierungsdaten,
+* nicht verfügbare Authentisierungsquelle.
+
+Benutzerseitige Fehlermeldungen dürfen keine Informationen liefern, die Angreifern das Erraten gültiger Identitäten oder Zugangsdaten erleichtern.
+
+Interne Audit- und Diagnoseinformationen dürfen detaillierter sein, müssen aber geschützt gespeichert werden.
+
+## 18. Schutz vor Angriffen
+
+Prüfe und konzipiere Schutzmaßnahmen gegen mindestens:
+
+* Brute Force,
+* Credential Stuffing,
+* Passwort-Raten,
+* Replay-Angriffe,
+* Session Hijacking,
+* Session Fixation,
+* Token-Diebstahl,
+* Timing-Angriffe,
+* manipulierte Authentisierungsergebnisse,
+* gefälschte Agentenidentitäten,
+* kompromittierte Connectoren,
+* Downgrade-Angriffe,
+* Umgehung durch alte Login-Pfade,
+* Missbrauch von Recovery-Funktionen,
+* Privilegieneskalation,
+* Log-Manipulation,
+* Denial of Service gegen Authentisierungsfunktionen.
+
+## 19. Datenschutz und Datensparsamkeit
+
+Definiere, welche Daten tatsächlich gespeichert werden müssen.
+
+Nicht dauerhaft zu speichern sind insbesondere:
+
+* Klartextpasswörter,
+* vollständige geheime Schlüssel,
+* ungeschützte Recovery Codes,
+* rohe biometrische Daten,
+* vollständige Tokens,
+* unnötige Geräteinformationen,
+* unnötige personenbezogene Verlaufsdaten.
+
+Authentisierungslogs sollen nach Möglichkeit nur enthalten:
+
+* Identitätsreferenz,
+* Zeitpunkt,
+* Ergebnis,
+* Verfahren,
+* Vertrauensstufe,
+* groben Ursprung,
+* Fehlerklasse,
+* Audit-Referenz.
+
+## 20. Mögliche CAF-Komponenten
+
+Prüfe ein schlankes Komponentenmodell, beispielsweise:
+
+* `CanonicalIdentityRegistry`
+* `CanonicalAuthenticationFramework`
+* `AuthenticationMethodRegistry`
+* `AuthenticationPolicyEvaluator`
+* `AuthenticationResult`
+* `AuthenticationSessionManager`
+* `CredentialReferenceManager`
+* `AuthenticationAuditAdapter`
+* `RecoveryCoordinator`
+* `AuthenticationStatusProvider`
+
+Diese Namen sind Vorschläge und dürfen an bestehende Namenskonventionen angepasst werden.
+
+Vermeide eine unnötige Aufteilung in zu viele Klassen oder Dienste.
+
+## 21. Mögliche kanonische Artefakte
+
+Prüfe die Erstellung folgender Artefakte:
+
+### Dokumentation
+
+* `14_documents/CANONICAL_AUTHENTICATION_FRAMEWORK_1_0.md`
+
+### Maschinenlesbare Definition
+
+* `24_config/canonical_authentication_framework_1_0.json`
+
+### Status- oder Prüfbericht
+
+* `31_reports/caf_1_0_status_report.md`
+
+### Optionales Schema
+
+* `24_config/schemas/canonical_authentication_framework_1_0.schema.json`
+
+### Optionales Identitätsschema
+
+* `24_config/schemas/canonical_identity_1_0.schema.json`
+
+### Optionales Sitzungsschema
+
+* `24_config/schemas/canonical_authentication_session_1_0.schema.json`
+
+### Optionales Authentisierungsergebnis-Schema
+
+* `24_config/schemas/canonical_authentication_result_1_0.schema.json`
+
+Vor der Erstellung ist zu prüfen, ob vorhandene Verzeichnis-, Schema- und Benennungskonventionen andere Zielpfade verlangen.
+
+## 22. Maschinenlesbare CAF-Definition
+
+Die JSON-Definition soll mindestens enthalten:
+
+* Framework-ID,
+* Name,
+* Version,
+* Status,
+* Zweck,
+* Geltungsbereich,
+* Identitätstypen,
+* Authentisierungsmethoden,
+* Assurance Levels,
+* Session-Regeln,
+* Recovery-Regeln,
+* Fehlerklassen,
+* Audit-Anforderungen,
+* Sicherheitsgrundsätze,
+* Datenschutzregeln,
+* Integrationspunkte,
+* verbotene Praktiken,
+* Migrationsregeln,
+* Schema-Version,
+* Provenienz,
+* Änderungsverlauf.
+
+## 23. Verbotene Praktiken
+
+Das CAF soll ausdrücklich folgende Praktiken verbieten:
+
+* Klartextpasswörter,
+* hart codierte produktive Secrets,
+* Authentisierung ausschließlich über Namen oder Rollen,
+* Creator-Prüfung durch bloßen Textvergleich,
+* unbegrenzt gültige Sitzungen,
+* nicht widerrufbare Tokens,
+* gemeinsame Zugangsdaten für mehrere Agenten oder Dienste,
+* Umgehung des CAF durch neue Sonderpfade,
+* direkte Berechtigungsvergabe innerhalb der Passwortprüfung,
+* Speicherung geheimer Nachweise in Audit-Logs,
+* unkontrollierte Fallback-Authentisierung,
+* stillschweigende Herabstufung von Sicherheitsanforderungen,
+* automatische Freigabe privilegierter Aktionen aufgrund einer alten Sitzung,
+* produktive Nutzung historischer Authentisierungskomponenten ohne ausdrückliche Freigabe.
+
+## 24. Integration in die bestehende Architektur
+
+Prüfe die Beziehung des CAF zu mindestens:
+
+* Canonical Development Governance,
+* Canonical Development Framework,
+* Canonical Architecture Manager,
+* Canonical Artifact Manager,
+* Canonical API Registry,
+* Foundation Layer,
+* Governance Layer,
+* Operational Layer,
+* Learning Layer,
+* Audit Framework,
+* Policy Engine,
+* Access Control,
+* Capability Resolution Engine,
+* Execution Planner,
+* Orchestrator Core,
+* Request Router,
+* Agent Registry,
+* Release Integrity,
+* Status Center,
+* GUI,
+* Start- und Installationsprozessen.
+
+Erstelle eine klare Verantwortungsmatrix:
+
+| Komponente                     | Verantwortung               | Darf Authentisierung ausführen? |         Darf Ergebnisse prüfen? | Darf Rechte vergeben? |
+| ------------------------------ | --------------------------- | ------------------------------: | ------------------------------: | --------------------: |
+| CAF                            | Authentisierungsrahmen      |                              Ja |                              Ja |                  Nein |
+| Autorisierungs-/Policy-Schicht | Berechtigungsentscheidung   |                            Nein |                              Ja |                    Ja |
+| Audit                          | Nachweis                    |                            Nein |                              Ja |                  Nein |
+| GUI                            | Eingabe und Anzeige         |                            Nein | Nein beziehungsweise nur Status |                  Nein |
+| Agenten                        | Authentisierungsanforderung |                    Nur über CAF |         Ja, soweit erforderlich |                  Nein |
+
+Passe die Matrix an die tatsächliche Architektur an.
+
+## 25. Migrationsstrategie
+
+Entwickle eine schrittweise Migrationsstrategie.
+
+### Phase 1 – Inventarisierung
+
+* bestehende Login- und Authentisierungspfade erfassen,
+* aktive und historische Komponenten unterscheiden,
+* Datenquellen und Session-Systeme identifizieren,
+* Risiken klassifizieren.
+
+### Phase 2 – Kanonische Definition
+
+* CAF-Dokumentation,
+* JSON-Definition,
+* Schemas,
+* Verantwortlichkeiten,
+* Sicherheitsregeln.
+
+### Phase 3 – Read-only Integration
+
+* bestehende Authentisierungsvorgänge beobachten,
+* Ergebnisse in kanonisches Format überführen,
+* Status und Audit ergänzen,
+* noch keine produktiven Pfade ersetzen.
+
+### Phase 4 – Adapterbetrieb
+
+* bestehende Login-Systeme über kontrollierte Adapter anbinden,
+* parallele Pfade sichtbar machen,
+* Abweichungen melden.
+
+### Phase 5 – Kontrollierte Migration
+
+* einzeln geprüfte Authentisierungspfade auf CAF umstellen,
+* Feature Flags verwenden,
+* Rückfallpunkte definieren,
+* bestehende Sitzungen und Daten migrieren.
+
+### Phase 6 – Stilllegung alter Pfade
+
+* erst nach vollständiger Verifikation,
+* dokumentierter Freigabe,
+* erfolgreichen Tests,
+* gesicherter Recovery-Möglichkeit,
+* aktualisierter Release Integrity.
+
+## 26. Tests
+
+Definiere mindestens folgende Testklassen:
+
+### Funktionale Tests
+
+* gültige Authentisierung,
+* ungültige Authentisierung,
+* gesperrte Identität,
+* abgelaufener Nachweis,
+* widerrufener Nachweis,
+* Session-Erstellung,
+* Session-Ablauf,
+* Abmeldung,
+* erneute Authentisierung,
+* Recovery.
+
+### Sicherheitstests
+
+* Brute-Force-Schutz,
+* Replay-Schutz,
+* Session-Invalidierung,
+* Privilegienanhebung,
+* Token-Widerruf,
+* manipulierte Authentisierungsergebnisse,
+* Agentenidentitätsfälschung,
+* Downgrade-Versuch.
+
+### Integritätstests
+
+* Schema-Validierung,
+* unveränderliche Ergebnisobjekte,
+* Audit-Vollständigkeit,
+* keine Secrets in Logs,
+* keine Klartextpasswörter,
+* keine direkten CAF-Umgehungen.
+
+### Kompatibilitätstests
+
+* bestehender Creator-Login,
+* bestehender Superadministratorzugriff,
+* GUI-Anmeldung,
+* lokale Startprozesse,
+* Agentenstarts,
+* Connector-Nutzung,
+* Neustart und Session-Verhalten.
+
+### Regressionstests
+
+Alle bestehenden Authentisierungs-, Access-Control-, Foundation-, Governance-, Runtime- und Release-Integrity-Tests müssen weiterhin ausgeführt werden.
+
+## 27. Sicherheitsanforderungen an Passwörter
+
+Falls Passwörter weiterhin verwendet werden, prüfe mindestens:
+
+* geeignetes modernes Passwort-Hashing,
+* individuelle Salts,
+* konfigurierbare Arbeitsfaktoren,
+* sichere Passwortänderung,
+* Schutz gegen bekannte kompromittierte Passwörter,
+* Rate Limiting,
+* temporäre Sperrung,
+* sichere Recovery,
+* keine unnötig starren Zeichenregeln,
+* Unterstützung langer Passphrasen,
+* keine Offenlegung durch Logs oder Fehlermeldungen.
+
+Treffe keine automatische Entscheidung über konkrete kryptografische Bibliotheken, ohne die bestehende technische Umgebung und Abhängigkeiten zu prüfen.
+
+## 28. Statusmodell
+
+Definiere einen CAF-Status, beispielsweise:
+
+* `NOT_PRESENT`
+* `DISCOVERED`
+* `ANALYZED`
+* `DEFINED`
+* `PARTIALLY_INTEGRATED`
+* `VERIFIED`
+* `ACTIVE`
+* `DEGRADED`
+* `BLOCKED`
+* `REVOKED`
+
+Der Status darf nicht allein durch das Vorhandensein von Dateien bestimmt werden.
+
+Er muss aus prüfbaren Nachweisen entstehen.
+
+## 29. Berichtspflicht
+
+Der Abschlussbericht muss mindestens enthalten:
+
+1. Zusammenfassung,
+2. untersuchte Dateien und Komponenten,
+3. bestehende Authentisierungspfade,
+4. erkannte Duplikate,
+5. erkannte Sicherheitsrisiken,
+6. aktive und historische Komponenten,
+7. vorgeschlagenes Identitätsmodell,
+8. vorgeschlagene Authentisierungsmethoden,
+9. Assurance-Level-Modell,
+10. Session-Modell,
+11. Recovery-Modell,
+12. Agenten- und Dienstidentitäten,
+13. Integrationsmatrix,
+14. Migrationsstrategie,
+15. Teststrategie,
+16. neu erstellte oder geänderte Artefakte,
+17. offene Fragen,
+18. Blocker,
+19. Restrisiken,
+20. klare Empfehlung.
+
+## 30. Entscheidungsstatus
+
+Der Bericht soll am Ende eine der folgenden Empfehlungen aussprechen:
+
+* **CAF 1.0 konzeptionell freigabefähig**
+* **CAF 1.0 mit Auflagen freigabefähig**
+* **CAF 1.0 noch nicht freigabefähig**
+* **CAF 1.0 durch kritische Altstruktur blockiert**
+
+Die Empfehlung muss nachvollziehbar begründet werden.
+
+## 31. Nichtziele
+
+Dieser Auftrag umfasst ausdrücklich nicht:
+
+* vollständige Neuerstellung des Login-Systems,
+* sofortige Ablösung aller Passwörter,
+* unkontrollierte Einführung externer Identitätsanbieter,
+* Einführung biometrischer Authentisierung,
+* zentrale Cloud-Abhängigkeit,
+* vollständige Neuentwicklung der Autorisierung,
+* Änderung der Creator- oder Superadministratorrechte,
+* Entfernung historischer Authentisierungsartefakte ohne Lifecycle-Prüfung,
+* produktive Migration ohne gesonderte Freigabe,
+* Speicherung oder Ausgabe realer Zugangsdaten im Bericht.
+
+## 32. Arbeitsregeln
+
+* Vor Änderungen immer zuerst den Bestand analysieren.
+* Keine Architekturannahmen ohne Dateinachweis.
+* Keine historischen Dateien reaktivieren.
+* Keine bestehenden produktiven Pfade ungeprüft ersetzen.
+* Keine Secrets in Berichte, Tests oder Konfigurationen schreiben.
+* Änderungen klein, nachvollziehbar und rückrollbar halten.
+* Bestehende kanonische Namens-, Schema- und Governance-Regeln beachten.
+* Neue Artefakte in CAM, Release Integrity, Glossar und relevante Architekturübersichten aufnehmen, sofern dies nach bestehender Governance erforderlich ist.
+* Unklare Sachverhalte als offene Punkte dokumentieren, nicht durch Vermutungen schließen.
+* Sicherheitskritische Befunde deutlich kennzeichnen.
+* Bei kritischen Risiken keine automatische Reparatur vornehmen, sondern zunächst Befund und Handlungsempfehlung liefern.
+
+## 33. Erwartetes Endergebnis
+
+Am Ende des Auftrags soll Projekt Kontinuum über eine belastbare Grundlage für ein **Canonical Authentication Framework 1.0** verfügen.
+
+Das Ergebnis soll:
+
+* vorhandene Authentisierung vollständig einordnen,
+* Identität, Authentisierung und Autorisierung klar trennen,
+* Creator-, Benutzer-, Agenten-, Dienst- und Geräteidentitäten berücksichtigen,
+* ein kanonisches Authentisierungsergebnis definieren,
+* Sitzungen und Vertrauensstufen regeln,
+* Recovery kontrollierbar machen,
+* sensible Daten schützen,
+* parallele Authentisierungspfade sichtbar machen,
+* eine sichere spätere Migration vorbereiten,
+* keine produktive Authentisierung vorschnell verändern.
+
+Führe diesen Auftrag vollständig aus und liefere anschließend den strukturierten Prüf- und Statusbericht.

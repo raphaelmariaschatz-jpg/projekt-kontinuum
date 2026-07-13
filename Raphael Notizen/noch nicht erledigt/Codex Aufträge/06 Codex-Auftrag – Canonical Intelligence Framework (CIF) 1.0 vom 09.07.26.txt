@@ -1,0 +1,289 @@
+# Codex-Auftrag – Canonical Intelligence Framework (CIF) 1.0
+
+## Ziel des Auftrags
+
+Bitte prüfe und konzipiere das neue Architekturkonzept:
+
+```text
+Canonical Intelligence Framework (CIF) 1.0
+```
+
+Das Canonical Intelligence Framework soll die kanonische Definition von Intelligenz innerhalb von Projekt Kontinuum bilden.
+
+Es beschreibt nicht einzelne Algorithmen oder Modelle, sondern legt fest, welche grundlegenden Fähigkeiten ein intelligentes System besitzen und wie diese Fähigkeiten innerhalb der Canonical Architecture zusammenwirken.
+
+---
+
+# Grundsatz
+
+Projekt Kontinuum versteht Intelligenz nicht als die Fähigkeit, möglichst viele Antworten zu erzeugen.
+
+Intelligenz bedeutet vielmehr die Fähigkeit,
+
+* Informationen zu verstehen,
+* Zusammenhänge zu erkennen,
+* Wissen sinnvoll anzuwenden,
+* Entscheidungen begründet zu treffen,
+* aus Erfahrungen zu lernen,
+* eigenes Handeln kritisch zu reflektieren,
+* und sich innerhalb klarer Governance-Regeln weiterzuentwickeln.
+
+Das CIF bildet hierfür den kanonischen Bezugsrahmen.
+
+---
+
+# Zielsetzung
+
+Das CIF soll die gemeinsame Grundlage für sämtliche zukünftigen intelligenten Funktionen bilden.
+
+Es definiert nicht:
+
+* konkrete Modelle,
+* Agenten,
+* Algorithmen,
+* Runtime-Komponenten,
+
+sondern die grundlegenden Intelligenzdimensionen, an denen sich die gesamte Architektur orientiert.
+
+---
+
+# Kanonische Intelligenzdimensionen
+
+Bitte prüfe folgende Dimensionen:
+
+### 1. Wahrnehmen (Perception)
+
+* Eingaben verstehen
+* Kontext erkennen
+* relevante Informationen auswählen
+* Unsicherheiten erkennen
+
+---
+
+### 2. Verstehen (Understanding)
+
+* Bedeutungen ableiten
+* Beziehungen erkennen
+* Ursache-Wirkungs-Zusammenhänge verstehen
+* Wissensstrukturen aufbauen
+
+---
+
+### 3. Schlussfolgern (Reasoning)
+
+* logisch argumentieren
+* Hypothesen bilden
+* Alternativen vergleichen
+* Entscheidungen begründen
+
+---
+
+### 4. Planen (Planning)
+
+* Ziele strukturieren
+* Prioritäten setzen
+* Strategien entwickeln
+* Ausführungspläne erzeugen
+
+---
+
+### 5. Handeln (Execution)
+
+* Aufgaben ausführen
+* Werkzeuge auswählen
+* Ergebnisse erzeugen
+* Prozesse steuern
+
+---
+
+### 6. Lernen (Learning)
+
+* Erfahrungen speichern
+* Wissen konsolidieren
+* Fähigkeiten erweitern
+* Kompetenzentwicklung unterstützen
+
+---
+
+### 7. Reflektieren (Reflection)
+
+* Ergebnisse prüfen
+* Fehler erkennen
+* Verbesserungen ableiten
+* Meta-Reasoning unterstützen
+
+---
+
+### 8. Weiterentwickeln (Evolution)
+
+* Architektur bewerten
+* Verbesserungsvorschläge erzeugen
+* neue Fähigkeiten vorbereiten
+* langfristige Entwicklung unterstützen
+
+---
+
+# Architektur-Einordnung
+
+Bitte prüfe folgende Einordnung:
+
+```text
+Foundation Layer
+        │
+Governance Layer
+        │
+Canonical Layer
+        │
+Canonical Intelligence Framework
+        │
+Canonical Cognitive Pipeline
+        │
+Capability Resolution Engine
+        │
+Execution Planner
+        │
+Orchestrator Core
+        │
+Canonical Learning Layer
+        │
+CAICF
+        │
+User
+```
+
+Das CIF bildet die Definition der Intelligenz.
+
+Die CCP beschreibt den Denkprozess.
+
+Das CAICF beschreibt den Kompetenzaufbau beim Menschen.
+
+---
+
+# Beziehungen zu bestehenden Architekturkomponenten
+
+Bitte prüfe die Beziehungen zu:
+
+* Foundation Layer
+* Governance Layer
+* Canonical Architecture
+* Canonical Cognitive Pipeline (CCP)
+* Canonical AI Competency Framework (CAICF)
+* Capability Resolution Engine (CRE)
+* Execution Planner
+* Orchestrator Core
+* Learning Agent
+* Canonical Memory
+* CAM / ALP
+* CDF
+* CDG
+* Meta-Reasoning
+* Reflection Engine
+* Release Integrity
+* Projektchronik
+* Canonical Glossary
+
+---
+
+# Arbeitsauftrag
+
+In dieser Phase erfolgt **keine Implementierung**.
+
+Bitte:
+
+1. analysiere das Architekturkonzept
+2. prüfe die Einordnung in die Canonical Architecture
+3. definiere die Intelligenzdimensionen
+4. identifiziere notwendige Schnittstellen
+5. grenze CIF klar gegenüber CCP und CAICF ab
+6. prüfe Erweiterbarkeit für spätere Versionen
+7. erstelle einen kanonischen Implementierungsplan
+8. dokumentiere Risiken und offene Fragen
+
+---
+
+# Erwartete Dateien
+
+Bitte prüfe, ob folgende Dateien sinnvoll sind:
+
+```text
+14_documents/CANONICAL_INTELLIGENCE_FRAMEWORK_1_0.md
+24_config/canonical_intelligence_framework_1_0.json
+31_reports/cif_1_0_status_report.md
+```
+
+Optional:
+
+```text
+14_documents/CIF_IMPLEMENTATION_PLAN_1_0.md
+24_config/cif_intelligence_dimensions_1_0.json
+```
+
+---
+
+# Erwartetes JSON-Grundschema
+
+Das Framework sollte mindestens enthalten:
+
+* Framework-Informationen
+* Version
+* Status
+* Intelligenzdimensionen
+* Beziehungen zur Canonical Architecture
+* Schnittstellen
+* Erweiterungspunkte
+* Governance-Bezug
+
+---
+
+# Leitplanken
+
+Erlaubt:
+
+* Architekturkonzept
+* JSON-Schema
+* Statusbericht
+* Glossar-Ergänzung
+* Dokumentation
+* Implementierungsplan
+
+Nicht erlaubt:
+
+* Runtime-Änderungen
+* Änderungen an CRE
+* Änderungen am Execution Planner
+* Änderungen am Orchestrator Core
+* neue Agentenimplementierungen
+* Datenbankmigrationen
+* Refactorings produktiver Komponenten
+
+---
+
+# Entscheidungskriterium
+
+Das Canonical Intelligence Framework soll nur dann als GO bewertet werden, wenn es:
+
+* die bestehende Architektur sinnvoll ergänzt,
+* eine klare Definition von Intelligenz liefert,
+* CCP und CAICF unterstützt,
+* Foundation und Governance stärkt,
+* langfristig erweiterbar bleibt,
+* die Architektur vereinfacht statt verkompliziert.
+
+---
+
+# Erwartetes Ergebnis
+
+Bitte liefere:
+
+1. Bestandsanalyse
+2. Architektur-Einordnung
+3. Definition der Intelligenzdimensionen
+4. Schnittstellenübersicht
+5. Abgrenzung zu CCP und CAICF
+6. Vorschlag für Dokumente und JSON-Strukturen
+7. Risiken und offene Fragen
+8. Empfehlung: GO / NO-GO / SPÄTER
+9. Kanonischen Implementierungsplan
+10. Statusbericht unter `31_reports`, falls umgesetzt.
+
+Ziel ist ein kanonischer Bezugsrahmen für die Definition von Intelligenz in Projekt Kontinuum, der sämtliche zukünftigen kognitiven, lernenden und adaptiven Komponenten auf eine gemeinsame Grundlage stellt.

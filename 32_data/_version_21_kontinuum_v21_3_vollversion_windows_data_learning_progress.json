@@ -1,0 +1,145 @@
+{
+  "subjects": {
+    "astronomie": {
+      "subject": "astronomie",
+      "area": "Naturwissenschaften und Raumfahrt",
+      "status": "Grundbestand angelegt",
+      "progress_percent": 7,
+      "learned_concepts": [
+        "Planet",
+        "Stern",
+        "Galaxie",
+        "Gravitation"
+      ],
+      "goals": [
+        "Sonnensystem",
+        "Sternentwicklung",
+        "Kosmologie",
+        "Raumfahrttechnik"
+      ],
+      "sources": [],
+      "notes": [
+        "Grundstruktur angelegt."
+      ]
+    },
+    "biologie": {
+      "subject": "biologie",
+      "area": "Naturwissenschaften",
+      "status": "Grundbestand angelegt",
+      "progress_percent": 8,
+      "learned_concepts": [
+        "Zelle",
+        "Organismus",
+        "Evolution",
+        "Ökosystem"
+      ],
+      "goals": [
+        "Genetik",
+        "Anatomie",
+        "Botanik",
+        "Zoologie",
+        "Ökologie"
+      ],
+      "sources": [],
+      "notes": [
+        "Grundstruktur angelegt."
+      ]
+    },
+    "chemie": {
+      "subject": "chemie",
+      "area": "Naturwissenschaften",
+      "status": "Lernziel aktiv",
+      "progress_percent": 8,
+      "learned_concepts": [
+        "Stoff",
+        "Element",
+        "Verbindung",
+        "Reaktion"
+      ],
+      "goals": [
+        "Periodensystem",
+        "Bindungen",
+        "Säuren und Basen",
+        "Stöchiometrie",
+        "Organische Chemie"
+      ],
+      "sources": [],
+      "notes": [
+        "Curriculum angelegt; Quellen und Experimente können später verknüpft werden."
+      ]
+    },
+    "mathematik": {
+      "subject": "mathematik",
+      "area": "Naturwissenschaftliche Grundlagen",
+      "status": "Grundbestand angelegt",
+      "progress_percent": 18,
+      "learned_concepts": [
+        "Grundrechenarten",
+        "Punkt-vor-Strich",
+        "einfache Multiplikation",
+        "Zahlenvergleich",
+        "Metaphernfreie Rechenfragen"
+      ],
+      "goals": [
+        "Bruchrechnung",
+        "Prozentrechnung",
+        "Gleichungen",
+        "Geometrie",
+        "Funktionen",
+        "Lineare Algebra",
+        "Analysis"
+      ],
+      "sources": [],
+      "notes": [
+        "Grundbestand ist intern angelegt. Quellenbasiertes Vertiefungslernen benötigt Dokumente oder Recherchefreigabe."
+      ]
+    },
+    "naturwissenschaften": {
+      "subject": "naturwissenschaften",
+      "area": "Gesamtbereich",
+      "status": "Grundbestand angelegt",
+      "progress_percent": 11,
+      "learned_concepts": [
+        "Mathematik",
+        "Physik",
+        "Chemie",
+        "Biologie",
+        "Astronomie als verknüpfte Lernfelder"
+      ],
+      "goals": [
+        "systematischer Lernplan",
+        "Quellenanalyse",
+        "Wissensgraph-Verknüpfung",
+        "Fortschrittsmessung"
+      ],
+      "sources": [],
+      "notes": [
+        "Dachbereich fuer alle naturwissenschaftlichen Lernfelder."
+      ]
+    },
+    "physik": {
+      "subject": "physik",
+      "area": "Naturwissenschaften",
+      "status": "Grundbestand angelegt",
+      "progress_percent": 10,
+      "learned_concepts": [
+        "Kraft",
+        "Energie",
+        "Bewegung",
+        "Hooksches Gesetz als Lernziel"
+      ],
+      "goals": [
+        "Mechanik",
+        "Optik",
+        "Elektrizität",
+        "Thermodynamik",
+        "Wellen",
+        "Moderne Physik"
+      ],
+      "sources": [],
+      "notes": [
+        "Grundstruktur vorhanden; konkrete Fundstellen werden bei Quellenanalyse ergänzt."
+      ]
+    }
+  }
+}

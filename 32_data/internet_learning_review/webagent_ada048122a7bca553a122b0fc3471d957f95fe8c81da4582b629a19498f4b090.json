@@ -1,0 +1,61 @@
+{
+  "url": "https://www.google.de",
+  "title": "Google",
+  "topic": "gehe zu:",
+  "retrieved_at": "2026-07-03T14:35:32.251782+00:00",
+  "sha256": "d250fea0bab8d9255560bd89d21bc1c10f554bd4445ea1e3ba608cd0454e4b51",
+  "summary": "© 2026 - Datenschutzerklärung - Nutzungsbedingungen",
+  "learning_summary": "Google: © 2026 - Datenschutzerklärung - Nutzungsbedingungen",
+  "http_status": 200,
+  "links": [
+    {
+      "url": "https://mail.google.com/mail/&ogbl",
+      "text": "Gmail"
+    },
+    {
+      "url": "https://www.google.com/imghp?hl=de&ogbl",
+      "text": "Bilder"
+    },
+    {
+      "url": "https://www.google.de/intl/de/about/products",
+      "text": ""
+    },
+    {
+      "url": "https://accounts.google.com/ServiceLogin?hl=de&passive=true&continue=https://www.google.com/&ec=GAZAmgQ",
+      "text": "Anmelden"
+    },
+    {
+      "url": "https://www.google.de/advanced_search?hl=de&authuser=0",
+      "text": ""
+    },
+    {
+      "url": "https://www.google.de/intl/de/ads/",
+      "text": "Werbeprogramme"
+    },
+    {
+      "url": "https://www.google.de/services/",
+      "text": "Unternehmensangebote"
+    },
+    {
+      "url": "https://www.google.de/intl/de/about.html",
+      "text": "Über Google"
+    },
+    {
+      "url": "https://www.google.com/setprefdomain?prefdom=DE&prev=https://www.google.de/&sig=K_L_cmyaBT8co-z_0AJKPQMR9ZjZw%3D",
+      "text": "Google.de © 2026 -"
+    },
+    {
+      "url": "https://www.google.de/intl/de/policies/privacy/",
+      "text": "Datenschutzerklärung -"
+    },
+    {
+      "url": "https://www.google.de/intl/de/policies/terms/",
+      "text": "Nutzungsbedingungen Google-Apps"
+    }
+  ],
+  "review_required": true,
+  "write_to_memory_directly": false,
+  "status": "queued_for_review",
+  "policy": "web_agent_1_0",
+  "review_status": "pending"
+}

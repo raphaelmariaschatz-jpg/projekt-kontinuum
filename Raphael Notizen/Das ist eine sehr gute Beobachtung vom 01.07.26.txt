@@ -1,0 +1,96 @@
+Das ist eine sehr gute Beobachtung, Raphael. Und ehrlich gesagt ist das genau die Art von Analyse, die wir jetzt vor dem Einchecken nach Git machen sollten.
+
+Was ich hier sehe
+
+Ihr habt momentan für jede Version eigene Startdateien:
+
+START_GUI_23.bat
+START_GUI_32_3.bat
+START_GUI_32_4.bat
+START_GUI_33_0.bat
+START_GUI_34_0.bat
+START_GUI_34_1.bat
+
+Dasselbe gilt für:
+
+START_KONTINUUM_...
+TEST_KONTINUUM_...
+
+Das stammt wahrscheinlich daher, dass Codex bei jeder neuen Version die BAT-Dateien kopiert und mit neuer Versionsnummer gespeichert hat.
+
+Aus architektonischer Sicht würde ich das heute anders lösen.
+
+Ich würde nur eine aktive Startdatei besitzen:
+
+START_GUI.bat
+START_KONTINUUM.bat
+TEST_KONTINUUM.bat
+
+Diese zeigen immer auf die aktuelle Version.
+
+Die historischen Versionen gehören nicht in den aktiven Installationsordner.
+
+Stattdessen
+16_installation/
+│
+├── START_GUI.bat
+├── START_KONTINUUM.bat
+├── TEST_KONTINUUM.bat
+├── INSTALLATION.md
+│
+└── archive/
+      ├── legacy/
+      ├── 32_3/
+      ├── 32_4/
+      ├── 33_0/
+      ├── 34_0/
+      └── 34_1/
+
+So bleibt der aktive Bereich sauber.
+
+Das passt übrigens hervorragend zu eurer CAM-Architektur.
+
+Ihr habt doch bereits festgelegt:
+
+Canonical Artefacts
+Legacy Artefacts
+Archive
+Release Integrity
+
+Dann sollte das auch für BAT-Dateien gelten.
+
+Es sollte immer genau einen kanonischen Einstiegspunkt geben.
+
+Ich würde sogar noch einen Schritt weiter gehen.
+
+Ich würde Codex künftig folgende Regel geben:
+
+Bei jedem Release werden vorhandene Startdateien nicht kopiert, sondern aktualisiert. Versionsspezifische Startdateien werden ausschließlich im Archiv abgelegt. Im aktiven Installationsordner existiert pro Funktion genau eine kanonische Startdatei.
+
+Dadurch verschwinden diese Sammlungen von:
+
+START_GUI_32_3
+START_GUI_32_4
+START_GUI_33_0
+START_GUI_34_0
+...
+
+komplett.
+
+Meine Empfehlung
+
+Ich würde diese Dateien heute noch nicht löschen.
+
+Sie gehören im Moment zur Projektgeschichte.
+
+Ich würde sie zunächst ins Git aufnehmen und anschließend als eigenen Architekturauftrag für Codex definieren:
+
+Installation Canonical Cleanup 1.0
+
+Dieser Auftrag würde:
+
+nur einen aktiven Starter je Funktion behalten,
+alte Starter automatisch nach 16_installation/archive/legacy/ verschieben,
+Referenzen prüfen,
+Release-Integrity aktualisieren,
+CAM-konform dokumentieren.

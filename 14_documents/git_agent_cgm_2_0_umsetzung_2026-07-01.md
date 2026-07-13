@@ -138,3 +138,6 @@ Nach expliziter Governance-Freigabe kann CGM 2.0 um kontrollierte Freigabe-Workf
 - signierte Release-Tags nach Freigabe
 - Chronik-Schreibworkflow mit Foundation-/Governance-Check
 - TestAgent- und BuildAgent-Anbindung fuer belastbare Release-Gates
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

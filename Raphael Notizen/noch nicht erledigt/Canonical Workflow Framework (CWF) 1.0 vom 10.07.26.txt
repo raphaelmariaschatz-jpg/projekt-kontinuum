@@ -1,0 +1,523 @@
+Canonical Workflow Framework (CWF) 1.0 vom 10.07.26
+
+bezeichnen.
+
+Es wäre der verbindliche Rahmen dafür, wie mehrstufige Arbeitsabläufe in Projekt Kontinuum beschrieben, geprüft, ausgeführt, überwacht, unterbrochen, fortgesetzt und abgeschlossen werden.
+
+Kernaufgabe
+
+Ein Workflow ist mehr als ein Ausführungsplan.
+
+Der Execution Planner plant eine konkrete Ausführung.
+Der Orchestrator Core führt validierte Schritte aus.
+Das CWF definiert dagegen die allgemeine Struktur und die Regeln, nach denen solche Abläufe überhaupt aufgebaut sein müssen.
+
+Das CWF würde also festlegen:
+
+welche Bestandteile ein Workflow besitzt,
+welche Zustände er durchlaufen kann,
+wie Schritte voneinander abhängen,
+welche Bedingungen erfüllt sein müssen,
+wann menschliche Freigaben nötig sind,
+wie Fehler, Wiederholungen und Rückfälle behandelt werden,
+wie ein Workflow nachvollziehbar protokolliert wird.
+Abgrenzung zu bestehenden Komponenten
+CDF
+
+Das Canonical Development Framework beschreibt den Entwicklungsrahmen des Projekts.
+
+CDG
+
+Canonical Development Governance regelt Verantwortlichkeiten, Freigaben und Kontrolle.
+
+CCAF
+
+Das Canonical Code Agent Framework regelt, wie Code-Agenten arbeiten dürfen.
+
+CRE
+
+Die Capability Resolution Engine bestimmt, welche Fähigkeiten für einen Schritt benötigt werden.
+
+Execution Planner
+
+Erzeugt aus einem konkreten Auftrag einen validierten Ausführungsplan.
+
+Orchestrator Core
+
+Führt den validierten Plan aus.
+
+CWF
+
+Definiert den kanonischen Aufbau, die Zustände und das Verhalten mehrstufiger Arbeitsabläufe.
+
+Damit wäre das CWF die verbindende Prozessschicht zwischen Auftrag, Planung und Ausführung.
+
+Grunddefinition
+
+Ein kanonischer Workflow ist ein versionierter, nachvollziehbarer und regelgebundener Ablauf aus definierten Zuständen, Schritten, Übergängen, Bedingungen, Rollen, Freigaben, Eingaben, Ausgaben und Fehlerbehandlungen.
+
+Ein Workflow darf nicht nur aus einer losen Reihenfolge von Befehlen bestehen.
+
+Wichtige Bestandteile eines Workflows
+Workflow-Identität
+
+Jeder Workflow benötigt mindestens:
+
+workflow_id
+workflow_name
+workflow_version
+workflow_type
+status
+owner
+risk_class
+created_at
+updated_at
+
+Zusätzlich sollte jede konkrete Ausführung eine eigene Identität besitzen:
+
+workflow_run_id
+execution_id
+started_at
+completed_at
+trigger_reference
+
+So bleibt der Workflow als Vorlage von einer konkreten Ausführung getrennt.
+
+Workflow-Schritte
+
+Jeder Schritt sollte eindeutig beschreiben:
+
+step_id
+step_name
+step_type
+required_inputs
+produced_outputs
+required_capabilities
+assigned_role
+preconditions
+success_conditions
+failure_conditions
+timeout
+retry_policy
+rollback_policy
+next_steps
+
+Ein Schritt muss also nicht nur sagen, was getan werden soll, sondern auch:
+
+wann er starten darf,
+woran Erfolg erkannt wird,
+was bei Fehlern geschieht,
+welcher Schritt danach folgt.
+Workflow-Typen
+
+Für Version 1.0 wären folgende Typen sinnvoll:
+
+Sequential Workflow
+
+Schritte laufen fest nacheinander.
+
+A → B → C
+Conditional Workflow
+
+Der weitere Ablauf hängt von einer Bedingung ab.
+
+A → Prüfung
+      ├─ bestanden → B
+      └─ fehlgeschlagen → C
+Parallel Workflow
+
+Mehrere unabhängige Schritte können gleichzeitig oder unabhängig ausgeführt werden.
+
+      ┌→ B
+A →───┤
+      └→ C
+
+Ein nachfolgender Schritt darf erst starten, wenn die festgelegte Synchronisationsbedingung erfüllt ist.
+
+Approval Workflow
+
+Ein menschlicher oder autorisierter Freigabeschritt ist erforderlich.
+
+Analyse → Planung → Freigabe → Ausführung
+Review Workflow
+
+Ein Ergebnis wird durch eine unabhängige Rolle geprüft.
+
+Recovery Workflow
+
+Ein definierter Wiederherstellungsablauf wird nach einem Fehler gestartet.
+
+Für CWF 1.0 würde ich zunächst keine völlig frei modellierbaren komplexen Graphen vorsehen. Ein begrenztes, gut prüfbares Modell ist sicherer.
+
+Workflow-Zustände
+
+Das CWF sollte kanonische Zustände definieren, beispielsweise:
+
+DRAFT
+VALIDATING
+READY
+WAITING
+RUNNING
+PAUSED
+BLOCKED
+RETRYING
+ROLLING_BACK
+FAILED
+ABORTED
+COMPLETED
+VERIFIED
+REJECTED
+ARCHIVED
+
+Dabei muss klar geregelt sein, welche Übergänge zulässig sind.
+
+Beispielsweise:
+
+DRAFT → VALIDATING → READY → RUNNING → COMPLETED → VERIFIED
+
+Nicht zulässig wäre beispielsweise:
+
+DRAFT → VERIFIED
+Übergangsregeln
+
+Ein Workflow-Zustand darf nicht beliebig geändert werden.
+
+Jeder Übergang benötigt:
+
+einen Ausgangszustand,
+einen Zielzustand,
+eine Bedingung,
+eine berechtigte Rolle,
+gegebenenfalls eine Freigabe,
+ein Audit-Ereignis.
+
+Beispiel:
+
+from: READY
+to: RUNNING
+condition: plan_validated == true
+authorized_role: orchestrator
+Trigger
+
+Workflows können unterschiedlich gestartet werden:
+
+manueller Auftrag,
+Zeitplan,
+Ereignis,
+Statusänderung,
+neuer Datensatz,
+Fehlerereignis,
+genehmigter Entwicklungsauftrag,
+externer API-Aufruf.
+
+Für jeden Trigger muss feststehen:
+
+wer oder was ihn auslösen darf,
+welche Daten übergeben werden,
+welche Authentifizierung erforderlich ist,
+ob eine erneute Ausführung zulässig ist.
+Eingaben und Ausgaben
+
+Jeder Workflow muss definierte Ein- und Ausgaben besitzen.
+
+Eingaben
+
+Beispielsweise:
+
+Auftrag,
+Artefaktreferenzen,
+Konfiguration,
+Nutzerfreigabe,
+Testdaten,
+Risikoklasse.
+Ausgaben
+
+Beispielsweise:
+
+erzeugte Artefakte,
+Prüfberichte,
+Statusänderungen,
+Testresultate,
+Audit-Einträge,
+Folgeaufträge.
+
+Ein Workflow darf nicht stillschweigend Daten erzeugen oder verändern, die nicht als Ausgabe oder Seiteneffekt definiert sind.
+
+Preconditions und Postconditions
+
+Vor dem Start eines Workflows müssen Vorbedingungen geprüft werden:
+
+preconditions:
+- gültiger Auftrag
+- gültige Identität
+- erforderliche Capabilities vorhanden
+- Rückfallpunkt vorhanden
+- benötigte Artefakte verfügbar
+
+Nach Abschluss müssen Nachbedingungen erfüllt sein:
+
+postconditions:
+- Ergebnisartefakte vorhanden
+- Tests bestanden
+- Audit vollständig
+- Status konsistent
+- Abschlussbericht erzeugt
+Rollen im Workflow
+
+Ein Workflow kann verschiedene Rollen enthalten:
+
+Auftraggeber
+Workflow Owner
+Planner
+Executor
+Reviewer
+Approver
+Auditor
+Recovery Owner
+
+Die Rollen müssen nicht immer durch unterschiedliche Personen oder Agenten besetzt sein. Bei kritischen Workflows sollte jedoch eine Rollentrennung vorgeschrieben werden.
+
+Freigabepunkte
+
+Das CWF sollte explizite Freigabeschritte erlauben:
+
+approval_gate
+review_gate
+security_gate
+release_gate
+human_confirmation_gate
+
+Ein solcher Schritt darf nicht automatisch übersprungen werden.
+
+Fehlerbehandlung
+
+Jeder kritische Schritt sollte eine definierte Fehlerstrategie besitzen.
+
+Mögliche Strategien:
+
+Stop
+
+Der Workflow wird angehalten.
+
+Retry
+
+Der Schritt wird nach festen Regeln erneut versucht.
+
+Skip
+
+Der Schritt wird übersprungen, aber nur wenn dies ausdrücklich erlaubt ist.
+
+Fallback
+
+Ein alternativer Schritt wird ausgeführt.
+
+Rollback
+
+Bereits ausgeführte Änderungen werden kontrolliert zurückgeführt.
+
+Escalate
+
+Der Workflow wird an eine autorisierte Instanz übergeben.
+
+Das CWF sollte verbieten, dass ein Workflow bei Fehlern einfach weitermacht, ohne dass dies ausdrücklich definiert ist.
+
+Retry-Regeln
+
+Wiederholungen müssen begrenzt sein:
+
+max_attempts
+delay
+backoff_strategy
+retryable_errors
+non_retryable_errors
+
+Sonst könnten Endlosschleifen oder unnötige Belastungen entstehen.
+
+Rollback und Kompensation
+
+Nicht jeder Schritt kann technisch vollständig rückgängig gemacht werden.
+
+Das CWF sollte deshalb zwischen zwei Konzepten unterscheiden:
+
+Rollback
+
+Der ursprüngliche Zustand wird technisch wiederhergestellt.
+
+Compensation
+
+Eine ausgleichende Handlung wird durchgeführt, wenn ein echtes Rollback nicht möglich ist.
+
+Beispiel:
+
+Dateiänderung zurücksetzen: Rollback
+bereits versendete Benachrichtigung durch Korrektur ergänzen: Compensation
+Idempotenz
+
+Ein Workflow-Schritt sollte angeben, ob er gefahrlos mehrfach ausgeführt werden kann.
+
+idempotent: true
+
+Das ist besonders wichtig bei:
+
+Wiederholungen,
+Systemabstürzen,
+Netzwerkfehlern,
+unterbrochenen Ausführungen.
+Pause und Fortsetzung
+
+Ein Workflow sollte kontrolliert pausiert und später fortgesetzt werden können.
+
+Dafür braucht er:
+
+gespeicherten Zustand,
+letzten erfolgreichen Schritt,
+offene Schritte,
+verwendete Eingaben,
+erzeugte Artefakte,
+gültige Freigaben,
+Ablaufdaten von Berechtigungen.
+
+Eine Fortsetzung darf nicht blind erfolgen. Der Projektzustand muss erneut geprüft werden.
+
+Workflow-Versionierung
+
+Ein laufender Workflow darf nicht unkontrolliert durch eine neue Workflow-Version verändert werden.
+
+Es sollten getrennt werden:
+
+workflow_definition_version
+workflow_run_definition_version
+
+Eine laufende Ausführung bleibt grundsätzlich an die Version gebunden, mit der sie gestartet wurde.
+
+Workflow-Validierung
+
+Vor Aktivierung sollte geprüft werden:
+
+alle Schritte besitzen eindeutige IDs,
+alle Übergänge sind gültig,
+es gibt einen Startpunkt,
+es gibt mindestens einen definierten Endzustand,
+keine unerreichbaren Schritte,
+keine unkontrollierten Schleifen,
+alle benötigten Capabilities sind bekannt,
+Rollen sind definiert,
+Fehlerwege sind vorhanden,
+Freigaben können nicht umgangen werden.
+Audit und Provenienz
+
+Jede Ausführung sollte protokollieren:
+
+workflow_id
+workflow_version
+workflow_run_id
+trigger
+actor
+current_state
+step_id
+step_status
+inputs
+outputs
+capabilities_used
+approvals
+errors
+retries
+rollback_actions
+timestamps
+final_status
+
+Dadurch lässt sich später nachvollziehen:
+
+Warum wurde welcher Schritt wann durch wen oder durch welchen Agenten ausgeführt?
+
+Sicherheitsregeln
+
+Ein CWF sollte mindestens folgende Regeln enthalten:
+
+keine nicht deklarierten Schritte,
+keine dynamische Scope-Erweiterung ohne neue Prüfung,
+keine stillen Übergänge,
+keine unbegrenzten Wiederholungen,
+keine Umgehung von Freigabepunkten,
+keine Fortsetzung nach kritischen Fehlern ohne Entscheidung,
+keine Änderung einer laufenden Workflow-Definition,
+keine Ausführung unbekannter Capabilities,
+keine versteckten Seiteneffekte,
+keine Selbstfreigabe kritischer Workflows.
+Zusammenspiel der Komponenten
+Auftrag oder Ereignis
+        ↓
+Canonical Workflow Framework
+definiert zulässige Struktur und Regeln
+        ↓
+CRE
+ermittelt benötigte Fähigkeiten
+        ↓
+Execution Planner
+erstellt einen konkreten Ausführungsplan
+        ↓
+Governance- und Freigabeprüfung
+        ↓
+Orchestrator Core
+führt die validierten Schritte aus
+        ↓
+Audit / Provenienz / CAM
+dokumentieren Ablauf und Ergebnisse
+Mögliche kanonische Artefakte
+14_documents/
+    CANONICAL_WORKFLOW_FRAMEWORK_1_0.md
+24_config/
+    canonical_workflow_framework_1_0.json
+    canonical_workflow_states_1_0.json
+    canonical_workflow_step_types_1_0.json
+    canonical_workflow_transition_rules_1_0.json
+    canonical_workflow_error_policies_1_0.json
+schemas/
+    canonical_workflow_definition_1_0.schema.json
+    canonical_workflow_run_1_0.schema.json
+    canonical_workflow_step_1_0.schema.json
+31_reports/
+    cwf_1_0_status_report.md
+Minimaler Scope für Version 1.0
+
+Ich würde CWF 1.0 bewusst auf folgende Punkte begrenzen:
+
+Workflow-Identität und Versionierung
+Workflow-Schritte
+Zustände und Übergänge
+Rollen und Berechtigungen
+Eingaben und Ausgaben
+Preconditions und Postconditions
+Freigabeschritte
+Fehler-, Retry- und Abbruchregeln
+Pause und Fortsetzung
+Audit und Provenienz
+Integrationsverträge zu CRE, Execution Planner und Orchestrator
+Validierungsregeln
+
+Später könnten ergänzt werden:
+
+grafischer Workflow-Designer,
+dynamische Workflow-Erzeugung,
+verteilte Workflows,
+Event Streaming,
+lang laufende Prozesse,
+Workflow-Simulation,
+Kosten- und Ressourcenplanung,
+lernende Workflow-Optimierung,
+automatische Engpasserkennung.
+Meine Einschätzung
+
+Das CWF wäre für Kontinuum sehr wichtig, weil ihr inzwischen viele spezialisierte Frameworks und Komponenten habt. Ohne einen einheitlichen Workflow-Rahmen könnte jede Komponente Abläufe anders definieren.
+
+Der entscheidende Grundsatz wäre:
+
+Das CWF entscheidet nicht, was fachlich getan werden soll. Es legt fest, wie ein mehrstufiger Ablauf strukturiert, geprüft, kontrolliert und nachvollziehbar ausgeführt werden muss.
+
+Damit wäre das CWF kein Konkurrent zum Execution Planner oder Orchestrator, sondern deren kanonischer Prozessrahmen.
+
+Meine Empfehlung lautet:
+
+GO für die Vorbereitung eines Canonical Workflow Framework (CWF) 1.0.
+
+Es sollte zunächst als Architektur- und Prüfrahmen definiert werden, bevor komplexe Multi-Agent-, Entwicklungs-, Lern- oder Betriebsworkflows produktiv automatisiert werden.

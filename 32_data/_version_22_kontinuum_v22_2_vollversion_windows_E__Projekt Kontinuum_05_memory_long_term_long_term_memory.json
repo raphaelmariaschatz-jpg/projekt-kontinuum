@@ -1,0 +1,18 @@
+[
+  {
+    "timestamp": "2026-06-07T14:59:12",
+    "text": "lerne alle Wissenschaften",
+    "response": "Ich habe alle Wissenschaftsfelder als Lernziel aktiviert: Mathematik, Physik, Chemie, Biologie, Astronomie, Geologie, Medizin, Informatik, Optik, Mechanik, Elektrotechnik, Architektur, Bauwesen, Landwirtschaft, Geschichte, Philosophie, Psychologie, Sprachwissenschaft, Soziologie, Ökonomie.",
+    "source": "dialogue",
+    "category": "long_term",
+    "importance": 2
+  },
+  {
+    "timestamp": "2026-06-07T14:59:12",
+    "text": "Hoffnung ist wie Zucker im Tee. Auch wenn sie noch so klein ist, versüßt sie alles",
+    "response": "Auch eine kleine Hoffnung kann das Ganze verwandeln. Wie wenig Zucker einen Tee süßer macht, kann ein kleiner Lichtblick einen schweren Tag erträglicher machen.",
+    "source": "dialogue",
+    "category": "long_term",
+    "importance": 1
+  }
+]

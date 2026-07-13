@@ -1,0 +1,36 @@
+Codex-Auftrag Canonical Change Policy CCP 1.0 04.07.26
+
+Ich lese zuerst den angehängten Auftrag, damit ich nicht aus dem bisherigen Verlauf heraus raten muss. Danach prüfe ich, ob die aktuelle Sandbox noch Schreibzugriff auf C:\Projekt Kontinuum erlaubt oder ob ich für die Umsetzung gezielt Freigabe brauche.
+
+Der Auftrag ist klar und passt direkt an CADP an: CCP 1.0 wird Foundation-Regel, CAM-Policy-Baustein und Release-Integrity-Pflichtregel, ohne Massenumbau. Da die aktuelle Sandbox C:\Projekt Kontinuum nur noch lesen darf, werde ich für Schreiboperationen gezielt eskalierte Befehle verwenden und die Änderungen eng auf die CCP-Dateien begrenzen.
+
+Ich ergänze jetzt CCP parallel zu CADP: FND-ID-050, canonical_change_policy_check, Release-Integrity-Pflichtregel, CAM-Manifestblock, Doku und Tests. Der Eingriff bleibt bewusst regel-/prüfungsbezogen; keine Archivierungs- oder Massen-Dateioperationen.
+
+Danke, ich nutze den Zugriff weiter gezielt für C:\Projekt Kontinuum. Die erste CCP-Implementierungsrunde ist geschrieben; ich prüfe jetzt, ob alle erwarteten Anker wirklich gesetzt wurden und ob die JSON-/Python-Struktur sauber ist.
+
+Der Ankerscan hat zwei Lücken gezeigt: Der neue CAM-Check ist als Methode vorhanden, aber noch nicht in status()/format_status() verdrahtet; außerdem ist FND-ID-050 noch nicht im echten Release-Integrity-Manifest angekommen. Ich korrigiere genau diese beiden technischen Lücken plus die fehlende Architekturmodell-Erwähnung.
+
+Die Korrektur hat wegen unterschiedlicher Zeilenendungen nicht gegriffen. Ich setze die Verdrahtung jetzt robuster über Regex-Blöcke, danach prüfe ich sofort per rg, ob die Lücken wirklich geschlossen sind.
+
+Der robuste Patch ist an PowerShell-Operator-Syntax hängen geblieben; dabei wurde nur release_integrity_34_1.json angefasst. Ich korrigiere das jetzt sauber mit [regex]::Replace, damit keine halben Ersetzungen bleiben.
+
+PowerShell quoting ist hier unnötig sperrig. Ich wechsle auf wörtliche Here-Strings innerhalb PowerShell, damit die Python-Codezeilen mit vielen Anführungszeichen nicht mehr vom Shellparser zerlegt werden.
+
+Die Verdrahtung ist jetzt gesetzt. Ich prüfe sofort die betroffenen Codeabschnitte auf versehentliche Escape-Zeichen und lasse dann Syntax/JSON laufen.
+
+Die CAM-Statusverdrahtung ist jetzt sichtbar. Ich prüfe noch den unteren Rückgabeblock und die JSON-Dateien; danach laufen die gezielten Tests.
+
+Die echte Release-Integrity-Konfiguration enthält FND-ID-050 noch nicht; der Regex hatte wegen maskierter Ersatzzeichen nicht gegriffen. Ich korrigiere diesen JSON-Block jetzt gezielt und validiere danach JSON direkt.
+
+Die echte Release-Integrity-Konfiguration enthält FND-ID-050 noch nicht; der Regex hatte wegen maskierter Ersatzzeichen nicht gegriffen. Ich korrigiere diesen JSON-Block jetzt gezielt und validiere danach JSON direkt.
+
+Ich muss hier anhalten: Die Eskalation zum Wiederherstellen von [release_integrity_34_1.json](C:/Projekt Kontinuum/24_config/release_integrity_34_1.json) wurde vom System wegen Codex-Usage-Limit abgelehnt. Wichtig: Die Datei ist aktuell leer geworden und muss aus dem Git-Index wiederhergestellt werden, bevor weitergearbeitet wird.
+Bitte führe in C:\Projekt Kontinuum aus:
+git show :24_config/release_integrity_34_1.json > 24_config/release_integrity_34_1.json
+Danach kann ich CCP sauber fertigstellen. Bis zum Abbruch war bereits umgesetzt/angelegt:
+FND-ID-050 in foundation_2_2.py
+canonical_change_policy_check() in CAM
+CCP-Policyblock in canonical_architecture_34_1.json
+Doku-Ergänzungen in Lifecycle-Regel, Architekturmodell, Projektstruktur, Projektstatus
+Test-Ergänzungen für CAM/Release/Foundation
+Offener Blocker: release_integrity_34_1.json wiederherstellen und anschließend required_foundation_rules um FND-ID-050 ergänzen.

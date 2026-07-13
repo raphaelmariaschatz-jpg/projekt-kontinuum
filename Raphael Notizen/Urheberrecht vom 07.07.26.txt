@@ -1,0 +1,227 @@
+Urheberrecht vom 07.07.26
+
+
+# Codex-Auftrag – Canonical Intellectual Property Ledger (CIPL) 1.0
+
+## Ziel
+
+Entwickle den Architekturbaustein **Canonical Intellectual Property Ledger (CIPL) 1.0** als kanonisches Herkunfts- und Urheberregister für Projekt Kontinuum.
+
+Der CIPL dient ausschließlich der nachvollziehbaren Dokumentation der Entstehung wesentlicher Architekturentscheidungen, Konzepte und Kernartefakte.
+
+Er ist **kein Lizenzsystem**, **kein DRM**, **keine Rechteverwaltung** und **kein Sicherheitssystem**.
+
+Er ergänzt Git, Projektchronik und Governance um eine kanonische Herkunftsebene.
+
+---
+
+## Architekturprinzip
+
+Jede wesentliche Architekturentscheidung soll zukünftig eindeutig nachvollziehbar dokumentieren:
+
+* Ursprung
+* Urheber
+* Zeitpunkt
+* Begründung
+* Version
+* Zusammenhang
+* Git-Referenz
+* Historische Entwicklung
+
+Die Architektur selbst bleibt unverändert.
+
+Keine funktionalen Änderungen.
+
+Keine Runtime-Anpassungen.
+
+Keine Refactorings.
+
+---
+
+# Aufgaben
+
+## 1. Neues Architekturmodul
+
+Erstelle den neuen kanonischen Architekturbaustein
+
+Canonical Intellectual Property Ledger (CIPL) 1.0
+
+als reine Dokumentations- und Governance-Komponente.
+
+---
+
+## 2. Neues Manifest
+
+Erstelle
+
+24_config/canonical_ip_ledger_1_0.json
+
+Dieses Manifest bildet den Single Source of Truth für Eigentums- und Herkunftsinformationen.
+
+Beispielhafte Felder:
+
+* ledger_version
+* project_name
+* creator
+* creator_id
+* project_owner
+* copyright_holder
+* first_release
+* canonical_since
+* architecture_generation
+* governance_reference
+* project_chronicle_reference
+
+---
+
+## 3. Creator Identity
+
+Verankere erstmalig eine kanonische Creator Identity.
+
+Creator Name:
+
+Raphael Maria Schatz
+
+Creator-ID:
+
+RMS-0001
+
+Diese ID dient ausschließlich der internen kanonischen Referenzierung innerhalb von Projekt Kontinuum.
+
+Sie ersetzt keine juristischen Identitätsnachweise.
+
+---
+
+## 4. Architektur-Herkunft
+
+Ermögliche die Dokumentation wesentlicher Architekturartefakte.
+
+Beispiel:
+
+CAM
+
+CRE
+
+Execution Planner
+
+Orchestrator Core
+
+CCP
+
+CDF
+
+CDG
+
+Foundation
+
+Governance
+
+Canonical Lifecycle
+
+Jeder Eintrag soll zukünftig Herkunftsmetadaten aufnehmen können.
+
+Keine Migration bestehender Historien erforderlich.
+
+Nur Vorbereitung.
+
+---
+
+## 5. Git-Referenz
+
+Der Ledger soll optionale Referenzen auf Git enthalten können.
+
+Beispielsweise:
+
+* erster Commit
+* relevanter Architektur-Commit
+* Referenz-Hash
+
+Keine automatische Git-Auswertung implementieren.
+
+Nur die Struktur vorbereiten.
+
+---
+
+## 6. Projektchronik
+
+Ergänze eine Referenz zur Projektchronik.
+
+Der CIPL soll auf bestehende Chroniken verweisen.
+
+Keine Chroniken verändern.
+
+---
+
+## 7. Governance
+
+Ergänze den CIPL im kanonischen Architekturmodell.
+
+Definiere ihn als Governance-Komponente.
+
+Keine Änderung bestehender Governance-Regeln.
+
+---
+
+## 8. Dokumentation
+
+Dokumentiere:
+
+Zweck
+
+Scope
+
+Nicht-Ziele
+
+Integration
+
+Zusammenspiel mit:
+
+* Git
+* Projektchronik
+* CAM
+* Release Integrity
+* Canonical Governance
+
+---
+
+## 9. Abschlussbericht
+
+Erstelle einen Statusbericht mit:
+
+* neu angelegte Dateien
+* aktualisierte Dokumentationen
+* Architekturintegration
+* keine funktionalen Änderungen bestätigt
+* keine Runtime betroffen
+* keine APIs verändert
+* keine Datenmigration durchgeführt
+
+---
+
+# Nicht tun
+
+Keine Lizenzverwaltung.
+
+Keine DRM-Funktionen.
+
+Keine Verschlüsselung.
+
+Keine Rechteprüfung.
+
+Keine Benutzerverwaltung.
+
+Keine Runtime-Änderungen.
+
+Keine Änderungen an CAM, CRE, Foundation oder Orchestrator.
+
+Keine Refactorings.
+
+Keine automatische Git-Auswertung.
+
+Keine juristischen Bewertungen.
+
+---
+
+## Erfolgskriterium
+
+Nach Abschluss existiert ein vollständig dokumentierter kanonischer Architekturbaustein "Canonical Intellectual Property Ledger (CIPL) 1.0", der die Herkunft und Entstehung wesentlicher Projektartefakte nachvollziehbar dokumentiert und dauerhaft in die Governance von Projekt Kontinuum integriert ist, ohne funktionale Änderungen am System vorzunehmen.

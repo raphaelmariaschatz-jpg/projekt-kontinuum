@@ -31,3 +31,6 @@ Status: OFFIZIELL_AKZEPTIERT
 Freigabe: JA
 
 Diese Baseline ist die verbindliche Ausgangsbasis fuer alle zukuenftigen Governance-Pruefungen und darf ausschliesslich durch zukuenftige, offiziell freigegebene Governance-Versionen ersetzt werden.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

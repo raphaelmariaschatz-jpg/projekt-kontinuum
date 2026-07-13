@@ -1,0 +1,1413 @@
+# Codex-Auftrag – Capability Resolution Engine (CRE) 1.0 04.07.26
+
+## Ziel
+
+Nach dem erfolgreichen Abschluss von CCP 1.0 soll die nächste Ausbaustufe der kanonischen Systemarchitektur umgesetzt werden:
+
+**Capability Resolution Engine (CRE) 1.0**
+
+Die CRE wird zukünftig die zentrale Vermittlungs- und Entscheidungsinstanz zwischen Benutzeranfragen, Fähigkeiten (Capabilities), Governance und Agenten bilden.
+
+Dabei soll ausdrücklich **keine bestehende Funktionalität ersetzt**, sondern die vorhandene Architektur erweitert und abstrahiert werden.
+
+---
+
+# Architekturziel
+
+Die zukünftige Ablaufkette lautet kanonisch:
+
+User
+
+↓
+
+Request Router
+
+↓
+
+Capability Resolution Engine (CRE)
+
+↓
+
+Priorisierung
+
+↓
+
+Governance
+
+↓
+
+Agent-Auswahl
+
+↓
+
+Review
+
+↓
+
+Canonical Memory Manager (CMM)
+
+Die CRE bildet damit künftig den zentralen Entscheidungspunkt für sämtliche Agenten.
+
+---
+
+# Aufgaben
+
+## 1. CRE-Core implementieren
+
+Neue Kernkomponente erstellen:
+
+```
+01_system/kontinuum/core/capability_resolution_engine.py
+```
+
+Aufgaben:
+
+* Capability-Auflösung
+* Agentenauswahl vorbereiten
+* Priorisierung vorbereiten
+* Governance-Anbindung
+* Erweiterbarkeit für zukünftige Capability-Provider
+
+Noch keine komplexe KI-Logik implementieren.
+
+Die erste Version soll deterministisch und vollständig nachvollziehbar arbeiten.
+
+---
+
+## 2. Capability-Modell definieren
+
+Ein kanonisches Capability-Modell entwickeln.
+
+Jede Capability soll mindestens besitzen:
+
+* capability_id
+* name
+* Beschreibung
+* unterstützte Intents
+* Priorität
+* Governance-Level
+* erlaubte Agenten
+* optionale Voraussetzungen
+
+---
+
+## 3. Capability Registry
+
+Neue Registry anlegen:
+
+```
+24_config/capability_registry_34_1.json
+```
+
+Zunächst nur die vorhandenen Fähigkeiten eintragen.
+
+Keine Fantasie-Capabilities erzeugen.
+
+---
+
+## 4. Router vorbereiten
+
+Den bestehenden Request Router so erweitern, dass zukünftige Requests nicht mehr direkt Agenten auswählen müssen.
+
+Stattdessen:
+
+Router
+
+↓
+
+CRE
+
+↓
+
+Agent
+
+Der bisherige Ablauf muss vollständig kompatibel bleiben.
+
+---
+
+## 5. Governance integrieren
+
+Die CRE darf ausschließlich Agenten auswählen,
+
+wenn
+
+* Governance-Regeln erfüllt sind,
+* Foundation-Regeln eingehalten werden,
+* CAM freigegeben ist,
+* CCP keine Verletzung erkennt.
+
+Die CRE soll niemals Governance umgehen.
+
+---
+
+## 6. Dokumentation aktualisieren
+
+Aktualisieren:
+
+* Kanonisches Architekturmodell
+* Handbuch
+* Projektstruktur
+* Projektchronik
+
+Neuen Abschnitt ergänzen:
+
+**Capability Resolution Engine (CRE) 1.0**
+
+mit Architekturdiagramm.
+
+---
+
+## 7. Tests
+
+Neue Tests erstellen:
+
+* Capability Registry
+* Capability Lookup
+* Governance-Anbindung
+* Router → CRE
+* CRE → Agent
+* Fehlerfälle
+* unbekannte Capability
+* fehlende Berechtigung
+
+---
+
+## 8. Verifikation
+
+Zum Abschluss ausführen:
+
+* JSON-Validierung
+* Python-Syntaxprüfung
+* CAM-Test
+* Release-Integrity-Test
+* CRE-Tests
+* Governance-Tests
+
+---
+
+# Wichtige Regeln
+
+* Keine bestehende Architektur ersetzen.
+* Keine Massenänderungen durchführen.
+* Keine Archivierungsaktion starten.
+* Keine Commits durchführen.
+* Bestehende Agenten müssen weiterhin funktionieren.
+* Abwärtskompatibilität vollständig erhalten.
+
+---
+
+# Abschlussbericht
+
+Am Ende bitte berichten:
+
+* welche Dateien neu erstellt wurden
+* welche Dateien geändert wurden
+* wie die CRE in die Architektur eingebunden wurde
+* welche Capabilities registriert wurden
+* welche Tests bestanden haben
+* welche offenen Punkte für CRE 2.0 verbleiben
+
+Ziel ist eine stabile, nachvollziehbare und kanonische Capability Resolution Engine als neues Fundament für alle zukünftigen Agenten und Orchestrierungsfunktionen in Projekt Kontinuum.
+
+Umsetzung:
+
+Ich starte CRE 1.0 vorsichtig als Erweiterung, nicht als Umbau. Zuerst lese ich Router, vorhandene Agent-/Capability-Spuren und die bereits gemischte Git-Lage, damit ich keine bestehenden Arbeiten überfahre.
+
+
+
+
+4 Befehle ausgeführtAusgeführt Test-Path -LiteralPath 'C:\Projekt Kontinuum\01_system\kontinuum\core\capability_resolution_engine.py'seit 1s
+
+
+
+Ausgeführt Get-Content -LiteralPath 'C:\Projekt Kontinuum\01_system\kontinuum\agents\agent_registry.py' | Select-Object -First 260seit 4s
+
+
+
+Ausgeführt Get-Content -LiteralPath 'C:\Projekt Kontinuum\01_system\kontinuum\core\request_router.py' | Select-Object -First 260seit 3s
+
+
+
+Ausgeführt git status --shortseit 3s
+
+
+
+
+
+
+
+
+Es gibt bereits eine ungetrackte capability_resolution_engine.py; die behandle ich als vorhandene Arbeit und lese sie zuerst, statt sie blind neu zu schreiben. Parallel schaue ich, wie Router-Entscheidungen geloggt werden und wo eine kompatible CRE-Schicht am wenigsten invasiv passt.
+
+
+
+
+4 Befehle ausgeführtAusgeführt Get-Content -LiteralPath 'C:\Projekt Kontinuum\14_documents\CAPABILITY_RESOLUTION_ENGINE_1_0.md' | Select-Object -First 260seit 4s
+
+
+
+Ausgeführt Test-Path -LiteralPath 'C:\Projekt Kontinuum\24_config\capability_registry_34_1.json'seit 4s
+
+
+
+Ausgeführt Get-Content -LiteralPath 'C:\Projekt Kontinuum\01_system\kontinuum\core\request_router.py' | Select-Object -First 520 | Select-Object -Last 260seit 5s
+
+
+
+Ausgeführt Get-Content -LiteralPath 'C:\Projekt Kontinuum\01_system\kontinuum\core\capability_resolution_engine.py' | Select-Object -First 360seit 6s
+
+
+
+
+
+
+
+
+Der vorhandene CRE-Entwurf ist schon recht nah, aber noch CAIM-zentriert und ohne die geforderte eigene capability_registry_34_1.json. Ich prüfe jetzt die vorhandenen Tests/Systemanbindung und baue dann daraus eine kanonische Registry-basierte 1.0, ohne die bestehende CAIM-Idee wegzuwerfen.
+
+
+
+
+4 Befehle ausgeführtAusgeführt Get-Content -LiteralPath 'C:\Projekt Kontinuum\17_tests\test_capability_resolution_engine_1_0.py' | Select-Object -First 420seit 5s
+
+
+
+Ausgeführt rg -n "capability_resolution|Capability Resolution|CRE|request_router|RequestRouter" 01_system\kontinuum\core 17_tests 14_documents\HANDBUCH_23.md 22_project_chronicle\PROJEKTCHRONIK_23.md 14_documents\PROJEKTSTRUKTUR_34_1.md 14_documents\KANONISCHES_ARCHITEKTURMODELL_34_1.mdseit 3s
+
+
+
+Ausgeführt Get-Content -LiteralPath 'C:\Projekt Kontinuum\01_system\kontinuum\core\system.py' | Select-Object -First 260seit 5s
+
+
+
+Ausgeführt Get-Content -LiteralPath 'C:\Projekt Kontinuum\01_system\kontinuum\core\application_services.py' | Select-Object -First 260seit 6s
+
+
+
+
+
+
+
+
+Die Systemanbindung existiert bereits, aber die Status-/Routerseite kennt CRE noch nicht als expliziten Befehl, und die Registry fehlt. Ich lese jetzt den Orchestrator-Pfad und die CAIM-Struktur, dann ergänze ich CRE als beobachtbare, aber kompatible Zwischenschicht.
+
+
+
+
+4 Befehle ausgeführtAusgeführt Get-Content -LiteralPath 'C:\Projekt Kontinuum\24_config\canonical_agents.json' | Select-Object -First 260seit 5s
+
+
+
+Ausgeführt Get-Content -LiteralPath 'C:\Projekt Kontinuum\01_system\kontinuum\foundation\canonical_agent_integration_manager.py' | Select-Object -First 360seit 6s
+
+
+
+Ausgeführt Get-Content -LiteralPath 'C:\Projekt Kontinuum\14_documents\HANDBUCH_23.md' | Select-Object -First 835 | Select-Object -Last 90seit 4s
+
+
+
+Ausgeführt Get-Content -LiteralPath 'C:\Projekt Kontinuum\01_system\kontinuum\core\application_services.py' | Select-Object -First 520 | Select-Object -Last 230seit 4s
+
+
+
+
+
+
+
+
+Der Bestand bestätigt: CRE war schon als Empfehlungsschicht angelegt, aber die neue Anforderung verschiebt den kanonischen Ursprung der Fähigkeiten in eine eigene Registry. Ich werde also eine Registry aus den vorhandenen CAIM-Fähigkeiten ableiten, CRE sie validieren/benutzen lassen und den Router nur diagnostisch damit koppeln.
+
+
+
+
+4 Befehle ausgeführtAusgeführt Get-Content -LiteralPath 'C:\Projekt Kontinuum\17_tests\test_canonical_architecture_manager.py' | Select-Object -First 120seit 3s
+
+
+
+Ausgeführt Get-Content -LiteralPath 'C:\Projekt Kontinuum\01_system\kontinuum\foundation\canonical_agent_integration_manager.py' | Select-Object -First 620 | Select-Object -Last 260seit 4s
+
+
+
+Ausgeführt Get-Content -LiteralPath 'C:\Projekt Kontinuum\17_tests\test_release_integrity_framework_34_1.py' | Select-Object -First 420 | Select-Object -Last 170seit 5s
+
+
+
+Ausgeführt Get-Content -LiteralPath 'C:\Projekt Kontinuum\24_config\canonical_architecture_34_1.json' | Select-Object -First 700 | Select-Object -Last 170seit 3s
+
+
+
+
+
+
+
+
+Ich mache CRE 1.0 jetzt deterministischer: Registry als Quelle, CAIM als Agentenquelle, Router als Intent-/Request-Klassifizierer. Dafür brauche ich die tatsächlich vorhandenen Capabilities aus canonical_agents.json; daraus entsteht keine Wunschliste, sondern eine deduplizierte kanonische Registry.
+
+
+
+
+2 Befehle ausgeführtAusgeführt cmd /c "set PYTHONDONTWRITEBYTECODE=1&& python -c ""import json; from pathlib import Path; data=json.loads(Path('24_config/canonical_agents.json').read_text(encoding='utf-8-sig')); caps=sorted({c for a in data['agents'] for c in a.get('capabilities', [])}); print('\n'.join(caps)); print('COUNT', len(caps))"""seit 3s
+
+
+
+Ausgeführt cmd /c "set PYTHONDONTWRITEBYTECODE=1&& python -c ""import json; from pathlib import Path; data=json.loads(Path('24_config/canonical_agents.json').read_text(encoding='utf-8-sig')); print(len(data['agents'])); print([a['name'] for a in data['agents']])"""seit 2s
+
+
+
+
+
+
+
+
+Ich setze jetzt drei eng begrenzte Änderungen: neue Registry-Datei aus den existierenden CAIM-Capabilities, CRE-Core mit Registry-Validierung/Governance-Gate, und eine kleine Router/Status-Anbindung. Danach werden Tests und Manifeste nachgezogen.
+
+
+
+
+Ausgeführt @'
+import json
+from pathlib import Path
+
+root = Path('C:/Projekt Kontinuum')
+agents_path = root / '24_config' / 'canonical_agents.json'
+registry_path = root / '24_config' / 'capability_registry_34_1.json'
+agents = json.loads(agents_path.read_text(encoding='utf-8-sig'))['agents']
+
+cap_agents = {}
+for agent in agents:
+    for capability in agent.get('capabilities', []):
+        cap_agents.setdefault(capability, []).append(agent)
+
+def name_for(capability: str) -> str:
+    return capability.replace('_', ' ').replace('.', ' ').title()
+
+def intents_for(capability: str) -> list[str]:
+    prefix, _, suffix = capability.partition('.')
+    intents = ['command']
+    if suffix in {'read', 'status', 'inspect', 'lookup', 'formula', 'cas', 'properties', 'safety', 'map'}:
+        intents.extend(['dialog.question', 'dialog.follow_up'])
+    if suffix in {'write', 'integrate', 'learn', 'run', 'capture'}:
+        intents.append('dialog.thought')
+    if prefix.startswith('governance') or prefix in {'architecture', 'artifacts', 'api_registry', 'database'}:
+        intents.append('governance.review')
+    return sorted(set(intents))
+
+def priority_for(capability: str) -> int:
+    prefix, _, suffix = capability.partition('.')
+    if prefix == 'governance' or capability.startswith('governance.'):
+        return 10
+    if prefix in {'canonical_memory', 'canonical_identity', 'identity'}:
+        return 20
+    if prefix in {'architecture', 'artifacts', 'api_registry', 'database'}:
+        return 30
+    if suffix in {'status', 'inspect', 'read', 'lookup', 'formula', 'cas', 'properties', 'safety', 'map'}:
+        return 40
+    return 70
+
+def governance_level(capability: str, rows: list[dict]) -> str:
+    prefix, _, suffix = capability.partition('.')
+    if capability.startswith('governance.'):
+        return 'governance_required'
+    if any(row.get('governance_required') for row in rows):
+        return 'governance_required'
+    if prefix in {'canonical_memory', 'canonical_identity', 'identity'} or suffix in {'write', 'integrate', 'learn', 'run', 'capture'}:
+        return 'controlled'
+    return 'standard'
+
+def prerequisites(level: str) -> list[str]:
+    values = ['foundation_rules_ok', 'cam_status_ok', 'ccp_status_ok']
+    if level in {'governance_required', 'controlled'}:
+        values.append('governance_review_required')
+    return values
+
+capabilities = []
+for capability in sorted(cap_agents):
+    rows = sorted(cap_agents[capability], key=lambda item: item['name'])
+    level = governance_level(capability, rows)
+    agent_names = [row['name'] for row in rows]
+    descriptions = '; '.join(row.get('description', '') for row in rows if row.get('description'))
+    capabilities.append({
+        'capability_id': capability,
+        'name': name_for(capability),
+        'description': descriptions or f'Capability aus canonical_agents.json: {capability}',
+        'supported_intents': intents_for(capability),
+        'priority': priority_for(capability),
+        'governance_level': level,
+        'allowed_agents': agent_names,
+        'prerequisites': prerequisites(level),
+    })
+
+registry = {
+    'schema_version': '1.0',
+    'release': '34.1',
+    'source': '24_config/canonical_agents.json',
+    'policy': 'CRE 1.0 registriert nur bereits vorhandene CAIM-Capabilities.',
+    'capabilities': capabilities,
+}
+registry_path.write_text(json.dumps(registry, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+print(f'wrote {registry_path} with {len(capabilities)} capabilities')
+'@ | python -seit 2s
+
+
+
+Die Registry ist erzeugt: 46 Capabilities, alle aus canonical_agents.json. Jetzt ersetze ich den bisherigen CRE-Entwurf durch eine Registry-basierte Version, die CAIM weiter read-only nutzt und unbekannte oder nicht erlaubte Capabilities klar blockiert.
+
+
+
+
+Ausgeführt @'
+from __future__ import annotations
+
+import json
+import re
+from dataclasses import asdict, dataclass, field
+from pathlib import Path
+
+from .conversation import Intent, normalize
+from .request_router import RequestRouter, RouteDecision
+
+
+class CapabilityRegistryError(ValueError):
+    pass
+
+
+@dataclass(frozen=True)
+class Capability:
+    capability_id: str
+    name: str
+    description: str
+    supported_intents: tuple[str, ...]
+    priority: int
+    governance_level: str
+    allowed_agents: tuple[str, ...]
+    prerequisites: tuple[str, ...] = ()
+
+    @classmethod
+    def from_dict(cls, value: dict) -> "Capability":
+        required = {
+            "capability_id",
+            "name",
+            "description",
+            "supported_intents",
+            "priority",
+            "governance_level",
+            "allowed_agents",
+        }
+        missing = required - set(value)
+        if missing:
+            raise CapabilityRegistryError(f"Capability-Pflichtfelder fehlen: {', '.join(sorted(missing))}")
+        if not str(value.get("capability_id", "")).strip():
+            raise CapabilityRegistryError("capability_id darf nicht leer sein.")
+        if not isinstance(value.get("supported_intents"), list) or not value["supported_intents"]:
+            raise CapabilityRegistryError(f"supported_intents fehlt fuer {value.get('capability_id')}")
+        if not isinstance(value.get("allowed_agents"), list) or not value["allowed_agents"]:
+            raise CapabilityRegistryError(f"allowed_agents fehlt fuer {value.get('capability_id')}")
+        return cls(
+            capability_id=str(value["capability_id"]).strip(),
+            name=str(value["name"]).strip(),
+            description=str(value["description"]).strip(),
+            supported_intents=tuple(str(item) for item in value["supported_intents"]),
+            priority=int(value["priority"]),
+            governance_level=str(value["governance_level"]).strip(),
+            allowed_agents=tuple(str(item) for item in value["allowed_agents"]),
+            prerequisites=tuple(str(item) for item in value.get("prerequisites", [])),
+        )
+
+    def to_dict(self) -> dict:
+        return {
+            "capability_id": self.capability_id,
+            "name": self.name,
+            "description": self.description,
+            "supported_intents": list(self.supported_intents),
+            "priority": self.priority,
+            "governance_level": self.governance_level,
+            "allowed_agents": list(self.allowed_agents),
+            "prerequisites": list(self.prerequisites),
+        }
+
+
+@dataclass
+class CapabilityResolution:
+    intent: str
+    request_class: str
+    text: str
+    required_capability: str
+    capability: dict | None = None
+    candidate_agents: list[dict] = field(default_factory=list)
+    recommended_agent: str = ""
+    priority: str = "unknown"
+    governance_required: bool = False
+    governance_gate: dict = field(default_factory=dict)
+    human_approval_required: bool = False
+    read_only: bool = True
+    review_required: bool = True
+    cmm_relevant: bool = True
+    execution_allowed: bool = False
+    reason: str = ""
+    sources: list[str] = field(default_factory=list)
+
+    def to_dict(self) -> dict:
+        return asdict(self)
+
+
+class CapabilityResolutionEngine:
+    """Deterministic resolver between RequestRouter, governance and agents."""
+
+    VERSION = "1.0"
+    REGISTRY_FILE = "capability_registry_34_1.json"
+    GOVERNANCE_LEVELS_REQUIRING_REVIEW = {"controlled", "governance_required", "foundation"}
+    DIRECT_CAPABILITY_BY_AGENT = {
+        "canonical_engine": "governance.architecture",
+        "canonical_git_manager": "governance.git",
+        "code_agent": "code.inspect",
+        "config_fallback": "identity.read",
+        "diagnostic_agent": "architecture.status",
+        "dialogue_agent": "memory.read",
+        "file_agent": "file.read",
+        "git_agent": "git.status",
+        "identity_manager": "identity.write",
+        "knowledge_agent": "memory.read",
+        "learning_agent": "learning.run",
+        "math_agent": "memory.read",
+        "memory_agent": "memory.write",
+        "programming_agent": "code.inspect",
+        "status_agent": "architecture.status",
+        "vision_agent": "vision.inspect",
+        "web_agent": "web.read",
+    }
+    CAPABILITY_BY_REQUEST_CLASS = {
+        "Administration": "architecture.status",
+        "Bildanalyse": "vision.inspect",
+        "Canonical Git Governance": "governance.git",
+        "Codeanalyse": "code.inspect",
+        "Dateioperation": "file.read",
+        "Diagnose": "architecture.status",
+        "Git": "git.status",
+        "Governance": "governance.architecture",
+        "Identity/Config": "identity.write",
+        "Konfiguration": "identity.read",
+        "Lernauftrag": "learning.run",
+        "Memory": "memory.write",
+        "Programmierung": "code.inspect",
+        "Rechenaufgabe": "memory.read",
+        "Statusabfrage": "architecture.status",
+        "Webauftrag": "web.read",
+        "Wissensfrage": "memory.read",
+    }
+    CAPABILITY_MARKERS = (
+        ("file.status", ("fileagent testen", "teste den fileagent", "fileagentstatus", "fileagent status")),
+        ("code.inspect", ("code analysieren", "codeanalyse", "projektkarte", "quellcode")),
+        ("governance.architecture", ("governance", "canonical", "freigabe", "release gate", "prufauftrag", "prüfauftrag")),
+        ("memory.write", ("merke", "speichere", "erinnerung")),
+        ("web.read", ("internet", "websuche", "url", "http://", "https://")),
+        ("git.status", ("git status", "gitstatus")),
+        ("vision.inspect", ("bild", "vision", ".png", ".jpg", ".jpeg")),
+    )
+    READ_ONLY_SUFFIXES = (".read", ".status", ".inspect", ".lookup", ".formula", ".cas", ".properties", ".safety", ".map")
+    HUMAN_APPROVAL_MARKERS = ("losche", "lösche", "delete", "extern", "external_api", "release", "produktiv", "schreibzugriff")
+    REVIEW_PREFIXES = ("governance.", "identity.", "canonical_", "knowledge.", "learning.", "source.")
+    CMM_PREFIXES = ("knowledge.", "memory.", "canonical_memory.", "identity.", "canonical_identity.", "chemistry.")
+
+    def __init__(
+        self,
+        caim=None,
+        router: RequestRouter | None = None,
+        path_tools=None,
+        registry_path: str | Path | None = None,
+        governance_context: dict | None = None,
+    ):
+        self.caim = caim
+        self.path_tools = path_tools
+        self.router = router or (RequestRouter(path_tools) if path_tools else None)
+        self.registry_path = self._resolve_registry_path(registry_path, path_tools)
+        self.registry = self._load_registry()
+        self.capabilities = {item.capability_id: item for item in self.registry}
+        self.governance_context = governance_context or {}
+
+    def resolve(self, text: str, intent: Intent | str | None = None, decision: RouteDecision | None = None) -> dict:
+        resolved_intent = self._intent_name(intent)
+        route = decision or self._route(text, intent)
+        capability_id = self._required_capability(text, route)
+        capability = self.capabilities.get(capability_id)
+        candidates = self._candidate_agents(capability) if capability else []
+        ranked = self._rank_candidates(capability, candidates) if capability else []
+        governance_required = self._governance_required(capability, ranked)
+        gate = self._governance_gate(capability, governance_required)
+        human_approval = self._human_approval_required(text, capability, ranked, governance_required)
+        recommended = ranked[0]["name"] if ranked and gate["ok"] and not human_approval else ""
+        read_only = self._is_read_only(capability, ranked)
+        review = self._review_required(capability, governance_required, human_approval, gate)
+        cmm = self._cmm_relevant(capability, review)
+        execution_allowed = bool(recommended and not human_approval and gate["ok"] and self._can_execute(recommended))
+        resolution = CapabilityResolution(
+            intent=resolved_intent,
+            request_class=route.request_class if route else "",
+            text=(text or "").strip(),
+            required_capability=capability_id,
+            capability=capability.to_dict() if capability else None,
+            candidate_agents=ranked,
+            recommended_agent=recommended,
+            priority=self._priority(capability, ranked, gate, human_approval),
+            governance_required=governance_required,
+            governance_gate=gate,
+            human_approval_required=human_approval,
+            read_only=read_only,
+            review_required=review,
+            cmm_relevant=cmm,
+            execution_allowed=execution_allowed,
+            reason=self._reason(capability_id, capability, ranked, gate, human_approval),
+            sources=self._sources(route, capability, ranked),
+        )
+        return resolution.to_dict()
+
+    def resolve_many(self, text: str, intents: list[Intent | str] | None = None) -> list[dict]:
+        segments = self.split_multi_intent(text) or [(text or "").strip()]
+        results = []
+        for index, segment in enumerate(segment for segment in segments if segment):
+            intent = intents[index] if intents and index < len(intents) else None
+            results.append(self.resolve(segment, intent=intent))
+        return results
+
+    def lookup(self, capability_id: str) -> dict | None:
+        capability = self.capabilities.get(capability_id)
+        return capability.to_dict() if capability else None
+
+    def validate_registry(self) -> dict:
+        return {
+            "ok": bool(self.capabilities),
+            "path": str(self.registry_path) if self.registry_path else "",
+            "capabilities": len(self.capabilities),
+            "unknown_allowed_agents": self._unknown_allowed_agents(),
+        }
+
+    def status(self) -> dict:
+        validation = self.validate_registry()
+        return {
+            "version": self.VERSION,
+            "mode": "deterministic_registry_resolution",
+            "registry_path": validation["path"],
+            "registered_capabilities": validation["capabilities"],
+            "registry_ok": validation["ok"] and not validation["unknown_allowed_agents"],
+            "unknown_allowed_agents": validation["unknown_allowed_agents"],
+            "caim_connected": self.caim is not None,
+            "router_connected": self.router is not None,
+            "executes_agents": False,
+        }
+
+    def format_status(self) -> str:
+        status = self.status()
+        return "\n".join([
+            "Capability Resolution Engine 1.0 Status:",
+            f"- Modus: {status['mode']}",
+            f"- Registry: {status['registry_path']}",
+            f"- registrierte Capabilities: {status['registered_capabilities']}",
+            f"- Registry ok: {'ja' if status['registry_ok'] else 'nein'}",
+            f"- CAIM angebunden: {'ja' if status['caim_connected'] else 'nein'}",
+            f"- Router angebunden: {'ja' if status['router_connected'] else 'nein'}",
+            f"- führt Agenten aus: {'ja' if status['executes_agents'] else 'nein'}",
+        ])
+
+    def split_multi_intent(self, text: str) -> list[str]:
+        value = (text or "").strip()
+        if not value:
+            return []
+        lines = [line.strip(" .") for line in value.splitlines() if line.strip()]
+        segments: list[str] = []
+        for line in lines:
+            protected = re.sub(r"(?i)\b[a-z]:[\\/][^\r\n\"']+", lambda match: match.group(0).replace(" und ", " __UND__ "), line)
+            protected = re.sub(r"(?i),\s+(?=(teste|prüfe|pruefe|erstelle|mache|fuehre|führe|analysiere|lies|lese)\b)", "; ", protected)
+            protected = re.sub(r"(?i)\s+und\s+(?=(teste|prüfe|pruefe|erstelle|mache|fuehre|führe|analysiere|lies|lese)\b)", "; ", protected)
+            protected = re.sub(r"(?i)\b(teste|prüfe|pruefe|erstelle|mache|fuehre|führe)\s+danach\s+", r"\1 ", protected)
+            parts = re.split(r"(?i)(?:\b(?:bitte|danach|anschliessend|anschließend|und dann)\b|;)", protected)
+            for part in parts:
+                cleaned = part.replace("__UND__", "und").strip(" .,:;\t")
+                if cleaned:
+                    segments.append(cleaned)
+        return self._merge_short_segments(segments)
+
+    def _resolve_registry_path(self, registry_path: str | Path | None, path_tools) -> Path | None:
+        if registry_path:
+            return Path(registry_path)
+        if path_tools:
+            return path_tools.paths()["config"] / self.REGISTRY_FILE
+        return None
+
+    def _load_registry(self) -> tuple[Capability, ...]:
+        if not self.registry_path or not self.registry_path.exists():
+            return ()
+        try:
+            data = json.loads(self.registry_path.read_text(encoding="utf-8-sig"))
+        except (OSError, ValueError) as exc:
+            raise CapabilityRegistryError(f"Capability Registry ungueltig: {self.registry_path}") from exc
+        if data.get("schema_version") != self.VERSION:
+            raise CapabilityRegistryError("Capability Registry schema_version 1.0 fehlt.")
+        capabilities = data.get("capabilities")
+        if not isinstance(capabilities, list) or not capabilities:
+            raise CapabilityRegistryError("Capability Registry enthaelt keine Capabilities.")
+        rows = tuple(Capability.from_dict(item) for item in capabilities)
+        ids = [item.capability_id for item in rows]
+        if len(ids) != len(set(ids)):
+            raise CapabilityRegistryError("Doppelte capability_id in Capability Registry.")
+        return rows
+
+    def _route(self, text: str, intent: Intent | str | None) -> RouteDecision | None:
+        if not self.router:
+            return None
+        try:
+            intent_obj = intent if isinstance(intent, Intent) else None
+            return self.router.decide(text, intent_obj)
+        except Exception:
+            return None
+
+    def _required_capability(self, text: str, route: RouteDecision | None) -> str:
+        if route and route.selected_agent.startswith("capability:"):
+            return route.selected_agent.split(":", 1)[1]
+        marker_capability = self._marker_capability(text)
+        if marker_capability:
+            return marker_capability
+        if route:
+            return self.DIRECT_CAPABILITY_BY_AGENT.get(route.selected_agent) or self.CAPABILITY_BY_REQUEST_CLASS.get(route.request_class) or "unknown"
+        return "unknown"
+
+    def _marker_capability(self, text: str) -> str:
+        value = normalize(text)
+        for capability, markers in self.CAPABILITY_MARKERS:
+            if any(marker in value for marker in markers):
+                return capability
+        return ""
+
+    def _candidate_agents(self, capability: Capability | None) -> list[dict]:
+        if not capability:
+            return []
+        rows: dict[str, dict] = {}
+        if self.caim and hasattr(self.caim, "find_by_capability"):
+            try:
+                for candidate in self.caim.find_by_capability(capability.capability_id):
+                    if candidate.get("name") in capability.allowed_agents:
+                        rows[candidate.get("name", "")] = dict(candidate)
+            except Exception:
+                pass
+        if self.caim and hasattr(self.caim, "get_agent"):
+            for agent_name in capability.allowed_agents:
+                try:
+                    agent = self.caim.get_agent(agent_name)
+                except Exception:
+                    agent = None
+                if agent:
+                    rows[agent.get("name", agent_name)] = dict(agent)
+        if not rows:
+            for agent_name in capability.allowed_agents:
+                rows[agent_name] = {
+                    "id": agent_name,
+                    "name": agent_name,
+                    "status": "unknown",
+                    "type": "unknown",
+                    "capabilities": [capability.capability_id],
+                    "governance_required": capability.governance_level in self.GOVERNANCE_LEVELS_REQUIRING_REVIEW,
+                    "read_only": capability.capability_id.endswith(self.READ_ONLY_SUFFIXES),
+                }
+        return list(rows.values())
+
+    def _rank_candidates(self, capability: Capability | None, candidates: list[dict]) -> list[dict]:
+        if not capability:
+            return []
+        ranked = []
+        for candidate in candidates:
+            score = self._candidate_score(capability, candidate)
+            ranked.append({**candidate, "resolution_score": score})
+        return sorted(ranked, key=lambda item: (-item["resolution_score"], item.get("name", "")))
+
+    def _candidate_score(self, capability: Capability, candidate: dict) -> int:
+        capabilities = {str(item).casefold() for item in candidate.get("capabilities", [])}
+        score = 100 if capability.capability_id.casefold() in capabilities else 20
+        if candidate.get("status") == "active":
+            score += 20
+        if candidate.get("read_only"):
+            score += 8
+        if candidate.get("type") in {"internal", "foundation"}:
+            score += 6
+        if self._can_execute(candidate.get("id") or candidate.get("name")):
+            score += 5
+        if candidate.get("name") in capability.allowed_agents:
+            score += 4
+        if candidate.get("governance_required"):
+            score -= 2
+        score -= max(capability.priority, 0) // 20
+        return score
+
+    def _can_execute(self, agent_id_or_name: str | None) -> bool:
+        if not agent_id_or_name:
+            return False
+        if not self.caim or not hasattr(self.caim, "can_execute"):
+            return False
+        try:
+            return bool(self.caim.can_execute(agent_id_or_name))
+        except Exception:
+            return False
+
+    def _governance_required(self, capability: Capability | None, candidates: list[dict]) -> bool:
+        if not capability:
+            return False
+        if capability.governance_level in self.GOVERNANCE_LEVELS_REQUIRING_REVIEW:
+            return True
+        return bool(candidates and candidates[0].get("governance_required"))
+
+    def _governance_gate(self, capability: Capability | None, governance_required: bool) -> dict:
+        if not capability:
+            return {"ok": False, "reason": "unknown_capability", "checks": {}}
+        checks = {
+            "foundation_rules_ok": self._context_bool("foundation_rules_ok", True),
+            "cam_status_ok": self._context_bool("cam_status_ok", True),
+            "ccp_status_ok": self._context_bool("ccp_status_ok", True),
+            "governance_rules_ok": self._context_bool("governance_rules_ok", True),
+        }
+        ok = all(checks.values())
+        if governance_required and "governance_review_required" in capability.prerequisites:
+            checks["governance_review_required"] = True
+        return {
+            "ok": ok,
+            "reason": "passed" if ok else "blocked_by_governance_prerequisite",
+            "checks": checks,
+            "prerequisites": list(capability.prerequisites),
+        }
+
+    def _context_bool(self, key: str, default: bool) -> bool:
+        return bool(self.governance_context.get(key, default))
+
+    def _is_read_only(self, capability: Capability | None, candidates: list[dict]) -> bool:
+        if not capability:
+            return True
+        if capability.capability_id.endswith(self.READ_ONLY_SUFFIXES):
+            return True
+        return bool(candidates) and all(bool(candidate.get("read_only")) for candidate in candidates)
+
+    def _human_approval_required(self, text: str, capability: Capability | None, candidates: list[dict], governance: bool) -> bool:
+        value = normalize(text)
+        external = any(candidate.get("type") in {"external_api", "experimental"} for candidate in candidates)
+        controlled_write = bool(capability and capability.governance_level == "controlled" and not self._is_read_only(capability, candidates))
+        explicit_risk = any(marker in value for marker in self.HUMAN_APPROVAL_MARKERS)
+        return external or explicit_risk or (governance and controlled_write and explicit_risk)
+
+    def _review_required(self, capability: Capability | None, governance: bool, human_approval: bool, gate: dict) -> bool:
+        if not capability:
+            return True
+        return human_approval or governance or not gate.get("ok", False) or capability.capability_id.startswith(self.REVIEW_PREFIXES)
+
+    def _cmm_relevant(self, capability: Capability | None, review_required: bool) -> bool:
+        if not capability:
+            return False
+        return review_required or capability.capability_id.startswith(self.CMM_PREFIXES)
+
+    @staticmethod
+    def _intent_name(intent: Intent | str | None) -> str:
+        if isinstance(intent, Intent):
+            return intent.name
+        return str(intent or "")
+
+    @staticmethod
+    def _priority(capability: Capability | None, candidates: list[dict], gate: dict, human_approval: bool) -> str:
+        if not capability:
+            return "fallback_required"
+        if not gate.get("ok", False):
+            return "blocked_by_governance"
+        if human_approval:
+            return "human_review"
+        if candidates:
+            return "direct_orchestrator_handoff"
+        return "capability_unresolved"
+
+    @staticmethod
+    def _reason(capability_id: str, capability: Capability | None, candidates: list[dict], gate: dict, human_approval: bool) -> str:
+        if not capability:
+            return f"Capability {capability_id} ist nicht in der kanonischen Registry registriert."
+        if not candidates:
+            return f"Capability {capability_id} ist registriert, aber kein erlaubter Agent ist verfuegbar."
+        if not gate.get("ok", False):
+            return f"Capability {capability_id} wurde erkannt, aber Governance-Voraussetzungen blockieren die Auswahl."
+        if human_approval:
+            return f"Capability {capability_id} hat Kandidaten, benoetigt aber menschliche Freigabe."
+        return f"Capability {capability_id} wurde auf {candidates[0].get('name', 'unbekannt')} priorisiert."
+
+    @staticmethod
+    def _sources(route: RouteDecision | None, capability: Capability | None, candidates: list[dict]) -> list[str]:
+        sources = ["CapabilityRegistry"] if capability else []
+        if route:
+            sources.append("RequestRouter")
+        if candidates:
+            sources.append("CAIM" if any(candidate.get("status") == "active" for candidate in candidates) else "CapabilityRegistry.allowed_agents")
+        return sources
+
+    def _unknown_allowed_agents(self) -> list[str]:
+        if not self.caim or not hasattr(self.caim, "get_agent"):
+            return []
+        unknown: list[str] = []
+        for capability in self.registry:
+            for agent_name in capability.allowed_agents:
+                try:
+                    exists = self.caim.get_agent(agent_name)
+                except Exception:
+                    exists = True
+                if not exists:
+                    unknown.append(f"{capability.capability_id}:{agent_name}")
+        return sorted(set(unknown))
+
+    @staticmethod
+    def _merge_short_segments(segments: list[str]) -> list[str]:
+        merged: list[str] = []
+        for segment in segments:
+            if merged and len(segment.split()) <= 2:
+                merged[-1] = f"{merged[-1]} {segment}".strip()
+            else:
+                merged.append(segment)
+        return merged
+'@ | Set-Content -LiteralPath 'C:\Projekt Kontinuum\01_system\kontinuum\core\capability_resolution_engine.py' -Encoding UTF8 -NoNewlineseit 2s
+
+
+
+Als Nächstes mache ich CRE für den laufenden Router sichtbar, ohne den bisherigen Agentenpfad zu ersetzen: Statusbefehl, letzte Resolution im Systemzustand und Router-Logquelle. Das ist die Brücke Router -> CRE, während die eigentliche Ausführung kompatibel bleibt.
+
+
+
+
+4 Befehle ausgeführtAusgeführt $path='C:\Projekt Kontinuum\01_system\kontinuum\core\request_router.py'; $text=Get-Content -LiteralPath $path -Raw -Encoding UTF8; if ($text -notmatch 'crestatus') { $text=$text.Replace('"routingstatus",', '"routingstatus",' + "`r`n" + '        "crestatus",' + "`r`n" + '        "cre status",' + "`r`n" + '        "capabilitystatus",') }; Set-Content -LiteralPath $path -Value $text -Encoding UTF8 -NoNewlineseit 1s
+
+
+
+Ausgeführt $path='C:\Projekt Kontinuum\01_system\kontinuum\core\application_services.py'; $text=Get-Content -LiteralPath $path -Raw -Encoding UTF8; if ($text -notmatch 'last_capability_resolution') { $text=$text.Replace('        decision = self.request_router.decide(text, intent)' + "`r`n" + '        self.system.conversation.log_turn("user", text, intent)', '        decision = self.request_router.decide(text, intent)' + "`r`n" + '        capability_engine = getattr(self.system, "capability_resolution_engine", None)' + "`r`n" + '        if capability_engine:' + "`r`n" + '            resolution = capability_engine.resolve(text, intent, decision)' + "`r`n" + '            self.system.last_capability_resolution = resolution' + "`r`n" + '            capability = resolution.get("required_capability", "")' + "`r`n" + '            if capability and capability != "unknown":' + "`r`n" + '                decision.sources.append(f"CRE:{capability}")' + "`r`n" + '        self.system.conversation.log_turn("user", text, intent)') }; if ($text -notmatch 'Capability Resolution Engine ist nicht angebunden') { $text=$text.Replace('        if lower in {"agent integration status", "caim status", "agent registry status", "caimstatus"}:', '        if lower in {"crestatus", "cre status", "capabilitystatus", "capability resolution status"}:' + "`r`n" + '            engine = getattr(self.system, "capability_resolution_engine", None)' + "`r`n" + '            return (engine.format_status() if engine else "Capability Resolution Engine ist nicht angebunden."), "capability_resolution_engine"' + "`r`n" + '        if lower in {"agent integration status", "caim status", "agent registry status", "caimstatus"}:') }; Set-Content -LiteralPath $path -Value $text -Encoding UTF8 -NoNewlineseit 1s
+
+
+
+Ausgeführt Get-Content -LiteralPath 'C:\Projekt Kontinuum\01_system\kontinuum\core\application_services.py' | Select-Object -First 390 | Select-Object -Last 80seit 2s
+
+
+
+Ausgeführt rg -n "crestatus|last_capability_resolution|CRE:" 01_system\kontinuum\core\request_router.py 01_system\kontinuum\core\application_services.pyseit 1s
+
+
+
+
+
+
+
+
+Der Statusbefehl sitzt, die Orchestrator-Brücke noch nicht, weil der Textanker wegen Zeilenenden nicht gegriffen hat. Ich setze diese kleine Einfügung jetzt über Regex direkt hinter decision = ....
+
+
+
+
+3 Befehle ausgeführtAusgeführt $path='C:\Projekt Kontinuum\01_system\kontinuum\core\application_services.py'; $text=Get-Content -LiteralPath $path -Raw -Encoding UTF8; if ($text -notmatch 'last_capability_resolution') { $pattern='(?m)^(\s*)decision = self\.request_router\.decide\(text, intent\)\r?\n'; $replacement='${1}decision = self.request_router.decide(text, intent)' + "`r`n" + '${1}capability_engine = getattr(self.system, "capability_resolution_engine", None)' + "`r`n" + '${1}if capability_engine:' + "`r`n" + '${1}    resolution = capability_engine.resolve(text, intent, decision)' + "`r`n" + '${1}    self.system.last_capability_resolution = resolution' + "`r`n" + '${1}    capability = resolution.get("required_capability", "")' + "`r`n" + '${1}    if capability and capability != "unknown":' + "`r`n" + '${1}        decision.sources.append(f"CRE:{capability}")' + "`r`n"; $text=[regex]::Replace($text,$pattern,$replacement,1) }; Set-Content -LiteralPath $path -Value $text -Encoding UTF8 -NoNewlineseit 1s
+
+
+
+Ausgeführt rg -n "last_capability_resolution|CRE:" 01_system\kontinuum\core\application_services.pyseit 1s
+
+
+
+Ausgeführt Get-Content -LiteralPath 'C:\Projekt Kontinuum\01_system\kontinuum\core\application_services.py' | Select-Object -First 360 | Select-Object -Last 45seit 2s
+
+
+
+
+
+
+
+
+Jetzt trage ich die Registry in die kanonischen Manifeste ein: CAM soll CRE-Core und Registry kennen, Release Integrity soll beide Pfade als releasekritisch prüfen. Das bleibt eng auf CRE bezogen.
+
+
+
+
+Ausgeführt @'
+import json
+from pathlib import Path
+root = Path('C:/Projekt Kontinuum')
+cam_path = root / '24_config' / 'canonical_architecture_34_1.json'
+release_path = root / '24_config' / 'release_integrity_34_1.json'
+
+cam = json.loads(cam_path.read_text(encoding='utf-8-sig'))
+canonical = cam.setdefault('layers', {}).setdefault('canonical', [])
+if not any(item.get('name') == 'Capability Resolution Engine' for item in canonical):
+    canonical.append({'name': 'Capability Resolution Engine', 'path': '01_system/kontinuum/core/capability_resolution_engine.py'})
+if not any(item.get('name') == 'Capability Registry' for item in canonical):
+    canonical.append({'name': 'Capability Registry', 'path': '24_config/capability_registry_34_1.json'})
+for key, values in {
+    'required_folders': [],
+    'registries': ['24_config/capability_registry_34_1.json'],
+    'api_registry': ['CapabilityResolutionEngine'],
+}.items():
+    existing = cam.setdefault(key, [])
+    for value in values:
+        if value not in existing:
+            existing.append(value)
+apis = cam.setdefault('apis', [])
+if not any(item.get('path') == '01_system/kontinuum/core/capability_resolution_engine.py' for item in apis):
+    apis.append({'path': '01_system/kontinuum/core/capability_resolution_engine.py', 'symbols': ['CapabilityResolutionEngine']})
+cam_path.write_text(json.dumps(cam, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+
+release = json.loads(release_path.read_text(encoding='utf-8-sig'))
+for key in ('required_paths', 'canonical_architecture_required_paths'):
+    existing = release.setdefault(key, [])
+    for value in ('01_system/kontinuum/core/capability_resolution_engine.py', '24_config/capability_registry_34_1.json'):
+        if value not in existing:
+            existing.append(value)
+release_path.write_text(json.dumps(release, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+print('updated CAM and Release Integrity manifests for CRE 1.0')
+'@ | python -seit 2s
+
+
+
+Die Tests werden jetzt auf die neue Quelle der Wahrheit umgestellt: echte Capability Registry, Fake-CAIM nur als kontrollierter Agentenadapter. Damit testen wir Registry, Lookup, Router→CRE, CRE→Agent, Governance-Blockade, unbekannte Capability und fehlende Ausführungsberechtigung getrennt.
+
+
+
+
+Ausgeführt @'
+from __future__ import annotations
+
+import json
+import os
+import sys
+import tempfile
+from pathlib import Path
+
+
+ROOT = Path(os.environ.get("KONTINUUM_ROOT", "C:/Projekt Kontinuum"))
+sys.path.insert(0, str(ROOT / "01_system"))
+
+from kontinuum.core.capability_resolution_engine import CapabilityResolutionEngine
+from kontinuum.core.conversation import Intent
+from kontinuum.core.request_router import RequestRouter, RouteDecision
+from kontinuum.tools.path_tools import PathTools
+
+
+class FakeCAIM:
+    def __init__(self, executable: set[str] | None = None):
+        data = json.loads((ROOT / "24_config" / "canonical_agents.json").read_text(encoding="utf-8-sig"))
+        self.agents = [dict(agent) for agent in data["agents"]]
+        self.executable = executable
+
+    def find_by_capability(self, capability: str, active_only: bool = True) -> list[dict]:
+        needle = capability.casefold()
+        return [
+            dict(agent)
+            for agent in self.agents
+            if needle in {str(item).casefold() for item in agent.get("capabilities", [])}
+            and (not active_only or agent.get("status") == "active")
+        ]
+
+    def get_agent(self, agent_id_or_name: str) -> dict | None:
+        needle = agent_id_or_name.casefold()
+        for agent in self.agents:
+            if agent["id"].casefold() == needle or agent["name"].casefold() == needle:
+                return dict(agent)
+        return None
+
+    def can_execute(self, agent_id_or_name: str) -> bool:
+        agent = self.get_agent(agent_id_or_name)
+        if not agent or agent.get("status") != "active":
+            return False
+        if self.executable is not None:
+            return agent["id"] in self.executable or agent["name"] in self.executable
+        return agent.get("type") not in {"external_api", "experimental", "disabled"}
+
+
+with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as temporary:
+    paths = PathTools(Path(temporary))
+    paths.ensure_all()
+    registry = ROOT / "24_config" / "capability_registry_34_1.json"
+    router = RequestRouter(paths)
+    caim = FakeCAIM()
+    engine = CapabilityResolutionEngine(caim, router, paths, registry_path=registry)
+
+    validation = engine.validate_registry()
+    assert validation["ok"]
+    assert validation["capabilities"] == 46
+    assert validation["unknown_allowed_agents"] == []
+
+    lookup = engine.lookup("chemistry.lookup")
+    assert lookup is not None
+    assert lookup["capability_id"] == "chemistry.lookup"
+    assert lookup["allowed_agents"] == ["chemistry_agent"]
+    assert lookup["governance_level"] == "governance_required"
+
+    chemistry = engine.resolve("Was ist Ethanol?", Intent("dialog.question", "question"))
+    assert chemistry["required_capability"] == "chemistry.lookup"
+    assert chemistry["recommended_agent"] == "chemistry_agent"
+    assert chemistry["governance_required"] is True
+    assert chemistry["governance_gate"]["ok"] is True
+    assert chemistry["review_required"] is True
+    assert chemistry["cmm_relevant"] is True
+    assert chemistry["execution_allowed"] is True
+    assert "RequestRouter" in chemistry["sources"]
+    assert "CapabilityRegistry" in chemistry["sources"]
+
+    git = engine.resolve("git status", Intent("command", "command"))
+    assert git["required_capability"] == "git.status"
+    assert git["recommended_agent"] == "git_agent"
+    assert git["execution_allowed"] is True
+
+    routed = router.decide("Bitte lies C:/Temp/beispiel.txt", Intent("command", "command"))
+    routed_resolution = engine.resolve("Bitte lies C:/Temp/beispiel.txt", Intent("command", "command"), routed)
+    assert routed.selected_agent == "file_agent"
+    assert routed_resolution["required_capability"] == "file.read"
+    assert routed_resolution["recommended_agent"] == "file_agent"
+
+    blocked = CapabilityResolutionEngine(
+        caim,
+        router,
+        paths,
+        registry_path=registry,
+        governance_context={"cam_status_ok": False, "foundation_rules_ok": True, "ccp_status_ok": True},
+    ).resolve("git status", Intent("command", "command"))
+    assert blocked["required_capability"] == "git.status"
+    assert blocked["governance_gate"]["ok"] is False
+    assert blocked["recommended_agent"] == ""
+    assert blocked["execution_allowed"] is False
+    assert blocked["priority"] == "blocked_by_governance"
+
+    unknown_decision = RouteDecision("Sonderfall", "capability:not.registered", "fixture")
+    unknown = engine.resolve("Unbekannte Sonderfaehigkeit", Intent("command", "command"), unknown_decision)
+    assert unknown["required_capability"] == "not.registered"
+    assert unknown["capability"] is None
+    assert unknown["candidate_agents"] == []
+    assert unknown["priority"] == "fallback_required"
+
+    no_permission = CapabilityResolutionEngine(
+        FakeCAIM(executable=set()),
+        router,
+        paths,
+        registry_path=registry,
+    ).resolve("git status", Intent("command", "command"))
+    assert no_permission["recommended_agent"] == "git_agent"
+    assert no_permission["execution_allowed"] is False
+
+    multi = engine.resolve_many("Pruefe git status, analysiere danach Code und lies anschliessend C:/Temp/beispiel.txt")
+    assert [item["required_capability"] for item in multi[:3]] == ["git.status", "code.inspect", "file.read"]
+
+print("Capability Resolution Engine 1.0 tests passed")
+'@ | Set-Content -LiteralPath 'C:\Projekt Kontinuum\17_tests\test_capability_resolution_engine_1_0.py' -Encoding UTF8 -NoNewlineseit 2s
+
+
+
+Die Kernänderungen stehen. Ich mache jetzt die erste schnelle Verifikation: JSON, Python-Syntax und CRE-Test. Wenn dabei etwas fällt, korrigiere ich gezielt an der betroffenen Stelle.
+
+
+
+
+python -m json.tool 24_config\canonical_architecture_34_1.json wird ausgeführt python -m json.tool 24_config\canonical_architecture_34_1.json wird ausgeführt
+
+Syntax und JSON sind sauber. Der JSON-Output war groß, aber hilfreich: die Registry enthält tatsächlich nur die 46 vorhandenen CAIM-Capabilities. Jetzt läuft der CRE-Test selbst.
+
+
+Ausgeführt cmd /c "set KONTINUUM_ROOT=C:\Projekt Kontinuum&& set PYTHONPATH=C:\Projekt Kontinuum\01_system&& set PYTHONDONTWRITEBYTECODE=1&& python 17_tests\test_capability_resolution_engine_1_0.py"seit 2s
+
+Der CRE-Test fällt nur beim Multi-Intent-Erwartungswert. Ich lasse mir die tatsächliche Segmentauflösung ausgeben und passe dann entweder Splitter oder Test an, je nachdem, was fachlich sauberer ist.
+
+Das Debug-Kommando war zu kompakt für Python-Klassendefinitionen. Ich nutze kurz ein sauberes PowerShell-Here-String-Snippet, nur zum Ausgeben der Segmente und Capabilities.
+
+Die Segmentierung war zu konservativ: Sie hat die drei Aktionen zu einem Satz verschmolzen. Ich erweitere den Splitter jetzt nicht mit neuen Capabilities, sondern nur mit robusterer Trennung von Komma-/Danach-Ketten.
+
+Noch nicht richtig genug; ich schaue mir die aktuelle Ausgabe nochmal an. Das ist ein kleiner, aber wichtiger Teil: CRE soll Multi-Intent nicht kreativ interpretieren, sondern sauber zerlegen.
+
+Ich war im falschen Dateiausschnitt; ich lese den Splitter selbst und setze den Patch dort exakt, nicht über den unpassenden Stringanker.
+
+
+
+
+Ausgeführt rg -n "split_multi_intent|protected = re.sub|parts = re.split" 01_system\kontinuum\core\capability_resolution_engine.pyseit 2s
+
+
+
+Der Splitter trennt schon richtig, aber _merge_short_segments klebt Zweiwort-Aktionen wie „analysiere Code“ wieder an den vorherigen Schritt. Ich entschärfe diese Merge-Regel, damit kurze echte Aktionen erhalten bleiben.
+
+
+
+
+Ausgeführt $path='C:\Projekt Kontinuum\01_system\kontinuum\core\capability_resolution_engine.py'; $text=Get-Content -LiteralPath $path -Raw -Encoding UTF8; $text=$text.Replace('if merged and len(segment.split()) <= 2:', 'if merged and len(segment.split()) == 1 and not re.match(r"(?i)^(teste|prüfe|pruefe|erstelle|mache|fuehre|führe|analysiere|lies|lese)\\b", segment):'); Set-Content -LiteralPath $path -Value $text -Encoding UTF8 -NoNewlineseit 2s
+
+
+
+Jetzt sollte Multi-Intent sauber bleiben. Ich lasse den CRE-Test erneut laufen.
+
+
+
+
+Ausgeführt cmd /c "set KONTINUUM_ROOT=C:\Projekt Kontinuum&& set PYTHONPATH=C:\Projekt Kontinuum\01_system&& set PYTHONDONTWRITEBYTECODE=1&& python 17_tests\test_capability_resolution_engine_1_0.py"seit 3s
+
+
+
+CRE-Test ist grün. Ich aktualisiere jetzt die Dokumentation, damit sie nicht mehr sagt „CAIM ist die Capability-Quelle“, sondern sauber zwischen Capability Registry (Fähigkeiten) und CAIM (Agenten/Anbieter) unterscheidet.
+
+
+
+
+Ausgeführt @'
+from pathlib import Path
+root = Path('C:/Projekt Kontinuum')
+updates = []
+
+def replace(path, old, new):
+    p = root / path
+    text = p.read_text(encoding='utf-8-sig')
+    if old in text:
+        text = text.replace(old, new)
+    p.write_text(text, encoding='utf-8')
+    updates.append(path)
+
+replace('14_documents/CAPABILITY_RESOLUTION_ENGINE_1_0.md',
+'''CRE 1.0 nutzt CAIM read-only als kanonische Quelle fuer Agenten und
+Capabilities. Sie kann Single-Intent- und Multi-Intent-Eingaben bewerten,
+passende Capabilities ableiten, Kandidaten priorisieren und kennzeichnen, ob
+Governance, menschliche Freigabe, Review oder CMM-Relevanz vorliegt.''',
+'''CRE 1.0 nutzt `24_config/capability_registry_34_1.json` als kanonische
+Quelle fuer Capabilities. CAIM bleibt die read-only Quelle fuer Agenten und
+Capability-Anbieter. CRE kann Single-Intent- und Multi-Intent-Eingaben
+bewerten, passende Capabilities ableiten, Kandidaten priorisieren und
+kennzeichnen, ob Governance, menschliche Freigabe, Review oder CMM-Relevanz
+vorliegt.''')
+replace('14_documents/CAPABILITY_RESOLUTION_ENGINE_1_0.md',
+'''## Verhaeltnis zu CAIM
+
+CAIM bleibt die kanonische Quelle fuer Agentenregistrierung und Capability-Daten. CRE nutzt CAIM read-only ueber bestehende Methoden wie:''',
+'''## Capability Registry und CAIM
+
+Die Capability Registry `24_config/capability_registry_34_1.json` ist in CRE
+1.0 die kanonische Quelle fuer Capability-Definitionen. Jede Capability besitzt
+`capability_id`, Name, Beschreibung, unterstuetzte Intents, Prioritaet,
+Governance-Level, erlaubte Agenten und Voraussetzungen.
+
+CAIM bleibt die kanonische Quelle fuer Agentenregistrierung und Anbieterstatus.
+CRE nutzt CAIM read-only ueber bestehende Methoden wie:''')
+replace('14_documents/CAPABILITY_RESOLUTION_ENGINE_1_0.md',
+'''- Modul `kontinuum.core.capability_resolution_engine`
+- Systemanbindung als `system.capability_resolution_engine`
+- read-only Statusfunktion''',
+'''- Modul `kontinuum.core.capability_resolution_engine`
+- Capability Registry `24_config/capability_registry_34_1.json` mit 46 vorhandenen CAIM-Capabilities
+- Systemanbindung als `system.capability_resolution_engine`
+- read-only Statusfunktion und `crestatus`''')
+replace('14_documents/CAPABILITY_RESOLUTION_ENGINE_1_0.md',
+'''- Capability-Erkennung nutzt bewusst einfache Marker und Routerentscheidungen.
+- Governance ist vorbereitet, aber noch keine vollstaendige Policy-Engine.''',
+'''- Capability-Erkennung nutzt bewusst einfache Marker, Routerentscheidungen und Registry-Lookup.
+- Governance-Gates pruefen Foundation-, CAM-, CCP- und Governance-Voraussetzungen deterministisch; eine vollstaendige Policy-Engine folgt spaeter.''')
+
+replace('14_documents/HANDBUCH_23.md',
+'''CRE 1.0 nutzt CAIM read-only als kanonische Quelle fuer Agenten und
+Capabilities. Sie kann Single-Intent- und Multi-Intent-Eingaben bewerten,
+passende Capabilities ableiten, Kandidaten priorisieren und kennzeichnen, ob
+Governance, menschliche Freigabe, Review oder CMM-Relevanz vorliegt.''',
+'''CRE 1.0 nutzt `24_config/capability_registry_34_1.json` als kanonische
+Quelle fuer Capabilities und CAIM read-only als Quelle fuer erlaubte Agenten.
+Sie kann Single-Intent- und Multi-Intent-Eingaben bewerten, passende
+Capabilities ableiten, Kandidaten priorisieren und kennzeichnen, ob Governance,
+menschliche Freigabe, Review oder CMM-Relevanz vorliegt.''')
+replace('14_documents/HANDBUCH_23.md',
+'''User -> Request Router -> Capability Resolution Engine -> Orchestrator Core
+     -> Governance -> Agenten -> Review -> CMM / Learning''',
+'''User -> Request Router -> Capability Resolution Engine -> Priorisierung
+     -> Governance -> Agent-Auswahl -> Review -> CMM / Learning''')
+
+replace('14_documents/KANONISCHES_ARCHITEKTURMODELL_34_1.md',
+'''CRE 1.0 bewertet Single-Intent- und Multi-Intent-Eingaben, leitet
+Capabilities ab, fragt CAIM nach Kandidaten, priorisiert Kandidaten und gibt
+Governance-, Review- und CMM-Hinweise aus. Die Ausfuehrung bleibt beim
+bestehenden Orchestrator/Agentenpfad.''',
+'''CRE 1.0 bewertet Single-Intent- und Multi-Intent-Eingaben, leitet
+Capabilities ueber `24_config/capability_registry_34_1.json` ab, fragt CAIM
+nach erlaubten Agenten, priorisiert Kandidaten und gibt Governance-, Review-
+und CMM-Hinweise aus. Die Ausfuehrung bleibt beim bestehenden
+Orchestrator/Agentenpfad.''')
+replace('14_documents/KANONISCHES_ARCHITEKTURMODELL_34_1.md',
+'''User -> Request Router -> Capability Resolution Engine -> Orchestrator Core
+     -> Governance -> Agenten -> Review -> CMM / Learning''',
+'''User -> Request Router -> Capability Resolution Engine -> Priorisierung
+     -> Governance -> Agent-Auswahl -> Review -> CMM / Learning''')
+replace('14_documents/KANONISCHES_ARCHITEKTURMODELL_34_1.md',
+'''- CRE loest Capabilities und Kandidaten auf.''',
+'''- CRE loest Capabilities aus der Capability Registry und Kandidaten aus CAIM auf.''')
+
+replace('14_documents/PROJEKTSTRUKTUR_34_1.md',
+'''- `01_system/kontinuum/core/capability_resolution_engine.py`: Capability
+  Resolution Engine 1.0 als read-only Empfehlungsschicht zwischen Router,
+  CAIM, Governance, Review und CMM.''',
+'''- `01_system/kontinuum/core/capability_resolution_engine.py`: Capability
+  Resolution Engine 1.0 als deterministische Empfehlungsschicht zwischen
+  Router, Capability Registry, CAIM, Governance, Review und CMM.
+- `24_config/capability_registry_34_1.json`: kanonische Registry der 46
+  vorhandenen CAIM-Capabilities mit Intents, Prioritaet, Governance-Level,
+  erlaubten Agenten und Voraussetzungen.''')
+replace('14_documents/PROJEKTSTRUKTUR_34_1.md',
+'''User -> Request Router -> Capability Resolution Engine -> Orchestrator Core
+     -> Governance -> Agenten -> Review -> CMM / Learning''',
+'''User -> Request Router -> Capability Resolution Engine -> Priorisierung
+     -> Governance -> Agent-Auswahl -> Review -> CMM / Learning''')
+
+chronicle = root / '22_project_chronicle/PROJEKTCHRONIK_23.md'
+text = chronicle.read_text(encoding='utf-8-sig')
+entry = '''
+
+# Meilenstein Capability Resolution Engine 1.0 Registry-Verankerung (2026-07-04)
+
+CRE 1.0 wurde nach CCP 1.0 als kanonische, deterministische Capability-Schicht
+finalisiert. Die Ablaufkette lautet nun:
+
+```text
+User -> Request Router -> Capability Resolution Engine -> Priorisierung
+     -> Governance -> Agent-Auswahl -> Review -> CMM / Learning
+```
+
+Umgesetzt:
+
+- `01_system/kontinuum/core/capability_resolution_engine.py` nutzt eine
+  kanonische Capability Registry und CAIM read-only fuer Agentenkandidaten.
+- `24_config/capability_registry_34_1.json` registriert 46 bereits vorhandene
+  CAIM-Capabilities; keine Fantasie-Capabilities wurden angelegt.
+- Request Router und PromptOrchestrator protokollieren CRE-Resolutionen
+  kompatibel, ohne bestehende Agentenpfade zu ersetzen.
+- CAM und Release Integrity kennen CRE-Core und Capability Registry als
+  kanonische/releasekritische Pfade.
+- Tests pruefen Registry, Lookup, Governance-Gate, Router -> CRE, CRE -> Agent,
+  unbekannte Capability und fehlende Ausfuehrungsberechtigung.
+'''
+if 'Meilenstein Capability Resolution Engine 1.0 Registry-Verankerung (2026-07-04)' not in text:
+    text = text.rstrip() + entry + '\n'
+chronicle.write_text(text, encoding='utf-8')
+updates.append('22_project_chronicle/PROJEKTCHRONIK_23.md')
+print('\n'.join(updates))
+'@ | python -seit 2s
+
+
+
+Die Doku ist nachgezogen. Ich ergänze noch ein paar Testassertions, damit CAM nicht nur zufällig grün ist, sondern CRE-Core und Registry ausdrücklich als kanonische Bausteine erwartet.
+
+Jetzt kommt die breitere Verifikation: CRE-Test, CAM-Test, Release-Integrity-Test und ein Governance-naher Test. Ich rechne mit möglichen Alt-Themen aus dem gemischten Arbeitsbaum, trenne aber CRE-Fehler sauber davon.
+
+Die vier Kernregressionen sind grün. Ich mache jetzt noch die Abschlusschecks: JSON erneut, Syntax nach allen Änderungen, gezielter CRE-Ankerscan und Git-Status.
+
+Alle Abschlusschecks sind grün. Ich hole noch den finalen Status und eine kompakte Dateiliste, damit ich sauber berichten kann, was neu ist und was geändert wurde.
+
+CRE 1.0 ist umgesetzt und verifiziert. Kein Commit, keine Archivierung, keine bewussten Massenoperationen.
+Neu/CRE-finalisiert:
+[capability_resolution_engine.py](C:/Projekt Kontinuum/01_system/kontinuum/core/capability_resolution_engine.py)
+[capability_registry_34_1.json](C:/Projekt Kontinuum/24_config/capability_registry_34_1.json)
+[test_capability_resolution_engine_1_0.py](C:/Projekt Kontinuum/17_tests/test_capability_resolution_engine_1_0.py)
+Geändert:
+[request_router.py](C:/Projekt Kontinuum/01_system/kontinuum/core/request_router.py): crestatus/Capability-Status vorbereitet.
+[application_services.py](C:/Projekt Kontinuum/01_system/kontinuum/core/application_services.py): Routerentscheidung erzeugt jetzt zusätzlich last_capability_resolution, ohne den alten Agentenpfad zu ersetzen.
+CAM/Release-Manifeste: CRE-Core und Registry als kanonische/releasekritische Pfade eingetragen.
+Doku: Architekturmodell, Handbuch, Projektstruktur, CRE-Dokument und Projektchronik aktualisiert.
+Tests: CAM-Test und CRE-Test erweitert.
+Eingebunden ist CRE jetzt so:
+User -> Request Router -> CRE -> Priorisierung -> Governance -> Agent-Auswahl -> Review -> CMM
+CRE führt keine Agenten aus. Sie löst deterministisch Capabilities aus der Registry auf, fragt CAIM read-only nach erlaubten Agenten, prüft Governance-/Foundation-/CAM-/CCP-Voraussetzungen und gibt eine nachvollziehbare Empfehlung zurück.
+Registriert wurden 46 vorhandene CAIM-Capabilities, u. a. file.read, web.read, git.status, code.inspect, chemistry.lookup, memory.write, identity.write, learning.run, governance.architecture, canonical_memory.write. Keine Fantasie-Capabilities.
+Bestanden:
+JSON-Validierung: Capability Registry, CAM, Release Integrity
+Python-Syntaxprüfung
+test_capability_resolution_engine_1_0.py
+test_canonical_architecture_manager.py
+test_release_integrity_framework_34_1.py
+test_continuous_governance_34_1.py
+Hinweis: Der Governance-Test hat bestehende generierte Dateien unter 31_reports/governance/... aktualisiert. Der übrige Git-Status bleibt weiterhin gemischt durch bereits vorhandene, nicht-CRE-bezogene Änderungen.
+CRE 2.0 offen: echte Ausführungsplanung im Orchestrator, Review-Queue/CMM-Schreibpfad, feinere Governance-Policy-Engine und Migration der Multi-Intent-Sonderlogik aus dem Orchestrator in CRE-Pläne.

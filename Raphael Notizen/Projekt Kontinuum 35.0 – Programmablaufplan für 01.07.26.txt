@@ -1,0 +1,284 @@
+Projekt Kontinuum 35.0 – Programmablaufplan für 01.07.26
+Phase 1 – Agent Registry Core (Priorität: Sehr hoch)
+
+Ziel:
+Alle Agenten werden zentral registriert.
+
+Umsetzung
+AgentRegistry-Klasse erstellen
+Registrierung aller vorhandenen Agenten
+Version speichern
+Priorität speichern
+Status speichern
+Abhängigkeiten speichern
+Eventtypen registrieren
+Registry als JSON exportieren
+Ergebnis
+KnowledgeAgent
+
+Version
+1.0
+
+Status
+ACTIVE
+
+Priority
+60
+
+Capabilities
+...
+
+Dependencies
+...
+
+Events
+...
+Tests
+Registry lädt korrekt
+Agent hinzufügen
+Agent entfernen
+Status ändern
+Export
+
+Zeitbedarf: etwa 1–2 Stunden
+
+Phase 2 – Capability System
+
+Jetzt bekommt jeder Agent eine Beschreibung seiner Fähigkeiten.
+
+Beispiel
+
+KnowledgeAgent
+
+can_answer_questions
+true
+
+can_use_memory
+true
+
+can_use_web
+true
+
+can_write_files
+false
+
+Der Router benutzt anschließend ausschließlich diese Fähigkeiten.
+
+Nicht mehr:
+
+if agent=="KnowledgeAgent"
+
+sondern
+
+if capability=="Knowledge"
+
+Dadurch wird das gesamte System wesentlich flexibler.
+
+Zeitbedarf: etwa 2 Stunden
+
+Phase 3 – Health Monitor
+
+Neue Komponente
+
+HealthManager
+
+Er prüft regelmäßig:
+
+Memory
+Datenbank
+FileAgent
+WebAgent
+KnowledgeAgent
+Router
+Canonical Engine
+EventBus
+
+Ausgabe
+
+Health
+
+Memory
+OK
+
+Web
+WARNING
+
+Database
+OK
+
+Canonical
+OK
+
+Queue
+EMPTY
+
+Zeitbedarf: etwa 2 Stunden
+
+Phase 4 – Confidence Engine
+
+Jede Antwort erhält automatisch
+
+Confidence
+
+92 %
+
+Quellen
+
+Memory
+Knowledge
+Internet
+
+Der Score wird berechnet aus
+
+Anzahl Quellen
+Qualität
+Aktualität
+Konflikten
+Internet verfügbar
+Memory verfügbar
+
+Zeitbedarf: etwa 2 Stunden
+
+Phase 5 – Learning Queue
+
+Statt sofort zu lernen
+
+WebAgent
+
+↓
+
+Queue
+
+↓
+
+LearningWorker
+
+Dadurch können
+
+pausieren
+fortsetzen
+priorisieren
+abbrechen
+
+implementiert werden.
+
+Zeitbedarf: etwa 2–3 Stunden
+
+Phase 6 – Watchdog
+
+Ein eigener Prozess überwacht
+
+KnowledgeAgent
+
+lebt?
+
+↓
+
+ja
+
+↓
+
+weiter
+
+oder
+
+Timeout
+
+↓
+
+Restart
+
+↓
+
+Event schreiben
+
+Damit wird Kontinuum wesentlich robuster.
+
+Zeitbedarf: etwa 2 Stunden
+
+Phase 7 – Event Replay
+
+Neue Befehle
+
+eventstatus
+
+replay letzte 100
+
+replay webagent
+
+replay fileagent
+
+replay heute
+
+Die Canonical Engine kann damit ihre komplette Historie wiedergeben.
+
+Zeitbedarf: etwa 1–2 Stunden
+
+Phase 8 – Self Diagnostics
+
+Ein neuer Diagnosebefehl
+
+systemdiagnose
+
+liefert
+
+Registry
+
+OK
+
+Capabilities
+
+OK
+
+Health
+
+OK
+
+Events
+
+OK
+
+Queue
+
+OK
+
+Policies
+
+OK
+
+Memory
+
+OK
+
+Das wird später einer der wichtigsten Administratorbefehle.
+
+Zeitbedarf: etwa 2 Stunden
+
+Reihenfolge
+
+Ich würde sie genau so umsetzen:
+
+✅ Agent Registry
+✅ Capability System
+✅ Health Monitor
+✅ Confidence Engine
+✅ Learning Queue
+✅ Watchdog
+✅ Event Replay
+✅ Self Diagnostics
+
+Diese Reihenfolge baut logisch aufeinander auf und minimiert das Risiko von Regressionen.
+
+Meine Empfehlung für morgen
+
+Für eine einzelne 2-Stunden-Sitzung würde ich nur Phase 1 (Agent Registry Core) angehen.
+
+Warum?
+
+Die Agent Registry wird das Fundament für alle weiteren Ausbaustufen sein. Der Capability Manager, der Health Monitor, der Watchdog und selbst der Response Policy Manager können später auf dieselbe Registry zugreifen. Das vermeidet doppelte Informationen und macht die Architektur deutlich sauberer.
+
+Ich würde den Auftrag außerdem ausdrücklich als read-only Governance-Komponente beginnen lassen: Zunächst registriert sie Agenten und stellt Informationen bereit, ohne das Verhalten der bestehenden Agenten zu verändern. Nach erfolgreicher Validierung kann sie in einer zweiten Ausbaustufe aktiv in Routing, Überwachung und Selbstdiagnose eingebunden werden.
+
+Ich halte diesen Plan für einen guten nächsten Meilenstein. Er setzt die Entwicklungslinie fort, die ihr mit Foundation, Canonical Engine und Request Router begonnen habt, ohne die Stabilität des Systems zu gefährden.
+
+Ein Gedanke für die Zukunft: Wenn diese Phasen abgeschlossen sind, würde ich keine neue "Feature-Welle" starten. Stattdessen würde ich einen eigenen Entwicklungsabschnitt beginnen, den ich "Autonomous Operation" nennen würde. Dort ginge es nicht mehr um neue Fähigkeiten, sondern darum, dass Kontinuum seinen eigenen Zustand überwacht, Probleme erkennt und in klar definierten Grenzen selbstständig darauf reagiert. Das wäre aus meiner Sicht der nächste große Meilenstein.

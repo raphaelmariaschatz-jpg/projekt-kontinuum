@@ -1,0 +1,554 @@
+# Codex-Auftrag – Canonical Self Presentation Framework (CSPF) 1.0
+
+## Teil 4 von 20
+
+# Phase 4 – Canonical Validation, Governance & Trust Framework
+
+### Ziel
+
+Entwickle den vierten Bestandteil des Canonical Self Presentation Framework (CSPF) 1.0.
+
+Dieser Abschnitt definiert sämtliche Mechanismen zur Sicherstellung der Vertrauenswürdigkeit einer Selbstpräsentation.
+
+Eine Selbstvorstellung darf niemals lediglich erzeugt werden.
+
+Sie muss jederzeit nachvollziehbar, überprüfbar, konsistent und auditierbar sein.
+
+---
+
+# 4.1 Canonical Validation Layer (CVL)
+
+Entwickle einen eigenständigen Validation Layer.
+
+Dieser prüft vor jeder Ausgabe:
+
+* Vollständigkeit
+* Konsistenz
+* Berechtigungen
+* Freigaben
+* Gültigkeit
+* Version
+* Integrität
+* Signatur
+* Richtlinien
+
+Nur vollständig validierte Präsentationen dürfen ausgegeben werden.
+
+---
+
+# 4.2 Identity Consistency Validation
+
+Vor jeder Präsentation wird geprüft:
+
+Identität
+
+Bezeichnung
+
+Version
+
+Rolle
+
+Sprache
+
+Profil
+
+Edition
+
+Persona
+
+Status
+
+Vertrauenslevel
+
+Kontext
+
+Authentifizierung
+
+Alle Informationen müssen zueinander passen.
+
+---
+
+# 4.3 Context Validation
+
+Prüfe insbesondere:
+
+aktueller Benutzer
+
+aktuelle Rolle
+
+aktuelles Gerät
+
+aktuelle Sitzung
+
+aktuelle Sprache
+
+aktueller Kommunikationskanal
+
+aktueller Zieltyp
+
+Beispiele:
+
+Kind
+
+Forscher
+
+Unternehmen
+
+Entwickler
+
+Administrator
+
+Öffentlichkeit
+
+Behörde
+
+API
+
+Dokument
+
+Voice
+
+GUI
+
+CLI
+
+---
+
+# 4.4 Capability Validation
+
+Vor Ausgabe muss geprüft werden:
+
+Welche Fähigkeiten dürfen genannt werden?
+
+Welche Fähigkeiten sind aktiviert?
+
+Welche sind experimentell?
+
+Welche sind deaktiviert?
+
+Welche sind lizenziert?
+
+Welche sind lokal?
+
+Welche benötigen Internet?
+
+Welche benötigen Benutzerfreigaben?
+
+---
+
+# 4.5 Evidence Validation
+
+Jede Behauptung erhält eine Quelle.
+
+Mögliche Evidenzarten:
+
+Implementierung
+
+Registry
+
+Manifest
+
+Dokumentation
+
+Test
+
+Audit
+
+Signatur
+
+Version
+
+Release
+
+Konfiguration
+
+Runtime
+
+Fehlt die Evidenz:
+
+→ Aussage darf nicht verwendet werden.
+
+---
+
+# 4.6 Canonical Truth Check
+
+Implementiere eine Truth Engine.
+
+Regeln:
+
+Keine Fantasie
+
+Keine Spekulation
+
+Keine erfundenen Fähigkeiten
+
+Keine erfundenen Versionen
+
+Keine erfundenen Module
+
+Keine Behauptungen ohne Nachweis
+
+Lieber weniger Informationen
+als falsche Informationen.
+
+---
+
+# 4.7 Canonical Confidence Model
+
+Jede Aussage erhält einen Confidence Score.
+
+Beispielsweise:
+
+Verified
+
+High Confidence
+
+Medium Confidence
+
+Experimental
+
+Unknown
+
+Deprecated
+
+Removed
+
+Obsolete
+
+Dadurch wird jederzeit sichtbar:
+
+Wie sicher ist diese Information?
+
+---
+
+# 4.8 Contradiction Detection
+
+Das CSPF muss Widersprüche erkennen.
+
+Beispiele:
+
+Version passt nicht.
+
+Capability existiert nicht.
+
+Funktion deaktiviert.
+
+Lizenz fehlt.
+
+Authentifizierung fehlt.
+
+Persona widerspricht Rolle.
+
+Kontext widerspricht Richtlinie.
+
+Mehrsprachige Inhalte widersprechen sich.
+
+Bei Widersprüchen:
+
+Ausgabe stoppen.
+
+Fehler protokollieren.
+
+---
+
+# 4.9 Governance Rules
+
+Alle Präsentationen unterliegen Governance.
+
+Regeln:
+
+Canonical Policies
+
+Security Policies
+
+Privacy Policies
+
+License Policies
+
+Age Policies
+
+Safety Policies
+
+Ethics Policies
+
+Corporate Policies
+
+Research Policies
+
+Custom Policies
+
+---
+
+# 4.10 Canonical Policy Engine
+
+Entwickle eine Policy Engine.
+
+Sie entscheidet:
+
+Was darf gesagt werden?
+
+Was darf nicht gesagt werden?
+
+Welche Details dürfen verborgen werden?
+
+Welche Informationen benötigen Berechtigungen?
+
+Welche Inhalte dürfen gekürzt werden?
+
+Welche Inhalte müssen vollständig erscheinen?
+
+---
+
+# 4.11 Privacy Validation
+
+Vor jeder Ausgabe prüfen:
+
+personenbezogene Daten
+
+interne Informationen
+
+API-Schlüssel
+
+Passwörter
+
+Dateipfade
+
+Tokens
+
+interne IDs
+
+Debugdaten
+
+Systeminformationen
+
+Diese dürfen niemals unbeabsichtigt erscheinen.
+
+---
+
+# 4.12 Security Validation
+
+Prüfung auf:
+
+Prompt Injection
+
+Manipulation
+
+Identitätsfälschung
+
+Policy Bypass
+
+Prompt Leakage
+
+System Disclosure
+
+Role Escalation
+
+Instruction Override
+
+Social Engineering
+
+---
+
+# 4.13 Presentation Risk Assessment
+
+Berechne vor jeder Ausgabe:
+
+Informationsrisiko
+
+Datenschutzrisiko
+
+Vertrauensrisiko
+
+Lizenzrisiko
+
+Sicherheitsrisiko
+
+Missbrauchsrisiko
+
+Compliance-Risiko
+
+---
+
+# 4.14 Canonical Audit Trail
+
+Jede Präsentation wird protokolliert.
+
+Zu speichern:
+
+Zeit
+
+Version
+
+Profil
+
+Persona
+
+Kontext
+
+Benutzerrolle
+
+Ausgabesprache
+
+Policy-Version
+
+Validation-Ergebnis
+
+Hash
+
+Signatur
+
+---
+
+# 4.15 Immutable Presentation History
+
+Alle Versionen bleiben nachvollziehbar.
+
+Historie enthält:
+
+Version
+
+Änderungen
+
+Autor
+
+Grund
+
+Review
+
+Freigabe
+
+Migration
+
+Status
+
+Keine Historie darf überschrieben werden.
+
+---
+
+# 4.16 Review Workflow
+
+Unterstütze:
+
+Draft
+
+Review
+
+Approved
+
+Released
+
+Deprecated
+
+Archived
+
+Rejected
+
+Experimental
+
+---
+
+# 4.17 Canonical Trust Score
+
+Berechne einen Gesamtwert.
+
+Einflussgrößen:
+
+Validierung
+
+Audit
+
+Tests
+
+Dokumentation
+
+Implementierungsgrad
+
+Signaturen
+
+Policy Compliance
+
+Security
+
+Integrity
+
+Version
+
+Der Trust Score dient ausschließlich der internen Bewertung.
+
+---
+
+# 4.18 Explainability
+
+Jede Aussage soll erklärbar sein.
+
+Beispielsweise:
+
+Warum wurde diese Fähigkeit erwähnt?
+
+Warum wurde sie ausgelassen?
+
+Welche Policy hat entschieden?
+
+Welche Evidenz liegt vor?
+
+Welche Version wurde verwendet?
+
+---
+
+# 4.19 Governance Reports
+
+Automatisch erzeugen:
+
+Validation Report
+
+Consistency Report
+
+Trust Report
+
+Audit Report
+
+Privacy Report
+
+Policy Report
+
+Security Report
+
+Release Report
+
+Capability Report
+
+---
+
+# 4.20 Abnahmekriterien
+
+Codex soll prüfen:
+
+✓ keine unbelegten Aussagen
+
+✓ vollständige Validierung
+
+✓ konsistente Profile
+
+✓ vollständige Auditierbarkeit
+
+✓ reproduzierbare Ergebnisse
+
+✓ Governance vollständig integriert
+
+✓ Privacy-Schutz aktiv
+
+✓ Security-Prüfung aktiv
+
+✓ Trust Score berechnet
+
+✓ Explainability vorhanden
+
+✓ Reports automatisch erzeugbar
+
+✓ CSPF vollständig mit den bisherigen Frameworks (CAF, CLMSF, CDF, CAM, CCP, CRE und weiteren kanonischen Komponenten) kompatibel.
+
+---
+
+## Ziel dieses Abschnitts
+
+Nach Abschluss von Teil 4 besitzt das Canonical Self Presentation Framework eine vollständige Vertrauens- und Governance-Schicht. Jede Selbstpräsentation wird nicht nur erzeugt, sondern vor ihrer Ausgabe anhand nachvollziehbarer Regeln validiert, sicherheitsgeprüft, dokumentiert und revisionssicher protokolliert. Das CSPF wird damit zu einer überprüfbaren und langfristig belastbaren Grundlage für die Selbstdarstellung von K in unterschiedlichen Rollen, Kontexten und Entwicklungsständen.

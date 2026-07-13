@@ -1,0 +1,345 @@
+# Codex-Auftrag – Canonical Media Learning Framework (CMLF) 1.0
+
+## Ziel des Auftrags
+
+Bitte prüfe und konzipiere das neue Architekturkonzept:
+
+```text
+Canonical Media Learning Framework (CMLF) 1.0
+```
+
+Das Canonical Media Learning Framework soll den kanonischen Rahmen definieren, über welche Medien, Darstellungsformen und Lernmethoden Projekt Kontinuum Wissen und Kompetenzen vermittelt.
+
+Das CMLF beschreibt nicht die Inhalte des Lernens, sondern die geeigneten Lernmedien und Vermittlungsformen.
+
+---
+
+# Grundsatz
+
+Projekt Kontinuum soll Wissen so vermitteln, dass Menschen entsprechend ihrer individuellen Lernweise möglichst effektiv lernen können.
+
+Dabei gilt:
+
+* Nicht jedes Thema eignet sich für dieselbe Darstellungsform.
+* Nicht jeder Mensch lernt auf dieselbe Weise.
+* Die Wahl des Mediums ist Teil des Lernprozesses.
+
+---
+
+# Zielsetzung
+
+Das CMLF soll festlegen,
+
+* welche Medientypen unterstützt werden,
+* wann welche Darstellungsform sinnvoll ist,
+* wie unterschiedliche Medien kombiniert werden,
+* wie adaptive Medienempfehlungen entstehen,
+* und wie Lernfortschritte medienübergreifend unterstützt werden.
+
+---
+
+# Kanonische Medienbereiche
+
+Bitte prüfe folgende Bereiche:
+
+## 1. Text Learning
+
+Beispiele:
+
+* Erklärungen
+* Zusammenfassungen
+* Schritt-für-Schritt-Anleitungen
+* Fachtexte
+* Dialoge
+
+---
+
+## 2. Visual Learning
+
+Beispiele:
+
+* Diagramme
+* Mindmaps
+* Infografiken
+* Tabellen
+* Prozessgrafiken
+* Architekturdiagramme
+
+---
+
+## 3. Interactive Learning
+
+Beispiele:
+
+* Fragen
+* Quiz
+* Aufgaben
+* Simulationen
+* Experimente
+* Übungen
+
+---
+
+## 4. Audio Learning
+
+Beispiele:
+
+* Sprachausgabe
+* Hörlektionen
+* Dialogtraining
+* Aussprache
+* Zusammenfassungen zum Anhören
+
+---
+
+## 5. Video Learning
+
+Beispiele:
+
+* Lernvideos
+* Demonstrationen
+* Animationen
+* Prozessdarstellungen
+
+---
+
+## 6. Practical Learning
+
+Beispiele:
+
+* Programmieraufgaben
+* Laborübungen
+* Projekte
+* Fallstudien
+* Praxisaufgaben
+
+---
+
+## 7. Reflective Learning
+
+Beispiele:
+
+* Selbstreflexion
+* Lerntagebuch
+* Wissensprüfung
+* Transferaufgaben
+* Feedback
+
+---
+
+# Adaptive Medienauswahl
+
+Bitte prüfe, wie K künftig entscheiden könnte,
+
+* welches Medium für welches Thema geeignet ist,
+* welche Kombination mehrerer Medien sinnvoll ist,
+* wann zwischen Medien gewechselt werden sollte,
+* wie Überforderung vermieden werden kann,
+* wie individuelle Präferenzen berücksichtigt werden können.
+
+---
+
+# Beziehung zum CAICF
+
+Bitte besonders prüfen:
+
+```text
+CAICF definiert,
+welche Kompetenzen aufgebaut werden.
+
+CMLF definiert,
+mit welchen Medien diese Kompetenzen vermittelt werden.
+```
+
+---
+
+# Beziehung zur CCP
+
+Bitte prüfen:
+
+Die CCP entscheidet,
+
+* wie K denkt,
+* analysiert,
+* plant
+* und antwortet.
+
+Das CMLF unterstützt die letzte Phase der Pipeline:
+
+```text
+Response
+↓
+
+Learning Output
+
+↓
+
+geeignetes Medium auswählen
+
+↓
+
+Nutzer
+```
+
+---
+
+# Architektur-Einordnung
+
+Bitte prüfe folgende Einordnung:
+
+```text
+Foundation Layer
+        │
+Governance Layer
+        │
+Canonical Layer
+        │
+Canonical Intelligence Framework
+        │
+Canonical Cognitive Pipeline
+        │
+Capability Resolution Engine
+        │
+Execution Planner
+        │
+Orchestrator Core
+        │
+Canonical Learning Layer
+        │
+├── CAICF
+├── CMLF
+└── Tutor
+        │
+User
+```
+
+---
+
+# Schnittstellenprüfung
+
+Bitte prüfe Beziehungen zu:
+
+* Foundation Layer
+* Governance Layer
+* Canonical Architecture
+* CIF
+* CCP
+* CAICF
+* CRE
+* Execution Planner
+* Orchestrator Core
+* Learning Agent
+* Canonical Memory
+* Tutor-Komponenten
+* Education Layer
+* Meta-Reasoning
+* Reflection
+* Release Integrity
+* Canonical Glossary
+* Projektchronik
+
+---
+
+# Arbeitsauftrag
+
+In dieser Phase erfolgt **keine Implementierung**.
+
+Bitte:
+
+1. analysiere das Konzept
+2. prüfe die Einordnung in die Canonical Architecture
+3. definiere die Medienbereiche
+4. prüfe adaptive Medienauswahl
+5. identifiziere notwendige Schnittstellen
+6. grenze CMLF klar gegenüber CAICF und CCP ab
+7. prüfe Erweiterbarkeit
+8. erstelle einen kanonischen Implementierungsplan
+9. dokumentiere Risiken und offene Fragen
+
+---
+
+# Erwartete Dateien
+
+Bitte prüfe, ob folgende Dateien sinnvoll sind:
+
+```text
+14_documents/CANONICAL_MEDIA_LEARNING_FRAMEWORK_1_0.md
+24_config/canonical_media_learning_framework_1_0.json
+31_reports/cmlf_1_0_status_report.md
+```
+
+Optional:
+
+```text
+14_documents/CMLF_IMPLEMENTATION_PLAN_1_0.md
+24_config/cmlf_media_types_1_0.json
+```
+
+---
+
+# Erwartetes JSON-Grundschema
+
+Das Framework sollte mindestens enthalten:
+
+* Framework-Informationen
+* Version
+* Status
+* Medienbereiche
+* adaptive Auswahlregeln
+* Beziehungen zu CAICF und CCP
+* Schnittstellen
+* Erweiterungspunkte
+
+---
+
+# Leitplanken
+
+Erlaubt:
+
+* Architekturkonzept
+* Dokumentation
+* JSON-Schema
+* Statusbericht
+* Glossar-Ergänzung
+* Implementierungsplan
+
+Nicht erlaubt:
+
+* Runtime-Änderungen
+* Änderungen an CRE, Execution Planner oder Orchestrator Core
+* neue Agentenimplementierungen
+* Datenbankmigrationen
+* automatische Mediengenerierung im Produktivbetrieb
+* Refactorings bestehender Komponenten
+
+---
+
+# Entscheidungskriterium
+
+Das Canonical Media Learning Framework soll nur dann als GO bewertet werden, wenn es:
+
+* die Lernarchitektur sinnvoll ergänzt,
+* CAICF unterstützt, aber nicht ersetzt,
+* die CCP bei der Ausgabe geeigneter Lernmedien unterstützt,
+* unterschiedliche Lernstile berücksichtigt,
+* langfristig erweiterbar bleibt,
+* die Architektur nicht unnötig verkompliziert.
+
+---
+
+# Erwartetes Ergebnis
+
+Bitte liefere:
+
+1. Bestandsanalyse
+2. Architektur-Einordnung
+3. Definition der Medienbereiche
+4. Schnittstellenübersicht
+5. Abgrenzung zu CAICF und CCP
+6. Vorschlag für Dokumente und JSON-Strukturen
+7. Risiken und offene Fragen
+8. Empfehlung: GO / NO-GO / SPÄTER
+9. Kanonischen Implementierungsplan
+10. Statusbericht unter `31_reports`, falls umgesetzt.
+
+Ziel ist ein kanonischer Rahmen, der festlegt, wie Projekt Kontinuum Wissen und Kompetenzen über geeignete Medienformen vermittelt und dabei unterschiedliche Lernstile sowie adaptive Lernpfade unterstützt.

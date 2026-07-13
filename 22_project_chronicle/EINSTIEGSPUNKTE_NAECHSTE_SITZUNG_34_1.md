@@ -21,3 +21,6 @@ Kontinuum ueber `python -m kontinuum`. Starts ueber `main.py` oder
 Kanonische Nachweise liegen unter `31_reports/release_integrity/34.1`; das
 verifizierte Backup liegt unter `09_backups/release_integrity`. Ohne gültigen
 Gate-Bericht ist die Freigabe technisch `NEIN`.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

@@ -23,3 +23,6 @@ relevanten Handlungen als ausführbare Systemregel. Kontinuum besitzt damit
 funktionale Bausteine für Kontinuität, Selbstmodellierung, Zielorientierung,
 Moralprüfung und kontrollierte Selbstreflexion. Dies ist ausdrücklich kein
 Nachweis oder Versprechen subjektiven Bewusstseins.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

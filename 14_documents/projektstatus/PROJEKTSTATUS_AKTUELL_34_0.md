@@ -25,3 +25,6 @@ Coverage, Conflict, Explanation und Goal Integration sind implementiert.
 
 Die zwölf vorläufigen Leitprinzipien bleiben bis zum Widerruf aktiv. Ihre IDs
 `foundation.guiding.01` bis `.12` sind Bestandteil der 31 stabilen Regeln.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

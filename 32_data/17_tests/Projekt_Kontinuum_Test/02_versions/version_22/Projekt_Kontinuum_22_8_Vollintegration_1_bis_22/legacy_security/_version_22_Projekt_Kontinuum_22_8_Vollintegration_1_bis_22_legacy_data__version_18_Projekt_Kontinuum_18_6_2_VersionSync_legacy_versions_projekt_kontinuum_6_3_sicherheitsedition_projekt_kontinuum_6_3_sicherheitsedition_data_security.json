@@ -1,0 +1,12 @@
+{
+  "initialized": false,
+  "users": [],
+  "failed_attempts": 0,
+  "locked_until": null,
+  "policy": {
+    "max_failed_attempts": 5,
+    "password_hashing": "sha256_with_salt",
+    "superadmin_fixed": "Raphael Schatz",
+    "applies_to_future_versions": true
+  }
+}

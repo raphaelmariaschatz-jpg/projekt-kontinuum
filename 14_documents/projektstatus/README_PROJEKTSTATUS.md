@@ -19,3 +19,6 @@ schneller auffindbar.
 - Release 32.4: `..\..\22_project_chronicle\RELEASE_32_4_VERIFICATION_DOCUMENTATION.md`
 - Release 32.3: `..\..\22_project_chronicle\RELEASE_32_3_RUNTIME_HARDENING.md`
 - Release 32.2: `..\..\22_project_chronicle\RELEASE_32_2_TEMPORAL_RELEVANCE.md`
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

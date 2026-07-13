@@ -1,0 +1,107 @@
+Doku Sync am 03.07.26
+
+Ich führe den Doku-Sync jetzt aus. Betroffene Dateien: 14_documents/HANDBUCH_23.md, 14_documents/PROJEKTSTRUKTUR_34_1.md, 14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_34_1.md, 14_documents/KANONISCHES_ARCHITEKTURMODELL_34_1.md und 22_project_chronicle/PROJEKTCHRONIK_23.md; ich halte die Ergänzungen klein und kanonisch.
+
+Ich sehe die Lücke klar: CRE hat ein eigenes Dokument, aber die kanonischen Sammeldokumente tragen sie noch nicht. Ich ergänze jetzt jeweils kurze kanonische Abschnitte, keine großflächige Umschreibung.
+
+Ich nehme ORDNERSTRUKTUR_23.md mit in den Sync, weil du „Ordnerstruktur“ ausdrücklich genannt hast. Damit sind es sechs Doku-Dateien plus Chronik.
+
+Ich schreibe jetzt die Synchronisation: CRE wird als aktive, read-only Empfehlungsschicht in Architektur, Projektstruktur, Projektstatus, Handbuch, Ordnerstruktur und Chronik verankert; außerdem wird der Multi-Intent-Fix als aktueller Übergangspfad benannt.
+
+Der Doku-Sync ist geschrieben. Ich prüfe jetzt per Suche, ob CRE/Multi-Intent in allen kanonischen Zieldateien auftaucht, und lasse die relevanten Tests noch einmal laufen.
+
+Die Inhalte sind in allen Zieldokumenten auffindbar, und CRE/Multi-Intent-Regressionen sind grün. Auffällig ist nur, dass Git bei einigen Markdown-Dateien CRLF/LF-Zeilenenden meldet; ich prüfe den Diff jetzt kurz, damit keine unerwünschte Formatwelle drinsteckt.
+
+Der Diff zeigt zusätzlich ältere, bereits uncommitted Doku-Ergänzungen zu Learning/CIM, die vor diesem Sync schon im Arbeitsbaum lagen. Ich lasse sie unangetastet. Einen kleinen Qualitätsfehler korrigiere ich noch: Im Handbuch gab es bereits doppelte Abschnittsnummern; meine CRE-Ergänzung soll die Nummerierung nicht weiter verschlechtern.
+
+zur Ergänzung: Codex-Auftrag: Kanonische Dokumentationsaktualisierung für Orchestrator / Capability Resolution Engine
+
+Bitte prüfe und aktualisiere alle relevanten kanonischen Dokumentationen im Projekt Kontinuum, damit der neue Architekturstand rund um Orchestrator Core, Capability Resolution Engine und Governance-Anbindung vollständig, konsistent und nachvollziehbar dokumentiert ist.
+
+Ziel:
+Die Dokumentation soll nicht nur einzelne neue Dateien erwähnen, sondern den Orchestrator als zentralen zukünftigen Steuerungsbaustein korrekt in die bestehende Architektur einordnen.
+
+Bitte insbesondere prüfen und aktualisieren:
+
+1. Kanonisches Architekturmodell
+- Orchestrator Core als zentrale Steuerungsschicht ergänzen
+- Capability Resolution Engine als vorgeschaltete Auflösungsschicht dokumentieren
+- Beziehung zu Router, Governance, Agenten, Review, CMM und Learning Layer beschreiben
+
+2. Handbuch / Projektübersicht
+- Neuer Abschnitt: Orchestrator Core 1.0
+- Zweck, Aufgaben und Grenzen beschreiben
+- Klarstellen: Der Orchestrator entscheidet nicht willkürlich, sondern regelgebunden über Fähigkeiten, Prioritäten, Agenten und Ausführung
+
+3. Projektchronik
+- heutigen Architekturentscheid eintragen
+- festhalten, dass der nächste große Entwicklungsschritt nicht „mehr Agenten“, sondern ein sauberer Orchestrator mit Capability Resolution ist
+
+4. Roadmap
+- Orchestrator Core 1.0 als priorisierten Architekturmeilenstein aufnehmen
+- Capability Resolution Engine als vorbereitenden Kernbaustein ergänzen
+- spätere Ausbaustufen markieren: Priorisierung, Governance-Check, Agent Planning, Review, CMM-Rückführung
+
+5. Governance-Dokumentation
+- dokumentieren, dass Orchestrator-Entscheidungen künftig governancepflichtig sind
+- Regeln für Blockieren, Freigeben, Protokollieren und Review berücksichtigen
+
+6. Agenten- / Capability-Dokumentation
+- Trennung zwischen Agent und Capability klar beschreiben
+- Capabilities sollen künftig nicht fest an Agentennamen gebunden sein
+- Agenten gelten als Anbieter von Fähigkeiten, nicht als primäre Steuerungseinheit
+
+Wichtig:
+- Keine rein kosmetische Aktualisierung.
+- Keine neuen Architekturbegriffe ohne Einordnung.
+- Keine widersprüchlichen Aussagen zwischen Architekturmodell, Handbuch, Roadmap und Chronik.
+- Bestehende kanonische Begriffe beibehalten.
+- Neue Begriffe nur ergänzen, wenn sie konsistent eingebettet werden.
+- Änderungen am Ende in einem kurzen Report zusammenfassen.
+
+Erwartetes Ergebnis:
+- Aktualisierte kanonische Dokumentation
+- Aktualisierte Roadmap
+- Aktualisierte Projektchronik
+- Kurzer Änderungsreport mit Liste aller angepassten Dateien
+- Hinweis auf mögliche Restspannungen oder fehlende Dokumentationsstellen
+
+Gute Ergänzung. Ich erweitere den Sync jetzt vom reinen CRE-Nachtrag auf den größeren Architekturstand: Orchestrator Core als zukünftige Steuerungsschicht, CRE als vorgeschalteter Resolver, Agenten als Capability-Anbieter. Betroffene zusätzliche Dateien prüfe ich jetzt: Roadmap, Phase-5-/Governance-Doku und Agenten-/Capability-Doku.
+
+Ich aktualisiere jetzt die zweite Ebene: Roadmap, Phase-5-Agenten-/Capability-Dokumentation und die bereits angepassten kanonischen Dokumente werden um „Orchestrator Core 1.0“ erweitert. Wichtig: Ich dokumentiere den Orchestrator als priorisierten Architekturmeilenstein bzw. zukünftige Steuerungsschicht; die aktuelle technische Instanz bleibt der bestehende PromptOrchestrator.
+
+Der Orchestrator-/Capability-Sync ist eingetragen. Ich prüfe jetzt Konsistenztreffer in allen betroffenen Dokumenten, die Handbuch-Nummerierung und die CRE/Multi-Intent-Regressionssuite.
+
+Die Suche zeigt alles ist verankert, aber ich sehe eine kleine Restspannung in der Reihenfolge des Zielpfads: Ein Dokument hatte Governance vor Orchestrator, andere Orchestrator vor Governance. Ich vereinheitliche das jetzt auf: Router -> CRE -> Orchestrator/Priorisierung -> Governance -> Agenten -> Review -> CMM.
+
+Die Zielpfade sind jetzt vereinheitlicht. Ich mache abschließend noch einen Konsistenzcheck auf die Kernbegriffe und eine Diff-/Statusübersicht.
+
+Doku-Sync ausgeführt. Der Orchestrator-/CRE-Architekturstand ist jetzt kanonisch deutlich besser verankert.
+Aktualisiert:
+14_documents/KANONISCHES_ARCHITEKTURMODELL_34_1.md
+14_documents/HANDBUCH_23.md
+14_documents/PROJEKTSTRUKTUR_34_1.md
+14_documents/ORDNERSTRUKTUR_23.md
+14_documents/projektstatus/PROJEKTSTATUS_AKTUELL_34_1.md
+14_documents/CAPABILITY_RESOLUTION_ENGINE_1_0.md
+14_documents/fundamentale Gedanken/Roadmap.md
+14_documents/PHASE_5_CANONICAL_AGENT_ECOSYSTEM.md
+14_documents/ARBEITSREGEL_ARTEFAKT_LIFECYCLE_34_1.md
+22_project_chronicle/PROJEKTCHRONIK_23.md
+Inhaltlich ergänzt:
+Orchestrator Core 1.0 als priorisierter nächster Architekturmeilenstein.
+CRE als vorgeschaltete read-only Resolver-Schicht.
+Zielpfad vereinheitlicht: User -> Request Router -> CRE -> Orchestrator Core/Priorisierung -> Governance -> Agenten -> Review -> CMM/Learning.
+Klare Trennung: Agenten sind Anbieter von Capabilities, nicht primäre Steuerungseinheit.
+Governance-Regeln für Orchestrator-Entscheidungen: blockieren, freigeben, protokollieren, Review, CMM-/Learning-Handoff.
+Roadmap aktualisiert: nächster großer Schritt ist Orchestrator + Capability Resolution, nicht „mehr Agenten“.
+Chronik um heutigen Architekturentscheid erweitert.
+Handbuch-Abschnittsnummerierung korrigiert.
+Verifiziert:
+test_capability_resolution_engine_1_0.py: bestanden
+test_multi_intent_file_diagnostics_34_1.py: bestanden
+Konsistenzsuche über Orchestrator/CRE/Governance/Capability-Begriffe: Treffer in allen Zieldokumenten vorhanden.
+Restspannungen:
+Git meldet bei einigen Markdown-Dateien CRLF/LF-Zeilenenden-Warnungen.
+Der Arbeitsbaum war vorher schon stark dirty; ich habe bestehende uncommitted Änderungen nicht zurückgesetzt.
+Orchestrator Core ist aktuell dokumentierter Architekturmeilenstein/Migrationsziel, noch kein eigenes produktives Runtime-Modul.

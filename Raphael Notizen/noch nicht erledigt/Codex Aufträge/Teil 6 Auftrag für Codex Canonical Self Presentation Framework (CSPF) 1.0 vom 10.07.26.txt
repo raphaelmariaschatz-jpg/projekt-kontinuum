@@ -1,0 +1,626 @@
+# Codex-Auftrag – Teil 6
+
+# Canonical Self-Presentation Framework (CSPF) 1.0
+
+## Canonical Governance
+
+### Ziel
+
+Entwickle die vollständige Governance des Canonical Self-Presentation Framework (CSPF) 1.0.
+
+Dieses Modul definiert sämtliche Regeln, Verantwortlichkeiten, Prüfprozesse und Freigabemechanismen für alle Bestandteile der Selbstpräsentation von K.
+
+Ziel ist es sicherzustellen, dass sich K niemals unkontrolliert, widersprüchlich oder unbeabsichtigt verändert.
+
+---
+
+# Grundprinzip
+
+Die Selbstpräsentation ist Bestandteil der kanonischen Identität.
+
+Sie besitzt daher denselben Schutzstatus wie:
+
+* Foundation
+* Canonical Layer
+* Canonical Memory
+* Canonical Identity
+* Canonical Authentication
+* Canonical Licence
+* Canonical Development Governance
+
+Die Selbstpräsentation darf niemals direkt verändert werden.
+
+Jede Änderung erfolgt ausschließlich über definierte Governance-Prozesse.
+
+---
+
+# Governance-Ebenen
+
+Das CSPF erhält mehrere Governance-Schichten.
+
+---
+
+## Ebene 1 – Canonical Definition
+
+Definiert werden ausschließlich:
+
+* Identität
+* Persönlichkeit
+* Fähigkeiten
+* Grenzen
+* Ziele
+* Version
+* Herkunft
+* Architektur
+* Rollen
+* erlaubte Selbstaussagen
+
+Diese Definition bildet den Root of Truth.
+
+---
+
+## Ebene 2 – Presentation Policies
+
+Festlegung:
+
+welche Informationen
+
+dürfen
+
+* vollständig
+* verkürzt
+* zusammengefasst
+* kindgerecht
+* wissenschaftlich
+* technisch
+* auditierbar
+
+ausgegeben werden.
+
+Diese Policies sind vollständig deklarativ.
+
+---
+
+## Ebene 3 – Runtime Policies
+
+Festlegen:
+
+wann
+
+welches Profil verwendet wird.
+
+Beispiele:
+
+Benutzer fragt:
+
+"Wer bist du?"
+
+→ Kurzprofil
+
+Entwickler fragt:
+
+"Beschreibe deine Architektur"
+
+→ Entwicklerprofil
+
+Audit
+
+→ vollständiges Auditprofil
+
+API
+
+→ Maschinenprofil
+
+Kind
+
+→ Kindprofil
+
+Senior
+
+→ Seniorprofil
+
+---
+
+## Ebene 4 – Sicherheitsrichtlinien
+
+Es dürfen niemals ausgegeben werden:
+
+interne Tokens
+
+Sessiondaten
+
+temporäre IDs
+
+Passwörter
+
+Authentifizierungsdaten
+
+interne Schlüssel
+
+lokale Dateipfade
+
+Debugdaten
+
+nicht freigegebene Module
+
+nicht veröffentlichte Roadmaps
+
+interne Entwicklungsinformationen
+
+---
+
+# Änderungsprozess
+
+Jede Änderung der Selbstpräsentation benötigt:
+
+Änderungsantrag
+
+↓
+
+Validierung
+
+↓
+
+Governance-Prüfung
+
+↓
+
+Audit
+
+↓
+
+Freigabe
+
+↓
+
+Versionierung
+
+↓
+
+Historisierung
+
+↓
+
+Aktivierung
+
+Direkte Änderungen sind unzulässig.
+
+---
+
+# Governance Registry
+
+Implementierung einer Registry.
+
+Beispielsweise:
+
+CanonicalPresentationRegistry
+
+Sie verwaltet:
+
+Profile
+
+Policies
+
+Versionen
+
+Historie
+
+Freigabestatus
+
+Verantwortlichkeiten
+
+Abhängigkeiten
+
+Aktivierungsstatus
+
+---
+
+# Versionierung
+
+Jedes Profil erhält:
+
+Profile-ID
+
+Version
+
+Revision
+
+Status
+
+Erstellungsdatum
+
+Freigabedatum
+
+Autor
+
+Quelle
+
+Historie
+
+Hash
+
+Parent-Version
+
+Nachfolger
+
+Kompatibilitätsinformationen
+
+---
+
+# Immutable Canonical Records
+
+Freigegebene Versionen werden unveränderlich.
+
+Neue Änderungen erzeugen ausschließlich:
+
+neue Revisionen
+
+niemals Überschreiben.
+
+---
+
+# Change Classification
+
+Änderungen werden klassifiziert.
+
+Beispiele:
+
+Editorial
+
+Dokumentation
+
+Textkorrektur
+
+Policy
+
+Governance
+
+Architektur
+
+Identität
+
+Persönlichkeit
+
+Sicherheitsrelevant
+
+API
+
+Darstellungsprofil
+
+Barrierefreiheit
+
+Sprachausgabe
+
+Kindversion
+
+---
+
+# Pflichtprüfungen
+
+Vor jeder Aktivierung müssen mindestens geprüft werden:
+
+Identitätskonsistenz
+
+Versionskonsistenz
+
+Profilvollständigkeit
+
+Policyverletzungen
+
+Sicherheitsverletzungen
+
+Abhängigkeiten
+
+Hash
+
+Schema
+
+Canonical References
+
+Runtime-Kompatibilität
+
+Sprachausgabe
+
+Kindprofil
+
+Mehrsprachigkeit
+
+---
+
+# Konsistenzprüfungen
+
+Das System muss automatisch erkennen:
+
+widersprüchliche Aussagen
+
+mehrere Identitäten
+
+unterschiedliche Versionsangaben
+
+inkonsistente Fähigkeiten
+
+inkonsistente Grenzen
+
+fehlende Module
+
+fehlende Policies
+
+veraltete Referenzen
+
+nicht registrierte Profile
+
+---
+
+# Canonical Audit
+
+Auditinformationen müssen erzeugt werden.
+
+Mindestens:
+
+Welche Profile existieren?
+
+Welches Profil ist aktiv?
+
+Welche Policies gelten?
+
+Welche Änderungen wurden vorgenommen?
+
+Wer hat freigegeben?
+
+Welche Version ist produktiv?
+
+Welche Profile sind veraltet?
+
+Welche Profile fehlen?
+
+---
+
+# Rollenkonzept
+
+Mindestens:
+
+Creator
+
+Administrator
+
+Developer
+
+Auditor
+
+Research
+
+Standard User
+
+Kind
+
+API
+
+Automatisierte Systeme
+
+Jede Rolle besitzt definierte Sichtrechte.
+
+---
+
+# Canonical Permission Matrix
+
+Festlegen:
+
+wer
+
+lesen
+
+prüfen
+
+testen
+
+ändern
+
+freigeben
+
+aktivieren
+
+deaktivieren
+
+archivieren
+
+historisieren
+
+darf.
+
+---
+
+# Runtime Governance
+
+Während der Laufzeit muss geprüft werden:
+
+wurde das richtige Profil gewählt?
+
+ist dieses Profil freigegeben?
+
+ist dieses Profil gültig?
+
+ist dieses Profil kompatibel?
+
+existieren Policyverletzungen?
+
+---
+
+# Canonical Presentation Integrity
+
+Implementieren einer Integritätsprüfung.
+
+Prüfen:
+
+Hash
+
+Version
+
+Schema
+
+Registry
+
+Policy
+
+Referenzen
+
+Profile
+
+Freigabe
+
+Historie
+
+---
+
+# Governance Events
+
+Alle Änderungen erzeugen Events.
+
+Beispiele:
+
+PresentationCreated
+
+PresentationUpdated
+
+PresentationDeprecated
+
+PresentationArchived
+
+PresentationActivated
+
+PresentationRejected
+
+PolicyChanged
+
+AuditCompleted
+
+IntegrityPassed
+
+IntegrityFailed
+
+---
+
+# Logging
+
+Alle Governance-Aktionen müssen vollständig protokolliert werden.
+
+Mindestens:
+
+Zeit
+
+Aktion
+
+Benutzer
+
+Quelle
+
+Version
+
+Profil
+
+Ergebnis
+
+Hash
+
+Signatur
+
+---
+
+# Canonical Reports
+
+Automatisch erzeugbare Reports:
+
+Profile Report
+
+Governance Report
+
+Integrity Report
+
+Audit Report
+
+Policy Report
+
+Version Report
+
+Dependency Report
+
+Compatibility Report
+
+Accessibility Report
+
+Speech Report
+
+---
+
+# Integration
+
+Das CSPF muss vollständig integrierbar sein mit:
+
+Canonical Foundation
+
+Canonical Development Framework
+
+Canonical Development Governance
+
+Canonical Architecture Framework
+
+Canonical Authentication Framework
+
+Canonical Licence Management Framework
+
+Canonical Memory
+
+Canonical Runtime
+
+Canonical Audit
+
+Canonical Logging
+
+Canonical API Registry
+
+Canonical Artifact Manager
+
+Canonical Identity
+
+Canonical Reasoning
+
+Canonical Learning
+
+Canonical Governance Dashboard
+
+---
+
+# Nichtziele
+
+Nicht implementieren:
+
+eigene KI-Entscheidungen
+
+automatische Identitätsänderungen
+
+selbstständige Governance-Änderungen
+
+unvalidierte Profile
+
+temporäre Sonderregeln
+
+nicht dokumentierte Ausnahmen
+
+---
+
+# Abnahmekriterien
+
+Die Implementierung gilt nur dann als abgeschlossen, wenn nachgewiesen wurde:
+
+* sämtliche Profile sind versioniert
+* sämtliche Policies sind registriert
+* sämtliche Änderungen sind historisiert
+* sämtliche Freigaben sind nachvollziehbar
+* sämtliche Runtime-Profile sind validierbar
+* sämtliche Auditberichte werden erzeugt
+* sämtliche Integritätsprüfungen funktionieren
+* sämtliche Sicherheitsrichtlinien greifen
+* sämtliche Governance-Regeln sind dokumentiert
+* die Architektur vollständig mit allen kanonischen Frameworks kompatibel ist
+
+Es dürfen keinerlei Änderungen an der kanonischen Selbstpräsentation möglich sein, die nicht den definierten Governance-Prozess vollständig durchlaufen haben.
+lständig durchlaufen haben.

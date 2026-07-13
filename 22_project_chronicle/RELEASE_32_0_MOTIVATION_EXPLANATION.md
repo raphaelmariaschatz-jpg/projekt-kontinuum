@@ -42,3 +42,6 @@ Erklärungspfade auditierbar nachvollziehbar.
 
 32.0 erklärt funktionale Bedeutungsgewichtungen. Das ist kein Nachweis von
 Wille, Bewusstsein oder subjektivem Erleben.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

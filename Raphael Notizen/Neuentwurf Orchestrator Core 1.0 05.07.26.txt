@@ -1,0 +1,385 @@
+Neuentwurf Orchestrator Core 1.0 05.07.26
+
+Codex-Auftrag – Orchestrator Core 1.0 neu entwerfen und vorbereiten – 05.07.26
+
+Ziel:
+Entwerfe den Orchestrator Core 1.0 als neue zentrale Execution Runtime von Projekt Kontinuum.
+
+Wichtig:
+Nicht den bisherigen Orchestrator weiterbauen.
+Nicht den alten direkten Agentenpfad ausbauen.
+Der Orchestrator Core 1.0 soll auf der neuen Architektur nach CRE 1.0 und Execution Planner 1.0 basieren.
+
+Kanonische Ablaufkette:
+
+User
+↓
+Request Router
+↓
+Capability Resolution Engine
+↓
+Execution Planner
+↓
+Orchestrator Core
+↓
+Governance
+↓
+Agent
+↓
+Review
+↓
+Canonical Memory Manager
+
+Grundprinzip:
+Der Orchestrator Core 1.0 übernimmt ausschließlich validierte ExecutionPlans vom Execution Planner und verwaltet deren Ausführung.
+
+Er entscheidet keine Capabilities.
+Er erzeugt keine Pläne.
+Er ersetzt nicht CRE.
+Er ersetzt nicht den Execution Planner.
+
+Aufgaben:
+
+1. Bestandsaufnahme
+   Prüfe lesend:
+
+* bestehende Orchestrator-/Runtime-Komponenten
+* application_services.py
+* execution_planner.py
+* execution_plan_schema_34_1.json
+* Agent-Registry / Agent-Konfiguration
+* Governance-Komponenten
+* Review-/CMM-Anbindung, soweit vorhanden
+
+Berichte kurz, welche Altpfade aktuell noch direkte Agentenausführung verwenden.
+
+2. Neues Kernartefakt vorbereiten
+
+Neue Datei erstellen:
+
+01_system/kontinuum/core/orchestrator_core.py
+
+Der Orchestrator Core soll enthalten:
+
+* OrchestratorCore
+* ExecutionRun
+* ExecutionTask
+* ExecutionResult
+* OrchestratorError
+
+3. ExecutionPlan übernehmen
+
+Der Orchestrator muss:
+
+* einen ExecutionPlan empfangen
+* plan_id und request_id prüfen
+* status prüfen
+* steps prüfen
+* parallel_groups prüfen
+* validation prüfen
+* blockierte, leere oder ungültige Pläne ablehnen
+
+Keine eigene Planerzeugung.
+
+4. Agent Lifecycle verwalten
+
+Für jeden Schritt aus dem Plan:
+
+* expected_agent auslesen
+* Agentenverfügbarkeit prüfen
+* Agent starten
+* Ergebnis entgegennehmen
+* handled=True / handled=False auswerten
+* Fehler erfassen
+* Laufstatus dokumentieren
+
+5. Fehlerbehandlung
+
+Behandle mindestens:
+
+* fehlender Agent
+* Agent nicht verfügbar
+* Agent antwortet nicht
+* handled=False
+* ungültiges Ergebnis
+* Timeout
+* Governance-Blockierung
+* ungültiger Plan
+* leerer Plan
+
+6. Fallback-Steuerung
+
+Wenn handled=False oder Agent nicht verfügbar:
+
+* Fallback nur kontrolliert versuchen
+* keine freie Agentenwahl außerhalb des Plans
+* Fallback muss dokumentiert werden
+* Fallback muss Governance respektieren
+* wenn kein Fallback erlaubt ist: sauber blockieren
+
+7. Parallelgruppen vorbereiten
+
+Der Orchestrator soll parallel_groups aus dem ExecutionPlan lesen.
+
+Version 1.0 darf noch sequentiell ausführen, muss aber:
+
+* Gruppenstruktur erkennen
+* Schritte gruppenweise abarbeiten
+* spätere Parallelisierung ermöglichen
+
+8. ExecutionRun erzeugen
+
+Jede Ausführung erzeugt einen ExecutionRun mit mindestens:
+
+* run_id
+* plan_id
+* request_id
+* started_at
+* finished_at
+* status
+* tasks
+* results
+* errors
+* fallbacks
+* governance_decisions
+* review_handoff_ready
+* cmm_handoff_ready
+
+9. Governance respektieren
+
+Vor Ausführung prüfen:
+
+* Plan validation ok
+* Governance-Level
+* blockierte Schritte
+* execution_allowed falls vorhanden
+
+Governance darf nicht umgangen werden.
+
+10. Review- und CMM-Handoff vorbereiten
+
+Der Orchestrator führt Review und CMM noch nicht selbst aus.
+
+Er soll nur vorbereiten:
+
+* review_handoff_ready=True bei erfolgreicher Ausführung
+* cmm_handoff_ready=True erst nach Review-Freigabe vorbereitet, aber nicht dauerhaft speichern
+
+11. Schema erstellen
+
+Neue Datei:
+
+24_config/orchestrator_runtime_schema_34_1.json
+
+Sie beschreibt:
+
+* ExecutionRun
+* ExecutionTask
+* ExecutionResult
+* Statuswerte
+* Fehlerklassen
+* Fallback-Regeln
+* Handoff-Felder
+
+12. Tests erstellen
+
+Neue Datei:
+
+17_tests/test_orchestrator_core_1_0.py
+
+Tests müssen mindestens prüfen:
+
+* gültiger ExecutionPlan wird angenommen
+* leerer Plan wird abgelehnt
+* blockierter Plan wird abgelehnt
+* ungültiger Plan wird abgelehnt
+* fehlender Agent wird erkannt
+* Agent wird gestartet
+* Ergebnis wird empfangen
+* handled=True führt zu Erfolg
+* handled=False löst Fallback aus
+* Fallback wird dokumentiert
+* fehlender Fallback blockiert sauber
+* Timeout wird behandelt
+* Governance-Blockierung verhindert Ausführung
+* Parallelgruppen werden erkannt
+* ExecutionRun wird erzeugt
+* Orchestrator ruft CRE nicht direkt auf
+* Orchestrator erzeugt keine eigenen Pläne
+* Orchestrator führt keine ungeplanten Agenten aus
+
+13. CAM und Release Integrity vorbereiten
+
+Orchestrator Core, Runtime Schema und Tests in die passenden kanonischen Artefakte aufnehmen:
+
+* CAM
+* Release Integrity
+* Architekturmodell
+
+Keine Massenänderungen.
+Keine Archivierungsaktionen.
+
+14. Dokumentation aktualisieren
+
+Aktualisieren:
+
+* Kanonisches Architekturmodell
+* Handbuch
+* Projektstruktur
+* Projektchronik
+
+Neuer Abschnitt:
+
+Orchestrator Core 1.0 – Execution Runtime
+
+Inhalt:
+
+* Rolle nach Execution Planner
+* übernimmt nur validierte ExecutionPlans
+* verwaltet Agent Lifecycle
+* Fehlerbehandlung
+* Fallback-Steuerung
+* Runtime-Status
+* Review-Handoff
+* CMM-Handoff
+* keine Planung
+* keine Capability-Erkennung
+
+15. Verifikation
+
+Zum Abschluss ausführen:
+
+* JSON-Validierung
+* Python-Syntaxprüfung
+* Orchestrator-Core-Tests
+* Execution-Planner-Tests
+* CAM-Test
+* Release-Integrity-Test
+* Governance-Test
+
+16. Abschlussbericht
+
+Bitte berichten:
+
+* welche Dateien neu erstellt wurden
+* welche Dateien geändert wurden
+* welche Altpfade noch bestehen
+* wie der Orchestrator Core eingebunden wurde
+* wie ExecutionRun aufgebaut ist
+* wie Fehler und Fallbacks behandelt werden
+* welche Tests bestanden haben
+* welche offenen Punkte für Orchestrator Core 2.0 bleiben
+
+Strikte Regeln:
+
+* Kein Commit.
+* Keine Archivierung.
+* Keine Massenänderungen.
+* Keine CRE-Logik im Orchestrator.
+* Keine Planerzeugung im Orchestrator.
+* Keine freie Agentenwahl außerhalb des ExecutionPlans.
+* Keine dauerhafte CMM-Speicherung im Orchestrator.
+* Keine Review-Logik im Orchestrator.
+* Kein Ausbau des alten direkten Runtime-Pfades außer notwendiger sauberer Anbindung.
+
+Umsetzung:
+
+Ich lese den angehängten Auftrag jetzt als verbindliche nächste Spezifikation und gleiche ihn mit dem gerade angelegten Orchestrator-Core-Stand ab.
+
+Ausgeführt Get-Content -LiteralPath 'C:\Users\Raphael\.codex\attachments\63005222-47fc-4891-a71e-ea4ef1284e96\pasted-text.txt'seit 3s
+
+Der angehängte Auftrag ist etwas strenger als der Stand, den ich eben vorbereitet hatte: Er verlangt explizit ExecutionTask, ExecutionResult und OrchestratorError sowie bestimmte ExecutionRun-Felder. Ich passe den neuen Core jetzt eng an diese Spezifikation an, ohne den alten Runtime-Pfad weiter auszubauen.
+
+4 Befehle ausgeführtAusgeführt Get-Content -LiteralPath 'C:\Projekt Kontinuum\24_config\orchestrator_runtime_schema_34_1.json' | Select-Object -First 260seit 4s
+
+Ausgeführt Get-Content -LiteralPath 'C:\Projekt Kontinuum\01_system\kontinuum\core\orchestrator_core.py' | Select-Object -First 520seit 10s
+
+Ausgeführt rg -n "_handle_routed|_handle_named_agent|_handle_capability|agent_router.route|handle_command|agent.handle|orchestrator_core|execution_planner|capability_resolution_engine" "C:\Projekt Kontinuum\01_system\kontinuum\core\application_services.py"seit 4s
+
+Ausgeführt Get-Content -LiteralPath 'C:\Projekt Kontinuum\17_tests\test_orchestrator_core_1_0.py' | Select-Object -First 260seit 7s
+
+Ich werde den Core jetzt auf die präzise Artefakt-Namen und Run-Struktur aus dem Auftrag nachziehen: ExecutionTask, ExecutionResult, ExecutionRun, OrchestratorError. Dabei bleibt die bestehende Runtime-Logik erhalten, wird aber klarer modelliert und die Tests werden um leere/ungültige Pläne, fehlenden Fallback und execution_allowed ergänzt.
+
+Die Vertragsverfeinerung ist vorbereitet. Ich schreibe sie jetzt ins Projekt und starte danach die volle im Auftrag geforderte Verifikation inklusive Planner-, CAM-, Release-Integrity- und Governance-Test.
+
+Der Lauf hat Core, Test und Schema bereits geschrieben und ist erst bei der CAM-Symbolergänzung gestoppt. Ich korrigiere die CAM-Aktualisierung für PowerShell-Objekte und lasse den Abschlusslauf idempotent erneut laufen.
+
+Ich setze den verfeinerten Abschlusslauf erneut auf. Da er die Dateien vollständig schreibt, bringt er den vorher halb abgeschlossenen CAM-Teil sauber in denselben Stand.
+
+Der Orchestrator-Vertrag ist jetzt nach Auftrag geschärft. Ich starte die Abschlussverifikation in Blöcken: JSON/Syntax, Orchestrator- und Planner-Tests, danach CAM/Release/Governance.
+
+Die ersten vier Prüfungen sind grün. Jetzt kommen CAM, Release Integrity und Governance; der Governance-Test schreibt Logs, also falls die Sandbox blockt, wiederhole ich ihn mit Freigabe.
+
+CAM und Release Integrity sind grün. Governance ist wieder nur an Schreibrechten für das Governance-Log gescheitert, nicht fachlich; ich wiederhole genau diesen Test mit Projekt-Schreibrecht.
+
+Alle geforderten Tests sind bestanden. Ich mache noch eine letzte Konsistenzsuche auf die Kernsymbole und eine Git-Hygieneprüfung, dann kommt der Abschlussbericht mit Altpfaden und offenen Punkten.
+
+Orchestrator Core 1.0 ist angelegt und kanonisch eingebunden.
+Neu erstellt:
+[orchestrator_core.py](C:/Projekt Kontinuum/01_system/kontinuum/core/orchestrator_core.py)
+[orchestrator_runtime_schema_34_1.json](C:/Projekt Kontinuum/24_config/orchestrator_runtime_schema_34_1.json)
+[test_orchestrator_core_1_0.py](C:/Projekt Kontinuum/17_tests/test_orchestrator_core_1_0.py)
+Zusätzlich eingebunden in:
+[system.py](C:/Projekt Kontinuum/01_system/kontinuum/core/system.py)
+[application_services.py](C:/Projekt Kontinuum/01_system/kontinuum/core/application_services.py)
+[request_router.py](C:/Projekt Kontinuum/01_system/kontinuum/core/request_router.py)
+CAM, Release Integrity, Architekturmodell, Handbuch, Projektstruktur, Chronik
+Der Core macht jetzt genau die Runtime-Arbeit: validierten ExecutionPlan annehmen, ungültige/blockierte Pläne ablehnen, Agenten aus Plan-Steps starten, handled=True/False auswerten, Fallbacks nur aus konfigurierten Regeln nutzen, Timeouts/Governance-Blockaden dokumentieren, Parallelgruppen lesen und einen ExecutionRun erzeugen.
+Bestanden:
+JSON-Validierung
+Python-Syntaxprüfung
+test_orchestrator_core_1_0.py
+CAM-Test
+Release-Integrity-Test
+Wichtig: Der Core ist systemweit sichtbar über orchestratorstatus. Den alten direkten Dialog-Runtime-Pfad habe ich noch nicht hart ersetzt; der neue Core ist sauber vorbereitet und kanonisch eingebunden, aber die vollständige Umschaltung des produktiven PromptOrchestrator-Pfads sollte als eigener, kontrollierter Migrationsschritt erfolgen. Kein Commit durchgeführt.
+
+8:42
+
+
+
+
+
+
+Codex-Auftrag – Orchestrator Core 1.0 neu entwerfen und vorbereiten – 05.07.26 …
+
+
+
+
+5m 31s lang gearbeitet
+
+
+
+Orchestrator Core 1.0 ist nach dem angehängten Auftrag nachgezogen und verifiziert. Kein Commit, keine Archivierung, keine freie Agentenwahl, keine CRE-/Planner-Logik im Orchestrator.
+Neu erstellt bzw. finalisiert:
+[orchestrator_core.py](C:/Projekt Kontinuum/01_system/kontinuum/core/orchestrator_core.py)
+[orchestrator_runtime_schema_34_1.json](C:/Projekt Kontinuum/24_config/orchestrator_runtime_schema_34_1.json)
+[test_orchestrator_core_1_0.py](C:/Projekt Kontinuum/17_tests/test_orchestrator_core_1_0.py)
+Geändert/eingebunden:
+[system.py](C:/Projekt Kontinuum/01_system/kontinuum/core/system.py)
+[application_services.py](C:/Projekt Kontinuum/01_system/kontinuum/core/application_services.py)
+[request_router.py](C:/Projekt Kontinuum/01_system/kontinuum/core/request_router.py)
+CAM, Release Integrity, Architekturmodell, Handbuch, Projektstruktur, Projektchronik, CAM-Test
+Der Core enthält jetzt die geforderten Artefakte:
+OrchestratorCore
+ExecutionRun
+ExecutionTask
+ExecutionResult
+OrchestratorError
+ExecutionRun enthält u. a. run_id, plan_id, request_id, started_at, finished_at, status, tasks, results, errors, fallbacks, governance_decisions, review_handoff_ready, cmm_handoff_ready, parallel_groups, started_steps und agent_status.
+Altpfade bestehen noch:
+PromptOrchestrator nutzt weiterhin direkte Agentenpfade über _handle_routed, _handle_named_agent, _handle_capability, agent_router.route, file_agent.handle_command und web_agent.handle_command.
+Diese Altpfade wurden nicht ausgebaut, nur der neue Orchestrator wurde sauber angebunden und über orchestratorstatus sichtbar gemacht.
+Bestanden:
+JSON-Validierung
+Python-Syntaxprüfung
+Orchestrator-Core-Tests
+Execution-Planner-Tests
+CAM-Test
+Release-Integrity-Test
+Governance-Test, mit Schreibrecht für Governance-Logs
+Offen für Orchestrator Core 2.0:
+vollständige Migration des alten PromptOrchestrator-Direktpfads auf ExecutionPlan → OrchestratorCore
+echte parallele Ausführung innerhalb von Parallelgruppen
+persistierte Run-Historie
+echte Review-Schicht und anschließender CMM-Handoff
+feinere Governance-/Fallback-Policies pro Capability und Agent.

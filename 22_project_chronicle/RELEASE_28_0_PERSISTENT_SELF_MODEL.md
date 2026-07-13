@@ -38,3 +38,6 @@ geschützt. Recherche war aktiv, die epistemische Automatik deaktiviert,
 29 Prüfaufträge waren offen und es wurden keine inneren Konflikte erkannt.
 Der Lebenszyklusübergang `ready -> stopped` wurde mit Herkunft, Zeitstempel und
 Grund persistiert.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

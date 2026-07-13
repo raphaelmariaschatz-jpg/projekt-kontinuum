@@ -309,3 +309,6 @@ User -> Request Router -> Capability Resolution Engine -> Execution Planner
      -> Orchestrator Core -> Governance -> Agent -> Review
      -> Canonical Memory Manager
 ```
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

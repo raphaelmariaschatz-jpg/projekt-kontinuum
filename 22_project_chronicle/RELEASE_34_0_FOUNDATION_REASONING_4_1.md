@@ -23,3 +23,6 @@ auf den tatsächlich gespeicherten Foundation-Nachweis zurückführbar.
 ## Abnahme
 
 Kanonische Regression: `17_tests/test_foundation_reasoning_4_1_coverage.py`.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

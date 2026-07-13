@@ -1,0 +1,13 @@
+{
+  "url": "https://www.nist.gov/artificial-intelligence",
+  "source_class": "government",
+  "title": "Artificial intelligence | NIST",
+  "retrieved_at": "2026-07-02T14:54:11.442373+00:00",
+  "sha256": "a5d66c1158f1608f2ffc3236916d7a9d72b175273b073812aeca4ee3e8506d9f",
+  "summary": "Artificial intelligence | NIST Skip to main content An official website of the United States government Here’s how you know Here’s how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( Lock A locked padlock ) or https:// means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites. https://www.nist.gov/artificial-intelligence Search NIST Menu Close Publications What We Do All Topics Advanced communications Artificial intelligence Bioscience Buildings and construction Chemistry Cybersecurity and Privacy Electronics Energy Environment",
+  "bytes": 99692,
+  "review_required": true,
+  "write_to_memory_directly": false,
+  "status": "queued_for_review",
+  "policy": "internet_learning_policy_34_1"
+}

@@ -102,3 +102,6 @@ Neue Testabdeckung:
 `canonicalenginestatus` in der GUI ausfuehren, danach Release-Gate erneut
 starten und die ersten echten Events aus CAM/WebAgent/FileAgent diagnostisch
 einspeisen.
+
+
+> © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.

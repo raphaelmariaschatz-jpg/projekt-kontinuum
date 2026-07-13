@@ -1,0 +1,137 @@
+Wiedereinstieg – 13:00 Uhr am 05.07.2026
+Aktueller Projektstand
+
+Heute wurden wesentliche Architektur-Meilensteine erreicht:
+
+✅ Execution Planner 1.0 vollständig abgeschlossen und verifiziert.
+✅ Architekturprüfung erfolgreich durchgeführt.
+✅ Orchestrator Core 1.0 als eigenständige Execution Runtime neu entwickelt.
+✅ Runtime-Schema, Tests, CAM, Release Integrity und Dokumentation aktualisiert.
+✅ Migrationsplan für den alten PromptOrchestrator erstellt.
+✅ Git-Kontrollsicherung durchgeführt.
+✅ Architektur-Audit des aktuellen Projektstands abgeschlossen.
+Neue Priorität vor der Runtime-Migration
+
+Während der Git-Kontrolle ist aufgefallen, dass die vereinbarte Artefakt-Lifecycle-Regel wieder verletzt wird.
+
+In mehreren aktiven Projektordnern liegen gleichzeitig verschiedene Versionsstände derselben Komponenten, beispielsweise:
+
+12_agents
+13_tools
+16_installation
+22_project_chronicle
+32_data
+
+Das widerspricht der kanonischen Projektregel:
+
+In aktiven Projektordnern darf grundsätzlich nur die aktuelle kanonische Version einer Datei oder Komponente liegen. Historische Versionen gehören ausschließlich in die vorgesehenen Archiv- bzw. Versionsbereiche.
+
+Deshalb sollte vor jeder Runtime-Migration zunächst eine projektweite Artefakt-Lifecycle-Prüfung erfolgen.
+
+Dabei soll Codex zunächst nur analysieren und berichten – noch nichts verschieben oder löschen.
+
+Danach: Runtime-Migration
+
+Erst wenn die Projektstruktur wieder eindeutig ist, folgt die eigentliche Integration des neuen Orchestrators.
+
+Reihenfolge:
+
+1. Kontrollsicherung bestätigen
+
+Den heutigen Git-Stand als Referenz beibehalten.
+
+2. Architektur-Baseline erzeugen
+
+Vor der Migration ein Baseline-Dokument erstellen:
+
+31_reports/
+
+ARCHITECTURE_BASELINE_PRE_RUNTIME_MIGRATION_34_1.md
+
+Inhalt:
+
+vorhandene Core-Komponenten
+aktuelle Architekturkette
+bekannte Altpfade
+Risiken
+Feature-Flag
+Rückfallstrategie
+Ausgangszustand vor der Migration
+
+Dieses Dokument dient als offizieller Vorher-/Nachher-Vergleich.
+
+3. Feature-Flag prüfen
+
+Prüfen oder einführen:
+
+orchestrator_runtime_enabled
+
+Damit kann der neue Runtime-Pfad kontrolliert aktiviert werden.
+
+4. Migrationsbrücke bauen
+
+Den alten PromptOrchestrator nicht sofort ersetzen.
+
+Stattdessen:
+
+PromptOrchestrator.handle()
+
+↓
+
+Execution Planner
+
+↓
+
+wenn plan.status == "ready"
+
+↓
+
+OrchestratorCore.run(plan)
+
+↓
+
+alter Direktpfad bleibt als Fallback erhalten
+5. Regressionstests
+
+Nach der Integration sämtliche wichtigen Pfade testen:
+
+Dialog
+FileAgent
+WebAgent
+Knowledge
+Memory
+Status
+Governance
+6. Alte Runtime entfernen
+
+Erst wenn sämtliche Regressionstests erfolgreich sind, wird gemeinsam entschieden, ob der bisherige Direktpfad endgültig entfernt werden kann.
+
+Hinweise aus dem Git-Audit
+
+Vor dem nächsten Release sollten insbesondere die beiden zentralen Architekturmanifeste noch einmal gezielt geprüft werden:
+
+canonical_architecture_34_1.json
+release_integrity_34_1.json
+
+Da sie viele Änderungen enthalten, empfiehlt sich eine abschließende Validierung vor dem Architektur-Release.
+
+Empfehlung für zukünftige Git-Historie
+
+Größere Entwicklungsschritte künftig möglichst getrennt abschließen, zum Beispiel:
+
+Capability Resolution Engine
+Execution Planner
+Orchestrator Core
+Runtime-Migration
+
+Dadurch bleibt die Entwicklungshistorie deutlich nachvollziehbarer.
+
+Persönliche Einschätzung
+
+Ich glaube, wir haben heute einen der wichtigsten Meilensteine seit Beginn von Projekt Kontinuum erreicht.
+
+Bis vor wenigen Tagen bestand Kontinuum hauptsächlich aus leistungsfähigen Einzelkomponenten. Heute besitzt es eine klar definierte mehrschichtige Architektur mit sauber getrennten Verantwortlichkeiten:
+
+Foundation → Canonical Layer → Capability Resolution → Execution Planning → Execution Runtime → Governance → Review → Canonical Memory
+
+Der nächste Schritt ist deshalb keine weitere Kernkomponente mehr, sondern die kontrollierte Integration dieser Architektur. Wenn die Runtime-Migration erfolgreich abgeschlossen ist, wird Kontinuum erstmals den vollständigen Ausführungsweg – von der Benutzeranfrage bis zur kanonischen Speicherung – durchgängig über die neue Architektur abbilden. Aus meiner Sicht markiert das den Übergang von einer Sammlung leistungsfähiger Module zu einem konsistent aufgebauten KI-System.

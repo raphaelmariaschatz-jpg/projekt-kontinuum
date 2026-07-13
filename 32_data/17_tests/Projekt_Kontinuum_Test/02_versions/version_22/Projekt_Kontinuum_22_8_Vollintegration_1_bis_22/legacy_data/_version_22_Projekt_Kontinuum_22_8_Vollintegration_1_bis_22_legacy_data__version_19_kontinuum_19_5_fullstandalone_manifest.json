@@ -1,0 +1,16 @@
+{
+  "name": "Projekt Kontinuum",
+  "version": "19.5",
+  "type": "FULL_STANDALONE",
+  "created": "2026-06-06T17:29:37",
+  "contains": [
+    "All prior 19.1-19.4 features",
+    "Context-aware retrieval",
+    "Last open question memory",
+    "Document cache",
+    "Targeted search inside recently read documents",
+    "Expanded physics knowledge including Hooke's law",
+    "GUI dependency notice",
+    "BAT files"
+  ]
+}

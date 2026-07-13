@@ -1,0 +1,309 @@
+Transformer mit Tokenisierung
+
+# Codex-Auftrag – Canonical Language Processing Framework (CLPF) 1.0
+
+## Ziel des Auftrags
+
+Bitte prüfe und konzipiere das neue Architekturkonzept:
+
+```text
+Canonical Language Processing Framework (CLPF) 1.0
+```
+
+Das CLPF soll den kanonischen Rahmen für die Sprachverarbeitung innerhalb von Projekt Kontinuum definieren.
+
+Es beschreibt den Weg von der Nutzereingabe bis zur semantischen Repräsentation, auf deren Grundlage die Canonical Cognitive Pipeline (CCP), die Capability Resolution Engine (CRE) und weitere Komponenten arbeiten.
+
+Das Framework ist modellunabhängig und soll verschiedene Sprachmodellarchitekturen unterstützen. Für Version 1.0 liegt der Schwerpunkt auf Transformer-basierten Verfahren.
+
+---
+
+# Grundsatz
+
+Projekt Kontinuum soll Sprachverarbeitung nicht an ein bestimmtes KI-Modell binden.
+
+Das CLPF definiert die kanonischen Verarbeitungsschritte.
+
+Transformer sind eine mögliche Implementierung dieser Schritte, jedoch nicht deren Definition.
+
+---
+
+# Zielsetzung
+
+Das CLPF beschreibt:
+
+* Aufnahme von Sprache und Text
+* Vorverarbeitung
+* Tokenisierung
+* Einbettung (Embeddings)
+* Transformer-basierte Verarbeitung
+* semantische Repräsentation
+* Übergabe an die Canonical Cognitive Pipeline
+
+Nicht Bestandteil des Frameworks sind:
+
+* Training großer Sprachmodelle
+* Fine-Tuning
+* Gewichtsverwaltung
+* Modelltraining
+* GPU-Optimierung
+
+---
+
+# Kanonische Verarbeitungsschritte
+
+Bitte prüfe folgende Pipeline:
+
+## 1. Input Acquisition
+
+* Texteingabe
+* Spracheingabe
+* Dateieingaben
+* strukturierte Daten
+
+↓
+
+## 2. Normalization
+
+* Unicode
+* Zeichensätze
+* Sprache erkennen
+* Formatvereinheitlichung
+
+↓
+
+## 3. Tokenization
+
+Bitte untersuchen:
+
+* Tokenizer
+* Subword-Tokenisierung
+* Byte Pair Encoding (BPE)
+* SentencePiece
+* WordPiece
+
+Ziel:
+
+Eine kanonische Tokenrepräsentation erzeugen.
+
+↓
+
+## 4. Embedding
+
+Bitte prüfen:
+
+* Token Embeddings
+* Positionsinformationen
+* Kontextrepräsentationen
+
+↓
+
+## 5. Transformer Processing
+
+Bitte ausschließlich konzeptionell prüfen.
+
+Mögliche Bestandteile:
+
+* Self Attention
+* Multi Head Attention
+* Feed Forward Layer
+* Layer Normalization
+* Residual Connections
+
+Keine Implementierung.
+
+↓
+
+## 6. Semantic Representation
+
+Ergebnis:
+
+Eine modellunabhängige semantische Repräsentation der Eingabe.
+
+Diese dient als Eingang für:
+
+* CCP
+* CRE
+* Learning
+* Memory
+* Meta-Reasoning
+
+---
+
+# Beziehung zur Canonical Cognitive Pipeline
+
+Bitte prüfen:
+
+```text
+User Input
+        │
+CLPF
+        │
+Semantische Repräsentation
+        │
+Canonical Cognitive Pipeline
+        │
+CRE
+        │
+Execution Planner
+        │
+Orchestrator Core
+```
+
+Das CLPF verarbeitet Sprache.
+
+Die CCP verarbeitet Bedeutung.
+
+---
+
+# Beziehung zu bestehenden Frameworks
+
+Bitte prüfen die Beziehungen zu:
+
+* Canonical Vision Framework (CVF)
+* Canonical Intelligence Framework (CIF)
+* Canonical Cognitive Pipeline (CCP)
+* Canonical Human Interface Framework (CHIF)
+* Canonical AI Competency Framework (CAICF)
+* Canonical Media Learning Framework (CMLF)
+* Foundation Layer
+* Governance Layer
+* Canonical Architecture
+* CRE
+* Execution Planner
+* Orchestrator Core
+* Canonical Memory
+* Learning Agent
+* Meta-Reasoning
+* Release Integrity
+* Canonical Glossary
+
+---
+
+# Tokenisierung
+
+Bitte konzipiere eine modellunabhängige kanonische Tokenisierung.
+
+Zu prüfen:
+
+* Token-Objekt
+* Token-ID
+* Position
+* Sprache
+* Satzgrenzen
+* Dokumentgrenzen
+* Metadaten
+
+Bitte prüfen, ob ein kanonisches Token-Schema sinnvoll ist.
+
+---
+
+# Transformer
+
+Bitte ausschließlich konzeptionell untersuchen:
+
+* Rolle innerhalb der Architektur
+* Einordnung in das CLPF
+* Schnittstellen
+* Austauschbarkeit
+* Erweiterbarkeit
+
+Nicht:
+
+* Training
+* Modellentwicklung
+* Gewichtsverwaltung
+
+---
+
+# Arbeitsauftrag
+
+In dieser Phase erfolgt **keine Implementierung**.
+
+Bitte:
+
+1. analysiere das Konzept
+2. prüfe die Einordnung in die Canonical Architecture
+3. definiere die Verarbeitungsschritte
+4. konzipiere die kanonische Tokenisierung
+5. definiere die Rolle von Transformer-Modellen
+6. identifiziere Schnittstellen
+7. prüfe Erweiterbarkeit für zukünftige Modellarchitekturen
+8. erstelle einen kanonischen Implementierungsplan
+9. dokumentiere Risiken und offene Fragen
+
+---
+
+# Erwartete Dateien
+
+Bitte prüfe, ob folgende Dateien sinnvoll sind:
+
+```text
+14_documents/CANONICAL_LANGUAGE_PROCESSING_FRAMEWORK_1_0.md
+24_config/canonical_language_processing_framework_1_0.json
+31_reports/clpf_1_0_status_report.md
+```
+
+Optional:
+
+```text
+14_documents/CLPF_IMPLEMENTATION_PLAN_1_0.md
+24_config/clpf_token_schema_1_0.json
+24_config/clpf_processing_pipeline_1_0.json
+```
+
+---
+
+# Leitplanken
+
+Erlaubt:
+
+* Architekturkonzept
+* Tokenisierungskonzept
+* Transformer-Einordnung
+* JSON-Schema
+* Statusbericht
+* Glossar-Ergänzung
+* Implementierungsplan
+
+Nicht erlaubt:
+
+* Training eines Sprachmodells
+* Integration eines LLM
+* Runtime-Migration
+* GPU-Optimierungen
+* Änderungen an produktiven Komponenten
+* Modellgewichte oder Fine-Tuning
+
+---
+
+# Entscheidungskriterium
+
+Das Canonical Language Processing Framework soll nur dann als GO bewertet werden, wenn es:
+
+* die Sprachverarbeitung klar von der kognitiven Verarbeitung trennt,
+* Transformer als austauschbare Implementierung behandelt,
+* eine kanonische Tokenisierung definiert,
+* modellunabhängig bleibt,
+* bestehende Frameworks sinnvoll ergänzt,
+* langfristig erweiterbar ist.
+
+---
+
+# Erwartetes Ergebnis
+
+Bitte liefere:
+
+1. Bestandsanalyse
+2. Architektur-Einordnung
+3. Definition der Sprachverarbeitungsschritte
+4. Vorschlag für ein kanonisches Token-Schema
+5. Einordnung von Transformer-Modellen
+6. Schnittstellenübersicht
+7. Vorschlag für Dokumente und JSON-Strukturen
+8. Risiken und offene Fragen
+9. Empfehlung: GO / NO-GO / SPÄTER
+10. Kanonischen Implementierungsplan
+11. Statusbericht unter `31_reports`, falls umgesetzt.
+
+Ziel ist ein universeller kanonischer Rahmen für die Sprachverarbeitung, der Projekt Kontinuum eine modellunabhängige Grundlage für Tokenisierung, semantische Repräsentation und die Anbindung moderner Sprachmodelle bietet.
