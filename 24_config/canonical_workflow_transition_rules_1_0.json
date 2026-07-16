@@ -1,0 +1,28 @@
+{
+  "framework": "Canonical Workflow Framework",
+  "version": "1.0",
+  "capability_reference_policy": {
+    "references_only": true,
+    "registry_path": "24_config/capability_registry_34_1.json",
+    "missing_references_are_capability_gap": true,
+    "cwf_must_not_register_capabilities": true
+  },
+  "transitions": [
+    {"transition_id": "draft_to_validating", "from_state": "DRAFT", "to_state": "VALIDATING", "condition": "definition_present", "authorized_roles": ["workflow_owner", "reviewer"], "required_approvals": [], "required_capabilities": ["workflow.validate"], "audit_event": "workflow_validated"},
+    {"transition_id": "validating_to_ready", "from_state": "VALIDATING", "to_state": "READY", "condition": "validation_ok", "authorized_roles": ["reviewer"], "required_approvals": [], "required_capabilities": ["workflow.validate"], "audit_event": "workflow_validated"},
+    {"transition_id": "ready_to_running", "from_state": "READY", "to_state": "RUNNING", "condition": "execution_plan_validated", "authorized_roles": ["orchestrator", "executor"], "required_approvals": ["governance_gate"], "required_capabilities": ["workflow.start"], "audit_event": "workflow_started"},
+    {"transition_id": "running_to_paused", "from_state": "RUNNING", "to_state": "PAUSED", "condition": "pause_requested", "authorized_roles": ["executor", "workflow_owner"], "required_approvals": [], "required_capabilities": ["workflow.pause"], "audit_event": "workflow_paused"},
+    {"transition_id": "paused_to_running", "from_state": "PAUSED", "to_state": "RUNNING", "condition": "resume_checks_ok", "authorized_roles": ["workflow_owner", "executor"], "required_approvals": ["resume_gate"], "required_capabilities": ["workflow.resume"], "audit_event": "workflow_resumed"},
+    {"transition_id": "running_to_retrying", "from_state": "RUNNING", "to_state": "RETRYING", "condition": "retry_policy_allows", "authorized_roles": ["executor"], "required_approvals": [], "required_capabilities": ["workflow.retry"], "audit_event": "retry_started"},
+    {"transition_id": "retrying_to_running", "from_state": "RETRYING", "to_state": "RUNNING", "condition": "retry_started", "authorized_roles": ["executor"], "required_approvals": [], "required_capabilities": ["workflow.retry"], "audit_event": "step_started"},
+    {"transition_id": "running_to_rolling_back", "from_state": "RUNNING", "to_state": "ROLLING_BACK", "condition": "rollback_required", "authorized_roles": ["recovery_owner"], "required_approvals": ["recovery_gate"], "required_capabilities": ["workflow.rollback"], "audit_event": "rollback_started"},
+    {"transition_id": "rolling_back_to_failed", "from_state": "ROLLING_BACK", "to_state": "FAILED", "condition": "rollback_completed_with_failure", "authorized_roles": ["recovery_owner"], "required_approvals": [], "required_capabilities": ["workflow.rollback"], "audit_event": "rollback_completed"},
+    {"transition_id": "running_to_completed", "from_state": "RUNNING", "to_state": "COMPLETED", "condition": "all_required_steps_completed", "authorized_roles": ["executor"], "required_approvals": [], "required_capabilities": ["workflow.start"], "audit_event": "workflow_completed"},
+    {"transition_id": "completed_to_verified", "from_state": "COMPLETED", "to_state": "VERIFIED", "condition": "independent_review_ok", "authorized_roles": ["reviewer", "auditor"], "required_approvals": ["review_gate"], "required_capabilities": ["workflow.verify"], "audit_event": "workflow_verified"},
+    {"transition_id": "completed_to_archived", "from_state": "COMPLETED", "to_state": "ARCHIVED", "condition": "archive_requested", "authorized_roles": ["auditor", "workflow_owner"], "required_approvals": [], "required_capabilities": ["workflow.archive"], "audit_event": "workflow_archived"},
+    {"transition_id": "verified_to_archived", "from_state": "VERIFIED", "to_state": "ARCHIVED", "condition": "archive_requested", "authorized_roles": ["auditor", "workflow_owner"], "required_approvals": [], "required_capabilities": ["workflow.archive"], "audit_event": "workflow_archived"},
+    {"transition_id": "running_to_failed", "from_state": "RUNNING", "to_state": "FAILED", "condition": "unrecoverable_error", "authorized_roles": ["executor", "recovery_owner"], "required_approvals": [], "required_capabilities": ["workflow.abort"], "audit_event": "step_failed"},
+    {"transition_id": "ready_to_rejected", "from_state": "READY", "to_state": "REJECTED", "condition": "approval_rejected", "authorized_roles": ["approver"], "required_approvals": ["governance_gate"], "required_capabilities": ["workflow.verify"], "audit_event": "approval_rejected"},
+    {"transition_id": "paused_to_aborted", "from_state": "PAUSED", "to_state": "ABORTED", "condition": "abort_requested", "authorized_roles": ["workflow_owner", "approver"], "required_approvals": ["abort_gate"], "required_capabilities": ["workflow.abort"], "audit_event": "workflow_aborted"}
+  ]
+}

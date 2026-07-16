@@ -1,0 +1,15 @@
+{
+  "framework": "Canonical Workflow Framework",
+  "version": "1.0",
+  "error_classes": ["VALIDATION_ERROR", "CAPABILITY_UNRESOLVED", "AUTHORIZATION_ERROR", "APPROVAL_REJECTED", "TIMEOUT", "EXECUTION_ERROR", "ROLLBACK_REQUIRED", "COMPENSATION_REQUIRED", "IRREVERSIBLE_FAILURE"],
+  "timeout_actions": ["FAIL", "PAUSE", "RETRY", "ESCALATE", "ABORT"],
+  "retry": {
+    "unbounded_retries_allowed": false,
+    "default_max_attempts": 1,
+    "max_attempts_upper_bound": 5
+  },
+  "rollback_and_compensation": {
+    "rollback_and_compensation_are_distinct": true,
+    "irreversible_steps_require_governance": true
+  }
+}

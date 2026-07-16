@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "canonical_workflow_step_1_0.schema.json",
+  "title": "Canonical Workflow Step 1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "step_id",
+    "step_name",
+    "step_type",
+    "sequence",
+    "required_inputs",
+    "produced_outputs",
+    "required_capabilities",
+    "assigned_role",
+    "preconditions",
+    "postconditions",
+    "timeout_policy",
+    "retry_policy",
+    "idempotent",
+    "next_steps",
+    "audit_required"
+  ],
+  "properties": {
+    "step_id": {"type": "string", "minLength": 1},
+    "step_name": {"type": "string", "minLength": 1},
+    "step_type": {"type": "string"},
+    "description": {"type": "string"},
+    "sequence": {"type": "integer", "minimum": 1},
+    "required_inputs": {"type": "array", "items": {"type": "string"}},
+    "produced_outputs": {"type": "array", "items": {"type": "string"}},
+    "required_capabilities": {"type": "array", "items": {"type": "string"}},
+    "assigned_role": {"type": "string", "minLength": 1},
+    "preconditions": {"type": "array", "items": {"type": "string"}},
+    "postconditions": {"type": "array", "items": {"type": "string"}},
+    "success_conditions": {"type": "array", "items": {"type": "string"}},
+    "failure_conditions": {"type": "array", "items": {"type": "string"}},
+    "timeout_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["timeout_seconds", "on_timeout", "timeout_error_code", "escalation_required"],
+      "properties": {
+        "timeout_seconds": {"type": "integer", "minimum": 0},
+        "on_timeout": {"type": "string"},
+        "timeout_error_code": {"type": "string"},
+        "escalation_required": {"type": "boolean"}
+      }
+    },
+    "retry_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["max_attempts", "retry_on", "requires_idempotency"],
+      "properties": {
+        "max_attempts": {"type": "integer", "minimum": 0},
+        "retry_on": {"type": "array", "items": {"type": "string"}},
+        "requires_idempotency": {"type": "boolean"}
+      }
+    },
+    "rollback_supported": {"type": "boolean"},
+    "rollback_reference": {"type": "string"},
+    "compensation_supported": {"type": "boolean"},
+    "compensation_reference": {"type": "string"},
+    "irreversible": {"type": "boolean"},
+    "idempotent": {"type": "boolean"},
+    "next_steps": {"type": "array", "items": {"type": "string"}},
+    "audit_required": {"type": "boolean"}
+  }
+}

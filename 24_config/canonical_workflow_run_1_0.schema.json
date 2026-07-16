@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "canonical_workflow_run_1_0.schema.json",
+  "title": "Canonical Workflow Run 1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "workflow_run_id",
+    "workflow_id",
+    "workflow_version",
+    "definition_hash",
+    "execution_plan_id",
+    "trigger_type",
+    "trigger_reference",
+    "initiated_by",
+    "current_state",
+    "current_step_id",
+    "started_at",
+    "final_status",
+    "audit_events"
+  ],
+  "properties": {
+    "workflow_run_id": {"type": "string", "minLength": 1},
+    "workflow_id": {"type": "string", "minLength": 1},
+    "workflow_version": {"type": "string", "minLength": 1},
+    "definition_hash": {"type": "string", "minLength": 1},
+    "execution_plan_id": {"type": "string"},
+    "trigger_type": {"type": "string", "enum": ["MANUAL", "EVENT", "SCHEDULED", "API", "STATUS_CHANGE", "RECOVERY"]},
+    "trigger_reference": {"type": "string"},
+    "initiated_by": {"type": "string", "minLength": 1},
+    "current_state": {"type": "string", "minLength": 1},
+    "current_step_id": {"type": "string"},
+    "started_at": {"type": "string"},
+    "paused_at": {"type": "string"},
+    "resumed_at": {"type": "string"},
+    "completed_at": {"type": "string"},
+    "final_status": {"type": "string"},
+    "audit_events": {"type": "array", "items": {"type": "object"}}
+  }
+}

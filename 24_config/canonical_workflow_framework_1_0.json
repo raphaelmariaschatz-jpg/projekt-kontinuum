@@ -1,0 +1,40 @@
+{
+  "framework_id": "cwf",
+  "framework_name": "Canonical Workflow Framework",
+  "framework_version": "1.0",
+  "status": "active_preparatory",
+  "scope": "workflow_definition_governance_validation_and_execution_contract",
+  "not_runtime_engine": true,
+  "does_not_plan": true,
+  "does_not_execute": true,
+  "does_not_resolve_capabilities": true,
+  "does_not_register_capabilities": true,
+  "capability_gap_policy": {
+    "workflow_capabilities_are_references_only": true,
+    "missing_workflow_capabilities_are_documented_gap": true,
+    "capability_registry_changes_out_of_scope": true,
+    "protected_registry_path": "24_config/capability_registry_34_1.json"
+  },
+  "canonical_files": {
+    "documentation": "14_documents/CANONICAL_WORKFLOW_FRAMEWORK_1_0.md",
+    "states": "24_config/canonical_workflow_states_1_0.json",
+    "step_types": "24_config/canonical_workflow_step_types_1_0.json",
+    "transition_rules": "24_config/canonical_workflow_transition_rules_1_0.json",
+    "error_policies": "24_config/canonical_workflow_error_policies_1_0.json",
+    "definition_schema": "24_config/canonical_workflow_definition_1_0.schema.json",
+    "run_schema": "24_config/canonical_workflow_run_1_0.schema.json",
+    "step_schema": "24_config/canonical_workflow_step_1_0.schema.json",
+    "validator": "01_system/kontinuum/core/canonical_workflow_validator.py",
+    "status_report": "31_reports/cwf_1_0_status_report.md"
+  },
+  "integration_contracts": {
+    "cre": "CWF supplies required capability references; CRE resolves providers.",
+    "execution_planner": "CWF supplies validated structure and constraints; Execution Planner creates concrete plans.",
+    "orchestrator_core": "CWF supplies allowed structure and state rules; Orchestrator Core executes validated plans only.",
+    "cdg": "CDG owns governance gates and escalation rules.",
+    "codeaf": "CODEAF owns code-agent roles, permissions and risk handling.",
+    "authentication": "Authentication confirms actors and approval identities.",
+    "cam": "CAM registers artifacts; CWF does not manage artifacts in parallel.",
+    "audit_provenance": "Audit and provenance store events; CWF defines required event set."
+  }
+}

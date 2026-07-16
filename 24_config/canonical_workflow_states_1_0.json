@@ -1,0 +1,29 @@
+{
+  "framework": "Canonical Workflow Framework",
+  "version": "1.0",
+  "states": [
+    "DRAFT",
+    "VALIDATING",
+    "READY",
+    "WAITING",
+    "RUNNING",
+    "PAUSED",
+    "BLOCKED",
+    "RETRYING",
+    "ROLLING_BACK",
+    "FAILED",
+    "ABORTED",
+    "COMPLETED",
+    "VERIFIED",
+    "REJECTED",
+    "ARCHIVED"
+  ],
+  "terminal_states": ["FAILED", "ABORTED", "COMPLETED", "VERIFIED", "REJECTED", "ARCHIVED"],
+  "active_states": ["READY", "WAITING", "RUNNING", "PAUSED", "BLOCKED", "RETRYING", "ROLLING_BACK"],
+  "rules": {
+    "verified_requires_completed": true,
+    "archived_is_not_active": true,
+    "paused_requires_resume_or_abort": true,
+    "blocked_requires_reason": true
+  }
+}

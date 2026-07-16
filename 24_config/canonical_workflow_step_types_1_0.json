@@ -1,0 +1,17 @@
+{
+  "framework": "Canonical Workflow Framework",
+  "version": "1.0",
+  "step_types": [
+    "ACTION",
+    "VALIDATION",
+    "DECISION",
+    "APPROVAL",
+    "REVIEW",
+    "WAIT",
+    "NOTIFICATION",
+    "CHECKPOINT",
+    "RECOVERY",
+    "FINALIZATION"
+  ],
+  "runtime_extension_allowed": false
+}
