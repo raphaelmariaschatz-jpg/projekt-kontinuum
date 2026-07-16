@@ -1,0 +1,108 @@
+{
+  "profile_collection": {
+    "id": "CDFX-PROFILES-1.0",
+    "framework": "CDFX",
+    "version": "1.0",
+    "status": "conceptual",
+    "date": "2026-07-16",
+    "runtime_effect": "none"
+  },
+  "profiles": [
+    {
+      "id": "CDFX-PROFILE-PERSONAL-1-0",
+      "canonical_name": "Personal Deployment Profile",
+      "display_name": "Personal Edition",
+      "canonical_term_preferred": true,
+      "target_group": "Private users",
+      "core_policy": {
+        "may_disable_canonical_core": false,
+        "profile_inheritance_allowed": false,
+        "composite_profile_allowed_only_if_explicitly_approved": true
+      },
+      "roles": [
+        "personal_user"
+      ],
+      "resource_profile": "low_to_medium_local",
+      "license_profile": "personal-local",
+      "integration_profile": "local_first_optional_connectors",
+      "required_validations": [
+        "core_not_disabled",
+        "single_user_boundary",
+        "privacy_review"
+      ]
+    },
+    {
+      "id": "CDFX-PROFILE-ENTERPRISE-1-0",
+      "canonical_name": "Enterprise Deployment Profile",
+      "display_name": "Enterprise Edition",
+      "canonical_term_preferred": true,
+      "target_group": "Organizations and enterprises",
+      "core_policy": {
+        "may_disable_canonical_core": false,
+        "profile_inheritance_allowed": false,
+        "composite_profile_allowed_only_if_explicitly_approved": true
+      },
+      "roles": [
+        "enterprise_admin",
+        "enterprise_user",
+        "auditor",
+        "release_reviewer"
+      ],
+      "resource_profile": "organization_managed",
+      "license_profile": "enterprise-governed",
+      "integration_profile": "approved_enterprise_integrations",
+      "required_validations": [
+        "core_not_disabled",
+        "role_rights_audit",
+        "integration_approval",
+        "monitoring_policy",
+        "release_integrity_evidence"
+      ]
+    },
+    {
+      "id": "CDFX-PROFILE-RESEARCH-1-0",
+      "canonical_name": "Research Deployment Profile",
+      "display_name": "Research Edition",
+      "canonical_term_preferred": true,
+      "target_group": "Research institutions, universities and scientific developers",
+      "core_policy": {
+        "may_disable_canonical_core": false,
+        "profile_inheritance_allowed": false,
+        "composite_profile_allowed_only_if_explicitly_approved": true
+      },
+      "roles": [
+        "research_lead",
+        "research_contributor",
+        "auditor"
+      ],
+      "resource_profile": "research_configurable",
+      "license_profile": "research-lab",
+      "integration_profile": "controlled_research_integrations",
+      "required_validations": [
+        "core_not_disabled",
+        "experiment_isolation",
+        "evidence_logging",
+        "reproducibility_check",
+        "promotion_review_required"
+      ]
+    }
+  ],
+  "global_constraints": [
+    {
+      "id": "CDFX-CONSTRAINT-001",
+      "rule": "Deployment profiles must not create source code forks."
+    },
+    {
+      "id": "CDFX-CONSTRAINT-002",
+      "rule": "Deployment profiles must not redefine framework identity."
+    },
+    {
+      "id": "CDFX-CONSTRAINT-003",
+      "rule": "Deployment profiles must not disable canonical core components."
+    },
+    {
+      "id": "CDFX-CONSTRAINT-004",
+      "rule": "Experimental components must remain isolated until approved through the governance cycle."
+    }
+  ]
+}

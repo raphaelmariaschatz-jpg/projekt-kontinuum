@@ -1,0 +1,415 @@
+{
+  "framework_information": {
+    "id": "CDFX-1.0",
+    "name": "Canonical Deployment Framework",
+    "abbreviation": "CDFX",
+    "version": "1.0",
+    "status": "conceptual",
+    "date": "2026-07-16",
+    "runtime_effect": "none",
+    "recommendation": {
+      "concept": "GO",
+      "implementation": "SPAETER"
+    },
+    "purpose": "Declarative governance framework for deriving reproducible deployment profiles from one Canonical Architecture without forks."
+  },
+  "architecture_position": {
+    "normative_source": "CMIBF",
+    "hierarchy": [
+      "CMIBF",
+      "AFP",
+      "CAWP",
+      "CAC or validators",
+      "canonical artifacts",
+      "CDFX deployment profiles",
+      "validated deployment"
+    ],
+    "non_authority_statement": "CDFX is not a competing architecture source and must not invent or override architecture rules."
+  },
+  "canonical_core": [
+    {
+      "id": "CDFX-CORE-001",
+      "name": "CMIBF",
+      "core_required": true,
+      "runtime_required": false,
+      "governance_required": true,
+      "minimum_function": "Normative architecture source"
+    },
+    {
+      "id": "CDFX-CORE-002",
+      "name": "Foundation",
+      "core_required": true,
+      "runtime_required": true,
+      "governance_required": true,
+      "minimum_function": "Technical and semantic system foundation"
+    },
+    {
+      "id": "CDFX-CORE-003",
+      "name": "Governance Layer",
+      "core_required": true,
+      "runtime_required": false,
+      "governance_required": true,
+      "minimum_function": "Rules, review, approval and control"
+    },
+    {
+      "id": "CDFX-CORE-004",
+      "name": "Canonical Architecture",
+      "core_required": true,
+      "runtime_required": false,
+      "governance_required": true,
+      "minimum_function": "Single architecture truth"
+    },
+    {
+      "id": "CDFX-CORE-005",
+      "name": "CAM",
+      "core_required": true,
+      "runtime_required": false,
+      "governance_required": true,
+      "minimum_function": "Artifact identity and lifecycle reference"
+    },
+    {
+      "id": "CDFX-CORE-006",
+      "name": "ALP",
+      "core_required": true,
+      "runtime_required": false,
+      "governance_required": true,
+      "minimum_function": "Archival and successor lifecycle"
+    },
+    {
+      "id": "CDFX-CORE-007",
+      "name": "CDF",
+      "core_required": true,
+      "runtime_required": false,
+      "governance_required": true,
+      "minimum_function": "Development framework"
+    },
+    {
+      "id": "CDFX-CORE-008",
+      "name": "CDG",
+      "core_required": true,
+      "runtime_required": false,
+      "governance_required": true,
+      "minimum_function": "Development and dependency governance"
+    },
+    {
+      "id": "CDFX-CORE-009",
+      "name": "Canonical Memory",
+      "core_required": true,
+      "runtime_required": true,
+      "governance_required": true,
+      "minimum_function": "Controlled memory and knowledge continuity"
+    },
+    {
+      "id": "CDFX-CORE-010",
+      "name": "CRE",
+      "core_required": true,
+      "runtime_required": true,
+      "governance_required": true,
+      "minimum_function": "Capability resolution without direct execution"
+    },
+    {
+      "id": "CDFX-CORE-011",
+      "name": "Execution Planner",
+      "core_required": true,
+      "runtime_required": true,
+      "governance_required": true,
+      "minimum_function": "Validated execution planning"
+    },
+    {
+      "id": "CDFX-CORE-012",
+      "name": "Orchestrator Core",
+      "core_required": true,
+      "runtime_required": true,
+      "governance_required": true,
+      "minimum_function": "Execution of validated plans"
+    },
+    {
+      "id": "CDFX-CORE-013",
+      "name": "Release Integrity",
+      "core_required": true,
+      "runtime_required": false,
+      "governance_required": true,
+      "minimum_function": "Integrity and reproducibility evidence"
+    },
+    {
+      "id": "CDFX-CORE-014",
+      "name": "Canonical Glossary",
+      "core_required": true,
+      "runtime_required": false,
+      "governance_required": true,
+      "minimum_function": "Canonical terminology"
+    },
+    {
+      "id": "CDFX-CORE-015",
+      "name": "Canonical History Index and Projektchronik",
+      "core_required": true,
+      "runtime_required": false,
+      "governance_required": true,
+      "minimum_function": "Traceable history"
+    },
+    {
+      "id": "CDFX-CORE-016",
+      "name": "Identity, provenance, security and audit foundations",
+      "core_required": true,
+      "runtime_required": true,
+      "governance_required": true,
+      "minimum_function": "Minimum identity, provenance, security and audit controls"
+    }
+  ],
+  "deployment_profiles": [
+    {
+      "profile_ref": "CDFX-PROFILE-PERSONAL-1-0",
+      "name": "Personal Deployment Profile",
+      "status": "recommended_concept",
+      "target_group": "Private users",
+      "deployment_characteristics": [
+        "single_user",
+        "local_or_personal_installation",
+        "reduced_visible_administration",
+        "privacy_focus",
+        "low_resource_baseline"
+      ],
+      "recommended_frameworks": [
+        "CAICF",
+        "CMLF",
+        "CHIF",
+        "CIF"
+      ],
+      "excluded_characteristics": [
+        "tenant_administration",
+        "enterprise_policy_centralization"
+      ]
+    },
+    {
+      "profile_ref": "CDFX-PROFILE-ENTERPRISE-1-0",
+      "name": "Enterprise Deployment Profile",
+      "status": "recommended_concept",
+      "target_group": "Organizations and enterprises",
+      "deployment_characteristics": [
+        "multi_user",
+        "extended_roles",
+        "rights_management",
+        "auditability",
+        "monitoring",
+        "controlled_integrations"
+      ],
+      "recommended_frameworks": [
+        "CEF",
+        "Observability",
+        "Evaluation Center",
+        "Capability Discovery",
+        "Meta-Reasoning",
+        "CHIF",
+        "CIF"
+      ],
+      "governance_requirements": [
+        "role_review",
+        "audit_policy",
+        "integration_approval"
+      ]
+    },
+    {
+      "profile_ref": "CDFX-PROFILE-RESEARCH-1-0",
+      "name": "Research Deployment Profile",
+      "status": "recommended_concept",
+      "target_group": "Researchers, universities and scientific developers",
+      "deployment_characteristics": [
+        "controlled_experiment_spaces",
+        "high_configurability",
+        "research_protocols",
+        "reproducibility",
+        "visualization",
+        "canonical_experimental_separation"
+      ],
+      "recommended_frameworks": [
+        "CAICF",
+        "CMLF",
+        "Meta-Reasoning",
+        "Evaluation Center",
+        "Capability Discovery",
+        "Observability"
+      ],
+      "governance_requirements": [
+        "experiment_isolation",
+        "evidence_logging",
+        "promotion_review"
+      ]
+    }
+  ],
+  "optional_frameworks": [
+    {
+      "id": "CDFX-OPT-001",
+      "name": "CAICF",
+      "function": "AI competency development",
+      "allowed_profiles": [
+        "personal",
+        "enterprise",
+        "research"
+      ],
+      "activation_conditions": [
+        "learning_governance_available"
+      ],
+      "security_impact": "medium",
+      "license_relevance": "profile_dependent"
+    },
+    {
+      "id": "CDFX-OPT-002",
+      "name": "CMLF",
+      "function": "Media learning",
+      "allowed_profiles": [
+        "personal",
+        "research"
+      ],
+      "activation_conditions": [
+        "media_governance",
+        "privacy_review"
+      ],
+      "security_impact": "medium",
+      "license_relevance": "media_rights"
+    },
+    {
+      "id": "CDFX-OPT-003",
+      "name": "CEF",
+      "function": "Enterprise modeling",
+      "allowed_profiles": [
+        "enterprise",
+        "research"
+      ],
+      "activation_conditions": [
+        "role_model_available",
+        "audit_policy_available"
+      ],
+      "security_impact": "high",
+      "license_relevance": "enterprise"
+    },
+    {
+      "id": "CDFX-OPT-004",
+      "name": "Meta-Reasoning",
+      "function": "Reflection and reasoning review",
+      "allowed_profiles": [
+        "enterprise",
+        "research",
+        "personal_optional"
+      ],
+      "activation_conditions": [
+        "governance_boundaries_defined"
+      ],
+      "security_impact": "medium",
+      "license_relevance": "none_initial"
+    },
+    {
+      "id": "CDFX-OPT-005",
+      "name": "Observability",
+      "function": "Monitoring and traceability",
+      "allowed_profiles": [
+        "enterprise",
+        "research"
+      ],
+      "activation_conditions": [
+        "audit_storage_available",
+        "privacy_policy_available"
+      ],
+      "security_impact": "high",
+      "license_relevance": "enterprise_or_research"
+    },
+    {
+      "id": "CDFX-OPT-006",
+      "name": "Capability Discovery",
+      "function": "Discovery and registration of capabilities",
+      "allowed_profiles": [
+        "enterprise",
+        "research",
+        "personal_optional"
+      ],
+      "activation_conditions": [
+        "CRE_registry_available",
+        "validation_required"
+      ],
+      "security_impact": "high",
+      "license_relevance": "profile_dependent"
+    },
+    {
+      "id": "CDFX-OPT-007",
+      "name": "Evaluation Center",
+      "function": "Evaluation, comparison and evidence review",
+      "allowed_profiles": [
+        "enterprise",
+        "research"
+      ],
+      "activation_conditions": [
+        "evidence_model_available"
+      ],
+      "security_impact": "medium",
+      "license_relevance": "research_or_enterprise"
+    },
+    {
+      "id": "CDFX-OPT-008",
+      "name": "Adaptive Strategy Engine",
+      "function": "Controlled strategy adaptation",
+      "allowed_profiles": [
+        "research"
+      ],
+      "activation_conditions": [
+        "separate_architecture_approval_required"
+      ],
+      "security_impact": "high",
+      "license_relevance": "future"
+    }
+  ],
+  "role_models": [
+    "core_governance_roles",
+    "deployment_roles",
+    "system_roles"
+  ],
+  "license_models": [
+    "personal-local",
+    "enterprise-governed",
+    "research-lab",
+    "evaluation-only"
+  ],
+  "governance_rules": [
+    "profiles_must_not_disable_core_components",
+    "profiles_must_reference_frameworks_not_duplicate_them",
+    "profiles_must_be_versioned",
+    "profile_combinations_require_explicit_composite_profile",
+    "experimental_components_must_remain_isolated_until_governance_approval"
+  ],
+  "extension_points": [
+    "new_deployment_profile",
+    "new_resource_profile",
+    "new_license_profile",
+    "new_integration_profile",
+    "future_CAC_validator_binding"
+  ],
+  "risks": [
+    "edition_language_may_suggest_product_forks",
+    "enterprise_requirements_may_require_security_frameworks_not_yet_finalized",
+    "research_experiments_may_contaminate_canonical_core_without_isolation",
+    "profile_combinations_may_become_hard_to_validate"
+  ],
+  "open_questions": [
+    "Which CMIBF registry ID should CDFX receive?",
+    "Which CDFX checks should CAC validate first?",
+    "Which role rules belong to CDFX versus future security frameworks?",
+    "When will CLMSF provide binding license validation?",
+    "Which pilot profile should be approved first?"
+  ],
+  "implementation_plan": [
+    "architecture_approval",
+    "documentation_maintenance",
+    "glossary_maintenance",
+    "cross_reference_review",
+    "json_schema_finalization",
+    "profile_registration",
+    "dependency_and_conflict_validation",
+    "role_and_rights_integration",
+    "resource_and_license_profile_integration",
+    "CAC_or_validator_binding",
+    "deployment_resolver",
+    "release_integrity_check",
+    "tests_and_validation",
+    "pilot_profile",
+    "controlled_release",
+    "monitoring_and_evolution"
+  ]
+}
