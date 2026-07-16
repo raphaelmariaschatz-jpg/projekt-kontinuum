@@ -1,0 +1,83 @@
+{
+  "schema": "CLPF Canonical Token Schema",
+  "framework": "Canonical Language Processing Framework",
+  "version": "1.0",
+  "status": "conceptual",
+  "date": "2026-07-16",
+  "runtime_effect": "none",
+  "token_object": {
+    "token_id": {
+      "type": "string",
+      "description": "Stable token identifier within the processed input."
+    },
+    "surface": {
+      "type": "string",
+      "description": "Visible or normalized token form."
+    },
+    "normalized_surface": {
+      "type": "string",
+      "description": "Optional normalized token form after Unicode and format normalization."
+    },
+    "tokenizer_type": {
+      "type": "string",
+      "allowed_values": [
+        "subword",
+        "bpe",
+        "sentencepiece",
+        "wordpiece",
+        "rule_based",
+        "future"
+      ]
+    },
+    "tokenizer_local_id": {
+      "type": "string",
+      "description": "Tokenizer- or model-local token identifier, if available."
+    },
+    "position": {
+      "type": "object",
+      "fields": [
+        "absolute_index",
+        "sentence_index",
+        "document_index",
+        "model_position"
+      ]
+    },
+    "span": {
+      "type": "object",
+      "fields": [
+        "source_start",
+        "source_end"
+      ]
+    },
+    "language": {
+      "type": "string",
+      "description": "Detected or declared language code."
+    },
+    "sentence_id": {
+      "type": "string",
+      "description": "Identifier of the sentence or utterance containing this token."
+    },
+    "document_id": {
+      "type": "string",
+      "description": "Identifier of the source document or input unit."
+    },
+    "metadata": {
+      "type": "object",
+      "fields": [
+        "source",
+        "normalization_steps",
+        "confidence",
+        "provenance",
+        "privacy_class",
+        "uncertainty_flags"
+      ]
+    }
+  },
+  "boundaries": [
+    "The schema does not mandate a concrete tokenizer.",
+    "The schema does not expose model weights.",
+    "The schema does not approve memory storage.",
+    "The schema does not define runtime execution."
+  ]
+}
+

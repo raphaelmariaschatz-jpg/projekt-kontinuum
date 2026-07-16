@@ -1,0 +1,100 @@
+{
+  "pipeline": "CLPF Processing Pipeline",
+  "framework": "Canonical Language Processing Framework",
+  "version": "1.0",
+  "status": "conceptual",
+  "date": "2026-07-16",
+  "runtime_effect": "none",
+  "stages": [
+    {
+      "id": "CLPF-01",
+      "name": "Input Acquisition",
+      "input": [
+        "text",
+        "transcribed_speech",
+        "file_content",
+        "structured_data"
+      ],
+      "output": "raw_language_input_envelope"
+    },
+    {
+      "id": "CLPF-02",
+      "name": "Normalization",
+      "input": "raw_language_input_envelope",
+      "output": "normalized_language_input",
+      "checks": [
+        "unicode",
+        "charset",
+        "language",
+        "locale",
+        "format",
+        "sentence_boundaries",
+        "document_boundaries"
+      ]
+    },
+    {
+      "id": "CLPF-03",
+      "name": "Tokenization",
+      "input": "normalized_language_input",
+      "output": "canonical_token_sequence",
+      "tokenizer_families": [
+        "subword",
+        "BPE",
+        "SentencePiece",
+        "WordPiece",
+        "rule_based",
+        "future"
+      ]
+    },
+    {
+      "id": "CLPF-04",
+      "name": "Embedding Preparation",
+      "input": "canonical_token_sequence",
+      "output": "model_input_representation",
+      "includes": [
+        "token_embeddings",
+        "position_information",
+        "segment_information",
+        "context_window_metadata"
+      ]
+    },
+    {
+      "id": "CLPF-05",
+      "name": "Transformer Processing",
+      "input": "model_input_representation",
+      "output": "contextual_language_representation",
+      "conceptual_elements": [
+        "self_attention",
+        "multi_head_attention",
+        "feed_forward_layer",
+        "layer_normalization",
+        "residual_connections"
+      ]
+    },
+    {
+      "id": "CLPF-06",
+      "name": "Semantic Representation",
+      "input": "contextual_language_representation",
+      "output": "canonical_semantic_representation",
+      "handoff_targets": [
+        "CLU",
+        "CCP-Cognitive",
+        "CRE",
+        "Learning",
+        "Canonical Memory",
+        "Meta-Reasoning"
+      ]
+    }
+  ],
+  "forbidden_runtime_effects": [
+    "training",
+    "fine_tuning",
+    "weight_management",
+    "GPU_optimization",
+    "CRE_change",
+    "Execution_Planner_change",
+    "Orchestrator_Core_change",
+    "automatic_memory_write"
+  ]
+}
+

@@ -733,3 +733,18 @@ Abschlussstand:
 - Beziehungen zu Foundation, Governance, Canonical Architecture, CPVF/CVF, CIF, CCP-Cognitive, CAICF, CMLF, CRE, Execution Planner, Orchestrator Core, Learning Agent, Canonical Memory, Meta-Reasoning, Reflection, Tutor-/Education-Komponenten, Release Integrity, Glossar und Projektchronik wurden dokumentiert.
 - CHIF 1.0 bleibt ohne Runtime-Wirkung; technische Operationalisierung ist fuer eine spaetere freigegebene Phase vorgemerkt.
 - Auftrag 10 wurde aus `Raphael Notizen/noch nicht erledigt/Codex Auftraege` nach `Raphael Notizen/erledigt/Codex Auftraege` verschoben.
+
+# Meilenstein Canonical Language Processing Framework (CLPF) 1.0 - Auftrag 11 abgeschlossen (2026-07-16)
+
+Auftrag 11 zum Canonical Language Processing Framework wurde als reine Konzept-, Dokumentations- und Governance-Vorbereitung abgeschlossen. CLPF 1.0 beschreibt den kanonischen Weg von Spracheingaben, Texteingaben, Dateiinhalten und strukturierten Daten bis zu einer modellunabhaengigen semantischen Repraesentation.
+
+Abschlussstand:
+
+- `CLPF` ist als kanonischer Sprachverarbeitungsrahmen dokumentiert.
+- CLPF trennt Sprachverarbeitung klar von kognitiver Verarbeitung: CLPF verarbeitet Sprache, CCP-Cognitive verarbeitet Bedeutung im kognitiven Ablauf.
+- Die Verarbeitungsschritte Input Acquisition, Normalization, Tokenization, Embedding Preparation, Transformer Processing und Semantic Representation wurden definiert.
+- Ein modellunabhaengiges kanonisches Token-Schema wurde vorbereitet.
+- Transformer wurden als austauschbare Referenzarchitektur fuer kontextuelle Sprachrepraesentation eingeordnet, nicht als Denkarchitektur von K.
+- Beziehungen zu Foundation, Governance, Canonical Architecture, CVF, CIF, CCP-Cognitive, CHIF, CAICF, CMLF, CLU, CRE, Execution Planner, Orchestrator Core, Canonical Memory, Learning Agent, Meta-Reasoning, Release Integrity und Canonical Glossary wurden dokumentiert.
+- CLPF 1.0 bleibt ohne Runtime-Wirkung; technische Operationalisierung ist fuer eine spaetere freigegebene Phase vorgemerkt.
+- Auftrag 11 wurde aus `Raphael Notizen/noch nicht erledigt/Codex Auftraege` nach `Raphael Notizen/erledigt/Codex Auftraege` verschoben.

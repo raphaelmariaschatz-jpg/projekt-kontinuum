@@ -200,3 +200,11 @@ Erste Dokumentation: CANONICAL_HUMAN_INTERFACE_FRAMEWORK_1_0.md
 Erste Implementierung: Keine Implementierung; Konzept-, Dokumentations- und Governance-Artefakt
 Governance-Einordnung: Interface Framework / kanonische Mensch-System-Interaktionsarchitektur
 Aktueller Status: Canonical concept, implementation later
+
+## CLPF
+
+Erste Erwaehnung: Codex-Auftrag 11 Canonical Language Processing Framework vom 09.07.2026
+Erste Dokumentation: CANONICAL_LANGUAGE_PROCESSING_FRAMEWORK_1_0.md
+Erste Implementierung: Keine Implementierung; Konzept-, Dokumentations- und Governance-Artefakt
+Governance-Einordnung: Language Architecture / kanonischer Sprachverarbeitungsrahmen
+Aktueller Status: Canonical concept, implementation later

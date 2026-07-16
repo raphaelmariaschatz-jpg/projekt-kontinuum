@@ -1,0 +1,136 @@
+{
+  "framework": "Canonical Language Processing Framework",
+  "abbreviation": "CLPF",
+  "version": "1.0",
+  "status": "conceptual",
+  "date": "2026-07-16",
+  "purpose": "Canonical, model-independent framework for language processing in Projekt Kontinuum.",
+  "principle": "CLPF processes language into semantic representations; CCP-Cognitive processes meaning in the cognitive workflow.",
+  "runtime_effect": "none",
+  "governance_result": {
+    "concept_preparation": "GO",
+    "implementation": "SPAETER",
+    "productive_integration": "not_approved",
+    "runtime_changes": "not_allowed"
+  },
+  "architecture_position": [
+    "User Input",
+    "Canonical Language Processing Framework",
+    "Canonical Semantic Representation",
+    "Canonical Language Understanding",
+    "Canonical Cognitive Pipeline",
+    "Capability Resolution Engine",
+    "Execution Planner",
+    "Orchestrator Core"
+  ],
+  "processing_steps": [
+    {
+      "id": "CLPF-01",
+      "name": "Input Acquisition",
+      "purpose": "Acquire text, transcribed speech, file content and structured data.",
+      "boundaries": [
+        "no GUI implementation",
+        "no microphone or audio implementation",
+        "no parser implementation"
+      ]
+    },
+    {
+      "id": "CLPF-02",
+      "name": "Normalization",
+      "purpose": "Normalize Unicode, character sets, language, locale, formatting, sentence boundaries and document boundaries.",
+      "boundaries": [
+        "must not silently alter meaning",
+        "must keep provenance"
+      ]
+    },
+    {
+      "id": "CLPF-03",
+      "name": "Tokenization",
+      "purpose": "Create canonical token objects independent of tokenizer family.",
+      "supported_tokenizer_families": [
+        "subword",
+        "BPE",
+        "SentencePiece",
+        "WordPiece",
+        "rule_based",
+        "future_tokenizer"
+      ],
+      "boundaries": [
+        "no concrete tokenizer mandate",
+        "no model lock-in"
+      ]
+    },
+    {
+      "id": "CLPF-04",
+      "name": "Embedding Preparation",
+      "purpose": "Prepare token, position, segment and context information for interchangeable model processing.",
+      "boundaries": [
+        "no embedding training",
+        "no weight management"
+      ]
+    },
+    {
+      "id": "CLPF-05",
+      "name": "Transformer Processing",
+      "purpose": "Conceptually place transformer processing as one interchangeable language representation mechanism.",
+      "conceptual_elements": [
+        "self_attention",
+        "multi_head_attention",
+        "feed_forward_layer",
+        "layer_normalization",
+        "residual_connections"
+      ],
+      "boundaries": [
+        "no implementation",
+        "no model training",
+        "no fine_tuning",
+        "no GPU optimization"
+      ]
+    },
+    {
+      "id": "CLPF-06",
+      "name": "Semantic Representation",
+      "purpose": "Produce a model-independent semantic representation for CLU, CCP-Cognitive, CRE, Learning, Memory and Meta-Reasoning.",
+      "boundaries": [
+        "no governance decision",
+        "no capability decision",
+        "no execution planning",
+        "no memory write"
+      ]
+    }
+  ],
+  "relationships": {
+    "clu": "CLU uses CLPF output for intent, context and meaning tasks.",
+    "ccp_cognitive": "CCP-Cognitive processes meaning in a controlled cognitive workflow.",
+    "cre": "CRE receives structured capability-relevant signals, not raw language.",
+    "chif": "CHIF governs human interaction; CLPF prepares language input.",
+    "cmlf": "CMLF governs learning media; CLPF does not select media.",
+    "cvf": "CVF remains computer vision; CLPF remains language processing.",
+    "memory": "Memory stores only validated, approved context and not unchecked raw language.",
+    "meta_reasoning": "Meta-Reasoning can inspect assumptions and representation uncertainty.",
+    "release_integrity": "Release Integrity validates later CLPF artifacts when implementation is approved."
+  },
+  "extension_points": [
+    "rule_based_tokenization",
+    "statistical_nlp",
+    "transformer_encoder",
+    "decoder_only_model",
+    "encoder_decoder_model",
+    "multilingual_processing",
+    "future_model_architecture"
+  ],
+  "non_goals": [
+    "language model training",
+    "LLM integration",
+    "runtime migration",
+    "GPU optimization",
+    "productive component changes",
+    "model weights",
+    "fine-tuning",
+    "CRE changes",
+    "Execution Planner changes",
+    "Orchestrator Core changes"
+  ],
+  "recommendation": "GO for conceptual canonical preparation; SPAETER for technical implementation."
+}
+
