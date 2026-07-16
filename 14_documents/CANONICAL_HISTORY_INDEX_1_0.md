@@ -216,3 +216,11 @@ Erste Dokumentation: CANONICAL_AUTHENTICATION_FRAMEWORK_1_0.md
 Erste Implementierung: Keine produktive Authentisierungsimplementierung; Konzept-, Pruef- und Governance-Artefakt mit Statusbericht und JSON-Konzeptmodell
 Governance-Einordnung: Kanonischer Rahmen fuer Identitaet, Authentisierung, Assurance Levels, Sessions, Recovery, Agenten-/Dienstidentitaeten und Auth-Audit; strikt getrennt von Autorisierung
 Aktueller Status: Canonical concept, mit Auflagen freigabefaehig; produktive Integration spaeter kontrolliert
+
+## CLMSF
+
+Erste Erwaehnung: Codex-Auftrag 14 Canonical Licence Management System Framework vom 10.07.2026
+Erste Dokumentation: CANONICAL_LICENCE_MANAGEMENT_SYSTEM_FRAMEWORK_1_0.md
+Erste Implementierung: Keine Implementierung; Architekturvorschlag, Pruefbericht und Governance-Artefakt ohne Runtime-Wirkung
+Governance-Einordnung: Kanonischer Rahmen fuer Lizenzidentitaet, Lizenzregistry, Lizenzlebenszyklus, Validierung, Policies, Audit, Sicherheit, Compliance, Export und Erweiterbarkeit; strikt getrennt von CAF, CIPL, CAM und Runtime-Lizenzmanagern
+Aktueller Status: Canonical concept, Architekturfreigabe GO; produktive Integration spaeter kontrolliert

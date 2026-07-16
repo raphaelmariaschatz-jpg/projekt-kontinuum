@@ -29,6 +29,7 @@ flowchart TD
   AGF --> CDG
   AGF --> CCPPolicy[CCP-Policy]
   CanonicalLayer --> CAM
+  CanonicalLayer --> CLMSF
   CAM --> ALP
   CAM --> CADP
   Governance --> ReleaseIntegrity[Release Integrity]
@@ -99,6 +100,15 @@ Used By: Operational Layer, Learning Layer, CAM, Release Integrity
 Governed By: CMIBF, AFP, AGF, CDG
 Layer: Canonical
 Status: Canonical
+
+### CLMSF
+
+Depends On: CMIBF, AFP, CAWP, CPI, CAC, AGF, CDG, CDF, CCP-Policy, CAM, ALP, CADP, CIPL, Release Integrity; optionally consumes CAF identity and assurance references
+Provides: Canonical licence identities, licence registry architecture, licence lifecycle, validation model, policy model, audit model, security and compliance model, export rules, extension points
+Used By: Future Licence Manager, future Licence Validation Service, Governance, Release Integrity, CAM, Compliance reviews
+Governed By: CMIBF, AFP, AGF, CDG, CCP-Policy
+Layer: Canonical
+Status: Canonical concept, architecture approved; implementation later
 
 ### Operational Layer
 

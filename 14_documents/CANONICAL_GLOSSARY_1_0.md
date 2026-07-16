@@ -1128,3 +1128,27 @@ Verwandte Komponenten:
 - Foundation
 - CRL
 - Meta-Reasoning
+
+### CLMSF - Canonical Licence Management System Framework
+
+Name: Canonical Licence Management System Framework
+Abkuerzung: CLMSF
+Vollstaendige Bezeichnung: Canonical Licence Management System Framework 1.0
+Definition: Kanonisches Architekturframework fuer zukuenftige Lizenzmechanismen in Projekt Kontinuum. CLMSF definiert Lizenzidentitaeten, Registry, Lifecycle, Validierungsmodell, Policies, Audit, Sicherheit, Compliance, Export und Erweiterungspunkte, ohne produktive Lizenzlogik zu implementieren.
+Zweck: Schafft eine stabile Architekturgrundlage fuer spaetere Lizenzmanager, Lizenzvalidierungsdienste und Compliance-Prozesse, ohne CAF, CIPL, CAM oder Release Integrity zu ersetzen.
+Architekturphase: Canonical Layer, Architektur- und Governance-Konzept vor Implementierung
+Status: Canonical concept, Architekturfreigabe GO; Implementierung spaeter
+
+Verantwortlichkeit:
+- Lizenzarchitektur kanonisch definieren
+- Lizenzidentitaet, licensed_subject, Lizenzprofile und Licence Assurance Level vorbereiten
+- Lizenzierung strikt von Authentisierung, IP-Herkunft, Artefaktverwaltung und Runtime-Entscheidung trennen
+- Erweiterungspunkte fuer spaetere Lizenzserver, Offline-Lizenzen, Unternehmens-, Forschungs- und Privatlizenzen beschreiben
+
+Verwandte Komponenten:
+- CMIBF
+- CAF
+- CIPL
+- CAM
+- CCP-Policy
+- Release Integrity
