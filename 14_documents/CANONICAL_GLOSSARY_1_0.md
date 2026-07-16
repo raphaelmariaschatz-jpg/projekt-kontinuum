@@ -1152,3 +1152,257 @@ Verwandte Komponenten:
 - CAM
 - CCP-Policy
 - Release Integrity
+
+### CODEAF - Canonical Code Agent Framework
+
+Name: Canonical Code Agent Framework
+Abkuerzung: CODEAF
+Vollstaendige Bezeichnung: Canonical Code Agent Framework 1.0
+Definition: Normative Agenten-Governance- und Kontrollschicht fuer Code-Agentenarbeit in Projekt Kontinuum. CODEAF definiert, wie Code-Agenten identifiziert, beauftragt, rollenbezogen begrenzt, capability- und permissionbezogen kontrolliert, risikoklassifiziert, auditiert und freigegeben werden.
+Zweck: Verhindert, dass Code-Agenten allein aufgrund technischer Faehigkeiten handeln. CODEAF verbindet Auftrag, Agentenidentitaet, Rolle, Capability, Permission, Scope, Risiko, Gate, Audit und Freigabe, ohne selbst Agent, Registry, Planner, Orchestrator oder Runtime zu sein.
+Architekturphase: Agent Governance / Architektur- und Governance-Konzept vor Implementierung
+Status: Concept complete, Architecture Review completed with conditions; Implementierung spaeter nur nach ausdruecklicher Freigabe
+
+Namensregel:
+- `CODEAF` ist die kanonische Abkuerzung gemaess CMIBF-Framework-Registry `PK-FW-AGENT-005`.
+- `CCAF` war ein Arbeitsname des Pruefauftrags und wird nicht als konkurrierende kanonische Benennung gefuehrt.
+
+Verantwortlichkeit:
+- kanonische Code-Agentenidentitaet definieren
+- Canonical Agent Task definieren
+- Rollen und Verantwortungsbereiche fuer Code-Agenten festlegen
+- Capability und Permission trennen
+- deny-by-default fuer nicht ausdruecklich erlaubte Aktionen festschreiben
+- Read-only-, Write-, Execute- und Administrative-Grenzen definieren
+- Risiko- und Vertrauensklassen definieren
+- Freigabe-, Eskalations- und Kontroll-Gates definieren
+- Delegation und Unteragenten begrenzen
+- Laufzeitgrenzen und Abbruchbedingungen definieren
+- Audit-, Provenienz- und Berichtspflichten definieren
+- Konfliktregeln zwischen Beschreibung, Registry, Permission Profile und Runtime-Konfiguration festlegen
+
+Abgrenzung:
+- CODEAF ist keine Agent Registry; Agentenregistrierung bleibt Aufgabe von CAIM beziehungsweise der kanonischen Agent Registry.
+- CODEAF ist keine Capability Resolution Engine; CRE loest Capabilities auf und priorisiert Kandidaten.
+- CODEAF ist kein Execution Planner; der Planner erstellt validierte Plaene aus erlaubten Capability-Resolutionen.
+- CODEAF ist kein Orchestrator; der Orchestrator fuehrt nur validierte Plaene innerhalb freigegebener Grenzen aus.
+- CODEAF ist keine Runtime- oder Implementierungsfreigabe.
+
+Verwandte Komponenten:
+- CMIBF
+- AFP
+- CDF
+- CDG
+- CAWP
+- AGF
+- CAF
+- CLMSF
+- CAIM
+- CRE
+- Execution Planner
+- Orchestrator Core
+- CAM
+- Release Integrity
+- Audit und Provenienz
+
+### Code-Agent
+
+Name: Code-Agent
+Abkuerzung: keine
+Vollstaendige Bezeichnung: Code-Agent
+Definition: Identifizierbare, regelgebundene Software- oder Modellinstanz, die innerhalb eines ausdruecklich freigegebenen Auftrags Quellcode, Konfigurationen, Tests, Dokumentation oder zugehoerige Entwicklungsartefakte analysiert, plant, erzeugt, veraendert, prueft oder verwaltet.
+Zweck: Macht automatisierte Codearbeit identifizierbar, begrenzt, pruefbar und governancefaehig.
+Architekturphase: Agent Governance, Analyse, Planung, Umsetzung, Review, Test, Dokumentation, Release
+Status: CODEAF-Begriff
+
+Verwandte Komponenten:
+- CODEAF
+- CAIM
+- CRE
+- Execution Planner
+- Orchestrator Core
+- CAWP
+- CDG
+
+### Canonical Agent Task
+
+Name: Canonical Agent Task
+Abkuerzung: keine
+Vollstaendige Bezeichnung: Canonical Agent Task
+Definition: Kanonischer Auftrag fuer einen Code-Agenten mit Task-ID, Ziel, Begruendung, Auftraggeber, Rolle, Capabilities, Permission Profile, Scope, Risikoklasse, Vorpruefungen, Arbeitsablauf, Tests, Dokumentation, Audit, Abbruchbedingungen, Rueckfallpunkt, erwarteten Ergebnissen, Freigabeverfahren, Abschlussbericht und Status.
+Zweck: Verhindert unklare, selbst erweiterte oder nicht nachvollziehbare Agentenarbeit.
+Architekturphase: CODEAF-Auftragsmodell
+Status: CODEAF-Begriff
+
+Verwandte Komponenten:
+- CODEAF
+- CDF
+- CDG
+- CAWP
+- Execution Planner
+
+### Agent Identity
+
+Name: Agent Identity
+Abkuerzung: keine
+Vollstaendige Bezeichnung: Code Agent Identity
+Definition: Dauerhafte, versionierbare und auditierbare Identitaet eines Code-Agenten mit eindeutiger Agenten-ID, Name, Version, Typ, Provider, Runtime, Vertrauensstufe, Status, Rollen, Capabilities, Permission Profile, Authentisierungsreferenz und Lizenzreferenz.
+Zweck: Trennt identifizierbare Agenten von Anzeigenamen, Produkten oder temporaren Sessions.
+Architekturphase: CODEAF Identity Gate
+Status: CODEAF-Begriff
+
+Verwandte Komponenten:
+- CODEAF
+- CAF
+- CLMSF
+- CAIM
+
+### Agent Run Identity
+
+Name: Agent Run Identity
+Abkuerzung: keine
+Vollstaendige Bezeichnung: Code Agent Run Identity
+Definition: Konkrete Lauf- oder Sitzungsidentitaet eines Agenten fuer einen bestimmten Auftrag, beispielsweise `agent_run_id`, `session_id`, `task_id` und `execution_id`.
+Zweck: Verknuepft dauerhafte Agentenidentitaet, Auftrag, Ausfuehrung, Audit und Bericht.
+Architekturphase: CODEAF Identity Gate, Audit und Provenienz
+Status: CODEAF-Begriff
+
+Verwandte Komponenten:
+- CODEAF
+- CAF
+- Orchestrator Core
+- Audit
+
+### Permission Profile
+
+Name: Permission Profile
+Abkuerzung: keine
+Vollstaendige Bezeichnung: Code Agent Permission Profile
+Definition: Auftragsspezifisches Berechtigungsprofil, das erlaubte und verbotene Aktionen, Pfade, Dateien, Dateitypen, Befehle, Tools, Datenbanken, Netzwerke, Git-Operationen, Laufzeiten und Aenderungsgroessen begrenzt.
+Zweck: Trennt technische Faehigkeit von konkreter Erlaubnis und macht Scope-Grenzen maschinen- und menschenpruefbar.
+Architekturphase: CODEAF Permission Gate
+Status: CODEAF-Begriff
+
+Verwandte Komponenten:
+- CODEAF
+- CAF
+- CDG
+- CRE
+- Execution Planner
+
+### Capability-vs-Permission-Trennung
+
+Name: Capability-vs-Permission-Trennung
+Abkuerzung: keine
+Vollstaendige Bezeichnung: Trennung von Capability und Permission
+Definition: Architekturregel, nach der Capability nur beschreibt, was ein Agent technisch kann, waehrend Permission beschreibt, was er in einem konkreten Auftrag, Scope und Risikokontext tatsaechlich darf.
+Zweck: Verhindert, dass registrierte technische Faehigkeiten automatisch als Ausfuehrungserlaubnis gelten.
+Architekturphase: CODEAF Capability Gate und Permission Gate
+Status: CODEAF-Regel
+
+Verwandte Komponenten:
+- CODEAF
+- CRE
+- CAIM
+- CDG
+
+### Deny-by-default
+
+Name: Deny-by-default
+Abkuerzung: keine
+Vollstaendige Bezeichnung: Deny-by-default-Prinzip
+Definition: Sicherheits- und Governance-Prinzip, nach dem alle nicht ausdruecklich erlaubten Aktionen, Pfade, Tools, Befehle, Datenbanken, Netzwerke, Git-Operationen, Delegationen und Runtime-Modi verboten sind.
+Zweck: Erzwingt explizite Erlaubnis statt impliziter Ausfuehrbarkeit.
+Architekturphase: CODEAF Permission Gate, Risk Gate, Execution Gate
+Status: CODEAF-Regel
+
+Verwandte Komponenten:
+- CODEAF
+- CDG
+- CAWP
+- AGF
+
+### Controlled Write Mode
+
+Name: Controlled Write Mode
+Abkuerzung: keine
+Vollstaendige Bezeichnung: Controlled Write Mode
+Definition: CODEAF-Betriebsmodus fuer begrenzte, freigegebene Schreibaktionen innerhalb eines expliziten Scopes mit verpflichtender Diff-, Test-, Scope- und Abschlusspruefung.
+Zweck: Erlaubt kontrollierte Implementierungsarbeit, ohne allgemeine Schreibrechte oder autonome Codearbeit zu aktivieren.
+Architekturphase: CODEAF Operating Modes
+Status: CODEAF-Begriff; Nutzung nur nach Implementierungsfreigabe
+
+Verwandte Komponenten:
+- CODEAF
+- CDF
+- CDG
+- Execution Planner
+- Orchestrator Core
+
+### Administrative Boundary
+
+Name: Administrative Boundary
+Abkuerzung: keine
+Vollstaendige Bezeichnung: Administrative Boundary
+Definition: CODEAF-Grenze fuer administrative oder besonders riskante Aktionen wie Git-Schreiboperationen, Rechteaenderungen, Authentisierung, Lizenzierung, Datenbankmigration, Release-Vorbereitung, Architekturmodifikation und Migration.
+Zweck: Trennt normale Analyse- oder Schreibarbeit von Aktionen mit erhoehtem Governance-, Sicherheits- oder Release-Risiko.
+Architekturphase: CODEAF Permission Gate, Risk Gate, Approval Gate
+Status: CODEAF-Begriff
+
+Verwandte Komponenten:
+- CODEAF
+- CAF
+- CLMSF
+- Release Integrity
+- CDG
+
+### Delegation / Unteragent
+
+Name: Delegation / Unteragent
+Abkuerzung: keine
+Vollstaendige Bezeichnung: CODEAF Delegation / Sub-Agent
+Definition: Auftraglich erlaubte Weitergabe eines begrenzten Teilauftrags an eine weitere Agenten- oder Laufidentitaet. Delegation darf Scope, Rolle, Capability, Permission oder Risiko nicht eigenmaechtig erweitern.
+Zweck: Ermoeglicht spaetere kontrollierte Multi-Agent-Arbeit, ohne freie Agentensuche oder automatische Agentenketten zu erlauben.
+Architekturphase: CODEAF Delegation Rules
+Status: CODEAF-Begriff
+
+Verwandte Komponenten:
+- CODEAF
+- CAIM
+- CRE
+- Execution Planner
+- Orchestrator Core
+
+### CODEAF Risk Class
+
+Name: CODEAF Risk Class
+Abkuerzung: keine
+Vollstaendige Bezeichnung: CODEAF Risk Class
+Definition: Risikoklasse fuer Code-Agentenarbeit von CODEAF-R0 bis CODEAF-R5, die Umfang, Freigabebedarf, Testpflicht, Reviewpflicht, Security-Pruefung und Autonomiegrenzen bestimmt.
+Zweck: Macht Code-Agentenarbeit risikobasiert steuerbar und verhindert Selbstfreigabe bei kritischen Aenderungen.
+Architekturphase: CODEAF Risk Gate
+Status: CODEAF-Begriff
+
+Verwandte Komponenten:
+- CODEAF
+- CDG
+- CAWP
+- Release Integrity
+
+### CODEAF Gate
+
+Name: CODEAF Gate
+Abkuerzung: keine
+Vollstaendige Bezeichnung: CODEAF Control Gate
+Definition: Verbindlicher Kontrollpunkt innerhalb von CODEAF, beispielsweise Identity Gate, Task Gate, Role Gate, Capability Gate, Permission Gate, Risk Gate, Plan Gate, Execution Gate, Verification Gate und Final Approval Gate.
+Zweck: Verhindert, dass Code-Agenten fehlende Identitaet, unklare Auftraege, fehlende Capabilities, fehlende Permissions, ungepruefte Risiken oder fehlende Freigaben umgehen.
+Architekturphase: CODEAF Control Gates
+Status: CODEAF-Begriff
+
+Verwandte Komponenten:
+- CODEAF
+- CDF
+- CDG
+- CAWP
+- Execution Planner
+- Orchestrator Core

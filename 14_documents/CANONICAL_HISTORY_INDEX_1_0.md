@@ -224,3 +224,11 @@ Erste Dokumentation: CANONICAL_LICENCE_MANAGEMENT_SYSTEM_FRAMEWORK_1_0.md
 Erste Implementierung: Keine Implementierung; Architekturvorschlag, Pruefbericht und Governance-Artefakt ohne Runtime-Wirkung
 Governance-Einordnung: Kanonischer Rahmen fuer Lizenzidentitaet, Lizenzregistry, Lizenzlebenszyklus, Validierung, Policies, Audit, Sicherheit, Compliance, Export und Erweiterbarkeit; strikt getrennt von CAF, CIPL, CAM und Runtime-Lizenzmanagern
 Aktueller Status: Canonical concept, Architekturfreigabe GO; produktive Integration spaeter kontrolliert
+
+## CODEAF
+
+Erste Erwaehnung: Codex-Auftrag 15 Canonical Code Agent Framework vom 10.07.2026
+Erste Dokumentation: CANONICAL_CODE_AGENT_FRAMEWORK_1_0.md, codeaf_1_0_status_report.md und codeaf_1_0_architecture_review.md
+Erste Implementierung: Keine Implementierung; Konzept-, Architekturpruefungs- und Governance-Artefakt ohne Runtime-Wirkung
+Governance-Einordnung: Normative Agenten-Governance- und Kontrollschicht zwischen CMIBF / AFP / CDF / CDG und Agent Registry / CRE / Execution Planner / Orchestrator; strikt getrennt von Agent Registry, CRE, Planner, Orchestrator und konkreten Agenten
+Aktueller Status: Concept complete, Architecture Review completed with conditions; Namens-, Glossar-, History-Index- und Chronikauflagen geschlossen; produktive Integration spaeter nur nach ausdruecklicher Implementierungsfreigabe

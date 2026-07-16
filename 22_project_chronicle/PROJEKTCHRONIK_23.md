@@ -762,3 +762,17 @@ Abschlussstand:
 - Risiken wie Namensableitung im Session Context, mutable Session-Dictionary-Gates, Legacy-SHA-256-Migration, Recovery-Key-Lifecycle und historische Sicherheitsdaten wurden dokumentiert.
 - CAF 1.0 bleibt ohne unmittelbare Runtime-Wirkung; technische Integration ist fuer eine spaetere freigegebene Phase vorgemerkt.
 - Auftrag 13 wurde aus `Raphael Notizen/noch nicht erledigt/Codex Auftraege` nach `Raphael Notizen/erledigt/Codex Auftraege` verschoben.
+
+# Meilenstein Canonical Code Agent Framework (CODEAF) 1.0 - Auftrag 15 Konzept und Architekturpruefung abgeschlossen (2026-07-16)
+
+Auftrag 15 zum Canonical Code Agent Framework wurde als Pruef-, Architekturdefinitions- und Vorbereitungauftrag abgeschlossen. Die Namenspruefung gegen das CMIBF bestaetigte `CODEAF` als kanonische Abkuerzung fuer den vorhandenen Framework-Registry-Eintrag `PK-FW-AGENT-005 | CODEAF | Code Agent Framework | 1.0 | PLANNED | AGENT`. `CCAF` wurde als Arbeitsname des Pruefauftrags verworfen und wird nicht als konkurrierende kanonische Benennung gefuehrt.
+
+Abschlussstand:
+
+- `CODEAF` ist als normative Agenten-Governance- und Kontrollschicht fuer Code-Agentenarbeit dokumentiert.
+- CODEAF steht architektonisch zwischen `CMIBF / AFP / CDF / CDG` und `Agent Registry / CRE / Execution Planner / Orchestrator`.
+- CODEAF ist kein Agent, keine Runtime, keine Registry, kein Planner, kein Orchestrator und keine Execution Engine.
+- CODEAF definiert Agentenidentitaet, Canonical Agent Task, Rollen, Capability-vs-Permission-Trennung, Deny-by-default, Betriebsgrenzen, Risikoklassen, Gates, Delegationsregeln, Laufzeitgrenzen, Abbruchbedingungen, Audit, Provenienz und Konfliktregeln.
+- Der gefundene `read_only`-Widerspruch in `canonical_agents.json` bleibt ein dokumentierter Governance-Gap und wurde nicht technisch korrigiert.
+- Glossar, History Index und Projektchronik wurden mit der kanonischen CODEAF-Benennung fortgeschrieben.
+- CODEAF 1.0 bleibt ohne Runtime-Wirkung; Anpassungen an `canonical_agents.json`, Capability Registry, CRE, Execution Planner oder Orchestrator Core sind erst in einer spaeteren, ausdruecklich freigegebenen Implementierungsphase zulaessig.
