@@ -21,9 +21,13 @@ class ReflectionAgent(BaseAgent):
         self_knowledge = self.config.get("self_knowledge")
         if self_knowledge and any(word in (prompt or "").lower() for word in ("selbst", "bewusstsein")):
             return AgentResult(self.name, True, self_knowledge.reflect(prompt))
+        crl = self.config.get("canonical_reflective_layer")
+        if crl:
+            assessment = crl.reflect(prompt)
+            return AgentResult(self.name, True, crl.format_assessment(assessment), assessment.to_dict())
         answer = (
             f"Reflexionsmodus {APP_VERSION} aktiv. Ich prüfe Konsistenz, bekannte Grenzen, fehlende Daten "
-            "und ob die Antwort mit den Projektprinzipien vereinbar ist."
+            "und ob die Antwort mit den Projektprinzipien vereinbar ist. Direkte Memory-Schreibung ist fuer "
+            "Reflection deaktiviert."
         )
-        self.remember("reflection.task", prompt, {"agent": self.name})
         return AgentResult(self.name, True, answer)

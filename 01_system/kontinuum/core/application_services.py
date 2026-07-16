@@ -375,6 +375,16 @@ class PromptOrchestrator:
             answer, agent = runtime_result
             self.request_router.record(text, decision, answer, agent)
             return self.recorder.finish(answer, agent, intent)
+        crl_result = self._handle_crl(text)
+        if crl_result:
+            answer, agent = crl_result
+            self.request_router.record(text, decision, answer, agent)
+            return self.recorder.finish(answer, agent, intent)
+        reflective_truth = self._handle_reflective_truth(intent)
+        if reflective_truth:
+            answer, agent = reflective_truth
+            self.request_router.record(text, decision, answer, agent)
+            return self.recorder.finish(answer, agent, intent)
         routed = self._handle_routed(text, intent, decision)
         if routed:
             answer, agent = routed
@@ -468,6 +478,27 @@ class PromptOrchestrator:
     def _orchestrator_runtime_enabled(self) -> bool:
         config = getattr(self.system, "agent_config", {}) or {}
         return bool(getattr(self.system, "orchestrator_runtime_enabled", False) or config.get("orchestrator_runtime_enabled", False))
+
+    def _handle_crl(self, text: str) -> tuple[str, str] | None:
+        lower = normalize(text).strip(" .!?")
+        if lower not in {"crlstatus", "crl status"} and not lower.startswith("crl "):
+            return None
+        crl = getattr(self.system, "canonical_reflective_layer", None)
+        if not crl:
+            return "Canonical Reflective Layer ist nicht angebunden.", "reflection"
+        if lower in {"crlstatus", "crl status"}:
+            return crl.format_status(), "reflection"
+        assessment = crl.reflect(text)
+        return crl.format_assessment(assessment), "reflection"
+
+    def _handle_reflective_truth(self, intent: Intent) -> tuple[str, str] | None:
+        if not intent.name.startswith(("consciousness.", "self_knowledge.")):
+            return None
+        answer = self.system.conversation.local_truth_answer(intent)
+        if not answer:
+            return None
+        agent = "consciousness" if intent.name.startswith("consciousness.") else "self_knowledge"
+        return answer, agent
 
     def _handle_orchestrator_runtime(self, text: str, intent: Intent, decision, plan) -> tuple[str, str] | None:
         if not self._orchestrator_runtime_enabled():

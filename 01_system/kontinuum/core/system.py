@@ -27,6 +27,7 @@ from .git_agent import GitAgentService
 from .canonical_git_manager import CanonicalGitManager
 from .code_agent import CodeAgentService
 from .consciousness import ConsciousnessCore
+from .canonical_reflective_layer import CanonicalReflectiveLayer
 from .self_knowledge import SelfKnowledgeCore
 from .memory_core import MemoryCore
 from .knowledge_platform import KnowledgePlatform
@@ -205,6 +206,8 @@ class KontinuumSystem:
             self.path_tools, self.storage, self.identity, self.consciousness, self.knowledge_intelligence
         )
         self.agent_config["self_knowledge"] = self.self_knowledge
+        self.canonical_reflective_layer = CanonicalReflectiveLayer(self.path_tools, self.storage)
+        self.agent_config["canonical_reflective_layer"] = self.canonical_reflective_layer
         self.foundation_decision = FoundationDecisionLayer(
             self.storage, self.moral_core, self.continuity_core, self.knowledge_intelligence
         )
@@ -483,6 +486,7 @@ class KontinuumSystem:
             "orchestrator_core": self.orchestrator_core.status(),
             "self_knowledge": self.self_knowledge.profile(),
             "consciousness": self.consciousness.profile(),
+            "canonical_reflective_layer": self.canonical_reflective_layer.status(),
             "memory_core": self.memory_core.status(),
             "canonical_memory_manager": self.canonical_memory_manager.status(),
             "knowledge_platform": self.knowledge_platform.status(),
