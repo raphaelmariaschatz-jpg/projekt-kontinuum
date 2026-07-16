@@ -1,0 +1,144 @@
+{
+  "model": "CHIF Interaction Model",
+  "framework": "Canonical Human Interface Framework",
+  "version": "1.0",
+  "date": "2026-07-16",
+  "status": "conceptual",
+  "runtime_effect": "none",
+  "interaction_flow": [
+    {
+      "stage": "CHIF-FLOW-01",
+      "name": "Human intent reception",
+      "description": "Receive the human request and preserve its stated goal, context and constraints.",
+      "primary_dimensions": [
+        "CHIF-01",
+        "CHIF-05",
+        "CHIF-08"
+      ],
+      "handoff": "CCP-01"
+    },
+    {
+      "stage": "CHIF-FLOW-02",
+      "name": "Context and responsibility framing",
+      "description": "Clarify assumptions, responsibility boundaries, risk level and governance relevance.",
+      "primary_dimensions": [
+        "CHIF-02",
+        "CHIF-06",
+        "CHIF-08"
+      ],
+      "handoff": "CCP-03"
+    },
+    {
+      "stage": "CHIF-FLOW-03",
+      "name": "Adaptive explanation planning",
+      "description": "Prepare the level of detail, language, structure and possible media for the response.",
+      "primary_dimensions": [
+        "CHIF-01",
+        "CHIF-04",
+        "CHIF-07"
+      ],
+      "handoff": "CAICF/CMLF"
+    },
+    {
+      "stage": "CHIF-FLOW-04",
+      "name": "Transparent response delivery",
+      "description": "Deliver answer, rationale, uncertainty, sources and next steps in a human-readable way.",
+      "primary_dimensions": [
+        "CHIF-01",
+        "CHIF-02",
+        "CHIF-03"
+      ],
+      "handoff": "User"
+    },
+    {
+      "stage": "CHIF-FLOW-05",
+      "name": "Collaborative continuation",
+      "description": "Support follow-up, questions, learning progress and human decision-making without taking over responsibility.",
+      "primary_dimensions": [
+        "CHIF-04",
+        "CHIF-05",
+        "CHIF-06",
+        "CHIF-08"
+      ],
+      "handoff": "Learning/Tutor/Education components where approved"
+    }
+  ],
+  "quality_criteria": [
+    {
+      "id": "CHIF-QC-01",
+      "name": "Understandability",
+      "check": "The response can be understood by the intended user without hiding necessary complexity."
+    },
+    {
+      "id": "CHIF-QC-02",
+      "name": "Traceability",
+      "check": "Important assumptions, reasons and dependencies are visible."
+    },
+    {
+      "id": "CHIF-QC-03",
+      "name": "Uncertainty marking",
+      "check": "Uncertain, inferred or incomplete information is marked."
+    },
+    {
+      "id": "CHIF-QC-04",
+      "name": "Responsibility preservation",
+      "check": "The human remains the decision owner where human responsibility is required."
+    },
+    {
+      "id": "CHIF-QC-05",
+      "name": "Governance alignment",
+      "check": "Risk, review and approval duties are not bypassed."
+    },
+    {
+      "id": "CHIF-QC-06",
+      "name": "Accessibility readiness",
+      "check": "Interaction principles do not depend on a single modality."
+    },
+    {
+      "id": "CHIF-QC-07",
+      "name": "Continuity control",
+      "check": "Context and learning history are used only within memory and governance limits."
+    }
+  ],
+  "modalities": [
+    {
+      "name": "text_chat",
+      "status": "future_applicable",
+      "chif_requirement": "clear structure, uncertainty marking, collaborative next steps"
+    },
+    {
+      "name": "voice",
+      "status": "future_applicable",
+      "chif_requirement": "concise turn-taking, repeatability, accessible alternatives"
+    },
+    {
+      "name": "image_and_visual",
+      "status": "future_applicable",
+      "chif_requirement": "visuals must support explanation and remain source-aware"
+    },
+    {
+      "name": "gesture_touch_mobile",
+      "status": "future_applicable",
+      "chif_requirement": "interaction must preserve human choice and accessibility"
+    },
+    {
+      "name": "vr_ar",
+      "status": "future_applicable",
+      "chif_requirement": "immersive interaction must keep transparency, safety and exit paths visible"
+    },
+    {
+      "name": "assistive_systems",
+      "status": "future_applicable",
+      "chif_requirement": "support must not remove human agency or hide critical decisions"
+    }
+  ],
+  "forbidden_interpretations": [
+    "CHIF as GUI specification",
+    "CHIF as UX redesign",
+    "CHIF as runtime module",
+    "CHIF as automatic personalization engine",
+    "CHIF as replacement for governance",
+    "CHIF as replacement for human responsibility"
+  ]
+}
+

@@ -192,3 +192,11 @@ Erste Dokumentation: CANONICAL_ENTERPRISE_FRAMEWORK_1_0.md
 Erste Implementierung: Keine Implementierung; Konzept-, Dokumentations- und Governance-Artefakt
 Governance-Einordnung: Enterprise and Operations Framework / kanonisches Unternehmensmodell
 Aktueller Status: Canonical concept, implementation later
+
+## CHIF
+
+Erste Erwaehnung: Codex-Auftrag 10 Canonical Human Interface Framework vom 09.07.2026
+Erste Dokumentation: CANONICAL_HUMAN_INTERFACE_FRAMEWORK_1_0.md
+Erste Implementierung: Keine Implementierung; Konzept-, Dokumentations- und Governance-Artefakt
+Governance-Einordnung: Interface Framework / kanonische Mensch-System-Interaktionsarchitektur
+Aktueller Status: Canonical concept, implementation later
