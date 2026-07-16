@@ -1,0 +1,292 @@
+{
+  "framework": "Canonical Enterprise Framework",
+  "abbreviation": "CEF",
+  "version": "1.0",
+  "status": "conceptual",
+  "date": "2026-07-16",
+  "runtime_effect": "none",
+  "cmibf_registry_id": "PK-FW-ENT-001",
+  "purpose": "Universal canonical enterprise model for organization functions, structures, processes, relationships and information flows.",
+  "governance_result": {
+    "concept_preparation": "GO",
+    "implementation": "SPAETER",
+    "runtime_effect": "none"
+  },
+  "dimensions": [
+    {
+      "id": "CEF-D01",
+      "name": "Vision & Strategie",
+      "purpose": "Mission, Ziele, Leitprinzipien, langfristige Planung und Unternehmensentwicklung.",
+      "elements": [
+        "Ziele",
+        "Mission",
+        "Leitprinzipien",
+        "Unternehmensentwicklung",
+        "langfristige Planung"
+      ]
+    },
+    {
+      "id": "CEF-D02",
+      "name": "Governance",
+      "purpose": "Richtlinien, Verantwortung, Compliance, Risiko, Qualitaet und Entscheidungsstrukturen.",
+      "elements": [
+        "Richtlinien",
+        "Verantwortlichkeiten",
+        "Compliance",
+        "Risikomanagement",
+        "Qualitaet",
+        "Entscheidungsstrukturen"
+      ]
+    },
+    {
+      "id": "CEF-D03",
+      "name": "Organisation",
+      "purpose": "Struktur, Rollen, Teams, Verantwortungsbereiche und Kommunikation.",
+      "elements": [
+        "Unternehmensstruktur",
+        "Rollen",
+        "Teams",
+        "Verantwortungsbereiche",
+        "Kommunikation"
+      ]
+    },
+    {
+      "id": "CEF-D04",
+      "name": "Prozesse",
+      "purpose": "Geschaeftsprozesse, Workflows, Standardisierung, Optimierung und Automatisierung.",
+      "elements": [
+        "Geschaeftsprozesse",
+        "Workflows",
+        "Standardprozesse",
+        "Optimierung",
+        "Automatisierung"
+      ]
+    },
+    {
+      "id": "CEF-D05",
+      "name": "Ressourcen",
+      "purpose": "Personal, Finanzen, Infrastruktur, IT, Maschinen, Material und Zeit als begrenzte Mittel.",
+      "elements": [
+        "Personal",
+        "Finanzen",
+        "Infrastruktur",
+        "IT",
+        "Maschinen",
+        "Material",
+        "Zeit"
+      ]
+    },
+    {
+      "id": "CEF-D06",
+      "name": "Wissen",
+      "purpose": "Dokumentation, Know-how, Lernen, Innovation, Wissensmanagement und Erfahrungen.",
+      "elements": [
+        "Dokumentation",
+        "Know-how",
+        "Lernen",
+        "Innovation",
+        "Wissensmanagement",
+        "Erfahrungen"
+      ]
+    },
+    {
+      "id": "CEF-D07",
+      "name": "Kunden & Partner",
+      "purpose": "Kunden, Lieferanten, Partner, Behoerden, Netzwerke und externe Kommunikation.",
+      "elements": [
+        "Kunden",
+        "Lieferanten",
+        "Partner",
+        "Behoerden",
+        "Netzwerke",
+        "Kommunikation"
+      ]
+    },
+    {
+      "id": "CEF-D08",
+      "name": "Produkte & Dienstleistungen",
+      "purpose": "Ideen, Entwicklung, Produktion, Qualitaet, Bereitstellung und Lebenszyklus von Wertangeboten.",
+      "elements": [
+        "Ideen",
+        "Entwicklung",
+        "Produktion",
+        "Qualitaet",
+        "Bereitstellung",
+        "Lebenszyklus"
+      ]
+    },
+    {
+      "id": "CEF-D09",
+      "name": "Steuerung & Kennzahlen",
+      "purpose": "Ziele, KPIs, Monitoring, Audits, Bewertungen und Verbesserungen.",
+      "elements": [
+        "Ziele",
+        "KPIs",
+        "Monitoring",
+        "Audits",
+        "Bewertungen",
+        "Verbesserungen"
+      ]
+    },
+    {
+      "id": "CEF-D10",
+      "name": "Nachhaltige Weiterentwicklung",
+      "purpose": "Innovation, Reflexion, Lessons Learned, Anpassungen, Architektur- und Unternehmensentwicklung.",
+      "elements": [
+        "Innovation",
+        "Reflexion",
+        "Lessons Learned",
+        "Anpassungen",
+        "Architekturentwicklung",
+        "Unternehmensentwicklung"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "from": "Vision & Strategie",
+      "to": "Governance",
+      "flow": "Ziele und Leitprinzipien begruenden Richtlinien, Verantwortung und Entscheidungsgrenzen."
+    },
+    {
+      "from": "Governance",
+      "to": "Organisation",
+      "flow": "Governance definiert Rollen, Verantwortlichkeiten und Kommunikationsgrenzen."
+    },
+    {
+      "from": "Organisation",
+      "to": "Prozesse",
+      "flow": "Organisation traegt und betreibt Prozesse; Prozesse machen Verantwortung ausfuehrbar."
+    },
+    {
+      "from": "Prozesse",
+      "to": "Ressourcen",
+      "flow": "Prozesse verbrauchen, planen und optimieren Ressourcen."
+    },
+    {
+      "from": "Wissen",
+      "to": "Prozesse",
+      "flow": "Wissen verbessert Prozesse; Prozesse erzeugen neue Erfahrungen."
+    },
+    {
+      "from": "Kunden & Partner",
+      "to": "Produkte & Dienstleistungen",
+      "flow": "Bedarfe, Feedback und Beziehungen beeinflussen Wertangebote."
+    },
+    {
+      "from": "Produkte & Dienstleistungen",
+      "to": "Steuerung & Kennzahlen",
+      "flow": "Leistung, Qualitaet und Lebenszyklus erzeugen Mess- und Steuerungsdaten."
+    },
+    {
+      "from": "Steuerung & Kennzahlen",
+      "to": "Nachhaltige Weiterentwicklung",
+      "flow": "Messungen und Audits fuehren zu Verbesserungen, Innovation und Anpassung."
+    },
+    {
+      "from": "Nachhaltige Weiterentwicklung",
+      "to": "Vision & Strategie",
+      "flow": "Lessons Learned und Entwicklungserkenntnisse aktualisieren Strategiefragen kontrolliert."
+    }
+  ],
+  "information_flow_model": [
+    "functions",
+    "relationships",
+    "information_flows",
+    "decisions",
+    "value_creation",
+    "control",
+    "sustainable_development"
+  ],
+  "software_boundaries": {
+    "erp": "CEF does not implement transactions or resource systems.",
+    "crm": "CEF does not manage customer data.",
+    "bpm": "CEF does not execute workflows.",
+    "dms": "CEF does not store documents.",
+    "bi": "CEF does not calculate productive KPIs."
+  },
+  "interfaces": [
+    {
+      "component": "Foundation Layer",
+      "purpose": "Responsibility, identity and protection boundaries.",
+      "boundary": "CEF must not alter Foundation."
+    },
+    {
+      "component": "Governance Layer",
+      "purpose": "Approval, compliance, risk and review.",
+      "boundary": "CEF does not decide autonomously."
+    },
+    {
+      "component": "Canonical Architecture / CMIBF",
+      "purpose": "Normative framework alignment.",
+      "boundary": "CMIBF remains single source of truth."
+    },
+    {
+      "component": "CPVF",
+      "purpose": "Vision and orientation.",
+      "boundary": "CEF does not automatically derive enterprise models from project vision."
+    },
+    {
+      "component": "CIF",
+      "purpose": "Intelligent analysis dimensions.",
+      "boundary": "CEF defines enterprises, not intelligence."
+    },
+    {
+      "component": "CCP-Cognitive",
+      "purpose": "Processing of enterprise questions.",
+      "boundary": "CEF does not replace the pipeline."
+    },
+    {
+      "component": "CAICF",
+      "purpose": "Competency development.",
+      "boundary": "CEF can structure enterprise learning topics, but does not redefine CAICF."
+    },
+    {
+      "component": "CMLF",
+      "purpose": "Media-based learning delivery.",
+      "boundary": "CMLF can convey CEF content; CEF does not choose media."
+    },
+    {
+      "component": "CRE",
+      "purpose": "Future capability resolution.",
+      "boundary": "CEF resolves no capabilities."
+    },
+    {
+      "component": "Execution Planner",
+      "purpose": "Future planning of enterprise analysis workflows.",
+      "boundary": "CEF creates no runtime plans."
+    },
+    {
+      "component": "Orchestrator Core",
+      "purpose": "Execution of validated plans.",
+      "boundary": "CEF executes nothing."
+    },
+    {
+      "component": "Canonical Memory",
+      "purpose": "Storage of validated enterprise models.",
+      "boundary": "No direct memory write."
+    }
+  ],
+  "extension_points": [
+    "Enterprise Ontology",
+    "Enterprise Capability Map",
+    "Process Landscape Model",
+    "Knowledge Map Model",
+    "Decision Map Model",
+    "KPI and Control Model",
+    "Digital Enterprise Twin",
+    "Consulting and Simulation Profiles",
+    "Industry-specific Extensions",
+    "Organisation Maturity Model"
+  ],
+  "non_goals": [
+    "ERP implementation",
+    "CRM implementation",
+    "financial or accounting functions",
+    "runtime changes",
+    "database migration",
+    "refactoring",
+    "productive enterprise data processing",
+    "automatic enterprise consulting"
+  ]
+}

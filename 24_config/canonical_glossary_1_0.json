@@ -614,6 +614,39 @@
         "Governance",
         "Release Integrity"
       ]
+    },
+    {
+      "name": "Canonical Enterprise Framework",
+      "abbreviation": "CEF",
+      "canonical_name": "Canonical Enterprise Framework 1.0",
+      "purpose": "Universal canonical enterprise model for dimensions, relationships and information flows without implementing enterprise software.",
+      "responsibilities": [
+        "define enterprise dimensions",
+        "describe relationships and information flows",
+        "separate CEF from ERP, CRM, BPM, DMS and BI",
+        "prepare future enterprise analysis, consulting and simulation",
+        "mark privacy, role and governance boundaries"
+      ],
+      "architecture_phase": "Phase 2 - Controlled Integration, Operation & Cognitive Evolution",
+      "status": "Concept reviewed, implementation later",
+      "related": [
+        "CMIBF",
+        "CPVF",
+        "CIF",
+        "CCP-Cognitive",
+        "CAICF",
+        "CMLF",
+        "Learning Layer",
+        "CRE",
+        "Execution Planner",
+        "Orchestrator Core",
+        "Canonical Memory",
+        "CAM",
+        "ALP",
+        "CDF",
+        "CDG",
+        "Release Integrity"
+      ]
     }
   ]
 }

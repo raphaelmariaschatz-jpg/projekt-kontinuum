@@ -38,8 +38,16 @@ Aktueller Status: Canonical
 Erste Erwaehnung: Auftrag Entwicklung des Canonical AI Working Protocol 1.0 vom 13.07.2026
 Erste Dokumentation: CANONICAL_AI_WORKING_PROTOCOL_1_0.md
 Erste Implementierung: Dokumentations-/Governance-Komponente; keine Runtime-Implementierung
-Governance-Einordnung: Verbindliches KI-Arbeitsprotokoll direkt unter AFP und vor CAC
-Aktueller Status: Canonical
+Governance-Einordnung: Verbindliches KI-Arbeitsprotokoll direkt unter AFP und vor CPI
+Aktueller Status: Canonical, freigegeben am 2026-07-13 durch Raphael Maria Schatz
+
+## CPI
+
+Erste Erwaehnung: Auftrag Continuous Process Improvement 1.0 vom 13.07.2026; Erweiterung zu CPI 2.0 am 13.07.2026
+Erste Dokumentation: CONTINUOUS_PROCESS_IMPROVEMENT_1_0.md
+Erste Implementierung: Dokumentations-/Governance-Komponente; keine Runtime-Implementierung
+Governance-Einordnung: Kontinuierliche Prozessverbesserung direkt unter CAWP und vor CAC; verbindlicher Canonical Improvement Lifecycle fuer saemtliche Arbeitsprozesse
+Aktueller Status: Canonical, CPI 2.0
 
 ## CAC
 
@@ -176,3 +184,11 @@ Erste Dokumentation: RELEASE_34_1_RELEASE_INTEGRITY_FRAMEWORK.md und Statusberic
 Erste Implementierung: Vorhanden laut Release- und Testnachweisen
 Governance-Einordnung: Release-Governance
 Aktueller Status: Canonical, implemented
+
+## CEF
+
+Erste Erwaehnung: Codex-Auftrag 09 Canonical Enterprise Framework vom 09.07.2026
+Erste Dokumentation: CANONICAL_ENTERPRISE_FRAMEWORK_1_0.md
+Erste Implementierung: Keine Implementierung; Konzept-, Dokumentations- und Governance-Artefakt
+Governance-Einordnung: Enterprise and Operations Framework / kanonisches Unternehmensmodell
+Aktueller Status: Canonical concept, implementation later

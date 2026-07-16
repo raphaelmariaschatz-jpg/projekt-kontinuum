@@ -1004,6 +1004,42 @@ Verwandte Komponenten:
 - CCP-Cognitive
 
 
+
+### CEF - Canonical Enterprise Framework 1.0
+
+Name: Canonical Enterprise Framework
+Abkuerzung: CEF
+Vollstaendige Bezeichnung: Canonical Enterprise Framework 1.0
+Definition: Kanonischer Bezugsrahmen fuer den universellen Aufbau eines Unternehmens als System aus Menschen, Ressourcen, Wissen, Prozessen, Entscheidungen und Zielen.
+Zweck: Definiert Unternehmensdimensionen, Beziehungen und Informationsfluesse, ohne ERP-, CRM-, BPM-, DMS-, Finanz- oder Buchhaltungsfunktionen zu implementieren.
+Architekturphase: Phase 2 - Controlled Integration, Operation & Cognitive Evolution
+Status: Concept reviewed, implementation later
+
+Verantwortlichkeit:
+- Unternehmensdimensionen definieren
+- Beziehungen und Informationsfluesse beschreiben
+- CEF von ERP, CRM, BPM, DMS und BI abgrenzen
+- spaetere Unternehmensanalyse, Beratung und Simulation vorbereiten
+- Datenschutz-, Rollen- und Governance-Grenzen fuer spaetere Operationalisierung vormerken
+
+Verwandte Komponenten:
+- CMIBF
+- CPVF
+- CIF
+- CCP-Cognitive
+- CAICF
+- CMLF
+- Learning Layer
+- CRE
+- Execution Planner
+- Orchestrator Core
+- Canonical Memory
+- CAM
+- ALP
+- CDF
+- CDG
+- Release Integrity
+
 ### CMLF - Canonical Media Learning Framework 1.0
 
 Name: Canonical Media Learning Framework
