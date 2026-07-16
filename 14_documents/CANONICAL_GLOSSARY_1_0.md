@@ -1003,6 +1003,37 @@ Verwandte Komponenten:
 - CRL
 - CCP-Cognitive
 
+
+### CMLF - Canonical Media Learning Framework 1.0
+
+Name: Canonical Media Learning Framework
+Abkuerzung: CMLF
+Vollstaendige Bezeichnung: Canonical Media Learning Framework 1.0
+Definition: Kanonischer Medien- und Vermittlungsrahmen fuer Lernmedien, Darstellungsformen und Lernmethoden in Projekt Kontinuum.
+Zweck: Definiert, welche Medienformen Wissen und Kompetenzen vermitteln koennen, wie Medien kombiniert werden duerfen und welche Kriterien spaetere adaptive Medienempfehlungen beachten muessen.
+Architekturphase: Phase 2 - Controlled Integration, Operation & Cognitive Evolution
+Status: Concept reviewed, implementation later
+
+Verantwortlichkeit:
+- Medienbereiche definieren
+- adaptive Medienauswahl vorbereiten
+- CMLF von CAICF, CCP-Cognitive und CVF abgrenzen
+- Ueberforderung durch Medienvielfalt vermeiden
+- spaetere Tutor- und Education-Schnittstellen vorbereiten
+
+Verwandte Komponenten:
+- CPVF
+- CIF
+- CCP-Cognitive
+- CAICF
+- CVF
+- Learning Agent
+- CLG
+- Canonical Memory
+- Tutor / Education
+- Governance
+- Release Integrity
+
 ### CPVF - Canonical Project Vision Framework 1.0
 
 Name: Canonical Project Vision Framework

@@ -586,6 +586,34 @@
         "CRL",
         "Meta-Reasoning"
       ]
+    },
+    {
+      "name": "Canonical Media Learning Framework",
+      "abbreviation": "CMLF",
+      "canonical_name": "Canonical Media Learning Framework 1.0",
+      "purpose": "Canonical media and learning-output framework for conveying knowledge and competencies through suitable media forms.",
+      "responsibilities": [
+        "define media learning areas",
+        "prepare adaptive media selection criteria",
+        "separate CMLF from CAICF, CCP-Cognitive and CVF",
+        "avoid overload through excessive media variety",
+        "prepare future tutor and education interfaces"
+      ],
+      "architecture_phase": "Phase 2 - Controlled Integration, Operation & Cognitive Evolution",
+      "status": "Concept reviewed, implementation later",
+      "related": [
+        "CPVF",
+        "CIF",
+        "CCP-Cognitive",
+        "CAICF",
+        "CVF",
+        "Learning Agent",
+        "CLG",
+        "Canonical Memory",
+        "Tutor / Education",
+        "Governance",
+        "Release Integrity"
+      ]
     }
   ]
 }

@@ -1,0 +1,150 @@
+{
+  "framework": "Canonical Media Learning Framework",
+  "abbreviation": "CMLF",
+  "version": "1.0",
+  "status": "conceptual_media_types_matrix",
+  "runtime_effect": "none",
+  "media_types": [
+    {
+      "id": "CMLF-M01",
+      "name": "Text Learning",
+      "examples": [
+        "Erklaerungen",
+        "Zusammenfassungen",
+        "Schritt-fuer-Schritt-Anleitungen",
+        "Fachtexte",
+        "Dialoge",
+        "Checklisten"
+      ],
+      "suited_for": [
+        "Begriffsverstaendnis",
+        "Argumentation",
+        "Nachschlagen",
+        "genaue Anleitungen"
+      ]
+    },
+    {
+      "id": "CMLF-M02",
+      "name": "Visual Learning",
+      "examples": [
+        "Diagramme",
+        "Mindmaps",
+        "Infografiken",
+        "Tabellen",
+        "Prozessgrafiken",
+        "Architekturdiagramme"
+      ],
+      "suited_for": [
+        "Beziehungen",
+        "Abhaengigkeiten",
+        "Prozesse",
+        "mentale Modelle"
+      ]
+    },
+    {
+      "id": "CMLF-M03",
+      "name": "Interactive Learning",
+      "examples": [
+        "Fragen",
+        "Quiz",
+        "Aufgaben",
+        "Simulationen",
+        "Experimente",
+        "Uebungen"
+      ],
+      "suited_for": [
+        "Verstaendnispruefung",
+        "Wiederholung",
+        "Transfer",
+        "Problemlosen"
+      ]
+    },
+    {
+      "id": "CMLF-M04",
+      "name": "Audio Learning",
+      "examples": [
+        "Sprachausgabe",
+        "Hoerlektionen",
+        "Dialogtraining",
+        "Aussprache",
+        "Zusammenfassungen zum Anhoeren"
+      ],
+      "suited_for": [
+        "Wiederholung",
+        "Sprachtraining",
+        "barrierearme Vermittlung"
+      ]
+    },
+    {
+      "id": "CMLF-M05",
+      "name": "Video Learning",
+      "examples": [
+        "Lernvideos",
+        "Demonstrationen",
+        "Animationen",
+        "Prozessdarstellungen",
+        "Screencasts"
+      ],
+      "suited_for": [
+        "Ablaufe",
+        "Bedienhandlungen",
+        "Demonstrationen",
+        "dynamische Prozesse"
+      ]
+    },
+    {
+      "id": "CMLF-M06",
+      "name": "Practical Learning",
+      "examples": [
+        "Programmieraufgaben",
+        "Laboruebungen",
+        "Projekte",
+        "Fallstudien",
+        "Praxisaufgaben"
+      ],
+      "suited_for": [
+        "Kompetenzaufbau durch Handeln",
+        "Transfer",
+        "Fehlerlernen",
+        "Projektarbeit"
+      ]
+    },
+    {
+      "id": "CMLF-M07",
+      "name": "Reflective Learning",
+      "examples": [
+        "Selbstreflexion",
+        "Lerntagebuch",
+        "Wissenspruefung",
+        "Transferaufgaben",
+        "Feedback"
+      ],
+      "suited_for": [
+        "nachhaltiges Lernen",
+        "Metakognition",
+        "Fehlerverstaendnis",
+        "Kompetenzbewusstsein"
+      ]
+    }
+  ],
+  "selection_criteria": [
+    "learning_goal",
+    "topic_structure",
+    "competency_area",
+    "complexity",
+    "user_preference",
+    "evidence_need",
+    "accessibility",
+    "overload_risk"
+  ],
+  "selection_rules": [
+    "Use the simplest medium that cleanly fulfils the learning goal.",
+    "Add a second medium only when it improves understanding, transfer or safety.",
+    "Use visual learning for relationships, structures and processes.",
+    "Use interactive learning for checking understanding and practice.",
+    "Use practical learning only when prerequisites, risks and goal are clear.",
+    "Use reflective learning after complex or error-prone learning steps.",
+    "Reduce media variety when overload is likely.",
+    "Do not store persistent preferences without separate governance approval."
+  ]
+}

@@ -1,0 +1,250 @@
+{
+  "framework": "Canonical Media Learning Framework",
+  "abbreviation": "CMLF",
+  "version": "1.0",
+  "status": "conceptual",
+  "date": "2026-07-16",
+  "runtime_effect": "none",
+  "purpose": "Canonical framework for media types, representation forms and learning methods used to convey knowledge and competencies in Projekt Kontinuum.",
+  "governance_result": {
+    "concept_preparation": "GO",
+    "implementation": "SPAETER",
+    "runtime_effect": "none"
+  },
+  "boundaries": {
+    "caicf": "defines competencies to be developed",
+    "cmlf": "defines media and learning-output forms for conveying competencies",
+    "ccp_cognitive": "defines the cognitive processing and response preparation pipeline",
+    "cvf": "reserved for Computer Vision, visual perception, interpretation and image processing"
+  },
+  "media_areas": [
+    {
+      "id": "CMLF-M01",
+      "name": "Text Learning",
+      "examples": [
+        "Erklaerungen",
+        "Zusammenfassungen",
+        "Schritt-fuer-Schritt-Anleitungen",
+        "Fachtexte",
+        "Dialoge",
+        "Checklisten"
+      ],
+      "suited_for": [
+        "Begriffsverstaendnis",
+        "Argumentation",
+        "Nachschlagen",
+        "genaue Anleitungen"
+      ]
+    },
+    {
+      "id": "CMLF-M02",
+      "name": "Visual Learning",
+      "examples": [
+        "Diagramme",
+        "Mindmaps",
+        "Infografiken",
+        "Tabellen",
+        "Prozessgrafiken",
+        "Architekturdiagramme"
+      ],
+      "suited_for": [
+        "Beziehungen",
+        "Abhaengigkeiten",
+        "Prozesse",
+        "mentale Modelle"
+      ]
+    },
+    {
+      "id": "CMLF-M03",
+      "name": "Interactive Learning",
+      "examples": [
+        "Fragen",
+        "Quiz",
+        "Aufgaben",
+        "Simulationen",
+        "Experimente",
+        "Uebungen"
+      ],
+      "suited_for": [
+        "Verstaendnispruefung",
+        "Wiederholung",
+        "Transfer",
+        "Problemlosen"
+      ]
+    },
+    {
+      "id": "CMLF-M04",
+      "name": "Audio Learning",
+      "examples": [
+        "Sprachausgabe",
+        "Hoerlektionen",
+        "Dialogtraining",
+        "Aussprache",
+        "Zusammenfassungen zum Anhoeren"
+      ],
+      "suited_for": [
+        "Wiederholung",
+        "Sprachtraining",
+        "barrierearme Vermittlung"
+      ]
+    },
+    {
+      "id": "CMLF-M05",
+      "name": "Video Learning",
+      "examples": [
+        "Lernvideos",
+        "Demonstrationen",
+        "Animationen",
+        "Prozessdarstellungen",
+        "Screencasts"
+      ],
+      "suited_for": [
+        "Ablaufe",
+        "Bedienhandlungen",
+        "Demonstrationen",
+        "dynamische Prozesse"
+      ]
+    },
+    {
+      "id": "CMLF-M06",
+      "name": "Practical Learning",
+      "examples": [
+        "Programmieraufgaben",
+        "Laboruebungen",
+        "Projekte",
+        "Fallstudien",
+        "Praxisaufgaben"
+      ],
+      "suited_for": [
+        "Kompetenzaufbau durch Handeln",
+        "Transfer",
+        "Fehlerlernen",
+        "Projektarbeit"
+      ]
+    },
+    {
+      "id": "CMLF-M07",
+      "name": "Reflective Learning",
+      "examples": [
+        "Selbstreflexion",
+        "Lerntagebuch",
+        "Wissenspruefung",
+        "Transferaufgaben",
+        "Feedback"
+      ],
+      "suited_for": [
+        "nachhaltiges Lernen",
+        "Metakognition",
+        "Fehlerverstaendnis",
+        "Kompetenzbewusstsein"
+      ]
+    }
+  ],
+  "adaptive_selection_criteria": [
+    "learning_goal",
+    "topic_structure",
+    "competency_area",
+    "complexity",
+    "user_preference",
+    "evidence_need",
+    "accessibility",
+    "overload_risk"
+  ],
+  "adaptive_selection_rules": [
+    "Use the simplest medium that cleanly fulfils the learning goal.",
+    "Add a second medium only when it improves understanding, transfer or safety.",
+    "Use visual learning for relationships, structures and processes.",
+    "Use interactive learning for checking understanding and practice.",
+    "Use practical learning only when prerequisites, risks and goal are clear.",
+    "Use reflective learning after complex or error-prone learning steps.",
+    "Reduce media variety when overload is likely.",
+    "Do not store persistent preferences without separate governance approval."
+  ],
+  "interfaces": [
+    {
+      "component": "Foundation Layer",
+      "purpose": "Protect identity, principles and responsibility.",
+      "boundary": "CMLF must not override Foundation."
+    },
+    {
+      "component": "Governance Layer",
+      "purpose": "Approval, review, privacy and risk boundaries.",
+      "boundary": "CMLF does not decide autonomously."
+    },
+    {
+      "component": "Canonical Architecture",
+      "purpose": "CMIBF and framework registry alignment.",
+      "boundary": "CMIBF remains normative."
+    },
+    {
+      "component": "CPVF",
+      "purpose": "Long-term project vision and mission.",
+      "boundary": "CMLF does not automatically operationalize CPVF."
+    },
+    {
+      "component": "CIF",
+      "purpose": "Intelligence dimensions.",
+      "boundary": "CMLF defines media, not intelligence."
+    },
+    {
+      "component": "CCP-Cognitive",
+      "purpose": "Cognitive processing and response preparation.",
+      "boundary": "CMLF does not replace the pipeline."
+    },
+    {
+      "component": "CAICF",
+      "purpose": "Competency target space.",
+      "boundary": "CMLF conveys competencies, does not define them."
+    },
+    {
+      "component": "CVF",
+      "purpose": "Computer Vision and visual perception.",
+      "boundary": "CVF analyzes visual content; CMLF selects learning media."
+    },
+    {
+      "component": "CRE",
+      "purpose": "Future capability resolution.",
+      "boundary": "CMLF does not resolve capabilities."
+    },
+    {
+      "component": "Execution Planner",
+      "purpose": "Future planning of learning steps.",
+      "boundary": "CMLF creates no runtime plans."
+    },
+    {
+      "component": "Orchestrator Core",
+      "purpose": "Execution of validated plans.",
+      "boundary": "CMLF executes nothing."
+    },
+    {
+      "component": "Canonical Memory",
+      "purpose": "Storage of validated learning evidence.",
+      "boundary": "No direct memory write."
+    },
+    {
+      "component": "Tutor / Education",
+      "purpose": "Adaptive learning support.",
+      "boundary": "No tutor implementation in CMLF 1.0."
+    }
+  ],
+  "extension_points": [
+    "Media Recommendation Policy",
+    "Tutor Media Profile",
+    "Accessibility Profile",
+    "Cognitive Load Model",
+    "Multimodal Learning Plans",
+    "Evidence-aware Learning Outputs",
+    "Media Effectiveness Review"
+  ],
+  "non_goals": [
+    "runtime changes",
+    "CRE changes",
+    "Execution Planner changes",
+    "Orchestrator Core changes",
+    "new agent implementation",
+    "database migration",
+    "automatic media generation",
+    "refactoring",
+    "automatic storage of user preferences"
+  ]
+}

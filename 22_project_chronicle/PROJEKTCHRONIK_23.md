@@ -692,3 +692,18 @@ Abschlussstand:
 - Die Naming-Governance-Regel gegen doppelt belegte Frameworknamen und Abkuerzungen wurde in Glossar, AGF und CMIBF/Framework Registry uebernommen.
 - CPVF 1.0 bleibt ohne Runtime-Wirkung; technische Operationalisierung ist fuer eine spaetere freigegebene Phase vorgemerkt.
 - Auftrag 07 wurde aus `Raphael Notizen/noch nicht erledigt/Codex Auftraege` nach `Raphael Notizen/erledigt/Codex Auftraege` verschoben.
+
+# Meilenstein Canonical Media Learning Framework (CMLF) 1.0 - Auftrag 08 abgeschlossen (2026-07-16)
+
+Auftrag 08 zum Canonical Media Learning Framework wurde als reine Konzept-, Dokumentations- und Governance-Vorbereitung abgeschlossen. CMLF 1.0 definiert den kanonischen Rahmen fuer Medienbereiche, Vermittlungsformen und adaptive Medienauswahl in Projekt Kontinuum.
+
+Abschlussstand:
+
+- `CMLF` ist als Medien- und Vermittlungsrahmen fuer Lernausgaben dokumentiert.
+- `CAICF` definiert weiterhin Kompetenzen; `CMLF` definiert geeignete Medienformen zur Vermittlung.
+- `CCP-Cognitive` bleibt Denk- und Verarbeitungsprozess; CMLF unterstuetzt nur die spaetere Learning-Output-Auswahl.
+- `CVF` bleibt Computer Vision und visuelle Wahrnehmung; CMLF ersetzt CVF nicht.
+- Medienbereiche Text, Visual, Interactive, Audio, Video, Practical und Reflective Learning wurden definiert.
+- Adaptive Medienauswahl wurde als spaetere, governancepflichtige Empfehlungsschicht vorbereitet.
+- CMLF 1.0 bleibt ohne Runtime-Wirkung; technische Operationalisierung ist fuer eine spaetere freigegebene Phase vorgemerkt.
+- Auftrag 08 wurde aus `Raphael Notizen/noch nicht erledigt/Codex Auftraege` nach `Raphael Notizen/erledigt/Codex Auftraege` verschoben.
