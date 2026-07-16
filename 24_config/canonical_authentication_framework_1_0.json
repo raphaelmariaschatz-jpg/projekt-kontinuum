@@ -1,0 +1,256 @@
+{
+  "framework_information": {
+    "id": "CAF-1.0",
+    "name": "Canonical Authentication Framework",
+    "abbreviation": "CAF",
+    "version": "1.0",
+    "status": "defined",
+    "date": "2026-07-16",
+    "runtime_effect": "none",
+    "recommendation": {
+      "concept": "GO_WITH_CONDITIONS",
+      "implementation": "LATER_CONTROLLED"
+    },
+    "purpose": "Canonical governance framework for identity, authentication, assurance, sessions, recovery, service identities and audit."
+  },
+  "architecture_position": {
+    "normative_sources": [
+      "CMIBF",
+      "AFP",
+      "CAWP",
+      "Foundation",
+      "Governance",
+      "Canonical Identity",
+      "CAM",
+      "ALP",
+      "Release Integrity",
+      "Canonical Glossary"
+    ],
+    "non_goals": [
+      "replace_current_login",
+      "change_creator_rights",
+      "introduce_external_identity_provider",
+      "rewrite_authorization",
+      "store_or_emit_real_credentials"
+    ]
+  },
+  "discovered_components": {
+    "active_authentication": [
+      "01_system/kontinuum/core/auth.py",
+      "01_system/kontinuum/core/password_security.py",
+      "32_data/auth_config.json",
+      "10_security/auth_security_master.json",
+      "27_logs/auth_audit.log"
+    ],
+    "identity_governance": [
+      "01_system/kontinuum/foundation/canonical_identity_manager.py",
+      "24_config/canonical_identity.json",
+      "24_config/canonical_identity_34_1.json"
+    ],
+    "session_and_runtime_identity": [
+      "01_system/kontinuum/core/session_context.py",
+      "01_system/kontinuum/core/identity_router.py"
+    ],
+    "authorization_consumers": [
+      "01_system/kontinuum/tools/oracle_cloud_tools.py",
+      "01_system/kontinuum/tools/development_tools.py",
+      "01_system/kontinuum/core/foundation_integrity.py",
+      "11_gui/desktop_gui_34_1.py"
+    ],
+    "historical_surfaces": [
+      "02_versions",
+      "09_backups",
+      "10_security/backups",
+      "11_gui/archive",
+      "17_tests/archive",
+      "32_data/02_versions"
+    ]
+  },
+  "identity_model": {
+    "required_fields": [
+      "identity_id",
+      "identity_type",
+      "canonical_name",
+      "display_name",
+      "status",
+      "trust_domain",
+      "created_at",
+      "updated_at",
+      "valid_from",
+      "valid_until",
+      "authentication_methods",
+      "credential_references",
+      "security_state",
+      "revocation_state",
+      "metadata",
+      "provenance",
+      "schema_version"
+    ],
+    "identity_types": [
+      "CREATOR",
+      "SUPERADMIN",
+      "HUMAN_USER",
+      "ENTERPRISE_USER",
+      "RESEARCH_USER",
+      "AGENT",
+      "SYSTEM_SERVICE",
+      "CONNECTOR",
+      "DEVICE",
+      "EXTERNAL_APPLICATION"
+    ],
+    "creator_superadmin_decision": {
+      "decision": "separate_creator_trust_anchor_from_superadmin_role",
+      "reason": "Creator is a protected provenance and foundation identity; SUPERADMIN is an operational authorization role. In the current personal installation they can map to the same human person but must remain canonically distinct."
+    }
+  },
+  "authentication_methods": [
+    {
+      "method_class": "PASSWORD_ARGON2ID",
+      "status": "active_compatible",
+      "minimum_assurance_level": "AAL-2"
+    },
+    {
+      "method_class": "PASSWORD_LEGACY_SHA256",
+      "status": "deprecated_migration_only",
+      "minimum_assurance_level": "AAL-1"
+    },
+    {
+      "method_class": "RECOVERY_KEY",
+      "status": "discovered_requires_review",
+      "minimum_assurance_level": "AAL-2"
+    },
+    {
+      "method_class": "LOCAL_DEVICE_CONTEXT",
+      "status": "planned",
+      "minimum_assurance_level": "AAL-1"
+    },
+    {
+      "method_class": "CRYPTOGRAPHIC_KEY",
+      "status": "planned",
+      "minimum_assurance_level": "AAL-3"
+    },
+    {
+      "method_class": "CERTIFICATE",
+      "status": "planned",
+      "minimum_assurance_level": "AAL-3"
+    },
+    {
+      "method_class": "TIME_LIMITED_TOKEN",
+      "status": "planned",
+      "minimum_assurance_level": "AAL-2"
+    },
+    {
+      "method_class": "MFA",
+      "status": "future",
+      "minimum_assurance_level": "AAL-3"
+    }
+  ],
+  "assurance_levels": [
+    {
+      "id": "AAL-0",
+      "meaning": "not authenticated"
+    },
+    {
+      "id": "AAL-1",
+      "meaning": "simple identity proof"
+    },
+    {
+      "id": "AAL-2",
+      "meaning": "strong local proof"
+    },
+    {
+      "id": "AAL-3",
+      "meaning": "privileged reauthentication"
+    },
+    {
+      "id": "AAL-4",
+      "meaning": "creator or system-core access with explicit governance evidence"
+    }
+  ],
+  "canonical_authentication_result_fields": [
+    "authentication_event_id",
+    "identity_id",
+    "identity_type",
+    "authentication_method_id",
+    "assurance_level",
+    "authenticated_at",
+    "valid_until",
+    "session_id",
+    "security_context",
+    "device_context",
+    "origin",
+    "result",
+    "schema_version"
+  ],
+  "integration_matrix": [
+    {
+      "component": "GUI login",
+      "current_state": "AuthManager returns mutable identity dict",
+      "caf_target": "AuthManager emits immutable CAF result while preserving compatibility"
+    },
+    {
+      "component": "Superadmin confirmation",
+      "current_state": "password recheck plus session dict",
+      "caf_target": "AAL-3 reauthentication event"
+    },
+    {
+      "component": "Foundation integrity",
+      "current_state": "authorization dict requires explicit, authenticated, creator and SUPERADMIN markers",
+      "caf_target": "AAL-4 creator trust anchor plus governance evidence"
+    },
+    {
+      "component": "Oracle Cloud changes",
+      "current_state": "session dict gate",
+      "caf_target": "CAF result plus authorization policy"
+    },
+    {
+      "component": "Development self-extension",
+      "current_state": "session dict gate",
+      "caf_target": "CAF result plus self-extension policy gate"
+    }
+  ],
+  "risk_register": [
+    {
+      "id": "CAF-RISK-001",
+      "severity": "high",
+      "finding": "SessionContext can infer creator and authenticated status from a name.",
+      "recommendation": "Treat as legacy compatibility only and replace with CAF result validation."
+    },
+    {
+      "id": "CAF-RISK-002",
+      "severity": "high",
+      "finding": "Authorization consumers trust mutable session dictionaries.",
+      "recommendation": "Introduce immutable CAF authentication results and verify freshness and assurance."
+    },
+    {
+      "id": "CAF-RISK-003",
+      "severity": "medium",
+      "finding": "Legacy SHA-256 hashes remain accepted for migration.",
+      "recommendation": "Keep migration path, measure remaining use, and block new legacy creation."
+    },
+    {
+      "id": "CAF-RISK-004",
+      "severity": "medium",
+      "finding": "Recovery key lifecycle is discovered but not fully governed.",
+      "recommendation": "Define rotation, expiry, revocation and audit before relying on recovery."
+    },
+    {
+      "id": "CAF-RISK-005",
+      "severity": "medium",
+      "finding": "Large historical security surfaces exist in versioned data and backups.",
+      "recommendation": "Keep archived, classify with ALP/CAM, and prevent accidental reactivation."
+    }
+  ],
+  "status_model": [
+    "NOT_PRESENT",
+    "DISCOVERED",
+    "ANALYZED",
+    "DEFINED",
+    "PARTIALLY_INTEGRATED",
+    "VERIFIED",
+    "ACTIVE",
+    "DEGRADED",
+    "BLOCKED",
+    "REVOKED"
+  ]
+}

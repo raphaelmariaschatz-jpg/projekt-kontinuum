@@ -748,3 +748,17 @@ Abschlussstand:
 - Beziehungen zu Foundation, Governance, Canonical Architecture, CVF, CIF, CCP-Cognitive, CHIF, CAICF, CMLF, CLU, CRE, Execution Planner, Orchestrator Core, Canonical Memory, Learning Agent, Meta-Reasoning, Release Integrity und Canonical Glossary wurden dokumentiert.
 - CLPF 1.0 bleibt ohne Runtime-Wirkung; technische Operationalisierung ist fuer eine spaetere freigegebene Phase vorgemerkt.
 - Auftrag 11 wurde aus `Raphael Notizen/noch nicht erledigt/Codex Auftraege` nach `Raphael Notizen/erledigt/Codex Auftraege` verschoben.
+
+# Meilenstein Canonical Authentication Framework (CAF) 1.0 - Auftrag 13 abgeschlossen (2026-07-16)
+
+Auftrag 13 zum Canonical Authentication Framework wurde als Bestandsaufnahme, Architekturpruefung, Risikoanalyse und kanonische Konzeptdefinition abgeschlossen. CAF 1.0 beschreibt den verbindlichen Rahmen fuer Identitaet, Authentisierung, Authentisierungsergebnis, Assurance Levels, Sessions, Recovery, privilegierte Reauthentisierung, Agenten- und Dienstidentitaeten sowie Auth-Audit.
+
+Abschlussstand:
+
+- `CAF` ist als kanonischer Authentisierungsrahmen dokumentiert.
+- Bestehende produktive Authentisierungslogik wurde nicht ersetzt, abgeschaltet oder umgebaut.
+- Aktive Pfade um `AuthManager`, Argon2id-Passwortschutz, GUI-Login, Superadmin-Reauth, Canonical Identity, Session Context und privilegierte Tool-Gates wurden eingeordnet.
+- Creator wurde kanonisch als geschuetzter Vertrauensanker von der Superadministrator-Rolle getrennt.
+- Risiken wie Namensableitung im Session Context, mutable Session-Dictionary-Gates, Legacy-SHA-256-Migration, Recovery-Key-Lifecycle und historische Sicherheitsdaten wurden dokumentiert.
+- CAF 1.0 bleibt ohne unmittelbare Runtime-Wirkung; technische Integration ist fuer eine spaetere freigegebene Phase vorgemerkt.
+- Auftrag 13 wurde aus `Raphael Notizen/noch nicht erledigt/Codex Auftraege` nach `Raphael Notizen/erledigt/Codex Auftraege` verschoben.

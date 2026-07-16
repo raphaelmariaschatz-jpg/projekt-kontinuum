@@ -208,3 +208,11 @@ Erste Dokumentation: CANONICAL_LANGUAGE_PROCESSING_FRAMEWORK_1_0.md
 Erste Implementierung: Keine Implementierung; Konzept-, Dokumentations- und Governance-Artefakt
 Governance-Einordnung: Language Architecture / kanonischer Sprachverarbeitungsrahmen
 Aktueller Status: Canonical concept, implementation later
+
+## CAF
+
+Erste Erwaehnung: Codex-Auftrag 13 Canonical Authentication Framework vom 10.07.2026
+Erste Dokumentation: CANONICAL_AUTHENTICATION_FRAMEWORK_1_0.md
+Erste Implementierung: Keine produktive Authentisierungsimplementierung; Konzept-, Pruef- und Governance-Artefakt mit Statusbericht und JSON-Konzeptmodell
+Governance-Einordnung: Kanonischer Rahmen fuer Identitaet, Authentisierung, Assurance Levels, Sessions, Recovery, Agenten-/Dienstidentitaeten und Auth-Audit; strikt getrennt von Autorisierung
+Aktueller Status: Canonical concept, mit Auflagen freigabefaehig; produktive Integration spaeter kontrolliert
