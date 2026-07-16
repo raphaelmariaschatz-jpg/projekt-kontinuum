@@ -13,6 +13,9 @@ Canonical Glossary (CG) 1.0 definiert die verbindliche Verwendung zentraler Arch
 ## Begriffsregeln
 
 - Abkuerzungen duerfen nicht mehrdeutig verwendet werden.
+- Jeder kanonische Frameworkname und jede Abkuerzung duerfen innerhalb der Architektur nur genau einer Bedeutung zugeordnet sein. Bereits reservierte Bezeichnungen duerfen nicht erneut verwendet werden; bei semantischen Kollisionen ist ein neuer kanonischer Name festzulegen.
+- `CVF` bleibt dauerhaft fuer das Canonical Vision Framework im Sinn von Computer Vision, visueller Wahrnehmung, Interpretation und Bildverarbeitung reserviert.
+- `CPVF` bezeichnet eindeutig das Canonical Project Vision Framework fuer Projektvision, Mission und langfristige Orientierung.
 - 'CCP-Policy' bezeichnet Canonical Change Policy.
 - 'CCP-Cognitive' oder 'CCP-Cog' bezeichnet Canonical Cognitive Pipeline.
 - 'CADP' bezeichnet im aktuellen kanonischen Projektstand Canonical Active Directory Policy.
@@ -60,6 +63,7 @@ Verantwortlichkeit:
 Verwandte Komponenten:
 - CMIBF
 - AFP
+- CPI
 - CAC
 - CDG
 - CDF
@@ -76,8 +80,108 @@ Status: Canonical
 
 Verwandte Komponenten:
 - CAWP
+- CPI
 - AFP
 - Governance
+
+### CPI - Continuous Process Improvement
+
+Name: Continuous Process Improvement
+Abkuerzung: CPI
+Vollstaendige Bezeichnung: Continuous Process Improvement 2.0
+Definition: Kanonisches Governance-Framework zur kontinuierlichen Verbesserung saemtlicher Arbeitsprozesse in Projekt Kontinuum.
+Zweck: Sichert Canonical Improvement Lifecycle, Root-Cause-Analyse, Verbesserungsklassen, Priorisierung, Standardisierung, Automatisierungspruefung, Dokumentationspflicht, Wirksamkeitspruefung, Verbesserungshistorie und reproduzierbare Prozessverbesserung.
+Architekturphase: Governance unterhalb CAWP, vor CAC
+Status: Canonical
+
+Verantwortlichkeit:
+- wiederkehrende Probleme dauerhaft analysieren und beseitigen
+- wiederkehrende Taetigkeiten standardisieren
+- sinnvolle Automatisierung pruefen
+- Prozessverbesserungen dokumentieren und governance-konform freigeben lassen
+
+Verwandte Komponenten:
+- CMIBF
+- AFP
+- CAWP
+- CAC
+- CDG
+- CDF
+
+### CIL - Canonical Improvement Lifecycle
+
+Name: Canonical Improvement Lifecycle
+Abkuerzung: CIL
+Vollstaendige Bezeichnung: Canonical Improvement Lifecycle
+Definition: Verbindlicher zehnphasiger CPI-Lebenszyklus von Observation, Root Cause Analysis, Improvement Proposal, Governance Review, Approval, Implementation, Validation, Effectiveness Review, Standardisation bis Knowledge Integration.
+Zweck: Stellt sicher, dass Verbesserungen beobachtet, ursachenbezogen analysiert, vorgeschlagen, geprueft, freigegeben, validiert, wirksamkeitsgeprueft, standardisiert und dauerhaft ins Projektwissen integriert werden.
+Architekturphase: Governance, Prozessverbesserung, kontrollierte Evolution
+Status: Canonical
+
+Verwandte Komponenten:
+- CPI
+- CAWP
+- CMIBF
+- Governance
+
+### CPI-Vorschlag - CPI Proposal
+
+Name: CPI-Vorschlag
+Abkuerzung: keine
+Vollstaendige Bezeichnung: Continuous Process Improvement Proposal
+Definition: Nicht verbindlicher Vorschlag zur Verbesserung eines wiederkehrenden Arbeits-, Governance-, Architektur-, Dokumentations-, Review-, Freigabe-, Implementierungs-, KI-, Entwickler-, Kommunikations-, Wissensmanagement-, Qualitaetssicherungs-, Release-, Archivierungs-, Versionsmanagement- oder Projektorganisationsprozesses.
+Zweck: Trennt Verbesserungserkenntnis von verbindlicher Governance-Freigabe.
+Architekturphase: Prozessverbesserung, Review, Governance
+Status: Canonical
+
+Verwandte Komponenten:
+- CPI
+- CAWP
+- Governance
+
+### CPI-Verstoss - CPI Violation
+
+Name: CPI-Verstoss
+Abkuerzung: keine
+Vollstaendige Bezeichnung: Continuous Process Improvement Violation
+Definition: Abweichung von CPI-Regeln, insbesondere implizite Prozessaenderung, fehlende Dokumentation, fehlende Ursachenanalyse oder nicht freigegebene neue Arbeitsregel.
+Zweck: Macht fehlerhafte Prozessverbesserung sichtbar, pruefbar und governance-faehig.
+Architekturphase: Prozessverbesserung, Governance, Review
+Status: Canonical
+
+Verwandte Komponenten:
+- CPI
+- Governance
+- Traceability
+
+### CPI-Metrik - CPI Metric
+
+Name: CPI-Metrik
+Abkuerzung: keine
+Vollstaendige Bezeichnung: Continuous Process Improvement Metric
+Definition: Optionale Kennzahl zur Bewertung von Prozessqualitaet und Verbesserungswirkung, ohne Architekturentscheidungen zu ersetzen.
+Zweck: Macht langfristige Qualitaetsentwicklung beobachtbar, etwa Fehlerwiederholung, Automatisierungsgrad, Dokumentationsvollstaendigkeit, Governance-Konsistenz, Review-Qualitaet, Bearbeitungsdauer oder Freigabezeit.
+Architekturphase: Prozessverbesserung, Governance, Wirksamkeitspruefung
+Status: Canonical
+
+Verwandte Komponenten:
+- CPI
+- CIL
+- Governance
+
+### Root-Cause-Analyse - Root Cause Analysis
+
+Name: Root-Cause-Analyse
+Abkuerzung: RCA
+Vollstaendige Bezeichnung: Root Cause Analysis
+Definition: Ursachenanalyse mit dem Ziel, wiederkehrende Probleme dauerhaft zu beseitigen statt Symptome nur kurzfristig zu korrigieren.
+Zweck: Grundlage fuer dauerhafte CPI-Verbesserungen.
+Architekturphase: Prozessverbesserung, Fehlerkultur, Governance
+Status: Canonical
+
+Verwandte Komponenten:
+- CPI
+- CAWP
 
 ### KI-System - AI System
 
@@ -833,3 +937,127 @@ Verwandte Komponenten:
 - CKS
 - Release Integrity
 - CAM
+
+### CRL - Canonical Reflective Layer 1.0
+
+Name: Canonical Reflective Layer
+Abkuerzung: CRL
+Vollstaendige Bezeichnung: Canonical Reflective Layer 1.0
+Definition: Dokumentarische Metaebene fuer evidenzgebundene Reflexion ueber die eigene Architektur- und Projektentwicklung von K.
+Zweck: Ermoeglicht Selbstmodellierung, Entwicklungsanalyse, Architekturreflexion, Mustererkennung und Verbesserungsvorschlaege ausschliesslich anhand dokumentierter Fakten.
+Architekturphase: Phase 2 - Controlled Integration, Operation & Cognitive Evolution
+Status: Canonical documentation and governance addition
+
+Verantwortlichkeit:
+- Entwicklung anhand dokumentierter Quellen beobachten
+- Architekturhistorie und Entscheidungen vergleichen
+- Muster und korrigierte Annahmen evidenzgebunden sichtbar machen
+- Verbesserungsvorschlaege ohne Runtime-Wirkung formulieren
+- Bewusstseins-, Erlebnis- und Freiwillensbehauptungen ausschliessen
+
+Verwandte Komponenten:
+- CCP-Cognitive
+- CKS
+- CG
+- CAMap
+- CDI
+- CHI
+- AGF
+- CDG
+- CDF
+- CIPL
+- Release Integrity
+- Project Chronicle
+- Roadmap
+
+### MR - Meta-Reasoning 1.0
+
+Name: Meta-Reasoning
+Abkuerzung: MR
+Vollstaendige Bezeichnung: Meta-Reasoning 1.0
+Definition: Pruefende Reasoning-Review-Schicht fuer Schlussfolgerungen, Annahmen, Alternativen, Confidence und Governance-Konformitaet.
+Zweck: Macht Denk- und Entscheidungswege nachvollziehbarer, ohne Bewusstsein, Selbstmodifikation oder Runtime-Automatik einzufuehren.
+Architekturphase: Phase 2 - Controlled Integration, Operation & Cognitive Evolution
+Status: Concept reviewed, implementation later
+
+Verantwortlichkeit:
+- Schlussfolgerungen pruefen
+- Annahmen sichtbar machen
+- Confidence einschaetzen
+- Alternativen und verworfene Pfade dokumentieren
+- Governance-Bezug markieren
+- Revisionsbedarf ausweisen
+
+Verwandte Komponenten:
+- Foundation
+- Foundation Reasoning
+- Query System
+- CRE
+- Execution Planner
+- Orchestrator Core
+- CDF
+- CDG
+- CAM
+- ALP
+- Release Integrity
+- CRL
+- CCP-Cognitive
+
+### CPVF - Canonical Project Vision Framework 1.0
+
+Name: Canonical Project Vision Framework
+Abkuerzung: CPVF
+Vollstaendige Bezeichnung: Canonical Project Vision Framework 1.0
+Definition: Kanonischer Vision-, Mission- und Orientierungsrahmen fuer den langfristigen Zweck von Projekt Kontinuum.
+Zweck: Bestaetigt die Projektvision, grenzt sie von Foundation, Governance, CIF und dem fuer Computer Vision reservierten CVF ab und richtet kuenftige Entwicklung an Lernen, Verantwortung, Transparenz und nachhaltiger Architektur aus.
+Architekturphase: Phase 2 - Controlled Integration, Operation & Cognitive Evolution
+Status: Concept reviewed, canonical naming confirmed, implementation later
+
+Verantwortlichkeit:
+- Projektvision definieren
+- Mission und Leitprinzipien dokumentieren
+- langfristige Orientierung bereitstellen
+- CVF-Namenskollision vermeiden
+- technische Operationalisierung fuer spaetere Freigabe vormerken
+
+Verwandte Komponenten:
+- CMIBF
+- Canonical Glossary
+- Foundation
+- Governance
+- CIF
+- CCP-Cognitive
+- CAICF
+- CRL
+- Meta-Reasoning
+
+### CAICF - Canonical AI Competency Framework 1.0
+
+Name: Canonical AI Competency Framework
+Abkuerzung: CAICF
+Vollstaendige Bezeichnung: Canonical AI Competency Framework 1.0
+Definition: Kanonischer Kompetenzrahmen fuer den verantwortungsvollen, kritischen, kreativen und gestaltenden Umgang mit Kuenstlicher Intelligenz.
+Zweck: Definiert Kompetenzbereiche und Bewertungsdimensionen fuer Lernpfade, Kompetenzentwicklung, adaptive Lernempfehlungen, Aufgabenplanung, Kompetenzbewertung sowie Tutor- und Education-Funktionen.
+Architekturphase: Phase 2 - Controlled Integration, Operation & Cognitive Evolution
+Status: Concept reviewed, implementation later
+
+Verantwortlichkeit:
+- Engage with AI definieren
+- Create with AI definieren
+- Manage AI definieren
+- Design AI definieren
+- Knowledge, Skills und Attitudes als Bewertungsdimensionen fuehren
+- Kompetenzaufbau am individuellen Wissensstand ausrichten
+
+Verwandte Komponenten:
+- Canonical Learning Layer
+- CCP-Cognitive
+- CRE
+- Execution Planner
+- Orchestrator Core
+- Learning Agent
+- Canonical Memory
+- Governance
+- Foundation
+- CRL
+- Meta-Reasoning

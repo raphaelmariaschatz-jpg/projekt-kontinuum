@@ -112,12 +112,13 @@ AFP-Verstoesse gelten als Architekturverletzungen. Dazu zaehlen insbesondere Imp
 
 Das Canonical AI Working Protocol (CAWP) 1.0 ist die verbindliche Governance-Schicht fuer das Arbeitsverhalten aller KI-Systeme in Projekt Kontinuum.
 
-CAWP steht in der kanonischen Governance-Hierarchie direkt unter dem AFP und vor der technischen Ableitung durch den CAC:
+CAWP steht in der kanonischen Governance-Hierarchie direkt unter dem AFP und vor CPI und der technischen Ableitung durch den CAC:
 
 ```text
 CMIBF
 -> AFP
 -> CAWP
+-> CPI
 -> CAC
 ```
 
@@ -126,9 +127,28 @@ Daraus folgt:
 - Das CMIBF definiert die Architektur.
 - Das AFP definiert den Architektur- und Entwicklungslebenszyklus.
 - Das CAWP definiert das verbindliche Arbeitsverhalten aller KI-Systeme.
+- Das CPI definiert die kontinuierliche Evolution saemtlicher Arbeitsprozesse.
 - Der CAC validiert und erzeugt deterministisch die kanonischen Artefakte.
 
 CAWP besitzt keine eigene Architekturautoritaet. Es erzeugt keine Architekturprinzipien und ersetzt keine CMIBF-Regeln. Es verpflichtet KI-Systeme jedoch auf transparente Kommunikation, Architekturdisziplin, Traceability, Qualitaets-Gates, Fehlerkultur und die Beachtung von CMIBF, AFP und CAC.
+
+## Continuous Process Improvement
+
+Continuous Process Improvement (CPI) 2.0 ist die verbindliche Governance-Schicht fuer kontinuierliche Prozessverbesserung in Projekt Kontinuum.
+
+CPI steht direkt unter CAWP und vor CAC:
+
+```text
+CMIBF
+-> AFP
+-> CAWP
+-> CPI
+-> CAC
+```
+
+CPI definiert die Verbesserung saemtlicher Arbeitsprozesse, insbesondere Governance, Architekturprozesse, Dokumentationsprozesse, Reviewprozesse, Freigabeprozesse, Implementierungsprozesse, KI-Arbeitsprozesse, Entwicklerprozesse, Kommunikationsprozesse, Wissensmanagement, Qualitaetssicherung, Releaseprozesse, Archivierungsprozesse, Versionsmanagement und Projektorganisation. CPI ist kein Runtime-, Software- oder Implementierungsframework, besitzt keine eigene Architekturautoritaet und erzeugt keine Architekturentscheidungen.
+
+CPI verpflichtet Menschen und KI-Systeme darauf, den Canonical Improvement Lifecycle einzuhalten, wiederkehrende Probleme durch Root-Cause-Analyse zu beseitigen, wiederkehrende Taetigkeiten zu standardisieren, sinnvolle Automatisierung zu pruefen, Prozessverbesserungen zu dokumentieren, ihre Wirksamkeit zu pruefen und alle Verbesserungen mit CMIBF, AFP und CAWP vereinbar zu halten.
 
 ## Verhältnis zur Foundation Architecture
 
@@ -9077,6 +9097,8 @@ Für die Framework Registry gelten folgende verbindliche Regeln:
 - Jede generierte Registry muss auf eine konkrete CMIBF-Version und einen konkreten Build-Stand verweisen.
 - Nicht im CMIBF verankerte Frameworks dürfen nicht als kanonisch ausgewiesen werden.
 - Neue Frameworks erhalten vor ihrer Implementierung eine eindeutige Framework-ID.
+- Frameworknamen und Kuerzel duerfen innerhalb der kanonischen Architektur nicht doppelt belegt werden. Bereits reservierte Kuerzel behalten ihre Bedeutung dauerhaft; bei semantischer Kollision ist ein neues Kuerzel zu vergeben.
+- `CVF` ist dauerhaft fuer das Canonical Vision Framework der Media-/Computer-Vision-Domaene reserviert. Das Projektvisionsframework wird kanonisch als `CPVF` gefuehrt.
 
 ---
 
@@ -9188,6 +9210,7 @@ PK-FW-PRESENTATION-001
 | PK-FW-META-003 | CAMap | Canonical Architecture Map | 1.0 | SPECIFIED | META | Kanonische Abbildung von Architekturebenen, Komponenten, Beziehungen und Informationsflüssen | CMIBF, CKS |
 | PK-FW-META-004 | ADG | Artifact Dependency Graph | 1.0 | PLANNED | ARTIFACT | Darstellung der Abhängigkeiten zwischen kanonischen Artefakten und Frameworks | CMIBF, CAM, CIPL |
 | PK-FW-META-005 | CGR | Canonical Graph Registry | 1.0 | PLANNED | ARTIFACT | Registrierung und Versionierung kanonischer Graphen und Beziehungsmodelle | CMIBF, CAC, ADG |
+| PK-FW-META-006 | CPVF | Canonical Project Vision Framework | 1.0 | SPECIFIED | META | Langfristiger Projektvisions-, Missions- und Orientierungsrahmen; bestaetigt CPVF als kanonische Bezeichnung und grenzt sie vom fuer Computer Vision reservierten CVF ab | CMIBF, CG, Foundation, Governance |
 
 ### 7.2 Foundation-Frameworks
 

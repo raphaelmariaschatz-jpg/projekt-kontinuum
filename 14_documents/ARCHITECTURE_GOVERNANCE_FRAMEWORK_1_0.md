@@ -34,18 +34,33 @@ Architektur entsteht ausschliesslich im CMIBF. Code, Tests, Konfigurationen, Reg
 
 ## 1.2 Canonical AI Working Protocol (CAWP)
 
-Das Canonical AI Working Protocol 1.0 ist die verbindliche Governance-Schicht fuer das Arbeitsverhalten aller KI-Systeme. Es steht direkt unter dem AFP und vor der technischen Ableitung durch den CAC:
+Das Canonical AI Working Protocol 1.0 ist die verbindliche Governance-Schicht fuer das Arbeitsverhalten aller KI-Systeme. Es steht direkt unter dem AFP und vor CPI:
 
 ```text
 CMIBF
 -> AFP
 -> CAWP
+-> CPI
 -> CAC
 ```
 
 CAWP legt Kommunikationsregeln, Architekturdisziplin, Traceability, Qualitaets-Gates, Fehlerkultur und Abschlussverhalten fuer KI-Systeme fest. Es besitzt keine eigene Architekturautoritaet und darf keine CMIBF-Regeln ersetzen.
 
-## 1.3 Rolle des Canonical Architecture Compiler (CAC)
+## 1.3 Continuous Process Improvement (CPI)
+
+Continuous Process Improvement 2.0 ist die Governance-Schicht fuer kontinuierliche Prozessverbesserung. Es steht unter CAWP und vor CAC:
+
+```text
+CMIBF
+-> AFP
+-> CAWP
+-> CPI
+-> CAC
+```
+
+CPI definiert den Canonical Improvement Lifecycle, Root-Cause-Analyse, Verbesserungsklassen, Priorisierung, Standardisierung, Automatisierungspruefung, Dokumentationspflicht, Wirksamkeitspruefung, Verbesserungshistorie und Knowledge Integration fuer alle Governance-, Architektur-, Dokumentations-, Review-, Freigabe-, Implementierungs-, KI-, Entwickler-, Kommunikations-, Wissensmanagement-, Qualitaetssicherungs-, Release-, Archivierungs-, Versionsmanagement- und Projektorganisationsprozesse. CPI besitzt keine eigene Architekturautoritaet und darf keine verbindliche Regel ohne Governance-Freigabe einfuehren.
+
+## 1.4 Rolle des Canonical Architecture Compiler (CAC)
 
 Der Canonical Architecture Compiler ist ein Compiler, kein freier Artefaktgenerator und kein eigenstaendiger Architekt. Seine Verarbeitungskette lautet:
 
@@ -77,6 +92,7 @@ Die folgenden Grundsaetze gelten dauerhaft und duerfen nur durch geschuetzte Fou
 10. Governance ueberwacht Regelkonformitaet.
 11. Release Integrity prueft Freigabefaehigkeit.
 12. Neue Komponenten duerfen nur eingefuehrt werden, wenn sie einen klar abgegrenzten Verantwortungsbereich besitzen, keine bestehende Verantwortung unnoetig duplizieren, eine freigegebene CMIBF-Grundlage besitzen und sich nachvollziehbar in die kanonische Architektur einfuegen.
+13. Kanonische Frameworknamen und Abkuerzungen duerfen nicht doppelt belegt werden. Bereits reservierte Namen bleiben ihrer ersten kanonischen Bedeutung zugeordnet; bei Kollisionen ist ein eindeutiger neuer Name einzufuehren. `CVF` bleibt dauerhaft fuer Computer Vision reserviert, `CPVF` ist die kanonische Bezeichnung fuer das Canonical Project Vision Framework.
 
 Diese Grundsaetze stehen unter der Architekturautoritaet des CMIBF und vor operativen Implementierungsentscheidungen.
 

@@ -1,0 +1,104 @@
+{
+  "framework": "Canonical Project Vision Framework",
+  "abbreviation": "CPVF",
+  "version": "1.0",
+  "status": "conceptual_principles_matrix",
+  "runtime_effect": "none",
+  "principles": [
+    {
+      "id": "CPVF-P01",
+      "principle": "Der Mensch bleibt verantwortlich.",
+      "purpose": "Kontinuum unterstuetzt menschliche Urteilskraft, ersetzt sie aber nicht.",
+      "governance_boundary": "Keine Delegation letzter Verantwortung an K."
+    },
+    {
+      "id": "CPVF-P02",
+      "principle": "KI unterstuetzt, ersetzt aber nicht eigenstaendiges Denken.",
+      "purpose": "K soll Verstehen, Lernen und Entscheiden foerdern.",
+      "governance_boundary": "Keine Entmuendigung des Nutzers durch Automatisierung."
+    },
+    {
+      "id": "CPVF-P03",
+      "principle": "Transparenz vor Intransparenz.",
+      "purpose": "Entscheidungen, Grenzen, Quellen und Unsicherheiten sollen sichtbar bleiben.",
+      "governance_boundary": "Keine verdeckten Entscheidungs- oder Lernpfade."
+    },
+    {
+      "id": "CPVF-P04",
+      "principle": "Nachvollziehbarkeit vor Komplexitaet.",
+      "purpose": "Architektur und Antworten muessen erklaerbar bleiben.",
+      "governance_boundary": "Komplexitaet darf Review und Audit nicht verhindern."
+    },
+    {
+      "id": "CPVF-P05",
+      "principle": "Qualitaet vor Geschwindigkeit.",
+      "purpose": "Sorgfalt, Validierung und Governance haben Vorrang vor schneller Ausgabe.",
+      "governance_boundary": "Keine Abkuerzung von Review oder Freigabe wegen Tempo."
+    },
+    {
+      "id": "CPVF-P06",
+      "principle": "Lernen vor blosser Automatisierung.",
+      "purpose": "K soll Kompetenzentwicklung foerdern, nicht nur Aufgaben mechanisch abarbeiten.",
+      "governance_boundary": "Automatisierung darf Lern- und Verstehensziele nicht verdecken."
+    },
+    {
+      "id": "CPVF-P07",
+      "principle": "Sicherheit vor Bequemlichkeit.",
+      "purpose": "Schutz, Grenzen und Verantwortlichkeit haben Vorrang vor Komfort.",
+      "governance_boundary": "Keine bequemen Umgehungen von Sicherheitsregeln."
+    },
+    {
+      "id": "CPVF-P08",
+      "principle": "Governance vor Autonomie.",
+      "purpose": "Autonomie bleibt kontrolliert, auditierbar und begrenzt.",
+      "governance_boundary": "Keine autonome Selbstmodifikation oder ungepruefte Freigabe."
+    },
+    {
+      "id": "CPVF-P09",
+      "principle": "Nachhaltige Architektur vor kurzfristigen Loesungen.",
+      "purpose": "Langfristige Wartbarkeit und Konsistenz sind hoeherwertig als schnelle Sonderwege.",
+      "governance_boundary": "Keine Architekturverschuldung ohne dokumentierte Freigabe."
+    }
+  ],
+  "long_term_goals": [
+    {
+      "id": "CPVF-G01",
+      "area": "Wissensentwicklung",
+      "goals": [
+        "Wissen verstaendlich vermitteln",
+        "Zusammenhaenge sichtbar machen",
+        "kritisches Denken foerdern"
+      ]
+    },
+    {
+      "id": "CPVF-G02",
+      "area": "Kompetenzentwicklung",
+      "goals": [
+        "lebenslanges Lernen unterstuetzen",
+        "KI-Kompetenz foerdern",
+        "Problemloesungskompetenz entwickeln"
+      ]
+    },
+    {
+      "id": "CPVF-G03",
+      "area": "Architekturentwicklung",
+      "goals": [
+        "stabile Foundation erhalten",
+        "kanonische Governance staerken",
+        "nachvollziehbare Evolution sichern",
+        "langfristige Wartbarkeit foerdern"
+      ]
+    },
+    {
+      "id": "CPVF-G04",
+      "area": "Gesellschaftlicher Nutzen",
+      "goals": [
+        "verantwortungsvollen KI-Einsatz unterstuetzen",
+        "digitale Bildung foerdern",
+        "Transparenz staerken",
+        "Wissenszugang erleichtern",
+        "informierte Entscheidungen ermoeglichen"
+      ]
+    }
+  ]
+}

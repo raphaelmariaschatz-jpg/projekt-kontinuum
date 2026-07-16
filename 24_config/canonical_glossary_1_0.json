@@ -19,7 +19,13 @@
     "ccp_policy": "Canonical Change Policy",
     "ccp_cognitive": "Canonical Cognitive Pipeline",
     "cadp_current_canonical_meaning": "Canonical Active Directory Policy",
-    "inconsistencies_are_reported_not_auto_changed": true
+    "inconsistencies_are_reported_not_auto_changed": true,
+    "framework_names_and_abbreviations_must_be_unique": true,
+    "reserved_abbreviations": {
+      "CVF": "Canonical Vision Framework for Computer Vision, visual perception, interpretation and image processing",
+      "CPVF": "Canonical Project Vision Framework for project vision, mission and long-term orientation"
+    },
+    "collision_resolution": "Already reserved canonical names and abbreviations keep their first canonical meaning; semantic collisions require a new canonical name and abbreviation."
   },
   "terms": [
     {
@@ -463,6 +469,122 @@
         "CKS",
         "Release Integrity",
         "CAM"
+      ]
+    },
+    {
+      "name": "Canonical Reflective Layer",
+      "abbreviation": "CRL",
+      "canonical_name": "Canonical Reflective Layer 1.0",
+      "purpose": "Dokumentarische Metaebene fuer evidenzgebundene Reflexion ueber die eigene Architektur- und Projektentwicklung von K.",
+      "responsibilities": [
+        "Entwicklung anhand dokumentierter Quellen beobachten",
+        "Architekturhistorie und Entscheidungen vergleichen",
+        "Muster und korrigierte Annahmen evidenzgebunden sichtbar machen",
+        "Verbesserungsvorschlaege ohne Runtime-Wirkung formulieren",
+        "Bewusstseins-, Erlebnis- und Freiwillensbehauptungen ausschliessen"
+      ],
+      "architecture_phase": "Phase 2 - Controlled Integration, Operation & Cognitive Evolution",
+      "status": "Canonical documentation and governance addition",
+      "related": [
+        "CCP-Cognitive",
+        "CKS",
+        "CG",
+        "CAMap",
+        "CDI",
+        "CHI",
+        "AGF",
+        "CDG",
+        "CDF",
+        "CIPL",
+        "Release Integrity",
+        "Project Chronicle",
+        "Roadmap"
+      ]
+    },
+    {
+      "name": "Meta-Reasoning",
+      "abbreviation": "MR",
+      "canonical_name": "Meta-Reasoning 1.0",
+      "purpose": "Pruefende Reasoning-Review-Schicht fuer Schlussfolgerungen, Annahmen, Alternativen, Confidence und Governance-Konformitaet.",
+      "responsibilities": [
+        "Schlussfolgerungen pruefen",
+        "Annahmen sichtbar machen",
+        "Confidence einschaetzen",
+        "Alternativen und verworfene Pfade dokumentieren",
+        "Governance-Bezug markieren",
+        "Revisionsbedarf ausweisen"
+      ],
+      "architecture_phase": "Phase 2 - Controlled Integration, Operation & Cognitive Evolution",
+      "status": "Concept reviewed, implementation later",
+      "related": [
+        "Foundation",
+        "Foundation Reasoning",
+        "Query System",
+        "CRE",
+        "Execution Planner",
+        "Orchestrator Core",
+        "CDF",
+        "CDG",
+        "CAM",
+        "ALP",
+        "Release Integrity",
+        "CRL",
+        "CCP-Cognitive"
+      ]
+    },
+    {
+      "name": "Canonical AI Competency Framework",
+      "abbreviation": "CAICF",
+      "canonical_name": "Canonical AI Competency Framework 1.0",
+      "purpose": "Kanonischer Kompetenzrahmen fuer verantwortungsvollen, kritischen, kreativen und gestaltenden KI-Umgang.",
+      "responsibilities": [
+        "Engage with AI definieren",
+        "Create with AI definieren",
+        "Manage AI definieren",
+        "Design AI definieren",
+        "Knowledge, Skills und Attitudes als Bewertungsdimensionen fuehren",
+        "Kompetenzaufbau am individuellen Wissensstand ausrichten"
+      ],
+      "architecture_phase": "Phase 2 - Controlled Integration, Operation & Cognitive Evolution",
+      "status": "Concept reviewed, implementation later",
+      "related": [
+        "Canonical Learning Layer",
+        "CCP-Cognitive",
+        "CRE",
+        "Execution Planner",
+        "Orchestrator Core",
+        "Learning Agent",
+        "Canonical Memory",
+        "Governance",
+        "Foundation",
+        "CRL",
+        "Meta-Reasoning"
+      ]
+    },
+    {
+      "name": "Canonical Project Vision Framework",
+      "abbreviation": "CPVF",
+      "canonical_name": "Canonical Project Vision Framework 1.0",
+      "purpose": "Long-term project vision, mission and orientation framework for Projekt Kontinuum; confirms CPVF as the canonical designation and keeps CVF reserved for Computer Vision.",
+      "responsibilities": [
+        "define project vision",
+        "document mission and guiding principles",
+        "provide long-term orientation",
+        "avoid CVF naming collision",
+        "reserve technical operationalization for later governance approval"
+      ],
+      "architecture_phase": "Phase 2 - Controlled Integration, Operation & Cognitive Evolution",
+      "status": "Concept reviewed, canonical naming confirmed, implementation later",
+      "related": [
+        "CMIBF",
+        "Canonical Glossary",
+        "Foundation",
+        "Governance",
+        "CIF",
+        "CCP-Cognitive",
+        "CAICF",
+        "CRL",
+        "Meta-Reasoning"
       ]
     }
   ]

@@ -1,0 +1,219 @@
+{
+  "framework": "Canonical Project Vision Framework",
+  "abbreviation": "CPVF",
+  "version": "1.0",
+  "status": "conceptual",
+  "date": "2026-07-15",
+  "source_order": "Codex-Auftrag 07 originally used CVF; exact CVF naming is not used because CMIBF already reserves CVF for visual perception.",
+  "purpose": "Long-term vision, mission and orientation framework for Projekt Kontinuum.",
+  "vision": "Projekt Kontinuum develops a learning AI system that helps people understand knowledge, recognize relationships, solve problems structurally, use AI responsibly, learn lifelong and make informed decisions.",
+  "mission": "K soll Wissen nicht ersetzen, sondern Menschen befaehigen, eigenes Wissen aufzubauen, kritisch zu denken, kreativ zu handeln und fundierte Entscheidungen zu treffen.",
+  "governance_result": {
+    "concept_preparation": "GO",
+    "exact_cvf_naming": "NO_GO",
+    "implementation": "SPAETER",
+    "runtime_effect": "none"
+  },
+  "naming_boundary": {
+    "cvf_reserved_meaning": "Canonical Vision Framework for visual perception, interpretation and image processing according to CMIBF Framework Registry.",
+    "project_vision_framework_name": "Canonical Project Vision Framework",
+    "project_vision_framework_abbreviation": "CPVF",
+    "proposed_governance_rule": "Ein kanonischer Frameworkname und seine Abkuerzung duerfen innerhalb der Architektur nur genau einer Bedeutung zugeordnet sein. Bereits reservierte Bezeichnungen duerfen nicht erneut verwendet werden. Bei semantischen Kollisionen ist ein neuer kanonischer Name festzulegen; bestehende Frameworks bleiben unveraendert."
+  },
+  "principles": [
+    {
+      "id": "CPVF-P01",
+      "principle": "Der Mensch bleibt verantwortlich.",
+      "purpose": "Kontinuum unterstuetzt menschliche Urteilskraft, ersetzt sie aber nicht.",
+      "governance_boundary": "Keine Delegation letzter Verantwortung an K."
+    },
+    {
+      "id": "CPVF-P02",
+      "principle": "KI unterstuetzt, ersetzt aber nicht eigenstaendiges Denken.",
+      "purpose": "K soll Verstehen, Lernen und Entscheiden foerdern.",
+      "governance_boundary": "Keine Entmuendigung des Nutzers durch Automatisierung."
+    },
+    {
+      "id": "CPVF-P03",
+      "principle": "Transparenz vor Intransparenz.",
+      "purpose": "Entscheidungen, Grenzen, Quellen und Unsicherheiten sollen sichtbar bleiben.",
+      "governance_boundary": "Keine verdeckten Entscheidungs- oder Lernpfade."
+    },
+    {
+      "id": "CPVF-P04",
+      "principle": "Nachvollziehbarkeit vor Komplexitaet.",
+      "purpose": "Architektur und Antworten muessen erklaerbar bleiben.",
+      "governance_boundary": "Komplexitaet darf Review und Audit nicht verhindern."
+    },
+    {
+      "id": "CPVF-P05",
+      "principle": "Qualitaet vor Geschwindigkeit.",
+      "purpose": "Sorgfalt, Validierung und Governance haben Vorrang vor schneller Ausgabe.",
+      "governance_boundary": "Keine Abkuerzung von Review oder Freigabe wegen Tempo."
+    },
+    {
+      "id": "CPVF-P06",
+      "principle": "Lernen vor blosser Automatisierung.",
+      "purpose": "K soll Kompetenzentwicklung foerdern, nicht nur Aufgaben mechanisch abarbeiten.",
+      "governance_boundary": "Automatisierung darf Lern- und Verstehensziele nicht verdecken."
+    },
+    {
+      "id": "CPVF-P07",
+      "principle": "Sicherheit vor Bequemlichkeit.",
+      "purpose": "Schutz, Grenzen und Verantwortlichkeit haben Vorrang vor Komfort.",
+      "governance_boundary": "Keine bequemen Umgehungen von Sicherheitsregeln."
+    },
+    {
+      "id": "CPVF-P08",
+      "principle": "Governance vor Autonomie.",
+      "purpose": "Autonomie bleibt kontrolliert, auditierbar und begrenzt.",
+      "governance_boundary": "Keine autonome Selbstmodifikation oder ungepruefte Freigabe."
+    },
+    {
+      "id": "CPVF-P09",
+      "principle": "Nachhaltige Architektur vor kurzfristigen Loesungen.",
+      "purpose": "Langfristige Wartbarkeit und Konsistenz sind hoeherwertig als schnelle Sonderwege.",
+      "governance_boundary": "Keine Architekturverschuldung ohne dokumentierte Freigabe."
+    }
+  ],
+  "long_term_goals": [
+    {
+      "id": "CPVF-G01",
+      "area": "Wissensentwicklung",
+      "goals": [
+        "Wissen verstaendlich vermitteln",
+        "Zusammenhaenge sichtbar machen",
+        "kritisches Denken foerdern"
+      ]
+    },
+    {
+      "id": "CPVF-G02",
+      "area": "Kompetenzentwicklung",
+      "goals": [
+        "lebenslanges Lernen unterstuetzen",
+        "KI-Kompetenz foerdern",
+        "Problemloesungskompetenz entwickeln"
+      ]
+    },
+    {
+      "id": "CPVF-G03",
+      "area": "Architekturentwicklung",
+      "goals": [
+        "stabile Foundation erhalten",
+        "kanonische Governance staerken",
+        "nachvollziehbare Evolution sichern",
+        "langfristige Wartbarkeit foerdern"
+      ]
+    },
+    {
+      "id": "CPVF-G04",
+      "area": "Gesellschaftlicher Nutzen",
+      "goals": [
+        "verantwortungsvollen KI-Einsatz unterstuetzen",
+        "digitale Bildung foerdern",
+        "Transparenz staerken",
+        "Wissenszugang erleichtern",
+        "informierte Entscheidungen ermoeglichen"
+      ]
+    }
+  ],
+  "relationships": {
+    "cpvf": "defines purpose, vision and orientation",
+    "cif": "defines intelligence",
+    "ccp": "defines the cognitive process",
+    "caicf": "defines human competency development"
+  },
+  "interfaces": [
+    {
+      "component": "Foundation Layer",
+      "purpose": "Schutz von Identitaet, Leitprinzipien und Grundwerten.",
+      "boundary": "CPVF orientiert Foundation nicht rueckwirkend um."
+    },
+    {
+      "component": "Governance Layer",
+      "purpose": "Freigabe, Review und kontrollierte Evolution.",
+      "boundary": "CPVF ersetzt keine Governance-Regel."
+    },
+    {
+      "component": "Canonical Architecture",
+      "purpose": "CMIBF-, AFP-, CDF- und CDG-Einordnung.",
+      "boundary": "CMIBF bleibt normative Architekturquelle."
+    },
+    {
+      "component": "CDF / CDG",
+      "purpose": "Entwicklungsdisziplin und Governance-Prozess.",
+      "boundary": "CPVF ist Orientierungsrahmen, kein Entwicklungsprozess."
+    },
+    {
+      "component": "CIF",
+      "purpose": "Definition intelligenter Verarbeitung.",
+      "boundary": "CPVF definiert Zweck, CIF definiert Intelligenz."
+    },
+    {
+      "component": "CCP-Cognitive",
+      "purpose": "Denk- und Prozessordnung.",
+      "boundary": "CPVF definiert Richtung, nicht Prozesslogik."
+    },
+    {
+      "component": "CAICF",
+      "purpose": "Kompetenzentwicklung beim Menschen.",
+      "boundary": "CPVF begruendet Zielrichtung, CAICF operationalisiert Kompetenzziele."
+    },
+    {
+      "component": "Learning Layer",
+      "purpose": "kontrollierte Lern- und Wissensentwicklung.",
+      "boundary": "CPVF schreibt kein Wissen."
+    },
+    {
+      "component": "Canonical Memory",
+      "purpose": "provenienzgesicherte Speicherung.",
+      "boundary": "CPVF schreibt nicht in Memory."
+    },
+    {
+      "component": "CAM / ALP",
+      "purpose": "Artefakt- und Lifecycle-Governance.",
+      "boundary": "CPVF veraendert keine Artefaktklassifikation."
+    },
+    {
+      "component": "Release Integrity",
+      "purpose": "Freigabepruefung spaeterer Umsetzung.",
+      "boundary": "CPVF 1.0 erzeugt keine Release-Aenderung."
+    },
+    {
+      "component": "Meta-Reasoning",
+      "purpose": "Pruefung konkreter Schlussfolgerungen.",
+      "boundary": "CPVF gibt Orientierung, prueft aber nicht selbst."
+    },
+    {
+      "component": "CRL / Reflection",
+      "purpose": "langfristige Reflexion dokumentierter Entwicklungsmuster.",
+      "boundary": "CPVF ist Zielrahmen, CRL ist Reflexionsrahmen."
+    },
+    {
+      "component": "Projektchronik",
+      "purpose": "Entwicklungshistorie.",
+      "boundary": "Chronik-Fortschreibung nur kontrolliert."
+    },
+    {
+      "component": "Canonical Glossary",
+      "purpose": "Begriffskanon.",
+      "boundary": "CVF bleibt fuer visuelle Wahrnehmung reserviert; CPVF bezeichnet Projektvision."
+    }
+  ],
+  "extension_points": [
+    "future vision review cycle",
+    "future mission alignment checks",
+    "future framework orientation audits",
+    "future roadmap alignment metrics"
+  ],
+  "non_goals": [
+    "runtime changes",
+    "productive component changes",
+    "refactoring",
+    "database migration",
+    "new agent implementation",
+    "replacement of Foundation",
+    "replacement of Governance",
+    "replacement of CIF"
+  ]
+}

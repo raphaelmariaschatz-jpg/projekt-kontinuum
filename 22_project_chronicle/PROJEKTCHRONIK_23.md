@@ -668,3 +668,27 @@ Phase 2 erweitert diesen Gedanken um die kontrollierte kognitive Evolution von K
 Projekt Kontinuum entwickelt nicht nur Funktionen, sondern eine kanonische Form des Denkens. Neue Faehigkeiten werden kuenftig nicht isoliert ergaenzt, sondern in einen kontrollierten kognitiven Prozess eingeordnet: Wahrnehmen, Verstehen, Denken, Planen, Handeln, Pruefen, Erinnern und Lernen.
 
 > © 2026 Raphael Maria Schatz – Projekt Kontinuum. Alle Rechte vorbehalten.
+
+# Meilenstein Canonical Reflective Layer (CRL) 1.0 - Dokumentations- und Governance-Ergaenzung (2026-07-15)
+
+CRL 1.0 wurde als reine Dokumentations- und Governance-Ergaenzung zur CCP-Cognitive angelegt. Es beschreibt, wie K seine eigene Entwicklung anhand belegbarer Architekturentscheidungen, Versionen, Chronik, Governance-Artefakte, Review-Ergebnisse und Statusberichte reflektieren kann.
+
+CRL ist strikt evidenzgebunden und schliesst Bewusstseinsbehauptungen, subjektive Selbstzuschreibungen und freien Willen ausdruecklich aus. Es veraendert keine Runtime, Foundation, Agenten, APIs, Datenbanken, Imports, Tests oder Migrationen.
+
+Angelegte Artefakte:
+
+- `14_documents/CANONICAL_REFLECTIVE_LAYER_1_0.md`
+- `24_config/canonical_reflective_layer_1_0.json`
+- `31_reports/crl_1_0_status_report.md`
+
+# Meilenstein Canonical Project Vision Framework (CPVF) 1.0 - Auftrag 07 abgeschlossen (2026-07-16)
+
+Auftrag 07 zum Canonical Vision Framework wurde fachlich als Projektvisionsrahmen geprueft. Wegen der bestehenden CMIBF-Reservierung von `CVF` fuer Computer Vision, visuelle Wahrnehmung, Interpretation und Bildverarbeitung wurde die Projektvision nicht als CVF gefuehrt, sondern kanonisch als `Canonical Project Vision Framework (CPVF) 1.0` bestaetigt.
+
+Abschlussstand:
+
+- `CPVF` ist die kanonische Bezeichnung fuer Projektvision, Mission und langfristige Orientierung.
+- `CVF` bleibt dauerhaft fuer Computer Vision reserviert.
+- Die Naming-Governance-Regel gegen doppelt belegte Frameworknamen und Abkuerzungen wurde in Glossar, AGF und CMIBF/Framework Registry uebernommen.
+- CPVF 1.0 bleibt ohne Runtime-Wirkung; technische Operationalisierung ist fuer eine spaetere freigegebene Phase vorgemerkt.
+- Auftrag 07 wurde aus `Raphael Notizen/noch nicht erledigt/Codex Auftraege` nach `Raphael Notizen/erledigt/Codex Auftraege` verschoben.

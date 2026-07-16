@@ -44,6 +44,8 @@ Für die Framework Registry gelten folgende verbindliche Regeln:
 - Jede generierte Registry muss auf eine konkrete CMIBF-Version und einen konkreten Build-Stand verweisen.
 - Nicht im CMIBF verankerte Frameworks dürfen nicht als kanonisch ausgewiesen werden.
 - Neue Frameworks erhalten vor ihrer Implementierung eine eindeutige Framework-ID.
+- Frameworknamen und Kuerzel duerfen innerhalb der kanonischen Architektur nicht doppelt belegt werden. Bereits reservierte Kuerzel behalten ihre Bedeutung dauerhaft; bei semantischer Kollision ist ein neues Kuerzel zu vergeben.
+- `CVF` ist dauerhaft fuer das Canonical Vision Framework der Media-/Computer-Vision-Domaene reserviert. Das Projektvisionsframework wird kanonisch als `CPVF` gefuehrt.
 
 ---
 
@@ -155,6 +157,7 @@ PK-FW-PRESENTATION-001
 | PK-FW-META-003 | CAMap | Canonical Architecture Map | 1.0 | SPECIFIED | META | Kanonische Abbildung von Architekturebenen, Komponenten, Beziehungen und Informationsflüssen | CMIBF, CKS |
 | PK-FW-META-004 | ADG | Artifact Dependency Graph | 1.0 | PLANNED | ARTIFACT | Darstellung der Abhängigkeiten zwischen kanonischen Artefakten und Frameworks | CMIBF, CAM, CIPL |
 | PK-FW-META-005 | CGR | Canonical Graph Registry | 1.0 | PLANNED | ARTIFACT | Registrierung und Versionierung kanonischer Graphen und Beziehungsmodelle | CMIBF, CAC, ADG |
+| PK-FW-META-006 | CPVF | Canonical Project Vision Framework | 1.0 | SPECIFIED | META | Langfristiger Projektvisions-, Missions- und Orientierungsrahmen; bestaetigt CPVF als kanonische Bezeichnung und grenzt sie vom fuer Computer Vision reservierten CVF ab | CMIBF, CG, Foundation, Governance |
 
 ### 7.2 Foundation-Frameworks
 
