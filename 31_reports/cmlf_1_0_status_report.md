@@ -2,10 +2,10 @@
 
 > (c) 2026 Raphael Maria Schatz - Projekt Kontinuum. Alle Rechte vorbehalten.
 
-Status: Konzeptpruefung abgeschlossen
+Status: Konzeptpruefung abgeschlossen; situative Empfehlung aktiviert
 Datum: 2026-07-16
 Auftrag: Canonical Media Learning Framework (CMLF) 1.0
-Runtime-Wirkung: keine
+Runtime-Wirkung: read-only Medienkatalog und situative Empfehlung
 
 ## 1. Angelegte Dateien
 
@@ -77,3 +77,16 @@ CMLF staerkt die Lernarchitektur, unterstuetzt CAICF und CCP, beruecksichtigt un
 - Keine Migration.
 - Keine automatische Mediengenerierung.
 - Keine Commits.
+
+## 11. Technische Aktivierung vom 2026-07-18
+
+CMLF Phasen 1 und 2 sind im sicheren Minimalumfang aktiviert.
+
+- Sieben Medienbereiche werden deklarativ geladen und validiert.
+- Empfehlungen basieren nur auf expliziten situativen Angaben.
+- Maximal zwei Medientypen werden empfohlen.
+- Hohe Komplexitaet oder Ueberforderungsrisiko reduziert auf ein Medium.
+- Es gibt keine Medienerzeugung, kein Nutzerprofil und keine persistente
+  Praeferenz.
+- Es erfolgt keine Kompetenzbewertung, Memory-Schreibung oder operative
+  Entscheidung.

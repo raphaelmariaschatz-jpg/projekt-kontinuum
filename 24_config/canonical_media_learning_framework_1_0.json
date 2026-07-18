@@ -2,14 +2,14 @@
   "framework": "Canonical Media Learning Framework",
   "abbreviation": "CMLF",
   "version": "1.0",
-  "status": "conceptual",
+  "status": "implemented_and_active_situational_recommendation",
   "date": "2026-07-16",
-  "runtime_effect": "none",
+  "runtime_effect": "read_only_catalog_and_situational_recommendation",
   "purpose": "Canonical framework for media types, representation forms and learning methods used to convey knowledge and competencies in Projekt Kontinuum.",
   "governance_result": {
     "concept_preparation": "GO",
-    "implementation": "SPAETER",
-    "runtime_effect": "none"
+    "implementation": "GO_CONTROLLED",
+    "runtime_effect": "situational_recommendation_only"
   },
   "boundaries": {
     "caicf": "defines competencies to be developed",
@@ -236,6 +236,18 @@
     "Evidence-aware Learning Outputs",
     "Media Effectiveness Review"
   ],
+  "runtime_contract": {
+    "module": "kontinuum.core.media_learning.CanonicalMediaLearningFramework",
+    "system_attribute": "media_learning_framework",
+    "agent_config_key": "media_learning_framework",
+    "media_matrix": "24_config/cmlf_media_types_1_0.json",
+    "max_recommended_media": 2,
+    "automatic_media_generation": false,
+    "preference_persistence": false,
+    "learner_profile": false,
+    "decision_authority": false,
+    "memory_write": false
+  },
   "non_goals": [
     "runtime changes",
     "CRE changes",

@@ -2,8 +2,8 @@
   "framework": "Canonical Media Learning Framework",
   "abbreviation": "CMLF",
   "version": "1.0",
-  "status": "conceptual_media_types_matrix",
-  "runtime_effect": "none",
+  "status": "active_situational_recommendation_contract",
+  "runtime_effect": "read_only_catalog_and_situational_recommendation",
   "media_types": [
     {
       "id": "CMLF-M01",

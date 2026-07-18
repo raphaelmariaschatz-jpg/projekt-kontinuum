@@ -2,8 +2,8 @@
 
 > (c) 2026 Raphael Maria Schatz - Projekt Kontinuum. Alle Rechte vorbehalten.
 
-Status: kanonischer Implementierungsplan fuer spaetere Phase
-Runtime-Wirkung: keine
+Status: Phasen 1 und 2 im sicheren Minimalumfang umgesetzt
+Runtime-Wirkung: situative Medienempfehlung ohne Generierung oder Profil
 
 ## 1. Zweck
 
@@ -63,3 +63,10 @@ CMLF darf nur als Medien-, Vermittlungs- und Lernoutput-Rahmen operationalisiert
 ## 5. Abschlusskriterium
 
 Eine spaetere Operationalisierung ist erst freigabefaehig, wenn Medienmodell, Auswahlregeln, Datenschutzgrenzen, Accessibility-Regeln, Tutor-Schnittstellen und Release-Integrity-Pruefung eindeutig validiert sind.
+
+## 6. Umsetzungsstand 2026-07-18
+
+Umgesetzt sind Medienmodell und situative Auswahlregeln. Eingaben sind
+explizit, Empfehlungen sind nicht persistierend, und Medien werden nicht
+erzeugt. Nutzerprofile, Tutor-/Education-Schnittstellen, Wirksamkeitsmessung
+und governance-zertifizierte Operationalisierung bleiben separat offen.

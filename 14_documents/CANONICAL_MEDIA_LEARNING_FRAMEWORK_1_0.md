@@ -2,10 +2,10 @@
 
 > (c) 2026 Raphael Maria Schatz - Projekt Kontinuum. Alle Rechte vorbehalten.
 
-Status: Konzept geprueft, Architekturbaustein empfohlen
+Status: Konzept geprueft, situative Empfehlung kontrolliert aktiviert
 Gueltig ab: 2026-07-16
 Komponententyp: Canonical Learning Layer / Medien- und Vermittlungsrahmen
-Runtime-Wirkung: keine
+Runtime-Wirkung: read-only Medienkatalog und situative Empfehlung
 
 ## 1. Zweck
 
@@ -60,9 +60,9 @@ Orchestrator Core
         |
 Canonical Learning Layer
         |
-├── CAICF
-├── CMLF
-└── Tutor / Education Components
+|-- CAICF
+|-- CMLF
+`-- Tutor / Education Components
         |
 User
 ```
@@ -371,3 +371,23 @@ Begruendung:
 - keine Refactorings bestehender Komponenten
 - keine automatische Speicherung von Nutzerpraeferenzen
 - keine Kompetenzdefinition ausserhalb CAICF
+
+## 13. Kontrollierte technische Aktivierung
+
+Die serielle Implementierungsfreigabe vom 2026-07-18 aktiviert die sicheren
+Teile der Phasen 1 und 2.
+
+Aktiviert sind:
+
+- deklaratives Laden und Validieren der sieben Medienbereiche;
+- read-only Medienkatalog;
+- situative Empfehlung aus explizitem Lernziel, Themenstruktur, Komplexitaet,
+  Accessibility, Ueberforderungsrisiko und Evidenzbedarf;
+- hoechstens zwei empfohlene Medientypen;
+- Reduktion auf ein Medium bei hoher Komplexitaet oder Ueberforderungsrisiko;
+- stabile Empfehlungs-IDs;
+- Registrierung und Statusausgabe in `KontinuumSystem`.
+
+Nicht aktiviert sind Medienerzeugung, Nutzerprofil, dauerhafte Praeferenzen,
+Kompetenzbewertung, Tutor-Automatik, Memory-Schreibung oder operative
+Entscheidungsautoritaet.
