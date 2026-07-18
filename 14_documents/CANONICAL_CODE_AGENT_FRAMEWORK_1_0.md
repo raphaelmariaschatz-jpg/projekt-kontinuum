@@ -2,17 +2,17 @@
 
 > (c) 2026 Raphael Maria Schatz - Projekt Kontinuum. Alle Rechte vorbehalten.
 
-Status: CONCEPT_COMPLETE / ARCHITECTURE_REVIEW_CONDITIONS_CLOSED / keine Implementierungsfreigabe
-Gueltig ab: offen nach Governance-Freigabe
+Status: IMPLEMENTED_WITH_LIMITATIONS / keine Ausfuehrungsfreigabe
+Gueltig ab: 2026-07-18 fuer explizite Auftragsvalidierung
 Komponententyp: Code-Agent-Governance-Framework
-Runtime-Wirkung: keine
+Runtime-Wirkung: explizite, read-only Auftragsvalidierung
 Produktive Aenderungen: keine
 
 ## 1. Zweck
 
 Das Canonical Code Agent Framework (CODEAF) 1.0 definiert den verbindlichen Rahmen, nach dem Code-Agenten in Projekt Kontinuum identifiziert, beauftragt, begrenzt, geplant, kontrolliert, geprueft und auditiert werden sollen.
 
-CODEAF ist kein Agent, keine Runtime, kein Orchestrator, kein Planner, keine Registry, kein Berechtigungssystem und keine automatische Codeausfuehrung. CODEAF ist die normative Agenten-Governance- und Kontrollschicht fuer Code-Agentenarbeit.
+CODEAF ist kein Agent, kein Orchestrator, kein Planner, keine Registry, kein Berechtigungssystem und keine automatische Codeausfuehrung. CODEAF ist die normative Agenten-Governance- und Kontrollschicht fuer Code-Agentenarbeit. Die aktive Komponente validiert nur explizit uebergebene Auftragsvertraege und autorisiert keine Ausfuehrung.
 
 Namensentscheidung: `CODEAF` ist die kanonische Abkuerzung, weil das CMIBF fuer `PK-FW-AGENT-005` bereits `CODEAF | Code Agent Framework | 1.0 | PLANNED | AGENT` fuehrt. `CCAF` war ein Arbeitsname dieses Pruefauftrags und wird nicht als konkurrierende kanonische Benennung verwendet.
 
@@ -548,7 +548,7 @@ Empfohlene Folgeartefakte nach Governance-/CMIBF-Klaerung:
 | Pfad | Zweck | Format | Status |
 | --- | --- | --- | --- |
 | `14_documents/CANONICAL_CODE_AGENT_FRAMEWORK_1_0.md` | normativer CODEAF-Rahmen | Markdown | vorbereitet |
-| `24_config/canonical_code_agent_framework_1_0.json` | maschinenlesbares Framework-Metamanifest | JSON | geplant |
+| `24_config/canonical_code_agent_framework_1_0.json` | maschinenlesbares Framework-Metamanifest | JSON | aktiv mit Begrenzungen |
 | `24_config/canonical_code_agent_roles_1_0.json` | Rollen und Grenzen | JSON | geplant |
 | `24_config/canonical_code_agent_capabilities_1_0.json` | Capability-Katalog | JSON | geplant |
 | `24_config/canonical_code_agent_permission_profiles_1_0.json` | Permission-Profile | JSON | geplant |
@@ -558,9 +558,11 @@ Empfohlene Folgeartefakte nach Governance-/CMIBF-Klaerung:
 | `schemas/canonical_code_agent_task_1_0.schema.json` | Auftragsschema | JSON Schema | geplant |
 | `schemas/canonical_code_agent_report_1_0.schema.json` | Berichtsschema | JSON Schema | geplant |
 | `schemas/canonical_code_agent_registry_1_0.schema.json` | Registry-Erweiterung | JSON Schema | geplant |
-| `31_reports/codeaf_1_0_status_report.md` | Pruef- und Abschlussbericht | Markdown | vorbereitet |
+| `31_reports/codeaf_1_0_status_report.md` | Pruef- und Abschlussbericht | Markdown | aktiv |
 
-Die geplanten JSON- und Schema-Artefakte duerfen erst nach CMIBF-/Governance-Klaerung als kanonische Maschinenartefakte eingefuehrt werden.
+Die spezialisierten Rollen-, Capability-, Permission-, Risiko-, Modus-, Gate-
+und Schemaartefakte bleiben geplant. Der aktive Umfang konsolidiert die
+minimalen Definitionen in genau einem validierten Framework-Metamanifest.
 
 ## 20. Teststrategie
 
@@ -612,4 +614,25 @@ Begruendung:
 - Es darf keine neue Runtime und keine parallele Agentenarchitektur entstehen.
 - Vor produktiver Maschinenlesbarkeit sind CMIBF-/AFP-Abdeckung, Schema-Freigabe und Registry-Konsolidierung erforderlich.
 
-CODEAF 1.0 ist als Dokumentations- und Vorbereitungsrahmen geeignet. Produktive Ausfuehrungsrechte, autonome Schreibrechte oder automatische Freigaben sind nicht Teil dieser Freigabe.
+CODEAF 1.0 ist als Dokumentations-, Auftrags- und Pruefrahmen aktiv.
+Produktive Ausfuehrungsrechte, autonome Schreibrechte oder automatische
+Freigaben sind nicht Teil dieser Freigabe.
+
+## 23. Aktiver Umfang
+
+`CanonicalCodeAgentFramework` laedt und validiert das konsolidierte
+CODEAF-Metamanifest. Ein Aufrufer kann einen kanonischen Code-Agentenauftrag
+explizit auf Pflichtfelder, Rolle, Capabilities, Permission Profile,
+Betriebsmodus, Risikoklasse und zehn Kontroll-Gates pruefen.
+
+Die Komponente:
+
+- wird im zentralen Systemstatus registriert,
+- wendet Deny-by-default und den Vorrang expliziter Verbote an,
+- markiert autonome Wartung und R5-Automation als unzulaessig,
+- gibt `execution_authorized` und `final_approval_granted` immer als `false`
+  aus,
+- aktiviert keinen Agenten und fuehrt keinen Auftrag aus,
+- veraendert weder `CodeAgentService` noch CRE, Planner oder Orchestrator,
+- korrigiert den dokumentierten Registry-Gap nicht stillschweigend,
+- schreibt weder Auditdaten noch Memory.

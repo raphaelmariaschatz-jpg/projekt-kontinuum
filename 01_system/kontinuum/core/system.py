@@ -41,6 +41,7 @@ from .language_processing import CanonicalLanguageProcessingFramework
 from .deployment_framework import CanonicalDeploymentFramework
 from .authentication_framework import CanonicalAuthenticationFramework
 from .licence_management_framework import CanonicalLicenceManagementSystemFramework
+from .code_agent_framework import CanonicalCodeAgentFramework
 from .self_knowledge import SelfKnowledgeCore
 from .memory_core import MemoryCore
 from .knowledge_platform import KnowledgePlatform
@@ -269,6 +270,10 @@ class KontinuumSystem:
             self.path_tools.project_root()
         )
         self.agent_config["licence_management_framework"] = self.licence_management_framework
+        self.code_agent_framework = CanonicalCodeAgentFramework(
+            self.path_tools.project_root()
+        )
+        self.agent_config["code_agent_framework"] = self.code_agent_framework
         self.foundation_decision = FoundationDecisionLayer(
             self.storage, self.moral_core, self.continuity_core, self.knowledge_intelligence
         )
@@ -561,6 +566,7 @@ class KontinuumSystem:
             "deployment_framework": self.deployment_framework.status(),
             "authentication_framework": self.authentication_framework.status(),
             "licence_management_framework": self.licence_management_framework.status(),
+            "code_agent_framework": self.code_agent_framework.status(),
             "memory_core": self.memory_core.status(),
             "canonical_memory_manager": self.canonical_memory_manager.status(),
             "knowledge_platform": self.knowledge_platform.status(),
