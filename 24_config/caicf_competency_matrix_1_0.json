@@ -1,0 +1,125 @@
+{
+  "matrix_id": "CAICF-COMPETENCY-MATRIX-1.0",
+  "framework": "CAICF",
+  "version": "1.0",
+  "status": "active_read_only_matrix",
+  "assessment_dimensions": [
+    "knowledge",
+    "skills",
+    "attitudes"
+  ],
+  "competency_areas": [
+    {
+      "id": "CAICF-ENGAGE",
+      "name": "Engage with AI",
+      "description": "KI erkennen, verstehen und kritisch hinterfragen.",
+      "goals": [
+        "KI im Alltag erkennen",
+        "KI-Ergebnisse kritisch bewerten",
+        "Quellen einschaetzen",
+        "Halluzinationen erkennen",
+        "Chancen und Risiken verstehen",
+        "gesundes Vertrauen in KI entwickeln"
+      ],
+      "dimensions": {
+        "knowledge": [
+          "Grundbegriffe von KI, Modellen, Prompts und Quellen kennen",
+          "typische Fehlerarten wie Halluzinationen und Verzerrungen kennen"
+        ],
+        "skills": [
+          "KI-Ausgaben mit Quellen, Plausibilitaet und Kontext pruefen",
+          "Unsicherheit und fehlende Evidenz erkennen"
+        ],
+        "attitudes": [
+          "kritisch, offen und verantwortungsvoll mit KI umgehen",
+          "weder blind vertrauen noch pauschal ablehnen"
+        ]
+      }
+    },
+    {
+      "id": "CAICF-CREATE",
+      "name": "Create with AI",
+      "description": "KI kreativ und verantwortungsvoll einsetzen.",
+      "goals": [
+        "Texte entwickeln",
+        "Bilder erzeugen",
+        "Programme erstellen",
+        "Ideen und Loesungen gemeinsam mit KI entwickeln",
+        "KI als kreatives Werkzeug sinnvoll nutzen"
+      ],
+      "dimensions": {
+        "knowledge": [
+          "Moeglichkeiten und Grenzen generativer KI kennen",
+          "Grundlagen von Prompting, Iteration und Ergebnispruefung kennen"
+        ],
+        "skills": [
+          "KI fuer Entwuerfe, Varianten, Code und kreative Loesungen einsetzen",
+          "Ergebnisse ueberarbeiten, testen und verantwortbar weiterverwenden"
+        ],
+        "attitudes": [
+          "Urheberschaft, Transparenz und Verantwortung beachten",
+          "KI als Werkzeug nutzen, nicht als Ersatz fuer eigene Urteilskraft"
+        ]
+      }
+    },
+    {
+      "id": "CAICF-MANAGE",
+      "name": "Manage AI",
+      "description": "KI verantwortungsvoll steuern.",
+      "goals": [
+        "entscheiden, wann KI sinnvoll eingesetzt wird",
+        "Ergebnisse validieren",
+        "Datenschutz und Informationssicherheit beruecksichtigen",
+        "ethische Fragestellungen verstehen",
+        "Verantwortung fuer den KI-Einsatz uebernehmen"
+      ],
+      "dimensions": {
+        "knowledge": [
+          "Datenschutz-, Sicherheits-, Ethik- und Governance-Grundlagen kennen",
+          "Einsatzgrenzen und Freigabeanforderungen verstehen"
+        ],
+        "skills": [
+          "KI-Einsatz planen, begrenzen und pruefen",
+          "Risiken, Review-Bedarf und Verantwortlichkeiten dokumentieren"
+        ],
+        "attitudes": [
+          "Sorgfalt, Nachvollziehbarkeit und menschliche Verantwortung priorisieren",
+          "sensible Daten und betroffene Personen schuetzen"
+        ]
+      }
+    },
+    {
+      "id": "CAICF-DESIGN",
+      "name": "Design AI",
+      "description": "KI-Systeme verstehen und weiterentwickeln.",
+      "goals": [
+        "Grundprinzipien moderner KI-Systeme verstehen",
+        "Agenten entwickeln",
+        "Workflows entwerfen",
+        "Architekturen erweitern",
+        "eigene KI-Systeme planen und verbessern"
+      ],
+      "dimensions": {
+        "knowledge": [
+          "Modelle, Agenten, Workflows, Evaluation und Systemarchitektur verstehen",
+          "Governance-, Sicherheits- und Validierungsprinzipien kennen"
+        ],
+        "skills": [
+          "einfache KI-Workflows, Agenten und Architekturbausteine entwerfen",
+          "Tests, Reviews und Verbesserungsschleifen planen"
+        ],
+        "attitudes": [
+          "Architecture First, Sicherheit und Nachvollziehbarkeit respektieren",
+          "Komplexitaet begrenzen und verantwortungsvoll erweitern"
+        ]
+      }
+    }
+  ],
+  "progression_policy": {
+    "basis": "individual_knowledge_state",
+    "age_independent": true,
+    "school_type_independent": true,
+    "requires_evidence_for_progress": true,
+    "requires_review_for_memory_adoption": true
+  }
+}

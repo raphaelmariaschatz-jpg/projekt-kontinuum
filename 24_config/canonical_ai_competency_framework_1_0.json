@@ -1,0 +1,168 @@
+{
+  "framework": "Canonical AI Competency Framework",
+  "abbreviation": "CAICF",
+  "version": "1.0",
+  "status": "implemented_and_active_read_only_catalog",
+  "canonical_since": "2026-07-15",
+  "layer": "Canonical Learning Layer",
+  "runtime_effect": "read_only_competency_catalog_and_explicit_focus_planning",
+  "principle": "CAICF defines which AI competencies should be developed; CCP defines how K processes inputs to support that development.",
+  "competency_areas": [
+    {
+      "id": "CAICF-ENGAGE",
+      "name": "Engage with AI",
+      "description": "KI erkennen, verstehen und kritisch hinterfragen.",
+      "goals": [
+        "KI im Alltag erkennen",
+        "KI-Ergebnisse kritisch bewerten",
+        "Quellen einschaetzen",
+        "Halluzinationen erkennen",
+        "Chancen und Risiken verstehen",
+        "gesundes Vertrauen in KI entwickeln"
+      ],
+      "dimensions": {
+        "knowledge": [
+          "Grundbegriffe von KI, Modellen, Prompts und Quellen kennen",
+          "typische Fehlerarten wie Halluzinationen und Verzerrungen kennen"
+        ],
+        "skills": [
+          "KI-Ausgaben mit Quellen, Plausibilitaet und Kontext pruefen",
+          "Unsicherheit und fehlende Evidenz erkennen"
+        ],
+        "attitudes": [
+          "kritisch, offen und verantwortungsvoll mit KI umgehen",
+          "weder blind vertrauen noch pauschal ablehnen"
+        ]
+      }
+    },
+    {
+      "id": "CAICF-CREATE",
+      "name": "Create with AI",
+      "description": "KI kreativ und verantwortungsvoll einsetzen.",
+      "goals": [
+        "Texte entwickeln",
+        "Bilder erzeugen",
+        "Programme erstellen",
+        "Ideen und Loesungen gemeinsam mit KI entwickeln",
+        "KI als kreatives Werkzeug sinnvoll nutzen"
+      ],
+      "dimensions": {
+        "knowledge": [
+          "Moeglichkeiten und Grenzen generativer KI kennen",
+          "Grundlagen von Prompting, Iteration und Ergebnispruefung kennen"
+        ],
+        "skills": [
+          "KI fuer Entwuerfe, Varianten, Code und kreative Loesungen einsetzen",
+          "Ergebnisse ueberarbeiten, testen und verantwortbar weiterverwenden"
+        ],
+        "attitudes": [
+          "Urheberschaft, Transparenz und Verantwortung beachten",
+          "KI als Werkzeug nutzen, nicht als Ersatz fuer eigene Urteilskraft"
+        ]
+      }
+    },
+    {
+      "id": "CAICF-MANAGE",
+      "name": "Manage AI",
+      "description": "KI verantwortungsvoll steuern.",
+      "goals": [
+        "entscheiden, wann KI sinnvoll eingesetzt wird",
+        "Ergebnisse validieren",
+        "Datenschutz und Informationssicherheit beruecksichtigen",
+        "ethische Fragestellungen verstehen",
+        "Verantwortung fuer den KI-Einsatz uebernehmen"
+      ],
+      "dimensions": {
+        "knowledge": [
+          "Datenschutz-, Sicherheits-, Ethik- und Governance-Grundlagen kennen",
+          "Einsatzgrenzen und Freigabeanforderungen verstehen"
+        ],
+        "skills": [
+          "KI-Einsatz planen, begrenzen und pruefen",
+          "Risiken, Review-Bedarf und Verantwortlichkeiten dokumentieren"
+        ],
+        "attitudes": [
+          "Sorgfalt, Nachvollziehbarkeit und menschliche Verantwortung priorisieren",
+          "sensible Daten und betroffene Personen schuetzen"
+        ]
+      }
+    },
+    {
+      "id": "CAICF-DESIGN",
+      "name": "Design AI",
+      "description": "KI-Systeme verstehen und weiterentwickeln.",
+      "goals": [
+        "Grundprinzipien moderner KI-Systeme verstehen",
+        "Agenten entwickeln",
+        "Workflows entwerfen",
+        "Architekturen erweitern",
+        "eigene KI-Systeme planen und verbessern"
+      ],
+      "dimensions": {
+        "knowledge": [
+          "Modelle, Agenten, Workflows, Evaluation und Systemarchitektur verstehen",
+          "Governance-, Sicherheits- und Validierungsprinzipien kennen"
+        ],
+        "skills": [
+          "einfache KI-Workflows, Agenten und Architekturbausteine entwerfen",
+          "Tests, Reviews und Verbesserungsschleifen planen"
+        ],
+        "attitudes": [
+          "Architecture First, Sicherheit und Nachvollziehbarkeit respektieren",
+          "Komplexitaet begrenzen und verantwortungsvoll erweitern"
+        ]
+      }
+    }
+  ],
+  "assessment_dimensions": [
+    "knowledge",
+    "skills",
+    "attitudes"
+  ],
+  "learner_model_policy": {
+    "based_on_individual_knowledge_state": true,
+    "based_on_age": false,
+    "based_on_school_type": false,
+    "based_on_formal_degree": false
+  },
+  "interfaces": {
+    "foundation_layer": true,
+    "governance_layer": true,
+    "canonical_architecture": true,
+    "ccp": true,
+    "cre": true,
+    "execution_planner": true,
+    "orchestrator_core": true,
+    "learning_agent": true,
+    "canonical_memory": true,
+    "tutor_education_components": true,
+    "audit_review": true,
+    "release_integrity": true,
+    "canonical_glossary": true,
+    "project_chronicle": true
+  },
+  "boundaries": {
+    "runtime_integration_read_only_catalog_only": true,
+    "no_cre_planner_orchestrator_changes": true,
+    "no_live_automatic_competency_assessment": true,
+    "no_new_agent_implementation": true,
+    "no_database_migration": true,
+    "no_file_deletion_or_move": true,
+    "no_existing_learning_logic_change": true
+  },
+  "recommendation": {
+    "concept": "GO",
+    "implementation": "GO_CONTROLLED",
+    "reason": "The serial implementation approval activates a read-only competency catalog and explicit focus planning without learner profiling or automatic assessment."
+  },
+  "runtime_contract": {
+    "module": "kontinuum.core.ai_competency_framework.CanonicalAICompetencyFramework",
+    "system_attribute": "ai_competency_framework",
+    "agent_config_key": "ai_competency_framework",
+    "matrix": "24_config/caicf_competency_matrix_1_0.json",
+    "read_only": true,
+    "automatic_assessment": false,
+    "learner_profile_persistence": false,
+    "memory_handoff": false
+  }
+}

@@ -29,6 +29,7 @@ from .code_agent import CodeAgentService
 from .consciousness import ConsciousnessCore
 from .canonical_reflective_layer import CanonicalReflectiveLayer
 from .meta_reasoning import MetaReasoningEngine
+from .ai_competency_framework import CanonicalAICompetencyFramework
 from .self_knowledge import SelfKnowledgeCore
 from .memory_core import MemoryCore
 from .knowledge_platform import KnowledgePlatform
@@ -211,6 +212,10 @@ class KontinuumSystem:
         self.agent_config["canonical_reflective_layer"] = self.canonical_reflective_layer
         self.meta_reasoning = MetaReasoningEngine(self.storage)
         self.agent_config["meta_reasoning"] = self.meta_reasoning
+        self.ai_competency_framework = CanonicalAICompetencyFramework(
+            self.path_tools.project_root()
+        )
+        self.agent_config["ai_competency_framework"] = self.ai_competency_framework
         self.foundation_decision = FoundationDecisionLayer(
             self.storage, self.moral_core, self.continuity_core, self.knowledge_intelligence
         )
@@ -491,6 +496,7 @@ class KontinuumSystem:
             "consciousness": self.consciousness.profile(),
             "canonical_reflective_layer": self.canonical_reflective_layer.status(),
             "meta_reasoning": self.meta_reasoning.status(),
+            "ai_competency_framework": self.ai_competency_framework.status(),
             "memory_core": self.memory_core.status(),
             "canonical_memory_manager": self.canonical_memory_manager.status(),
             "knowledge_platform": self.knowledge_platform.status(),
