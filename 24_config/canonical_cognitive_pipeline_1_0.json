@@ -1,0 +1,235 @@
+{
+  "pipeline": "Canonical Cognitive Pipeline",
+  "abbreviation": "CCP-Cognitive",
+  "version": "1.0",
+  "status": "implemented_and_active_audit_trace_only",
+  "date": "2026-07-15",
+  "purpose": "Canonical processing logic for user input in Projekt Kontinuum.",
+  "principle": "CCP = K denkt kanonisch.",
+  "governance_result": {
+    "concept_preparation": "GO",
+    "implementation": "GO_AUDIT_ONLY",
+    "runtime_effect": "explicit_audit_trace_only",
+    "productive_integration": "not_approved",
+    "normal_response_path_change": false
+  },
+  "terminology_boundary": {
+    "ccp_cognitive": "Canonical Cognitive Pipeline",
+    "ccp_policy": "Canonical Change Policy",
+    "rule": "CCP-Cognitive and CCP-Policy must not be mixed."
+  },
+  "relationship_to_caicf": {
+    "ccp": "K denkt kanonisch.",
+    "caicf": "K lehrt KI-Kompetenz kanonisch.",
+    "rule": "CAICF defines which competencies should develop; CCP defines how K processes inputs to support that development."
+  },
+  "relationship_to_meta_reasoning": {
+    "role": "Meta-Reasoning reviews concrete conclusions, assumptions, alternatives, confidence and governance alignment in CCP review stages.",
+    "boundary": "Meta-Reasoning does not replace governance, CRL, CRE, Planner or Orchestrator."
+  },
+  "relationship_to_crl": {
+    "role": "CRL provides evidence-based long-term reflection over documented development patterns.",
+    "boundary": "Reflection is controlled self-analysis within architecture rules, not consciousness, feelings, personality or free thinking."
+  },
+  "stages": [
+    {
+      "id": "CCP-01",
+      "name": "Input Capture",
+      "purpose": "Nutzereingabe, Dateikontext und Gespraechskontext erfassen.",
+      "interfaces": [
+        "user_input",
+        "conversation_context",
+        "file_context"
+      ]
+    },
+    {
+      "id": "CCP-02",
+      "name": "Semantic Analysis",
+      "purpose": "Bedeutung, Begriffe, Ziele, Unsicherheiten und relevante Wissensbereiche analysieren.",
+      "interfaces": [
+        "foundation",
+        "canonical_glossary",
+        "canonical_language_understanding"
+      ]
+    },
+    {
+      "id": "CCP-03",
+      "name": "Context User State Risk Assessment",
+      "purpose": "Kontext, Nutzerstand, Projektrelevanz, Risiko und Governance-Anforderungen bewerten.",
+      "interfaces": [
+        "governance",
+        "foundation",
+        "memory",
+        "risk_policy"
+      ]
+    },
+    {
+      "id": "CCP-04",
+      "name": "Goal and Learning Intent Derivation",
+      "purpose": "Unmittelbares Ziel, Lernabsicht, Ergebnisform und moegliche CAICF-Bezuege ableiten.",
+      "interfaces": [
+        "caicf",
+        "learning_layer",
+        "tutor_components"
+      ]
+    },
+    {
+      "id": "CCP-05",
+      "name": "Capability Resolution",
+      "purpose": "Passende Capability ueber CRE und Capability Registry bestimmen.",
+      "interfaces": [
+        "cre",
+        "capability_registry",
+        "caim"
+      ]
+    },
+    {
+      "id": "CCP-06",
+      "name": "Execution Planning",
+      "purpose": "Einen validierten Ausfuehrungsplan erstellen, ohne ihn selbst auszufuehren.",
+      "interfaces": [
+        "execution_planner",
+        "governance",
+        "runtime_schema"
+      ]
+    },
+    {
+      "id": "CCP-07",
+      "name": "Response Task Learning Impulse Generation",
+      "purpose": "Antwort, Aufgabe oder Lernimpuls anhand des validierten Pfades erzeugen.",
+      "interfaces": [
+        "orchestrator_core",
+        "learning_agent",
+        "tutor_components"
+      ]
+    },
+    {
+      "id": "CCP-08",
+      "name": "Review and Validation",
+      "purpose": "Ergebnis, Logik, Quellen, Governance und Unsicherheiten pruefen.",
+      "interfaces": [
+        "meta_reasoning",
+        "review",
+        "audit",
+        "release_integrity"
+      ]
+    },
+    {
+      "id": "CCP-09",
+      "name": "Reflection and Memory Update",
+      "purpose": "Erkenntnis, Verlauf und Kompetenzentwicklung reflektieren und Handoffs vorbereiten.",
+      "interfaces": [
+        "canonical_reflective_layer",
+        "canonical_memory",
+        "learning_agent",
+        "project_chronicle",
+        "caicf"
+      ]
+    }
+  ],
+  "interfaces": [
+    {
+      "component": "Foundation Layer",
+      "role": "Schutz von Identitaet, Leitprinzipien und unverhandelbaren Grenzen.",
+      "boundary": "CCP darf Foundation nicht ueberschreiben."
+    },
+    {
+      "component": "Governance Layer",
+      "role": "Freigabe, Review, Risiko- und Compliance-Entscheidungen.",
+      "boundary": "CCP markiert Governance-Bedarf, entscheidet aber nicht autonom."
+    },
+    {
+      "component": "Canonical Architecture",
+      "role": "Einordnung in CMIBF, AFP, CDF, CDG und kanonische Artefakte.",
+      "boundary": "CCP besitzt keine hoehere Autoritaet als CMIBF."
+    },
+    {
+      "component": "CAICF",
+      "role": "Kompetenzzielraum fuer KI-Kompetenz.",
+      "boundary": "CAICF definiert Kompetenzen; CCP verarbeitet Eingaben."
+    },
+    {
+      "component": "CRE",
+      "role": "Read-only Capability-Aufloesung.",
+      "boundary": "CCP ersetzt CRE nicht."
+    },
+    {
+      "component": "Execution Planner",
+      "role": "Validierte Ausfuehrungsplanung.",
+      "boundary": "CCP erzeugt selbst keinen produktiven Plan in Version 1.0."
+    },
+    {
+      "component": "Orchestrator Core",
+      "role": "Kontrollierte Ausfuehrung validierter Plaene.",
+      "boundary": "CCP triggert keine unvalidierte Ausfuehrung."
+    },
+    {
+      "component": "Learning Agent",
+      "role": "Proposal- und Lernhandoff.",
+      "boundary": "Keine automatische Wissensuebernahme."
+    },
+    {
+      "component": "Canonical Memory",
+      "role": "Dauerhafte validierte Erinnerung.",
+      "boundary": "Keine direkte Memory-Schreibung durch CCP 1.0."
+    },
+    {
+      "component": "Meta-Reasoning",
+      "role": "Pruefung konkreter Schlussfolgerungen und Annahmen.",
+      "boundary": "Keine Bewusstseins- oder Autonomiezuschreibung."
+    },
+    {
+      "component": "CRL",
+      "role": "Langfristige evidenzgebundene Reflexion dokumentierter Entwicklungsmuster.",
+      "boundary": "Reflection ist kontrollierte Selbstanalyse, nicht Selbstbewusstsein."
+    },
+    {
+      "component": "Tutor and Education Components",
+      "role": "Spaetere Lernbegleitung und adaptive Erklaerung.",
+      "boundary": "Keine Implementierung in CCP 1.0."
+    },
+    {
+      "component": "Audit / Review",
+      "role": "Nachvollziehbarkeit, Pruefung, Revisionsbedarf.",
+      "boundary": "Review bleibt governancepflichtig."
+    },
+    {
+      "component": "Release Integrity",
+      "role": "Freigabepruefung spaeterer Implementierungen.",
+      "boundary": "Release Integrity validiert Releases, nicht Live-Denken."
+    },
+    {
+      "component": "Canonical Glossary",
+      "role": "Begriffskanon, insbesondere CCP-Policy vs CCP-Cognitive.",
+      "boundary": "Begriffe duerfen nicht vermischt werden."
+    },
+    {
+      "component": "Projektchronik",
+      "role": "Dokumentierte Entwicklungshistorie.",
+      "boundary": "Chronik-Handoffs nur kontrolliert und belegbar."
+    }
+  ],
+  "runtime_contract": {
+    "module": "kontinuum.core.cognitive_pipeline.CanonicalCognitivePipeline",
+    "system_attribute": "cognitive_pipeline",
+    "agent_config_key": "cognitive_pipeline",
+    "stage_matrix": "24_config/ccp_pipeline_stages_1_0.json",
+    "event_kind": "ccp_cognitive.trace",
+    "automatic_processing": false,
+    "execution": false,
+    "memory_write": false,
+    "registry_write": false
+  },
+  "non_goals": [
+    "productive runtime integration",
+    "changes to CRE, Execution Planner or Orchestrator Core",
+    "automatic self-modification",
+    "new agent implementation",
+    "database migration",
+    "file deletion or movement",
+    "change of existing response logic",
+    "automatic identity update",
+    "direct memory write",
+    "automatic competency profile update"
+  ]
+}

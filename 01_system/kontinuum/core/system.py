@@ -31,6 +31,7 @@ from .canonical_reflective_layer import CanonicalReflectiveLayer
 from .meta_reasoning import MetaReasoningEngine
 from .ai_competency_framework import CanonicalAICompetencyFramework
 from .api_learning_connector import APILearningConnector
+from .cognitive_pipeline import CanonicalCognitivePipeline
 from .self_knowledge import SelfKnowledgeCore
 from .memory_core import MemoryCore
 from .knowledge_platform import KnowledgePlatform
@@ -219,6 +220,10 @@ class KontinuumSystem:
         self.agent_config["ai_competency_framework"] = self.ai_competency_framework
         self.api_learning_connector = APILearningConnector()
         self.agent_config["api_learning_connector"] = self.api_learning_connector
+        self.cognitive_pipeline = CanonicalCognitivePipeline(
+            self.path_tools.project_root(), self.storage
+        )
+        self.agent_config["cognitive_pipeline"] = self.cognitive_pipeline
         self.foundation_decision = FoundationDecisionLayer(
             self.storage, self.moral_core, self.continuity_core, self.knowledge_intelligence
         )
@@ -501,6 +506,7 @@ class KontinuumSystem:
             "meta_reasoning": self.meta_reasoning.status(),
             "ai_competency_framework": self.ai_competency_framework.status(),
             "api_learning_connector": self.api_learning_connector.status(),
+            "cognitive_pipeline": self.cognitive_pipeline.status(),
             "memory_core": self.memory_core.status(),
             "canonical_memory_manager": self.canonical_memory_manager.status(),
             "knowledge_platform": self.knowledge_platform.status(),

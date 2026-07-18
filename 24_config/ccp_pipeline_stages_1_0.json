@@ -1,0 +1,202 @@
+{
+  "pipeline": "Canonical Cognitive Pipeline",
+  "version": "1.0",
+  "status": "active_audit_trace_contract",
+  "runtime_effect": "explicit_audit_trace_only",
+  "stages": [
+    {
+      "id": "CCP-01",
+      "name": "Input Capture",
+      "purpose": "Nutzereingabe, Dateikontext und Gespraechskontext erfassen.",
+      "primary_interfaces": [
+        "user_input",
+        "conversation_context",
+        "file_context"
+      ],
+      "responsibilities": [
+        "Eingabe erfassen",
+        "Datei- und Projektkontext erkennen",
+        "Grobe Absicht bestimmen",
+        "Nicht erkannte oder mehrdeutige Eingaben markieren"
+      ],
+      "boundaries": [
+        "Keine Ausfuehrung",
+        "Keine Memory-Aenderung",
+        "Keine Capability-Auswahl"
+      ]
+    },
+    {
+      "id": "CCP-02",
+      "name": "Semantic Analysis",
+      "purpose": "Bedeutung, Begriffe, Ziele, Unsicherheiten und relevante Wissensbereiche analysieren.",
+      "primary_interfaces": [
+        "foundation",
+        "canonical_glossary",
+        "canonical_language_understanding"
+      ],
+      "responsibilities": [
+        "Bedeutung erfassen",
+        "Begriffe und Ziele klaeren",
+        "Mehrdeutigkeiten sichtbar machen",
+        "Semantische Grundlage fuer weitere Verarbeitung liefern"
+      ],
+      "boundaries": [
+        "Keine Governance-Entscheidung",
+        "Keine Ausfuehrungsplanung",
+        "Keine Wissensuebernahme"
+      ]
+    },
+    {
+      "id": "CCP-03",
+      "name": "Context User State Risk Assessment",
+      "purpose": "Kontext, Nutzerstand, Projektrelevanz, Risiko und Governance-Anforderungen bewerten.",
+      "primary_interfaces": [
+        "governance",
+        "foundation",
+        "memory",
+        "risk_policy"
+      ],
+      "responsibilities": [
+        "Kontext und Nutzerstand einschaetzen",
+        "Projektrelevanz erkennen",
+        "Risiko klassifizieren",
+        "Governance- und Review-Pflichten markieren"
+      ],
+      "boundaries": [
+        "Keine Freigabeentscheidung ausserhalb Governance",
+        "Keine Identitaetsaenderung",
+        "Keine automatische Kompetenzbewertung"
+      ]
+    },
+    {
+      "id": "CCP-04",
+      "name": "Goal and Learning Intent Derivation",
+      "purpose": "Unmittelbares Ziel, Lernabsicht, Ergebnisform und moegliche CAICF-Bezuege ableiten.",
+      "primary_interfaces": [
+        "caicf",
+        "learning_layer",
+        "tutor_components"
+      ],
+      "responsibilities": [
+        "Ziel der Anfrage ableiten",
+        "Moegliche Lernabsicht erkennen",
+        "CAICF-Kompetenzbereich zuordnen, falls passend",
+        "Antwort-, Aufgaben- oder Lernimpulsform bestimmen"
+      ],
+      "boundaries": [
+        "CAICF definiert Kompetenzen, CCP verarbeitet Eingaben",
+        "Keine dauerhafte Profilfortschreibung",
+        "Keine automatische Lernbewertung"
+      ]
+    },
+    {
+      "id": "CCP-05",
+      "name": "Capability Resolution",
+      "purpose": "Passende Capability ueber CRE und Capability Registry bestimmen.",
+      "primary_interfaces": [
+        "cre",
+        "capability_registry",
+        "caim"
+      ],
+      "responsibilities": [
+        "Capability-Kandidaten anfragen",
+        "Geeignete Agenten oder Tools read-only identifizieren",
+        "Governance-, Review- und CMM-Hinweise uebernehmen",
+        "Unpassende oder riskante Capabilities markieren"
+      ],
+      "boundaries": [
+        "CRE bleibt read-only",
+        "Keine Agentenausfuehrung",
+        "Keine Registry-Aenderung"
+      ]
+    },
+    {
+      "id": "CCP-06",
+      "name": "Execution Planning",
+      "purpose": "Einen validierten Ausfuehrungsplan erstellen, ohne ihn selbst auszufuehren.",
+      "primary_interfaces": [
+        "execution_planner",
+        "governance",
+        "runtime_schema"
+      ],
+      "responsibilities": [
+        "Schritte ordnen",
+        "Grenzen und Pruefpflichten festlegen",
+        "Risiken im Plan sichtbar halten",
+        "Plan nur bei erfuellten Voraussetzungen weitergeben"
+      ],
+      "boundaries": [
+        "Execution Planner fuehrt nicht aus",
+        "Keine Umgehung von Governance",
+        "Keine direkte Orchestrator-Aktivierung ohne validierten Plan"
+      ]
+    },
+    {
+      "id": "CCP-07",
+      "name": "Response Task Learning Impulse Generation",
+      "purpose": "Antwort, Aufgabe oder Lernimpuls anhand des validierten Pfades erzeugen.",
+      "primary_interfaces": [
+        "orchestrator_core",
+        "learning_agent",
+        "tutor_components"
+      ],
+      "responsibilities": [
+        "Antwort erzeugen",
+        "Freigegebene Aufgabe ausfuehren lassen",
+        "Lernimpuls nutzerverstaendlich formulieren",
+        "Ergebnisgrenzen offenlegen"
+      ],
+      "boundaries": [
+        "Orchestrator Core fuehrt nur validierte Plaene aus",
+        "Keine automatische Memory-Uebernahme",
+        "Keine neue Antwortlogik in CCP 1.0"
+      ]
+    },
+    {
+      "id": "CCP-08",
+      "name": "Review and Validation",
+      "purpose": "Ergebnis, Logik, Quellen, Governance und Unsicherheiten pruefen.",
+      "primary_interfaces": [
+        "meta_reasoning",
+        "review",
+        "audit",
+        "release_integrity"
+      ],
+      "responsibilities": [
+        "Ergebnis validieren",
+        "Meta-Reasoning fuer konkrete Schlussfolgerungen einordnen",
+        "Quellen, Logik und Governance pruefen",
+        "Fehler, Unsicherheiten und Revisionsbedarf markieren"
+      ],
+      "boundaries": [
+        "Meta-Reasoning prueft, entscheidet aber nicht allein",
+        "Release Integrity bleibt Release-Gate, nicht Denkmodul",
+        "Review ist kein Selbstbewusstsein"
+      ]
+    },
+    {
+      "id": "CCP-09",
+      "name": "Reflection and Memory Update",
+      "purpose": "Erkenntnis, Verlauf und Kompetenzentwicklung reflektieren und Handoffs vorbereiten.",
+      "primary_interfaces": [
+        "canonical_reflective_layer",
+        "canonical_memory",
+        "learning_agent",
+        "project_chronicle",
+        "caicf"
+      ],
+      "responsibilities": [
+        "Relevante Erkenntnisse reflektieren",
+        "Langfristige Entwicklungsmuster ueber CRL einordnen",
+        "Kompetenzentwicklung als Review-Hinweis vorbereiten",
+        "Memory- oder Chronik-Handoff nur nach Governance vormerken"
+      ],
+      "boundaries": [
+        "Reflection bedeutet kontrollierte Selbstanalyse, nicht Bewusstsein",
+        "Keine automatische Identitaetsaenderung",
+        "Keine direkte Memory-Schreibung",
+        "Keine ungepruefte Kompetenzprofil-Aktualisierung"
+      ]
+    }
+  ]
+}
