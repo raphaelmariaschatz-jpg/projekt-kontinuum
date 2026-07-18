@@ -2,10 +2,10 @@
 
 > (c) 2026 Raphael Maria Schatz - Projekt Kontinuum. Alle Rechte vorbehalten.
 
-Status: Konzept geprueft, Architekturbaustein empfohlen  
-Gueltig ab: 2026-07-16  
-Komponententyp: Canonical Language Architecture / Sprachverarbeitungsrahmen  
-Runtime-Wirkung: keine
+Status: aktiv mit Begrenzungen
+Gueltig ab: 2026-07-16
+Komponententyp: Canonical Language Architecture / Sprachverarbeitungsrahmen
+Runtime-Wirkung: explizite Token-Vertragsvalidierung
 
 ## 1. Zweck
 
@@ -25,7 +25,9 @@ CCP verarbeitet Bedeutung im kognitiven Ablauf.
 
 CLPF bindet Projekt Kontinuum nicht an ein bestimmtes Sprachmodell. Transformer
 sind in Version 1.0 die wichtigste konzeptionelle Referenzarchitektur, aber
-nicht die Definition des Frameworks.
+nicht die Definition des Frameworks. Die aktive Komponente validiert nur
+bereits vom Aufrufer erzeugte Tokenobjekte gegen den kanonischen Vertrag. Sie
+tokenisiert keine Eingabe und ruft kein Modell auf.
 
 ## 2. Bestandsanalyse
 
@@ -240,7 +242,7 @@ Risiken:
 
 - Vermischung von CLPF mit CCP-Cognitive oder CLU.
 - Transformer werden faelschlich als Denkarchitektur interpretiert.
-- Tokenizer-spezifische Details sickern in kanonische Verträge ein.
+- Tokenizer-spezifische Details sickern in kanonische Vertraege ein.
 - Rohdaten, Sprachdaten oder Dokumentinhalte werden ungeprueft gespeichert.
 - Modellbias und Spracherkennungsfehler bleiben unsichtbar.
 - Mehrsprachigkeit wird zu frueh technisch verengt.
@@ -260,8 +262,8 @@ Offene Fragen:
 
 ## 10. Entscheidung
 
-Empfehlung: `GO` fuer Konzept und kanonische Vorbereitung; `SPAETER` fuer
-technische Implementierung.
+Empfehlung: `GO` fuer die begrenzte Token-Vertragsaktivierung; `SPAETER` fuer
+Tokenizer-, Modell- oder semantische Runtime-Integration.
 
 Begruendung:
 
@@ -278,9 +280,24 @@ Begruendung:
 - keine LLM-Integration
 - keine Runtime-Migration
 - keine GPU-Optimierung
-- keine produktiven Komponenten
+- keine produktive Sprach- oder Antwortpipeline
 - keine Modellgewichte
 - kein Fine-Tuning
 - keine Aenderungen an CRE, Execution Planner oder Orchestrator Core
 - keine automatische Memory-Schreibung
 
+## 12. Aktiver Umfang
+
+`CanonicalLanguageProcessingFramework` laedt und validiert das Framework,
+Token-Schema und Pipeline-Modell. Ein expliziter Aufruf kann aus bereits
+tokenisierten, caller-supplied Daten eine deterministische kanonische
+Tokenfolge fuer die Stufen CLPF-01 bis CLPF-03 bauen.
+
+Die Komponente:
+
+- wird im zentralen Systemstatus registriert,
+- validiert Token-IDs, Dokument- und Sprachbindung, Positionen und Spans,
+- tokenisiert oder normalisiert keinen Rohtext,
+- erzeugt keine semantische Repraesentation,
+- integriert kein Modell und verwaltet keine Gewichte,
+- schreibt weder Events noch Memory.

@@ -2,9 +2,9 @@
   "schema": "CLPF Canonical Token Schema",
   "framework": "Canonical Language Processing Framework",
   "version": "1.0",
-  "status": "conceptual",
+  "status": "implemented_with_limitations",
   "date": "2026-07-16",
-  "runtime_effect": "none",
+  "runtime_effect": "explicit_token_contract_validation_only",
   "token_object": {
     "token_id": {
       "type": "string",
@@ -80,4 +80,3 @@
     "The schema does not define runtime execution."
   ]
 }
-

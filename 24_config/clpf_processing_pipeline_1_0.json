@@ -2,9 +2,9 @@
   "pipeline": "CLPF Processing Pipeline",
   "framework": "Canonical Language Processing Framework",
   "version": "1.0",
-  "status": "conceptual",
+  "status": "implemented_with_limitations",
   "date": "2026-07-16",
-  "runtime_effect": "none",
+  "runtime_effect": "explicit_token_contract_validation_only",
   "stages": [
     {
       "id": "CLPF-01",
@@ -97,4 +97,3 @@
     "automatic_memory_write"
   ]
 }
-

@@ -37,6 +37,7 @@ from .project_vision import CanonicalProjectVisionFramework
 from .media_learning import CanonicalMediaLearningFramework
 from .enterprise_framework import CanonicalEnterpriseFramework
 from .human_interface import CanonicalHumanInterfaceFramework
+from .language_processing import CanonicalLanguageProcessingFramework
 from .self_knowledge import SelfKnowledgeCore
 from .memory_core import MemoryCore
 from .knowledge_platform import KnowledgePlatform
@@ -249,6 +250,10 @@ class KontinuumSystem:
             self.path_tools.project_root()
         )
         self.agent_config["human_interface_framework"] = self.human_interface_framework
+        self.language_processing_framework = CanonicalLanguageProcessingFramework(
+            self.path_tools.project_root()
+        )
+        self.agent_config["language_processing_framework"] = self.language_processing_framework
         self.foundation_decision = FoundationDecisionLayer(
             self.storage, self.moral_core, self.continuity_core, self.knowledge_intelligence
         )
@@ -537,6 +542,7 @@ class KontinuumSystem:
             "media_learning_framework": self.media_learning_framework.status(),
             "enterprise_framework": self.enterprise_framework.status(),
             "human_interface_framework": self.human_interface_framework.status(),
+            "language_processing_framework": self.language_processing_framework.status(),
             "memory_core": self.memory_core.status(),
             "canonical_memory_manager": self.canonical_memory_manager.status(),
             "knowledge_platform": self.knowledge_platform.status(),

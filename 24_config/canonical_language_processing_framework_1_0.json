@@ -2,16 +2,16 @@
   "framework": "Canonical Language Processing Framework",
   "abbreviation": "CLPF",
   "version": "1.0",
-  "status": "conceptual",
+  "status": "implemented_with_limitations",
   "date": "2026-07-16",
   "purpose": "Canonical, model-independent framework for language processing in Projekt Kontinuum.",
   "principle": "CLPF processes language into semantic representations; CCP-Cognitive processes meaning in the cognitive workflow.",
-  "runtime_effect": "none",
+  "runtime_effect": "explicit_token_contract_validation_only",
   "governance_result": {
     "concept_preparation": "GO",
-    "implementation": "SPAETER",
+    "implementation": "active_with_limitations",
     "productive_integration": "not_approved",
-    "runtime_changes": "not_allowed"
+    "runtime_changes": "read_only_framework_registration_only"
   },
   "architecture_position": [
     "User Input",
@@ -133,4 +133,3 @@
   ],
   "recommendation": "GO for conceptual canonical preparation; SPAETER for technical implementation."
 }
-

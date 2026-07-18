@@ -2,9 +2,9 @@
 
 > (c) 2026 Raphael Maria Schatz - Projekt Kontinuum. Alle Rechte vorbehalten.
 
-Status: kanonischer Implementierungsplan, technische Umsetzung spaeter  
-Gueltig ab: 2026-07-16  
-Runtime-Wirkung: keine
+Status: Phase 1 bis 3 begrenzt umgesetzt
+Gueltig ab: 2026-07-16
+Runtime-Wirkung: explizite Token-Vertragsvalidierung
 
 ## 1. Zweck
 
@@ -36,7 +36,8 @@ Ziele:
 - Glossarbegriffe fuer Token, Embedding, Transformer und Semantic
   Representation stabilisieren.
 
-Status: spaeter, nach GO-Bestaetigung.
+Status: begrenzt umgesetzt durch Systemregistrierung und dokumentierte
+Schnittstellengrenzen. Chronik- und Shared-Glossary-Aenderungen bleiben offen.
 
 ### Phase 3 - Schemahaertung
 
@@ -47,7 +48,9 @@ Ziele:
   definieren.
 - Datenschutz- und Provenienzfelder verbindlich machen.
 
-Status: spaeter.
+Status: begrenzt umgesetzt. Tokenobjekte, Version, Position, Span, Sprache und
+Dokumentbindung werden explizit validiert. Verbindliche Datenschutzprofile und
+Semantic-Representation-Felder bleiben offen.
 
 ### Phase 4 - CLU-Anbindung
 
@@ -69,7 +72,8 @@ Ziele:
   austauschbare Referenzklassen einordnen.
 - Keine Modellgewichte, kein Training und kein Fine-Tuning einfuehren.
 
-Status: nicht freigegeben.
+Status: begrenzte read-only Registrierung freigegeben. Tokenizer-, Modell- und
+semantische Runtime-Integration bleiben nicht freigegeben.
 
 ### Phase 6 - Runtime-nahe Umsetzung
 
@@ -93,6 +97,8 @@ Empfohlene Artefakte:
 - `24_config/clpf_token_schema_1_0.json`
 - `24_config/clpf_processing_pipeline_1_0.json`
 - `31_reports/clpf_1_0_status_report.md`
+- `01_system/kontinuum/core/language_processing.py`
+- `17_tests/test_language_processing_framework_1_0.py`
 
 ## 4. Akzeptanzkriterien
 
@@ -109,6 +115,5 @@ CLPF 1.0 gilt konzeptionell als vorbereitet, wenn:
 
 ## 5. Empfehlung
 
-Empfehlung: `GO` fuer Konzept und Dokumentationsartefakte; `SPAETER` fuer
-technische Implementierung.
-
+Empfehlung: `GO` fuer die aktive Token-Vertragsvalidierung; `SPAETER` fuer
+Tokenizer-, Modell- oder semantische Runtime-Integration.
