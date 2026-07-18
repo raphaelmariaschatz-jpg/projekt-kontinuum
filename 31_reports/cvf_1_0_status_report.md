@@ -2,8 +2,8 @@
 
 Stand: 2026-07-15
 Auftrag: Canonical Vision Framework (CVF) 1.0
-Status: Konzept geprueft, unter eindeutigem Namen vorbereitet
-Runtime-Wirkung: keine
+Status: Konzept geprueft; CPVF Alignment-Review aktiviert
+Runtime-Wirkung: read-only Katalog und expliziter Alignment-Review
 
 ## 1. Namensentscheidung
 
@@ -64,3 +64,16 @@ Operationalisierung.
 - Implementierungsplan fuer spaetere Phase erstellt.
 - Keine Runtime-, Agenten-, API-, Datenbank-, Import-, Test- oder
   Migrationsaenderung vorgenommen.
+
+## 8. Technische Aktivierung vom 2026-07-18
+
+CPVF ist als expliziter, nicht entscheidender Alignment-Rahmen aktiviert.
+
+- Neun Prinzipien und vier Zielbereiche werden deklarativ validiert.
+- Checks muessen vom Aufrufer explizit bereitgestellt werden.
+- Luecken und ungepruefte Prinzipien werden getrennt ausgewiesen.
+- Der reine Assess-Pfad schreibt nichts.
+- Der Record-Pfad schreibt genau ein minimales Audit-Ereignis.
+- Es gibt keine automatische Roadmap-, Foundation-, Governance- oder
+  Runtime-Aenderung.
+- `CVF` bleibt unveraendert fuer visuelle Wahrnehmung reserviert.

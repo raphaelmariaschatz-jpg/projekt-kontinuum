@@ -2,8 +2,8 @@
 
 > (c) 2026 Raphael Maria Schatz - Projekt Kontinuum. Alle Rechte vorbehalten.
 
-Status: kanonischer Implementierungsplan fuer spaetere Phase
-Runtime-Wirkung: keine
+Status: Vision-/Mission- und Framework-Alignment kontrolliert aktiviert
+Runtime-Wirkung: expliziter Alignment-Review ohne operative Entscheidung
 
 ## 1. Zweck
 
@@ -62,3 +62,16 @@ Foundation- oder Governance-Regeln ersetzen.
 Eine spaetere Operationalisierung ist erst freigabefaehig, wenn Mission
 Alignment, Governance-Grenzen, Glossar-Begriffe und CMIBF-Bezug eindeutig
 validiert sind.
+
+## 6. Umsetzungsstand 2026-07-18
+
+Die sicheren Teile der Phasen 1 und 2 sind umgesetzt:
+
+- Prinzipien und Zielbereiche werden deklarativ validiert;
+- Alignment-Checks stammen explizit vom Aufrufer;
+- Luecken und ungepruefte Prinzipien bleiben sichtbar;
+- der reine Review-Pfad schreibt nichts;
+- der Record-Pfad schreibt nur ein minimales Audit-Ereignis.
+
+Roadmap Alignment und governance-zertifizierte Operationalisierung bleiben
+fuer separate Freigaben offen. Es gibt keine automatische Aenderung.

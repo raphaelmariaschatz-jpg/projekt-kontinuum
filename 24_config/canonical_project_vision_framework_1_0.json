@@ -2,7 +2,7 @@
   "framework": "Canonical Project Vision Framework",
   "abbreviation": "CPVF",
   "version": "1.0",
-  "status": "conceptual",
+  "status": "implemented_and_active_explicit_alignment_review",
   "date": "2026-07-15",
   "source_order": "Codex-Auftrag 07 originally used CVF; exact CVF naming is not used because CMIBF already reserves CVF for visual perception.",
   "purpose": "Long-term vision, mission and orientation framework for Projekt Kontinuum.",
@@ -11,8 +11,8 @@
   "governance_result": {
     "concept_preparation": "GO",
     "exact_cvf_naming": "NO_GO",
-    "implementation": "SPAETER",
-    "runtime_effect": "none"
+    "implementation": "GO_CONTROLLED",
+    "runtime_effect": "read_only_catalog_and_explicit_alignment_review"
   },
   "naming_boundary": {
     "cvf_reserved_meaning": "Canonical Vision Framework for visual perception, interpretation and image processing according to CMIBF Framework Registry.",
@@ -206,6 +206,17 @@
     "future framework orientation audits",
     "future roadmap alignment metrics"
   ],
+  "runtime_contract": {
+    "module": "kontinuum.core.project_vision.CanonicalProjectVisionFramework",
+    "system_attribute": "project_vision_framework",
+    "agent_config_key": "project_vision_framework",
+    "principles_matrix": "24_config/cpvf_principles_1_0.json",
+    "event_kind": "cpvf.alignment_review",
+    "caller_supplied_checks_only": true,
+    "decision_authority": false,
+    "automatic_change": false,
+    "memory_write": false
+  },
   "non_goals": [
     "runtime changes",
     "productive component changes",

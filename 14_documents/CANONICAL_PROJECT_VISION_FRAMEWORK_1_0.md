@@ -2,10 +2,10 @@
 
 > (c) 2026 Raphael Maria Schatz - Projekt Kontinuum. Alle Rechte vorbehalten.
 
-Status: Konzept geprueft, Architekturbaustein empfohlen
+Status: Konzept geprueft, expliziter Alignment-Review aktiviert
 Gueltig ab: 2026-07-15
 Komponententyp: Vision, Mission and Orientation Framework
-Runtime-Wirkung: keine
+Runtime-Wirkung: read-only Katalog und expliziter Alignment-Review
 
 ## 1. Namens- und Governance-Hinweis
 
@@ -226,3 +226,22 @@ Begruendung:
 - keine neue Agentenimplementierung
 - keine Umdeutung des bestehenden CVF-Media-Frameworks
 - keine Ersetzung von Foundation, Governance oder CIF
+
+## 14. Kontrollierte technische Aktivierung
+
+Die serielle Implementierungsfreigabe vom 2026-07-18 aktiviert CPVF als
+read-only Orientierungs- und Alignment-Rahmen.
+
+Aktiviert sind:
+
+- deklaratives Laden und Validieren von neun Prinzipien und vier Zielbereichen;
+- read-only Katalogzugriff;
+- explizite Alignment-Pruefung auf Basis vom Aufrufer gelieferter Checks;
+- sichtbare Luecken und ungepruefte Prinzipien;
+- stabile Review-IDs;
+- reiner Assess-Pfad und optional ein minimales Audit-Ereignis;
+- Registrierung und Statusausgabe in `KontinuumSystem`.
+
+CPVF vergibt keine Freigabe, trifft keine Runtime-Entscheidung und aendert
+weder Roadmap noch Foundation, Governance, CIF, CCP, CAICF oder Memory.
+`CVF` bleibt fuer visuelle Wahrnehmung reserviert.

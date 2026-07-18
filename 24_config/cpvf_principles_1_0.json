@@ -2,8 +2,8 @@
   "framework": "Canonical Project Vision Framework",
   "abbreviation": "CPVF",
   "version": "1.0",
-  "status": "conceptual_principles_matrix",
-  "runtime_effect": "none",
+  "status": "active_read_only_alignment_contract",
+  "runtime_effect": "explicit_alignment_review_only",
   "principles": [
     {
       "id": "CPVF-P01",
