@@ -1,0 +1,169 @@
+{
+  "framework": "Canonical Intelligence Framework",
+  "version": "1.0",
+  "status": "active_audit_mapping_contract",
+  "runtime_effect": "explicit_audit_mapping_only",
+  "dimensions": [
+    {
+      "id": "CIF-01",
+      "name": "Perception",
+      "german_name": "Wahrnehmen",
+      "definition": "Eingaben, Kontext, relevante Informationen und Unsicherheiten erkennen.",
+      "responsibilities": [
+        "Eingaben erfassen",
+        "Kontext erkennen",
+        "relevante Informationen auswaehlen",
+        "Unsicherheiten markieren"
+      ],
+      "related_ccp_stages": [
+        "CCP-01",
+        "CCP-02",
+        "CCP-03"
+      ],
+      "boundaries": [
+        "Keine Ausfuehrung",
+        "Keine Memory-Schreibung",
+        "Keine autonome Entscheidung"
+      ]
+    },
+    {
+      "id": "CIF-02",
+      "name": "Understanding",
+      "german_name": "Verstehen",
+      "definition": "Bedeutungen, Beziehungen, Ursache-Wirkungs-Zusammenhaenge und Wissensstrukturen ableiten.",
+      "responsibilities": [
+        "Bedeutungen ableiten",
+        "Beziehungen erkennen",
+        "Ursache-Wirkungs-Zusammenhaenge einordnen",
+        "Wissensstrukturen vorbereiten"
+      ],
+      "related_ccp_stages": [
+        "CCP-02",
+        "CCP-03"
+      ],
+      "boundaries": [
+        "Keine ungepruefte Wissensuebernahme",
+        "Keine Ersetzung von CKS oder Memory"
+      ]
+    },
+    {
+      "id": "CIF-03",
+      "name": "Reasoning",
+      "german_name": "Schlussfolgern",
+      "definition": "Logisch argumentieren, Hypothesen bilden, Alternativen vergleichen und Entscheidungen begruenden.",
+      "responsibilities": [
+        "Argumente strukturieren",
+        "Hypothesen bilden",
+        "Alternativen vergleichen",
+        "Entscheidungen begruenden"
+      ],
+      "related_ccp_stages": [
+        "CCP-04",
+        "CCP-08"
+      ],
+      "boundaries": [
+        "Keine Governance-Umgehung",
+        "Meta-Reasoning prueft konkrete Schlussfolgerungen"
+      ]
+    },
+    {
+      "id": "CIF-04",
+      "name": "Planning",
+      "german_name": "Planen",
+      "definition": "Ziele strukturieren, Prioritaeten setzen, Strategien entwickeln und Ausfuehrungsplaene vorbereiten.",
+      "responsibilities": [
+        "Ziele strukturieren",
+        "Prioritaeten setzen",
+        "Strategien entwickeln",
+        "Ausfuehrungsplanung vorbereiten"
+      ],
+      "related_ccp_stages": [
+        "CCP-05",
+        "CCP-06"
+      ],
+      "boundaries": [
+        "Execution Planner bleibt die Planungsschicht",
+        "CIF erzeugt keinen Runtime-Plan"
+      ]
+    },
+    {
+      "id": "CIF-05",
+      "name": "Execution",
+      "german_name": "Handeln",
+      "definition": "Aufgaben kontrolliert ausfuehren, Werkzeuge nutzen, Ergebnisse erzeugen und Prozesse steuern.",
+      "responsibilities": [
+        "Aufgaben ausfuehren lassen",
+        "Werkzeugnutzung einordnen",
+        "Ergebnisse erzeugen",
+        "Prozesse kontrolliert steuern"
+      ],
+      "related_ccp_stages": [
+        "CCP-07"
+      ],
+      "boundaries": [
+        "Orchestrator Core fuehrt aus",
+        "CIF ist kein Executor",
+        "Keine neue Agentenimplementierung"
+      ]
+    },
+    {
+      "id": "CIF-06",
+      "name": "Learning",
+      "german_name": "Lernen",
+      "definition": "Erfahrungen, Wissen, Faehigkeiten und Kompetenzentwicklung kontrolliert konsolidieren.",
+      "responsibilities": [
+        "Erfahrungen auswerten",
+        "Wissen konsolidieren",
+        "Faehigkeiten weiterentwickeln",
+        "Kompetenzentwicklung unterstuetzen"
+      ],
+      "related_ccp_stages": [
+        "CCP-04",
+        "CCP-09"
+      ],
+      "boundaries": [
+        "Learning Agent und CLG bleiben reviewpflichtig",
+        "Keine automatische Memory-Uebernahme"
+      ]
+    },
+    {
+      "id": "CIF-07",
+      "name": "Reflection",
+      "german_name": "Reflektieren",
+      "definition": "Ergebnisse pruefen, Fehler erkennen, Verbesserungen ableiten und Meta-Reasoning unterstuetzen.",
+      "responsibilities": [
+        "Ergebnisse pruefen",
+        "Fehler erkennen",
+        "Verbesserungen ableiten",
+        "Meta-Reasoning und CRL einordnen"
+      ],
+      "related_ccp_stages": [
+        "CCP-08",
+        "CCP-09"
+      ],
+      "boundaries": [
+        "Reflection bedeutet kontrollierte Analyse, nicht Bewusstsein",
+        "CRL bleibt fuer langfristige Entwicklungsmuster zustaendig"
+      ]
+    },
+    {
+      "id": "CIF-08",
+      "name": "Evolution",
+      "german_name": "Weiterentwickeln",
+      "definition": "Architektur bewerten, Verbesserungsvorschlaege erzeugen, neue Faehigkeiten vorbereiten und langfristige Entwicklung unterstuetzen.",
+      "responsibilities": [
+        "Architektur bewerten",
+        "Verbesserungsvorschlaege vorbereiten",
+        "neue Faehigkeiten konzeptionell einordnen",
+        "langfristige Entwicklung unter Governance unterstuetzen"
+      ],
+      "related_ccp_stages": [
+        "CCP-09"
+      ],
+      "boundaries": [
+        "Keine automatische Selbstmodifikation",
+        "Keine Architekturentscheidung ohne CMIBF-/Governance-Prozess"
+      ]
+    }
+  ]
+}

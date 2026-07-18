@@ -1,0 +1,314 @@
+{
+  "framework": "Canonical Intelligence Framework",
+  "abbreviation": "CIF",
+  "version": "1.0",
+  "status": "implemented_and_active_audit_mapping_only",
+  "date": "2026-07-15",
+  "purpose": "Canonical definition of intelligence in Projekt Kontinuum.",
+  "principle": "Intelligence means understanding information, recognizing relations, applying knowledge, reasoning, learning, reflecting and evolving under governance.",
+  "governance_result": {
+    "concept_preparation": "GO",
+    "implementation": "GO_AUDIT_ONLY",
+    "runtime_effect": "explicit_audit_mapping_only",
+    "productive_integration": "not_approved"
+  },
+  "architecture_position": [
+    "Foundation Layer",
+    "Governance Layer",
+    "Canonical Layer",
+    "Canonical Intelligence Framework",
+    "Canonical Cognitive Pipeline",
+    "Capability Resolution Engine",
+    "Execution Planner",
+    "Orchestrator Core",
+    "Canonical Learning Layer",
+    "CAICF",
+    "User"
+  ],
+  "relationships": {
+    "ccp": "CCP describes the canonical cognitive process.",
+    "caicf": "CAICF describes human AI competency development.",
+    "cif": "CIF defines the intelligence dimensions that future cognitive, learning and adaptive components must respect."
+  },
+  "dimensions": [
+    {
+      "id": "CIF-01",
+      "name": "Perception",
+      "german_name": "Wahrnehmen",
+      "definition": "Eingaben, Kontext, relevante Informationen und Unsicherheiten erkennen.",
+      "responsibilities": [
+        "Eingaben erfassen",
+        "Kontext erkennen",
+        "relevante Informationen auswaehlen",
+        "Unsicherheiten markieren"
+      ],
+      "related_ccp_stages": [
+        "CCP-01",
+        "CCP-02",
+        "CCP-03"
+      ],
+      "boundaries": [
+        "Keine Ausfuehrung",
+        "Keine Memory-Schreibung",
+        "Keine autonome Entscheidung"
+      ]
+    },
+    {
+      "id": "CIF-02",
+      "name": "Understanding",
+      "german_name": "Verstehen",
+      "definition": "Bedeutungen, Beziehungen, Ursache-Wirkungs-Zusammenhaenge und Wissensstrukturen ableiten.",
+      "responsibilities": [
+        "Bedeutungen ableiten",
+        "Beziehungen erkennen",
+        "Ursache-Wirkungs-Zusammenhaenge einordnen",
+        "Wissensstrukturen vorbereiten"
+      ],
+      "related_ccp_stages": [
+        "CCP-02",
+        "CCP-03"
+      ],
+      "boundaries": [
+        "Keine ungepruefte Wissensuebernahme",
+        "Keine Ersetzung von CKS oder Memory"
+      ]
+    },
+    {
+      "id": "CIF-03",
+      "name": "Reasoning",
+      "german_name": "Schlussfolgern",
+      "definition": "Logisch argumentieren, Hypothesen bilden, Alternativen vergleichen und Entscheidungen begruenden.",
+      "responsibilities": [
+        "Argumente strukturieren",
+        "Hypothesen bilden",
+        "Alternativen vergleichen",
+        "Entscheidungen begruenden"
+      ],
+      "related_ccp_stages": [
+        "CCP-04",
+        "CCP-08"
+      ],
+      "boundaries": [
+        "Keine Governance-Umgehung",
+        "Meta-Reasoning prueft konkrete Schlussfolgerungen"
+      ]
+    },
+    {
+      "id": "CIF-04",
+      "name": "Planning",
+      "german_name": "Planen",
+      "definition": "Ziele strukturieren, Prioritaeten setzen, Strategien entwickeln und Ausfuehrungsplaene vorbereiten.",
+      "responsibilities": [
+        "Ziele strukturieren",
+        "Prioritaeten setzen",
+        "Strategien entwickeln",
+        "Ausfuehrungsplanung vorbereiten"
+      ],
+      "related_ccp_stages": [
+        "CCP-05",
+        "CCP-06"
+      ],
+      "boundaries": [
+        "Execution Planner bleibt die Planungsschicht",
+        "CIF erzeugt keinen Runtime-Plan"
+      ]
+    },
+    {
+      "id": "CIF-05",
+      "name": "Execution",
+      "german_name": "Handeln",
+      "definition": "Aufgaben kontrolliert ausfuehren, Werkzeuge nutzen, Ergebnisse erzeugen und Prozesse steuern.",
+      "responsibilities": [
+        "Aufgaben ausfuehren lassen",
+        "Werkzeugnutzung einordnen",
+        "Ergebnisse erzeugen",
+        "Prozesse kontrolliert steuern"
+      ],
+      "related_ccp_stages": [
+        "CCP-07"
+      ],
+      "boundaries": [
+        "Orchestrator Core fuehrt aus",
+        "CIF ist kein Executor",
+        "Keine neue Agentenimplementierung"
+      ]
+    },
+    {
+      "id": "CIF-06",
+      "name": "Learning",
+      "german_name": "Lernen",
+      "definition": "Erfahrungen, Wissen, Faehigkeiten und Kompetenzentwicklung kontrolliert konsolidieren.",
+      "responsibilities": [
+        "Erfahrungen auswerten",
+        "Wissen konsolidieren",
+        "Faehigkeiten weiterentwickeln",
+        "Kompetenzentwicklung unterstuetzen"
+      ],
+      "related_ccp_stages": [
+        "CCP-04",
+        "CCP-09"
+      ],
+      "boundaries": [
+        "Learning Agent und CLG bleiben reviewpflichtig",
+        "Keine automatische Memory-Uebernahme"
+      ]
+    },
+    {
+      "id": "CIF-07",
+      "name": "Reflection",
+      "german_name": "Reflektieren",
+      "definition": "Ergebnisse pruefen, Fehler erkennen, Verbesserungen ableiten und Meta-Reasoning unterstuetzen.",
+      "responsibilities": [
+        "Ergebnisse pruefen",
+        "Fehler erkennen",
+        "Verbesserungen ableiten",
+        "Meta-Reasoning und CRL einordnen"
+      ],
+      "related_ccp_stages": [
+        "CCP-08",
+        "CCP-09"
+      ],
+      "boundaries": [
+        "Reflection bedeutet kontrollierte Analyse, nicht Bewusstsein",
+        "CRL bleibt fuer langfristige Entwicklungsmuster zustaendig"
+      ]
+    },
+    {
+      "id": "CIF-08",
+      "name": "Evolution",
+      "german_name": "Weiterentwickeln",
+      "definition": "Architektur bewerten, Verbesserungsvorschlaege erzeugen, neue Faehigkeiten vorbereiten und langfristige Entwicklung unterstuetzen.",
+      "responsibilities": [
+        "Architektur bewerten",
+        "Verbesserungsvorschlaege vorbereiten",
+        "neue Faehigkeiten konzeptionell einordnen",
+        "langfristige Entwicklung unter Governance unterstuetzen"
+      ],
+      "related_ccp_stages": [
+        "CCP-09"
+      ],
+      "boundaries": [
+        "Keine automatische Selbstmodifikation",
+        "Keine Architekturentscheidung ohne CMIBF-/Governance-Prozess"
+      ]
+    }
+  ],
+  "interfaces": [
+    {
+      "component": "Foundation Layer",
+      "purpose": "Grenzen, Identitaet, Prinzipien und geschuetzte Grundregeln.",
+      "boundary": "CIF darf Foundation nicht veraendern."
+    },
+    {
+      "component": "Governance Layer",
+      "purpose": "Freigabe, Risiko, Review und Compliance.",
+      "boundary": "CIF definiert Intelligenzdimensionen, entscheidet aber nicht autonom."
+    },
+    {
+      "component": "Canonical Architecture",
+      "purpose": "CMIBF-, AFP-, CDF- und CDG-Einordnung.",
+      "boundary": "CMIBF bleibt normative Quelle."
+    },
+    {
+      "component": "CCP-Cognitive",
+      "purpose": "Kanonischer Denk- und Verarbeitungsprozess.",
+      "boundary": "CIF definiert Dimensionen; CCP ordnet den Ablauf."
+    },
+    {
+      "component": "CAICF",
+      "purpose": "Kompetenzzielraum fuer Menschen.",
+      "boundary": "CIF definiert Intelligenz von K, CAICF Kompetenzentwicklung beim Nutzer."
+    },
+    {
+      "component": "CRE",
+      "purpose": "Capability-Aufloesung.",
+      "boundary": "CIF ersetzt CRE nicht."
+    },
+    {
+      "component": "Execution Planner",
+      "purpose": "Validierte Ausfuehrungsplanung.",
+      "boundary": "CIF erzeugt keine Runtime-Plaene."
+    },
+    {
+      "component": "Orchestrator Core",
+      "purpose": "Kontrollierte Ausfuehrung.",
+      "boundary": "CIF fuehrt nicht aus."
+    },
+    {
+      "component": "Learning Agent",
+      "purpose": "Proposal- und Lernhandoff.",
+      "boundary": "Keine automatische Wissensuebernahme."
+    },
+    {
+      "component": "Canonical Memory",
+      "purpose": "Provenienzgesicherte Speicherung.",
+      "boundary": "CIF schreibt nicht direkt in Memory."
+    },
+    {
+      "component": "CAM / ALP",
+      "purpose": "Artefakt- und Lifecycle-Governance.",
+      "boundary": "CIF veraendert keine Artefaktklassifikation."
+    },
+    {
+      "component": "CDF / CDG",
+      "purpose": "Entwicklungs- und Governance-Regeln.",
+      "boundary": "CIF-Umsetzung bleibt phase- und freigabepflichtig."
+    },
+    {
+      "component": "Meta-Reasoning",
+      "purpose": "Pruefung konkreter Schlussfolgerungen.",
+      "boundary": "Meta-Reasoning ist eine CIF-nahe Funktion, nicht CIF selbst."
+    },
+    {
+      "component": "CRL",
+      "purpose": "Langfristige evidenzgebundene Reflection.",
+      "boundary": "CRL reflektiert Entwicklungsmuster, CIF definiert die Intelligenzdimension Reflection."
+    },
+    {
+      "component": "Release Integrity",
+      "purpose": "Freigabepruefung spaeterer Umsetzung.",
+      "boundary": "CIF 1.0 erzeugt keine Release-Aenderung."
+    },
+    {
+      "component": "Projektchronik",
+      "purpose": "Entwicklungshistorie.",
+      "boundary": "Chronik-Handoffs nur nach Governance."
+    },
+    {
+      "component": "Canonical Glossary",
+      "purpose": "Begriffskanon.",
+      "boundary": "CIF-Begriffe muessen eindeutig gegen CCP und CAICF abgegrenzt bleiben."
+    }
+  ],
+  "extension_points": [
+    "future Canonical Cognitive Manager",
+    "future intelligence metrics",
+    "future adaptive tutor systems",
+    "future capability maturity evaluation",
+    "future governance-certified self-evolution"
+  ],
+  "runtime_contract": {
+    "module": "kontinuum.core.intelligence_framework.CanonicalIntelligenceFramework",
+    "system_attribute": "intelligence_framework",
+    "agent_config_key": "intelligence_framework",
+    "dimension_matrix": "24_config/cif_intelligence_dimensions_1_0.json",
+    "event_kind": "cif.dimension_mapping",
+    "metrics": false,
+    "scoring": false,
+    "decision_authority": false,
+    "execution": false,
+    "self_modification": false,
+    "memory_write": false
+  },
+  "non_goals": [
+    "runtime changes",
+    "changes to CRE",
+    "changes to Execution Planner",
+    "changes to Orchestrator Core",
+    "new agent implementation",
+    "database migration",
+    "productive refactoring",
+    "automatic self-modification",
+    "consciousness claim"
+  ]
+}
