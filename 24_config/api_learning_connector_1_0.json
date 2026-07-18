@@ -1,0 +1,44 @@
+{
+  "component": "API Learning Connector",
+  "version": "1.0",
+  "status": "implemented_and_active_local_analysis_only",
+  "mode": "local_supplied_source_analysis_only",
+  "runtime_contract": {
+    "module": "kontinuum.core.api_learning_connector.APILearningConnector",
+    "system_attribute": "api_learning_connector",
+    "agent_config_key": "api_learning_connector",
+    "max_source_bytes": 1048576
+  },
+  "admission": {
+    "public_access_must_be_explicit": true,
+    "credential_bearing_source_references_forbidden": true,
+    "network_fetch": false,
+    "login_sources": false,
+    "private_sources": false
+  },
+  "analysis": {
+    "supported_local_formats": [
+      "openapi_json",
+      "postman_json",
+      "wsdl_xml",
+      "rfc_text",
+      "markdown",
+      "generic_json_xml_text"
+    ],
+    "dtd_and_entities_forbidden": true,
+    "secret_like_fields_redacted": true,
+    "request_execution": false,
+    "example_code_execution": false
+  },
+  "handoff_boundaries": {
+    "raw_content_persistence": false,
+    "knowledge_write": false,
+    "memory_write": false,
+    "capability_registry_write": false,
+    "cre_handoff": false,
+    "planner_handoff": false,
+    "orchestrator_handoff": false,
+    "capability_candidates_executable": false,
+    "governance_review_required": true
+  }
+}
