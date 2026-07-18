@@ -1,15 +1,31 @@
 {
   "framework": "Canonical Workflow Framework",
   "version": "1.0",
-  "error_classes": ["VALIDATION_ERROR", "CAPABILITY_UNRESOLVED", "AUTHORIZATION_ERROR", "APPROVAL_REJECTED", "TIMEOUT", "EXECUTION_ERROR", "ROLLBACK_REQUIRED", "COMPENSATION_REQUIRED", "IRREVERSIBLE_FAILURE"],
+  "error_classes": [
+    "VALIDATION_ERROR",
+    "CAPABILITY_UNRESOLVED",
+    "AUTHENTICATION_ERROR",
+    "AUTHORIZATION_ERROR",
+    "APPROVAL_REJECTED",
+    "TIMEOUT",
+    "EXECUTION_ERROR",
+    "ROLLBACK_REQUIRED",
+    "COMPENSATION_REQUIRED",
+    "IRREVERSIBLE_FAILURE"
+  ],
+  "strategies": ["STOP", "RETRY", "SKIP", "FALLBACK", "ROLLBACK", "COMPENSATE", "ESCALATE", "ABORT"],
   "timeout_actions": ["FAIL", "PAUSE", "RETRY", "ESCALATE", "ABORT"],
   "retry": {
     "unbounded_retries_allowed": false,
     "default_max_attempts": 1,
-    "max_attempts_upper_bound": 5
+    "max_attempts_upper_bound": 5,
+    "backoff_strategies": ["NONE", "FIXED", "LINEAR", "EXPONENTIAL"],
+    "automatic_retry_forbidden_for": ["AUTHENTICATION_ERROR", "AUTHORIZATION_ERROR", "VALIDATION_ERROR"],
+    "non_idempotent_retry_requires_protection": true
   },
   "rollback_and_compensation": {
     "rollback_and_compensation_are_distinct": true,
-    "irreversible_steps_require_governance": true
+    "irreversible_steps_require_governance": true,
+    "critical_reversible_steps_require_rollback_or_compensation": true
   }
 }

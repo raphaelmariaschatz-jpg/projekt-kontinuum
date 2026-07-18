@@ -42,6 +42,7 @@ from .deployment_framework import CanonicalDeploymentFramework
 from .authentication_framework import CanonicalAuthenticationFramework
 from .licence_management_framework import CanonicalLicenceManagementSystemFramework
 from .code_agent_framework import CanonicalCodeAgentFramework
+from .canonical_workflow_validator import CanonicalWorkflowValidator
 from .self_knowledge import SelfKnowledgeCore
 from .memory_core import MemoryCore
 from .knowledge_platform import KnowledgePlatform
@@ -274,6 +275,10 @@ class KontinuumSystem:
             self.path_tools.project_root()
         )
         self.agent_config["code_agent_framework"] = self.code_agent_framework
+        self.canonical_workflow_framework = CanonicalWorkflowValidator(
+            project_root=self.path_tools.project_root()
+        )
+        self.agent_config["canonical_workflow_framework"] = self.canonical_workflow_framework
         self.foundation_decision = FoundationDecisionLayer(
             self.storage, self.moral_core, self.continuity_core, self.knowledge_intelligence
         )
@@ -416,6 +421,7 @@ class KontinuumSystem:
                 "canonical_git_manager": lambda: self.canonical_git_manager.status(),
                 "canonical_agent_integration_manager": lambda: self.canonical_agent_integration_manager.status(),
                 "capability_resolution_engine": lambda: self.capability_resolution_engine.status(),
+                "canonical_workflow_framework": lambda: self.canonical_workflow_framework.status(),
                 "orchestrator_core": lambda: self.orchestrator_core.status(),
                 "knowledge_platform": lambda: self.knowledge_platform.status(),
                 "continuity": lambda: self.continuity_core.status(),
@@ -567,6 +573,7 @@ class KontinuumSystem:
             "authentication_framework": self.authentication_framework.status(),
             "licence_management_framework": self.licence_management_framework.status(),
             "code_agent_framework": self.code_agent_framework.status(),
+            "canonical_workflow_framework": self.canonical_workflow_framework.status(),
             "memory_core": self.memory_core.status(),
             "canonical_memory_manager": self.canonical_memory_manager.status(),
             "knowledge_platform": self.knowledge_platform.status(),

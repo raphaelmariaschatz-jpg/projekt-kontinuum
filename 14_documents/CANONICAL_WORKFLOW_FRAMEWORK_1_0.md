@@ -1,8 +1,9 @@
 # Canonical Workflow Framework (CWF) 1.0
 
-Status: aktiv vorbereitend / CWF-1.0-Implementierungskandidat  
-Version: 1.0  
-Datum: 2026-07-16
+Status: implementiert mit Grenzen (`IMPLEMENTED_WITH_LIMITATIONS`)
+Version: 1.0
+Datum: 2026-07-18
+Framework-Registry-ID: `PK-FW-EXEC-004`
 
 ## 1. Zweck
 
@@ -77,6 +78,11 @@ Eine Workflow-Definition muss mindestens enthalten:
 - `definition_hash`
 - `created_at`
 - `updated_at`
+- `trigger`
+- `start_step_id`
+- `end_step_ids`
+- `preconditions`
+- `postconditions`
 - `steps`
 - `transitions`
 - `inputs`
@@ -84,6 +90,8 @@ Eine Workflow-Definition muss mindestens enthalten:
 - `audit_requirements`
 
 `workflow_id` ist dauerhaft stabil. `workflow_version` bindet jede Ausfuehrung an eine konkrete Definition. Laufende Ausfuehrungen duerfen nicht still auf neue Definitionen wechseln.
+
+Der `definition_hash` ist der SHA-256-Hash der kanonisch serialisierten Definition ohne das Feld `definition_hash`. Der Schrittgraph muss genau einen Startpunkt, mindestens einen Endpunkt und ausschliesslich erreichbare, schleifenfreie Schritte besitzen.
 
 ## 6. Workflow-Ausfuehrung
 
@@ -99,8 +107,15 @@ Eine Workflow-Ausfuehrung muss mindestens enthalten:
 - `initiated_by`
 - `current_state`
 - `current_step_id`
+- `last_completed_step_id`
+- `pending_step_ids`
+- `inputs`
+- `outputs`
+- `approvals`
+- `rollback_point_reference`
 - `started_at`
 - `paused_at`
+- `pause_reason`
 - `resumed_at`
 - `completed_at`
 - `final_status`
@@ -112,7 +127,9 @@ Eine Ausfuehrung ist keine Definition und darf Definitionen nicht veraendern.
 
 Zulaessige Schrittarten sind `ACTION`, `VALIDATION`, `DECISION`, `APPROVAL`, `REVIEW`, `WAIT`, `NOTIFICATION`, `CHECKPOINT`, `RECOVERY` und `FINALIZATION`.
 
-Jeder Schritt muss eine stabile `step_id`, deklarierte Ein- und Ausgaben, Capability-Referenzen, eine Rolle, Preconditions, Postconditions, Fehlerwege, Retry- und Timeout-Regeln sowie Audit-Anforderungen besitzen.
+Jeder Schritt muss eine stabile `step_id`, deklarierte Ein- und Ausgaben, Capability-Referenzen, eine Rolle, Preconditions, Postconditions, Erfolgs- und Fehlerbedingungen, Kritikalitaet, Fehlerstrategie, Retry- und Timeout-Regeln sowie Audit-Anforderungen besitzen.
+
+Ein `APPROVAL`-Schritt benoetigt ein typisiertes Approval Gate. Gates werden in Definitionen immer im Zustand `PENDING` gespeichert; konkrete Freigaben gehoeren ausschliesslich in den Workflow Run. Kritische Schritte duerfen keine Selbstfreigabe zulassen.
 
 Unbekannte Schrittarten sind unzulaessig.
 
@@ -134,11 +151,11 @@ CWF referenziert Rollen und Capabilities nur. Gueltige Capability-Referenzen mue
 
 Die in CWF 1.0 verwendeten `workflow.*`-Capability-Referenzen sind keine neue Registry. Solange diese Referenzen nicht in der bestehenden CRE-/Capability-Registry aufloesbar sind, gelten sie als dokumentierter Capability-Gap beziehungsweise als externe CRE-Abhaengigkeit. Eine spaetere Ergaenzung von `24_config/capability_registry_34_1.json` ist eine eigene, ausdruecklich freizugebende Implementierungsaenderung und nicht Teil dieses CWF-Auftrags.
 
-Minimale Rollenreferenzen: `workflow_owner`, `planner`, `executor`, `reviewer`, `approver`, `auditor`, `recovery_owner`.
+Minimale Rollenreferenzen: `workflow_owner`, `planner`, `executor`, `reviewer`, `approver`, `auditor`, `recovery_owner`, `orchestrator`.
 
 ## 11. Fehler, Retry und Timeout
 
-Retry-Regeln muessen begrenzt sein. Unbegrenzte Wiederholung ist unzulaessig. Nicht idempotente Schritte benoetigen Schutz durch Idempotency Key, Freigabe oder Kompensationsregel.
+Retry-Regeln muessen begrenzt sein. Unbegrenzte Wiederholung ist unzulaessig. Nicht idempotente Schritte benoetigen Schutz durch Idempotency Key oder Kompensationsregel. Authentifizierungs-, Autorisierungs- und Validierungsfehler duerfen nicht automatisch wiederholt werden.
 
 Timeouts muessen eine kontrollierte Reaktion definieren: `FAIL`, `PAUSE`, `RETRY`, `ESCALATE` oder `ABORT`.
 
@@ -152,17 +169,23 @@ Eine Pause speichert Zustand, aktuellen Schritt, erledigte Schritte, offene Schr
 
 Vor Fortsetzung sind Definition-Hash, Berechtigungen, Freigaben, Artefakte und Rueckfallpunkt erneut zu pruefen. Eine Fortsetzung darf nicht blind am letzten Befehl ansetzen.
 
+Der Validator bietet dafuer eine rein lesende Resume-Pruefung. Er veraendert weder Run-Zustand noch Artefakte und fuehrt den naechsten Schritt nicht selbst aus.
+
 ## 14. Audit und Provenienz
 
 Mindestens folgende Ereignisse sind vorzusehen: `workflow_created`, `workflow_validated`, `workflow_started`, `step_started`, `step_completed`, `step_failed`, `approval_requested`, `approval_granted`, `approval_rejected`, `workflow_paused`, `workflow_resumed`, `retry_started`, `rollback_started`, `rollback_completed`, `compensation_started`, `compensation_completed`, `workflow_aborted`, `workflow_completed`, `workflow_verified`, `workflow_archived`.
 
+Jedes Run-Ereignis bindet Ereignis-ID und -Typ an Workflow-ID, Version und Run-ID und fuehrt Akteur, Rolle, Zeitstempel, Zustandsbezug sowie Referenzen auf Ein-/Ausgaben, Artefakte, Fehler, Freigabe und Execution Plan.
+
 ## 15. Validierung
 
-Der CWF-Validator prueft Struktur, IDs, Zustaende, Uebergaenge, Start- und Endpunkte, Schrittarten, Capability-Referenzen, Rollenreferenzen, Retry- und Timeout-Regeln, Freigabepunkte, Rollback/Kompensation und Definition-Hash.
+Der CWF-Validator prueft die kanonischen Definition-, Schritt- und Run-Schemata sowie IDs, Trigger, Zustaende, Uebergaenge, Start- und Endpunkte, Erreichbarkeit, Schrittarten, Ein-/Ausgabevertraege, Capability- und Rollenreferenzen, Bedingungen, Retry- und Timeout-Regeln, Freigabepunkte, Rollback/Kompensation, Definition-Hash, Run-Bindung, Audit-Verknuepfung und Resume-Voraussetzungen.
 
 Er fuehrt keine Schritte aus, erzeugt keine Execution Plans und loest keine Capabilities auf.
 
 Bei nicht aufloesbaren Capability-Referenzen gibt der Validator je nach Pruefmodus einen Fehler oder eine Warnung aus. Er erzeugt, registriert oder ersetzt niemals Capabilities.
+
+Der produktive Systemstatus registriert CWF unter `canonical_workflow_framework`. Diese Registrierung aktiviert nur explizit aufgerufene, seiteneffektfreie Validierung; sie verbindet CWF nicht automatisch mit Planner oder Orchestrator.
 
 ## 16. Sicherheitsregeln
 
@@ -178,4 +201,4 @@ Bei nicht aufloesbaren Capability-Referenzen gibt der Validator je nach Pruefmod
 
 ## 17. Bekannte Grenzen
 
-CWF 1.0 ist ein Definitions-, Governance-, Validierungs- und Vertragsrahmen. Runtime-Integration, Parallel-Synchronisation, Scheduling, produktive Workflow-Ausfuehrung und visuelle Modellierung bleiben Folgeauftraege.
+CWF 1.0 ist als Definitions-, Governance-, Validierungs- und Vertragsrahmen implementiert. Runtime-Integration, Parallel-Synchronisation, Scheduling, produktive Workflow-Ausfuehrung, visuelle Modellierung und die Registrierung der referenzierten `workflow.*`-Capabilities bleiben ausdruecklich ausserhalb dieses Auftrags.

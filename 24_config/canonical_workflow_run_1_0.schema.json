@@ -15,26 +15,97 @@
     "initiated_by",
     "current_state",
     "current_step_id",
+    "last_completed_step_id",
+    "pending_step_ids",
+    "inputs",
+    "outputs",
+    "approvals",
+    "rollback_point_reference",
     "started_at",
+    "paused_at",
+    "pause_reason",
+    "resumed_at",
+    "completed_at",
     "final_status",
     "audit_events"
   ],
   "properties": {
     "workflow_run_id": {"type": "string", "minLength": 1},
     "workflow_id": {"type": "string", "minLength": 1},
-    "workflow_version": {"type": "string", "minLength": 1},
-    "definition_hash": {"type": "string", "minLength": 1},
-    "execution_plan_id": {"type": "string"},
+    "workflow_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+(\\.[0-9]+)?$"},
+    "definition_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "execution_plan_id": {"type": "string", "minLength": 1},
     "trigger_type": {"type": "string", "enum": ["MANUAL", "EVENT", "SCHEDULED", "API", "STATUS_CHANGE", "RECOVERY"]},
     "trigger_reference": {"type": "string"},
     "initiated_by": {"type": "string", "minLength": 1},
-    "current_state": {"type": "string", "minLength": 1},
+    "current_state": {"$ref": "#/$defs/state"},
     "current_step_id": {"type": "string"},
-    "started_at": {"type": "string"},
-    "paused_at": {"type": "string"},
-    "resumed_at": {"type": "string"},
-    "completed_at": {"type": "string"},
-    "final_status": {"type": "string"},
-    "audit_events": {"type": "array", "items": {"type": "object"}}
+    "last_completed_step_id": {"type": "string"},
+    "pending_step_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "inputs": {"type": "object"},
+    "outputs": {"type": "object"},
+    "approvals": {"type": "array", "items": {"$ref": "#/$defs/approval"}},
+    "rollback_point_reference": {"type": "string"},
+    "started_at": {"type": "string", "format": "date-time"},
+    "paused_at": {"type": "string", "format": "date-time"},
+    "pause_reason": {"type": "string"},
+    "resumed_at": {"type": "string", "format": "date-time"},
+    "completed_at": {"type": "string", "format": "date-time"},
+    "final_status": {"type": "string", "enum": ["", "FAILED", "ABORTED", "COMPLETED", "VERIFIED", "REJECTED", "ARCHIVED"]},
+    "audit_events": {"type": "array", "items": {"$ref": "#/$defs/audit_event"}}
+  },
+  "$defs": {
+    "state": {
+      "type": "string",
+      "enum": ["DRAFT", "VALIDATING", "READY", "WAITING", "RUNNING", "PAUSED", "BLOCKED", "RETRYING", "ROLLING_BACK", "FAILED", "ABORTED", "COMPLETED", "VERIFIED", "REJECTED", "ARCHIVED"]
+    },
+    "approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["gate_id", "gate_type", "required_role", "required_actor_count", "approval_status", "requested_by", "approved_by", "requested_at", "approved_at", "valid_until", "rejection_reason", "self_approval_allowed", "required"],
+      "properties": {
+        "gate_id": {"type": "string", "minLength": 1},
+        "gate_type": {"type": "string", "enum": ["APPROVAL_GATE", "REVIEW_GATE", "SECURITY_GATE", "RELEASE_GATE", "HUMAN_CONFIRMATION_GATE"]},
+        "required_role": {"type": "string", "enum": ["workflow_owner", "planner", "executor", "reviewer", "approver", "auditor", "recovery_owner", "orchestrator"]},
+        "required_actor_count": {"type": "integer", "minimum": 1},
+        "approval_status": {"type": "string", "enum": ["PENDING", "APPROVED", "REJECTED", "EXPIRED"]},
+        "requested_by": {"type": "string", "minLength": 1},
+        "approved_by": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "requested_at": {"type": "string", "format": "date-time"},
+        "approved_at": {"type": "string", "format": "date-time"},
+        "valid_until": {"type": "string", "format": "date-time"},
+        "rejection_reason": {"type": "string"},
+        "self_approval_allowed": {"type": "boolean"},
+        "required": {"type": "boolean"}
+      }
+    },
+    "audit_event": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["event_id", "event_type", "workflow_run_id", "workflow_id", "workflow_version", "step_id", "actor", "actor_role", "timestamp", "previous_state", "new_state", "inputs_reference", "outputs_reference", "artifact_references", "error_reference", "approval_reference", "execution_plan_reference"],
+      "properties": {
+        "event_id": {"type": "string", "minLength": 1},
+        "event_type": {"$ref": "#/$defs/audit_event_type"},
+        "workflow_run_id": {"type": "string", "minLength": 1},
+        "workflow_id": {"type": "string", "minLength": 1},
+        "workflow_version": {"type": "string", "minLength": 1},
+        "step_id": {"type": "string"},
+        "actor": {"type": "string", "minLength": 1},
+        "actor_role": {"type": "string", "enum": ["workflow_owner", "planner", "executor", "reviewer", "approver", "auditor", "recovery_owner", "orchestrator"]},
+        "timestamp": {"type": "string", "format": "date-time"},
+        "previous_state": {"type": "string"},
+        "new_state": {"type": "string"},
+        "inputs_reference": {"type": "string"},
+        "outputs_reference": {"type": "string"},
+        "artifact_references": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "error_reference": {"type": "string"},
+        "approval_reference": {"type": "string"},
+        "execution_plan_reference": {"type": "string", "minLength": 1}
+      }
+    },
+    "audit_event_type": {
+      "type": "string",
+      "enum": ["workflow_created", "workflow_validated", "workflow_started", "step_started", "step_completed", "step_failed", "approval_requested", "approval_granted", "approval_rejected", "workflow_paused", "workflow_resumed", "retry_started", "rollback_started", "rollback_completed", "compensation_started", "compensation_completed", "workflow_aborted", "workflow_completed", "workflow_verified", "workflow_archived"]
+    }
   }
 }

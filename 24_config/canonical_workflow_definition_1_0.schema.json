@@ -9,12 +9,18 @@
     "workflow_name",
     "workflow_version",
     "workflow_type",
+    "description",
     "status",
     "owner",
     "risk_class",
     "definition_hash",
     "created_at",
     "updated_at",
+    "trigger",
+    "start_step_id",
+    "end_step_ids",
+    "preconditions",
+    "postconditions",
     "steps",
     "transitions",
     "inputs",
@@ -22,26 +28,53 @@
     "audit_requirements"
   ],
   "properties": {
-    "workflow_id": {"type": "string", "minLength": 1},
+    "workflow_id": {"type": "string", "minLength": 1, "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"},
     "workflow_name": {"type": "string", "minLength": 1},
     "workflow_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+(\\.[0-9]+)?$"},
     "workflow_type": {"type": "string", "enum": ["SEQUENTIAL", "CONDITIONAL", "APPROVAL", "REVIEW", "RECOVERY"]},
     "description": {"type": "string"},
-    "status": {"type": "string"},
+    "status": {"type": "string", "$ref": "#/$defs/state"},
     "owner": {"type": "string", "minLength": 1},
     "risk_class": {"type": "string", "minLength": 1},
-    "definition_hash": {"type": "string"},
-    "created_at": {"type": "string"},
-    "updated_at": {"type": "string"},
-    "valid_from": {"type": "string"},
-    "valid_until": {"type": "string"},
+    "definition_hash": {"type": "string", "pattern": "^$|^[a-f0-9]{64}$"},
+    "created_at": {"type": "string", "format": "date-time"},
+    "updated_at": {"type": "string", "format": "date-time"},
+    "valid_from": {"type": "string", "format": "date-time"},
+    "valid_until": {"type": "string", "format": "date-time"},
+    "trigger": {"$ref": "#/$defs/trigger"},
+    "start_step_id": {"type": "string", "minLength": 1},
+    "end_step_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "preconditions": {"type": "array", "items": {"$ref": "#/$defs/condition"}},
+    "postconditions": {"type": "array", "items": {"$ref": "#/$defs/condition"}},
     "inputs": {"type": "array", "items": {"$ref": "#/$defs/input"}},
     "outputs": {"type": "array", "items": {"$ref": "#/$defs/output"}},
     "steps": {"type": "array", "minItems": 1, "items": {"$ref": "canonical_workflow_step_1_0.schema.json"}},
     "transitions": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/transition"}},
-    "audit_requirements": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+    "audit_requirements": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/audit_event_type"}}
   },
   "$defs": {
+    "state": {
+      "type": "string",
+      "enum": ["DRAFT", "VALIDATING", "READY", "WAITING", "RUNNING", "PAUSED", "BLOCKED", "RETRYING", "ROLLING_BACK", "FAILED", "ABORTED", "COMPLETED", "VERIFIED", "REJECTED", "ARCHIVED"]
+    },
+    "condition": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_.:-]*$"},
+    "audit_event_type": {
+      "type": "string",
+      "enum": ["workflow_created", "workflow_validated", "workflow_started", "step_started", "step_completed", "step_failed", "approval_requested", "approval_granted", "approval_rejected", "workflow_paused", "workflow_resumed", "retry_started", "rollback_started", "rollback_completed", "compensation_started", "compensation_completed", "workflow_aborted", "workflow_completed", "workflow_verified", "workflow_archived"]
+    },
+    "trigger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["trigger_type", "trigger_reference", "authorized_actor", "required_authentication", "input_contract", "idempotency_key"],
+      "properties": {
+        "trigger_type": {"type": "string", "enum": ["MANUAL", "EVENT", "SCHEDULED", "API", "STATUS_CHANGE", "RECOVERY"]},
+        "trigger_reference": {"type": "string"},
+        "authorized_actor": {"type": "string"},
+        "required_authentication": {"type": "boolean"},
+        "input_contract": {"type": "string"},
+        "idempotency_key": {"type": "string", "minLength": 1}
+      }
+    },
     "input": {
       "type": "object",
       "additionalProperties": false,
@@ -51,7 +84,7 @@
         "input_type": {"type": "string", "minLength": 1},
         "schema_reference": {"type": "string"},
         "required": {"type": "boolean"},
-        "source": {"type": "string"}
+        "source": {"type": "string", "minLength": 1}
       }
     },
     "output": {
@@ -72,13 +105,13 @@
       "required": ["transition_id", "from_state", "to_state", "condition", "authorized_roles", "required_approvals", "required_capabilities", "audit_event"],
       "properties": {
         "transition_id": {"type": "string", "minLength": 1},
-        "from_state": {"type": "string", "minLength": 1},
-        "to_state": {"type": "string", "minLength": 1},
-        "condition": {"type": "string", "minLength": 1},
-        "authorized_roles": {"type": "array", "items": {"type": "string"}},
-        "required_approvals": {"type": "array", "items": {"type": "string"}},
-        "required_capabilities": {"type": "array", "items": {"type": "string"}},
-        "audit_event": {"type": "string", "minLength": 1}
+        "from_state": {"$ref": "#/$defs/state"},
+        "to_state": {"$ref": "#/$defs/state"},
+        "condition": {"$ref": "#/$defs/condition"},
+        "authorized_roles": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "enum": ["workflow_owner", "planner", "executor", "reviewer", "approver", "auditor", "recovery_owner", "orchestrator"]}},
+        "required_approvals": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "required_capabilities": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "audit_event": {"$ref": "#/$defs/audit_event_type"}
       }
     }
   }

@@ -8,6 +8,7 @@
     "step_id",
     "step_name",
     "step_type",
+    "description",
     "sequence",
     "required_inputs",
     "produced_outputs",
@@ -15,8 +16,15 @@
     "assigned_role",
     "preconditions",
     "postconditions",
+    "success_conditions",
+    "failure_conditions",
+    "critical",
     "timeout_policy",
     "retry_policy",
+    "error_policy",
+    "rollback_supported",
+    "compensation_supported",
+    "irreversible",
     "idempotent",
     "next_steps",
     "audit_required"
@@ -24,45 +32,89 @@
   "properties": {
     "step_id": {"type": "string", "minLength": 1},
     "step_name": {"type": "string", "minLength": 1},
-    "step_type": {"type": "string"},
+    "step_type": {"type": "string", "enum": ["ACTION", "VALIDATION", "DECISION", "APPROVAL", "REVIEW", "WAIT", "NOTIFICATION", "CHECKPOINT", "RECOVERY", "FINALIZATION"]},
     "description": {"type": "string"},
     "sequence": {"type": "integer", "minimum": 1},
-    "required_inputs": {"type": "array", "items": {"type": "string"}},
-    "produced_outputs": {"type": "array", "items": {"type": "string"}},
-    "required_capabilities": {"type": "array", "items": {"type": "string"}},
-    "assigned_role": {"type": "string", "minLength": 1},
-    "preconditions": {"type": "array", "items": {"type": "string"}},
-    "postconditions": {"type": "array", "items": {"type": "string"}},
-    "success_conditions": {"type": "array", "items": {"type": "string"}},
-    "failure_conditions": {"type": "array", "items": {"type": "string"}},
-    "timeout_policy": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["timeout_seconds", "on_timeout", "timeout_error_code", "escalation_required"],
-      "properties": {
-        "timeout_seconds": {"type": "integer", "minimum": 0},
-        "on_timeout": {"type": "string"},
-        "timeout_error_code": {"type": "string"},
-        "escalation_required": {"type": "boolean"}
-      }
-    },
-    "retry_policy": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["max_attempts", "retry_on", "requires_idempotency"],
-      "properties": {
-        "max_attempts": {"type": "integer", "minimum": 0},
-        "retry_on": {"type": "array", "items": {"type": "string"}},
-        "requires_idempotency": {"type": "boolean"}
-      }
-    },
+    "required_inputs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "produced_outputs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "required_capabilities": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "assigned_role": {"type": "string", "enum": ["workflow_owner", "planner", "executor", "reviewer", "approver", "auditor", "recovery_owner", "orchestrator"]},
+    "preconditions": {"type": "array", "items": {"$ref": "#/$defs/condition"}},
+    "postconditions": {"type": "array", "items": {"$ref": "#/$defs/condition"}},
+    "success_conditions": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/condition"}},
+    "failure_conditions": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/condition"}},
+    "critical": {"type": "boolean"},
+    "timeout_policy": {"$ref": "#/$defs/timeout_policy"},
+    "retry_policy": {"$ref": "#/$defs/retry_policy"},
+    "error_policy": {"$ref": "#/$defs/error_policy"},
+    "approval_gate": {"$ref": "#/$defs/approval_gate"},
     "rollback_supported": {"type": "boolean"},
     "rollback_reference": {"type": "string"},
     "compensation_supported": {"type": "boolean"},
     "compensation_reference": {"type": "string"},
     "irreversible": {"type": "boolean"},
     "idempotent": {"type": "boolean"},
-    "next_steps": {"type": "array", "items": {"type": "string"}},
+    "next_steps": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
     "audit_required": {"type": "boolean"}
+  },
+  "$defs": {
+    "condition": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_.:-]*$"},
+    "error_class": {
+      "type": "string",
+      "enum": ["VALIDATION_ERROR", "CAPABILITY_UNRESOLVED", "AUTHENTICATION_ERROR", "AUTHORIZATION_ERROR", "APPROVAL_REJECTED", "TIMEOUT", "EXECUTION_ERROR", "ROLLBACK_REQUIRED", "COMPENSATION_REQUIRED", "IRREVERSIBLE_FAILURE"]
+    },
+    "timeout_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["timeout_seconds", "on_timeout", "timeout_error_code", "escalation_required"],
+      "properties": {
+        "timeout_seconds": {"type": "integer", "minimum": 0},
+        "on_timeout": {"type": "string", "enum": ["FAIL", "PAUSE", "RETRY", "ESCALATE", "ABORT"]},
+        "timeout_error_code": {"type": "string", "minLength": 1},
+        "escalation_required": {"type": "boolean"}
+      }
+    },
+    "retry_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["max_attempts", "delay_seconds", "backoff_strategy", "retryable_errors", "non_retryable_errors", "reset_timeout_on_retry", "requires_idempotency", "idempotency_key_required"],
+      "properties": {
+        "max_attempts": {"type": "integer", "minimum": 0, "maximum": 5},
+        "delay_seconds": {"type": "integer", "minimum": 0},
+        "backoff_strategy": {"type": "string", "enum": ["NONE", "FIXED", "LINEAR", "EXPONENTIAL"]},
+        "retryable_errors": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/error_class"}},
+        "non_retryable_errors": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/error_class"}},
+        "reset_timeout_on_retry": {"type": "boolean"},
+        "requires_idempotency": {"type": "boolean"},
+        "idempotency_key_required": {"type": "boolean"}
+      }
+    },
+    "error_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["on_error", "retryable_errors", "non_retryable_errors", "escalate_to"],
+      "properties": {
+        "on_error": {"type": "string", "enum": ["STOP", "RETRY", "SKIP", "FALLBACK", "ROLLBACK", "COMPENSATE", "ESCALATE", "ABORT"]},
+        "retryable_errors": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/error_class"}},
+        "non_retryable_errors": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/error_class"}},
+        "escalate_to": {"type": "string", "enum": ["workflow_owner", "planner", "executor", "reviewer", "approver", "auditor", "recovery_owner", "orchestrator"]}
+      }
+    },
+    "approval_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["gate_id", "gate_type", "required_role", "required_actor_count", "approval_status", "approved_by", "approved_at", "rejection_reason", "self_approval_allowed"],
+      "properties": {
+        "gate_id": {"type": "string", "minLength": 1},
+        "gate_type": {"type": "string", "enum": ["APPROVAL_GATE", "REVIEW_GATE", "SECURITY_GATE", "RELEASE_GATE", "HUMAN_CONFIRMATION_GATE"]},
+        "required_role": {"type": "string", "enum": ["workflow_owner", "planner", "executor", "reviewer", "approver", "auditor", "recovery_owner", "orchestrator"]},
+        "required_actor_count": {"type": "integer", "minimum": 1},
+        "approval_status": {"type": "string", "const": "PENDING"},
+        "approved_by": {"type": "array", "items": {"type": "string"}},
+        "approved_at": {"type": "string"},
+        "rejection_reason": {"type": "string"},
+        "self_approval_allowed": {"type": "boolean"}
+      }
+    }
   }
 }
