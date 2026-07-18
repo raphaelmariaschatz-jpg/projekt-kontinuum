@@ -2,10 +2,10 @@
 
 > (c) 2026 Raphael Maria Schatz - Projekt Kontinuum. Alle Rechte vorbehalten.
 
-Status: Konzeptpruefung abgeschlossen
+Status: Konzeptpruefung abgeschlossen; Phase-1-Kernmodell aktiviert
 Datum: 2026-07-16
 Auftrag: Canonical Enterprise Framework (CEF) 1.0
-Runtime-Wirkung: keine
+Runtime-Wirkung: read-only universelles Enterprise-Kernmodell
 
 ## 1. Angelegte Dateien
 
@@ -73,3 +73,15 @@ CEF ist brancheneutral, groessenunabhaengig, mit der Canonical Architecture vere
 - Keine Refactorings bestehender Komponenten.
 - Keine produktive Unternehmensdatenverarbeitung.
 - Keine Commits.
+
+## 10. Technische Aktivierung vom 2026-07-18
+
+CEF Phase 1 ist als read-only Enterprise-Kernmodell aktiviert.
+
+- Zehn Dimensionen und ihre Beziehungen werden deklarativ validiert.
+- Katalog und Scope-Ansicht enthalten nur Modellstruktur, keine
+  Unternehmensdaten.
+- Nur das generische branchenneutrale Kernmodell ist zugelassen.
+- Es gibt keine Transaktion, KPI-Berechnung, Beratung, Simulation oder
+  Unternehmenssoftware-Funktion.
+- Es erfolgt keine Entscheidung, Persistenz oder Memory-Schreibung.

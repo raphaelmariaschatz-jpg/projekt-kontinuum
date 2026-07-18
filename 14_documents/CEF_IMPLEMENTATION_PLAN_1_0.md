@@ -2,8 +2,8 @@
 
 > (c) 2026 Raphael Maria Schatz - Projekt Kontinuum. Alle Rechte vorbehalten.
 
-Status: kanonischer Implementierungsplan fuer spaetere Phase
-Runtime-Wirkung: keine
+Status: Phase 1 Enterprise-Kernmodell umgesetzt
+Runtime-Wirkung: read-only universelles Kernmodell ohne Unternehmensdaten
 
 ## 1. Zweck
 
@@ -56,3 +56,12 @@ CEF darf nur als Unternehmensmodell, Analyse- und Beratungsrahmen operationalisi
 ## 5. Abschlusskriterium
 
 Eine spaetere Operationalisierung ist erst freigabefaehig, wenn Unternehmensmodell, Daten- und Rollenmodell, Datenschutzgrenzen, Review-Pflichten, Schnittstellen und Release-Integrity-Pruefung eindeutig validiert sind.
+
+## 6. Umsetzungsstand 2026-07-18
+
+Phase 1 ist im kleinsten sicheren Scope umgesetzt. Dimensionen, Beziehungen
+und Informationsfluesse werden deklarativ validiert und als read-only Katalog
+oder Scope bereitgestellt. Es werden keine Unternehmensdaten verarbeitet.
+
+Analyse-/Wissenslandkarten, Beratungs-/Simulationsprofile und
+governance-zertifizierte Operationalisierung bleiben separat offen.

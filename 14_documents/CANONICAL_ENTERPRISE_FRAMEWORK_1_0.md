@@ -2,10 +2,10 @@
 
 > (c) 2026 Raphael Maria Schatz - Projekt Kontinuum. Alle Rechte vorbehalten.
 
-Status: Konzept geprueft, Architekturbaustein empfohlen
+Status: Konzept geprueft, read-only Kernmodell aktiviert
 Gueltig ab: 2026-07-16
 Komponententyp: Enterprise and Operations Framework / kanonisches Unternehmensmodell
-Runtime-Wirkung: keine
+Runtime-Wirkung: read-only universelles Enterprise-Kernmodell
 
 ## 1. Zweck
 
@@ -232,3 +232,22 @@ Begruendung:
 - keine Refactorings bestehender Komponenten
 - keine produktive Unternehmensdatenverarbeitung
 - keine automatische Unternehmensberatung
+
+## 13. Kontrollierte technische Aktivierung
+
+Die serielle Implementierungsfreigabe vom 2026-07-18 aktiviert Phase 1 als
+read-only Enterprise-Kernmodell.
+
+Aktiviert sind:
+
+- deklaratives Laden und Validieren von zehn Unternehmensdimensionen;
+- Validierung der Beziehungen und Informationsfluesse;
+- read-only Katalogzugriff;
+- explizite Scope-Ansicht ausgewaehlter Dimensionen;
+- stabile Scope-IDs;
+- ausschliesslich das generische, branchenneutrale Kernmodell;
+- Registrierung und Statusausgabe in `KontinuumSystem`.
+
+Nicht aktiviert sind Unternehmensdatenverarbeitung, Transaktionen,
+KPI-Berechnung, ERP/CRM/BPM/DMS/BI-Funktionen, Beratung, Simulation,
+Entscheidungsautoritaet oder Memory-Schreibung.

@@ -2,15 +2,15 @@
   "framework": "Canonical Enterprise Framework",
   "abbreviation": "CEF",
   "version": "1.0",
-  "status": "conceptual",
+  "status": "implemented_and_active_read_only_core_model",
   "date": "2026-07-16",
-  "runtime_effect": "none",
+  "runtime_effect": "read_only_universal_enterprise_model",
   "cmibf_registry_id": "PK-FW-ENT-001",
   "purpose": "Universal canonical enterprise model for organization functions, structures, processes, relationships and information flows.",
   "governance_result": {
     "concept_preparation": "GO",
-    "implementation": "SPAETER",
-    "runtime_effect": "none"
+    "implementation": "GO_PHASE_1",
+    "runtime_effect": "read_only_core_model_only"
   },
   "dimensions": [
     {
@@ -279,6 +279,19 @@
     "Industry-specific Extensions",
     "Organisation Maturity Model"
   ],
+  "runtime_contract": {
+    "module": "kontinuum.core.enterprise_framework.CanonicalEnterpriseFramework",
+    "system_attribute": "enterprise_framework",
+    "agent_config_key": "enterprise_framework",
+    "enterprise_model": "24_config/cef_enterprise_model_1_0.json",
+    "industry_profile": "generic_only",
+    "enterprise_data_processing": false,
+    "transactions": false,
+    "kpi_calculation": false,
+    "automatic_consulting": false,
+    "decision_authority": false,
+    "memory_write": false
+  },
   "non_goals": [
     "ERP implementation",
     "CRM implementation",

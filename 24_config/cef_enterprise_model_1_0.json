@@ -2,8 +2,8 @@
   "framework": "Canonical Enterprise Framework",
   "abbreviation": "CEF",
   "version": "1.0",
-  "status": "conceptual_enterprise_model",
-  "runtime_effect": "none",
+  "status": "active_read_only_core_model",
+  "runtime_effect": "read_only_universal_enterprise_model",
   "dimensions": [
     {
       "id": "CEF-D01",
