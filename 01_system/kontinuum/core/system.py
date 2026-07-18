@@ -28,6 +28,7 @@ from .canonical_git_manager import CanonicalGitManager
 from .code_agent import CodeAgentService
 from .consciousness import ConsciousnessCore
 from .canonical_reflective_layer import CanonicalReflectiveLayer
+from .meta_reasoning import MetaReasoningEngine
 from .self_knowledge import SelfKnowledgeCore
 from .memory_core import MemoryCore
 from .knowledge_platform import KnowledgePlatform
@@ -208,6 +209,8 @@ class KontinuumSystem:
         self.agent_config["self_knowledge"] = self.self_knowledge
         self.canonical_reflective_layer = CanonicalReflectiveLayer(self.path_tools, self.storage)
         self.agent_config["canonical_reflective_layer"] = self.canonical_reflective_layer
+        self.meta_reasoning = MetaReasoningEngine(self.storage)
+        self.agent_config["meta_reasoning"] = self.meta_reasoning
         self.foundation_decision = FoundationDecisionLayer(
             self.storage, self.moral_core, self.continuity_core, self.knowledge_intelligence
         )
@@ -487,6 +490,7 @@ class KontinuumSystem:
             "self_knowledge": self.self_knowledge.profile(),
             "consciousness": self.consciousness.profile(),
             "canonical_reflective_layer": self.canonical_reflective_layer.status(),
+            "meta_reasoning": self.meta_reasoning.status(),
             "memory_core": self.memory_core.status(),
             "canonical_memory_manager": self.canonical_memory_manager.status(),
             "knowledge_platform": self.knowledge_platform.status(),

@@ -1,0 +1,106 @@
+{
+  "component_id": "MR-1.0",
+  "name": "Meta-Reasoning",
+  "abbreviation": "MR",
+  "version": "1.0",
+  "status": "implemented_and_active_explicit_review_only",
+  "canonical_since": "2026-07-15",
+  "component_type": "reasoning_review_governance_concept",
+  "runtime_effect": "explicit_review_service_no_automatic_live_review",
+  "purpose": "Schlanker kanonischer Baustein zur Pruefung eigener Schlussfolgerungen, Annahmen, Alternativen, Confidence und Governance-Konformitaet.",
+  "decision": {
+    "concept": "GO",
+    "implementation": "GO_CONTROLLED",
+    "reason": "Die serielle Implementierungsfreigabe vom 2026-07-18 erlaubt einen expliziten, deterministischen Review-Service ohne Eingriff in aktive Entscheidungswege."
+  },
+  "minimal_tasks": [
+    "reasoning_review",
+    "assumption_tracking",
+    "confidence_assessment",
+    "alternative_path_review",
+    "governance_alignment",
+    "revision_trigger"
+  ],
+  "related_components": [
+    "Foundation Layer",
+    "Foundation Reasoning",
+    "Foundation Decision",
+    "Query System",
+    "Capability Resolution Engine",
+    "Execution Planner",
+    "Orchestrator Core",
+    "CDF",
+    "CDG",
+    "CAM",
+    "ALP",
+    "Release Integrity",
+    "Project Chronicle",
+    "Audit / Review",
+    "CRL",
+    "CCP-Cognitive"
+  ],
+  "boundaries": {
+    "not_consciousness_module": true,
+    "no_emotional_self_interpretation": true,
+    "no_personality_claim": true,
+    "no_free_thinking_claim": true,
+    "no_uncontrolled_self_modification": true,
+    "no_runtime_migration": true,
+    "no_orchestrator_planner_cre_logic_change": true,
+    "no_active_decision_path_change": true,
+    "no_live_auto_self_assessment": true,
+    "no_new_agent_flood": true
+  },
+  "future_ccp_position": {
+    "status": "architecture_placeholder_only",
+    "pipeline": [
+      "Perception",
+      "Reasoning",
+      "Meta-Reasoning",
+      "Reflection (CRL)",
+      "Learning",
+      "Memory"
+    ],
+    "rule": "Meta-Reasoning reviews concrete conclusions before CRL-level reflection, learning, or memory adoption."
+  },
+  "conceptual_schema_proposal": {
+    "review_id": "string",
+    "target_type": "answer | decision | plan | architecture_assumption",
+    "target_reference": "string",
+    "reasoning_summary": "string",
+    "assumptions": "array",
+    "uncertainties": "array",
+    "confidence": "high | medium | low",
+    "alternatives_reviewed": "array",
+    "preferred_path_rationale": "string",
+    "governance_alignment": "object",
+    "revision_trigger": "object",
+    "output_boundary": "review_only"
+  },
+  "governance_constraints": {
+    "cmibf_alignment_required": true,
+    "requires_separate_implementation_approval": false,
+    "implementation_approval": "serial_implementation_order_01_16_2026_07_18",
+    "requires_future_interface_model": false,
+    "requires_release_integrity_before_runtime_use": false,
+    "requires_release_integrity_before_release": true,
+    "document_only_in_1_0": false,
+    "explicit_review_only": true,
+    "automatic_live_review": false,
+    "direct_memory_write": false,
+    "decision_authority": false
+  },
+  "runtime_contract": {
+    "module": "kontinuum.core.meta_reasoning.MetaReasoningEngine",
+    "system_attribute": "meta_reasoning",
+    "agent_config_key": "meta_reasoning",
+    "assessment_is_pure": true,
+    "review_event_kind": "meta_reasoning.review",
+    "allowed_target_types": [
+      "answer",
+      "decision",
+      "plan",
+      "architecture_assumption"
+    ]
+  }
+}
