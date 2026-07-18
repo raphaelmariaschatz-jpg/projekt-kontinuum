@@ -1,14 +1,14 @@
 # Canonical Licence Management System Framework (CLMSF) 1.0
 
-Datum: 2026-07-16  
-Status: Architekturvorschlag / Pruefbericht  
-Runtime-Wirkung: keine  
+Datum: 2026-07-18
+Status: aktiv mit Begrenzungen
+Runtime-Wirkung: explizite strukturelle Deklarationspruefung
 Produktive Aenderungen: keine
 Revision: 1.1 nach fachlicher Gesamtbewertung, GO mit Auflagen
 
 ## 1. Zweck
 
-Das Canonical Licence Management System Framework (CLMSF) 1.0 definiert den kanonischen Architekturrahmen fuer zukuenftige Lizenzmechanismen in Projekt Kontinuum. Es ist kein Lizenzmanager, kein DRM-System, kein Authentisierungssystem und keine produktive Runtime-Komponente.
+Das Canonical Licence Management System Framework (CLMSF) 1.0 definiert den kanonischen Architekturrahmen fuer zukuenftige Lizenzmechanismen in Projekt Kontinuum. Es ist kein Lizenzmanager, kein DRM-System und kein Authentisierungssystem. Die aktive Komponente prueft nur explizit uebergebene Lizenzdeklarationen strukturell und besitzt keine produktive Durchsetzungswirkung.
 
 CLMSF beschreibt:
 
@@ -505,7 +505,8 @@ Lizenzdaten koennen personenbezogen sein. Gegenmassnahme: Datensparsamkeit, Refe
 
 ### Phase 2 - Konfigurationsentwurf
 
-- JSON-Schemas fuer Framework-, Registry- und Policy-Konfiguration vorbereiten.
+- Maschinenlesbare Framework-Konfiguration aktivieren.
+- Registry- und Policy-Schemas spaeter separat vorbereiten.
 - Noch keine produktiven Datensaetze und keine Runtime-Integration.
 
 ### Phase 3 - Implementierungsplan
@@ -527,12 +528,32 @@ Pruefstatus:
 - Auftrag gelesen: ja.
 - Bestehende Architektur geprueft: ja, mit Schwerpunkt auf CMIBF/CDF/CAF/CAMap/CDG/ALP/CADP/CCP/CIPL/Release Integrity und Manager-Mustern.
 - Produktive Dateien geaendert: nein.
-- Runtime-Komponenten erstellt: nein.
-- Implementierung begonnen: nein.
+- Runtime-Komponenten erstellt: ja, begrenzte read-only Strukturpruefung.
+- Implementierung begonnen: ja, ohne Lizenzdurchsetzung.
 - CLMSF-Zielarchitektur vorgeschlagen: ja.
 - Fachliche Gesamtbewertung eingearbeitet: ja, GO mit Auflagen.
 - Ergaenzt: `licensed_subject`, offene Lizenztypen, Licence Assurance Level, Canonical Dependencies und Licence Profiles.
 
 Bewertung:
 
-CLMSF 1.0 ist architektonisch sinnvoll und kompatibel mit Projekt Kontinuum, sofern es strikt als kanonisches Framework ohne Runtime-Wirkung eingefuehrt wird. Die sauberste Einordnung ist der Canonical Layer mit Governance-Anbindung an CMIBF, CDF, CDG, CCP, CAM/ALP/CADP, CAF, CIPL und Release Integrity.
+CLMSF 1.0 ist architektonisch sinnvoll und als begrenzte, nicht
+rechtsverbindliche Strukturpruefung aktiv. Die sauberste Einordnung ist der
+Canonical Layer mit Governance-Anbindung an CMIBF, CDF, CDG, CCP,
+CAM/ALP/CADP, CAF, CIPL und Release Integrity.
+
+## 14. Aktiver Umfang
+
+`CanonicalLicenceManagementSystemFramework` validiert die neue
+maschinenlesbare CLMSF-Definition und prueft explizit uebergebene
+Lizenzdeklarationen auf Pflichtfelder, registrierte Starttypen, Lifecycle,
+Zeitfenster, Subject-Struktur und Secret-Freiheit.
+
+Die Komponente:
+
+- wird im zentralen Systemstatus registriert,
+- erzeugt deterministische strukturelle Review-Ergebnisse,
+- stellt keine Lizenz aus und aktiviert keine Lizenz,
+- erteilt keine Rechte und authentisiert keine Identitaet,
+- trifft keine juristische oder Compliance-Einzelfallentscheidung,
+- mutiert keine Registry und schreibt kein Memory,
+- fuehrt keine Sperre, Zahlung oder DRM-Funktion aus.

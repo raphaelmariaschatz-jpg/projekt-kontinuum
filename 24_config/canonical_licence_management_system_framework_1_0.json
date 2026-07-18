@@ -1,0 +1,113 @@
+{
+  "framework_information": {
+    "id": "CLMSF-1.0",
+    "name": "Canonical Licence Management System Framework",
+    "abbreviation": "CLMSF",
+    "version": "1.0",
+    "status": "implemented_with_limitations",
+    "date": "2026-07-18",
+    "runtime_effect": "explicit_structural_declaration_review_only",
+    "purpose": "Canonical architecture and validation contract for future licence mechanisms without enforcement."
+  },
+  "licence_identity": {
+    "required_fields": [
+      "licence_id",
+      "licence_type",
+      "schema_version",
+      "licence_version",
+      "owner_reference",
+      "issuer_reference",
+      "licensed_subject",
+      "origin",
+      "status",
+      "valid_from",
+      "valid_until",
+      "licence_profile_reference",
+      "scope",
+      "constraints",
+      "provenance",
+      "history_reference",
+      "integrity"
+    ],
+    "starter_licence_types": [
+      "PRIVATE",
+      "RESEARCH",
+      "ENTERPRISE",
+      "INTERNAL",
+      "OPEN_SOURCE_COMPATIBILITY",
+      "TRIAL"
+    ],
+    "additional_types_require_governance_registration": true,
+    "licensed_subject_types": [
+      "USER",
+      "ORGANIZATION",
+      "DEVICE",
+      "INSTALLATION",
+      "API",
+      "CONNECTOR",
+      "RESEARCH_UNIT",
+      "DEPLOYMENT",
+      "PRODUCT_OR_MODULE_GROUP"
+    ]
+  },
+  "lifecycle_statuses": [
+    "DRAFT",
+    "PROPOSED",
+    "APPROVED",
+    "ACTIVE",
+    "SUSPENDED",
+    "REINSTATED",
+    "EXPIRING",
+    "EXPIRED",
+    "REVOKED",
+    "ARCHIVED"
+  ],
+  "licence_assurance_levels": [
+    "LOW",
+    "MEDIUM",
+    "HIGH",
+    "CANONICAL"
+  ],
+  "validation_dimensions": [
+    "identity",
+    "integrity",
+    "time",
+    "status",
+    "scope",
+    "compatibility",
+    "trust",
+    "compliance"
+  ],
+  "policy_groups": [
+    "issuance_policy",
+    "usage_policy",
+    "transfer_policy",
+    "renewal_policy",
+    "suspension_policy",
+    "revocation_policy",
+    "archive_policy",
+    "export_policy",
+    "compliance_policy"
+  ],
+  "prohibited_practices": [
+    "licence_as_authentication",
+    "licence_as_automatic_authorization",
+    "automatic_legal_decision",
+    "secret_or_private_key_storage",
+    "silent_registry_overwrite",
+    "unapproved_runtime_enforcement",
+    "deletion_instead_of_archival"
+  ],
+  "non_goals": [
+    "productive_licence_validation",
+    "activation_keys",
+    "licence_server",
+    "payment_processing",
+    "DRM",
+    "rights_management",
+    "authentication",
+    "automatic_issuance",
+    "automatic_suspension",
+    "legal_case_assessment"
+  ]
+}
