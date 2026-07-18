@@ -2,9 +2,9 @@
 
 > (c) 2026 Raphael Maria Schatz - Projekt Kontinuum. Alle Rechte vorbehalten.
 
-Status: kanonischer Implementierungsplan, technische Umsetzung spaeter  
-Gueltig ab: 2026-07-16  
-Runtime-Wirkung: keine
+Status: Phase 1 bis 3 begrenzt umgesetzt
+Gueltig ab: 2026-07-16
+Runtime-Wirkung: explizite, read-only Interaktionsplanung
 
 ## 1. Zweck
 
@@ -36,7 +36,8 @@ Ziele:
 - Governance-Grenzen gegen GUI, UX und Runtime absichern.
 - Projektchronik-Eintrag fuer CHIF vorbereiten.
 
-Status: spaeter, governancepflichtig.
+Status: umgesetzt durch Systemregistrierung und dokumentierte Grenzen; keine
+Veraenderung an CRE, Execution Planner oder Orchestrator Core.
 
 ### Phase 3 - Compliance-Kriterien
 
@@ -47,7 +48,9 @@ Ziele:
 - Kriterien fuer barrierearme und adaptive Interaktion definieren.
 - Review-Kriterien fuer neue Interfaces vorbereiten.
 
-Status: spaeter.
+Status: begrenzt umgesetzt. Die sieben vorhandenen Qualitaetskriterien werden
+maschinenlesbar validiert und in expliziten Interaktionsplaenen referenziert.
+Automatische Antwortpruefung und Release-Compliance bleiben offen.
 
 ### Phase 4 - Tutor- und Education-Integration
 
@@ -80,7 +83,8 @@ Ziele:
 - Keine Aenderung an CRE, Execution Planner oder Orchestrator Core ohne
   separaten Architekturauftrag.
 
-Status: nicht freigegeben.
+Status: begrenzte read-only Registrierung freigegeben. Automatische
+Dialogintegration und produktive Hook-Punkte bleiben nicht freigegeben.
 
 ## 3. Artefakte
 
@@ -91,6 +95,8 @@ Empfohlene Artefakte:
 - `24_config/canonical_human_interface_framework_1_0.json`
 - `24_config/chif_interaction_model_1_0.json`
 - `31_reports/chif_1_0_status_report.md`
+- `01_system/kontinuum/core/human_interface.py`
+- `17_tests/test_human_interface_framework_1_0.py`
 
 Diese Artefakte sind sinnvoll, weil sie Konzept, Implementierungsweg,
 maschinenlesbare Struktur, Interaktionsdimensionen und Status getrennt halten.
@@ -121,6 +127,5 @@ CHIF 1.0 gilt konzeptionell als eingefuehrt, wenn:
 
 ## 6. Empfehlung
 
-Empfehlung: `GO` fuer Konzept und Dokumentationsartefakte; `SPAETER` fuer
-technische Implementierung.
-
+Empfehlung: `GO` fuer den aktiven read-only Umfang; `SPAETER` fuer
+automatische oder produktive Dialogintegration.

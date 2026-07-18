@@ -2,10 +2,10 @@
 
 > (c) 2026 Raphael Maria Schatz - Projekt Kontinuum. Alle Rechte vorbehalten.
 
-Status: Konzept geprueft, Architekturbaustein empfohlen  
-Gueltig ab: 2026-07-16  
-Komponententyp: Canonical Interaction Framework / Mensch-KI-Interaktionsrahmen  
-Runtime-Wirkung: keine
+Status: aktiv mit Begrenzungen
+Gueltig ab: 2026-07-16
+Komponententyp: Canonical Interaction Framework / Mensch-KI-Interaktionsrahmen
+Runtime-Wirkung: explizite, read-only Interaktionsplanung
 
 ## 1. Zweck
 
@@ -24,7 +24,9 @@ CHIF = K begegnet dem Menschen kanonisch.
 CHIF legt fest, wie K kommuniziert, Unsicherheiten offenlegt, Vertrauen
 aufbaut, Eigenverantwortung respektiert, unterschiedliche Nutzerstaende
 beruecksichtigt und Ergebnisse der kanonischen Verarbeitung verstaendlich an
-Menschen vermittelt.
+Menschen vermittelt. Die aktive Komponente stellt dafuer nur einen explizit
+aufrufbaren, deterministischen Interaktionsplan bereit. Sie erzeugt oder
+veraendert keine Antwort.
 
 ## 2. Bestandsanalyse
 
@@ -340,8 +342,8 @@ Offene Fragen:
 
 ## 11. Entscheidung
 
-Empfehlung: `GO` fuer Konzept und kanonische Vorbereitung; `SPAETER` fuer
-technische Implementierung.
+Empfehlung: `GO` fuer die begrenzte read-only Aktivierung; `SPAETER` fuer
+produktive Dialog-, GUI- oder Personalisierungsintegration.
 
 Begruendung:
 
@@ -356,7 +358,7 @@ Begruendung:
 
 - keine GUI-Implementierung
 - kein UX-Redesign
-- keine Runtime-Aenderungen
+- keine automatische Antwort- oder Runtime-Pipeline-Aenderung
 - keine Aenderungen an CRE
 - keine Aenderungen am Execution Planner
 - keine Aenderungen am Orchestrator Core
@@ -366,3 +368,19 @@ Begruendung:
 - keine automatische Memory-Schreibung
 - keine produktive Personalisierungslogik
 
+## 13. Aktiver Umfang
+
+`CanonicalHumanInterfaceFramework` laedt und validiert die acht
+Interaktionsdimensionen, fuenf Interaktionsstufen und sieben
+Qualitaetskriterien. Ein Aufrufer kann daraus explizit einen deterministischen
+Interaktionsplan mit Offenlegungs-, Verantwortungs-, Barrierefreiheits- und
+Kontinuitaetshinweisen erzeugen.
+
+Die Komponente:
+
+- wird im zentralen Systemstatus registriert,
+- generiert und veraendert keine Antworten,
+- steuert keine GUI und keine Modalitaet,
+- bewertet oder profiliert keine Nutzer,
+- trifft keine Entscheidung,
+- schreibt weder Memory noch Praeferenzen.

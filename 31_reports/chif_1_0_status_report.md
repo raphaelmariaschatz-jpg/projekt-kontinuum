@@ -1,9 +1,9 @@
 # CHIF 1.0 Status Report
 
-Stand: 2026-07-16  
-Auftrag: Canonical Human Interface Framework (CHIF) 1.0  
-Status: Konzept geprueft, Architekturbaustein empfohlen  
-Runtime-Wirkung: keine
+Stand: 2026-07-16
+Auftrag: Canonical Human Interface Framework (CHIF) 1.0
+Status: aktiv mit Begrenzungen
+Runtime-Wirkung: explizite, read-only Interaktionsplanung
 
 ## 1. Erzeugte Artefakte
 
@@ -12,6 +12,8 @@ Runtime-Wirkung: keine
 - `24_config/canonical_human_interface_framework_1_0.json`
 - `24_config/chif_interaction_model_1_0.json`
 - `31_reports/chif_1_0_status_report.md`
+- `01_system/kontinuum/core/human_interface.py`
+- `17_tests/test_human_interface_framework_1_0.py`
 
 ## 2. Bestandsanalyse
 
@@ -31,7 +33,8 @@ Intelligenzdimensionen, CCP-Cognitive beschreibt den Verarbeitungsprozess,
 CAICF beschreibt den Kompetenzzielraum, CMLF beschreibt Medien- und
 Vermittlungsformen.
 
-CHIF ist kein Runtime-Modul, kein GUI-Framework und kein UX-Redesign.
+CHIF ist kein GUI-Framework und kein UX-Redesign. Die aktive Runtime-Komponente
+ist auf explizite, deterministische und read-only Interaktionsplanung begrenzt.
 
 ## 4. Interaktionsdimensionen
 
@@ -55,8 +58,8 @@ Freigaben, Grenzen, Review und Compliance.
 
 ## 6. Entscheidung
 
-Bewertung: `GO` fuer Konzept und kanonische Vorbereitung; `SPAETER` fuer
-technische Implementierung.
+Bewertung: `GO` fuer den aktiven read-only Umfang; `SPAETER` fuer automatische
+oder produktive Dialogintegration.
 
 Begruendung:
 
@@ -71,7 +74,7 @@ Begruendung:
 
 - keine GUI-Implementierung
 - kein UX-Redesign
-- keine Runtime-Aenderungen
+- keine automatische Antwort- oder Runtime-Pipeline-Aenderung
 - keine Aenderungen an CRE
 - keine Aenderungen am Execution Planner
 - keine Aenderungen am Orchestrator Core
@@ -106,6 +109,9 @@ Offene Fragen:
 - Interaktionsmodell erstellt.
 - Implementierungsplan erstellt.
 - Statusbericht erstellt.
-- Keine Runtime-, GUI-, UX-, Agenten-, API-, Datenbank-, Import-, Test- oder
-  Migrationsaenderung vorgenommen.
-
+- Systemregistrierung und Statusanzeige aktiviert.
+- Expliziter Interaktionsplaner implementiert und getestet.
+- Keine Antwort-, GUI-, UX-, Agenten-, API-, Datenbank- oder
+  Migrationsintegration vorgenommen.
+- Keine automatische Personalisierung, Entscheidung, Memory- oder
+  Praeferenzschreibung.

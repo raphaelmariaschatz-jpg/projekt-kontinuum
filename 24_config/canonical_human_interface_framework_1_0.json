@@ -2,16 +2,16 @@
   "framework": "Canonical Human Interface Framework",
   "abbreviation": "CHIF",
   "version": "1.0",
-  "status": "conceptual",
+  "status": "implemented_with_limitations",
   "date": "2026-07-16",
   "purpose": "Canonical framework for human-K interaction in Projekt Kontinuum.",
   "principle": "Human-K interaction is a partner-oriented dialogue. K supports human responsibility without replacing it.",
-  "runtime_effect": "none",
+  "runtime_effect": "explicit_read_only_interaction_planning_only",
   "governance_result": {
     "concept_preparation": "GO",
-    "implementation": "SPAETER",
+    "implementation": "active_with_limitations",
     "productive_integration": "not_approved",
-    "runtime_changes": "not_allowed"
+    "runtime_changes": "read_only_framework_registration_only"
   },
   "architecture_position": [
     "Foundation Layer",
@@ -241,4 +241,3 @@
   ],
   "recommendation": "GO for conceptual canonical preparation; SPAETER for technical implementation."
 }
-
