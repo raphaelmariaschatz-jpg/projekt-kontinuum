@@ -4,12 +4,12 @@
     "name": "Canonical Deployment Framework",
     "abbreviation": "CDFX",
     "version": "1.0",
-    "status": "conceptual",
+    "status": "implemented_with_limitations",
     "date": "2026-07-16",
-    "runtime_effect": "none",
+    "runtime_effect": "read_only_profile_validation_only",
     "recommendation": {
       "concept": "GO",
-      "implementation": "SPAETER"
+      "implementation": "active_with_limitations"
     },
     "purpose": "Declarative governance framework for deriving reproducible deployment profiles from one Canonical Architecture without forks."
   },

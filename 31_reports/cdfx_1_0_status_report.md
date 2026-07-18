@@ -2,10 +2,10 @@
 
 > (c) 2026 Raphael Maria Schatz - Projekt Kontinuum. Alle Rechte vorbehalten.
 
-Status: CONCEPT_COMPLETE
+Status: IMPLEMENTED_WITH_LIMITATIONS
 Datum: 2026-07-16
 Auftrag: Canonical Deployment Framework (CDFX) 1.0 - Architekturpruefung und Konzeptphase
-Runtime-Wirkung: keine
+Runtime-Wirkung: explizite, read-only Profilvalidierung
 Git-Push: nicht ausgefuehrt
 
 ## 1. Angelegte Dateien
@@ -15,6 +15,8 @@ Git-Push: nicht ausgefuehrt
 - `24_config/canonical_deployment_framework_1_0.json`
 - `24_config/deployment_profiles_1_0.json`
 - `31_reports/cdfx_1_0_status_report.md`
+- `01_system/kontinuum/core/deployment_framework.py`
+- `17_tests/test_deployment_framework_1_0.py`
 
 ## 2. Geaenderte Dateien
 
@@ -126,7 +128,7 @@ Offene Fragen:
 
 ## 11. Empfehlung
 
-Empfehlung: GO fuer Konzept- und Dokumentationsvorbereitung; SPAETER fuer technische Implementierung.
+Empfehlung: GO fuer die aktive read-only Profilvalidierung; SPAETER fuer CAC-Anbindung, Deployment-Resolver und produktive Profilaktivierung.
 
 Begruendung:
 
@@ -176,9 +178,26 @@ Durchgefuehrt:
 
 ## 14. Bestaetigung der Nicht-Aenderungen
 
-- Keine produktive Implementierung.
+- Read-only Profilvalidator und Systemstatus-Registrierung aktiviert.
+- Keine produktive Deployment-Implementierung.
 - Keine Runtime-Migration.
 - Keine Aenderung produktiver Komponenten.
 - Keine Aenderung bestehender Architekturentscheidungen.
 - Keine Installation zusaetzlicher Software.
 - Kein Git-Push.
+
+## 15. Aktiver Umfang
+
+Der Validator prueft bekannte Profil-IDs, den Schutz aller sechzehn Core-
+Eintraege, acht optionale Framework-Referenzen und die deklarierte
+Lizenzbindung. Er erzeugt einen deterministischen Befund ohne Freigabe- oder
+Ausfuehrungswirkung.
+
+Nachgewiesene Grenzen:
+
+- keine Installation oder Deployment-Ausfuehrung
+- keine Konfigurationsmutation
+- kein Source-Fork
+- keine Lizenzdurchsetzung
+- keine Freigabeentscheidung
+- keine Event- oder Memory-Schreibung

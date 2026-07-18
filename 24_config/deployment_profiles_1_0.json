@@ -3,9 +3,9 @@
     "id": "CDFX-PROFILES-1.0",
     "framework": "CDFX",
     "version": "1.0",
-    "status": "conceptual",
+    "status": "implemented_with_limitations",
     "date": "2026-07-16",
-    "runtime_effect": "none"
+    "runtime_effect": "read_only_profile_validation_only"
   },
   "profiles": [
     {

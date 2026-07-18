@@ -2,16 +2,16 @@
 
 > (c) 2026 Raphael Maria Schatz - Projekt Kontinuum. Alle Rechte vorbehalten.
 
-Status: Konzept geprueft, Architekturbaustein empfohlen
+Status: aktiv mit Begrenzungen
 Gueltig ab: 2026-07-16
 Komponententyp: Deployment Governance Framework / deklaratives Profilmodell
-Runtime-Wirkung: keine
+Runtime-Wirkung: explizite, read-only Profilvalidierung
 
 ## 1. Zweck
 
 Das Canonical Deployment Framework (CDFX) 1.0 definiert, wie aus genau einer Canonical Architecture kontrollierte, reproduzierbare und governance-konforme Bereitstellungsvarianten abgeleitet werden koennen.
 
-CDFX ist kein Produktmodell, keine Edition-Codebasis und keine Runtime-Migration. Es ist ein deklaratives Architektur- und Governance-Framework fuer Deployment-Profile.
+CDFX ist kein Produktmodell, keine Edition-Codebasis und keine Runtime-Migration. Es ist ein deklaratives Architektur- und Governance-Framework fuer Deployment-Profile. Die aktive Komponente validiert Profile nur auf ausdruecklichen Aufruf und fuehrt keine Bereitstellung aus.
 
 Grundsatz:
 
@@ -280,7 +280,7 @@ Offene Fragen:
 
 ## 14. Empfehlung
 
-Empfehlung: GO fuer die kanonische Konzept- und Dokumentationsvorbereitung; SPAETER fuer technische Implementierung, CAC-Anbindung, Deployment-Resolver und produktive Profilaktivierung.
+Empfehlung: GO fuer die begrenzte read-only Profilvalidierung; SPAETER fuer CAC-Anbindung, Deployment-Resolver und produktive Profilaktivierung.
 
 Begruendung:
 
@@ -301,7 +301,7 @@ Begruendung:
 | 4 Querverweispruefung | Dokumente stabil | Beziehungen in CAMap/CDG erfasst | veraltete Referenzen | keine widerspruechlichen Links |
 | 5 JSON-Schema-Finalisierung | Profilmodell stabil | verbindliches Schema | zu fruehe Festlegung | Schema validiert |
 | 6 Profilregistrierung | Schema final | Profile registriert | Produktdenken | Profile als Deployment Profiles markiert |
-| 7 Konfliktvalidierung | Abhaengigkeiten erfasst | Validator-Regeln | Kombinationskomplexitaet | Core-Deaktivierung blockiert |
+| 7 Konfliktvalidierung | Abhaengigkeiten erfasst | Validator-Regeln | begrenzt aktiv | Core-Deaktivierung blockiert |
 | 8 Rollenintegration | Rollenmodell freigegeben | Rechteprofile | Sicherheitsluecken | Auditpflicht definiert |
 | 9 Ressourcen/Lizenz | CLMSF/CSF-Abgleich | Ressourcen- und Lizenzprofile | Lizenz als Architekturquelle | Lizenz nur als Bedingung |
 | 10 CAC-Anbindung | CAC bereit | Profilvalidierung | Compiler ueberdehnt | CAC validiert nur |
@@ -314,6 +314,22 @@ Begruendung:
 
 ## 16. Abschlussstatus
 
-CONCEPT_COMPLETE
+IMPLEMENTED_WITH_LIMITATIONS
 
-Es wurde keine produktive Implementierung vorgenommen. CDFX 1.0 ist als Konzept- und Governance-Schicht geeignet, benoetigt aber vor technischer Aktivierung eine formale Architekturfreigabe und spaetere Validator-/CAC-Anbindung.
+CDFX 1.0 ist als read-only Profilvalidator aktiv. Es prueft Profilidentitaet, Core-Schutz, optionale Framework-Zulaessigkeit und Lizenzbindung. Es fuehrt kein Deployment aus, veraendert keine Konfiguration und benoetigt fuer CAC-Anbindung oder produktive Aktivierung weiterhin eine separate Freigabe.
+
+## 17. Aktiver Umfang
+
+`CanonicalDeploymentFramework` laedt und validiert die kanonische Core- und
+Profildefinition. Ein Aufrufer kann ein bekanntes Profil mit explizit
+angeforderten optionalen Frameworks, Core-Deaktivierungen und einem
+Lizenzprofil read-only pruefen.
+
+Die Komponente:
+
+- wird im zentralen Systemstatus registriert,
+- blockiert jede angeforderte Core-Deaktivierung,
+- meldet unzulaessige optionale Frameworks und Lizenzabweichungen,
+- installiert, aktiviert oder konfiguriert nichts,
+- erstellt keinen Source-Fork,
+- trifft keine Freigabeentscheidung und schreibt kein Memory.

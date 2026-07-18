@@ -2,9 +2,9 @@
 
 > (c) 2026 Raphael Maria Schatz - Projekt Kontinuum. Alle Rechte vorbehalten.
 
-Status: Profilkonzept / deklarative Ausgangsprofile
+Status: deklarative Ausgangsprofile, read-only validierbar
 Gueltig ab: 2026-07-16
-Runtime-Wirkung: keine
+Runtime-Wirkung: explizite, read-only Profilvalidierung
 
 ## 1. Zweck
 
@@ -180,4 +180,5 @@ Moegliche spaetere Profile:
 - Developer Deployment Profile
 - Evaluation Deployment Profile
 
-Diese Profile sind noch nicht freigegeben.
+Diese Profile sind noch nicht freigegeben. Die drei Ausgangsprofile sind nur
+als Validierungsreferenz aktiv; daraus folgt keine Deployment-Freigabe.
