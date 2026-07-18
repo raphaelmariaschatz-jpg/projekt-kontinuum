@@ -1,9 +1,9 @@
 # CAF 1.0 Pruef- und Statusbericht
 
-Stand: 2026-07-16  
-Auftrag: Canonical Authentication Framework (CAF) 1.0  
-Status: Konzept geprueft, mit Auflagen freigabefaehig  
-Runtime-Wirkung: keine produktive Authentisierungslogik geaendert
+Stand: 2026-07-18
+Auftrag: Canonical Authentication Framework (CAF) 1.0
+Status: PARTIALLY_INTEGRATED_WITH_CONDITIONS
+Runtime-Wirkung: nicht-autoritative Authentisierungsbeobachtung
 
 ## 1. Zusammenfassung
 
@@ -167,6 +167,8 @@ Erforderlich sind funktionale Tests, Sicherheitstests, Integritaetstests, Kompat
 - `14_documents/CANONICAL_AUTHENTICATION_FRAMEWORK_1_0.md`
 - `24_config/canonical_authentication_framework_1_0.json`
 - `31_reports/caf_1_0_status_report.md`
+- `01_system/kontinuum/core/authentication_framework.py`
+- `17_tests/test_authentication_framework_1_0.py`
 
 ## 17. Offene Fragen
 
@@ -178,7 +180,7 @@ Erforderlich sind funktionale Tests, Sicherheitstests, Integritaetstests, Kompat
 
 ## 18. Blocker
 
-Kein technischer Blocker fuer die konzeptionelle Freigabe. Blocker fuer produktive Aktivierung:
+Kein technischer Blocker fuer die additive Beobachtungsschicht. Blocker fuer produktive Aktivierung:
 
 - fehlendes CAF-Ergebnisobjekt,
 - fehlende Session-Ablauf-/Widerrufslogik,
@@ -188,7 +190,9 @@ Kein technischer Blocker fuer die konzeptionelle Freigabe. Blocker fuer produkti
 
 ## 19. Restrisiken
 
-CAF 1.0 reduziert keine Risiken automatisch, solange es nicht implementiert ist. Das groesste Restrisiko bleibt die Verwechslung von Identitaet, Rolle und Authentisierung in Legacy-Kompatibilitaetspfaden.
+Die aktive Beobachtungsschicht reduziert die produktiven Legacy-Risiken nicht
+automatisch. Das groesste Restrisiko bleibt die Verwechslung von Identitaet,
+Rolle und Authentisierung in Legacy-Kompatibilitaetspfaden.
 
 ## 20. Klare Empfehlung
 
@@ -202,3 +206,22 @@ Begruendung:
 - die Trennung von Identitaet, Authentisierung und Autorisierung ist konzeptionell sauber definierbar;
 - Risiken sind bekannt und ohne sofortigen Runtime-Umbau adressierbar;
 - produktive Aenderungen waeren aktuell zu frueh und muessen in einem gesonderten Implementierungsauftrag erfolgen.
+
+## 21. Aktiver Umfang und Validierung
+
+Aktiviert wurden ein frozen, nicht-autoritativer CAF-Beobachtungsvertrag und
+die zentrale Statusregistrierung. Die Komponente validiert die kanonischen
+Felder, Identity Types, Method Classes, Assurance-Mindestwerte, Zeitgrenzen und
+verbietet Secret-Felder.
+
+Explizit unveraendert blieben:
+
+- `AuthManager` und `PasswordSecurity`
+- GUI-Login und Superadmin-Reauth
+- `SessionContext` und dessen dokumentiertes Legacy-Risiko
+- Oracle-, Self-Extension- und Foundation-Authorization-Gates
+- Credential-, Recovery-, Session- und Audit-Speicherung
+
+Das Ergebnis setzt `issuer_attested=false`, `authentication_performed=false`
+und `authorization_usable=false`. Es darf daher keinen bestehenden
+Sicherheitsentscheid ersetzen.

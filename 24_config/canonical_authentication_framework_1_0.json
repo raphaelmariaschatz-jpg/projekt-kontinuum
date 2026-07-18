@@ -4,12 +4,12 @@
     "name": "Canonical Authentication Framework",
     "abbreviation": "CAF",
     "version": "1.0",
-    "status": "defined",
+    "status": "partially_integrated",
     "date": "2026-07-16",
-    "runtime_effect": "none",
+    "runtime_effect": "non_authoritative_observation_contract_only",
     "recommendation": {
       "concept": "GO_WITH_CONDITIONS",
-      "implementation": "LATER_CONTROLLED"
+      "implementation": "ACTIVE_WITH_LIMITATIONS"
     },
     "purpose": "Canonical governance framework for identity, authentication, assurance, sessions, recovery, service identities and audit."
   },
@@ -180,6 +180,10 @@
     "device_context",
     "origin",
     "result",
+    "failure_reason_code",
+    "policy_version",
+    "framework_version",
+    "audit_reference",
     "schema_version"
   ],
   "integration_matrix": [

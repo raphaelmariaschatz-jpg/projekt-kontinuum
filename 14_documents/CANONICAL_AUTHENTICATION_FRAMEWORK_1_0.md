@@ -2,16 +2,16 @@
 
 > (c) 2026 Raphael Maria Schatz - Projekt Kontinuum. Alle Rechte vorbehalten.
 
-Status: Konzept geprueft, mit Auflagen freigabefaehig  
-Gueltig ab: 2026-07-16  
-Komponententyp: Authentication Governance Framework / kanonisches Sicherheitsmodell  
-Runtime-Wirkung: keine unmittelbare Runtime-Aenderung
+Status: teilweise integriert, mit Auflagen
+Gueltig ab: 2026-07-16
+Komponententyp: Authentication Governance Framework / kanonisches Sicherheitsmodell
+Runtime-Wirkung: nicht-autoritative Authentisierungsbeobachtung
 
 ## 1. Zweck
 
 Das Canonical Authentication Framework (CAF) 1.0 definiert den verbindlichen Rahmen fuer Identitaet, Authentisierung, Authentisierungsergebnis, Sitzung, Wiederherstellung, Agenten- und Dienstidentitaeten sowie Audit in Projekt Kontinuum.
 
-CAF ist keine neue Login-Implementierung. CAF ersetzt keine produktive Authentisierungslogik und deaktiviert keine historischen Komponenten. CAF ordnet vorhandene Pfade ein und bereitet eine spaetere kontrollierte Migration vor.
+CAF ist keine neue Login-Implementierung. CAF ersetzt keine produktive Authentisierungslogik und deaktiviert keine historischen Komponenten. CAF ordnet vorhandene Pfade ein und bereitet eine spaetere kontrollierte Migration vor. Die aktive Komponente erzeugt nur nicht-autoritative Beobachtungsobjekte; diese duerfen nicht als Login- oder Autorisierungsnachweis verwendet werden.
 
 Grundsatz:
 
@@ -322,7 +322,9 @@ CAF-Statuswerte:
 - `BLOCKED`
 - `REVOKED`
 
-CAF 1.0 selbst steht nach dieser Pruefung auf `DEFINED`. Die produktive Integration steht noch nicht auf `ACTIVE`.
+CAF 1.0 selbst steht nach der additiven Aktivierung auf `PARTIALLY_INTEGRATED`.
+Die produktive Authentisierung und Autorisierung stehen weiterhin nicht auf
+`ACTIVE` unter CAF.
 
 ## 17. Freigabeempfehlung
 
@@ -336,3 +338,21 @@ Auflagen:
 - Creator-Status nie mehr aus Namen ableiten,
 - Berechtigungsgates muessen mittelfristig CAF-Ergebnisse statt frei veraenderbarer Dicts pruefen,
 - Recovery-Key-Lifecycle muss vor Aktivierung vollstaendig definiert werden.
+
+## 18. Aktiver Umfang
+
+`CanonicalAuthenticationFramework` laedt und validiert Identitaetstypen,
+Methodenklassen, Assurance Levels und das kanonische Ergebnisfeldmodell. Ein
+Aufrufer kann einen bereits extern beobachteten Authentisierungsvorgang als
+deterministisches, frozen CAF-Objekt strukturieren.
+
+Die Komponente:
+
+- wird im zentralen Systemstatus registriert,
+- prueft Identitaetstyp, Methode, Mindest-Assurance und Zeitgrenzen,
+- weist Passwoerter, Hashes, Tokens, Recovery Keys und private Schluessel ab,
+- authentisiert niemanden und erstellt keine Sitzung,
+- setzt `issuer_attested`, `authentication_performed` und
+  `authorization_usable` immer auf `false`,
+- aendert weder `AuthManager` noch GUI oder privilegierte Verbraucher,
+- schreibt weder Auditdateien noch Memory.

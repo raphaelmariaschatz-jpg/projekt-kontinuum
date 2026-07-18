@@ -39,6 +39,7 @@ from .enterprise_framework import CanonicalEnterpriseFramework
 from .human_interface import CanonicalHumanInterfaceFramework
 from .language_processing import CanonicalLanguageProcessingFramework
 from .deployment_framework import CanonicalDeploymentFramework
+from .authentication_framework import CanonicalAuthenticationFramework
 from .self_knowledge import SelfKnowledgeCore
 from .memory_core import MemoryCore
 from .knowledge_platform import KnowledgePlatform
@@ -259,6 +260,10 @@ class KontinuumSystem:
             self.path_tools.project_root()
         )
         self.agent_config["deployment_framework"] = self.deployment_framework
+        self.authentication_framework = CanonicalAuthenticationFramework(
+            self.path_tools.project_root()
+        )
+        self.agent_config["authentication_framework"] = self.authentication_framework
         self.foundation_decision = FoundationDecisionLayer(
             self.storage, self.moral_core, self.continuity_core, self.knowledge_intelligence
         )
@@ -549,6 +554,7 @@ class KontinuumSystem:
             "human_interface_framework": self.human_interface_framework.status(),
             "language_processing_framework": self.language_processing_framework.status(),
             "deployment_framework": self.deployment_framework.status(),
+            "authentication_framework": self.authentication_framework.status(),
             "memory_core": self.memory_core.status(),
             "canonical_memory_manager": self.canonical_memory_manager.status(),
             "knowledge_platform": self.knowledge_platform.status(),
