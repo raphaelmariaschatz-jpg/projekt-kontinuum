@@ -1,0 +1,91 @@
+{
+  "review_id": "AUFTRAG-17-FRAMEWORK-IMPLEMENTATION-REVIEW-1.0",
+  "review_version": "1.0",
+  "review_date": "2026-07-19",
+  "repository": "C:\\Projekt Kontinuum",
+  "reviewed_head": "7968d21e2233ee95fe0d129885c37675dac5274c",
+  "overall_status": "NO_GO",
+  "declarative_result_only": true,
+  "grants_approval": false,
+  "grants_authorization": false,
+  "executes_actions": false,
+  "framework_count": 16,
+  "finding_counts": {
+    "P0": 0,
+    "P1": 4,
+    "P2": 7,
+    "P3": 3,
+    "INFO": 2
+  },
+  "automatic_corrections": 2,
+  "blocked_verification_areas": 2,
+  "frameworks": [
+    {"order": "01", "framework": "CRL", "version": "1.0", "technical_test": "PASS", "architecture": "FINDING", "side_effects": "FINDING", "overall": "FINDING", "commit": "c1618587612921fd7676811b2d5e962e5bd71655"},
+    {"order": "02", "framework": "MR", "version": "1.0", "technical_test": "PASS", "architecture": "FINDING", "side_effects": "PASS_WITH_LIMITATIONS", "overall": "FINDING", "commit": "f3f22e0eb802b7c6adbdf2985dbd6963bc107d2d"},
+    {"order": "03", "framework": "CAICF", "version": "1.0", "technical_test": "PASS", "architecture": "FINDING", "side_effects": "PASS", "overall": "FINDING", "commit": "8a66a54e69bbaa29314015ba1f8600310e4b5623"},
+    {"order": "04", "framework": "API Learning Connector", "version": "1.0", "technical_test": "PASS", "architecture": "FINDING", "side_effects": "PASS_WITH_LIMITATIONS", "overall": "FINDING", "commit": "cc052d6171ac0183081d19578fe853f9d8381c7f"},
+    {"order": "05", "framework": "CCP-Cognitive", "version": "1.0", "technical_test": "PASS", "architecture": "FINDING", "side_effects": "PASS_WITH_LIMITATIONS", "overall": "FINDING", "commit": "ebf82d28636d789cd58080e07ac78168efd04aa2"},
+    {"order": "06", "framework": "CIF", "version": "1.0", "technical_test": "PASS", "architecture": "FINDING", "side_effects": "PASS_WITH_LIMITATIONS", "overall": "FINDING", "commit": "8b8ae35f6dfe116a24919fe811e1099fa5aa8f43"},
+    {"order": "07", "framework": "CPVF", "version": "1.0", "technical_test": "PASS", "architecture": "FINDING", "side_effects": "PASS_WITH_LIMITATIONS", "overall": "FINDING", "commit": "11f6e291d62bc0c9a262b5c2cc78bcf4597920d6"},
+    {"order": "08", "framework": "CMLF", "version": "1.0", "technical_test": "PASS", "architecture": "FINDING", "side_effects": "PASS", "overall": "FINDING", "commit": "eeb0fea49082cd8fc3677cd72b17ad378253af66"},
+    {"order": "09", "framework": "CEF", "version": "1.0", "technical_test": "PASS", "architecture": "FINDING", "side_effects": "PASS", "overall": "FINDING", "commit": "3551073d28e897c42411be26503197465b166bb6"},
+    {"order": "10", "framework": "CHIF", "version": "1.0", "technical_test": "PASS", "architecture": "FINDING", "side_effects": "PASS", "overall": "FINDING", "commit": "580d124f2c9b6232bec571169645463399b1a864"},
+    {"order": "11", "framework": "CLPF", "version": "1.0", "technical_test": "PASS", "architecture": "FINDING", "side_effects": "PASS_WITH_LIMITATIONS", "overall": "FINDING", "commit": "b190ef2e73219284bd39969f2375dcdabb5e1747"},
+    {"order": "12", "framework": "CDFX", "version": "1.0", "technical_test": "PASS", "architecture": "FINDING", "side_effects": "PASS", "overall": "FINDING", "commit": "805678171e7460a5d44e333cd772294c70cbbed1"},
+    {"order": "13", "framework": "Authentication (CAF working name / CAF-AUTH in CMIBF)", "version": "1.0", "technical_test": "PASS_WITH_BLOCKED_ADJACENT_TEST", "architecture": "FINDING", "side_effects": "PASS", "overall": "FINDING", "commit": "8d542fa74444b5470db9f1aacde5df6234fdd4d3"},
+    {"order": "14", "framework": "CLMSF", "version": "1.0", "technical_test": "PASS", "architecture": "FINDING", "side_effects": "PASS", "overall": "FINDING", "commit": "e0e8bd76fe880214f993c123b9c2e98ff50e7425"},
+    {"order": "15", "framework": "CODEAF", "version": "1.0", "technical_test": "PASS", "architecture": "FINDING", "side_effects": "PASS_WITH_LIMITATIONS", "overall": "FINDING", "commit": "a20164a3275949cdac3d66eb9d0bf14c8f2bac4e"},
+    {"order": "16", "framework": "CWF", "version": "1.0", "technical_test": "PASS_AFTER_HARNESS_CORRECTION", "architecture": "FINDING", "side_effects": "PASS", "overall": "FINDING", "commit": "7968d21e2233ee95fe0d129885c37675dac5274c"}
+  ],
+  "findings": [
+    {"id": "A17-F001", "priority": "P1", "title": "Active implementations are not reconciled with CMIBF lifecycle", "frameworks": ["01-16"], "status": "OPEN", "automatic_correction_allowed": false, "raphael_decision_required": true},
+    {"id": "A17-F002", "priority": "P1", "title": "CAF abbreviation and framework identity collide", "frameworks": ["13", "15"], "status": "OPEN", "automatic_correction_allowed": false, "raphael_decision_required": true},
+    {"id": "A17-F003", "priority": "P1", "title": "CRL persists the complete caller prompt", "frameworks": ["01"], "status": "OPEN", "automatic_correction_allowed": false, "raphael_decision_required": true},
+    {"id": "A17-F004", "priority": "P1", "title": "API identifiers hash raw content before redaction", "frameworks": ["04"], "status": "OPEN", "automatic_correction_allowed": false, "raphael_decision_required": true},
+    {"id": "A17-F005", "priority": "P2", "title": "Caller-controlled content enters hashes and audit references", "frameworks": ["02", "05", "06", "07", "10", "11", "16"], "status": "OPEN", "automatic_correction_allowed": false, "raphael_decision_required": true},
+    {"id": "A17-F006", "priority": "P2", "title": "Gate results can look like authorization without attestation", "frameworks": ["15", "16"], "status": "OPEN", "automatic_correction_allowed": false, "raphael_decision_required": true},
+    {"id": "A17-F007", "priority": "P2", "title": "CWF validation results are time-dependent", "frameworks": ["16"], "status": "OPEN", "automatic_correction_allowed": false, "raphael_decision_required": true},
+    {"id": "A17-F008", "priority": "P2", "title": "CWF silently degrades capability-registry verification", "frameworks": ["16"], "status": "OPEN", "automatic_correction_allowed": false, "raphael_decision_required": true},
+    {"id": "A17-F009", "priority": "P2", "title": "Documentation status glossary and history are inconsistent", "frameworks": ["01-16"], "status": "OPEN", "automatic_correction_allowed": false, "raphael_decision_required": true},
+    {"id": "A17-F010", "priority": "P2", "title": "Required series and CRL evidence is missing from committed baseline", "frameworks": ["01", "01-16"], "status": "OPEN", "automatic_correction_allowed": false, "raphael_decision_required": true},
+    {"id": "A17-F011", "priority": "P2", "title": "CRL evidence labels do not prove evidence review", "frameworks": ["01"], "status": "OPEN", "automatic_correction_allowed": false, "raphael_decision_required": true},
+    {"id": "A17-F012", "priority": "P3", "title": "Test entry-point and environment limitations", "frameworks": ["13", "16"], "status": "PARTIALLY_CORRECTED", "automatic_correction_allowed": true, "raphael_decision_required": true},
+    {"id": "A17-F013", "priority": "P3", "title": "ASCII exceptions remain in direct implementation artifacts", "frameworks": ["01", "15"], "status": "OPEN_WITH_DOCUMENTED_EXCEPTIONS", "automatic_correction_allowed": false, "raphael_decision_required": false},
+    {"id": "A17-F014", "priority": "P3", "title": "CRL implementation commit contained whitespace errors", "frameworks": ["01"], "status": "CORRECTED_AND_VALIDATED", "automatic_correction_allowed": true, "raphael_decision_required": false},
+    {"id": "A17-F015", "priority": "INFO", "title": "No unexpected productive side-effect mechanism found", "frameworks": ["01-16"], "status": "VERIFIED_INFORMATION", "automatic_correction_allowed": false, "raphael_decision_required": false},
+    {"id": "A17-F016", "priority": "INFO", "title": "Dirty worktree isolation remains effective but mandatory", "frameworks": ["repository"], "status": "CONTROLLED_INFORMATION", "automatic_correction_allowed": false, "raphael_decision_required": false}
+  ],
+  "corrections": [
+    {"id": "C01", "file": "17_tests/test_canonical_workflow_framework_1_0.py", "change": "standalone import-path setup", "productive_semantics_changed": false, "validation": "29 CWF tests passed without PYTHONPATH"},
+    {"id": "C02", "file": "31_reports/CRL_IMPLEMENTATION_REPORT_1_0.md", "change": "removed three trailing-whitespace occurrences", "productive_semantics_changed": false, "validation": "CRL focused test and diff check passed"}
+  ],
+  "validation": {
+    "focused_framework_entry_points_passed": 16,
+    "focused_framework_entry_points_total": 16,
+    "cwf_internal_checks_passed": 29,
+    "adjacent_regression_entry_points_passed": 11,
+    "json_files_parsed": 33,
+    "json_failures": 0,
+    "python_files_compiled_in_memory": 34,
+    "python_syntax_failures": 0,
+    "secret_scan_files": 121,
+    "high_confidence_secret_files": 0,
+    "ascii_scan_files": 121,
+    "ascii_only_files": 116,
+    "non_ascii_files": 5,
+    "remaining_focused_test_failures": 0,
+    "initial_corrected_test_failures": 1
+  },
+  "blocked_checks": [
+    {"check": "17_tests/test_auth_23.py", "reason": "missing existing argon2 dependency; no package installed"},
+    {"check": "full pytest collection for 17_tests", "reason": "timed out after 60.9 seconds without a complete result"}
+  ],
+  "recommendations": [
+    "Reconcile all sixteen frameworks with CMIBF lifecycle and CAC evidence before release.",
+    "Resolve CAF versus CAF-AUTH through an explicit Raphael-approved canonical decision.",
+    "Approve audit-data redaction hashing and retention contracts before changing CRL or API security behavior.",
+    "Separate structural validation from attested authorization in CODEAF and CWF.",
+    "Commit only exact Auftrag-17 paths after staged-diff review; do not include foreign worktree changes."
+  ],
+  "push_performed": false
+}

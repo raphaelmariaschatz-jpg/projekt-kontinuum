@@ -5,6 +5,11 @@ from __future__ import annotations
 from datetime import datetime, timezone
 import json
 from pathlib import Path
+import sys
+
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "01_system"))
 
 from kontinuum.core.canonical_workflow_validator import CanonicalWorkflowValidator
 

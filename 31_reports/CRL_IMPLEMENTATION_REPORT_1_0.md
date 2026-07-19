@@ -1,8 +1,8 @@
 # CRL Implementation Report 1.0
 
-Projekt: Projekt Kontinuum (K)  
-Auftrag: Governance-Freeze und Start der Implementierungsphase - CRL 1.0  
-Datum: 2026-07-16  
+Projekt: Projekt Kontinuum (K)
+Auftrag: Governance-Freeze und Start der Implementierungsphase - CRL 1.0
+Datum: 2026-07-16
 Status: IMPLEMENTED_VALIDATED_PENDING_COMMIT
 
 ## 1. Governance-Freeze
